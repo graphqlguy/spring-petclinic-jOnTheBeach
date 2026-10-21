@@ -2,7 +2,7 @@ package org.springframework.samples.petclinic;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-import java.util.Optional;
+import java.util.List;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -19,8 +19,9 @@ import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.samples.petclinic.owner.Owner;
 import org.springframework.samples.petclinic.owner.OwnerRepository;
+import org.springframework.samples.petclinic.owner.Pet;
+import org.springframework.transaction.support.TransactionTemplate;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 import org.springframework.web.client.RestTemplate;
@@ -37,18 +38,18 @@ public class PetClinicConcurrencyTests {
 	@Autowired
 	private RestTemplateBuilder restTemplateBuilder;
 
+	@Autowired
+	private TransactionTemplate transactions;
+
 	@Test
 	public void testDuplicatePetNameRaceConditionIsBlocked() throws Exception {
 		int ownerId = 1;
-		Optional<Owner> initialOwnerOpt = ownerRepository.findById(ownerId);
-		assertThat(initialOwnerOpt).isPresent();
-		Owner owner = initialOwnerOpt.get();
-
-		int initialPetCount = owner.getPets().size();
+		List<String> initialPets = petNames(ownerId);
+		int initialPetCount = initialPets.size();
 		String duplicatePetName = "ConcurrencyTestPet";
 
 		// Ensure duplicate pet name does not exist yet
-		assertThat(owner.getPet(duplicatePetName)).isNull();
+		assertThat(initialPets).doesNotContain(duplicatePetName);
 
 		RestTemplate template = restTemplateBuilder.baseUri("http://localhost:" + port).build();
 
@@ -111,8 +112,8 @@ public class PetClinicConcurrencyTests {
 			executorService.shutdown();
 		}
 
-		Owner updatedOwner = ownerRepository.findById(ownerId).get();
-		int newPetCount = updatedOwner.getPets().size();
+		List<String> updatedPets = petNames(ownerId);
+		int newPetCount = updatedPets.size();
 
 		System.out.println("--- Concurrency Test Assertions ---");
 		System.out.println("Successful additions: " + successCount.get());
@@ -124,11 +125,14 @@ public class PetClinicConcurrencyTests {
 		assertThat(successCount.get()).isEqualTo(1);
 		assertThat(newPetCount).isEqualTo(initialPetCount + 1);
 
-		long countWithDuplicateName = updatedOwner.getPets()
-			.stream()
-			.filter(p -> duplicatePetName.equalsIgnoreCase(p.getName()))
-			.count();
+		long countWithDuplicateName = updatedPets.stream().filter(duplicatePetName::equalsIgnoreCase).count();
 		assertThat(countWithDuplicateName).isEqualTo(1);
+	}
+
+	// The pets of an owner load lazily, so they are read inside a transaction
+	private List<String> petNames(int ownerId) {
+		return this.transactions.execute(
+				(status) -> ownerRepository.findById(ownerId).orElseThrow().getPets().stream().map(Pet::getName).toList());
 	}
 
 }
