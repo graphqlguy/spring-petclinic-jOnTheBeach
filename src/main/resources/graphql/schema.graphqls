@@ -125,6 +125,12 @@ type Specialty {
 
 scalar Date @specifiedBy(url: "https://tools.ietf.org/html/rfc3339")
 
+"Events a client can listen to, over a WebSocket or Server-Sent Events"
+type Subscription {
+    "Each visit as it is booked. Give a vetId to get only that vet's visits."
+    visitBooked(vetId: ID): Visit!
+}
+
 "Changes to the clinic's data"
 type Mutation {
     addVisit(input: AddVisitInput!): Visit!
