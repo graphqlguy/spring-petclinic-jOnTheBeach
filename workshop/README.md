@@ -11,7 +11,7 @@ The frontend checks the backend's schema at startup and shows only the pages the
 ## Part 1: GraphQL
 
 1. [Your first GraphQL service](01-your-first-graphql-service.md): the dependency, GraphiQL, your first schema, queries with arguments, paging and filtering, deprecation
-2. Relationships and the N+1 problem
+2. [Relationships and the N+1 problem](02-relationships-and-the-n-plus-1-problem.md): nested fields, default field resolution, `@SchemaMapping`, the N+1 problem and `@BatchMapping`
 3. Mutations, input types and a custom scalar
 4. Errors and validation
 5. Security
