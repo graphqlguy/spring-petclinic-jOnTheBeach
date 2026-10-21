@@ -19,7 +19,7 @@ export default function LivePage() {
     <div>
       <PageTitle>Live bookings</PageTitle>
       <p className="mb-6 text-sm text-spring-grey">
-        Listening for new visits. Book one in another tab, in the web pages at port 8080, or through the assistant.
+        Listening for new visits. Book one in another tab, or ask the assistant to book one.
       </p>
       <Errors errors={error} />
       <ul className="space-y-3">
