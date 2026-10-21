@@ -49,6 +49,7 @@ This is schema-first development: we describe the API in the GraphQL Schema Defi
 ```graphql
 # The entry point of our API. This line is a comment, by the way:
 # comments start with # and are only for people reading this file.
+"The queries a client can send"
 type Query {
     ownersAll: [Owner!]!
 }
@@ -84,9 +85,12 @@ SDL has two ways to write text, and they serve different readers:
 |---|---|---|
 | `"..."` | Description, one line | **Clients.** It is part of the schema: introspection returns it, and GraphiQL and every other GraphQL tool show it. |
 | `"""..."""` | Description, several lines | **Clients**, the same as above. |
-| `# ...` | Comment | **Only you.** The parser drops it, so it stays in the file. |
+| `# ...` | Comment | **People reading the file**, as long as the definition below it has a description. |
 
-Rule of thumb: if a client of your API would benefit from reading it, make it a description. If it is a note for whoever edits the schema file, make it a comment. In the second half of the workshop the client is an AI agent, and it reads the descriptions to decide which field to use.
+Rule of thumb: if a client of your API would benefit from reading it, make it a description. If it is a note for whoever edits the schema file, make it a comment.
+
+> [!IMPORTANT]
+> GraphQL Java has one exception. When a type or a field has no description, it takes the comment lines directly above it as its description, and sends them to every client. That is why `Query` has a description here: the comment above it then stays in the file. In the second half of the workshop the client is an AI agent, and it reads every description it gets.
 
 ## 4. Start the server and explore
 
@@ -114,7 +118,7 @@ GraphQL endpoint HTTP POST /graphql
 
 Open GraphiQL at [http://localhost:8080/graphiql](http://localhost:8080/graphiql) and click the book icon at the top left to open the documentation explorer. `ownersAll` and the `Owner` type are there, with their descriptions. Nobody wrote this documentation by hand: GraphiQL asked the API for its own schema. This is called **introspection**, and the frontend and the agents use it too.
 
-Look at the two kinds of text: the descriptions of `Owner` and `telephone` are there, and the `#` comments are missing.
+Look at the two kinds of text: the descriptions of `Query`, `Owner` and `telephone` are there, and the `#` comments are missing.
 
 Now run this query in the editor, with the ▶ button:
 
