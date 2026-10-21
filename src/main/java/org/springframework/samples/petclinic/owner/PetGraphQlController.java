@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.graphql.data.method.annotation.Argument;
 import org.springframework.graphql.data.method.annotation.MutationMapping;
 import org.springframework.graphql.data.method.annotation.QueryMapping;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 
 @Controller
@@ -22,11 +23,13 @@ class PetGraphQlController {
 	}
 
 	@MutationMapping
+	@PreAuthorize("hasAuthority('SCOPE_petclinic:write')")
 	Pet addPet(@Argument AddPetInput input) {
 		return this.petService.addPet(input);
 	}
 
 	@MutationMapping
+	@PreAuthorize("hasAuthority('SCOPE_petclinic:write')")
 	Pet updatePet(@Argument UpdatePetInput input) {
 		return this.petService.updatePet(input);
 	}
