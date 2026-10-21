@@ -1,0 +1,28 @@
+package org.springframework.samples.petclinic.vet;
+
+import java.util.List;
+
+import org.springframework.graphql.data.method.annotation.Argument;
+import org.springframework.graphql.data.method.annotation.QueryMapping;
+import org.springframework.stereotype.Controller;
+
+@Controller
+class VetGraphQlController {
+
+	private final VetService vetService;
+
+	VetGraphQlController(VetService vetService) {
+		this.vetService = vetService;
+	}
+
+	@QueryMapping
+	List<Vet> vets() {
+		return this.vetService.findAll();
+	}
+
+	@QueryMapping
+	Vet vet(@Argument Integer id) {
+		return this.vetService.findById(id);
+	}
+
+}

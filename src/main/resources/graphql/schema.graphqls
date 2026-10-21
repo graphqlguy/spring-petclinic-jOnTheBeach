@@ -1,0 +1,75 @@
+# The entry point of our API. This line is a comment, by the way:
+# comments start with # and are only for people reading this file.
+"The queries a client can send"
+type Query {
+    ownersAll: [Owner!]! @deprecated(reason: "Unbounded. Use 'owners' instead.")
+    owner(id: ID!): Owner
+    owners(filter: OwnerFilter, page: Int! = 0, size: Int! = 10, sort: OwnerSort): OwnerPage!
+    vets: [Vet!]!
+    vet(id: ID!): Vet
+}
+
+"""
+An owner of one or more pets, and a client of the clinic.
+Triple quotes allow a description over several lines.
+"""
+# We extend the Owner type as the workshop goes on
+type Owner {
+    id: ID!
+    firstName: String!
+    lastName: String!
+    address: String!
+    city: String!
+    "Ten digits, such as 9521234567"
+    telephone: String!
+}
+
+enum OwnerSortField {
+    LAST_NAME
+    FIRST_NAME
+    CITY
+}
+
+enum SortOrder {
+    ASC
+    DESC
+}
+
+input OwnerFilter {
+    "Owners whose last name starts with this text, in upper or lower case"
+    lastName: String
+    "Owners who live in this city, in upper or lower case"
+    city: String
+}
+
+input OwnerSort {
+    field: OwnerSortField
+    order: SortOrder
+}
+
+"One page of owners. Pages count from 0."
+type OwnerPage {
+    content: [Owner!]!
+    totalElements: Int!
+    totalPages: Int!
+    currentPage: Int!
+    size: Int!
+    isFirst: Boolean!
+    isLast: Boolean!
+    hasNext: Boolean!
+    hasPrevious: Boolean!
+}
+
+"A veterinarian of the clinic"
+type Vet {
+    id: ID!
+    firstName: String!
+    lastName: String!
+    specialties: [Specialty!]!
+}
+
+"A field a vet specializes in, such as surgery"
+type Specialty {
+    id: ID!
+    name: String!
+}
