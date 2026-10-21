@@ -14,7 +14,7 @@ The frontend checks the backend's schema at startup and shows only the pages the
 2. [Relationships and the N+1 problem](02-relationships-and-the-n-plus-1-problem.md): nested fields, default field resolution, `@SchemaMapping`, the N+1 problem and `@BatchMapping`
 3. [Mutations, input types and a custom scalar](03-mutations-input-types-and-a-custom-scalar.md): a `Date` scalar, the `Mutation` type, input types, variables and partial updates
 4. [Errors and validation](04-errors-and-validation.md): error classifications, `@GraphQlExceptionHandler`, partial responses and Bean Validation on arguments
-5. Security
+5. [Security](05-security.md): a resource server, a `login` mutation that signs a token, `@PreAuthorize` on mutations and on a single field
 6. Interfaces and unions
 7. Subscriptions
 8. Testing
