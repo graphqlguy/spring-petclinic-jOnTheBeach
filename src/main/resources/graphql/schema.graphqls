@@ -1,4 +1,6 @@
 scalar Date @specifiedBy(url: "https://tools.ietf.org/html/rfc3339")
+directive @PositiveOrZero(message: String = "graphql.validation.PositiveOrZero.message") on ARGUMENT_DEFINITION | INPUT_FIELD_DEFINITION
+directive @Range(min: Int = 0, max: Int = 2147483647, message: String = "graphql.validation.Range.message") on ARGUMENT_DEFINITION | INPUT_FIELD_DEFINITION
 
 # The entry point of our API. This line is a comment:
 # comments start with # and are only for people reading this file.
@@ -7,7 +9,7 @@ type Query {
     "Every owner of the clinic, in one list, without filters."
     ownersAll: [Owner!]! @deprecated(reason: "Unbounded. Use 'owners' instead.")
     owner(id: ID!): Owner
-    owners(filter: OwnerFilter, page: Int! = 0, size: Int! = 10, sort: OwnerSort): OwnerPage!
+    owners(filter: OwnerFilter, page: Int! = 0 @PositiveOrZero, size: Int! = 10 @Range(min: 1, max: 100), sort: OwnerSort): OwnerPage!
     vets: [Vet!]!
     vet(id: ID!): Vet
     petTypes: [PetType!]!
