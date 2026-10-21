@@ -26,8 +26,8 @@ type Owner {
     lastName: String!
     address: String!
     city: String!
-    "The owner's telephone number as ten digits, for example 9521234567."
-    telephone: String!
+    "The owner's telephone number as ten digits, for example 9521234567. Only staff can read it."
+    telephone: String
     pets: [Pet!]!
 }
 
@@ -117,6 +117,8 @@ type Mutation {
     updateOwner(input: UpdateOwnerInput!): Owner!
     addPet(input: AddPetInput!): Pet!
     updatePet(input: UpdatePetInput!): Pet!
+    "Signs in, and returns the access token to send as 'Authorization: Bearer <token>'."
+    login(username: String!, password: String!): String!
 }
 
 input AddVisitInput {
