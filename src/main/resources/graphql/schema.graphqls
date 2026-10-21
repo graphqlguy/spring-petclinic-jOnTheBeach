@@ -13,6 +13,20 @@ type Query {
     vets: [Vet!]!
     vet(id: ID!): Vet
     petTypes: [PetType!]!
+    "Owners, vets and pets whose name contains the text, in upper or lower case."
+    search(text: String!): [SearchResult!]!
+    "Owners and vets whose first or last name contains the text, in upper or lower case."
+    people(name: String!): [Person!]!
+}
+
+"An owner, a vet or a pet that a search found."
+union SearchResult = Owner | Pet | Vet
+
+"A person the clinic knows: an owner or a vet."
+interface Person {
+    id: ID!
+    firstName: String!
+    lastName: String!
 }
 
 """
@@ -20,7 +34,7 @@ A client of the clinic, who owns one or more pets.
 Triple quotes allow a description over several lines.
 """
 # We extend the Owner type as the workshop goes on
-type Owner {
+type Owner implements Person {
     id: ID!
     firstName: String!
     lastName: String!
@@ -85,7 +99,7 @@ type OwnerPage {
 }
 
 "A veterinarian who works at the clinic."
-type Vet {
+type Vet implements Person {
     id: ID!
     firstName: String!
     lastName: String!
