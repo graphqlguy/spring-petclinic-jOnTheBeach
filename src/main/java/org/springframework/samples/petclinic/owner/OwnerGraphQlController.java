@@ -3,6 +3,7 @@ package org.springframework.samples.petclinic.owner;
 import java.util.List;
 
 import org.springframework.graphql.data.method.annotation.Argument;
+import org.springframework.graphql.data.method.annotation.MutationMapping;
 import org.springframework.graphql.data.method.annotation.QueryMapping;
 import org.springframework.stereotype.Controller;
 
@@ -28,6 +29,16 @@ class OwnerGraphQlController {
 	@QueryMapping
 	OwnerPage owners(@Argument OwnerFilter filter, @Argument int page, @Argument int size, @Argument OwnerSort sort) {
 		return this.ownerService.findOwners(filter, page, size, sort);
+	}
+
+	@MutationMapping
+	Owner addOwner(@Argument AddOwnerInput input) {
+		return this.ownerService.addOwner(input);
+	}
+
+	@MutationMapping
+	Owner updateOwner(@Argument UpdateOwnerInput input) {
+		return this.ownerService.updateOwner(input);
 	}
 
 }

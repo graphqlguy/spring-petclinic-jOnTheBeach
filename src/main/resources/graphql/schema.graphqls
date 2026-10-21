@@ -7,6 +7,9 @@ type Query {
     owners(filter: OwnerFilter, page: Int! = 0, size: Int! = 10, sort: OwnerSort): OwnerPage!
     vets: [Vet!]!
     vet(id: ID!): Vet
+    "The visits from one date to another, both included, in date order"
+    visits(from: Date!, to: Date!): [Visit!]!
+    petTypes: [PetType!]!
 }
 
 """
@@ -29,7 +32,7 @@ type Owner {
 type Pet {
     id: ID!
     name: String!
-    birthDate: String
+    birthDate: Date
     type: PetType!
     owner: Owner!
     "The visits of this pet, oldest first"
@@ -91,7 +94,7 @@ type Vet {
 "A visit of a pet to the clinic, past or booked"
 type Visit {
     id: ID!
-    date: String!
+    date: Date!
     description: String!
     pet: Pet!
     "The vet who sees the pet. The Petclinic web pages book visits without a vet."
@@ -104,4 +107,58 @@ type Specialty {
     name: String!
     "The vets who have this specialty"
     vets: [Vet!]!
+}
+
+scalar Date @specifiedBy(url: "https://tools.ietf.org/html/rfc3339")
+
+"Changes to the clinic's data"
+type Mutation {
+    addVisit(input: AddVisitInput!): Visit!
+    addOwner(input: AddOwnerInput!): Owner!
+    updateOwner(input: UpdateOwnerInput!): Owner!
+    addPet(input: AddPetInput!): Pet!
+    updatePet(input: UpdatePetInput!): Pet!
+}
+
+input AddVisitInput {
+    petId: ID!
+    "Leave it out to book the visit without a vet"
+    vetId: ID
+    "Leave it out to book the visit for tomorrow"
+    date: Date
+    description: String!
+}
+
+input AddOwnerInput {
+    firstName: String!
+    lastName: String!
+    address: String!
+    city: String!
+    "Ten digits, such as 9521234567"
+    telephone: String!
+}
+
+"The fields to change. A field left out keeps its value."
+input UpdateOwnerInput {
+    id: ID!
+    firstName: String
+    lastName: String
+    address: String
+    city: String
+    telephone: String
+}
+
+input AddPetInput {
+    ownerId: ID!
+    name: String!
+    birthDate: Date!
+    typeId: ID!
+}
+
+"The fields to change. A field left out keeps its value."
+input UpdatePetInput {
+    id: ID!
+    name: String
+    birthDate: Date
+    typeId: ID
 }
