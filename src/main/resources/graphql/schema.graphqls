@@ -124,6 +124,12 @@ type Specialty {
     name: String!
 }
 
+"Events a client can listen to, over a WebSocket or Server-Sent Events."
+type Subscription {
+    "Each visit, as soon as it is booked."
+    visitBooked: Visit!
+}
+
 "Changes to the clinic's data."
 type Mutation {
     addVisit(input: AddVisitInput!): Visit!
