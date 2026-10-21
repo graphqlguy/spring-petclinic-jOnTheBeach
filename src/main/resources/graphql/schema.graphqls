@@ -1,3 +1,5 @@
+scalar Date @specifiedBy(url: "https://tools.ietf.org/html/rfc3339")
+
 # The entry point of our API. This line is a comment:
 # comments start with # and are only for people reading this file.
 "The queries a client can send."
@@ -8,6 +10,7 @@ type Query {
     owners(filter: OwnerFilter, page: Int! = 0, size: Int! = 10, sort: OwnerSort): OwnerPage!
     vets: [Vet!]!
     vet(id: ID!): Vet
+    petTypes: [PetType!]!
 }
 
 """
@@ -30,7 +33,7 @@ type Owner {
 type Pet {
     id: ID!
     name: String!
-    birthDate: String
+    birthDate: Date
     type: PetType!
     owner: Owner!
     "The pet's visits to the clinic, oldest first."
@@ -92,7 +95,7 @@ type Vet {
 "A pet's visit to the clinic, in the past or booked for later."
 type Visit {
     id: ID!
-    date: String!
+    date: Date!
     description: String!
     pet: Pet!
     "The vet who sees the pet, or null when the visit was booked without one, as the Petclinic web pages do."
@@ -103,4 +106,56 @@ type Visit {
 type Specialty {
     id: ID!
     name: String!
+}
+
+"Changes to the clinic's data."
+type Mutation {
+    addVisit(input: AddVisitInput!): Visit!
+    addOwner(input: AddOwnerInput!): Owner!
+    updateOwner(input: UpdateOwnerInput!): Owner!
+    addPet(input: AddPetInput!): Pet!
+    updatePet(input: UpdatePetInput!): Pet!
+}
+
+input AddVisitInput {
+    petId: ID!
+    "Leave it out to book the visit without a vet."
+    vetId: ID
+    "Leave it out to book the visit for tomorrow."
+    date: Date
+    description: String!
+}
+
+input AddOwnerInput {
+    firstName: String!
+    lastName: String!
+    address: String!
+    city: String!
+    "The owner's telephone number as ten digits, for example 9521234567."
+    telephone: String!
+}
+
+"The details to change for one owner. A field left out keeps its value."
+input UpdateOwnerInput {
+    id: ID!
+    firstName: String
+    lastName: String
+    address: String
+    city: String
+    telephone: String
+}
+
+input AddPetInput {
+    ownerId: ID!
+    name: String!
+    birthDate: Date!
+    typeId: ID!
+}
+
+"The details to change for one pet. A field left out keeps its value."
+input UpdatePetInput {
+    id: ID!
+    name: String
+    birthDate: Date
+    typeId: ID
 }
