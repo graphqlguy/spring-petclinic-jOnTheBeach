@@ -15,11 +15,14 @@
  */
 package org.springframework.samples.petclinic.owner;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 
 /**
  * Repository class for <code>Owner</code> domain objects. All method names are compliant
@@ -58,5 +61,25 @@ public interface OwnerRepository extends JpaRepository<Owner, Integer> {
 	 * input for id)
 	 */
 	Optional<Owner> findById(Integer id);
+
+	/**
+	 * Owners whose last name starts with the given text and who live in the given city,
+	 * both in any case. A null leaves its condition out.
+	 */
+	@Query("""
+			SELECT owner FROM Owner owner
+			WHERE (:lastName IS NULL OR LOWER(owner.lastName) LIKE LOWER(CONCAT(:lastName, '%')))
+			AND (:city IS NULL OR LOWER(owner.city) = LOWER(:city))""")
+	Page<Owner> findWithFilters(@Param("lastName") String lastName, @Param("city") String city, Pageable pageable);
+
+	/**
+	 * Owners whose first or last name contains the given text, in any case.
+	 */
+	@Query("""
+			SELECT owner FROM Owner owner
+			WHERE LOWER(owner.firstName) LIKE LOWER(CONCAT('%', :text, '%'))
+			OR LOWER(owner.lastName) LIKE LOWER(CONCAT('%', :text, '%'))
+			ORDER BY owner.lastName, owner.firstName""")
+	List<Owner> search(@Param("text") String text);
 
 }

@@ -19,10 +19,14 @@ import org.springframework.cache.annotation.Cacheable;
 import org.springframework.dao.DataAccessException;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.Repository;
+import org.springframework.data.repository.query.Param;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Collection;
+import java.util.List;
+import java.util.Optional;
 
 /**
  * Repository class for <code>Vet</code> domain objects All method names are compliant
@@ -54,5 +58,26 @@ public interface VetRepository extends Repository<Vet, Integer> {
 	@Transactional(readOnly = true)
 	@Cacheable("vets")
 	Page<Vet> findAll(Pageable pageable) throws DataAccessException;
+
+	@Transactional(readOnly = true)
+	Optional<Vet> findById(Integer id);
+
+	/**
+	 * Vets whose first or last name contains the given text, in any case.
+	 */
+	@Transactional(readOnly = true)
+	@Query("""
+			SELECT vet FROM Vet vet
+			WHERE LOWER(vet.firstName) LIKE LOWER(CONCAT('%', :text, '%'))
+			OR LOWER(vet.lastName) LIKE LOWER(CONCAT('%', :text, '%'))
+			ORDER BY vet.lastName, vet.firstName""")
+	List<Vet> search(@Param("text") String text);
+
+	/**
+	 * The vets who have any of the given specialties, in one statement.
+	 */
+	@Transactional(readOnly = true)
+	@Query("SELECT DISTINCT vet FROM Vet vet JOIN vet.specialties specialty WHERE specialty.id IN :specialtyIds")
+	List<Vet> findBySpecialtyIds(@Param("specialtyIds") Collection<Integer> specialtyIds);
 
 }
