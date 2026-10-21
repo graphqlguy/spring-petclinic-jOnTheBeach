@@ -22,6 +22,24 @@ type Owner {
     city: String!
     "Ten digits, such as 9521234567"
     telephone: String!
+    pets: [Pet!]!
+}
+
+"A pet of an owner, and a patient of the clinic"
+type Pet {
+    id: ID!
+    name: String!
+    birthDate: String
+    type: PetType!
+    owner: Owner!
+    "The visits of this pet, oldest first"
+    visits: [Visit!]!
+}
+
+"A kind of pet, such as cat or dog"
+type PetType {
+    id: ID!
+    name: String!
 }
 
 enum OwnerSortField {
@@ -66,10 +84,24 @@ type Vet {
     firstName: String!
     lastName: String!
     specialties: [Specialty!]!
+    "The visits this vet has seen or will see, newest first"
+    visits: [Visit!]!
+}
+
+"A visit of a pet to the clinic, past or booked"
+type Visit {
+    id: ID!
+    date: String!
+    description: String!
+    pet: Pet!
+    "The vet who sees the pet. The Petclinic web pages book visits without a vet."
+    vet: Vet
 }
 
 "A field a vet specializes in, such as surgery"
 type Specialty {
     id: ID!
     name: String!
+    "The vets who have this specialty"
+    vets: [Vet!]!
 }
