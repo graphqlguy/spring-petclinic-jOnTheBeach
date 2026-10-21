@@ -28,7 +28,7 @@ function OwnerForm({ owner, onSubmit, state }) {
       {FIELDS.map(([name, label]) => (
         <Field key={name} label={label} error={fieldError(state.errors, name)}>
           <input
-            className={inputClass}
+            className={`${inputClass} w-full`}
             value={values[name]}
             onChange={(event) => setValues({ ...values, [name]: event.target.value })}
           />

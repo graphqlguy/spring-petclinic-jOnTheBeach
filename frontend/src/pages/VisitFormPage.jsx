@@ -56,10 +56,10 @@ export default function VisitFormPage() {
       <form className="max-w-md" onSubmit={submit}>
         <Errors errors={state.errors?.filter((error) => !fields.has(error.extensions?.field))} />
         <Field label="Date" error={fieldError(state.errors, 'date')}>
-          <input type="date" className={inputClass} value={values.date} onChange={set('date')} />
+          <input type="date" className={`${inputClass} w-full`} value={values.date} onChange={set('date')} />
         </Field>
         <Field label="Vet" error={fieldError(state.errors, 'vetId')}>
-          <select className={inputClass} value={values.vetId} onChange={set('vetId')}>
+          <select className={`${inputClass} w-full`} value={values.vetId} onChange={set('vetId')}>
             <option value="">No vet yet</option>
             {vets.data?.vets.map((vet) => (
               <option key={vet.id} value={vet.id}>
@@ -70,7 +70,7 @@ export default function VisitFormPage() {
           </select>
         </Field>
         <Field label="Description" error={fieldError(state.errors, 'description')}>
-          <input className={inputClass} value={values.description} onChange={set('description')} />
+          <input className={`${inputClass} w-full`} value={values.description} onChange={set('description')} />
         </Field>
         <Button disabled={state.loading}>Book visit</Button>
       </form>

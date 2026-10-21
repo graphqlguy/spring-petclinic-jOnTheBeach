@@ -33,7 +33,7 @@ export default function LoginPage() {
         <Errors errors={state.errors} />
         <Field label="Username">
           <input
-            className={inputClass}
+            className={`${inputClass} w-full`}
             value={values.username}
             onChange={(event) => setValues({ ...values, username: event.target.value })}
           />
@@ -41,7 +41,7 @@ export default function LoginPage() {
         <Field label="Password">
           <input
             type="password"
-            className={inputClass}
+            className={`${inputClass} w-full`}
             value={values.password}
             onChange={(event) => setValues({ ...values, password: event.target.value })}
           />

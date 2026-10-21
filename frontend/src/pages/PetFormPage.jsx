@@ -23,13 +23,13 @@ function PetForm({ pet, types, onSubmit, state }) {
     >
       <Errors errors={state.errors?.filter((error) => !fields.has(error.extensions?.field))} />
       <Field label="Name" error={fieldError(state.errors, 'name')}>
-        <input className={inputClass} value={values.name} onChange={set('name')} />
+        <input className={`${inputClass} w-full`} value={values.name} onChange={set('name')} />
       </Field>
       <Field label="Birth date" error={fieldError(state.errors, 'birthDate')}>
-        <input type="date" className={inputClass} value={values.birthDate} onChange={set('birthDate')} />
+        <input type="date" className={`${inputClass} w-full`} value={values.birthDate} onChange={set('birthDate')} />
       </Field>
       <Field label="Type" error={fieldError(state.errors, 'typeId')}>
-        <select className={inputClass} value={values.typeId} onChange={set('typeId')}>
+        <select className={`${inputClass} w-full`} value={values.typeId} onChange={set('typeId')}>
           {types.map((type) => (
             <option key={type.id} value={type.id}>
               {type.name}

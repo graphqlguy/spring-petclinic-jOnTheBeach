@@ -1,4 +1,4 @@
-import { buildClientSchema, validate } from 'graphql'
+import { buildClientSchema, Kind, validate } from 'graphql'
 import { requestBody } from './client'
 
 // Reads the backend's schema and validates every operation against it. An operation
@@ -34,9 +34,17 @@ export async function checkSchema(operations) {
   const schema = buildClientSchema(json.data)
   const available = {}
   for (const operation of Object.values(operations)) {
-    available[operation.name] = validate(schema, operation.document).length === 0
+    available[operation.name] = hasRootType(schema, operation.document) && validate(schema, operation.document).length === 0
   }
   return { status: 'ready', available }
+}
+
+// validate() accepts a mutation against a schema without a Mutation type, and leaves
+// the refusal to execution, so the root type is checked here.
+function hasRootType(schema, document) {
+  return document.definitions
+    .filter((definition) => definition.kind === Kind.OPERATION_DEFINITION)
+    .every((definition) => schema.getRootType(definition.operation) != null)
 }
 
 // The chat endpoint from chapter 12 takes POST alone, so a GET gets 405 once it exists
