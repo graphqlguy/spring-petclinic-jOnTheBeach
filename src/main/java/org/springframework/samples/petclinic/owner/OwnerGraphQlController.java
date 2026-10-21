@@ -7,6 +7,9 @@ import org.springframework.graphql.data.method.annotation.MutationMapping;
 import org.springframework.graphql.data.method.annotation.QueryMapping;
 import org.springframework.stereotype.Controller;
 
+import jakarta.validation.constraints.Max;
+import jakarta.validation.constraints.Min;
+
 @Controller
 class OwnerGraphQlController {
 
@@ -27,7 +30,8 @@ class OwnerGraphQlController {
 	}
 
 	@QueryMapping
-	OwnerPage owners(@Argument OwnerFilter filter, @Argument int page, @Argument int size, @Argument OwnerSort sort) {
+	OwnerPage owners(@Argument OwnerFilter filter, @Argument @Min(0) int page, @Argument @Min(1) @Max(100) int size,
+			@Argument OwnerSort sort) {
 		return this.ownerService.findOwners(filter, page, size, sort);
 	}
 
