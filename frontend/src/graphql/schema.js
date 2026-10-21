@@ -6,7 +6,7 @@ import { requestBody } from './client'
 //
 // Result statuses:
 //   'ready'        - the schema was read, `available` says which operations validate
-//   'no-graphql'   - the backend answers, but has no /graphql endpoint yet (before chapter 1)
+//   'no-graphql'   - the backend answers, without a /graphql endpoint yet (before chapter 1)
 //   'backend-down' - nothing answered on the backend port
 export async function checkSchema(operations) {
   let response

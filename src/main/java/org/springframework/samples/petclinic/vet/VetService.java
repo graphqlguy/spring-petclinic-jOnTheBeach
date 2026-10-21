@@ -56,7 +56,7 @@ public class VetService {
 
 	/**
 	 * The vet with this id.
-	 * @throws EntityNotFoundException when there is none
+	 * @throws EntityNotFoundException when no vet has the id
 	 */
 	public Vet findById(Integer id) {
 		this.latency.pause();

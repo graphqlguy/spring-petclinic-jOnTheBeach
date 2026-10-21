@@ -52,7 +52,7 @@ public class PetService {
 
 	/**
 	 * The pet with this id.
-	 * @throws EntityNotFoundException when there is none
+	 * @throws EntityNotFoundException when no pet has the id
 	 */
 	public Pet findById(Integer id) {
 		this.latency.pause();

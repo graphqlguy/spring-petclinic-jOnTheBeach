@@ -4,7 +4,7 @@ Each chapter is one file: numbered steps with the complete code to copy, and mos
 
 ## How it works
 
-The repository you cloned is the **starting point**: Spring Petclinic with its services and data ready, and a React frontend, but no GraphQL code at all. We add the GraphQL API step by step. After each chapter, the `checkpoint_N` branch holds the code as it should be, exercises included.
+The repository you cloned is the **starting point**: Spring Petclinic with its services, its data and a React frontend ready. The GraphQL API is what we add, step by step. After each chapter, the `checkpoint_N` branch holds the code as it should be, exercises included.
 
 The frontend checks the backend's schema at startup and shows only the pages the API can serve. Each chapter lights up another part of it: change the schema, restart the backend, refresh the browser.
 

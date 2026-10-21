@@ -1,4 +1,4 @@
-# The owner page before chapter 2, when an owner has no pets in the schema yet.
+# The owner page in chapter 1, before the schema connects owners to their pets.
 query OwnerSummary($id: ID!) {
   owner(id: $id) {
     id

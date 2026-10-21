@@ -16,8 +16,8 @@
 package org.springframework.samples.petclinic.system;
 
 /**
- * Thrown when an id names a row that does not exist, such as an owner id that no owner
- * has.
+ * Thrown when no row has the id a caller asked for, such as an owner id with a typo in
+ * it.
  */
 public class EntityNotFoundException extends RuntimeException {
 

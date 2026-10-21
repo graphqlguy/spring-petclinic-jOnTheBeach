@@ -53,7 +53,7 @@ public class Visit extends BaseEntity {
 	private Pet pet;
 
 	/**
-	 * The vet who sees the pet. Visits booked through the web pages have none.
+	 * The vet who sees the pet. The web pages book visits without a vet.
 	 */
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "vet_id")

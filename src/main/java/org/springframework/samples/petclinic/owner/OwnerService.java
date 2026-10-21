@@ -63,7 +63,7 @@ public class OwnerService {
 	}
 
 	/**
-	 * The owner with this id, or {@code null} when there is none.
+	 * The owner with this id, or {@code null} when no owner has it.
 	 */
 	public Owner findById(Integer id) {
 		this.latency.pause();
@@ -148,7 +148,7 @@ public class OwnerService {
 			case FIRST_NAME -> "firstName";
 			case CITY -> "city";
 		};
-		// the id breaks ties, so that the same owner never shows on two pages
+		// the id breaks ties, so that each owner shows on exactly one page
 		return Sort.by(direction, property).and(Sort.by("id"));
 	}
 

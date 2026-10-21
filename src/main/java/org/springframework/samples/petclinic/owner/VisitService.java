@@ -98,7 +98,7 @@ public class VisitService {
 	/**
 	 * A visit with its pet, owner, pet type and vet already read, for code that runs
 	 * after the transaction, such as a subscription.
-	 * @throws EntityNotFoundException when there is none
+	 * @throws EntityNotFoundException when no visit has the id
 	 */
 	public Visit findWithDetails(Integer id) {
 		return this.visits.findWithDetailsById(id).orElseThrow(() -> new EntityNotFoundException("Visit", id));

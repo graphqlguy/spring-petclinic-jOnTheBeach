@@ -1,4 +1,4 @@
-# The vet page before chapter 2, when a vet has no visits in the schema yet.
+# The vet page in chapter 1, before the schema connects vets to their visits.
 query VetSummary($id: ID!) {
   vet(id: $id) {
     id

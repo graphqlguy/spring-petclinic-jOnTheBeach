@@ -52,7 +52,7 @@ npm install
 npm run dev
 ```
 
-Open http://localhost:5173. With the backend running, the home page says *"The backend runs, but it has no GraphQL endpoint yet."* That is the starting point: chapter 1 adds the endpoint. Stop the frontend with `Ctrl+C`.
+Open http://localhost:5173. With the backend running, the home page says *"The backend is running. Its GraphQL endpoint arrives in chapter 1."* That is the starting point. Stop the frontend with `Ctrl+C`.
 
 ## 5. Pull the models for the second half
 

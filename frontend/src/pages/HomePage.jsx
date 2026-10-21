@@ -18,7 +18,7 @@ function BackendStatus({ status }) {
     )
   }
   if (status === 'no-graphql') {
-    return <p>The backend runs, but it has no GraphQL endpoint yet. Chapter 1 adds it.</p>
+    return <p>The backend is running. Its GraphQL endpoint arrives in chapter 1.</p>
   }
   return null
 }
