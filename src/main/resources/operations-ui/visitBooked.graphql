@@ -1,0 +1,22 @@
+# Each visit as it is booked, from the web pages, the frontend or an agent.
+subscription VisitBooked {
+  visitBooked {
+    id
+    date
+    description
+    pet {
+      id
+      name
+      owner {
+        id
+        firstName
+        lastName
+      }
+    }
+    vet {
+      id
+      firstName
+      lastName
+    }
+  }
+}

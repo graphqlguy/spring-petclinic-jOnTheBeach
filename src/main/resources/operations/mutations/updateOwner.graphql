@@ -1,0 +1,12 @@
+# Changes the details of an owner and returns the owner.
+# Only the details passed change, and a detail left out keeps its value. findOwners or search gives the id.
+mutation UpdateOwner($id: ID!, $firstName: String, $lastName: String, $address: String, $city: String, $telephone: String) {
+  updateOwner(input: {id: $id, firstName: $firstName, lastName: $lastName, address: $address, city: $city, telephone: $telephone}) {
+    id
+    firstName
+    lastName
+    address
+    city
+    telephone
+  }
+}

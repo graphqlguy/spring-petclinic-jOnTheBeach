@@ -1,0 +1,12 @@
+# The vet page before chapter 2, when a vet has no visits in the schema yet.
+query VetSummary($id: ID!) {
+  vet(id: $id) {
+    id
+    firstName
+    lastName
+    specialties {
+      id
+      name
+    }
+  }
+}

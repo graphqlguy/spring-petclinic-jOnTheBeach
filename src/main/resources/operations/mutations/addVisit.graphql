@@ -1,0 +1,11 @@
+# Books a visit for a pet and returns its id and date.
+# getOwnerDetails or search gives the petId, and listVets gives the vetId, which can be left out.
+# Leave the date out to book the visit for tomorrow. Every call books one more visit,
+# so after a call that failed or timed out, check the visits of the pet with getOwnerDetails before calling again.
+mutation AddVisit($petId: ID!, $vetId: ID, $date: Date, $description: String!) {
+  addVisit(input: {petId: $petId, vetId: $vetId, date: $date, description: $description}) {
+    id
+    date
+    description
+  }
+}

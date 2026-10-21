@@ -1,0 +1,4 @@
+# Signs in with a username and a password, and returns the access token the frontend sends with every request.
+mutation Login($username: String!, $password: String!) {
+  login(username: $username, password: $password)
+}

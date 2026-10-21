@@ -1,0 +1,9 @@
+# Registers a new pet for an owner and returns its id.
+# findOwners or search gives the ownerId, and listPetTypes gives the typeId. The birth date is written as 2024-05-01.
+# An owner cannot have two pets with the same name, so a second call with the same name is refused.
+mutation AddPet($ownerId: ID!, $name: String!, $birthDate: Date!, $typeId: ID!) {
+  addPet(input: {ownerId: $ownerId, name: $name, birthDate: $birthDate, typeId: $typeId}) {
+    id
+    name
+  }
+}

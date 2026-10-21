@@ -1,0 +1,14 @@
+# Changes the name, the birth date or the type of a pet and returns the pet.
+# Only the details passed change, and a detail left out keeps its value.
+# getOwnerDetails or search gives the id, and listPetTypes gives the typeId.
+mutation UpdatePet($id: ID!, $name: String, $birthDate: Date, $typeId: ID) {
+  updatePet(input: {id: $id, name: $name, birthDate: $birthDate, typeId: $typeId}) {
+    id
+    name
+    birthDate
+    type {
+      id
+      name
+    }
+  }
+}

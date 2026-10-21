@@ -1,0 +1,13 @@
+# Lists every vet of the clinic with their specialties, such as surgery or dentistry.
+# getVetDetails gives the visits of one vet, and addVisit takes the id of a vet as vetId.
+query ListVets {
+  vets {
+    id
+    firstName
+    lastName
+    specialties {
+      id
+      name
+    }
+  }
+}

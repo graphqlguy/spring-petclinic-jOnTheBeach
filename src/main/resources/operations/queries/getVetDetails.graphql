@@ -1,0 +1,30 @@
+# Returns one vet with their specialties and every visit they have seen or will see, newest first, with the pet and its owner.
+# listVets or search gives the id of a vet. An id that no vet has returns an error.
+query GetVetDetails($id: ID!) {
+  vet(id: $id) {
+    id
+    firstName
+    lastName
+    specialties {
+      id
+      name
+    }
+    visits {
+      id
+      date
+      description
+      pet {
+        id
+        name
+        type {
+          name
+        }
+        owner {
+          id
+          firstName
+          lastName
+        }
+      }
+    }
+  }
+}

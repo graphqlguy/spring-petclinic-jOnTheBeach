@@ -1,0 +1,11 @@
+# The owner page before chapter 2, when an owner has no pets in the schema yet.
+query OwnerSummary($id: ID!) {
+  owner(id: $id) {
+    id
+    firstName
+    lastName
+    address
+    city
+    telephone
+  }
+}

@@ -1,0 +1,31 @@
+// What each part of the frontend needs from the backend, and the chapter that builds it.
+// A feature is live once every one of its operations validates against the schema.
+export const FEATURES = [
+  { key: 'owners', title: 'Find owners', chapter: 1, operations: ['findOwners'], needs: 'the owners query' },
+  { key: 'ownerPage', title: 'Owner page', chapter: 1, operations: ['ownerSummary'], needs: 'the owner query' },
+  { key: 'vets', title: 'Vets', chapter: 1, operations: ['listVets'], needs: 'the vets query (exercise 1)' },
+  { key: 'vetPage', title: 'Vet page', chapter: 1, operations: ['vetSummary'], needs: 'the vet query (exercise 2)' },
+  {
+    key: 'ownerDetails',
+    title: 'Pets and visits on the owner page',
+    chapter: 2,
+    operations: ['getOwnerDetails'],
+    needs: 'the pets of an owner, the visits of a pet and the vet of a visit',
+  },
+  { key: 'vetDetails', title: 'Visits on the vet page', chapter: 2, operations: ['getVetDetails'], needs: 'the visits of a vet' },
+  { key: 'ownerForms', title: 'Add and edit owners', chapter: 3, operations: ['addOwner', 'updateOwner'], needs: 'the addOwner and updateOwner mutations' },
+  { key: 'visitForm', title: 'Book a visit', chapter: 3, operations: ['addVisit', 'listVets'], needs: 'the addVisit mutation' },
+  {
+    key: 'petForms',
+    title: 'Add and edit pets',
+    chapter: 3,
+    operations: ['addPet', 'updatePet', 'listPetTypes'],
+    needs: 'the addPet and updatePet mutations and the petTypes query',
+  },
+  { key: 'agenda', title: 'Visits agenda', chapter: 3, operations: ['findVisits'], needs: 'the visits query and the Date scalar' },
+  { key: 'login', title: 'Sign in', chapter: 5, operations: ['login'], needs: 'the login mutation' },
+  { key: 'search', title: 'Search', chapter: 6, operations: ['search'], needs: 'the search query and its union' },
+  { key: 'live', title: 'Live bookings', chapter: 7, operations: ['visitBooked'], needs: 'the visitBooked subscription' },
+]
+
+export const feature = (key) => FEATURES.find((f) => f.key === key)
