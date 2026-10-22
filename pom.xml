@@ -86,6 +86,16 @@
       <artifactId>gatool-mcp-spring-boot-starter</artifactId>
       <version>0.1.0</version>
     </dependency>
+    <dependency>
+      <groupId>io.gatool</groupId>
+      <artifactId>gatool-in-process-spring-boot-starter</artifactId>
+      <version>0.1.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.ai</groupId>
+      <artifactId>spring-ai-starter-model-ollama</artifactId>
+      <version>2.0.1</version>
+    </dependency>
 
     <dependency>
       <groupId>javax.cache</groupId>
@@ -328,6 +338,48 @@
   </licenses>
 
   <profiles>
+    <!-- A hosted chat model in place of Ollama, for example: ./mvnw spring-boot:run -Pmistral
+         Each profile adds the model's starter, and runs the application with the Spring
+         profile of the same name, which application-mistral.properties configures. -->
+    <profile>
+      <id>mistral</id>
+      <properties>
+        <spring-boot.run.profiles>mistral</spring-boot.run.profiles>
+      </properties>
+      <dependencies>
+        <dependency>
+          <groupId>org.springframework.ai</groupId>
+          <artifactId>spring-ai-starter-model-mistral-ai</artifactId>
+          <version>2.0.1</version>
+        </dependency>
+      </dependencies>
+    </profile>
+    <profile>
+      <id>openai</id>
+      <properties>
+        <spring-boot.run.profiles>openai</spring-boot.run.profiles>
+      </properties>
+      <dependencies>
+        <dependency>
+          <groupId>org.springframework.ai</groupId>
+          <artifactId>spring-ai-starter-model-openai</artifactId>
+          <version>2.0.1</version>
+        </dependency>
+      </dependencies>
+    </profile>
+    <profile>
+      <id>anthropic</id>
+      <properties>
+        <spring-boot.run.profiles>anthropic</spring-boot.run.profiles>
+      </properties>
+      <dependencies>
+        <dependency>
+          <groupId>org.springframework.ai</groupId>
+          <artifactId>spring-ai-starter-model-anthropic</artifactId>
+          <version>2.0.1</version>
+        </dependency>
+      </dependencies>
+    </profile>
     <profile>
       <id>css</id>
       <build>

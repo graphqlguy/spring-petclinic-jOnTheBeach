@@ -9,6 +9,7 @@ import graphql.schema.DataFetchingEnvironment;
 
 import org.springframework.graphql.data.method.annotation.GraphQlExceptionHandler;
 import org.springframework.graphql.execution.ErrorType;
+import org.springframework.validation.BindException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 
 @ControllerAdvice
@@ -35,5 +36,16 @@ class GraphQLExceptionHandlers {
 			.toList();
 	}
 
+	@GraphQlExceptionHandler
+	List<GraphQLError> notAnId(BindException ex, DataFetchingEnvironment environment) {
+		return ex.getFieldErrors()
+			.stream()
+			.map((error) -> GraphqlErrorBuilder.newError(environment)
+				.errorType(ErrorType.BAD_REQUEST)
+				.message("'" + error.getRejectedValue()
+						+ "' is not an id. An id is a number, which queries such as search, owners and vets return.")
+				.build())
+			.toList();
+	}
 
 }
