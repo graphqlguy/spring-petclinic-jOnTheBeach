@@ -41,6 +41,12 @@ class VetGraphQlController {
 			.collect(Collectors.toMap((vet) -> vet, (vet) -> visitsByVetId.getOrDefault(vet.getId(), List.of())));
 	}
 
+	@BatchMapping
+	Map<Vet, Integer> visitCount(List<Vet> vets) {
+		Map<Vet, List<Visit>> visits = visits(vets);
+		return vets.stream().collect(Collectors.toMap((vet) -> vet, (vet) -> visits.get(vet).size()));
+	}
+
 	@BatchMapping(field = "vets")
 	Map<Specialty, List<Vet>> specialtyVets(List<Specialty> specialties) {
 		List<Integer> specialtyIds = specialties.stream().map(Specialty::getId).toList();

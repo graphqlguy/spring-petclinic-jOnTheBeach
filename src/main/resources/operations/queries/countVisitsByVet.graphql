@@ -1,0 +1,10 @@
+# Lists every vet with the number of visits they have seen or will see.
+# Use it for questions such as how many visits each vet has had, or which vet is the busiest.
+query CountVisitsByVet {
+  vets {
+    id
+    firstName
+    lastName
+    visitCount
+  }
+}
