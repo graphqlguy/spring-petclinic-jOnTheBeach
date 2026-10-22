@@ -1,4 +1,6 @@
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
+import Markdown from 'react-markdown'
+import remarkGfm from 'remark-gfm'
 import { useGraphQL } from '../context/GraphQLContext'
 import { tokenStore } from '../graphql/client'
 
@@ -10,6 +12,14 @@ export default function ChatPanel() {
   const [messages, setMessages] = useState([])
   const [question, setQuestion] = useState('')
   const [waiting, setWaiting] = useState(false)
+  const list = useRef(null)
+
+  // Keeps the latest message in view
+  useEffect(() => {
+    if (list.current) {
+      list.current.scrollTop = list.current.scrollHeight
+    }
+  }, [messages, waiting])
 
   if (!chat) {
     return null
@@ -48,18 +58,22 @@ export default function ChatPanel() {
       {open && (
         <div className="mb-3 flex h-[28rem] w-80 flex-col rounded border border-spring-grey bg-white shadow-lg sm:w-96">
           <div className="bg-spring-brown px-4 py-2 text-sm text-spring-light-grey">Clinic assistant</div>
-          <div className="flex-1 space-y-3 overflow-y-auto p-3 text-sm">
+          <div ref={list} className="flex-1 space-y-3 overflow-y-auto p-3 text-sm">
             {messages.length === 0 && (
               <p className="text-spring-grey">Ask about owners, pets, vets and visits, or ask it to book a visit.</p>
             )}
-            {messages.map((message, i) => (
-              <p
-                key={i}
-                className={`whitespace-pre-wrap rounded px-3 py-2 ${message.from === 'you' ? 'ml-8 bg-spring-light-grey' : 'mr-8 bg-spring-green/15'}`}
-              >
-                {message.text}
-              </p>
-            ))}
+            {messages.map((message, i) =>
+              message.from === 'you' ? (
+                <p key={i} className="ml-8 whitespace-pre-wrap rounded bg-spring-light-grey px-3 py-2">
+                  {message.text}
+                </p>
+              ) : (
+                // Models answer in Markdown. react-markdown renders it without running any HTML it contains.
+                <div key={i} className="chat-answer mr-8 rounded bg-spring-green/15 px-3 py-2">
+                  <Markdown remarkPlugins={[remarkGfm]}>{message.text}</Markdown>
+                </div>
+              ),
+            )}
             {waiting && <p className="text-spring-grey">Thinking…</p>}
           </div>
           <form onSubmit={ask} className="flex border-t border-spring-grey">
