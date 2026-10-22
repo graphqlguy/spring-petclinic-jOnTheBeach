@@ -79,10 +79,6 @@ npx -y @modelcontextprotocol/inspector@2.9.0
 
 It opens a browser tab. Close the tab and stop it with `Ctrl+C`.
 
-## 7. Optional: Docker
-
-Chapter 13 can also sign in through Keycloak, which runs in Docker. Everything else works without Docker, so install it only if you want to try that part.
-
 ## Checklist
 
 - [ ] `java -version` shows 21 or newer
