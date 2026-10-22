@@ -76,6 +76,11 @@
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-security-oauth2-resource-server</artifactId>
     </dependency>
+    <dependency>
+      <groupId>io.gatool</groupId>
+      <artifactId>gatool-mcp-spring-boot-starter</artifactId>
+      <version>0.1.0</version>
+    </dependency>
 
     <dependency>
       <groupId>javax.cache</groupId>

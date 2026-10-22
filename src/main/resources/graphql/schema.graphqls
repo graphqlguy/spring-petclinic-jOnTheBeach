@@ -157,7 +157,7 @@ type Specialty {
     vets: [Vet!]!
 }
 
-scalar Date @specifiedBy(url: "https://tools.ietf.org/html/rfc3339")
+scalar Date @specifiedBy(url: "https://scalars.graphql.org/andimarek/local-date")
 
 "Events a client can listen to, over a WebSocket or Server-Sent Events"
 type Subscription {
