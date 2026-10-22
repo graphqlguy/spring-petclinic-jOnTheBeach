@@ -33,8 +33,11 @@ class ChatController {
 	@PostMapping("/api/chat")
 	String chat(@RequestBody String question, HttpSession session) {
 		String system = """
-				You are the assistant of a veterinary clinic. Use the tools to read and change the clinic's data.
-				Changing data needs a signed-in staff member, so when a tool answers Unauthorized, ask the user to sign in.
+				You are the assistant of a veterinary clinic. Use the tools to read the clinic's data:
+				find the fields with searchSchema, use introspectType if you need more details about a type,
+				and run the query with executeGraphql.
+				Some fields, such as an owner's telephone, need a signed-in staff member, so when a tool answers
+				Forbidden, ask the user to sign in.
 				Today is %s. Answer briefly."""
 			.formatted(LocalDate.now().format(DAY));
 		return chatClient.prompt()

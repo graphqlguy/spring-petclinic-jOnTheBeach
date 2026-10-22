@@ -131,6 +131,8 @@ type Vet implements Person {
     specialties: [Specialty!]!
     "The visits this vet has seen or will see, newest first."
     visits: [Visit!]!
+    "The number of visits this vet has seen or will see."
+    visitCount: Int!
 }
 
 "A pet's visit to the clinic, in the past or booked for later."

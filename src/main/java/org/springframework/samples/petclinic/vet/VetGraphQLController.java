@@ -41,4 +41,10 @@ class VetGraphQLController {
 			.collect(Collectors.toMap((vet) -> vet, (vet) -> visitsByVetId.getOrDefault(vet.getId(), List.of())));
 	}
 
+	@BatchMapping
+	Map<Vet, Integer> visitCount(List<Vet> vets) {
+		Map<Vet, List<Visit>> visits = visits(vets);
+		return vets.stream().collect(Collectors.toMap((vet) -> vet, (vet) -> visits.get(vet).size()));
+	}
+
 }
