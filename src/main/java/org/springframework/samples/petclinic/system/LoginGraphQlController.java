@@ -2,7 +2,9 @@ package org.springframework.samples.petclinic.system;
 
 import java.time.Duration;
 import java.time.Instant;
+import java.util.List;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.graphql.data.method.annotation.Argument;
 import org.springframework.graphql.data.method.annotation.MutationMapping;
 import org.springframework.security.authentication.BadCredentialsException;
@@ -25,10 +27,18 @@ class LoginGraphQlController {
 
 	private final JwtEncoder jwtEncoder;
 
-	LoginGraphQlController(UserDetailsService users, PasswordEncoder passwordEncoder, JwtEncoder jwtEncoder) {
+	private final String issuer;
+
+	private final String audience;
+
+	LoginGraphQlController(UserDetailsService users, PasswordEncoder passwordEncoder, JwtEncoder jwtEncoder,
+			@Value("${spring.security.oauth2.resourceserver.jwt.issuer-uri}") String issuer,
+			@Value("${gatool.mcp.security.resource}") String audience) {
 		this.users = users;
 		this.passwordEncoder = passwordEncoder;
 		this.jwtEncoder = jwtEncoder;
+		this.issuer = issuer;
+		this.audience = audience;
 	}
 
 	@MutationMapping
@@ -40,7 +50,8 @@ class LoginGraphQlController {
 		boolean staff = user.getAuthorities().stream().anyMatch((a) -> a.getAuthority().equals("ROLE_STAFF"));
 		Instant now = Instant.now();
 		JwtClaimsSet claims = JwtClaimsSet.builder()
-			.issuer("petclinic")
+			.issuer(this.issuer)
+			.audience(List.of(this.audience))
 			.subject(user.getUsername())
 			.issuedAt(now)
 			.expiresAt(now.plus(Duration.ofHours(8)))
