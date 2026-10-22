@@ -25,6 +25,6 @@ The frontend checks the backend's schema at startup and shows only the pages the
 10. [MCP tools generated from the schema](10-mcp-tools-generated-from-the-schema.md): GATool, the MCP Inspector, generated tools and their selection depth, a typed `Date` scalar, a write tool with a staff token
 11. [Curated operations and trusted documents](11-curated-operations-and-trusted-documents.md): the frontend's operation files as tools, partial answers counted as results, an interceptor that runs operations by their hash and can refuse every other document
 12. [An assistant inside the application](12-an-assistant-inside-the-application.md): Spring AI's `ChatClient` with the operation files as in-process tools, tool calls that act as the signed-in user, checking what the model did, errors a model can act on, hosted models, conversation memory
-13. Securing the MCP endpoint
+13. [Securing the MCP endpoint](13-securing-the-mcp-endpoint.md): how an MCP client signs in, Spring Security's authorization server inside the application, open client registration, tokens bound to the endpoint, the MCP Inspector signed in as staff and as guest
 14. Dynamic tools: an agent that explores the schema
 15. A large schema built from Spanish open data
