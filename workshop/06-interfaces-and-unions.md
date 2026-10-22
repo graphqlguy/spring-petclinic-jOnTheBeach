@@ -28,12 +28,12 @@ type Query {
 union SearchResult = Owner | Pet | Vet
 ```
 
-The services already search each type. **Create a new class** named `SearchGraphQlController` in the `org.springframework.samples.petclinic.system` package, which holds code that spans the clinic:
+The services already search each type. A search spans the clinic, so it gets a package of its own: **create a new class** named `SearchGraphQlController` in a new `org.springframework.samples.petclinic.search` package:
 
-`src/main/java/org/springframework/samples/petclinic/system/SearchGraphQlController.java`
+`src/main/java/org/springframework/samples/petclinic/search/SearchGraphQlController.java`
 
 ```java
-package org.springframework.samples.petclinic.system;
+package org.springframework.samples.petclinic.search;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -202,7 +202,7 @@ type Query {
 }
 ```
 
-`src/main/java/org/springframework/samples/petclinic/system/SearchGraphQlController.java`
+`src/main/java/org/springframework/samples/petclinic/search/SearchGraphQlController.java`
 
 ```java
 import org.springframework.samples.petclinic.model.Person;
