@@ -1,4 +1,4 @@
-scalar Date @specifiedBy(url: "https://tools.ietf.org/html/rfc3339")
+scalar Date @specifiedBy(url: "https://scalars.graphql.org/andimarek/local-date")
 directive @PositiveOrZero(message: String = "graphql.validation.PositiveOrZero.message") on ARGUMENT_DEFINITION | INPUT_FIELD_DEFINITION
 directive @Range(min: Int = 0, max: Int = 2147483647, message: String = "graphql.validation.Range.message") on ARGUMENT_DEFINITION | INPUT_FIELD_DEFINITION
 
