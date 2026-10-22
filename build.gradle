@@ -51,6 +51,8 @@ dependencies {
   testImplementation 'org.springframework.boot:spring-boot-starter-restclient-test'
   testImplementation 'org.springframework.boot:spring-boot-starter-webmvc-test'
   testImplementation 'org.springframework.boot:spring-boot-starter-security-oauth2-resource-server-test'
+  testImplementation 'org.springframework.boot:spring-boot-starter-graphql-test'
+  testImplementation 'io.projectreactor:reactor-test'
   testImplementation 'org.springframework.boot:spring-boot-testcontainers'
   testImplementation 'org.springframework.boot:spring-boot-docker-compose'
   testImplementation 'org.testcontainers:testcontainers-junit-jupiter'
