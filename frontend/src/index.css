@@ -1,0 +1,34 @@
+@import 'tailwindcss';
+
+/* The fonts and colours of the Spring Petclinic web pages */
+@font-face {
+  font-family: 'Varela Round';
+  src: url('/fonts/varela_round-webfont.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('/fonts/montserrat-webfont.woff') format('woff');
+}
+
+@theme {
+  --color-spring-green: #6db33f;
+  --color-spring-dark-green: #5fa134;
+  --color-spring-brown: #34302d;
+  --color-spring-grey: #838789;
+  --color-spring-light-grey: #f1f1f1;
+  --font-sans: 'Varela Round', ui-sans-serif, system-ui, sans-serif;
+  --font-heading: 'Montserrat', ui-sans-serif, system-ui, sans-serif;
+}
+
+body {
+  background-color: white;
+  color: var(--color-spring-brown);
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-heading);
+  text-transform: uppercase;
+}
