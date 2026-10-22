@@ -17,7 +17,7 @@ The frontend checks the backend's schema at startup and shows only the pages the
 5. [Security](05-security.md): a resource server, a `login` mutation that signs a token, `@PreAuthorize` on mutations and on a single field
 6. [Interfaces and unions](06-interfaces-and-unions.md): a search across types, inline fragments, `__typename`, and when to use which
 7. [Subscriptions](07-subscriptions.md): the `Subscription` type, WebSocket and Server-Sent Events, a Reactor sink fed by application events
-8. Testing
+8. [Testing](08-testing.md): `HttpGraphQlTester`, errors and tokens in tests, a subscription test, the `@GraphQlTest` slice
 9. Ready for agents: descriptions and query limits
 
 ## Part 2: agents
