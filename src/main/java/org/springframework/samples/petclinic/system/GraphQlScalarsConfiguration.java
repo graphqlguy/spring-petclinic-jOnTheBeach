@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.graphql.execution.RuntimeWiringConfigurer;
 
 @Configuration(proxyBeanMethods = false)
-class GraphQlScalarsConfiguration {
+public class GraphQlScalarsConfiguration {
 
 	@Bean
 	RuntimeWiringConfigurer scalars() {
