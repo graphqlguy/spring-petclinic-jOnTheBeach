@@ -22,7 +22,7 @@ The frontend checks the backend's schema at startup and shows only the pages the
 
 ## Part 2: agents
 
-10. MCP tools generated from the schema
+10. [MCP tools generated from the schema](10-mcp-tools-generated-from-the-schema.md): GATool, the MCP Inspector, generated tools and their selection depth, a typed `Date` scalar, a write tool with a staff token
 11. Curated operations, and trusted documents
 12. An assistant inside the application
 13. Securing the MCP endpoint
