@@ -1,0 +1,337 @@
+{
+ "operations": [
+  {
+   "field": "malagaDatasets",
+   "path": "/package_search",
+   "arguments": [
+    {
+     "name": "query",
+     "parameter": "q",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "filter",
+     "parameter": "fq",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "sort",
+     "parameter": "sort",
+     "in": "query",
+     "list": false
+    }
+   ],
+   "paging": {
+    "style": "offset",
+    "start": "start",
+    "size": "rows"
+   }
+  },
+  {
+   "field": "malagaDataset",
+   "path": "/package_show",
+   "arguments": [
+    {
+     "name": "id",
+     "parameter": "id",
+     "in": "query",
+     "list": false
+    }
+   ]
+  },
+  {
+   "field": "malagaDatasetNames",
+   "path": "/package_list",
+   "arguments": [
+    {
+     "name": "limit",
+     "parameter": "limit",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "offset",
+     "parameter": "offset",
+     "in": "query",
+     "list": false
+    }
+   ]
+  },
+  {
+   "field": "malagaOrganizations",
+   "path": "/organization_list",
+   "arguments": [],
+   "fixed": {
+    "all_fields": "true"
+   }
+  },
+  {
+   "field": "malagaGroups",
+   "path": "/group_list",
+   "arguments": [],
+   "fixed": {
+    "all_fields": "true"
+   }
+  },
+  {
+   "field": "malagaTags",
+   "path": "/tag_list",
+   "arguments": []
+  },
+  {
+   "field": "malagaResource",
+   "path": "/resource_show",
+   "arguments": [
+    {
+     "name": "id",
+     "parameter": "id",
+     "in": "query",
+     "list": false
+    }
+   ]
+  },
+  {
+   "field": "malagaDatastoreRecords",
+   "path": "/datastore_search",
+   "arguments": [
+    {
+     "name": "resourceId",
+     "parameter": "resource_id",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "query",
+     "parameter": "q",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "filters",
+     "parameter": "filters",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "sort",
+     "parameter": "sort",
+     "in": "query",
+     "list": false
+    }
+   ],
+   "paging": {
+    "style": "offset",
+    "start": "offset",
+    "size": "limit"
+   }
+  }
+ ],
+ "fields": {
+  "MalagaDatasetSearch": {
+   "count": {
+    "key": "result/count"
+   },
+   "sort": {
+    "key": "result/sort"
+   },
+   "datasets": {
+    "key": "result/results"
+   }
+  },
+  "MalagaDatasetAnswer": {
+   "dataset": {
+    "key": "result"
+   }
+  },
+  "MalagaDataset": {
+   "description": {
+    "key": "notes"
+   },
+   "authorEmail": {
+    "key": "author_email"
+   },
+   "maintainerEmail": {
+    "key": "maintainer_email"
+   },
+   "license": {
+    "key": "license_title"
+   },
+   "licenseId": {
+    "key": "license_id"
+   },
+   "licenseUrl": {
+    "key": "license_url"
+   },
+   "isOpen": {
+    "key": "isopen"
+   },
+   "created": {
+    "key": "metadata_created"
+   },
+   "modified": {
+    "key": "metadata_modified"
+   },
+   "resourceCount": {
+    "key": "num_resources"
+   },
+   "tagCount": {
+    "key": "num_tags"
+   },
+   "organizationId": {
+    "key": "owner_org"
+   },
+   "revisionId": {
+    "key": "revision_id"
+   }
+  },
+  "MalagaResource": {
+   "mimetypeInner": {
+    "key": "mimetype_inner"
+   },
+   "datastoreActive": {
+    "key": "datastore_active"
+   },
+   "urlType": {
+    "key": "url_type"
+   },
+   "lastModified": {
+    "key": "last_modified"
+   },
+   "datasetId": {
+    "key": "package_id"
+   },
+   "sourcePath": {
+    "key": "update"
+   },
+   "primaryKey": {
+    "key": "primary_key"
+   },
+   "validationStatus": {
+    "key": "validation_status"
+   },
+   "validationTimestamp": {
+    "key": "validation_timestamp"
+   },
+   "webstoreUrl": {
+    "key": "webstore_url"
+   },
+   "revisionId": {
+    "key": "revision_id"
+   },
+   "resourceType": {
+    "key": "resource_type"
+   },
+   "cacheUrl": {
+    "key": "cache_url"
+   },
+   "cacheLastUpdated": {
+    "key": "cache_last_updated"
+   }
+  },
+  "MalagaTag": {
+   "displayName": {
+    "key": "display_name"
+   },
+   "vocabularyId": {
+    "key": "vocabulary_id"
+   }
+  },
+  "MalagaGroup": {
+   "displayName": {
+    "key": "display_name"
+   },
+   "imageUrl": {
+    "key": "image_display_url"
+   },
+   "packageCount": {
+    "key": "package_count"
+   },
+   "isOrganization": {
+    "key": "is_organization"
+   },
+   "approvalStatus": {
+    "key": "approval_status"
+   },
+   "followers": {
+    "key": "num_followers"
+   },
+   "image": {
+    "key": "image_url"
+   },
+   "revisionId": {
+    "key": "revision_id"
+   }
+  },
+  "MalagaOrganization": {
+   "displayName": {
+    "key": "display_name"
+   },
+   "imageUrl": {
+    "key": "image_display_url"
+   },
+   "packageCount": {
+    "key": "package_count"
+   },
+   "isOrganization": {
+    "key": "is_organization"
+   },
+   "approvalStatus": {
+    "key": "approval_status"
+   },
+   "followers": {
+    "key": "num_followers"
+   },
+   "image": {
+    "key": "image_url"
+   },
+   "revisionId": {
+    "key": "revision_id"
+   }
+  },
+  "MalagaNameList": {
+   "names": {
+    "key": "result"
+   }
+  },
+  "MalagaOrganizationList": {
+   "organizations": {
+    "key": "result"
+   }
+  },
+  "MalagaGroupList": {
+   "groups": {
+    "key": "result"
+   }
+  },
+  "MalagaResourceAnswer": {
+   "resource": {
+    "key": "result"
+   }
+  },
+  "MalagaDatastoreAnswer": {
+   "resourceId": {
+    "key": "result/resource_id"
+   },
+   "total": {
+    "key": "result/total"
+   },
+   "limit": {
+    "key": "result/limit"
+   },
+   "offset": {
+    "key": "result/offset"
+   },
+   "query": {
+    "key": "result/q"
+   },
+   "fields": {
+    "key": "result/fields"
+   },
+   "records": {
+    "key": "result/records"
+   }
+  }
+ }
+}

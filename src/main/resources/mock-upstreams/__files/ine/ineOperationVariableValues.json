@@ -1,0 +1,4 @@
+[{"Id":451, "FK_Variable":18, "Nombre":"Total", "Codigo":""}
+,{"Id":452, "FK_Variable":18, "Nombre":"Males", "Codigo":"1"}
+,{"Id":453, "FK_Variable":18, "Nombre":"Females", "Codigo":"6"}
+]

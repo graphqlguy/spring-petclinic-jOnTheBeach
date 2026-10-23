@@ -1,0 +1,40 @@
+{
+    "status": {
+        "code": "200",
+        "text": "ok"
+    },
+    "data": [
+        {
+            "fecha_actualizacion": "20260702T062030Z",
+            "identificador": "BOE-A-2023-7936",
+            "ambito": {
+                "codigo": "1",
+                "texto": "Estatal"
+            },
+            "departamento": {
+                "codigo": "7723",
+                "texto": "Jefatura del Estado"
+            },
+            "rango": {
+                "codigo": "1300",
+                "texto": "Ley"
+            },
+            "fecha_disposicion": "20230328",
+            "numero_oficial": "7\/2023",
+            "titulo": "Ley 7\/2023, de 28 de marzo, de protecci\u00f3n de los derechos y el bienestar de los animales.",
+            "diario": "Bolet\u00edn Oficial del Estado",
+            "fecha_publicacion": "20230329",
+            "diario_numero": "75",
+            "fecha_vigencia": "20230929",
+            "estatus_derogacion": "N",
+            "estatus_anulacion": "N",
+            "vigencia_agotada": "N",
+            "estado_consolidacion": {
+                "codigo": "3",
+                "texto": "Finalizado"
+            },
+            "url_eli": "https:\/\/www.boe.es\/eli\/es\/l\/2023\/03\/28\/7",
+            "url_html_consolidada": "https:\/\/www.boe.es\/buscar\/act.php?id=BOE-A-2023-7936"
+        }
+    ]
+}

@@ -1,0 +1,737 @@
+{
+ "operations": [
+  {
+   "field": "cimaVetMedicines",
+   "path": "/medicamentos",
+   "arguments": [
+    {
+     "name": "name",
+     "parameter": "nombre",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "activeIngredient",
+     "parameter": "practiv1",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "speciesId",
+     "parameter": "idespecie",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "atcCode",
+     "parameter": "atc",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "laboratory",
+     "parameter": "laboratorio",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "marketed",
+     "parameter": "comerc",
+     "in": "query",
+     "list": false,
+     "values": {
+      "true": "1",
+      "false": "0"
+     }
+    },
+    {
+     "name": "antibiotic",
+     "parameter": "antibiotico",
+     "in": "query",
+     "list": false,
+     "values": {
+      "true": "1",
+      "false": "0"
+     }
+    }
+   ],
+   "paging": {
+    "style": "page",
+    "start": "pagina",
+    "size": null
+   }
+  },
+  {
+   "field": "cimaVetMedicine",
+   "path": "/medicamento",
+   "arguments": [
+    {
+     "name": "registrationNumber",
+     "parameter": "nregistro",
+     "in": "query",
+     "list": false
+    }
+   ]
+  },
+  {
+   "field": "cimaVetPresentations",
+   "path": "/presentaciones",
+   "arguments": [
+    {
+     "name": "registrationNumber",
+     "parameter": "nregistro",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "nationalCode",
+     "parameter": "cn",
+     "in": "query",
+     "list": false
+    }
+   ],
+   "paging": {
+    "style": "page",
+    "start": "pagina",
+    "size": null
+   }
+  },
+  {
+   "field": "cimaVetPresentation",
+   "path": "/presentacion/{cn}",
+   "arguments": [
+    {
+     "name": "nationalCode",
+     "parameter": "cn",
+     "in": "path",
+     "list": false
+    }
+   ]
+  },
+  {
+   "field": "cimaVetSupplyProblems",
+   "path": "/psuministro",
+   "arguments": [],
+   "paging": {
+    "style": "page",
+    "start": "pagina",
+    "size": null
+   }
+  },
+  {
+   "field": "cimaVetRegisterChanges",
+   "path": "/registroCambios",
+   "arguments": [
+    {
+     "name": "since",
+     "parameter": "fecha",
+     "in": "query",
+     "list": false,
+     "dateFormat": "dd/MM/yyyy"
+    }
+   ],
+   "paging": {
+    "style": "page",
+    "start": "pagina",
+    "size": null
+   }
+  },
+  {
+   "field": "cimaVetSpecies",
+   "path": "/maestras",
+   "arguments": [
+    {
+     "name": "name",
+     "parameter": "nombre",
+     "in": "query",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "maestra": "7"
+   },
+   "paging": {
+    "style": "page",
+    "start": "pagina",
+    "size": null
+   }
+  },
+  {
+   "field": "cimaVetActiveIngredients",
+   "path": "/maestras",
+   "arguments": [
+    {
+     "name": "name",
+     "parameter": "nombre",
+     "in": "query",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "maestra": "1"
+   },
+   "paging": {
+    "style": "page",
+    "start": "pagina",
+    "size": null
+   }
+  },
+  {
+   "field": "cimaVetPharmaceuticalForms",
+   "path": "/maestras",
+   "arguments": [
+    {
+     "name": "name",
+     "parameter": "nombre",
+     "in": "query",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "maestra": "2"
+   },
+   "paging": {
+    "style": "page",
+    "start": "pagina",
+    "size": null
+   }
+  },
+  {
+   "field": "cimaVetAdministrationRoutes",
+   "path": "/maestras",
+   "arguments": [
+    {
+     "name": "name",
+     "parameter": "nombre",
+     "in": "query",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "maestra": "3"
+   },
+   "paging": {
+    "style": "page",
+    "start": "pagina",
+    "size": null
+   }
+  },
+  {
+   "field": "cimaVetLaboratories",
+   "path": "/maestras",
+   "arguments": [
+    {
+     "name": "name",
+     "parameter": "nombre",
+     "in": "query",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "maestra": "4"
+   },
+   "paging": {
+    "style": "page",
+    "start": "pagina",
+    "size": null
+   }
+  },
+  {
+   "field": "cimaVetAtcCodes",
+   "path": "/maestras",
+   "arguments": [
+    {
+     "name": "name",
+     "parameter": "nombre",
+     "in": "query",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "maestra": "5"
+   },
+   "paging": {
+    "style": "page",
+    "start": "pagina",
+    "size": null
+   }
+  },
+  {
+   "field": "cimaVetExcipients",
+   "path": "/maestras",
+   "arguments": [
+    {
+     "name": "name",
+     "parameter": "nombre",
+     "in": "query",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "maestra": "6"
+   },
+   "paging": {
+    "style": "page",
+    "start": "pagina",
+    "size": null
+   }
+  },
+  {
+   "field": "cimaVetIndications",
+   "path": "/maestras",
+   "arguments": [
+    {
+     "name": "name",
+     "parameter": "nombre",
+     "in": "query",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "maestra": "11"
+   },
+   "paging": {
+    "style": "page",
+    "start": "pagina",
+    "size": null
+   }
+  },
+  {
+   "field": "cimaVetClinicalSigns",
+   "path": "/maestras",
+   "arguments": [
+    {
+     "name": "name",
+     "parameter": "nombre",
+     "in": "query",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "maestra": "12"
+   },
+   "paging": {
+    "style": "page",
+    "start": "pagina",
+    "size": null
+   }
+  }
+ ],
+ "fields": {
+  "CimaVetMedicinePage": {
+   "totalCount": {
+    "key": "totalFilas"
+   },
+   "medicines": {
+    "key": "resultados"
+   }
+  },
+  "CimaVetMedicine": {
+   "registrationNumber": {
+    "key": "nregistro"
+   },
+   "name": {
+    "key": "nombre"
+   },
+   "activeIngredientNames": {
+    "key": "pactivos"
+   },
+   "excipientNames": {
+    "key": "excip"
+   },
+   "holder": {
+    "key": "labtitular"
+   },
+   "marketer": {
+    "key": "labcomercializador"
+   },
+   "dispensing": {
+    "key": "dispensacion"
+   },
+   "medicineType": {
+    "key": "tipoMedicamento"
+   },
+   "administeredBy": {
+    "key": "administracion"
+   },
+   "status": {
+    "key": "estado"
+   },
+   "marketed": {
+    "key": "comerc"
+   },
+   "prescription": {
+    "key": "receta"
+   },
+   "narcotic": {
+    "key": "estupefaciente"
+   },
+   "psychotropic": {
+    "key": "psicotropo"
+   },
+   "hasSafetyNotes": {
+    "key": "notas"
+   },
+   "centrallyAuthorized": {
+    "key": "ema"
+   },
+   "documents": {
+    "key": "docs"
+   },
+   "firstAuthorized": {
+    "key": "primeraAutorizacion",
+    "conversion": "epoch-millis-date"
+   },
+   "hasSupplyProblems": {
+    "key": "psum"
+   },
+   "antibiotic": {
+    "key": "antibiotico"
+   },
+   "electronicLeafletPilot": {
+    "key": "pilotoProspectoElectronico"
+   },
+   "atcCodes": {
+    "key": "atcs"
+   },
+   "pharmaceuticalForms": {
+    "key": "formasFarmaceuticas"
+   },
+   "administrationRoutes": {
+    "key": "viasAdministracion"
+   },
+   "activeIngredients": {
+    "key": "principiosActivos"
+   },
+   "excipients": {
+    "key": "excipientes"
+   },
+   "species": {
+    "key": "especies"
+   },
+   "indications": {
+    "key": "indicaciones"
+   },
+   "contraindications": {
+    "key": "contraindicaciones"
+   },
+   "interactions": {
+    "key": "interacciones"
+   },
+   "adverseReactions": {
+    "key": "reaccionesAdversas"
+   },
+   "withdrawalPeriods": {
+    "key": "tiemposEspera"
+   },
+   "presentations": {
+    "key": "presentaciones"
+   }
+  },
+  "CimaVetStatus": {
+   "authorized": {
+    "key": "aut",
+    "conversion": "epoch-millis-date"
+   },
+   "revoked": {
+    "key": "rev",
+    "conversion": "epoch-millis-date"
+   }
+  },
+  "CimaVetCategory": {
+   "name": {
+    "key": "nombre"
+   }
+  },
+  "CimaVetSpecies": {
+   "name": {
+    "key": "nombre"
+   }
+  },
+  "CimaVetPharmaceuticalForm": {
+   "name": {
+    "key": "nombre"
+   }
+  },
+  "CimaVetAdministrationRoute": {
+   "name": {
+    "key": "nombre"
+   }
+  },
+  "CimaVetAtc": {
+   "code": {
+    "key": "codigo"
+   },
+   "name": {
+    "key": "nombre"
+   },
+   "level": {
+    "key": "nivel"
+   },
+   "antibiotic": {
+    "key": "antibiotico"
+   }
+  },
+  "CimaVetIngredient": {
+   "code": {
+    "key": "codigo"
+   },
+   "name": {
+    "key": "nombre"
+   },
+   "amount": {
+    "key": "cantidad"
+   },
+   "unit": {
+    "key": "unidad"
+   },
+   "order": {
+    "key": "orden"
+   }
+  },
+  "CimaVetSpeciesTerm": {
+   "species": {
+    "key": "especie"
+   },
+   "name": {
+    "key": "nombre"
+   }
+  },
+  "CimaVetAdverseReaction": {
+   "species": {
+    "key": "especie"
+   },
+   "name": {
+    "key": "nombre"
+   },
+   "frequency": {
+    "key": "frecuencia"
+   }
+  },
+  "CimaVetWithdrawalPeriod": {
+   "species": {
+    "key": "especie"
+   },
+   "pharmaceuticalForm": {
+    "key": "formaFarmaceutica"
+   },
+   "administrationRoute": {
+    "key": "viaAdministracion"
+   },
+   "tissue": {
+    "key": "tejido"
+   },
+   "amount": {
+    "key": "cantidad"
+   },
+   "timeUnit": {
+    "key": "unidadTiempo"
+   }
+  },
+  "CimaVetDocument": {
+   "type": {
+    "key": "tipo"
+   },
+   "hasSections": {
+    "key": "secc"
+   },
+   "updated": {
+    "key": "fecha",
+    "conversion": "epoch-millis-date"
+   }
+  },
+  "CimaVetPresentationSummary": {
+   "nationalCode": {
+    "key": "cn"
+   },
+   "name": {
+    "key": "nombre"
+   },
+   "status": {
+    "key": "estado"
+   },
+   "marketed": {
+    "key": "comerc"
+   },
+   "hasSupplyProblems": {
+    "key": "psum"
+   }
+  },
+  "CimaVetPresentationPage": {
+   "totalCount": {
+    "key": "totalFilas"
+   },
+   "presentations": {
+    "key": "resultados"
+   }
+  },
+  "CimaVetPresentation": {
+   "registrationNumber": {
+    "key": "nregistro"
+   },
+   "name": {
+    "key": "nombre"
+   },
+   "activeIngredientNames": {
+    "key": "pactivos"
+   },
+   "excipientNames": {
+    "key": "excip"
+   },
+   "holder": {
+    "key": "labtitular"
+   },
+   "marketer": {
+    "key": "labcomercializador"
+   },
+   "dispensing": {
+    "key": "dispensacion"
+   },
+   "medicineType": {
+    "key": "tipoMedicamento"
+   },
+   "administeredBy": {
+    "key": "administracion"
+   },
+   "status": {
+    "key": "estado"
+   },
+   "marketed": {
+    "key": "comerc"
+   },
+   "prescription": {
+    "key": "receta"
+   },
+   "narcotic": {
+    "key": "estupefaciente"
+   },
+   "psychotropic": {
+    "key": "psicotropo"
+   },
+   "hasSafetyNotes": {
+    "key": "notas"
+   },
+   "centrallyAuthorized": {
+    "key": "ema"
+   },
+   "documents": {
+    "key": "docs"
+   },
+   "nationalCode": {
+    "key": "cn"
+   },
+   "activeIngredients": {
+    "key": "principiosActivos"
+   }
+  },
+  "CimaVetSupplyProblemPage": {
+   "totalCount": {
+    "key": "totalFilas"
+   },
+   "problems": {
+    "key": "resultados"
+   }
+  },
+  "CimaVetSupplyProblem": {
+   "registrationNumber": {
+    "key": "nregistro"
+   },
+   "nationalCode": {
+    "key": "cn"
+   },
+   "name": {
+    "key": "nombre"
+   },
+   "started": {
+    "key": "fini",
+    "conversion": "epoch-millis-date"
+   },
+   "expectedEnd": {
+    "key": "ffin",
+    "conversion": "epoch-millis-date"
+   },
+   "active": {
+    "key": "activo"
+   },
+   "notes": {
+    "key": "observ"
+   }
+  },
+  "CimaVetRegisterChangePage": {
+   "totalCount": {
+    "key": "totalFilas"
+   },
+   "changes": {
+    "key": "resultados"
+   }
+  },
+  "CimaVetRegisterChange": {
+   "registrationNumber": {
+    "key": "nregistro"
+   },
+   "changedAt": {
+    "key": "fecha",
+    "conversion": "epoch-millis-date-time"
+   },
+   "kind": {
+    "key": "tipoCambio"
+   },
+   "changes": {
+    "key": "cambio"
+   }
+  },
+  "CimaVetSpeciesPage": {
+   "totalCount": {
+    "key": "totalFilas"
+   },
+   "species": {
+    "key": "resultados"
+   }
+  },
+  "CimaVetCodedEntryPage": {
+   "totalCount": {
+    "key": "totalFilas"
+   },
+   "entries": {
+    "key": "resultados"
+   }
+  },
+  "CimaVetCodedEntry": {
+   "code": {
+    "key": "codigo"
+   },
+   "name": {
+    "key": "nombre"
+   }
+  },
+  "CimaVetEntryPage": {
+   "totalCount": {
+    "key": "totalFilas"
+   },
+   "entries": {
+    "key": "resultados"
+   }
+  },
+  "CimaVetEntry": {
+   "name": {
+    "key": "nombre"
+   }
+  },
+  "CimaVetAtcCodePage": {
+   "totalCount": {
+    "key": "totalFilas"
+   },
+   "codes": {
+    "key": "resultados"
+   }
+  },
+  "CimaVetAtcCode": {
+   "code": {
+    "key": "codigo"
+   },
+   "name": {
+    "key": "nombre"
+   }
+  }
+ }
+}

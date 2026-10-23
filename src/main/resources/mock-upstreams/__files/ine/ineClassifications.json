@@ -1,0 +1,213 @@
+[{"Id":1, "Nombre":"CNAE 93", "Fecha":725842800000}
+,
+{"Id":2, "Nombre":"CNAE 2009", "Fecha":1230764400000}
+,
+{"Id":3, "Nombre":"CNAE 74", "Fecha":126226800000}
+,
+{"Id":5, "Nombre":"CPI System 1976", "Fecha":220921200000}
+,
+{"Id":6, "Nombre":"CPI System 1983", "Fecha":441759600000}
+,
+{"Id":7, "Nombre":"CPI System 1992", "Fecha":725842800000}
+,
+{"Id":10, "Nombre":"CNO94", "Fecha":757378800000}
+,
+{"Id":11, "Nombre":"CNO11", "Fecha":1293836400000}
+,
+{"Id":14, "Nombre":"Base 2008", "Fecha":1230764400000}
+,
+{"Id":15, "Nombre":"Base 2000", "Fecha":978303600000}
+,
+{"Id":16, "Nombre":"Base 1995", "Fecha":820450800000}
+,
+{"Id":17, "Nombre":"Base 2010", "Fecha":1293836400000}
+,
+{"Id":18, "Nombre":"2001 Census", "Fecha":1004569200000}
+,
+{"Id":19, "Nombre":"2011 Census", "Fecha":1320102000000}
+,
+{"Id":20, "Nombre":"Base 2001", "Fecha":1009839600000}
+,
+{"Id":21, "Nombre":"Base 2002", "Fecha":1041375600000}
+,
+{"Id":22, "Nombre":"2006 TV", "Fecha":1136070000000}
+,
+{"Id":23, "Nombre":"PTS 2010", "Fecha":1262300400000}
+,
+{"Id":24, "Nombre":"CNED 2000", "Fecha":946681200000}
+,
+{"Id":25, "Nombre":"CNED 2014", "Fecha":1388530800000}
+,
+{"Id":26, "Nombre":"Base 1980", "Fecha":347151600000}
+,
+{"Id":27, "Nombre":"Base 2001", "Fecha":1325372400000}
+,
+{"Id":28, "Nombre":"Base 1964", "Fecha":1458169200000}
+,
+{"Id":29, "Nombre":"Geographical 2007", "Fecha":1199142000000}
+,
+{"Id":30, "Nombre":"Geographical 2008", "Fecha":1230764400000}
+,
+{"Id":31, "Nombre":"Geographical 2009", "Fecha":1262300400000}
+,
+{"Id":32, "Nombre":"Geographical 2010", "Fecha":1293836400000}
+,
+{"Id":33, "Nombre":"Geographical 2011", "Fecha":1325372400000}
+,
+{"Id":34, "Nombre":"Geographical 2012", "Fecha":1356994800000}
+,
+{"Id":35, "Nombre":"Geographical 2013", "Fecha":1388530800000}
+,
+{"Id":36, "Nombre":"Geographical 2014", "Fecha":1420066800000}
+,
+{"Id":37, "Nombre":"Geographical 2015", "Fecha":1451602800000}
+,
+{"Id":38, "Nombre":"Geographical 2016", "Fecha":1483225200000}
+,
+{"Id":39, "Nombre":"Geographical 2001", "Fecha":1009839600000}
+,
+{"Id":40, "Nombre":"Geographical 2002", "Fecha":1041375600000}
+,
+{"Id":41, "Nombre":"Geographical 2003", "Fecha":1072911600000}
+,
+{"Id":42, "Nombre":"Geographical 2004", "Fecha":1104534000000}
+,
+{"Id":43, "Nombre":"Geographical 2005", "Fecha":1136070000000}
+,
+{"Id":44, "Nombre":"Geographical 2006", "Fecha":1167606000000}
+,
+{"Id":45, "Nombre":"Geographical 2000", "Fecha":978303600000}
+,
+{"Id":49, "Nombre":"Base 2016", "Fecha":1483225200000}
+,
+{"Id":50, "Nombre":"Base 2015", "Fecha":1451602800000}
+,
+{"Id":52, "Nombre":"ECOICOP Censo 2011", "Fecha":1496268000000}
+,
+{"Id":53, "Nombre":"Base 1994", "Fecha":788914800000}
+,
+{"Id":54, "Nombre":"Base 2014", "Fecha":1420066800000}
+,
+{"Id":55, "Nombre":"Base 2005", "Fecha":1136070000000}
+,
+{"Id":56, "Nombre":"Base 1990", "Fecha":662684400000}
+,
+{"Id":57, "Nombre":"Base 2006", "Fecha":1167606000000}
+,
+{"Id":58, "Nombre":"Base 2007", "Fecha":1199142000000}
+,
+{"Id":59, "Nombre":"Base 2017", "Fecha":1514761200000}
+,
+{"Id":61, "Nombre":"Método de muestreo 1995", "Fecha":820450800000}
+,
+{"Id":62, "Nombre":"Método de muestreo 2003", "Fecha":1072911600000}
+,
+{"Id":63, "Nombre":"Método de muestreo 2004", "Fecha":1104534000000}
+,
+{"Id":64, "Nombre":"Método de muestreo 2013", "Fecha":1388530800000}
+,
+{"Id":65, "Nombre":"Base 2012 (ICLA)", "Fecha":1356994800000}
+,
+{"Id":66, "Nombre":"Primera clasificación / nula", "Fecha":-2208987916000}
+,
+{"Id":67, "Nombre":"Geographical 2017", "Fecha":1514761200000}
+,
+{"Id":70, "Nombre":"EEE2016", "Fecha":1514761200000}
+,
+{"Id":71, "Nombre":"SEC 2010. Base 2010", "Fecha":1262300400000}
+,
+{"Id":74, "Nombre":"IPCA Base 2015. Grupos especiales 5 dígitos", "Fecha":1485903600000}
+,
+{"Id":75, "Nombre":"Cuentas Nacionales. Revisión Estadística 2019 (CNTR, CTNFSI,CNE))", "Fecha":1568584800000}
+,
+{"Id":76, "Nombre":"Geographical 2018", "Fecha":1546297200000}
+,
+{"Id":77, "Nombre":"Base 2016  (ICLA. ETCL)", "Fecha":1559340000000}
+,
+{"Id":78, "Nombre":"EMLG. Estrato municipal de nomenclator", "Fecha":1546297200000}
+,
+{"Id":79, "Nombre":"EMLG. Estrato municipal de diseño", "Fecha":1283292000000}
+,
+{"Id":80, "Nombre":"DIRCE. Antigua definición de empresa", "Fecha":915145200000}
+,
+{"Id":81, "Nombre":"DIRCE. Nueva definición de empresa desde 2019", "Fecha":1546297200000}
+,
+{"Id":82, "Nombre":"Geographical 2019", "Fecha":1577833200000}
+,
+{"Id":84, "Nombre":"EEE2018", "Fecha":1546297200000}
+,
+{"Id":86, "Nombre":"Base 2016 ( IPT )", "Fecha":1472680800000}
+,
+{"Id":87, "Nombre":"Geographical 2020", "Fecha":1609455600000}
+,
+{"Id":88, "Nombre":"Base 2021 (EPA)", "Fecha":1609455600000}
+,
+{"Id":89, "Nombre":"Geographical 2021", "Fecha":1640991600000}
+,
+{"Id":90, "Nombre":"Base 2021 (IPC)", "Fecha":1643583600000}
+,
+{"Id":94, "Nombre":"Geographical 2022", "Fecha":1672527600000}
+,
+{"Id":95, "Nombre":"EIP. Antigua Encuesta Industrial Anual de Productos\r\n", "Fecha":978303600000}
+,
+{"Id":96, "Nombre":"EIP. Nueva Encuesta Industrial Anual de Productos", "Fecha":1609455600000}
+,
+{"Id":97, "Nombre":"Base 2020 (ICLA, ETCL)", "Fecha":1685570400000}
+,
+{"Id":98, "Nombre":"Base 2021 (IPS,ECSE)", "Fecha":1717192800000}
+,
+{"Id":99, "Nombre":"BASE 2021 (ICM,IPI,IASS,ICN,ICNE,IPCO)", "Fecha":1709247600000}
+,
+{"Id":100, "Nombre":"Geographical 2023", "Fecha":1704063600000}
+,
+{"Id":101, "Nombre":"BASE 2021 (IPRI, IPRIX-PRIM)", "Fecha":1706742000000}
+,
+{"Id":102, "Nombre":"IDB Series 2021", "Fecha":1609455600000}
+,
+{"Id":103, "Nombre":"IDB Series 2008", "Fecha":1199142000000}
+,
+{"Id":104, "Nombre":"Cuentas Nacionales. Base 2020. Revisión Estadística 2024.", "Fecha":1719525600000}
+,
+{"Id":108, "Nombre":"Proyecciones 2022", "Fecha":1640991600000}
+,
+{"Id":109, "Nombre":"Proyecciones 2024", "Fecha":1704063600000}
+,
+{"Id":110, "Nombre":"Proyecciones 2020", "Fecha":1577833200000}
+,
+{"Id":111, "Nombre":"CNAE 2025", "Fecha":1777327200000}
+,
+{"Id":112, "Nombre":"Geographical 2024", "Fecha":1735686000000}
+,
+{"Id":113, "Nombre":"MYH estrategia Europa 2020 Indicador AROPE", "Fecha":1199142000000}
+,
+{"Id":114, "Nombre":"MYH estrategia Europa 2030 Indicador AROPE", "Fecha":1735686000000}
+,
+{"Id":115, "Nombre":"COICOP 1999", "Fecha":915145200000}
+,
+{"Id":116, "Nombre":"COICOP 2018", "Fecha":1748728800000}
+,
+{"Id":117, "Nombre":"Base 2016 (EPF)", "Fecha":1451602800000}
+,
+{"Id":118, "Nombre":"Urban Audit: Edición 2025 (PRUEBA)", "Fecha":1735686000000}
+,
+{"Id":119, "Nombre":"Base 2022", "Fecha":1767135600000}
+,
+{"Id":120, "Nombre":"Base 2025 (IPC, IPCA)", "Fecha":1769727600000}
+,
+{"Id":121, "Nombre":"Geográfico 2025", "Fecha":1767222000000}
+,
+{"Id":122, "Nombre":"Base 2021 (IPCO)", "Fecha":1769814000000}
+,
+{"Id":123, "Nombre":"BASE 2021 CNAE 2025 (EPA/EFPA)", "Fecha":1777327200000}
+,
+{"Id":124, "Nombre":"Base 2025 (IPV)", "Fecha":1780264800000}
+,
+{"Id":125, "Nombre":"PRODCOM 2025", "Fecha":1780264800000}
+,
+{"Id":126, "Nombre":"EEECN CNAE09", "Fecha":1780437600000}
+,
+{"Id":127, "Nombre":"Contabilidad Regional. Base 2021", "Fecha":1609455600000}
+,
+{"Id":128, "Nombre":"DIRCE. CNAE 2025", "Fecha":1798671600000}
+]
+

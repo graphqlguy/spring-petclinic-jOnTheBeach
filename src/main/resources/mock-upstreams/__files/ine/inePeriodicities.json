@@ -1,0 +1,47 @@
+[{"Id":0, "Nombre":"Minutely", "Codigo":"N"}
+,
+{"Id":1, "Nombre":"Monthly", "Codigo":"M"}
+,
+{"Id":2, "Nombre":"Bimonthly", "Codigo":"BM"}
+,
+{"Id":3, "Nombre":"Quarterly", "Codigo":"Q"}
+,
+{"Id":4, "Nombre":"Four-monthly", "Codigo":"F"}
+,
+{"Id":6, "Nombre":"Semi-annual", "Codigo":"S"}
+,
+{"Id":7, "Nombre":"Weekly", "Codigo":"W"}
+,
+{"Id":8, "Nombre":"Semanal 1/1", "Codigo":""}
+,
+{"Id":12, "Nombre":"Annual", "Codigo":"A"}
+,
+{"Id":13, "Nombre":"Biannual Odd", "Codigo":"ABI"}
+,
+{"Id":14, "Nombre":"Biannual Even", "Codigo":"ABP"}
+,
+{"Id":30, "Nombre":"Daily", "Codigo":"D"}
+,
+{"Id":31, "Nombre":"Daily-business week", "Codigo":"B"}
+,
+{"Id":100, "Nombre":"WITHOUT PERIODICITY", "Codigo":"SP"}
+,
+{"Id":103, "Nombre":"Every hour", "Codigo":"H"}
+,
+{"Id":104, "Nombre":"Every minute", "Codigo":""}
+,
+{"Id":105, "Nombre":"Four-yearly", "Codigo":"C"}
+,
+{"Id":106, "Nombre":"Triennial", "Codigo":""}
+,
+{"Id":107, "Nombre":"Annual yet to be determined", "Codigo":""}
+,
+{"Id":108, "Nombre":"Five-yearly", "Codigo":""}
+,
+{"Id":111, "Nombre":"Four-yearly Base 3", "Codigo":"C3"}
+,
+{"Id":112, "Nombre":"Triennial Base 2003", "Codigo":"T3"}
+,
+{"Id":113, "Nombre":"Trienal Base 2004", "Codigo":""}
+]
+

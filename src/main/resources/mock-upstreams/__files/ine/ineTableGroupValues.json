@@ -1,0 +1,105 @@
+[{"Id":2910, "FK_Variable":19, "Nombre":"Alameda", "Codigo":"29001", "FK_JerarquiaPadres":[30,392118]}
+,{"Id":2911, "FK_Variable":19, "Nombre":"Alcaucín", "Codigo":"29002", "FK_JerarquiaPadres":[30,392119]}
+,{"Id":2912, "FK_Variable":19, "Nombre":"Alfarnate", "Codigo":"29003", "FK_JerarquiaPadres":[30,392118]}
+,{"Id":2753, "FK_Variable":19, "Nombre":"Alfarnatejo", "Codigo":"29004", "FK_JerarquiaPadres":[30,392118]}
+,{"Id":2913, "FK_Variable":19, "Nombre":"Algarrobo", "Codigo":"29005", "FK_JerarquiaPadres":[30,392119]}
+,{"Id":2754, "FK_Variable":19, "Nombre":"Algatocín", "Codigo":"29006", "FK_JerarquiaPadres":[30,392120]}
+,{"Id":2755, "FK_Variable":19, "Nombre":"Alhaurín de la Torre", "Codigo":"29007", "FK_JerarquiaPadres":[30,392121]}
+,{"Id":2914, "FK_Variable":19, "Nombre":"Alhaurín el Grande", "Codigo":"29008", "FK_JerarquiaPadres":[30,392121]}
+,{"Id":2915, "FK_Variable":19, "Nombre":"Almáchar", "Codigo":"29009", "FK_JerarquiaPadres":[30,392119]}
+,{"Id":2916, "FK_Variable":19, "Nombre":"Almargen", "Codigo":"29010", "FK_JerarquiaPadres":[30,392118]}
+,{"Id":2756, "FK_Variable":19, "Nombre":"Almogía", "Codigo":"29011", "FK_JerarquiaPadres":[30,392121]}
+,{"Id":2917, "FK_Variable":19, "Nombre":"Álora", "Codigo":"29012", "FK_JerarquiaPadres":[30,392121]}
+,{"Id":2757, "FK_Variable":19, "Nombre":"Alozaina", "Codigo":"29013", "FK_JerarquiaPadres":[30,392121]}
+,{"Id":2918, "FK_Variable":19, "Nombre":"Alpandeire", "Codigo":"29014", "FK_JerarquiaPadres":[30,392120]}
+,{"Id":2758, "FK_Variable":19, "Nombre":"Antequera", "Codigo":"29015", "FK_JerarquiaPadres":[30,392118]}
+,{"Id":2919, "FK_Variable":19, "Nombre":"Árchez", "Codigo":"29016", "FK_JerarquiaPadres":[30,392119]}
+,{"Id":2920, "FK_Variable":19, "Nombre":"Archidona", "Codigo":"29017", "FK_JerarquiaPadres":[30,392118]}
+,{"Id":2759, "FK_Variable":19, "Nombre":"Ardales", "Codigo":"29018", "FK_JerarquiaPadres":[30,392118]}
+,{"Id":2921, "FK_Variable":19, "Nombre":"Arenas", "Codigo":"29019", "FK_JerarquiaPadres":[30,392119]}
+,{"Id":2760, "FK_Variable":19, "Nombre":"Arriate", "Codigo":"29020", "FK_JerarquiaPadres":[30,392120]}
+,{"Id":2922, "FK_Variable":19, "Nombre":"Atajate", "Codigo":"29021", "FK_JerarquiaPadres":[30,392120]}
+,{"Id":2761, "FK_Variable":19, "Nombre":"Benadalid", "Codigo":"29022", "FK_JerarquiaPadres":[30,392120]}
+,{"Id":2923, "FK_Variable":19, "Nombre":"Benahavís", "Codigo":"29023", "FK_JerarquiaPadres":[30,392121]}
+,{"Id":2762, "FK_Variable":19, "Nombre":"Benalauría", "Codigo":"29024", "FK_JerarquiaPadres":[30,392120]}
+,{"Id":2924, "FK_Variable":19, "Nombre":"Benalmádena", "Codigo":"29025", "FK_JerarquiaPadres":[30,392121]}
+,{"Id":2763, "FK_Variable":19, "Nombre":"Benamargosa", "Codigo":"29026", "FK_JerarquiaPadres":[30,392119]}
+,{"Id":2925, "FK_Variable":19, "Nombre":"Benamocarra", "Codigo":"29027", "FK_JerarquiaPadres":[30,392119]}
+,{"Id":2926, "FK_Variable":19, "Nombre":"Benaoján", "Codigo":"29028", "FK_JerarquiaPadres":[30,392120]}
+,{"Id":2764, "FK_Variable":19, "Nombre":"Benarrabá", "Codigo":"29029", "FK_JerarquiaPadres":[30,392120]}
+,{"Id":2927, "FK_Variable":19, "Nombre":"Borge, El", "Codigo":"29030", "FK_JerarquiaPadres":[30,392119]}
+,{"Id":2765, "FK_Variable":19, "Nombre":"Burgo, El", "Codigo":"29031", "FK_JerarquiaPadres":[30,392120]}
+,{"Id":2928, "FK_Variable":19, "Nombre":"Campillos", "Codigo":"29032", "FK_JerarquiaPadres":[30,392118]}
+,{"Id":2766, "FK_Variable":19, "Nombre":"Canillas de Aceituno", "Codigo":"29033", "FK_JerarquiaPadres":[30,392119]}
+,{"Id":2929, "FK_Variable":19, "Nombre":"Canillas de Albaida", "Codigo":"29034", "FK_JerarquiaPadres":[30,392119]}
+,{"Id":2767, "FK_Variable":19, "Nombre":"Cañete la Real", "Codigo":"29035", "FK_JerarquiaPadres":[30,392118]}
+,{"Id":2930, "FK_Variable":19, "Nombre":"Carratraca", "Codigo":"29036", "FK_JerarquiaPadres":[30,392121]}
+,{"Id":2931, "FK_Variable":19, "Nombre":"Cartajima", "Codigo":"29037", "FK_JerarquiaPadres":[30,392120]}
+,{"Id":2768, "FK_Variable":19, "Nombre":"Cártama", "Codigo":"29038", "FK_JerarquiaPadres":[30,392121]}
+,{"Id":2932, "FK_Variable":19, "Nombre":"Casabermeja", "Codigo":"29039", "FK_JerarquiaPadres":[30,392118]}
+,{"Id":2769, "FK_Variable":19, "Nombre":"Casarabonela", "Codigo":"29040", "FK_JerarquiaPadres":[30,392121]}
+,{"Id":2933, "FK_Variable":19, "Nombre":"Casares", "Codigo":"29041", "FK_JerarquiaPadres":[30,392121]}
+,{"Id":2934, "FK_Variable":19, "Nombre":"Coín", "Codigo":"29042", "FK_JerarquiaPadres":[30,392121]}
+,{"Id":2770, "FK_Variable":19, "Nombre":"Colmenar", "Codigo":"29043", "FK_JerarquiaPadres":[30,392118]}
+,{"Id":2935, "FK_Variable":19, "Nombre":"Comares", "Codigo":"29044", "FK_JerarquiaPadres":[30,392119]}
+,{"Id":2771, "FK_Variable":19, "Nombre":"Cómpeta", "Codigo":"29045", "FK_JerarquiaPadres":[30,392119]}
+,{"Id":2772, "FK_Variable":19, "Nombre":"Cortes de la Frontera", "Codigo":"29046", "FK_JerarquiaPadres":[30,392120]}
+,{"Id":2936, "FK_Variable":19, "Nombre":"Cuevas Bajas", "Codigo":"29047", "FK_JerarquiaPadres":[30,392118]}
+,{"Id":2773, "FK_Variable":19, "Nombre":"Cuevas de San Marcos", "Codigo":"29049", "FK_JerarquiaPadres":[30,392118]}
+,{"Id":2937, "FK_Variable":19, "Nombre":"Cuevas del Becerro", "Codigo":"29048", "FK_JerarquiaPadres":[30,392118]}
+,{"Id":2938, "FK_Variable":19, "Nombre":"Cútar", "Codigo":"29050", "FK_JerarquiaPadres":[30,392119]}
+,{"Id":2939, "FK_Variable":19, "Nombre":"Estepona", "Codigo":"29051", "FK_JerarquiaPadres":[30,392121]}
+,{"Id":2940, "FK_Variable":19, "Nombre":"Faraján", "Codigo":"29052", "FK_JerarquiaPadres":[30,392120]}
+,{"Id":2774, "FK_Variable":19, "Nombre":"Frigiliana", "Codigo":"29053", "FK_JerarquiaPadres":[30,392119]}
+,{"Id":2941, "FK_Variable":19, "Nombre":"Fuengirola", "Codigo":"29054", "FK_JerarquiaPadres":[30,392121]}
+,{"Id":2775, "FK_Variable":19, "Nombre":"Fuente de Piedra", "Codigo":"29055", "FK_JerarquiaPadres":[30,392118]}
+,{"Id":2942, "FK_Variable":19, "Nombre":"Gaucín", "Codigo":"29056", "FK_JerarquiaPadres":[30,392120]}
+,{"Id":2943, "FK_Variable":19, "Nombre":"Genalguacil", "Codigo":"29057", "FK_JerarquiaPadres":[30,392120]}
+,{"Id":2944, "FK_Variable":19, "Nombre":"Guaro", "Codigo":"29058", "FK_JerarquiaPadres":[30,392121]}
+,{"Id":2776, "FK_Variable":19, "Nombre":"Humilladero", "Codigo":"29059", "FK_JerarquiaPadres":[30,392118]}
+,{"Id":2945, "FK_Variable":19, "Nombre":"Igualeja", "Codigo":"29060", "FK_JerarquiaPadres":[30,392120]}
+,{"Id":2777, "FK_Variable":19, "Nombre":"Istán", "Codigo":"29061", "FK_JerarquiaPadres":[30,392121]}
+,{"Id":2946, "FK_Variable":19, "Nombre":"Iznate", "Codigo":"29062", "FK_JerarquiaPadres":[30,392119]}
+,{"Id":2778, "FK_Variable":19, "Nombre":"Jimera de Líbar", "Codigo":"29063", "FK_JerarquiaPadres":[30,392120]}
+,{"Id":2947, "FK_Variable":19, "Nombre":"Jubrique", "Codigo":"29064", "FK_JerarquiaPadres":[30,392120]}
+,{"Id":2948, "FK_Variable":19, "Nombre":"Júzcar", "Codigo":"29065", "FK_JerarquiaPadres":[30,392120]}
+,{"Id":2779, "FK_Variable":19, "Nombre":"Macharaviaya", "Codigo":"29066", "FK_JerarquiaPadres":[30,392119]}
+,{"Id":485, "FK_Variable":19, "Nombre":"Málaga", "Codigo":"29067", "FK_JerarquiaPadres":[30,292420,392121]}
+,{"Id":30, "FK_Variable":115, "Nombre":"Málaga", "Codigo":"29", "FK_JerarquiaPadres":[8997]}
+,{"Id":2821, "FK_Variable":19, "Nombre":"Manilva", "Codigo":"29068", "FK_JerarquiaPadres":[30,392121]}
+,{"Id":2822, "FK_Variable":19, "Nombre":"Marbella", "Codigo":"29069", "FK_JerarquiaPadres":[30,292630,392121]}
+,{"Id":2823, "FK_Variable":19, "Nombre":"Mijas", "Codigo":"29070", "FK_JerarquiaPadres":[30,392121]}
+,{"Id":2824, "FK_Variable":19, "Nombre":"Moclinejo", "Codigo":"29071", "FK_JerarquiaPadres":[30,392119]}
+,{"Id":2825, "FK_Variable":19, "Nombre":"Mollina", "Codigo":"29072", "FK_JerarquiaPadres":[30,392118]}
+,{"Id":2826, "FK_Variable":19, "Nombre":"Monda", "Codigo":"29073", "FK_JerarquiaPadres":[30,392121]}
+,{"Id":298955, "FK_Variable":19, "Nombre":"Montecorto", "Codigo":"29903", "FK_JerarquiaPadres":[30,392120]}
+,{"Id":2827, "FK_Variable":19, "Nombre":"Montejaque", "Codigo":"29074", "FK_JerarquiaPadres":[30,392120]}
+,{"Id":2828, "FK_Variable":19, "Nombre":"Nerja", "Codigo":"29075", "FK_JerarquiaPadres":[30,392119]}
+,{"Id":2829, "FK_Variable":19, "Nombre":"Ojén", "Codigo":"29076", "FK_JerarquiaPadres":[30,392121]}
+,{"Id":2830, "FK_Variable":19, "Nombre":"Parauta", "Codigo":"29077", "FK_JerarquiaPadres":[30,392120]}
+,{"Id":2831, "FK_Variable":19, "Nombre":"Periana", "Codigo":"29079", "FK_JerarquiaPadres":[30,392119]}
+,{"Id":2832, "FK_Variable":19, "Nombre":"Pizarra", "Codigo":"29080", "FK_JerarquiaPadres":[30,392121]}
+,{"Id":2833, "FK_Variable":19, "Nombre":"Pujerra", "Codigo":"29081", "FK_JerarquiaPadres":[30,392120]}
+,{"Id":2834, "FK_Variable":19, "Nombre":"Rincón de la Victoria", "Codigo":"29082", "FK_JerarquiaPadres":[30,392119]}
+,{"Id":2835, "FK_Variable":19, "Nombre":"Riogordo", "Codigo":"29083", "FK_JerarquiaPadres":[30,392118]}
+,{"Id":2836, "FK_Variable":19, "Nombre":"Ronda", "Codigo":"29084", "FK_JerarquiaPadres":[30,392120]}
+,{"Id":2732, "FK_Variable":19, "Nombre":"Salares", "Codigo":"29085", "FK_JerarquiaPadres":[30,392119]}
+,{"Id":2733, "FK_Variable":19, "Nombre":"Sayalonga", "Codigo":"29086", "FK_JerarquiaPadres":[30,392119]}
+,{"Id":2734, "FK_Variable":19, "Nombre":"Sedella", "Codigo":"29087", "FK_JerarquiaPadres":[30,392119]}
+,{"Id":298956, "FK_Variable":19, "Nombre":"Serrato", "Codigo":"29904", "FK_JerarquiaPadres":[30,392120]}
+,{"Id":2735, "FK_Variable":19, "Nombre":"Sierra de Yeguas", "Codigo":"29088", "FK_JerarquiaPadres":[30,392118]}
+,{"Id":2736, "FK_Variable":19, "Nombre":"Teba", "Codigo":"29089", "FK_JerarquiaPadres":[30,392118]}
+,{"Id":2628, "FK_Variable":19, "Nombre":"Tolox", "Codigo":"29090", "FK_JerarquiaPadres":[30,392121]}
+,{"Id":2639, "FK_Variable":19, "Nombre":"Torremolinos", "Codigo":"29901", "FK_JerarquiaPadres":[30,392121]}
+,{"Id":2629, "FK_Variable":19, "Nombre":"Torrox", "Codigo":"29091", "FK_JerarquiaPadres":[30,392119]}
+,{"Id":2630, "FK_Variable":19, "Nombre":"Totalán", "Codigo":"29092", "FK_JerarquiaPadres":[30,392119]}
+,{"Id":2631, "FK_Variable":19, "Nombre":"Valle de Abdalajís", "Codigo":"29093", "FK_JerarquiaPadres":[30,392121]}
+,{"Id":2632, "FK_Variable":19, "Nombre":"Vélez-Málaga", "Codigo":"29094", "FK_JerarquiaPadres":[30,392119]}
+,{"Id":2633, "FK_Variable":19, "Nombre":"Villanueva de Algaidas", "Codigo":"29095", "FK_JerarquiaPadres":[30,392118]}
+,{"Id":23218, "FK_Variable":19, "Nombre":"Villanueva de la Concepción", "Codigo":"29902", "FK_JerarquiaPadres":[30,392118]}
+,{"Id":2636, "FK_Variable":19, "Nombre":"Villanueva de Tapia", "Codigo":"29098", "FK_JerarquiaPadres":[30,392118]}
+,{"Id":2634, "FK_Variable":19, "Nombre":"Villanueva del Rosario", "Codigo":"29096", "FK_JerarquiaPadres":[30,392118]}
+,{"Id":2635, "FK_Variable":19, "Nombre":"Villanueva del Trabuco", "Codigo":"29097", "FK_JerarquiaPadres":[30,392118]}
+,{"Id":2637, "FK_Variable":19, "Nombre":"Viñuela", "Codigo":"29099", "FK_JerarquiaPadres":[30,392119]}
+,{"Id":2638, "FK_Variable":19, "Nombre":"Yunquera", "Codigo":"29100", "FK_JerarquiaPadres":[30,392121]}
+]

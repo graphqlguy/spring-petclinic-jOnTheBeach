@@ -1,0 +1,97 @@
+{
+    "type":"Feature",
+    "properties":{
+        "id_areactr":110020000035,
+        "type":"restArea",
+        "nilreason_nombre":null,
+        "nil_nombre":null,
+        "nombre":"CAMPSA",
+        "id_ptoctra":110020000035,
+        "fecha_alta":"2017-03-17T00:00:00",
+        "nilreason_varios":"other:unpopulated",
+        "nil_varios":true
+    },
+    "id":"VIEST_A110020000035",
+    "geometry":{
+        "type":"Polygon",
+        "coordinates":[
+            [
+                [
+                    -5.16386136999995,
+                    36.89485625000003,
+                    652.1999999999971
+                ],
+                [
+                    -5.163761739999927,
+                    36.89482472000003,
+                    652.1999999999971
+                ],
+                [
+                    -5.163862499999936,
+                    36.89461830000005,
+                    652.1999999999971
+                ],
+                [
+                    -5.163962139999967,
+                    36.89464983000005,
+                    652.1999999999971
+                ],
+                [
+                    -5.16386136999995,
+                    36.89485625000003,
+                    652.1999999999971
+                ]
+            ]
+        ]
+    },
+    "prev":"VIEST_A110010001004",
+    "next":"VIEST_A110020001036",
+    "links":[
+        {
+            "type":"application/json",
+            "rel":"root",
+            "title":"The landing page of this server as JSON",
+            "href":"https://api-features.idee.es?f=json"
+        },
+        {
+            "type":"text/html",
+            "rel":"root",
+            "title":"The landing page of this server as HTML",
+            "href":"https://api-features.idee.es?f=html"
+        },
+        {
+            "rel":"self",
+            "type":"application/geo+json",
+            "title":"This document as JSON",
+            "href":"https://api-features.idee.es/collections/roadservicearea/items/VIEST_A110020000035?f=json"
+        },
+        {
+            "rel":"alternate",
+            "type":"application/ld+json",
+            "title":"This document as RDF (JSON-LD)",
+            "href":"https://api-features.idee.es/collections/roadservicearea/items/VIEST_A110020000035?f=jsonld"
+        },
+        {
+            "rel":"alternate",
+            "type":"text/html",
+            "title":"This document as HTML",
+            "href":"https://api-features.idee.es/collections/roadservicearea/items/VIEST_A110020000035?f=html"
+        },
+        {
+            "rel":"collection",
+            "type":"application/json",
+            "title":"TN-RO \u00c1rea de servicio de carretera",
+            "href":"https://api-features.idee.es/collections/roadservicearea"
+        },
+        {
+            "rel":"prev",
+            "type":"application/json",
+            "href":"https://api-features.idee.es/collections/roadservicearea/items/VIEST_A110010001004?f=json"
+        },
+        {
+            "rel":"next",
+            "type":"application/json",
+            "href":"https://api-features.idee.es/collections/roadservicearea/items/VIEST_A110020001036?f=json"
+        }
+    ]
+}

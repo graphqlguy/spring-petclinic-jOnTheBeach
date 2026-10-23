@@ -1,0 +1,1427 @@
+{
+ "operations": [
+  {
+   "field": "ctanConsortia",
+   "path": "/consorcios",
+   "arguments": []
+  },
+  {
+   "field": "ctanMunicipalities",
+   "path": "/{idConsorcio}/municipios/",
+   "arguments": [
+    {
+     "name": "consortiumId",
+     "parameter": "idConsorcio",
+     "in": "path",
+     "list": false
+    }
+   ]
+  },
+  {
+   "field": "ctanMunicipality",
+   "path": "/{idConsorcio}/municipios/{idMunicipio}",
+   "arguments": [
+    {
+     "name": "consortiumId",
+     "parameter": "idConsorcio",
+     "in": "path",
+     "list": false
+    },
+    {
+     "name": "municipalityId",
+     "parameter": "idMunicipio",
+     "in": "path",
+     "list": false
+    }
+   ]
+  },
+  {
+   "field": "ctanTownsInMunicipality",
+   "path": "/{idConsorcio}/municipios/{idMunicipio}/nucleos",
+   "arguments": [
+    {
+     "name": "consortiumId",
+     "parameter": "idConsorcio",
+     "in": "path",
+     "list": false
+    },
+    {
+     "name": "municipalityId",
+     "parameter": "idMunicipio",
+     "in": "path",
+     "list": false
+    }
+   ]
+  },
+  {
+   "field": "ctanTowns",
+   "path": "/{idConsorcio}/nucleos",
+   "arguments": [
+    {
+     "name": "consortiumId",
+     "parameter": "idConsorcio",
+     "in": "path",
+     "list": false
+    }
+   ]
+  },
+  {
+   "field": "ctanTown",
+   "path": "/{idConsorcio}/nucleos/{idNucleo}",
+   "arguments": [
+    {
+     "name": "consortiumId",
+     "parameter": "idConsorcio",
+     "in": "path",
+     "list": false
+    },
+    {
+     "name": "townId",
+     "parameter": "idNucleo",
+     "in": "path",
+     "list": false
+    }
+   ]
+  },
+  {
+   "field": "ctanLinesInTown",
+   "path": "/{idConsorcio}/nucleos/{idNucleo}/lineas",
+   "arguments": [
+    {
+     "name": "consortiumId",
+     "parameter": "idConsorcio",
+     "in": "path",
+     "list": false
+    },
+    {
+     "name": "townId",
+     "parameter": "idNucleo",
+     "in": "path",
+     "list": false
+    }
+   ]
+  },
+  {
+   "field": "ctanStopsInTown",
+   "path": "/{idConsorcio}/nucleos/{idNucleo}/paradas",
+   "arguments": [
+    {
+     "name": "consortiumId",
+     "parameter": "idConsorcio",
+     "in": "path",
+     "list": false
+    },
+    {
+     "name": "townId",
+     "parameter": "idNucleo",
+     "in": "path",
+     "list": false
+    }
+   ]
+  },
+  {
+   "field": "ctanLinesInMunicipalityTown",
+   "path": "/{idConsorcio}/municipios/{idMunicipio}/nucleos/{idNucleo}/lineas",
+   "arguments": [
+    {
+     "name": "consortiumId",
+     "parameter": "idConsorcio",
+     "in": "path",
+     "list": false
+    },
+    {
+     "name": "municipalityId",
+     "parameter": "idMunicipio",
+     "in": "path",
+     "list": false
+    },
+    {
+     "name": "townId",
+     "parameter": "idNucleo",
+     "in": "path",
+     "list": false
+    }
+   ]
+  },
+  {
+   "field": "ctanStopsInMunicipalityTown",
+   "path": "/{idConsorcio}/municipios/{idMunicipio}/nucleos/{idNucleo}/paradas",
+   "arguments": [
+    {
+     "name": "consortiumId",
+     "parameter": "idConsorcio",
+     "in": "path",
+     "list": false
+    },
+    {
+     "name": "municipalityId",
+     "parameter": "idMunicipio",
+     "in": "path",
+     "list": false
+    },
+    {
+     "name": "townId",
+     "parameter": "idNucleo",
+     "in": "path",
+     "list": false
+    }
+   ]
+  },
+  {
+   "field": "ctanLines",
+   "path": "/{idConsorcio}/lineas",
+   "arguments": [
+    {
+     "name": "consortiumId",
+     "parameter": "idConsorcio",
+     "in": "path",
+     "list": false
+    },
+    {
+     "name": "latitude",
+     "parameter": "latitud",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "longitude",
+     "parameter": "longitud",
+     "in": "query",
+     "list": false
+    }
+   ]
+  },
+  {
+   "field": "ctanLineStops",
+   "path": "/{idConsorcio}/lineas/{idLinea}/paradas",
+   "arguments": [
+    {
+     "name": "consortiumId",
+     "parameter": "idConsorcio",
+     "in": "path",
+     "list": false
+    },
+    {
+     "name": "lineId",
+     "parameter": "idLinea",
+     "in": "path",
+     "list": false
+    }
+   ]
+  },
+  {
+   "field": "ctanLineTimetable",
+   "path": "/{idConsorcio}/horarios_lineas",
+   "arguments": [
+    {
+     "name": "consortiumId",
+     "parameter": "idConsorcio",
+     "in": "path",
+     "list": false
+    },
+    {
+     "name": "lineId",
+     "parameter": "idLinea",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "frequencyId",
+     "parameter": "idFrecuencia",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "day",
+     "parameter": "dia",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "month",
+     "parameter": "mes",
+     "in": "query",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "lang": "EN"
+   }
+  },
+  {
+   "field": "ctanTimetableBetweenTowns",
+   "path": "/{idConsorcio}/horarios_origen_destino",
+   "arguments": [
+    {
+     "name": "consortiumId",
+     "parameter": "idConsorcio",
+     "in": "path",
+     "list": false
+    },
+    {
+     "name": "fromTownId",
+     "parameter": "idNucleoOrigen",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "toTownId",
+     "parameter": "idNucleoDestino",
+     "in": "query",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "lang": "EN"
+   }
+  },
+  {
+   "field": "ctanStopsNear",
+   "path": "/{idConsorcio}/paradas/",
+   "arguments": [
+    {
+     "name": "consortiumId",
+     "parameter": "idConsorcio",
+     "in": "path",
+     "list": false
+    },
+    {
+     "name": "latitude",
+     "parameter": "latitud",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "longitude",
+     "parameter": "longitud",
+     "in": "query",
+     "list": false
+    }
+   ]
+  },
+  {
+   "field": "ctanStop",
+   "path": "/{idConsorcio}/paradas/{idParada}",
+   "arguments": [
+    {
+     "name": "consortiumId",
+     "parameter": "idConsorcio",
+     "in": "path",
+     "list": false
+    },
+    {
+     "name": "stopId",
+     "parameter": "idParada",
+     "in": "path",
+     "list": false
+    }
+   ]
+  },
+  {
+   "field": "ctanDepartures",
+   "path": "/{idConsorcio}/paradas/{idParada}/servicios",
+   "arguments": [
+    {
+     "name": "consortiumId",
+     "parameter": "idConsorcio",
+     "in": "path",
+     "list": false
+    },
+    {
+     "name": "stopId",
+     "parameter": "idParada",
+     "in": "path",
+     "list": false
+    },
+    {
+     "name": "from",
+     "parameter": "horaIni",
+     "in": "query",
+     "list": false
+    }
+   ]
+  },
+  {
+   "field": "ctanZones",
+   "path": "/{idConsorcio}/zonas",
+   "arguments": [
+    {
+     "name": "consortiumId",
+     "parameter": "idConsorcio",
+     "in": "path",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "lang": "EN"
+   }
+  },
+  {
+   "field": "ctanStopsInZone",
+   "path": "/{idConsorcio}/zonas/{idZona}/paradas",
+   "arguments": [
+    {
+     "name": "consortiumId",
+     "parameter": "idConsorcio",
+     "in": "path",
+     "list": false
+    },
+    {
+     "name": "zoneId",
+     "parameter": "idZona",
+     "in": "path",
+     "list": false
+    }
+   ]
+  },
+  {
+   "field": "ctanZoneJumps",
+   "path": "/{idConsorcio}/saltos",
+   "arguments": [
+    {
+     "name": "consortiumId",
+     "parameter": "idConsorcio",
+     "in": "path",
+     "list": false
+    }
+   ]
+  },
+  {
+   "field": "ctanJumpsBetweenTowns",
+   "path": "/{idConsorcio}/calculo_saltos/",
+   "arguments": [
+    {
+     "name": "consortiumId",
+     "parameter": "idConsorcio",
+     "in": "path",
+     "list": false
+    },
+    {
+     "name": "fromTownId",
+     "parameter": "origen",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "toTownId",
+     "parameter": "destino",
+     "in": "query",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "lang": "EN"
+   }
+  },
+  {
+   "field": "ctanInterurbanFares",
+   "path": "/{idConsorcio}/tarifas_interurbanas",
+   "arguments": [
+    {
+     "name": "consortiumId",
+     "parameter": "idConsorcio",
+     "in": "path",
+     "list": false
+    }
+   ]
+  },
+  {
+   "field": "ctanUrbanFares",
+   "path": "/{idConsorcio}/tarifas_urbanas",
+   "arguments": [
+    {
+     "name": "consortiumId",
+     "parameter": "idConsorcio",
+     "in": "path",
+     "list": false
+    }
+   ]
+  },
+  {
+   "field": "ctanTransportModes",
+   "path": "/{idConsorcio}/modostransporte",
+   "arguments": [
+    {
+     "name": "consortiumId",
+     "parameter": "idConsorcio",
+     "in": "path",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "lang": "EN"
+   }
+  },
+  {
+   "field": "ctanTransportMode",
+   "path": "/{idConsorcio}/modostransporte/{idModo}",
+   "arguments": [
+    {
+     "name": "consortiumId",
+     "parameter": "idConsorcio",
+     "in": "path",
+     "list": false
+    },
+    {
+     "name": "modeId",
+     "parameter": "idModo",
+     "in": "path",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "lang": "EN"
+   }
+  },
+  {
+   "field": "ctanLinesByMode",
+   "path": "/{idConsorcio}/modostransporte/{idModo}/lineas",
+   "arguments": [
+    {
+     "name": "consortiumId",
+     "parameter": "idConsorcio",
+     "in": "path",
+     "list": false
+    },
+    {
+     "name": "modeId",
+     "parameter": "idModo",
+     "in": "path",
+     "list": false
+    }
+   ]
+  },
+  {
+   "field": "ctanFrequencies",
+   "path": "/{idConsorcio}/frecuencias",
+   "arguments": [
+    {
+     "name": "consortiumId",
+     "parameter": "idConsorcio",
+     "in": "path",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "lang": "EN"
+   }
+  },
+  {
+   "field": "ctanAbbreviations",
+   "path": "/{idConsorcio}/abreviaturas",
+   "arguments": [
+    {
+     "name": "consortiumId",
+     "parameter": "idConsorcio",
+     "in": "path",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "lang": "EN"
+   }
+  },
+  {
+   "field": "ctanPointOfInterestCategories",
+   "path": "/{idConsorcio}/tipos_lugares_interes/",
+   "arguments": [
+    {
+     "name": "consortiumId",
+     "parameter": "idConsorcio",
+     "in": "path",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "lang": "EN"
+   }
+  },
+  {
+   "field": "ctanPointsOfInterest",
+   "path": "/{idConsorcio}/lugares_interes",
+   "arguments": [
+    {
+     "name": "consortiumId",
+     "parameter": "idConsorcio",
+     "in": "path",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "lang": "EN"
+   }
+  },
+  {
+   "field": "ctanPointsOfInterestInMunicipality",
+   "path": "/{idConsorcio}/municipios/{idMunicipio}/lugares_interes",
+   "arguments": [
+    {
+     "name": "consortiumId",
+     "parameter": "idConsorcio",
+     "in": "path",
+     "list": false
+    },
+    {
+     "name": "municipalityId",
+     "parameter": "idMunicipio",
+     "in": "path",
+     "list": false
+    },
+    {
+     "name": "categoryId",
+     "parameter": "idTipo",
+     "in": "query",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "lang": "EN"
+   }
+  },
+  {
+   "field": "ctanSalesPoints",
+   "path": "/{idConsorcio}/puntos_venta",
+   "arguments": [
+    {
+     "name": "consortiumId",
+     "parameter": "idConsorcio",
+     "in": "path",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "lang": "EN"
+   }
+  },
+  {
+   "field": "ctanNewsCategories",
+   "path": "/{idConsorcio}/categorias_noticias",
+   "arguments": [
+    {
+     "name": "consortiumId",
+     "parameter": "idConsorcio",
+     "in": "path",
+     "list": false
+    }
+   ]
+  },
+  {
+   "field": "ctanNews",
+   "path": "/{idConsorcio}/noticias",
+   "arguments": [
+    {
+     "name": "consortiumId",
+     "parameter": "idConsorcio",
+     "in": "path",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "lang": "EN"
+   }
+  },
+  {
+   "field": "ctanNewsItem",
+   "path": "/{idConsorcio}/noticias/{idNoticia}",
+   "arguments": [
+    {
+     "name": "consortiumId",
+     "parameter": "idConsorcio",
+     "in": "path",
+     "list": false
+    },
+    {
+     "name": "newsId",
+     "parameter": "idNoticia",
+     "in": "path",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "lang": "ES"
+   }
+  },
+  {
+   "field": "ctanLineNews",
+   "path": "/{idConsorcio}/lineas/{idLinea}/noticias",
+   "arguments": [
+    {
+     "name": "consortiumId",
+     "parameter": "idConsorcio",
+     "in": "path",
+     "list": false
+    },
+    {
+     "name": "lineId",
+     "parameter": "idLinea",
+     "in": "path",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "lang": "ES"
+   }
+  },
+  {
+   "field": "ctanCorridors",
+   "path": "/{idConsorcio}/corredores/",
+   "arguments": [
+    {
+     "name": "consortiumId",
+     "parameter": "idConsorcio",
+     "in": "path",
+     "list": false
+    }
+   ]
+  },
+  {
+   "field": "ctanCorridor",
+   "path": "/{idConsorcio}/corredores/{idCorredor}",
+   "arguments": [
+    {
+     "name": "consortiumId",
+     "parameter": "idConsorcio",
+     "in": "path",
+     "list": false
+    },
+    {
+     "name": "corridorId",
+     "parameter": "idCorredor",
+     "in": "path",
+     "list": false
+    }
+   ]
+  },
+  {
+   "field": "ctanCorridorBlocks",
+   "path": "/{idConsorcio}/corredores/{idCorredor}/bloques",
+   "arguments": [
+    {
+     "name": "consortiumId",
+     "parameter": "idConsorcio",
+     "in": "path",
+     "list": false
+    },
+    {
+     "name": "corridorId",
+     "parameter": "idCorredor",
+     "in": "path",
+     "list": false
+    }
+   ]
+  },
+  {
+   "field": "ctanCorridorTimetable",
+   "path": "/{idConsorcio}/horarios_corredor",
+   "arguments": [
+    {
+     "name": "consortiumId",
+     "parameter": "idConsorcio",
+     "in": "path",
+     "list": false
+    },
+    {
+     "name": "corridorId",
+     "parameter": "idCorredor",
+     "in": "query",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "lang": "EN"
+   }
+  }
+ ],
+ "fields": {
+  "CtanConsortiumList": {
+   "consortia": {
+    "key": "consorcios"
+   }
+  },
+  "CtanConsortium": {
+   "id": {
+    "key": "idConsorcio"
+   },
+   "name": {
+    "key": "nombre"
+   },
+   "shortName": {
+    "key": "nombreCorto"
+   }
+  },
+  "CtanMunicipalityList": {
+   "municipalities": {
+    "key": "municipios"
+   }
+  },
+  "CtanMunicipality": {
+   "id": {
+    "key": "idMunicipio"
+   },
+   "name": {
+    "key": "datos"
+   }
+  },
+  "CtanTownList": {
+   "towns": {
+    "key": "nucleos"
+   }
+  },
+  "CtanTown": {
+   "id": {
+    "key": "idNucleo"
+   },
+   "name": {
+    "key": "nombre"
+   },
+   "municipalityId": {
+    "key": "idMunicipio"
+   },
+   "zoneId": {
+    "key": "idZona"
+   }
+  },
+  "CtanLineList": {
+   "lines": {
+    "key": "lineas"
+   }
+  },
+  "CtanMunicipalityLineList": {
+   "lines": {
+    "key": "lugaresInteres"
+   }
+  },
+  "CtanLine": {
+   "id": {
+    "key": "idLinea|idlinea"
+   },
+   "code": {
+    "key": "codigo"
+   },
+   "name": {
+    "key": "nombre"
+   },
+   "mode": {
+    "key": "modo"
+   },
+   "modeId": {
+    "key": "idModo|idmodo"
+   },
+   "operators": {
+    "key": "operadores"
+   },
+   "hasNews": {
+    "key": "hayNoticias|hayNoticia",
+    "conversion": "yes-no"
+   },
+   "modeNotes": {
+    "key": "observacionesModoTransporte"
+   },
+   "townId": {
+    "key": "idNucleo"
+   },
+   "municipalityId": {
+    "key": "idMunicipio"
+   }
+  },
+  "CtanStopList": {
+   "stops": {
+    "key": "paradas"
+   }
+  },
+  "CtanStop": {
+   "id": {
+    "key": "idParada"
+   },
+   "name": {
+    "key": "nombre"
+   },
+   "townId": {
+    "key": "idNucleo"
+   },
+   "town": {
+    "key": "nucleo"
+   },
+   "municipalityId": {
+    "key": "idMunicipio"
+   },
+   "municipality": {
+    "key": "municipio"
+   },
+   "zoneId": {
+    "key": "idZona"
+   },
+   "latitude": {
+    "key": "latitud",
+    "conversion": "number"
+   },
+   "longitude": {
+    "key": "longitud",
+    "conversion": "number"
+   },
+   "description": {
+    "key": "descripcion"
+   },
+   "notes": {
+    "key": "observaciones"
+   },
+   "main": {
+    "key": "principal",
+    "conversion": "yes-no"
+   },
+   "inactive": {
+    "key": "inactiva",
+    "conversion": "yes-no"
+   },
+   "connections": {
+    "key": "correspondecias"
+   }
+  },
+  "CtanLineStopList": {
+   "stops": {
+    "key": "paradas"
+   }
+  },
+  "CtanLineStop": {
+   "id": {
+    "key": "idParada"
+   },
+   "name": {
+    "key": "nombre"
+   },
+   "townId": {
+    "key": "idNucleo"
+   },
+   "zoneId": {
+    "key": "idZona"
+   },
+   "latitude": {
+    "key": "latitud",
+    "conversion": "number"
+   },
+   "longitude": {
+    "key": "longitud",
+    "conversion": "number"
+   },
+   "lineId": {
+    "key": "idLinea"
+   },
+   "direction": {
+    "key": "sentido",
+    "conversion": "integer"
+   },
+   "order": {
+    "key": "orden"
+   },
+   "modes": {
+    "key": "modos"
+   }
+  },
+  "CtanLineTimetable": {
+   "plans": {
+    "key": "planificadores"
+   },
+   "frequencies": {
+    "key": "frecuencias"
+   },
+   "cutOffTime": {
+    "key": "horaCorte"
+   },
+   "modeNotes": {
+    "key": "observacionesModoTransporte"
+   }
+  },
+  "CtanTimetablePlan": {
+   "id": {
+    "key": "idPlani"
+   },
+   "from": {
+    "key": "fechaInicio"
+   },
+   "to": {
+    "key": "fechaFin"
+   },
+   "showEndDate": {
+    "key": "muestraFechaFin",
+    "conversion": "yes-no"
+   },
+   "special": {
+    "key": "especial",
+    "conversion": "yes-no"
+   },
+   "outboundTowns": {
+    "key": "nucleosIda"
+   },
+   "outboundBlocks": {
+    "key": "bloquesIda"
+   },
+   "outboundTrips": {
+    "key": "horarioIda"
+   },
+   "returnTowns": {
+    "key": "nucleosVuelta"
+   },
+   "returnBlocks": {
+    "key": "bloquesVuelta"
+   },
+   "returnTrips": {
+    "key": "horarioVuelta"
+   }
+  },
+  "CtanTimetableTown": {
+   "name": {
+    "key": "nombre"
+   },
+   "columns": {
+    "key": "colspan"
+   }
+  },
+  "CtanTimetableBlock": {
+   "name": {
+    "key": "nombre",
+    "conversion": "text"
+   },
+   "type": {
+    "key": "tipo"
+   }
+  },
+  "CtanTimetableRow": {
+   "times": {
+    "key": "horas"
+   },
+   "days": {
+    "key": "frecuencia|dias"
+   },
+   "notes": {
+    "key": "observaciones"
+   },
+   "onDemand": {
+    "key": "demandahoras"
+   },
+   "lineId": {
+    "key": "idlinea"
+   },
+   "lineCode": {
+    "key": "codigo"
+   }
+  },
+  "CtanFrequencyCode": {
+   "id": {
+    "key": "idfrecuencia"
+   },
+   "abbreviation": {
+    "key": "acronimo"
+   },
+   "name": {
+    "key": "nombre"
+   }
+  },
+  "CtanTripTimetable": {
+   "blocks": {
+    "key": "bloques"
+   },
+   "trips": {
+    "key": "horario"
+   },
+   "frequencies": {
+    "key": "frecuencias"
+   },
+   "towns": {
+    "key": "nucleos"
+   },
+   "modeNotes": {
+    "key": "observacionesModoTransporte"
+   }
+  },
+  "CtanModeNote": {
+   "mode": {
+    "key": "medio"
+   },
+   "notes": {
+    "key": "observaciones"
+   }
+  },
+  "CtanCorridorTimetable": {
+   "outboundTowns": {
+    "key": "nucleosIda"
+   },
+   "outboundBlocks": {
+    "key": "bloquesIda"
+   },
+   "outboundTrips": {
+    "key": "horarioIda"
+   },
+   "returnTowns": {
+    "key": "nucleosVuelta"
+   },
+   "returnBlocks": {
+    "key": "bloquesVuelta"
+   },
+   "returnTrips": {
+    "key": "horarioVuelta"
+   },
+   "frequencies": {
+    "key": "frecuencias"
+   },
+   "modeNotes": {
+    "key": "observacionesModoTransporte"
+   }
+  },
+  "CtanDepartureList": {
+   "departures": {
+    "key": "servicios"
+   },
+   "from": {
+    "key": "horaIni"
+   },
+   "to": {
+    "key": "horaFin"
+   }
+  },
+  "CtanDeparture": {
+   "stopId": {
+    "key": "idParada"
+   },
+   "lineId": {
+    "key": "idLinea"
+   },
+   "time": {
+    "key": "servicio"
+   },
+   "lineCode": {
+    "key": "linea"
+   },
+   "lineName": {
+    "key": "nombre"
+   },
+   "direction": {
+    "key": "sentido",
+    "conversion": "integer"
+   },
+   "destination": {
+    "key": "destino"
+   },
+   "stopType": {
+    "key": "tipo",
+    "conversion": "integer"
+   }
+  },
+  "CtanZoneList": {
+   "zones": {
+    "key": "zonas"
+   }
+  },
+  "CtanZone": {
+   "id": {
+    "key": "idZona"
+   },
+   "name": {
+    "key": "nombre"
+   }
+  },
+  "CtanZoneJumpList": {
+   "jumps": {
+    "key": "saltos"
+   }
+  },
+  "CtanZoneJump": {
+   "fromZone": {
+    "key": "origen"
+   },
+   "toZone": {
+    "key": "destino"
+   },
+   "jumps": {
+    "key": "saltos",
+    "conversion": "integer"
+   }
+  },
+  "CtanJumpCalculation": {
+   "result": {
+    "key": "calculo_saltos"
+   }
+  },
+  "CtanJumps": {
+   "jumps": {
+    "key": "saltos",
+    "conversion": "integer"
+   }
+  },
+  "CtanInterurbanFareList": {
+   "fares": {
+    "key": "tarifasInterurbanas"
+   }
+  },
+  "CtanInterurbanFare": {
+   "jumps": {
+    "key": "saltos",
+    "conversion": "integer"
+   },
+   "singleTicket": {
+    "key": "bs",
+    "conversion": "number"
+   },
+   "card": {
+    "key": "tarjeta",
+    "conversion": "number"
+   }
+  },
+  "CtanUrbanFareList": {
+   "fares": {
+    "key": "tarifasUrbanas"
+   }
+  },
+  "CtanUrbanFare": {
+   "town": {
+    "key": "nombre"
+   },
+   "withChange": {
+    "key": "tu",
+    "conversion": "number"
+   },
+   "withoutChange": {
+    "key": "importeUsuario",
+    "conversion": "number"
+   }
+  },
+  "CtanTransportModeList": {
+   "modes": {
+    "key": "modosTransporte"
+   }
+  },
+  "CtanTransportMode": {
+   "id": {
+    "key": "idModo"
+   },
+   "name": {
+    "key": "descripcion"
+   },
+   "notes": {
+    "key": "observaciones"
+   },
+   "bus": {
+    "key": "autobus",
+    "conversion": "yes-no"
+   },
+   "boat": {
+    "key": "barco",
+    "conversion": "yes-no"
+   },
+   "train": {
+    "key": "tren",
+    "conversion": "yes-no"
+   },
+   "tram": {
+    "key": "tranvia",
+    "conversion": "yes-no"
+   },
+   "metro": {
+    "key": "metro",
+    "conversion": "yes-no"
+   },
+   "bicycle": {
+    "key": "bici",
+    "conversion": "yes-no"
+   }
+  },
+  "CtanFrequencyList": {
+   "frequencies": {
+    "key": "frecuencias"
+   }
+  },
+  "CtanFrequency": {
+   "id": {
+    "key": "idFreq"
+   },
+   "code": {
+    "key": "codigo"
+   },
+   "name": {
+    "key": "nombre"
+   }
+  },
+  "CtanAbbreviationList": {
+   "abbreviations": {
+    "key": "abreviaturas"
+   }
+  },
+  "CtanPointOfInterestCategoryList": {
+   "categories": {
+    "key": "tiposLugaresInteres"
+   }
+  },
+  "CtanPointOfInterestCategory": {
+   "id": {
+    "key": "idCat"
+   },
+   "name": {
+    "key": "nombre"
+   }
+  },
+  "CtanPointOfInterestList": {
+   "places": {
+    "key": "lugaresInteres"
+   }
+  },
+  "CtanPointOfInterest": {
+   "id": {
+    "key": "idLugar"
+   },
+   "name": {
+    "key": "nombre"
+   },
+   "categoryId": {
+    "key": "idCat"
+   },
+   "category": {
+    "key": "tipo"
+   },
+   "municipalityId": {
+    "key": "idMunicipio"
+   },
+   "municipality": {
+    "key": "municipio"
+   },
+   "latitude": {
+    "key": "latitud",
+    "conversion": "number"
+   },
+   "longitude": {
+    "key": "longitud",
+    "conversion": "number"
+   }
+  },
+  "CtanSalesPointList": {
+   "places": {
+    "key": "puntosVenta"
+   }
+  },
+  "CtanSalesPoint": {
+   "id": {
+    "key": "idComercio"
+   },
+   "typeId": {
+    "key": "idTipo"
+   },
+   "type": {
+    "key": "tipo"
+   },
+   "address": {
+    "key": "direccion"
+   },
+   "townId": {
+    "key": "idNucleo"
+   },
+   "town": {
+    "key": "nucleo"
+   },
+   "municipalityId": {
+    "key": "idMunicipio"
+   },
+   "municipality": {
+    "key": "municipio"
+   },
+   "latitude": {
+    "key": "latitud",
+    "conversion": "number"
+   },
+   "longitude": {
+    "key": "longitud",
+    "conversion": "number"
+   }
+  },
+  "CtanNewsCategoryList": {
+   "categories": {
+    "key": "categoriasNoticias"
+   }
+  },
+  "CtanNewsCategory": {
+   "id": {
+    "key": "idCategoria"
+   },
+   "name": {
+    "key": "nombre"
+   }
+  },
+  "CtanNewsList": {
+   "news": {
+    "key": "noticias"
+   }
+  },
+  "CtanNewsItem": {
+   "id": {
+    "key": "idNoticia"
+   },
+   "categoryId": {
+    "key": "idCategoria"
+   },
+   "category": {
+    "key": "categoria"
+   },
+   "title": {
+    "key": "titulo"
+   },
+   "subtitle": {
+    "key": "subTitulo"
+   },
+   "summary": {
+    "key": "resumen"
+   },
+   "starts": {
+    "key": "fechaInicio"
+   },
+   "ends": {
+    "key": "fechafin|fechaFin"
+   },
+   "fixedEnd": {
+    "key": "fechafinFija|fechaFinFija"
+   },
+   "isNew": {
+    "key": "novedad",
+    "conversion": "yes-no"
+   },
+   "lineId": {
+    "key": "idLinea"
+   },
+   "lineIds": {
+    "key": "lineas"
+   },
+   "text": {
+    "key": "texto"
+   },
+   "order": {
+    "key": "orden",
+    "conversion": "integer"
+   }
+  },
+  "CtanCorridorList": {
+   "corridors": {
+    "key": "corredores"
+   }
+  },
+  "CtanCorridor": {
+   "id": {
+    "key": "idCorredor"
+   },
+   "name": {
+    "key": "nombre"
+   }
+  },
+  "CtanCorridorBlockList": {
+   "blocks": {
+    "key": "Bloques"
+   }
+  },
+  "CtanCorridorBlock": {
+   "id": {
+    "key": "idBloque"
+   },
+   "corridorId": {
+    "key": "idCorredor"
+   },
+   "name": {
+    "key": "nombre"
+   }
+  }
+ }
+}

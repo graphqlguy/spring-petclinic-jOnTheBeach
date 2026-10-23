@@ -1,0 +1,8 @@
+# The scalars of the fields that read Spanish public services. Each service has a schema file of its own,
+# named after it, such as cimavet.graphqls.
+
+"A moment with its offset from UTC, written as 2026-10-22T19:09:14+02:00"
+scalar DateTime @specifiedBy(url: "https://scalars.graphql.org/andimarek/date-time")
+
+"Any JSON value, for answers whose keys change from one dataset to the next"
+scalar JSON

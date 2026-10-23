@@ -1,0 +1,115 @@
+{
+    "type":"FeatureCollection",
+    "features":[
+        {
+            "type":"Feature",
+            "properties":{
+                "tipo":"Zona encharcable",
+                "nilreason_varios":null,
+                "hydroid_localid":"ES050HYWLDS0000000000165",
+                "fuente":"5001",
+                "nil_nombre":true,
+                "fuented":"Instituto Geogr\u00e1fico Nacional",
+                "nil_varios":null,
+                "nombre":null,
+                "marea":false,
+                "nativeness":null,
+                "fecha_alta":"2019-04-09",
+                "resolucion":5,
+                "script":null,
+                "id_demarc":"ES050",
+                "area":308871.0,
+                "id_demarcd":"Guadalquivir",
+                "tipo_zhum":"20002",
+                "nilreason_nombre":"other:unpopulated"
+            },
+            "id":"ES050HYWLDS0000001553604",
+            "geometry":null
+        },
+        {
+            "type":"Feature",
+            "properties":{
+                "tipo":"Zona encharcable",
+                "nilreason_varios":null,
+                "hydroid_localid":"ES050HYWLDS0000000000750",
+                "fuente":"5001",
+                "nil_nombre":true,
+                "fuented":"Instituto Geogr\u00e1fico Nacional",
+                "nil_varios":null,
+                "nombre":null,
+                "marea":false,
+                "nativeness":null,
+                "fecha_alta":"2019-04-09",
+                "resolucion":5,
+                "script":null,
+                "id_demarc":"ES050",
+                "area":41953.6,
+                "id_demarcd":"Guadalquivir",
+                "tipo_zhum":"20002",
+                "nilreason_nombre":"other:unpopulated"
+            },
+            "id":"ES050HYWLDS0000001554189",
+            "geometry":null
+        },
+        {
+            "type":"Feature",
+            "properties":{
+                "tipo":"Zona encharcable",
+                "nilreason_varios":null,
+                "hydroid_localid":"ES050HYWLDS0000000000753",
+                "fuente":"5001",
+                "nil_nombre":true,
+                "fuented":"Instituto Geogr\u00e1fico Nacional",
+                "nil_varios":null,
+                "nombre":null,
+                "marea":false,
+                "nativeness":null,
+                "fecha_alta":"2019-04-09",
+                "resolucion":5,
+                "script":null,
+                "id_demarc":"ES050",
+                "area":8751.03,
+                "id_demarcd":"Guadalquivir",
+                "tipo_zhum":"20002",
+                "nilreason_nombre":"other:unpopulated"
+            },
+            "id":"ES050HYWLDS0000001554192",
+            "geometry":null
+        }
+    ],
+    "numberMatched":4,
+    "numberReturned":3,
+    "links":[
+        {
+            "type":"application/geo+json",
+            "rel":"self",
+            "title":"This document as GeoJSON",
+            "href":"https://api-features.idee.es/collections/wetland/items?f=json&bbox=-5.6,36.2,-3.7,37.4&skipGeometry=true&limit=3"
+        },
+        {
+            "rel":"alternate",
+            "type":"application/ld+json",
+            "title":"This document as RDF (JSON-LD)",
+            "href":"https://api-features.idee.es/collections/wetland/items?f=jsonld&bbox=-5.6,36.2,-3.7,37.4&skipGeometry=true&limit=3"
+        },
+        {
+            "type":"text/html",
+            "rel":"alternate",
+            "title":"This document as HTML",
+            "href":"https://api-features.idee.es/collections/wetland/items?f=html&bbox=-5.6,36.2,-3.7,37.4&skipGeometry=true&limit=3"
+        },
+        {
+            "type":"application/geo+json",
+            "rel":"next",
+            "title":"Items (next)",
+            "href":"https://api-features.idee.es/collections/wetland/items?offset=3&bbox=-5.6,36.2,-3.7,37.4&skipGeometry=true&limit=3"
+        },
+        {
+            "type":"application/json",
+            "title":"HY-P Humedal",
+            "rel":"collection",
+            "href":"https://api-features.idee.es/collections/wetland"
+        }
+    ],
+    "timeStamp":"2026-10-22T23:42:55.368495Z"
+}

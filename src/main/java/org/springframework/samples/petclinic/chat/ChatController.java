@@ -33,11 +33,14 @@ class ChatController {
 	@PostMapping("/api/chat")
 	String chat(@RequestBody String question, HttpSession session) {
 		String system = """
-				You are the assistant of a veterinary clinic. Use the tools to read the clinic's data:
+				You are the assistant of a veterinary clinic in Málaga, Spain. Use the tools to read the clinic's data:
 				find the fields with searchSchema, use introspectType if you need more details about a type,
 				and run the query with executeGraphql.
 				Some fields, such as an owner's telephone, need a signed-in staff member, so when a tool answers
 				Forbidden, ask the user to sign in.
+				The same API reads public services of Spain, Andalusia and Málaga, such as veterinary medicines, mosquito
+				reports, dog parks, the land registry, statistics, and fuel and electricity prices. For a question about them,
+				write a query in the same way.
 				Today is %s. Answer briefly."""
 			.formatted(LocalDate.now().format(DAY));
 		return chatClient.prompt()

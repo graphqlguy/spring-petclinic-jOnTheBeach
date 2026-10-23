@@ -1,0 +1,12 @@
+[{"Id":485, "Variable":{"Id":19, "Nombre":"Municipalities", "Codigo":"MUN"}
+, "Nombre":"Málaga", "Codigo":"29067", "JerarquiaPadres":[{"Id":30, "FK_Variable":115, "Nombre":"Málaga", "Codigo":"29"}
+,{"Id":292420, "FK_Variable":599, "Nombre":"Málaga FUA", "Codigo":"ES006F"}
+,{"Id":392121, "FK_Variable":953, "Nombre":"Centro-Sur o Guadalorce", "Codigo":"2903"}
+]}
+,{"Id":451, "Variable":{"Id":18, "Nombre":"Sex", "Codigo":"2"}
+, "Nombre":"Total", "Codigo":"0"}
+,{"Id":8677, "Variable":{"Id":34, "Nombre":"Size of municipalities", "Codigo":"3"}
+, "Nombre":"Total inhabitants", "Codigo":"0"}
+,{"Id":20258, "Variable":{"Id":3, "Nombre":"Type of data", "Codigo":"5"}
+, "Nombre":"Persons", "Codigo":""}
+]

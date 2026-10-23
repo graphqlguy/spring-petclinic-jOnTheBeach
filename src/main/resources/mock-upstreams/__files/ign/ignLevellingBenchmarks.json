@@ -1,0 +1,100 @@
+{
+    "type":"FeatureCollection",
+    "features":[
+        {
+            "type":"Feature",
+            "properties":{
+                "tipo":"Principal",
+                "nombre":"NGZ 200* (M\u00e1laga)",
+                "nodo":"L\u00ednea",
+                "longitud_etrs89":-4.42569939722222,
+                "altitud_elipsoidal":55.21598,
+                "resena":"https://datos-geodesia.ign.es/REDNAP/Lin00000/135.pdf",
+                "resena_linea":"https://datos-geodesia.ign.es/REDNAP/Lin00000/Lin00000.pdf",
+                "nombre_muni":"M\u00e1laga",
+                "nombre_prov":"M\u00e1laga",
+                "grupo":135,
+                "latitud_etrs89":36.7171328166667,
+                "ortometrica":7.35568,
+                "linea":"Puntos Nodales"
+            },
+            "id":135.0,
+            "geometry":null
+        },
+        {
+            "type":"Feature",
+            "properties":{
+                "tipo":"Principal",
+                "nombre":"NGZ 195",
+                "nodo":"no",
+                "longitud_etrs89":-4.351595,
+                "altitud_elipsoidal":null,
+                "resena":"https://datos-geodesia.ign.es/REDNAP/Lin00521/521117.pdf",
+                "resena_linea":"https://datos-geodesia.ign.es/REDNAP/Lin00521/Lin00521.pdf",
+                "nombre_muni":"M\u00e1laga",
+                "nombre_prov":"M\u00e1laga",
+                "grupo":52121,
+                "latitud_etrs89":36.719794375,
+                "ortometrica":10.61636,
+                "linea":"Motril - M\u00e1laga"
+            },
+            "id":521117.0,
+            "geometry":null
+        },
+        {
+            "type":"Feature",
+            "properties":{
+                "tipo":"Principal",
+                "nombre":"NGZ 196",
+                "nodo":"no",
+                "longitud_etrs89":-4.35180626388889,
+                "altitud_elipsoidal":58.59818,
+                "resena":"https://datos-geodesia.ign.es/REDNAP/Lin00521/521118.pdf",
+                "resena_linea":"https://datos-geodesia.ign.es/REDNAP/Lin00521/Lin00521.pdf",
+                "nombre_muni":"M\u00e1laga",
+                "nombre_prov":"M\u00e1laga",
+                "grupo":52121,
+                "latitud_etrs89":36.7198696555556,
+                "ortometrica":10.39437,
+                "linea":"Motril - M\u00e1laga"
+            },
+            "id":521118.0,
+            "geometry":null
+        }
+    ],
+    "numberMatched":34,
+    "numberReturned":3,
+    "links":[
+        {
+            "type":"application/geo+json",
+            "rel":"self",
+            "title":"This document as GeoJSON",
+            "href":"https://api-features.ign.es/collections/red_nap/items?f=json&bbox=-4.50,36.65,-4.35,36.75&skipGeometry=true&limit=3"
+        },
+        {
+            "rel":"alternate",
+            "type":"application/ld+json",
+            "title":"This document as RDF (JSON-LD)",
+            "href":"https://api-features.ign.es/collections/red_nap/items?f=jsonld&bbox=-4.50,36.65,-4.35,36.75&skipGeometry=true&limit=3"
+        },
+        {
+            "type":"text/html",
+            "rel":"alternate",
+            "title":"This document as HTML",
+            "href":"https://api-features.ign.es/collections/red_nap/items?f=html&bbox=-4.50,36.65,-4.35,36.75&skipGeometry=true&limit=3"
+        },
+        {
+            "type":"application/geo+json",
+            "rel":"next",
+            "title":"Items (next)",
+            "href":"https://api-features.ign.es/collections/red_nap/items?offset=3&bbox=-4.50,36.65,-4.35,36.75&skipGeometry=true&limit=3"
+        },
+        {
+            "type":"application/json",
+            "title":"Red de Nivelaci\u00f3n de Alta Precisi\u00f3n (REDNAP)",
+            "rel":"collection",
+            "href":"https://api-features.ign.es/collections/red_nap"
+        }
+    ],
+    "timeStamp":"2026-10-22T23:45:04.949577Z"
+}

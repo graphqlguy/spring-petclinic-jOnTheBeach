@@ -1,0 +1,3200 @@
+{
+ "mappings": [
+  {
+   "name": "reeElectricityBalance: {\"startDate\": \"2026-10-01\", \"endDate\": \"2026-10-20\", \"timeTrunc\": \"DAY\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ree/balance/balance-electrico",
+    "queryParameters": {
+     "start_date": {
+      "equalTo": "2026-10-01T00:00"
+     },
+     "end_date": {
+      "equalTo": "2026-10-20T23:59"
+     },
+     "time_trunc": {
+      "equalTo": "day"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ree/reeElectricityBalance.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://apidatos.ree.es/en/datos/balance/balance-electrico?start_date=2026-10-01T00%3A00&end_date=2026-10-20T23%3A59&time_trunc=day on 2026-10-23."
+   }
+  },
+  {
+   "name": "reeElectricityBalance: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ree/balance/balance\\-electrico"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ree/reeElectricityBalance.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of reeElectricityBalance with the first recording, from https://apidatos.ree.es/en/datos/balance/balance-electrico?start_date=2026-10-01T00%3A00&end_date=2026-10-20T23%3A59&time_trunc=day on 2026-10-23."
+   }
+  },
+  {
+   "name": "reeDemand: {\"startDate\": \"2026-10-01\", \"endDate\": \"2026-10-20\", \"timeTrunc\": \"DAY\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ree/demanda/evolucion",
+    "queryParameters": {
+     "start_date": {
+      "equalTo": "2026-10-01T00:00"
+     },
+     "end_date": {
+      "equalTo": "2026-10-20T23:59"
+     },
+     "time_trunc": {
+      "equalTo": "day"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ree/reeDemand.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://apidatos.ree.es/en/datos/demanda/evolucion?start_date=2026-10-01T00%3A00&end_date=2026-10-20T23%3A59&time_trunc=day on 2026-10-23."
+   }
+  },
+  {
+   "name": "reeDemand: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ree/demanda/evolucion"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ree/reeDemand.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of reeDemand with the first recording, from https://apidatos.ree.es/en/datos/demanda/evolucion?start_date=2026-10-01T00%3A00&end_date=2026-10-20T23%3A59&time_trunc=day on 2026-10-23."
+   }
+  },
+  {
+   "name": "reeDemandVariation: {\"startDate\": \"2026-01-01\", \"endDate\": \"2026-09-30\", \"timeTrunc\": \"MONTH\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ree/demanda/variacion-componentes",
+    "queryParameters": {
+     "start_date": {
+      "equalTo": "2026-01-01T00:00"
+     },
+     "end_date": {
+      "equalTo": "2026-09-30T23:59"
+     },
+     "time_trunc": {
+      "equalTo": "month"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ree/reeDemandVariation.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://apidatos.ree.es/en/datos/demanda/variacion-componentes?start_date=2026-01-01T00%3A00&end_date=2026-09-30T23%3A59&time_trunc=month on 2026-10-23."
+   }
+  },
+  {
+   "name": "reeDemandVariation: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ree/demanda/variacion\\-componentes"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ree/reeDemandVariation.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of reeDemandVariation with the first recording, from https://apidatos.ree.es/en/datos/demanda/variacion-componentes?start_date=2026-01-01T00%3A00&end_date=2026-09-30T23%3A59&time_trunc=month on 2026-10-23."
+   }
+  },
+  {
+   "name": "reeDemandVariationMovingYear: {\"startDate\": \"2026-01-01\", \"endDate\": \"2026-09-30\", \"timeTrunc\": \"MONTH\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ree/demanda/variacion-componentes-movil",
+    "queryParameters": {
+     "start_date": {
+      "equalTo": "2026-01-01T00:00"
+     },
+     "end_date": {
+      "equalTo": "2026-09-30T23:59"
+     },
+     "time_trunc": {
+      "equalTo": "month"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ree/reeDemandVariationMovingYear.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://apidatos.ree.es/en/datos/demanda/variacion-componentes-movil?start_date=2026-01-01T00%3A00&end_date=2026-09-30T23%3A59&time_trunc=month on 2026-10-23."
+   }
+  },
+  {
+   "name": "reeDemandVariationMovingYear: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ree/demanda/variacion\\-componentes\\-movil"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ree/reeDemandVariationMovingYear.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of reeDemandVariationMovingYear with the first recording, from https://apidatos.ree.es/en/datos/demanda/variacion-componentes-movil?start_date=2026-01-01T00%3A00&end_date=2026-09-30T23%3A59&time_trunc=month on 2026-10-23."
+   }
+  },
+  {
+   "name": "reeConsumptionIndex: {\"startDate\": \"2026-01-01\", \"endDate\": \"2026-09-30\", \"timeTrunc\": \"MONTH\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ree/demanda/ire-general",
+    "queryParameters": {
+     "start_date": {
+      "equalTo": "2026-01-01T00:00"
+     },
+     "end_date": {
+      "equalTo": "2026-09-30T23:59"
+     },
+     "time_trunc": {
+      "equalTo": "month"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ree/reeConsumptionIndex.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://apidatos.ree.es/en/datos/demanda/ire-general?start_date=2026-01-01T00%3A00&end_date=2026-09-30T23%3A59&time_trunc=month on 2026-10-23."
+   }
+  },
+  {
+   "name": "reeConsumptionIndex: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ree/demanda/ire\\-general"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ree/reeConsumptionIndex.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of reeConsumptionIndex with the first recording, from https://apidatos.ree.es/en/datos/demanda/ire-general?start_date=2026-01-01T00%3A00&end_date=2026-09-30T23%3A59&time_trunc=month on 2026-10-23."
+   }
+  },
+  {
+   "name": "reeConsumptionIndexYearly: {\"startDate\": \"2026-01-01\", \"endDate\": \"2026-09-30\", \"timeTrunc\": \"MONTH\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ree/demanda/ire-general-anual",
+    "queryParameters": {
+     "start_date": {
+      "equalTo": "2026-01-01T00:00"
+     },
+     "end_date": {
+      "equalTo": "2026-09-30T23:59"
+     },
+     "time_trunc": {
+      "equalTo": "month"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ree/reeConsumptionIndexYearly.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://apidatos.ree.es/en/datos/demanda/ire-general-anual?start_date=2026-01-01T00%3A00&end_date=2026-09-30T23%3A59&time_trunc=month on 2026-10-23."
+   }
+  },
+  {
+   "name": "reeConsumptionIndexYearly: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ree/demanda/ire\\-general\\-anual"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ree/reeConsumptionIndexYearly.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of reeConsumptionIndexYearly with the first recording, from https://apidatos.ree.es/en/datos/demanda/ire-general-anual?start_date=2026-01-01T00%3A00&end_date=2026-09-30T23%3A59&time_trunc=month on 2026-10-23."
+   }
+  },
+  {
+   "name": "reeConsumptionIndexMovingYear: {\"startDate\": \"2026-01-01\", \"endDate\": \"2026-09-30\", \"timeTrunc\": \"MONTH\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ree/demanda/ire-general-movil",
+    "queryParameters": {
+     "start_date": {
+      "equalTo": "2026-01-01T00:00"
+     },
+     "end_date": {
+      "equalTo": "2026-09-30T23:59"
+     },
+     "time_trunc": {
+      "equalTo": "month"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ree/reeConsumptionIndexMovingYear.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://apidatos.ree.es/en/datos/demanda/ire-general-movil?start_date=2026-01-01T00%3A00&end_date=2026-09-30T23%3A59&time_trunc=month on 2026-10-23."
+   }
+  },
+  {
+   "name": "reeConsumptionIndexMovingYear: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ree/demanda/ire\\-general\\-movil"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ree/reeConsumptionIndexMovingYear.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of reeConsumptionIndexMovingYear with the first recording, from https://apidatos.ree.es/en/datos/demanda/ire-general-movil?start_date=2026-01-01T00%3A00&end_date=2026-09-30T23%3A59&time_trunc=month on 2026-10-23."
+   }
+  },
+  {
+   "name": "reeIndustryConsumptionIndex: {\"startDate\": \"2026-01-01\", \"endDate\": \"2026-09-30\", \"timeTrunc\": \"MONTH\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ree/demanda/ire-industria",
+    "queryParameters": {
+     "start_date": {
+      "equalTo": "2026-01-01T00:00"
+     },
+     "end_date": {
+      "equalTo": "2026-09-30T23:59"
+     },
+     "time_trunc": {
+      "equalTo": "month"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ree/reeIndustryConsumptionIndex.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://apidatos.ree.es/en/datos/demanda/ire-industria?start_date=2026-01-01T00%3A00&end_date=2026-09-30T23%3A59&time_trunc=month on 2026-10-23."
+   }
+  },
+  {
+   "name": "reeIndustryConsumptionIndex: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ree/demanda/ire\\-industria"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ree/reeIndustryConsumptionIndex.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of reeIndustryConsumptionIndex with the first recording, from https://apidatos.ree.es/en/datos/demanda/ire-industria?start_date=2026-01-01T00%3A00&end_date=2026-09-30T23%3A59&time_trunc=month on 2026-10-23."
+   }
+  },
+  {
+   "name": "reeIndustryConsumptionIndexYearly: {\"startDate\": \"2026-01-01\", \"endDate\": \"2026-09-30\", \"timeTrunc\": \"MONTH\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ree/demanda/ire-industria-anual",
+    "queryParameters": {
+     "start_date": {
+      "equalTo": "2026-01-01T00:00"
+     },
+     "end_date": {
+      "equalTo": "2026-09-30T23:59"
+     },
+     "time_trunc": {
+      "equalTo": "month"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ree/reeIndustryConsumptionIndexYearly.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://apidatos.ree.es/en/datos/demanda/ire-industria-anual?start_date=2026-01-01T00%3A00&end_date=2026-09-30T23%3A59&time_trunc=month on 2026-10-23."
+   }
+  },
+  {
+   "name": "reeIndustryConsumptionIndexYearly: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ree/demanda/ire\\-industria\\-anual"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ree/reeIndustryConsumptionIndexYearly.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of reeIndustryConsumptionIndexYearly with the first recording, from https://apidatos.ree.es/en/datos/demanda/ire-industria-anual?start_date=2026-01-01T00%3A00&end_date=2026-09-30T23%3A59&time_trunc=month on 2026-10-23."
+   }
+  },
+  {
+   "name": "reeIndustryConsumptionIndexMovingYear: {\"startDate\": \"2026-01-01\", \"endDate\": \"2026-09-30\", \"timeTrunc\": \"MONTH\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ree/demanda/ire-industria-movil",
+    "queryParameters": {
+     "start_date": {
+      "equalTo": "2026-01-01T00:00"
+     },
+     "end_date": {
+      "equalTo": "2026-09-30T23:59"
+     },
+     "time_trunc": {
+      "equalTo": "month"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ree/reeIndustryConsumptionIndexMovingYear.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://apidatos.ree.es/en/datos/demanda/ire-industria-movil?start_date=2026-01-01T00%3A00&end_date=2026-09-30T23%3A59&time_trunc=month on 2026-10-23."
+   }
+  },
+  {
+   "name": "reeIndustryConsumptionIndexMovingYear: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ree/demanda/ire\\-industria\\-movil"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ree/reeIndustryConsumptionIndexMovingYear.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of reeIndustryConsumptionIndexMovingYear with the first recording, from https://apidatos.ree.es/en/datos/demanda/ire-industria-movil?start_date=2026-01-01T00%3A00&end_date=2026-09-30T23%3A59&time_trunc=month on 2026-10-23."
+   }
+  },
+  {
+   "name": "reeServicesConsumptionIndex: {\"startDate\": \"2026-01-01\", \"endDate\": \"2026-09-30\", \"timeTrunc\": \"MONTH\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ree/demanda/ire-servicios",
+    "queryParameters": {
+     "start_date": {
+      "equalTo": "2026-01-01T00:00"
+     },
+     "end_date": {
+      "equalTo": "2026-09-30T23:59"
+     },
+     "time_trunc": {
+      "equalTo": "month"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ree/reeServicesConsumptionIndex.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://apidatos.ree.es/en/datos/demanda/ire-servicios?start_date=2026-01-01T00%3A00&end_date=2026-09-30T23%3A59&time_trunc=month on 2026-10-23."
+   }
+  },
+  {
+   "name": "reeServicesConsumptionIndex: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ree/demanda/ire\\-servicios"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ree/reeServicesConsumptionIndex.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of reeServicesConsumptionIndex with the first recording, from https://apidatos.ree.es/en/datos/demanda/ire-servicios?start_date=2026-01-01T00%3A00&end_date=2026-09-30T23%3A59&time_trunc=month on 2026-10-23."
+   }
+  },
+  {
+   "name": "reeServicesConsumptionIndexYearly: {\"startDate\": \"2026-01-01\", \"endDate\": \"2026-09-30\", \"timeTrunc\": \"MONTH\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ree/demanda/ire-servicios-anual",
+    "queryParameters": {
+     "start_date": {
+      "equalTo": "2026-01-01T00:00"
+     },
+     "end_date": {
+      "equalTo": "2026-09-30T23:59"
+     },
+     "time_trunc": {
+      "equalTo": "month"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ree/reeServicesConsumptionIndexYearly.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://apidatos.ree.es/en/datos/demanda/ire-servicios-anual?start_date=2026-01-01T00%3A00&end_date=2026-09-30T23%3A59&time_trunc=month on 2026-10-23."
+   }
+  },
+  {
+   "name": "reeServicesConsumptionIndexYearly: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ree/demanda/ire\\-servicios\\-anual"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ree/reeServicesConsumptionIndexYearly.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of reeServicesConsumptionIndexYearly with the first recording, from https://apidatos.ree.es/en/datos/demanda/ire-servicios-anual?start_date=2026-01-01T00%3A00&end_date=2026-09-30T23%3A59&time_trunc=month on 2026-10-23."
+   }
+  },
+  {
+   "name": "reeServicesConsumptionIndexMovingYear: {\"startDate\": \"2026-01-01\", \"endDate\": \"2026-09-30\", \"timeTrunc\": \"MONTH\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ree/demanda/ire-servicios-movil",
+    "queryParameters": {
+     "start_date": {
+      "equalTo": "2026-01-01T00:00"
+     },
+     "end_date": {
+      "equalTo": "2026-09-30T23:59"
+     },
+     "time_trunc": {
+      "equalTo": "month"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ree/reeServicesConsumptionIndexMovingYear.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://apidatos.ree.es/en/datos/demanda/ire-servicios-movil?start_date=2026-01-01T00%3A00&end_date=2026-09-30T23%3A59&time_trunc=month on 2026-10-23."
+   }
+  },
+  {
+   "name": "reeServicesConsumptionIndexMovingYear: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ree/demanda/ire\\-servicios\\-movil"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ree/reeServicesConsumptionIndexMovingYear.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of reeServicesConsumptionIndexMovingYear with the first recording, from https://apidatos.ree.es/en/datos/demanda/ire-servicios-movil?start_date=2026-01-01T00%3A00&end_date=2026-09-30T23%3A59&time_trunc=month on 2026-10-23."
+   }
+  },
+  {
+   "name": "reeOtherConsumptionIndex: {\"startDate\": \"2026-01-01\", \"endDate\": \"2026-09-30\", \"timeTrunc\": \"MONTH\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ree/demanda/ire-otras",
+    "queryParameters": {
+     "start_date": {
+      "equalTo": "2026-01-01T00:00"
+     },
+     "end_date": {
+      "equalTo": "2026-09-30T23:59"
+     },
+     "time_trunc": {
+      "equalTo": "month"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ree/reeOtherConsumptionIndex.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://apidatos.ree.es/en/datos/demanda/ire-otras?start_date=2026-01-01T00%3A00&end_date=2026-09-30T23%3A59&time_trunc=month on 2026-10-23."
+   }
+  },
+  {
+   "name": "reeOtherConsumptionIndex: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ree/demanda/ire\\-otras"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ree/reeOtherConsumptionIndex.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of reeOtherConsumptionIndex with the first recording, from https://apidatos.ree.es/en/datos/demanda/ire-otras?start_date=2026-01-01T00%3A00&end_date=2026-09-30T23%3A59&time_trunc=month on 2026-10-23."
+   }
+  },
+  {
+   "name": "reeOtherConsumptionIndexYearly: {\"startDate\": \"2026-01-01\", \"endDate\": \"2026-09-30\", \"timeTrunc\": \"MONTH\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ree/demanda/ire-otras-anual",
+    "queryParameters": {
+     "start_date": {
+      "equalTo": "2026-01-01T00:00"
+     },
+     "end_date": {
+      "equalTo": "2026-09-30T23:59"
+     },
+     "time_trunc": {
+      "equalTo": "month"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ree/reeOtherConsumptionIndexYearly.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://apidatos.ree.es/en/datos/demanda/ire-otras-anual?start_date=2026-01-01T00%3A00&end_date=2026-09-30T23%3A59&time_trunc=month on 2026-10-23."
+   }
+  },
+  {
+   "name": "reeOtherConsumptionIndexYearly: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ree/demanda/ire\\-otras\\-anual"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ree/reeOtherConsumptionIndexYearly.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of reeOtherConsumptionIndexYearly with the first recording, from https://apidatos.ree.es/en/datos/demanda/ire-otras-anual?start_date=2026-01-01T00%3A00&end_date=2026-09-30T23%3A59&time_trunc=month on 2026-10-23."
+   }
+  },
+  {
+   "name": "reeOtherConsumptionIndexMovingYear: {\"startDate\": \"2026-01-01\", \"endDate\": \"2026-09-30\", \"timeTrunc\": \"MONTH\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ree/demanda/ire-otras-movil",
+    "queryParameters": {
+     "start_date": {
+      "equalTo": "2026-01-01T00:00"
+     },
+     "end_date": {
+      "equalTo": "2026-09-30T23:59"
+     },
+     "time_trunc": {
+      "equalTo": "month"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ree/reeOtherConsumptionIndexMovingYear.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://apidatos.ree.es/en/datos/demanda/ire-otras-movil?start_date=2026-01-01T00%3A00&end_date=2026-09-30T23%3A59&time_trunc=month on 2026-10-23."
+   }
+  },
+  {
+   "name": "reeOtherConsumptionIndexMovingYear: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ree/demanda/ire\\-otras\\-movil"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ree/reeOtherConsumptionIndexMovingYear.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of reeOtherConsumptionIndexMovingYear with the first recording, from https://apidatos.ree.es/en/datos/demanda/ire-otras-movil?start_date=2026-01-01T00%3A00&end_date=2026-09-30T23%3A59&time_trunc=month on 2026-10-23."
+   }
+  },
+  {
+   "name": "reeDailyPeakDemand: {\"startDate\": \"2026-01-01\", \"endDate\": \"2026-09-30\", \"timeTrunc\": \"MONTH\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ree/demanda/demanda-maxima-diaria",
+    "queryParameters": {
+     "start_date": {
+      "equalTo": "2026-01-01T00:00"
+     },
+     "end_date": {
+      "equalTo": "2026-09-30T23:59"
+     },
+     "time_trunc": {
+      "equalTo": "month"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ree/reeDailyPeakDemand.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://apidatos.ree.es/en/datos/demanda/demanda-maxima-diaria?start_date=2026-01-01T00%3A00&end_date=2026-09-30T23%3A59&time_trunc=month on 2026-10-23."
+   }
+  },
+  {
+   "name": "reeDailyPeakDemand: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ree/demanda/demanda\\-maxima\\-diaria"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ree/reeDailyPeakDemand.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of reeDailyPeakDemand with the first recording, from https://apidatos.ree.es/en/datos/demanda/demanda-maxima-diaria?start_date=2026-01-01T00%3A00&end_date=2026-09-30T23%3A59&time_trunc=month on 2026-10-23."
+   }
+  },
+  {
+   "name": "reeHourlyPeakDemand: {\"startDate\": \"2026-01-01\", \"endDate\": \"2026-09-30\", \"timeTrunc\": \"MONTH\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ree/demanda/demanda-maxima-horaria",
+    "queryParameters": {
+     "start_date": {
+      "equalTo": "2026-01-01T00:00"
+     },
+     "end_date": {
+      "equalTo": "2026-09-30T23:59"
+     },
+     "time_trunc": {
+      "equalTo": "month"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ree/reeHourlyPeakDemand.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://apidatos.ree.es/en/datos/demanda/demanda-maxima-horaria?start_date=2026-01-01T00%3A00&end_date=2026-09-30T23%3A59&time_trunc=month on 2026-10-23."
+   }
+  },
+  {
+   "name": "reeHourlyPeakDemand: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ree/demanda/demanda\\-maxima\\-horaria"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ree/reeHourlyPeakDemand.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of reeHourlyPeakDemand with the first recording, from https://apidatos.ree.es/en/datos/demanda/demanda-maxima-horaria?start_date=2026-01-01T00%3A00&end_date=2026-09-30T23%3A59&time_trunc=month on 2026-10-23."
+   }
+  },
+  {
+   "name": "reeTransmissionLosses: {\"startDate\": \"2026-10-01\", \"endDate\": \"2026-10-20\", \"timeTrunc\": \"DAY\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ree/demanda/perdidas-transporte",
+    "queryParameters": {
+     "start_date": {
+      "equalTo": "2026-10-01T00:00"
+     },
+     "end_date": {
+      "equalTo": "2026-10-20T23:59"
+     },
+     "time_trunc": {
+      "equalTo": "day"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ree/reeTransmissionLosses.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://apidatos.ree.es/en/datos/demanda/perdidas-transporte?start_date=2026-10-01T00%3A00&end_date=2026-10-20T23%3A59&time_trunc=day on 2026-10-23."
+   }
+  },
+  {
+   "name": "reeTransmissionLosses: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ree/demanda/perdidas\\-transporte"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ree/reeTransmissionLosses.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of reeTransmissionLosses with the first recording, from https://apidatos.ree.es/en/datos/demanda/perdidas-transporte?start_date=2026-10-01T00%3A00&end_date=2026-10-20T23%3A59&time_trunc=day on 2026-10-23."
+   }
+  },
+  {
+   "name": "reePeakInstantaneousPower: {\"startDate\": \"2026-01-01\", \"endDate\": \"2026-09-30\", \"timeTrunc\": \"MONTH\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ree/demanda/potencia-maxima-instantanea",
+    "queryParameters": {
+     "start_date": {
+      "equalTo": "2026-01-01T00:00"
+     },
+     "end_date": {
+      "equalTo": "2026-09-30T23:59"
+     },
+     "time_trunc": {
+      "equalTo": "month"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ree/reePeakInstantaneousPower.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://apidatos.ree.es/en/datos/demanda/potencia-maxima-instantanea?start_date=2026-01-01T00%3A00&end_date=2026-09-30T23%3A59&time_trunc=month on 2026-10-23."
+   }
+  },
+  {
+   "name": "reePeakInstantaneousPower: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ree/demanda/potencia\\-maxima\\-instantanea"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ree/reePeakInstantaneousPower.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of reePeakInstantaneousPower with the first recording, from https://apidatos.ree.es/en/datos/demanda/potencia-maxima-instantanea?start_date=2026-01-01T00%3A00&end_date=2026-09-30T23%3A59&time_trunc=month on 2026-10-23."
+   }
+  },
+  {
+   "name": "reePeakInstantaneousPowerVariation: {\"startDate\": \"2026-01-01\", \"endDate\": \"2026-09-30\", \"timeTrunc\": \"MONTH\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ree/demanda/potencia-maxima-instantanea-variacion",
+    "queryParameters": {
+     "start_date": {
+      "equalTo": "2026-01-01T00:00"
+     },
+     "end_date": {
+      "equalTo": "2026-09-30T23:59"
+     },
+     "time_trunc": {
+      "equalTo": "month"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ree/reePeakInstantaneousPowerVariation.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://apidatos.ree.es/en/datos/demanda/potencia-maxima-instantanea-variacion?start_date=2026-01-01T00%3A00&end_date=2026-09-30T23%3A59&time_trunc=month on 2026-10-23."
+   }
+  },
+  {
+   "name": "reePeakInstantaneousPowerVariation: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ree/demanda/potencia\\-maxima\\-instantanea\\-variacion"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ree/reePeakInstantaneousPowerVariation.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of reePeakInstantaneousPowerVariation with the first recording, from https://apidatos.ree.es/en/datos/demanda/potencia-maxima-instantanea-variacion?start_date=2026-01-01T00%3A00&end_date=2026-09-30T23%3A59&time_trunc=month on 2026-10-23."
+   }
+  },
+  {
+   "name": "reePeakInstantaneousPowerRecord: {\"startDate\": \"2026-01-01\", \"endDate\": \"2026-09-30\", \"timeTrunc\": \"MONTH\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ree/demanda/potencia-maxima-instantanea-variacion-historico",
+    "queryParameters": {
+     "start_date": {
+      "equalTo": "2026-01-01T00:00"
+     },
+     "end_date": {
+      "equalTo": "2026-09-30T23:59"
+     },
+     "time_trunc": {
+      "equalTo": "month"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ree/reePeakInstantaneousPowerRecord.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://apidatos.ree.es/en/datos/demanda/potencia-maxima-instantanea-variacion-historico?start_date=2026-01-01T00%3A00&end_date=2026-09-30T23%3A59&time_trunc=month on 2026-10-23."
+   }
+  },
+  {
+   "name": "reePeakInstantaneousPowerRecord: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ree/demanda/potencia\\-maxima\\-instantanea\\-variacion\\-historico"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ree/reePeakInstantaneousPowerRecord.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of reePeakInstantaneousPowerRecord with the first recording, from https://apidatos.ree.es/en/datos/demanda/potencia-maxima-instantanea-variacion-historico?start_date=2026-01-01T00%3A00&end_date=2026-09-30T23%3A59&time_trunc=month on 2026-10-23."
+   }
+  },
+  {
+   "name": "reeGenerationByTechnology: {\"startDate\": \"2026-10-01\", \"endDate\": \"2026-10-20\", \"timeTrunc\": \"DAY\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ree/generacion/estructura-generacion",
+    "queryParameters": {
+     "start_date": {
+      "equalTo": "2026-10-01T00:00"
+     },
+     "end_date": {
+      "equalTo": "2026-10-20T23:59"
+     },
+     "time_trunc": {
+      "equalTo": "day"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ree/reeGenerationByTechnology.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://apidatos.ree.es/en/datos/generacion/estructura-generacion?start_date=2026-10-01T00%3A00&end_date=2026-10-20T23%3A59&time_trunc=day on 2026-10-23."
+   }
+  },
+  {
+   "name": "reeGenerationByTechnology: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ree/generacion/estructura\\-generacion"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ree/reeGenerationByTechnology.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of reeGenerationByTechnology with the first recording, from https://apidatos.ree.es/en/datos/generacion/estructura-generacion?start_date=2026-10-01T00%3A00&end_date=2026-10-20T23%3A59&time_trunc=day on 2026-10-23."
+   }
+  },
+  {
+   "name": "reeRenewableShare: {\"startDate\": \"2026-10-01\", \"endDate\": \"2026-10-20\", \"timeTrunc\": \"DAY\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ree/generacion/evolucion-renovable-no-renovable",
+    "queryParameters": {
+     "start_date": {
+      "equalTo": "2026-10-01T00:00"
+     },
+     "end_date": {
+      "equalTo": "2026-10-20T23:59"
+     },
+     "time_trunc": {
+      "equalTo": "day"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ree/reeRenewableShare.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://apidatos.ree.es/en/datos/generacion/evolucion-renovable-no-renovable?start_date=2026-10-01T00%3A00&end_date=2026-10-20T23%3A59&time_trunc=day on 2026-10-23."
+   }
+  },
+  {
+   "name": "reeRenewableShare: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ree/generacion/evolucion\\-renovable\\-no\\-renovable"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ree/reeRenewableShare.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of reeRenewableShare with the first recording, from https://apidatos.ree.es/en/datos/generacion/evolucion-renovable-no-renovable?start_date=2026-10-01T00%3A00&end_date=2026-10-20T23%3A59&time_trunc=day on 2026-10-23."
+   }
+  },
+  {
+   "name": "reeRenewableGenerationByTechnology: {\"startDate\": \"2026-10-01\", \"endDate\": \"2026-10-20\", \"timeTrunc\": \"DAY\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ree/generacion/estructura-renovables",
+    "queryParameters": {
+     "start_date": {
+      "equalTo": "2026-10-01T00:00"
+     },
+     "end_date": {
+      "equalTo": "2026-10-20T23:59"
+     },
+     "time_trunc": {
+      "equalTo": "day"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ree/reeRenewableGenerationByTechnology.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://apidatos.ree.es/en/datos/generacion/estructura-renovables?start_date=2026-10-01T00%3A00&end_date=2026-10-20T23%3A59&time_trunc=day on 2026-10-23."
+   }
+  },
+  {
+   "name": "reeRenewableGenerationByTechnology: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ree/generacion/estructura\\-renovables"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ree/reeRenewableGenerationByTechnology.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of reeRenewableGenerationByTechnology with the first recording, from https://apidatos.ree.es/en/datos/generacion/estructura-renovables?start_date=2026-10-01T00%3A00&end_date=2026-10-20T23%3A59&time_trunc=day on 2026-10-23."
+   }
+  },
+  {
+   "name": "reeGenerationByEmissions: {\"startDate\": \"2026-10-01\", \"endDate\": \"2026-10-20\", \"timeTrunc\": \"DAY\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ree/generacion/estructura-generacion-emisiones-asociadas",
+    "queryParameters": {
+     "start_date": {
+      "equalTo": "2026-10-01T00:00"
+     },
+     "end_date": {
+      "equalTo": "2026-10-20T23:59"
+     },
+     "time_trunc": {
+      "equalTo": "day"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ree/reeGenerationByEmissions.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://apidatos.ree.es/en/datos/generacion/estructura-generacion-emisiones-asociadas?start_date=2026-10-01T00%3A00&end_date=2026-10-20T23%3A59&time_trunc=day on 2026-10-23."
+   }
+  },
+  {
+   "name": "reeGenerationByEmissions: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ree/generacion/estructura\\-generacion\\-emisiones\\-asociadas"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ree/reeGenerationByEmissions.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of reeGenerationByEmissions with the first recording, from https://apidatos.ree.es/en/datos/generacion/estructura-generacion-emisiones-asociadas?start_date=2026-10-01T00%3A00&end_date=2026-10-20T23%3A59&time_trunc=day on 2026-10-23."
+   }
+  },
+  {
+   "name": "reeEmissionFreeShare: {\"startDate\": \"2026-10-01\", \"endDate\": \"2026-10-20\", \"timeTrunc\": \"DAY\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ree/generacion/evolucion-estructura-generacion-emisiones-asociadas",
+    "queryParameters": {
+     "start_date": {
+      "equalTo": "2026-10-01T00:00"
+     },
+     "end_date": {
+      "equalTo": "2026-10-20T23:59"
+     },
+     "time_trunc": {
+      "equalTo": "day"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ree/reeEmissionFreeShare.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://apidatos.ree.es/en/datos/generacion/evolucion-estructura-generacion-emisiones-asociadas?start_date=2026-10-01T00%3A00&end_date=2026-10-20T23%3A59&time_trunc=day on 2026-10-23."
+   }
+  },
+  {
+   "name": "reeEmissionFreeShare: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ree/generacion/evolucion\\-estructura\\-generacion\\-emisiones\\-asociadas"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ree/reeEmissionFreeShare.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of reeEmissionFreeShare with the first recording, from https://apidatos.ree.es/en/datos/generacion/evolucion-estructura-generacion-emisiones-asociadas?start_date=2026-10-01T00%3A00&end_date=2026-10-20T23%3A59&time_trunc=day on 2026-10-23."
+   }
+  },
+  {
+   "name": "reeCo2Emissions: {\"startDate\": \"2026-10-01\", \"endDate\": \"2026-10-20\", \"timeTrunc\": \"DAY\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ree/generacion/no-renovables-detalle-emisiones-CO2",
+    "queryParameters": {
+     "start_date": {
+      "equalTo": "2026-10-01T00:00"
+     },
+     "end_date": {
+      "equalTo": "2026-10-20T23:59"
+     },
+     "time_trunc": {
+      "equalTo": "day"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ree/reeCo2Emissions.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://apidatos.ree.es/en/datos/generacion/no-renovables-detalle-emisiones-CO2?start_date=2026-10-01T00%3A00&end_date=2026-10-20T23%3A59&time_trunc=day on 2026-10-23."
+   }
+  },
+  {
+   "name": "reeCo2Emissions: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ree/generacion/no\\-renovables\\-detalle\\-emisiones\\-CO2"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ree/reeCo2Emissions.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of reeCo2Emissions with the first recording, from https://apidatos.ree.es/en/datos/generacion/no-renovables-detalle-emisiones-CO2?start_date=2026-10-01T00%3A00&end_date=2026-10-20T23%3A59&time_trunc=day on 2026-10-23."
+   }
+  },
+  {
+   "name": "reePeakRenewableGeneration: {\"startDate\": \"2026-01-01\", \"endDate\": \"2026-09-30\", \"timeTrunc\": \"MONTH\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ree/generacion/maxima-renovable",
+    "queryParameters": {
+     "start_date": {
+      "equalTo": "2026-01-01T00:00"
+     },
+     "end_date": {
+      "equalTo": "2026-09-30T23:59"
+     },
+     "time_trunc": {
+      "equalTo": "month"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ree/reePeakRenewableGeneration.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://apidatos.ree.es/en/datos/generacion/maxima-renovable?start_date=2026-01-01T00%3A00&end_date=2026-09-30T23%3A59&time_trunc=month on 2026-10-23."
+   }
+  },
+  {
+   "name": "reePeakRenewableGeneration: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ree/generacion/maxima\\-renovable"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ree/reePeakRenewableGeneration.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of reePeakRenewableGeneration with the first recording, from https://apidatos.ree.es/en/datos/generacion/maxima-renovable?start_date=2026-01-01T00%3A00&end_date=2026-09-30T23%3A59&time_trunc=month on 2026-10-23."
+   }
+  },
+  {
+   "name": "reePeakRenewableGenerationRecord: {\"startDate\": \"2026-01-01\", \"endDate\": \"2026-09-30\", \"timeTrunc\": \"MONTH\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ree/generacion/maxima-renovable-historico",
+    "queryParameters": {
+     "start_date": {
+      "equalTo": "2026-01-01T00:00"
+     },
+     "end_date": {
+      "equalTo": "2026-09-30T23:59"
+     },
+     "time_trunc": {
+      "equalTo": "month"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ree/reePeakRenewableGenerationRecord.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://apidatos.ree.es/en/datos/generacion/maxima-renovable-historico?start_date=2026-01-01T00%3A00&end_date=2026-09-30T23%3A59&time_trunc=month on 2026-10-23."
+   }
+  },
+  {
+   "name": "reePeakRenewableGenerationRecord: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ree/generacion/maxima\\-renovable\\-historico"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ree/reePeakRenewableGenerationRecord.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of reePeakRenewableGenerationRecord with the first recording, from https://apidatos.ree.es/en/datos/generacion/maxima-renovable-historico?start_date=2026-01-01T00%3A00&end_date=2026-09-30T23%3A59&time_trunc=month on 2026-10-23."
+   }
+  },
+  {
+   "name": "reePeakEmissionFreeGenerationRecord: {\"startDate\": \"2026-01-01\", \"endDate\": \"2026-09-30\", \"timeTrunc\": \"MONTH\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ree/generacion/maxima-sin-emisiones-historico",
+    "queryParameters": {
+     "start_date": {
+      "equalTo": "2026-01-01T00:00"
+     },
+     "end_date": {
+      "equalTo": "2026-09-30T23:59"
+     },
+     "time_trunc": {
+      "equalTo": "month"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ree/reePeakEmissionFreeGenerationRecord.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://apidatos.ree.es/en/datos/generacion/maxima-sin-emisiones-historico?start_date=2026-01-01T00%3A00&end_date=2026-09-30T23%3A59&time_trunc=month on 2026-10-23."
+   }
+  },
+  {
+   "name": "reePeakEmissionFreeGenerationRecord: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ree/generacion/maxima\\-sin\\-emisiones\\-historico"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ree/reePeakEmissionFreeGenerationRecord.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of reePeakEmissionFreeGenerationRecord with the first recording, from https://apidatos.ree.es/en/datos/generacion/maxima-sin-emisiones-historico?start_date=2026-01-01T00%3A00&end_date=2026-09-30T23%3A59&time_trunc=month on 2026-10-23."
+   }
+  },
+  {
+   "name": "reeExchangesWithFrance: {\"startDate\": \"2026-10-01\", \"endDate\": \"2026-10-20\", \"timeTrunc\": \"DAY\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ree/intercambios/francia-frontera",
+    "queryParameters": {
+     "start_date": {
+      "equalTo": "2026-10-01T00:00"
+     },
+     "end_date": {
+      "equalTo": "2026-10-20T23:59"
+     },
+     "time_trunc": {
+      "equalTo": "day"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ree/reeExchangesWithFrance.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://apidatos.ree.es/en/datos/intercambios/francia-frontera?start_date=2026-10-01T00%3A00&end_date=2026-10-20T23%3A59&time_trunc=day on 2026-10-23."
+   }
+  },
+  {
+   "name": "reeExchangesWithFrance: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ree/intercambios/francia\\-frontera"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ree/reeExchangesWithFrance.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of reeExchangesWithFrance with the first recording, from https://apidatos.ree.es/en/datos/intercambios/francia-frontera?start_date=2026-10-01T00%3A00&end_date=2026-10-20T23%3A59&time_trunc=day on 2026-10-23."
+   }
+  },
+  {
+   "name": "reeExchangesWithPortugal: {\"startDate\": \"2026-10-01\", \"endDate\": \"2026-10-20\", \"timeTrunc\": \"DAY\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ree/intercambios/portugal-frontera",
+    "queryParameters": {
+     "start_date": {
+      "equalTo": "2026-10-01T00:00"
+     },
+     "end_date": {
+      "equalTo": "2026-10-20T23:59"
+     },
+     "time_trunc": {
+      "equalTo": "day"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ree/reeExchangesWithPortugal.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://apidatos.ree.es/en/datos/intercambios/portugal-frontera?start_date=2026-10-01T00%3A00&end_date=2026-10-20T23%3A59&time_trunc=day on 2026-10-23."
+   }
+  },
+  {
+   "name": "reeExchangesWithPortugal: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ree/intercambios/portugal\\-frontera"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ree/reeExchangesWithPortugal.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of reeExchangesWithPortugal with the first recording, from https://apidatos.ree.es/en/datos/intercambios/portugal-frontera?start_date=2026-10-01T00%3A00&end_date=2026-10-20T23%3A59&time_trunc=day on 2026-10-23."
+   }
+  },
+  {
+   "name": "reeExchangesWithMorocco: {\"startDate\": \"2026-10-01\", \"endDate\": \"2026-10-20\", \"timeTrunc\": \"DAY\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ree/intercambios/marruecos-frontera",
+    "queryParameters": {
+     "start_date": {
+      "equalTo": "2026-10-01T00:00"
+     },
+     "end_date": {
+      "equalTo": "2026-10-20T23:59"
+     },
+     "time_trunc": {
+      "equalTo": "day"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ree/reeExchangesWithMorocco.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://apidatos.ree.es/en/datos/intercambios/marruecos-frontera?start_date=2026-10-01T00%3A00&end_date=2026-10-20T23%3A59&time_trunc=day on 2026-10-23."
+   }
+  },
+  {
+   "name": "reeExchangesWithMorocco: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ree/intercambios/marruecos\\-frontera"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ree/reeExchangesWithMorocco.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of reeExchangesWithMorocco with the first recording, from https://apidatos.ree.es/en/datos/intercambios/marruecos-frontera?start_date=2026-10-01T00%3A00&end_date=2026-10-20T23%3A59&time_trunc=day on 2026-10-23."
+   }
+  },
+  {
+   "name": "reeExchangesWithAndorra: {\"startDate\": \"2026-10-01\", \"endDate\": \"2026-10-20\", \"timeTrunc\": \"DAY\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ree/intercambios/andorra-frontera",
+    "queryParameters": {
+     "start_date": {
+      "equalTo": "2026-10-01T00:00"
+     },
+     "end_date": {
+      "equalTo": "2026-10-20T23:59"
+     },
+     "time_trunc": {
+      "equalTo": "day"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ree/reeExchangesWithAndorra.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://apidatos.ree.es/en/datos/intercambios/andorra-frontera?start_date=2026-10-01T00%3A00&end_date=2026-10-20T23%3A59&time_trunc=day on 2026-10-23."
+   }
+  },
+  {
+   "name": "reeExchangesWithAndorra: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ree/intercambios/andorra\\-frontera"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ree/reeExchangesWithAndorra.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of reeExchangesWithAndorra with the first recording, from https://apidatos.ree.es/en/datos/intercambios/andorra-frontera?start_date=2026-10-01T00%3A00&end_date=2026-10-20T23%3A59&time_trunc=day on 2026-10-23."
+   }
+  },
+  {
+   "name": "reeExchangesWithFranceByLine: {\"startDate\": \"2026-10-01\", \"endDate\": \"2026-10-20\", \"timeTrunc\": \"DAY\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ree/intercambios/lineas-francia",
+    "queryParameters": {
+     "start_date": {
+      "equalTo": "2026-10-01T00:00"
+     },
+     "end_date": {
+      "equalTo": "2026-10-20T23:59"
+     },
+     "time_trunc": {
+      "equalTo": "day"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ree/reeExchangesWithFranceByLine.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://apidatos.ree.es/en/datos/intercambios/lineas-francia?start_date=2026-10-01T00%3A00&end_date=2026-10-20T23%3A59&time_trunc=day on 2026-10-23."
+   }
+  },
+  {
+   "name": "reeExchangesWithFranceByLine: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ree/intercambios/lineas\\-francia"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ree/reeExchangesWithFranceByLine.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of reeExchangesWithFranceByLine with the first recording, from https://apidatos.ree.es/en/datos/intercambios/lineas-francia?start_date=2026-10-01T00%3A00&end_date=2026-10-20T23%3A59&time_trunc=day on 2026-10-23."
+   }
+  },
+  {
+   "name": "reeExchangesWithPortugalByLine: {\"startDate\": \"2026-10-01\", \"endDate\": \"2026-10-20\", \"timeTrunc\": \"DAY\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ree/intercambios/lineas-portugal",
+    "queryParameters": {
+     "start_date": {
+      "equalTo": "2026-10-01T00:00"
+     },
+     "end_date": {
+      "equalTo": "2026-10-20T23:59"
+     },
+     "time_trunc": {
+      "equalTo": "day"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ree/reeExchangesWithPortugalByLine.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://apidatos.ree.es/en/datos/intercambios/lineas-portugal?start_date=2026-10-01T00%3A00&end_date=2026-10-20T23%3A59&time_trunc=day on 2026-10-23."
+   }
+  },
+  {
+   "name": "reeExchangesWithPortugalByLine: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ree/intercambios/lineas\\-portugal"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ree/reeExchangesWithPortugalByLine.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of reeExchangesWithPortugalByLine with the first recording, from https://apidatos.ree.es/en/datos/intercambios/lineas-portugal?start_date=2026-10-01T00%3A00&end_date=2026-10-20T23%3A59&time_trunc=day on 2026-10-23."
+   }
+  },
+  {
+   "name": "reeExchangesWithMoroccoByLine: {\"startDate\": \"2026-10-01\", \"endDate\": \"2026-10-20\", \"timeTrunc\": \"DAY\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ree/intercambios/lineas-marruecos",
+    "queryParameters": {
+     "start_date": {
+      "equalTo": "2026-10-01T00:00"
+     },
+     "end_date": {
+      "equalTo": "2026-10-20T23:59"
+     },
+     "time_trunc": {
+      "equalTo": "day"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ree/reeExchangesWithMoroccoByLine.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://apidatos.ree.es/en/datos/intercambios/lineas-marruecos?start_date=2026-10-01T00%3A00&end_date=2026-10-20T23%3A59&time_trunc=day on 2026-10-23."
+   }
+  },
+  {
+   "name": "reeExchangesWithMoroccoByLine: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ree/intercambios/lineas\\-marruecos"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ree/reeExchangesWithMoroccoByLine.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of reeExchangesWithMoroccoByLine with the first recording, from https://apidatos.ree.es/en/datos/intercambios/lineas-marruecos?start_date=2026-10-01T00%3A00&end_date=2026-10-20T23%3A59&time_trunc=day on 2026-10-23."
+   }
+  },
+  {
+   "name": "reeExchangesWithAndorraByLine: {\"startDate\": \"2026-10-01\", \"endDate\": \"2026-10-20\", \"timeTrunc\": \"DAY\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ree/intercambios/lineas-andorra",
+    "queryParameters": {
+     "start_date": {
+      "equalTo": "2026-10-01T00:00"
+     },
+     "end_date": {
+      "equalTo": "2026-10-20T23:59"
+     },
+     "time_trunc": {
+      "equalTo": "day"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ree/reeExchangesWithAndorraByLine.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://apidatos.ree.es/en/datos/intercambios/lineas-andorra?start_date=2026-10-01T00%3A00&end_date=2026-10-20T23%3A59&time_trunc=day on 2026-10-23."
+   }
+  },
+  {
+   "name": "reeExchangesWithAndorraByLine: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ree/intercambios/lineas\\-andorra"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ree/reeExchangesWithAndorraByLine.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of reeExchangesWithAndorraByLine with the first recording, from https://apidatos.ree.es/en/datos/intercambios/lineas-andorra?start_date=2026-10-01T00%3A00&end_date=2026-10-20T23%3A59&time_trunc=day on 2026-10-23."
+   }
+  },
+  {
+   "name": "reeScheduledExchangesWithFrance: {\"startDate\": \"2026-10-01\", \"endDate\": \"2026-10-20\", \"timeTrunc\": \"DAY\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ree/intercambios/francia-frontera-programado",
+    "queryParameters": {
+     "start_date": {
+      "equalTo": "2026-10-01T00:00"
+     },
+     "end_date": {
+      "equalTo": "2026-10-20T23:59"
+     },
+     "time_trunc": {
+      "equalTo": "day"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ree/reeScheduledExchangesWithFrance.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://apidatos.ree.es/en/datos/intercambios/francia-frontera-programado?start_date=2026-10-01T00%3A00&end_date=2026-10-20T23%3A59&time_trunc=day on 2026-10-23."
+   }
+  },
+  {
+   "name": "reeScheduledExchangesWithFrance: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ree/intercambios/francia\\-frontera\\-programado"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ree/reeScheduledExchangesWithFrance.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of reeScheduledExchangesWithFrance with the first recording, from https://apidatos.ree.es/en/datos/intercambios/francia-frontera-programado?start_date=2026-10-01T00%3A00&end_date=2026-10-20T23%3A59&time_trunc=day on 2026-10-23."
+   }
+  },
+  {
+   "name": "reeScheduledExchangesWithPortugal: {\"startDate\": \"2026-10-01\", \"endDate\": \"2026-10-20\", \"timeTrunc\": \"DAY\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ree/intercambios/portugal-frontera-programado",
+    "queryParameters": {
+     "start_date": {
+      "equalTo": "2026-10-01T00:00"
+     },
+     "end_date": {
+      "equalTo": "2026-10-20T23:59"
+     },
+     "time_trunc": {
+      "equalTo": "day"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ree/reeScheduledExchangesWithPortugal.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://apidatos.ree.es/en/datos/intercambios/portugal-frontera-programado?start_date=2026-10-01T00%3A00&end_date=2026-10-20T23%3A59&time_trunc=day on 2026-10-23."
+   }
+  },
+  {
+   "name": "reeScheduledExchangesWithPortugal: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ree/intercambios/portugal\\-frontera\\-programado"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ree/reeScheduledExchangesWithPortugal.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of reeScheduledExchangesWithPortugal with the first recording, from https://apidatos.ree.es/en/datos/intercambios/portugal-frontera-programado?start_date=2026-10-01T00%3A00&end_date=2026-10-20T23%3A59&time_trunc=day on 2026-10-23."
+   }
+  },
+  {
+   "name": "reeScheduledExchangesWithMorocco: {\"startDate\": \"2026-10-01\", \"endDate\": \"2026-10-20\", \"timeTrunc\": \"DAY\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ree/intercambios/marruecos-frontera-programado",
+    "queryParameters": {
+     "start_date": {
+      "equalTo": "2026-10-01T00:00"
+     },
+     "end_date": {
+      "equalTo": "2026-10-20T23:59"
+     },
+     "time_trunc": {
+      "equalTo": "day"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ree/reeScheduledExchangesWithMorocco.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://apidatos.ree.es/en/datos/intercambios/marruecos-frontera-programado?start_date=2026-10-01T00%3A00&end_date=2026-10-20T23%3A59&time_trunc=day on 2026-10-23."
+   }
+  },
+  {
+   "name": "reeScheduledExchangesWithMorocco: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ree/intercambios/marruecos\\-frontera\\-programado"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ree/reeScheduledExchangesWithMorocco.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of reeScheduledExchangesWithMorocco with the first recording, from https://apidatos.ree.es/en/datos/intercambios/marruecos-frontera-programado?start_date=2026-10-01T00%3A00&end_date=2026-10-20T23%3A59&time_trunc=day on 2026-10-23."
+   }
+  },
+  {
+   "name": "reeScheduledExchangesWithAndorra: {\"startDate\": \"2026-10-01\", \"endDate\": \"2026-10-20\", \"timeTrunc\": \"DAY\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ree/intercambios/andorra-frontera-programado",
+    "queryParameters": {
+     "start_date": {
+      "equalTo": "2026-10-01T00:00"
+     },
+     "end_date": {
+      "equalTo": "2026-10-20T23:59"
+     },
+     "time_trunc": {
+      "equalTo": "day"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ree/reeScheduledExchangesWithAndorra.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://apidatos.ree.es/en/datos/intercambios/andorra-frontera-programado?start_date=2026-10-01T00%3A00&end_date=2026-10-20T23%3A59&time_trunc=day on 2026-10-23."
+   }
+  },
+  {
+   "name": "reeScheduledExchangesWithAndorra: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ree/intercambios/andorra\\-frontera\\-programado"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ree/reeScheduledExchangesWithAndorra.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of reeScheduledExchangesWithAndorra with the first recording, from https://apidatos.ree.es/en/datos/intercambios/andorra-frontera-programado?start_date=2026-10-01T00%3A00&end_date=2026-10-20T23%3A59&time_trunc=day on 2026-10-23."
+   }
+  },
+  {
+   "name": "reeBalearicLink: {\"startDate\": \"2026-10-01\", \"endDate\": \"2026-10-20\", \"timeTrunc\": \"DAY\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ree/intercambios/enlace-baleares",
+    "queryParameters": {
+     "start_date": {
+      "equalTo": "2026-10-01T00:00"
+     },
+     "end_date": {
+      "equalTo": "2026-10-20T23:59"
+     },
+     "time_trunc": {
+      "equalTo": "day"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ree/reeBalearicLink.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://apidatos.ree.es/en/datos/intercambios/enlace-baleares?start_date=2026-10-01T00%3A00&end_date=2026-10-20T23%3A59&time_trunc=day on 2026-10-23."
+   }
+  },
+  {
+   "name": "reeBalearicLink: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ree/intercambios/enlace\\-baleares"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ree/reeBalearicLink.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of reeBalearicLink with the first recording, from https://apidatos.ree.es/en/datos/intercambios/enlace-baleares?start_date=2026-10-01T00%3A00&end_date=2026-10-20T23%3A59&time_trunc=day on 2026-10-23."
+   }
+  },
+  {
+   "name": "reePhysicalExchangeBalance: {\"startDate\": \"2026-10-01\", \"endDate\": \"2026-10-20\", \"timeTrunc\": \"DAY\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ree/intercambios/frontera-fisicos",
+    "queryParameters": {
+     "start_date": {
+      "equalTo": "2026-10-01T00:00"
+     },
+     "end_date": {
+      "equalTo": "2026-10-20T23:59"
+     },
+     "time_trunc": {
+      "equalTo": "day"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ree/reePhysicalExchangeBalance.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://apidatos.ree.es/en/datos/intercambios/frontera-fisicos?start_date=2026-10-01T00%3A00&end_date=2026-10-20T23%3A59&time_trunc=day on 2026-10-23."
+   }
+  },
+  {
+   "name": "reePhysicalExchangeBalance: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ree/intercambios/frontera\\-fisicos"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ree/reePhysicalExchangeBalance.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of reePhysicalExchangeBalance with the first recording, from https://apidatos.ree.es/en/datos/intercambios/frontera-fisicos?start_date=2026-10-01T00%3A00&end_date=2026-10-20T23%3A59&time_trunc=day on 2026-10-23."
+   }
+  },
+  {
+   "name": "reePhysicalExchangesAllBorders: {\"startDate\": \"2026-10-01\", \"endDate\": \"2026-10-20\", \"timeTrunc\": \"DAY\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ree/intercambios/todas-fronteras-fisicos",
+    "queryParameters": {
+     "start_date": {
+      "equalTo": "2026-10-01T00:00"
+     },
+     "end_date": {
+      "equalTo": "2026-10-20T23:59"
+     },
+     "time_trunc": {
+      "equalTo": "day"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ree/reePhysicalExchangesAllBorders.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://apidatos.ree.es/en/datos/intercambios/todas-fronteras-fisicos?start_date=2026-10-01T00%3A00&end_date=2026-10-20T23%3A59&time_trunc=day on 2026-10-23."
+   }
+  },
+  {
+   "name": "reePhysicalExchangesAllBorders: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ree/intercambios/todas\\-fronteras\\-fisicos"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ree/reePhysicalExchangesAllBorders.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of reePhysicalExchangesAllBorders with the first recording, from https://apidatos.ree.es/en/datos/intercambios/todas-fronteras-fisicos?start_date=2026-10-01T00%3A00&end_date=2026-10-20T23%3A59&time_trunc=day on 2026-10-23."
+   }
+  },
+  {
+   "name": "reeScheduledExchangesAllBorders: {\"startDate\": \"2026-10-01\", \"endDate\": \"2026-10-20\", \"timeTrunc\": \"DAY\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ree/intercambios/todas-fronteras-programados",
+    "queryParameters": {
+     "start_date": {
+      "equalTo": "2026-10-01T00:00"
+     },
+     "end_date": {
+      "equalTo": "2026-10-20T23:59"
+     },
+     "time_trunc": {
+      "equalTo": "day"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ree/reeScheduledExchangesAllBorders.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://apidatos.ree.es/en/datos/intercambios/todas-fronteras-programados?start_date=2026-10-01T00%3A00&end_date=2026-10-20T23%3A59&time_trunc=day on 2026-10-23."
+   }
+  },
+  {
+   "name": "reeScheduledExchangesAllBorders: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ree/intercambios/todas\\-fronteras\\-programados"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ree/reeScheduledExchangesAllBorders.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of reeScheduledExchangesAllBorders with the first recording, from https://apidatos.ree.es/en/datos/intercambios/todas-fronteras-programados?start_date=2026-10-01T00%3A00&end_date=2026-10-20T23%3A59&time_trunc=day on 2026-10-23."
+   }
+  },
+  {
+   "name": "reeEnergyNotSupplied: {\"startDate\": \"2026-01-01\", \"endDate\": \"2026-09-30\", \"timeTrunc\": \"MONTH\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ree/transporte/energia-no-suministrada-ens",
+    "queryParameters": {
+     "start_date": {
+      "equalTo": "2026-01-01T00:00"
+     },
+     "end_date": {
+      "equalTo": "2026-09-30T23:59"
+     },
+     "time_trunc": {
+      "equalTo": "month"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ree/reeEnergyNotSupplied.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://apidatos.ree.es/en/datos/transporte/energia-no-suministrada-ens?start_date=2026-01-01T00%3A00&end_date=2026-09-30T23%3A59&time_trunc=month on 2026-10-23."
+   }
+  },
+  {
+   "name": "reeEnergyNotSupplied: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ree/transporte/energia\\-no\\-suministrada\\-ens"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ree/reeEnergyNotSupplied.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of reeEnergyNotSupplied with the first recording, from https://apidatos.ree.es/en/datos/transporte/energia-no-suministrada-ens?start_date=2026-01-01T00%3A00&end_date=2026-09-30T23%3A59&time_trunc=month on 2026-10-23."
+   }
+  },
+  {
+   "name": "reeGridUnavailability: {\"startDate\": \"2026-01-01\", \"endDate\": \"2026-09-30\", \"timeTrunc\": \"MONTH\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ree/transporte/indice-indisponibilidad",
+    "queryParameters": {
+     "start_date": {
+      "equalTo": "2026-01-01T00:00"
+     },
+     "end_date": {
+      "equalTo": "2026-09-30T23:59"
+     },
+     "time_trunc": {
+      "equalTo": "month"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ree/reeGridUnavailability.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://apidatos.ree.es/en/datos/transporte/indice-indisponibilidad?start_date=2026-01-01T00%3A00&end_date=2026-09-30T23%3A59&time_trunc=month on 2026-10-23."
+   }
+  },
+  {
+   "name": "reeGridUnavailability: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ree/transporte/indice\\-indisponibilidad"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ree/reeGridUnavailability.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of reeGridUnavailability with the first recording, from https://apidatos.ree.es/en/datos/transporte/indice-indisponibilidad?start_date=2026-01-01T00%3A00&end_date=2026-09-30T23%3A59&time_trunc=month on 2026-10-23."
+   }
+  },
+  {
+   "name": "reeAverageInterruptionTime: {\"startDate\": \"2026-01-01\", \"endDate\": \"2026-09-30\", \"timeTrunc\": \"MONTH\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ree/transporte/tiempo-interrupcion-medio-tim",
+    "queryParameters": {
+     "start_date": {
+      "equalTo": "2026-01-01T00:00"
+     },
+     "end_date": {
+      "equalTo": "2026-09-30T23:59"
+     },
+     "time_trunc": {
+      "equalTo": "month"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ree/reeAverageInterruptionTime.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://apidatos.ree.es/en/datos/transporte/tiempo-interrupcion-medio-tim?start_date=2026-01-01T00%3A00&end_date=2026-09-30T23%3A59&time_trunc=month on 2026-10-23."
+   }
+  },
+  {
+   "name": "reeAverageInterruptionTime: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ree/transporte/tiempo\\-interrupcion\\-medio\\-tim"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ree/reeAverageInterruptionTime.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of reeAverageInterruptionTime with the first recording, from https://apidatos.ree.es/en/datos/transporte/tiempo-interrupcion-medio-tim?start_date=2026-01-01T00%3A00&end_date=2026-09-30T23%3A59&time_trunc=month on 2026-10-23."
+   }
+  },
+  {
+   "name": "reeGridLength: {\"startDate\": \"2026-01-01\", \"endDate\": \"2026-09-30\", \"timeTrunc\": \"MONTH\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ree/transporte/kilometros-lineas",
+    "queryParameters": {
+     "start_date": {
+      "equalTo": "2026-01-01T00:00"
+     },
+     "end_date": {
+      "equalTo": "2026-09-30T23:59"
+     },
+     "time_trunc": {
+      "equalTo": "month"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ree/reeGridLength.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://apidatos.ree.es/en/datos/transporte/kilometros-lineas?start_date=2026-01-01T00%3A00&end_date=2026-09-30T23%3A59&time_trunc=month on 2026-10-23."
+   }
+  },
+  {
+   "name": "reeGridLength: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ree/transporte/kilometros\\-lineas"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ree/reeGridLength.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of reeGridLength with the first recording, from https://apidatos.ree.es/en/datos/transporte/kilometros-lineas?start_date=2026-01-01T00%3A00&end_date=2026-09-30T23%3A59&time_trunc=month on 2026-10-23."
+   }
+  },
+  {
+   "name": "reeGridAvailability: {\"startDate\": \"2026-01-01\", \"endDate\": \"2026-09-30\", \"timeTrunc\": \"MONTH\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ree/transporte/indice-disponibilidad",
+    "queryParameters": {
+     "start_date": {
+      "equalTo": "2026-01-01T00:00"
+     },
+     "end_date": {
+      "equalTo": "2026-09-30T23:59"
+     },
+     "time_trunc": {
+      "equalTo": "month"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ree/reeGridAvailability.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://apidatos.ree.es/en/datos/transporte/indice-disponibilidad?start_date=2026-01-01T00%3A00&end_date=2026-09-30T23%3A59&time_trunc=month on 2026-10-23."
+   }
+  },
+  {
+   "name": "reeGridAvailability: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ree/transporte/indice\\-disponibilidad"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ree/reeGridAvailability.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of reeGridAvailability with the first recording, from https://apidatos.ree.es/en/datos/transporte/indice-disponibilidad?start_date=2026-01-01T00%3A00&end_date=2026-09-30T23%3A59&time_trunc=month on 2026-10-23."
+   }
+  },
+  {
+   "name": "reePowerOutages: {\"startDate\": \"2026-01-01\", \"endDate\": \"2026-09-30\", \"timeTrunc\": \"MONTH\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ree/transporte/numero-cortes",
+    "queryParameters": {
+     "start_date": {
+      "equalTo": "2026-01-01T00:00"
+     },
+     "end_date": {
+      "equalTo": "2026-09-30T23:59"
+     },
+     "time_trunc": {
+      "equalTo": "month"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ree/reePowerOutages.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://apidatos.ree.es/en/datos/transporte/numero-cortes?start_date=2026-01-01T00%3A00&end_date=2026-09-30T23%3A59&time_trunc=month on 2026-10-23."
+   }
+  },
+  {
+   "name": "reePowerOutages: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ree/transporte/numero\\-cortes"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ree/reePowerOutages.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of reePowerOutages with the first recording, from https://apidatos.ree.es/en/datos/transporte/numero-cortes?start_date=2026-01-01T00%3A00&end_date=2026-09-30T23%3A59&time_trunc=month on 2026-10-23."
+   }
+  },
+  {
+   "name": "reeEnergyNotSuppliedAndInterruptionTime: {\"startDate\": \"2026-01-01\", \"endDate\": \"2026-09-30\", \"timeTrunc\": \"MONTH\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ree/transporte/ens-tim",
+    "queryParameters": {
+     "start_date": {
+      "equalTo": "2026-01-01T00:00"
+     },
+     "end_date": {
+      "equalTo": "2026-09-30T23:59"
+     },
+     "time_trunc": {
+      "equalTo": "month"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ree/reeEnergyNotSuppliedAndInterruptionTime.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://apidatos.ree.es/en/datos/transporte/ens-tim?start_date=2026-01-01T00%3A00&end_date=2026-09-30T23%3A59&time_trunc=month on 2026-10-23."
+   }
+  },
+  {
+   "name": "reeEnergyNotSuppliedAndInterruptionTime: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ree/transporte/ens\\-tim"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ree/reeEnergyNotSuppliedAndInterruptionTime.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of reeEnergyNotSuppliedAndInterruptionTime with the first recording, from https://apidatos.ree.es/en/datos/transporte/ens-tim?start_date=2026-01-01T00%3A00&end_date=2026-09-30T23%3A59&time_trunc=month on 2026-10-23."
+   }
+  },
+  {
+   "name": "reeTotalGridAvailability: {\"startDate\": \"2026-01-01\", \"endDate\": \"2026-09-30\", \"timeTrunc\": \"MONTH\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ree/transporte/indice-disponibilidad-total",
+    "queryParameters": {
+     "start_date": {
+      "equalTo": "2026-01-01T00:00"
+     },
+     "end_date": {
+      "equalTo": "2026-09-30T23:59"
+     },
+     "time_trunc": {
+      "equalTo": "month"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ree/reeTotalGridAvailability.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://apidatos.ree.es/en/datos/transporte/indice-disponibilidad-total?start_date=2026-01-01T00%3A00&end_date=2026-09-30T23%3A59&time_trunc=month on 2026-10-23."
+   }
+  },
+  {
+   "name": "reeTotalGridAvailability: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ree/transporte/indice\\-disponibilidad\\-total"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ree/reeTotalGridAvailability.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of reeTotalGridAvailability with the first recording, from https://apidatos.ree.es/en/datos/transporte/indice-disponibilidad-total?start_date=2026-01-01T00%3A00&end_date=2026-09-30T23%3A59&time_trunc=month on 2026-10-23."
+   }
+  },
+  {
+   "name": "reePriceComponents: {\"startDate\": \"2026-01-01\", \"endDate\": \"2026-09-30\", \"timeTrunc\": \"MONTH\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ree/mercados/componentes-precio-energia-cierre-desglose",
+    "queryParameters": {
+     "start_date": {
+      "equalTo": "2026-01-01T00:00"
+     },
+     "end_date": {
+      "equalTo": "2026-09-30T23:59"
+     },
+     "time_trunc": {
+      "equalTo": "month"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ree/reePriceComponents.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://apidatos.ree.es/en/datos/mercados/componentes-precio-energia-cierre-desglose?start_date=2026-01-01T00%3A00&end_date=2026-09-30T23%3A59&time_trunc=month on 2026-10-23."
+   }
+  },
+  {
+   "name": "reePriceComponents: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ree/mercados/componentes\\-precio\\-energia\\-cierre\\-desglose"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ree/reePriceComponents.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of reePriceComponents with the first recording, from https://apidatos.ree.es/en/datos/mercados/componentes-precio-energia-cierre-desglose?start_date=2026-01-01T00%3A00&end_date=2026-09-30T23%3A59&time_trunc=month on 2026-10-23."
+   }
+  },
+  {
+   "name": "reeAdjustmentServicesEnergy: {\"startDate\": \"2026-01-01\", \"endDate\": \"2026-09-30\", \"timeTrunc\": \"MONTH\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ree/mercados/energia-gestionada-servicios-ajuste",
+    "queryParameters": {
+     "start_date": {
+      "equalTo": "2026-01-01T00:00"
+     },
+     "end_date": {
+      "equalTo": "2026-09-30T23:59"
+     },
+     "time_trunc": {
+      "equalTo": "month"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ree/reeAdjustmentServicesEnergy.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://apidatos.ree.es/en/datos/mercados/energia-gestionada-servicios-ajuste?start_date=2026-01-01T00%3A00&end_date=2026-09-30T23%3A59&time_trunc=month on 2026-10-23."
+   }
+  },
+  {
+   "name": "reeAdjustmentServicesEnergy: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ree/mercados/energia\\-gestionada\\-servicios\\-ajuste"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ree/reeAdjustmentServicesEnergy.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of reeAdjustmentServicesEnergy with the first recording, from https://apidatos.ree.es/en/datos/mercados/energia-gestionada-servicios-ajuste?start_date=2026-01-01T00%3A00&end_date=2026-09-30T23%3A59&time_trunc=month on 2026-10-23."
+   }
+  },
+  {
+   "name": "reeConstraintEnergy: {\"startDate\": \"2026-01-01\", \"endDate\": \"2026-09-30\", \"timeTrunc\": \"MONTH\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ree/mercados/energia-restricciones",
+    "queryParameters": {
+     "start_date": {
+      "equalTo": "2026-01-01T00:00"
+     },
+     "end_date": {
+      "equalTo": "2026-09-30T23:59"
+     },
+     "time_trunc": {
+      "equalTo": "month"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ree/reeConstraintEnergy.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://apidatos.ree.es/en/datos/mercados/energia-restricciones?start_date=2026-01-01T00%3A00&end_date=2026-09-30T23%3A59&time_trunc=month on 2026-10-23."
+   }
+  },
+  {
+   "name": "reeConstraintEnergy: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ree/mercados/energia\\-restricciones"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ree/reeConstraintEnergy.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of reeConstraintEnergy with the first recording, from https://apidatos.ree.es/en/datos/mercados/energia-restricciones?start_date=2026-01-01T00%3A00&end_date=2026-09-30T23%3A59&time_trunc=month on 2026-10-23."
+   }
+  },
+  {
+   "name": "reeConstraintPrices: {\"startDate\": \"2026-01-01\", \"endDate\": \"2026-09-30\", \"timeTrunc\": \"MONTH\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ree/mercados/precios-restricciones",
+    "queryParameters": {
+     "start_date": {
+      "equalTo": "2026-01-01T00:00"
+     },
+     "end_date": {
+      "equalTo": "2026-09-30T23:59"
+     },
+     "time_trunc": {
+      "equalTo": "month"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ree/reeConstraintPrices.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://apidatos.ree.es/en/datos/mercados/precios-restricciones?start_date=2026-01-01T00%3A00&end_date=2026-09-30T23%3A59&time_trunc=month on 2026-10-23."
+   }
+  },
+  {
+   "name": "reeConstraintPrices: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ree/mercados/precios\\-restricciones"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ree/reeConstraintPrices.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of reeConstraintPrices with the first recording, from https://apidatos.ree.es/en/datos/mercados/precios-restricciones?start_date=2026-01-01T00%3A00&end_date=2026-09-30T23%3A59&time_trunc=month on 2026-10-23."
+   }
+  },
+  {
+   "name": "reeSecondaryRegulationBand: {\"startDate\": \"2026-01-01\", \"endDate\": \"2026-09-30\", \"timeTrunc\": \"MONTH\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ree/mercados/banda-regulacion-secundaria",
+    "queryParameters": {
+     "start_date": {
+      "equalTo": "2026-01-01T00:00"
+     },
+     "end_date": {
+      "equalTo": "2026-09-30T23:59"
+     },
+     "time_trunc": {
+      "equalTo": "month"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ree/reeSecondaryRegulationBand.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://apidatos.ree.es/en/datos/mercados/banda-regulacion-secundaria?start_date=2026-01-01T00%3A00&end_date=2026-09-30T23%3A59&time_trunc=month on 2026-10-23."
+   }
+  },
+  {
+   "name": "reeSecondaryRegulationBand: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ree/mercados/banda\\-regulacion\\-secundaria"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ree/reeSecondaryRegulationBand.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of reeSecondaryRegulationBand with the first recording, from https://apidatos.ree.es/en/datos/mercados/banda-regulacion-secundaria?start_date=2026-01-01T00%3A00&end_date=2026-09-30T23%3A59&time_trunc=month on 2026-10-23."
+   }
+  },
+  {
+   "name": "reeSecondaryRegulation: {\"startDate\": \"2026-01-01\", \"endDate\": \"2026-09-30\", \"timeTrunc\": \"MONTH\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ree/mercados/energia-precios-regulacion-secundaria",
+    "queryParameters": {
+     "start_date": {
+      "equalTo": "2026-01-01T00:00"
+     },
+     "end_date": {
+      "equalTo": "2026-09-30T23:59"
+     },
+     "time_trunc": {
+      "equalTo": "month"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ree/reeSecondaryRegulation.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://apidatos.ree.es/en/datos/mercados/energia-precios-regulacion-secundaria?start_date=2026-01-01T00%3A00&end_date=2026-09-30T23%3A59&time_trunc=month on 2026-10-23."
+   }
+  },
+  {
+   "name": "reeSecondaryRegulation: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ree/mercados/energia\\-precios\\-regulacion\\-secundaria"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ree/reeSecondaryRegulation.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of reeSecondaryRegulation with the first recording, from https://apidatos.ree.es/en/datos/mercados/energia-precios-regulacion-secundaria?start_date=2026-01-01T00%3A00&end_date=2026-09-30T23%3A59&time_trunc=month on 2026-10-23."
+   }
+  },
+  {
+   "name": "reeTertiaryRegulation: {\"startDate\": \"2026-01-01\", \"endDate\": \"2026-09-30\", \"timeTrunc\": \"MONTH\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ree/mercados/energia-precios-regulacion-terciaria",
+    "queryParameters": {
+     "start_date": {
+      "equalTo": "2026-01-01T00:00"
+     },
+     "end_date": {
+      "equalTo": "2026-09-30T23:59"
+     },
+     "time_trunc": {
+      "equalTo": "month"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ree/reeTertiaryRegulation.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://apidatos.ree.es/en/datos/mercados/energia-precios-regulacion-terciaria?start_date=2026-01-01T00%3A00&end_date=2026-09-30T23%3A59&time_trunc=month on 2026-10-23."
+   }
+  },
+  {
+   "name": "reeTertiaryRegulation: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ree/mercados/energia\\-precios\\-regulacion\\-terciaria"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ree/reeTertiaryRegulation.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of reeTertiaryRegulation with the first recording, from https://apidatos.ree.es/en/datos/mercados/energia-precios-regulacion-terciaria?start_date=2026-01-01T00%3A00&end_date=2026-09-30T23%3A59&time_trunc=month on 2026-10-23."
+   }
+  },
+  {
+   "name": "reeAdjustmentServicesCost: {\"startDate\": \"2026-01-01\", \"endDate\": \"2026-09-30\", \"timeTrunc\": \"MONTH\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ree/mercados/coste-servicios-ajuste",
+    "queryParameters": {
+     "start_date": {
+      "equalTo": "2026-01-01T00:00"
+     },
+     "end_date": {
+      "equalTo": "2026-09-30T23:59"
+     },
+     "time_trunc": {
+      "equalTo": "month"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ree/reeAdjustmentServicesCost.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://apidatos.ree.es/en/datos/mercados/coste-servicios-ajuste?start_date=2026-01-01T00%3A00&end_date=2026-09-30T23%3A59&time_trunc=month on 2026-10-23."
+   }
+  },
+  {
+   "name": "reeAdjustmentServicesCost: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ree/mercados/coste\\-servicios\\-ajuste"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ree/reeAdjustmentServicesCost.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of reeAdjustmentServicesCost with the first recording, from https://apidatos.ree.es/en/datos/mercados/coste-servicios-ajuste?start_date=2026-01-01T00%3A00&end_date=2026-09-30T23%3A59&time_trunc=month on 2026-10-23."
+   }
+  },
+  {
+   "name": "reeAdjustmentServicesVolumeVariation: {\"startDate\": \"2026-01-01\", \"endDate\": \"2026-09-30\", \"timeTrunc\": \"MONTH\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ree/mercados/volumen-energia-servicios-ajuste-variacion",
+    "queryParameters": {
+     "start_date": {
+      "equalTo": "2026-01-01T00:00"
+     },
+     "end_date": {
+      "equalTo": "2026-09-30T23:59"
+     },
+     "time_trunc": {
+      "equalTo": "month"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ree/reeAdjustmentServicesVolumeVariation.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://apidatos.ree.es/en/datos/mercados/volumen-energia-servicios-ajuste-variacion?start_date=2026-01-01T00%3A00&end_date=2026-09-30T23%3A59&time_trunc=month on 2026-10-23."
+   }
+  },
+  {
+   "name": "reeAdjustmentServicesVolumeVariation: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ree/mercados/volumen\\-energia\\-servicios\\-ajuste\\-variacion"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ree/reeAdjustmentServicesVolumeVariation.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of reeAdjustmentServicesVolumeVariation with the first recording, from https://apidatos.ree.es/en/datos/mercados/volumen-energia-servicios-ajuste-variacion?start_date=2026-01-01T00%3A00&end_date=2026-09-30T23%3A59&time_trunc=month on 2026-10-23."
+   }
+  },
+  {
+   "name": "reeDeviationManagementPricesBefore: {\"startDate\": \"2026-01-01\", \"endDate\": \"2026-09-30\", \"timeTrunc\": \"MONTH\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ree/mercados/energia-precios-ponderados-gestion-desvios-before",
+    "queryParameters": {
+     "start_date": {
+      "equalTo": "2026-01-01T00:00"
+     },
+     "end_date": {
+      "equalTo": "2026-09-30T23:59"
+     },
+     "time_trunc": {
+      "equalTo": "month"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ree/reeDeviationManagementPricesBefore.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://apidatos.ree.es/en/datos/mercados/energia-precios-ponderados-gestion-desvios-before?start_date=2026-01-01T00%3A00&end_date=2026-09-30T23%3A59&time_trunc=month on 2026-10-23."
+   }
+  },
+  {
+   "name": "reeDeviationManagementPricesBefore: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ree/mercados/energia\\-precios\\-ponderados\\-gestion\\-desvios\\-before"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ree/reeDeviationManagementPricesBefore.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of reeDeviationManagementPricesBefore with the first recording, from https://apidatos.ree.es/en/datos/mercados/energia-precios-ponderados-gestion-desvios-before?start_date=2026-01-01T00%3A00&end_date=2026-09-30T23%3A59&time_trunc=month on 2026-10-23."
+   }
+  },
+  {
+   "name": "reeDeviationManagementPrices: {\"startDate\": \"2026-01-01\", \"endDate\": \"2026-09-30\", \"timeTrunc\": \"MONTH\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ree/mercados/energia-precios-ponderados-gestion-desvios",
+    "queryParameters": {
+     "start_date": {
+      "equalTo": "2026-01-01T00:00"
+     },
+     "end_date": {
+      "equalTo": "2026-09-30T23:59"
+     },
+     "time_trunc": {
+      "equalTo": "month"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ree/reeDeviationManagementPrices.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://apidatos.ree.es/en/datos/mercados/energia-precios-ponderados-gestion-desvios?start_date=2026-01-01T00%3A00&end_date=2026-09-30T23%3A59&time_trunc=month on 2026-10-23."
+   }
+  },
+  {
+   "name": "reeDeviationManagementPrices: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ree/mercados/energia\\-precios\\-ponderados\\-gestion\\-desvios"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ree/reeDeviationManagementPrices.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of reeDeviationManagementPrices with the first recording, from https://apidatos.ree.es/en/datos/mercados/energia-precios-ponderados-gestion-desvios?start_date=2026-01-01T00%3A00&end_date=2026-09-30T23%3A59&time_trunc=month on 2026-10-23."
+   }
+  },
+  {
+   "name": "reeDeviationManagementPricesAfter: {\"startDate\": \"2026-01-01\", \"endDate\": \"2026-09-30\", \"timeTrunc\": \"MONTH\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ree/mercados/energia-precios-ponderados-gestion-desvios-after",
+    "queryParameters": {
+     "start_date": {
+      "equalTo": "2026-01-01T00:00"
+     },
+     "end_date": {
+      "equalTo": "2026-09-30T23:59"
+     },
+     "time_trunc": {
+      "equalTo": "month"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ree/reeDeviationManagementPricesAfter.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://apidatos.ree.es/en/datos/mercados/energia-precios-ponderados-gestion-desvios-after?start_date=2026-01-01T00%3A00&end_date=2026-09-30T23%3A59&time_trunc=month on 2026-10-23."
+   }
+  },
+  {
+   "name": "reeDeviationManagementPricesAfter: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ree/mercados/energia\\-precios\\-ponderados\\-gestion\\-desvios\\-after"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ree/reeDeviationManagementPricesAfter.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of reeDeviationManagementPricesAfter with the first recording, from https://apidatos.ree.es/en/datos/mercados/energia-precios-ponderados-gestion-desvios-after?start_date=2026-01-01T00%3A00&end_date=2026-09-30T23%3A59&time_trunc=month on 2026-10-23."
+   }
+  },
+  {
+   "name": "reeElectricityPrices: {\"startDate\": \"2026-10-20\", \"endDate\": \"2026-10-20\", \"timeTrunc\": \"HOUR\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ree/mercados/precios-mercados-tiempo-real",
+    "queryParameters": {
+     "start_date": {
+      "equalTo": "2026-10-20T00:00"
+     },
+     "end_date": {
+      "equalTo": "2026-10-20T23:59"
+     },
+     "time_trunc": {
+      "equalTo": "hour"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ree/reeElectricityPrices.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://apidatos.ree.es/en/datos/mercados/precios-mercados-tiempo-real?start_date=2026-10-20T00%3A00&end_date=2026-10-20T23%3A59&time_trunc=hour on 2026-10-23."
+   }
+  },
+  {
+   "name": "reeElectricityPrices: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ree/mercados/precios\\-mercados\\-tiempo\\-real"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ree/reeElectricityPrices.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of reeElectricityPrices with the first recording, from https://apidatos.ree.es/en/datos/mercados/precios-mercados-tiempo-real?start_date=2026-10-20T00%3A00&end_date=2026-10-20T23%3A59&time_trunc=hour on 2026-10-23."
+   }
+  }
+ ]
+}

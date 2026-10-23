@@ -1,0 +1,71 @@
+{
+    "type":"Feature",
+    "properties":{
+        "id_puerto":110330000011,
+        "nombre":"Puerto Deportivo de Sotogrande",
+        "id_esta_ma":"ESTA_MA110330000011",
+        "currentstatus":"functional",
+        "fecha_alta":"2024-07-01T00:00:00",
+        "href":"#TN-W_PORTNODE_PUERT_N110330000011",
+        "estadofis":"http://inspire.ec.europa.eu/codelist/ConditionOfFacilityValue/functional"
+    },
+    "id":"PUERT_N110330000011",
+    "geometry":{
+        "type":"Point",
+        "coordinates":[
+            -5.269808333334116,
+            36.28590277777052,
+            1.429999999993015
+        ]
+    },
+    "prev":"PUERT_N110330000002",
+    "next":"PUERT_N110330000016",
+    "links":[
+        {
+            "type":"application/json",
+            "rel":"root",
+            "title":"The landing page of this server as JSON",
+            "href":"https://api-features.idee.es?f=json"
+        },
+        {
+            "type":"text/html",
+            "rel":"root",
+            "title":"The landing page of this server as HTML",
+            "href":"https://api-features.idee.es?f=html"
+        },
+        {
+            "rel":"self",
+            "type":"application/geo+json",
+            "title":"This document as JSON",
+            "href":"https://api-features.idee.es/collections/portnode/items/PUERT_N110330000011?f=json"
+        },
+        {
+            "rel":"alternate",
+            "type":"application/ld+json",
+            "title":"This document as RDF (JSON-LD)",
+            "href":"https://api-features.idee.es/collections/portnode/items/PUERT_N110330000011?f=jsonld"
+        },
+        {
+            "rel":"alternate",
+            "type":"text/html",
+            "title":"This document as HTML",
+            "href":"https://api-features.idee.es/collections/portnode/items/PUERT_N110330000011?f=html"
+        },
+        {
+            "rel":"collection",
+            "type":"application/json",
+            "title":"TN-W Nodo portuario",
+            "href":"https://api-features.idee.es/collections/portnode"
+        },
+        {
+            "rel":"prev",
+            "type":"application/json",
+            "href":"https://api-features.idee.es/collections/portnode/items/PUERT_N110330000002?f=json"
+        },
+        {
+            "rel":"next",
+            "type":"application/json",
+            "href":"https://api-features.idee.es/collections/portnode/items/PUERT_N110330000016?f=json"
+        }
+    ]
+}

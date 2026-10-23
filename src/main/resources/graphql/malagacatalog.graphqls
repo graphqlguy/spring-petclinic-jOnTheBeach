@@ -1,0 +1,368 @@
+# The fields of the catalogue of the open data portal of the city of Málaga, at datosabiertos.malaga.eu, which runs
+# CKAN. CKAN documents its Action API on a web page, so a generator wrote these fields, their types and
+# src/main/resources/malagacatalog/operations.json from that page and from answers recorded from the portal. The names
+# and descriptions are written by hand in English. Each field is fetched by a RestOperationFetcher, see
+# MalagaCatalogConfiguration. The parks for dogs, the fountains and the buses have fields of their own, in
+# malaga.graphqls.
+
+extend type Query {
+    # The city publishes more than 1,300 datasets, such as the air quality, the noise maps, the pest control of each
+    # year and the bus lines. A dataset holds resources, the files in each format, and many resources have a table in
+    # the datastore that malagaDatastoreRecords reads row by row.
+
+    """
+    Searches the datasets of the city of Málaga by words in Spanish, such as caninos (for dogs), plagas (pests) or polen
+    (pollen), most relevant first
+    """
+    malagaDatasets(
+        "The words to find, in Spanish, such as plagas"
+        query: String
+        "A filter in the syntax of Solr, such as organization:medio-ambiente or tags:perros"
+        filter: String
+        "The order, such as metadata_modified desc for the latest changed first"
+        sort: String
+        "The page to return. Pages count from 0."
+        page: Int! = 0
+        "The number of results on a page, from 1 to 100"
+        size: Int! = 10
+    ): MalagaDatasetSearch
+
+    "One dataset of the city of Málaga by its name or id, such as parques-caninos, with its resources and tags"
+    malagaDataset(
+        "The name or id of the dataset, such as parques-caninos"
+        id: ID!
+    ): MalagaDatasetAnswer
+
+    "The names of every dataset of the city of Málaga, such as parques-caninos, a page at a time"
+    malagaDatasetNames(
+        "The largest number of names to return, such as 100"
+        limit: Int
+        "How many names to skip"
+        offset: Int
+    ): MalagaNameList
+
+    "The departments and companies of the city that publish data, such as medio-ambiente (environment)"
+    malagaOrganizations: MalagaOrganizationList
+
+    "The groups the city files its datasets under, such as Medio ambiente"
+    malagaGroups: MalagaGroupList
+
+    "Every tag of the datasets of the city of Málaga, such as perros"
+    malagaTags: MalagaNameList
+
+    """
+    One resource of a dataset, a file in one format, by its id, with the address to download it and whether the
+    datastore holds its table
+    """
+    malagaResource(
+        "The id of the resource, such as 01864ff6-106b-45d4-b28b-da6a28e1dd87 for the parks for dogs as CSV"
+        id: ID!
+    ): MalagaResourceAnswer
+
+    """
+    The rows of a table of the datastore, the data of a resource, filtered by words or by values of columns. The rows
+    have the columns of their table, so each comes as a JSON object; fields lists the columns. For the drinking
+    fountains, resourceId 2513b555-cd58-4a19-a9df-6bcec9bf58fc.
+    """
+    malagaDatastoreRecords(
+        "The id of the resource whose table to read"
+        resourceId: ID!
+        "Only the rows that contain these words in any column"
+        query: String
+        """
+        Only the rows with these values, as a JSON object of columns and values, such as {"nombre": "Plaza de la
+        Merced"}
+        """
+        filters: String
+        "The order of the rows, such as nombre asc"
+        sort: String
+        "The page to return. Pages count from 0."
+        page: Int! = 0
+        "The number of results on a page, from 1 to 100"
+        size: Int! = 10
+    ): MalagaDatastoreAnswer
+}
+
+"The datasets of the city of Málaga that match a search"
+type MalagaDatasetSearch {
+    "Whether the portal answered the call"
+    success: Boolean
+    "The number of datasets that match, across all pages"
+    count: Int
+    "The order of the datasets, such as score desc, metadata_modified desc"
+    sort: String
+    "The datasets of this page"
+    datasets: [MalagaDataset]
+}
+
+"One dataset of the city of Málaga"
+type MalagaDatasetAnswer {
+    "Whether the portal answered the call"
+    success: Boolean
+    "The dataset"
+    dataset: MalagaDataset
+}
+
+"A dataset of the open data portal of the city of Málaga, such as the parks for dogs"
+type MalagaDataset {
+    "The id of the dataset, a UUID"
+    id: ID
+    "The name of the dataset in addresses, such as parques-caninos. malagaDataset takes it."
+    name: String
+    "The title, such as Parques Caninos"
+    title: String
+    "What the dataset holds, in Spanish, with links in Markdown"
+    description: String
+    "Who is responsible for the data, such as Responsable de medio ambiente y sostenibilidad"
+    author: String
+    "The email address of the author, or an empty text"
+    authorEmail: String
+    "Who maintains the dataset, or an empty text"
+    maintainer: String
+    "The email address of the maintainer, or an empty text"
+    maintainerEmail: String
+    "The license, such as Creative Commons Atribución 4.0"
+    license: String
+    "The id of the license, such as by-sa-40"
+    licenseId: String
+    "The address of the license"
+    licenseUrl: String
+    "Whether the license is an open one"
+    isOpen: Boolean
+    "Whether the dataset is private"
+    private: Boolean
+    "The state of the dataset, such as active"
+    state: String
+    "The kind of record, dataset"
+    type: String
+    "When the dataset was created, written as 2019-06-26T11:17:30.391160"
+    created: String
+    "When the dataset last changed, written the same way"
+    modified: String
+    "The version of the dataset, or an empty text"
+    version: String
+    "The address of the source of the data, or an empty text"
+    url: String
+    "How many resources the dataset has"
+    resourceCount: Int
+    "How many tags the dataset has"
+    tagCount: Int
+    "The id of the organization that owns the dataset"
+    organizationId: String
+    "The id of the latest revision of the dataset"
+    revisionId: String
+    "The department or company of the city that publishes it"
+    organization: MalagaOrganization
+    "The groups the dataset is filed under, such as Medio ambiente"
+    groups: [MalagaGroup]
+    "The tags of the dataset, such as ambiente"
+    tags: [MalagaTag]
+    "The files of the dataset, one for each format"
+    resources: [MalagaResource]
+    "More facts about the dataset, such as Frecuencia: mensual (updated monthly)"
+    extras: [MalagaExtra]
+}
+
+"A resource of a dataset: the data in one format, such as a CSV or a GeoJSON file"
+type MalagaResource {
+    "The id of the resource, for the resourceId argument of malagaDatastoreRecords"
+    id: ID
+    "The name, such as CSV Sistema Referencia EPSG 4326"
+    name: String
+    "A description, in Spanish"
+    description: String
+    "The format, such as CSV, GeoJSON or KML"
+    format: String
+    "The media type, such as text/csv"
+    mimetype: String
+    "The media type inside a compressed file, or null"
+    mimetypeInner: String
+    "The address of the file"
+    url: String
+    "Whether the datastore holds its table, which malagaDatastoreRecords reads"
+    datastoreActive: Boolean
+    "How the file is stored, such as datastore, or null"
+    urlType: String
+    "When the resource was created"
+    created: String
+    "When the file last changed"
+    lastModified: String
+    "The place of the resource in its dataset, from 0"
+    position: Int
+    "The id of its dataset"
+    datasetId: String
+    "The state of the resource, such as active"
+    state: String
+    "The size of the file in bytes, or null"
+    size: Int
+    "A hash of the file, or an empty text"
+    hash: String
+    "The path of the file on the servers of the city, from which the portal updates it"
+    sourcePath: String
+    "The column that identifies a row of its table, such as FID"
+    primaryKey: String
+    "The result of the last check of the file, such as success"
+    validationStatus: String
+    "When the file was last checked"
+    validationTimestamp: String
+    "The state of its web store, such as active"
+    webstoreUrl: String
+    "The id of the latest revision of the resource"
+    revisionId: String
+    "The kind of resource, or null"
+    resourceType: String
+    "The address of a cached copy, or null"
+    cacheUrl: String
+    "When the cached copy was made, or null"
+    cacheLastUpdated: String
+}
+
+"A tag of a dataset"
+type MalagaTag {
+    "The id of the tag"
+    id: ID
+    "The tag, such as ambiente"
+    name: String
+    "The tag as the portal shows it"
+    displayName: String
+    "The state of the tag, such as active"
+    state: String
+    "The id of the vocabulary of the tag, or null for a free tag"
+    vocabularyId: String
+}
+
+"A group the city files its datasets under, such as Medio ambiente"
+type MalagaGroup {
+    "The id of the group"
+    id: ID
+    "The name of the group in addresses, such as medio-ambiente"
+    name: String
+    "The title, such as Medio ambiente"
+    title: String
+    "The name the portal shows"
+    displayName: String
+    "What the group covers, in Spanish"
+    description: String
+    "The address of the image of the group"
+    imageUrl: String
+    "How many datasets the group holds, in the lists"
+    packageCount: Int
+    "When the group was created, written as 2013-06-19T12:14:44.895004"
+    created: String
+    "The state of the group, such as active"
+    state: String
+    "group or organization"
+    type: String
+    "Whether the group is an organization of the city"
+    isOrganization: Boolean
+    "Whether the group is approved, such as approved"
+    approvalStatus: String
+    "How many users of the portal follow the group"
+    followers: Int
+    "The address of the image of the group, as stored"
+    image: String
+    "The id of the latest revision of the group"
+    revisionId: String
+}
+
+"A department or company of the city that publishes data, such as MEDIO AMBIENTE Y SOSTENIBILIDAD"
+type MalagaOrganization {
+    "The id of the group"
+    id: ID
+    "The name of the group in addresses, such as medio-ambiente"
+    name: String
+    "The title, such as Medio ambiente"
+    title: String
+    "The name the portal shows"
+    displayName: String
+    "What the group covers, in Spanish"
+    description: String
+    "The address of the image of the group"
+    imageUrl: String
+    "How many datasets the group holds, in the lists"
+    packageCount: Int
+    "When the group was created, written as 2013-06-19T12:14:44.895004"
+    created: String
+    "The state of the group, such as active"
+    state: String
+    "group or organization"
+    type: String
+    "Whether the group is an organization of the city"
+    isOrganization: Boolean
+    "Whether the group is approved, such as approved"
+    approvalStatus: String
+    "How many users of the portal follow the group"
+    followers: Int
+    "The address of the image of the group, as stored"
+    image: String
+    "The id of the latest revision of the group"
+    revisionId: String
+}
+
+"A fact about a dataset without a field of its own"
+type MalagaExtra {
+    "The name of the fact, such as Frecuencia"
+    key: String
+    "Its value, such as mensual"
+    value: String
+}
+
+"Names of the portal"
+type MalagaNameList {
+    "Whether the portal answered the call"
+    success: Boolean
+    "The names, such as parques-caninos"
+    names: [String]
+}
+
+"The organizations of the portal"
+type MalagaOrganizationList {
+    "Whether the portal answered the call"
+    success: Boolean
+    "The organizations"
+    organizations: [MalagaOrganization]
+}
+
+"The groups of the portal"
+type MalagaGroupList {
+    "Whether the portal answered the call"
+    success: Boolean
+    "The groups"
+    groups: [MalagaGroup]
+}
+
+"One resource of the portal"
+type MalagaResourceAnswer {
+    "Whether the portal answered the call"
+    success: Boolean
+    "The resource"
+    resource: MalagaResource
+}
+
+"Rows of a table of the datastore"
+type MalagaDatastoreAnswer {
+    "Whether the portal answered the call"
+    success: Boolean
+    "The id of the resource whose table was read"
+    resourceId: String
+    "The number of rows that match, across all pages"
+    total: Int
+    "The largest number of rows on the page"
+    limit: Int
+    "How many rows the page skipped"
+    offset: Int
+    "The words the rows were searched by"
+    query: String
+    "The columns of the table"
+    fields: [MalagaDatastoreField]
+    "The rows, each a JSON object of the columns and their values"
+    records: [JSON]
+}
+
+"A column of a table of the datastore"
+type MalagaDatastoreField {
+    "The name of the column, such as nombre or wkb_geometry"
+    id: String
+    "The type of the column, such as text, int or numeric"
+    type: String
+}

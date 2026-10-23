@@ -1,0 +1,5 @@
+[{"Id":485, "FK_Variable":19, "Nombre":"Málaga", "Codigo":"29067", "FK_JerarquiaPadres":[30,292420,392121]}
+,{"Id":451, "FK_Variable":18, "Nombre":"Total", "Codigo":"0"}
+,{"Id":8677, "FK_Variable":34, "Nombre":"Total inhabitants", "Codigo":"0"}
+,{"Id":20258, "FK_Variable":3, "Nombre":"Persons", "Codigo":""}
+]

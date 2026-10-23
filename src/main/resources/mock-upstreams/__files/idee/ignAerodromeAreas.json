@@ -1,0 +1,91 @@
+{
+    "type":"FeatureCollection",
+    "features":[
+        {
+            "type":"Feature",
+            "properties":{
+                "aerodrometype":"http://inspire.ec.europa.eu/codelist/AerodromeTypeValue/heliportOnly",
+                "aerodromecategory":"http://inspire.ec.europa.eu/codelist/AerodromeCategoryValue/domesticNational",
+                "fecha_alta":"2024-07-01T00:00:00",
+                "nilreason_nombre":null,
+                "nil_nombre":null,
+                "id_aerodro":290674000001,
+                "nombre":"Helipuerto del Hospital de Especialidades Virgen de la Victoria",
+                "href":"#TN-A_AERODROMEAREA_AEROD_A290670000001",
+                "nilreason_varios":"other:unpopulated",
+                "nil_varios":true
+            },
+            "id":"AEROD_A290670000001",
+            "geometry":null
+        },
+        {
+            "type":"Feature",
+            "properties":{
+                "aerodrometype":"http://inspire.ec.europa.eu/codelist/AerodromeTypeValue/aerodromeOnly",
+                "aerodromecategory":"http://inspire.ec.europa.eu/codelist/AerodromeCategoryValue/international",
+                "fecha_alta":"2024-07-01T00:00:00",
+                "nilreason_nombre":null,
+                "nil_nombre":null,
+                "id_aerodro":290674000026,
+                "nombre":"Aeropuerto de M\u00e1laga-Costa del Sol",
+                "href":"#TN-A_AERODROMEAREA_AEROD_A290670000006",
+                "nilreason_varios":"other:unpopulated",
+                "nil_varios":true
+            },
+            "id":"AEROD_A290670000006",
+            "geometry":null
+        },
+        {
+            "type":"Feature",
+            "properties":{
+                "aerodrometype":"http://inspire.ec.europa.eu/codelist/AerodromeTypeValue/heliportOnly",
+                "aerodromecategory":"http://inspire.ec.europa.eu/codelist/AerodromeCategoryValue/domesticNational",
+                "fecha_alta":"2024-07-01T00:00:00",
+                "nilreason_nombre":null,
+                "nil_nombre":null,
+                "id_aerodro":290674000004,
+                "nombre":"Helipuerto Hospital Regional Universitario de M\u00e1laga",
+                "href":"#TN-A_AERODROMEAREA_AEROD_A290670000015",
+                "nilreason_varios":"other:unpopulated",
+                "nil_varios":true
+            },
+            "id":"AEROD_A290670000015",
+            "geometry":null
+        }
+    ],
+    "numberMatched":9,
+    "numberReturned":3,
+    "links":[
+        {
+            "type":"application/geo+json",
+            "rel":"self",
+            "title":"This document as GeoJSON",
+            "href":"https://api-features.idee.es/collections/aerodromearea/items?f=json&bbox=-4.50,36.65,-4.35,36.75&skipGeometry=true&limit=3"
+        },
+        {
+            "rel":"alternate",
+            "type":"application/ld+json",
+            "title":"This document as RDF (JSON-LD)",
+            "href":"https://api-features.idee.es/collections/aerodromearea/items?f=jsonld&bbox=-4.50,36.65,-4.35,36.75&skipGeometry=true&limit=3"
+        },
+        {
+            "type":"text/html",
+            "rel":"alternate",
+            "title":"This document as HTML",
+            "href":"https://api-features.idee.es/collections/aerodromearea/items?f=html&bbox=-4.50,36.65,-4.35,36.75&skipGeometry=true&limit=3"
+        },
+        {
+            "type":"application/geo+json",
+            "rel":"next",
+            "title":"Items (next)",
+            "href":"https://api-features.idee.es/collections/aerodromearea/items?offset=3&bbox=-4.50,36.65,-4.35,36.75&skipGeometry=true&limit=3"
+        },
+        {
+            "type":"application/json",
+            "title":"TN-A \u00c1rea de aer\u00f3dromo",
+            "rel":"collection",
+            "href":"https://api-features.idee.es/collections/aerodromearea"
+        }
+    ],
+    "timeStamp":"2026-10-22T23:42:57.958681Z"
+}

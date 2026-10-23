@@ -1,0 +1,82 @@
+{
+    "type":"Feature",
+    "properties":{
+        "fuented":"Instituto Geogr\u00e1fico Nacional",
+        "nilreason_nombre":"other:unpopulated",
+        "hydroid_localid":"ES010HYFLSP0000000000060",
+        "descr":null,
+        "nilreason_varios":null,
+        "id_nodo":null,
+        "nil_nombre":true,
+        "nombre":null,
+        "persist":"http://inspire.ec.europa.eu/codelist/WaterPersistenceValue/seasonal",
+        "nil_varios":null,
+        "id_demarc":"ES010",
+        "persistd":"Estacional",
+        "nativeness":null,
+        "id_demarcd":"Mi\u00f1o-Sil",
+        "resolucion":5,
+        "fecha_alta":"2019-02-27",
+        "fuente":"5001",
+        "script":null
+    },
+    "id":"ES010HYFLSP0000001528421",
+    "geometry":{
+        "type":"Point",
+        "coordinates":[
+            -6.213160860099448,
+            42.89817938982546,
+            1272.3
+        ]
+    },
+    "prev":"ES010HYFLSP0000001528421",
+    "next":"ES010HYFLSP0000001528423",
+    "links":[
+        {
+            "type":"application/json",
+            "rel":"root",
+            "title":"The landing page of this server as JSON",
+            "href":"https://api-features.idee.es?f=json"
+        },
+        {
+            "type":"text/html",
+            "rel":"root",
+            "title":"The landing page of this server as HTML",
+            "href":"https://api-features.idee.es?f=html"
+        },
+        {
+            "rel":"self",
+            "type":"application/geo+json",
+            "title":"This document as JSON",
+            "href":"https://api-features.idee.es/collections/falls/items/ES010HYFLSP0000001528421?f=json"
+        },
+        {
+            "rel":"alternate",
+            "type":"application/ld+json",
+            "title":"This document as RDF (JSON-LD)",
+            "href":"https://api-features.idee.es/collections/falls/items/ES010HYFLSP0000001528421?f=jsonld"
+        },
+        {
+            "rel":"alternate",
+            "type":"text/html",
+            "title":"This document as HTML",
+            "href":"https://api-features.idee.es/collections/falls/items/ES010HYFLSP0000001528421?f=html"
+        },
+        {
+            "rel":"collection",
+            "type":"application/json",
+            "title":"HY-P Cascada",
+            "href":"https://api-features.idee.es/collections/falls"
+        },
+        {
+            "rel":"prev",
+            "type":"application/json",
+            "href":"https://api-features.idee.es/collections/falls/items/ES010HYFLSP0000001528421?f=json"
+        },
+        {
+            "rel":"next",
+            "type":"application/json",
+            "href":"https://api-features.idee.es/collections/falls/items/ES010HYFLSP0000001528423?f=json"
+        }
+    ]
+}

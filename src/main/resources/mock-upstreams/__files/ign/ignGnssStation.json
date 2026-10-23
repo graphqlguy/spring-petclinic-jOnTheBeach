@@ -1,0 +1,85 @@
+{
+    "type":"Feature",
+    "properties":{
+        "nombre_prov":"M\u00e1laga",
+        "latitud":36.72611196,
+        "alt_orto":71.776,
+        "nombre_muni":"M\u00e1laga",
+        "huso":30.0,
+        "resena":"https://datos-geodesia.ign.es/ERGNSS/fichas/MALA.pdf",
+        "localizacion":"M\u00e1laga, Andaluc\u00eda",
+        "longitud":-4.393533478,
+        "y_UTM":4065394.809,
+        "x_UTM":375562.041,
+        "nombre":"M\u00e1laga",
+        "cartZ":3793146.864,
+        "red_secundaria":[
+            "EUREF"
+        ],
+        "fecha_ins":"2000-03-15T00:00:00",
+        "cod_iers":"13443M001",
+        "cartY":-392096.808,
+        "red_principal":"ERGNSS",
+        "cartX":5103282.404,
+        "log":"https://datos-geodesia.ign.es/ERGNSS/log/",
+        "altura_elipsoidal":119.825
+    },
+    "id":"MALA",
+    "geometry":{
+        "type":"Point",
+        "coordinates":[
+            -4.393533478,
+            36.72611196
+        ]
+    },
+    "prev":"MAL1",
+    "next":"MALL",
+    "links":[
+        {
+            "type":"application/json",
+            "rel":"root",
+            "title":"The landing page of this server as JSON",
+            "href":"https://api-features.ign.es?f=json"
+        },
+        {
+            "type":"text/html",
+            "rel":"root",
+            "title":"The landing page of this server as HTML",
+            "href":"https://api-features.ign.es?f=html"
+        },
+        {
+            "rel":"self",
+            "type":"application/geo+json",
+            "title":"This document as JSON",
+            "href":"https://api-features.ign.es/collections/red_ergnss/items/MALA?f=json"
+        },
+        {
+            "rel":"alternate",
+            "type":"application/ld+json",
+            "title":"This document as RDF (JSON-LD)",
+            "href":"https://api-features.ign.es/collections/red_ergnss/items/MALA?f=jsonld"
+        },
+        {
+            "rel":"alternate",
+            "type":"text/html",
+            "title":"This document as HTML",
+            "href":"https://api-features.ign.es/collections/red_ergnss/items/MALA?f=html"
+        },
+        {
+            "rel":"collection",
+            "type":"application/json",
+            "title":"Red de Estaciones de Referencia GNSS (ERGNSS)",
+            "href":"https://api-features.ign.es/collections/red_ergnss"
+        },
+        {
+            "rel":"prev",
+            "type":"application/json",
+            "href":"https://api-features.ign.es/collections/red_ergnss/items/MAL1?f=json"
+        },
+        {
+            "rel":"next",
+            "type":"application/json",
+            "href":"https://api-features.ign.es/collections/red_ergnss/items/MALL?f=json"
+        }
+    ]
+}

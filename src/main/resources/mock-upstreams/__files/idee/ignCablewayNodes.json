@@ -1,0 +1,70 @@
+{
+    "type":"FeatureCollection",
+    "features":[
+        {
+            "type":"Feature",
+            "properties":{
+                "fecha_alta":"2021-04-06",
+                "id_nodoc":180000000001,
+                "fuente":1
+            },
+            "id":"CABL_N_180000000001",
+            "geometry":null
+        },
+        {
+            "type":"Feature",
+            "properties":{
+                "fecha_alta":"2021-04-06",
+                "id_nodoc":180000000002,
+                "fuente":1
+            },
+            "id":"CABL_N_180000000002",
+            "geometry":null
+        },
+        {
+            "type":"Feature",
+            "properties":{
+                "fecha_alta":"2021-04-06",
+                "id_nodoc":180000000003,
+                "fuente":1
+            },
+            "id":"CABL_N_180000000003",
+            "geometry":null
+        }
+    ],
+    "numberMatched":36,
+    "numberReturned":3,
+    "links":[
+        {
+            "type":"application/geo+json",
+            "rel":"self",
+            "title":"This document as GeoJSON",
+            "href":"https://api-features.idee.es/collections/cablewaynode/items?f=json&bbox=-4.0,36.8,-2.5,37.5&skipGeometry=true&limit=3"
+        },
+        {
+            "rel":"alternate",
+            "type":"application/ld+json",
+            "title":"This document as RDF (JSON-LD)",
+            "href":"https://api-features.idee.es/collections/cablewaynode/items?f=jsonld&bbox=-4.0,36.8,-2.5,37.5&skipGeometry=true&limit=3"
+        },
+        {
+            "type":"text/html",
+            "rel":"alternate",
+            "title":"This document as HTML",
+            "href":"https://api-features.idee.es/collections/cablewaynode/items?f=html&bbox=-4.0,36.8,-2.5,37.5&skipGeometry=true&limit=3"
+        },
+        {
+            "type":"application/geo+json",
+            "rel":"next",
+            "title":"Items (next)",
+            "href":"https://api-features.idee.es/collections/cablewaynode/items?offset=3&bbox=-4.0,36.8,-2.5,37.5&skipGeometry=true&limit=3"
+        },
+        {
+            "type":"application/json",
+            "title":"TN-C Nodo de cable transportador",
+            "rel":"collection",
+            "href":"https://api-features.idee.es/collections/cablewaynode"
+        }
+    ],
+    "timeStamp":"2026-10-22T23:43:13.945132Z"
+}

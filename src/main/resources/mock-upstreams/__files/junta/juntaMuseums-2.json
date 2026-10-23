@@ -1,0 +1,1 @@
+{"detail":[{"loc":["query","unit_type"],"msg":"value is not a valid enumeration member; permitted: '-', 'Colección Museográfica', 'Conjunto', 'Museo'","type":"type_error.enum","ctx":{"enum_values":["-","Colección Museográfica","Conjunto","Museo"]}}]}

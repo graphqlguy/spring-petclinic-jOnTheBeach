@@ -1,0 +1,511 @@
+[{"Id":3, "Nombre":"Persons", "Codigo":null, "Abrev":null}
+,
+{"Id":7, "Nombre":"Euros", "Codigo":null, "Abrev":"€"}
+,
+{"Id":9, "Nombre":"Pairs", "Codigo":null, "Abrev":"pairs"}
+,
+{"Id":10, "Nombre":"Minutes", "Codigo":null, "Abrev":null}
+,
+{"Id":11, "Nombre":"Hours", "Codigo":null, "Abrev":"Hours"}
+,
+{"Id":12, "Nombre":"Days", "Codigo":null, "Abrev":null}
+,
+{"Id":33, "Nombre":"Square metres", "Codigo":null, "Abrev":"m2"}
+,
+{"Id":34, "Nombre":"Square kilometers", "Codigo":null, "Abrev":"Square kilometres"}
+,
+{"Id":37, "Nombre":"Hectares", "Codigo":null, "Abrev":null}
+,
+{"Id":42, "Nombre":"Tonnes", "Codigo":null, "Abrev":"t."}
+,
+{"Id":45, "Nombre":"Litres", "Codigo":null, "Abrev":"litres"}
+,
+{"Id":48, "Nombre":"Hours/worker(month)", "Codigo":null, "Abrev":null}
+,
+{"Id":50, "Nombre":"% 100", "Codigo":null, "Abrev":"Expressed as a percentage"}
+,
+{"Id":51, "Nombre":"% 1000", "Codigo":null, "Abrev":"%1000"}
+,
+{"Id":93, "Nombre":"Thousands of euros", "Codigo":null, "Abrev":"Thousands of euros"}
+,
+{"Id":97, "Nombre":"Companies", "Codigo":null, "Abrev":null}
+,
+{"Id":101, "Nombre":"Percentage", "Codigo":null, "Abrev":"%"}
+,
+{"Id":108, "Nombre":"Years", "Codigo":null, "Abrev":null}
+,
+{"Id":110, "Nombre":"Children per woman", "Codigo":null, "Abrev":null}
+,
+{"Id":113, "Nombre":"Per 1000 women in that age group", "Codigo":null, "Abrev":null}
+,
+{"Id":114, "Nombre":"Marriage per 1000 inhabitants", "Codigo":null, "Abrev":null}
+,
+{"Id":115, "Nombre":"Births minus deaths per 1000 inhabitants", "Codigo":null, "Abrev":null}
+,
+{"Id":116, "Nombre":"Deaths per 1000 inhabitants", "Codigo":null, "Abrev":null}
+,
+{"Id":117, "Nombre":"Deaths of babies under 1 year old per 1000 births", "Codigo":null, "Abrev":null}
+,
+{"Id":118, "Nombre":"Deaths during the first 24 hours of life", "Codigo":null, "Abrev":null}
+,
+{"Id":120, "Nombre":"Births", "Codigo":null, "Abrev":null}
+,
+{"Id":121, "Nombre":"Marriages", "Codigo":null, "Abrev":null}
+,
+{"Id":122, "Nombre":"Deaths", "Codigo":null, "Abrev":null}
+,
+{"Id":123, "Nombre":"Number", "Codigo":null, "Abrev":null}
+,
+{"Id":124, "Nombre":"Total expenditure: thousand euros. Average expenditure: euros", "Codigo":null, "Abrev":"Total expenditure: thousands euros. Average expenditure: euros "}
+,
+{"Id":125, "Nombre":"Total expenditure: thousand euros. Unit value: euros/unit", "Codigo":null, "Abrev":"Total expenditure: thousands of euros. Unit value: euros/unit"}
+,
+{"Id":128, "Nombre":"Premises", "Codigo":null, "Abrev":null}
+,
+{"Id":129, "Nombre":"Total amount: thousand units. Average amount: units", "Codigo":null, "Abrev":"Total amount: thousands of units. Average amount: units"}
+,
+{"Id":131, "Nombre":"Persons and percentages", "Codigo":null, "Abrev":"Persons and percentages"}
+,
+{"Id":133, "Nombre":"Index", "Codigo":null, "Abrev":null}
+,
+{"Id":134, "Nombre":"Municipalities", "Codigo":null, "Abrev":"Municipalities"}
+,
+{"Id":135, "Nombre":"Rates", "Codigo":null, "Abrev":null}
+,
+{"Id":142, "Nombre":"Persons married for the first time by thousand inhabitants.", "Codigo":null, "Abrev":null}
+,
+{"Id":155, "Nombre":"Migratory flows", "Codigo":null, "Abrev":null}
+,
+{"Id":156, "Nombre":"Thousand kWh ", "Codigo":null, "Abrev":"1.000 kWh"}
+,
+{"Id":157, "Nombre":"Kilogram of active substance", "Codigo":null, "Abrev":"kg. act. sub"}
+,
+{"Id":158, "Nombre":"Thousand cubic metres", "Codigo":null, "Abrev":"Thousand m3"}
+,
+{"Id":159, "Nombre":"---", "Codigo":null, "Abrev":"---"}
+,
+{"Id":160, "Nombre":"Tonne of nitrogen", "Codigo":null, "Abrev":"t. N"}
+,
+{"Id":161, "Nombre":"Units", "Codigo":null, "Abrev":"Units"}
+,
+{"Id":162, "Nombre":"Tonne of dialuminium trioxide (alumina)", "Codigo":null, "Abrev":"t. Al2O3"}
+,
+{"Id":163, "Nombre":"Tonne of 90% dry matter", "Codigo":null, "Abrev":"t. 90% s.d.t."}
+,
+{"Id":166, "Nombre":"Tonne of sodium pyrosulphate", "Codigo":null, "Abrev":"t. Na2S2O5"}
+,
+{"Id":167, "Nombre":"Kilogram", "Codigo":null, "Abrev":"kg"}
+,
+{"Id":169, "Nombre":"Hectolitre of 100% pure alcohol", "Codigo":null, "Abrev":"hl. alc. 100%"}
+,
+{"Id":170, "Nombre":"Thousand metres", "Codigo":null, "Abrev":"Thousand metres"}
+,
+{"Id":171, "Nombre":"Tonne of potassium oxide", "Codigo":null, "Abrev":"t. K2O"}
+,
+{"Id":173, "Nombre":"Kilogram of titanium dioxide", "Codigo":null, "Abrev":"kg. TiO2"}
+,
+{"Id":174, "Nombre":"Tonne of sulphur dioxide", "Codigo":null, "Abrev":"t. SO2"}
+,
+{"Id":176, "Nombre":"Thousand litres", "Codigo":null, "Abrev":"Thousand litres"}
+,
+{"Id":177, "Nombre":"Hectolitre", "Codigo":null, "Abrev":"hectolitre"}
+,
+{"Id":178, "Nombre":"Terajoules", "Codigo":null, "Abrev":"terajoules"}
+,
+{"Id":180, "Nombre":"Tonne of hydrogen chloride", "Codigo":null, "Abrev":"t. HCl"}
+,
+{"Id":181, "Nombre":"Tonne of hydrogen peroxide", "Codigo":null, "Abrev":"t. H2O2"}
+,
+{"Id":182, "Nombre":"Cmpensated gross registered tonne", "Codigo":null, "Abrev":"CGT"}
+,
+{"Id":183, "Nombre":"Tonne of silicon dioxide", "Codigo":null, "Abrev":"t. SiO2"}
+,
+{"Id":184, "Nombre":"Tonne of phosphorous pentoxide", "Codigo":null, "Abrev":"t. P205"}
+,
+{"Id":185, "Nombre":"Gram", "Codigo":null, "Abrev":"gram"}
+,
+{"Id":186, "Nombre":"Thousand pairs", "Codigo":null, "Abrev":"Thousand pairs"}
+,
+{"Id":187, "Nombre":"Thousand square metres", "Codigo":null, "Abrev":"Thousand m2"}
+,
+{"Id":188, "Nombre":"........", "Codigo":null, "Abrev":"........"}
+,
+{"Id":189, "Nombre":"Thousand Units", "Codigo":null, "Abrev":"Thousand Units"}
+,
+{"Id":190, "Nombre":"Tonne of chlorine", "Codigo":null, "Abrev":"t. Cl"}
+,
+{"Id":191, "Nombre":"Tonne of sodium hydroxide (caustic soda)", "Codigo":null, "Abrev":"t. NaOH"}
+,
+{"Id":192, "Nombre":"Kilowatts", "Codigo":null, "Abrev":"kilowatts"}
+,
+{"Id":193, "Nombre":"Tonne of boron trioxide", "Codigo":null, "Abrev":"t. B2O3"}
+,
+{"Id":196, "Nombre":"Tonne of fluoride", "Codigo":null, "Abrev":"t. F"}
+,
+{"Id":197, "Nombre":"Number of cells", "Codigo":null, "Abrev":"N/cells"}
+,
+{"Id":199, "Nombre":"Cubic metres", "Codigo":null, "Abrev":"m3"}
+,
+{"Id":200, "Nombre":"Tonne of potassium hydroxide (potassium hydroxide)", "Codigo":null, "Abrev":"t. KOH"}
+,
+{"Id":201, "Nombre":"Tonne of hydrogen fluoride", "Codigo":null, "Abrev":"t. HF"}
+,
+{"Id":202, "Nombre":"Metre", "Codigo":null, "Abrev":"m."}
+,
+{"Id":203, "Nombre":"Kilogram of nitrogen", "Codigo":null, "Abrev":"kg. N"}
+,
+{"Id":204, "Nombre":"Kilogram of soda ash", "Codigo":null, "Abrev":"kg. Na2CO3"}
+,
+{"Id":207, "Nombre":"Positions", "Codigo":null, "Abrev":null}
+,
+{"Id":213, "Nombre":"Travellers", "Codigo":null, "Abrev":null}
+,
+{"Id":214, "Nombre":"Dwelling", "Codigo":null, "Abrev":null}
+,
+{"Id":219, "Nombre":"Marginal rate", "Codigo":null, "Abrev":"Marginal rate"}
+,
+{"Id":220, "Nombre":"Average", "Codigo":null, "Abrev":"Average"}
+,
+{"Id":221, "Nombre":"Base dec85 = 100", "Codigo":null, "Abrev":"Base dec85 = 100"}
+,
+{"Id":222, "Nombre":"USD/EUR", "Codigo":null, "Abrev":"USD/EUR"}
+,
+{"Id":229, "Nombre":"Hours/worker (week)", "Codigo":null, "Abrev":null}
+,
+{"Id":231, "Nombre":"Percentage of persons", "Codigo":null, "Abrev":null}
+,
+{"Id":232, "Nombre":"Percentage of households", "Codigo":null, "Abrev":"Percentage of households"}
+,
+{"Id":234, "Nombre":"Marriages per person", "Codigo":null, "Abrev":null}
+,
+{"Id":235, "Nombre":"As so much per thousand married persons", "Codigo":null, "Abrev":null}
+,
+{"Id":236, "Nombre":"At so much per thousand marriages", "Codigo":null, "Abrev":null}
+,
+{"Id":237, "Nombre":"At so much per thousand persons", "Codigo":null, "Abrev":null}
+,
+{"Id":239, "Nombre":"Vacancy", "Codigo":null, "Abrev":null}
+,
+{"Id":240, "Nombre":"Percentage of centres", "Codigo":null, "Abrev":"Percentage of centres"}
+,
+{"Id":242, "Nombre":"Overnight stays", "Codigo":null, "Abrev":"Overnight stays"}
+,
+{"Id":243, "Nombre":"Apartments", "Codigo":null, "Abrev":null}
+,
+{"Id":244, "Nombre":"Establishments", "Codigo":null, "Abrev":null}
+,
+{"Id":245, "Nombre":"Positions", "Codigo":null, "Abrev":null}
+,
+{"Id":246, "Nombre":"Plots", "Codigo":null, "Abrev":"Pitches"}
+,
+{"Id":249, "Nombre":"Migrations per inhabitant", "Codigo":null, "Abrev":null}
+,
+{"Id":251, "Nombre":"Migrations per inhabitant", "Codigo":null, "Abrev":null}
+,
+{"Id":252, "Nombre":"Property", "Codigo":null, "Abrev":null}
+,
+{"Id":254, "Nombre":"Per unit", "Codigo":null, "Abrev":null}
+,
+{"Id":255, "Nombre":"Percentage of deaths", "Codigo":null, "Abrev":"Percentage of deaths"}
+,
+{"Id":256, "Nombre":"Travels", "Codigo":null, "Abrev":null}
+,
+{"Id":257, "Nombre":"Indicators", "Codigo":null, "Abrev":"Indicators"}
+,
+{"Id":260, "Nombre":"Euros", "Codigo":null, "Abrev":null}
+,
+{"Id":261, "Nombre":"Euros", "Codigo":null, "Abrev":"Euros"}
+,
+{"Id":262, "Nombre":"Gold fine troy ounces", "Codigo":null, "Abrev":null}
+,
+{"Id":263, "Nombre":"Excursions", "Codigo":null, "Abrev":null}
+,
+{"Id":264, "Nombre":"Rooms", "Codigo":null, "Abrev":null}
+,
+{"Id":273, "Nombre":"Births per 1,000 deaths", "Codigo":null, "Abrev":null}
+,
+{"Id":274, "Nombre":"Growth per 1,000 inhabitants", "Codigo":null, "Abrev":null}
+,
+{"Id":275, "Nombre":"Emigrations per 1,000  inhabitants", "Codigo":null, "Abrev":null}
+,
+{"Id":276, "Nombre":"Immigrations per 1,000  inhabitants", "Codigo":null, "Abrev":null}
+,
+{"Id":277, "Nombre":"Migrations per 1,000  inhabitants", "Codigo":null, "Abrev":null}
+,
+{"Id":278, "Nombre":" First Marriages per inhabitant", "Codigo":null, "Abrev":null}
+,
+{"Id":279, "Nombre":" First Marriages per man", "Codigo":null, "Abrev":null}
+,
+{"Id":280, "Nombre":" First Marriages per woman", "Codigo":null, "Abrev":null}
+,
+{"Id":281, "Nombre":"Marriages per inhabitant", "Codigo":null, "Abrev":null}
+,
+{"Id":282, "Nombre":"Marriages per man", "Codigo":null, "Abrev":null}
+,
+{"Id":283, "Nombre":"Marriages per woman", "Codigo":null, "Abrev":null}
+,
+{"Id":284, "Nombre":"Spouses per 1,000 inhabitants", "Codigo":null, "Abrev":null}
+,
+{"Id":285, "Nombre":"Deaths per 1,000 born babies", "Codigo":null, "Abrev":null}
+,
+{"Id":286, "Nombre":"Deaths per 1,000 live birth", "Codigo":null, "Abrev":null}
+,
+{"Id":287, "Nombre":"Births per 1,000 inhabitants", "Codigo":null, "Abrev":null}
+,
+{"Id":288, "Nombre":"Mortgages", "Codigo":null, "Abrev":null}
+,
+{"Id":289, "Nombre":" sulphuric acid", "Codigo":null, "Abrev":"t. H2SO4"}
+,
+{"Id":290, "Nombre":"Stage", "Codigo":null, "Abrev":null}
+,
+{"Id":291, "Nombre":"Trips per one thousand inhabitants", "Codigo":null, "Abrev":null}
+,
+{"Id":293, "Nombre":"Women for every 100 men", "Codigo":null, "Abrev":null}
+,
+{"Id":294, "Nombre":"Per 100,000 population\r\n", "Codigo":null, "Abrev":null}
+,
+{"Id":295, "Nombre":"Excursiones por cada mil habitantes", "Codigo":null, "Abrev":null}
+,
+{"Id":296, "Nombre":"Books", "Codigo":null, "Abrev":null}
+,
+{"Id":297, "Nombre":"Bibliotecas", "Codigo":null, "Abrev":null}
+,
+{"Id":298, "Nombre":"Visitas", "Codigo":null, "Abrev":null}
+,
+{"Id":299, "Nombre":"Turistas", "Codigo":null, "Abrev":null}
+,
+{"Id":300, "Nombre":"Asunto", "Codigo":null, "Abrev":null}
+,
+{"Id":301, "Nombre":"Sentencias", "Codigo":null, "Abrev":null}
+,
+{"Id":302, "Nombre":"Childbirths", "Codigo":null, "Abrev":null}
+,
+{"Id":303, "Nombre":"Nulidades", "Codigo":null, "Abrev":null}
+,
+{"Id":304, "Nombre":"Separaciones", "Codigo":null, "Abrev":null}
+,
+{"Id":305, "Nombre":"Divorces", "Codigo":null, "Abrev":null}
+,
+{"Id":306, "Nombre":"Disoluciones matrimoniales", "Codigo":null, "Abrev":null}
+,
+{"Id":307, "Nombre":"Número de asuntos", "Codigo":null, "Abrev":"Nº asuntos"}
+,
+{"Id":308, "Nombre":"UTI", "Codigo":null, "Abrev":"UTI"}
+,
+{"Id":309, "Nombre":"UTI en TEU", "Codigo":null, "Abrev":"UTI en TEU"}
+,
+{"Id":310, "Nombre":"Trenes-Km", "Codigo":null, "Abrev":null}
+,
+{"Id":311, "Nombre":"Accidentes", "Codigo":null, "Abrev":null}
+,
+{"Id":312, "Nombre":"Toneladas-Km (1000)", "Codigo":null, "Abrev":"Toneladas-Km (1000)"}
+,
+{"Id":313, "Nombre":"Travelers-Km (1000)", "Codigo":null, "Abrev":null}
+,
+{"Id":315, "Nombre":"Divorcios por mil habitantes", "Codigo":null, "Abrev":null}
+,
+{"Id":316, "Nombre":"Divorciados por mil habitantes", "Codigo":null, "Abrev":null}
+,
+{"Id":317, "Nombre":"Divorcios por habitante", "Codigo":null, "Abrev":null}
+,
+{"Id":318, "Nombre":"Divorcios por hombre", "Codigo":null, "Abrev":null}
+,
+{"Id":319, "Nombre":"Divorcios por mujer", "Codigo":null, "Abrev":null}
+,
+{"Id":320, "Nombre":"Percentage of GDP\r\n", "Codigo":null, "Abrev":null}
+,
+{"Id":321, "Nombre":"Infracciones", "Codigo":null, "Abrev":"Infracciones"}
+,
+{"Id":322, "Nombre":"Horas/dia", "Codigo":null, "Abrev":"H/d"}
+,
+{"Id":323, "Nombre":"Años-persona", "Codigo":null, "Abrev":null}
+,
+{"Id":324, "Nombre":"Años-persona", "Codigo":null, "Abrev":null}
+,
+{"Id":325, "Nombre":"Medidas", "Codigo":null, "Abrev":null}
+,
+{"Id":326, "Nombre":"Hogares", "Codigo":null, "Abrev":null}
+,
+{"Id":327, "Nombre":"Cubic hectometre", "Codigo":null, "Abrev":"hm3"}
+,
+{"Id":328, "Nombre":"Litros habitante y día", "Codigo":null, "Abrev":null}
+,
+{"Id":329, "Nombre":"Euros por metro cúbico", "Codigo":null, "Abrev":"euros/m3"}
+,
+{"Id":330, "Nombre":"Equivalencia jornada completa", "Codigo":null, "Abrev":"EJC"}
+,
+{"Id":331, "Nombre":"Kg/inhabitant/year", "Codigo":null, "Abrev":null}
+,
+{"Id":332, "Nombre":"Average number", "Codigo":null, "Abrev":null}
+,
+{"Id":334, "Nombre":"Decretos", "Codigo":null, "Abrev":null}
+,
+{"Id":335, "Nombre":"Maternal deaths per 100,000 live births\r\n\r\n", "Codigo":null, "Abrev":null}
+,
+{"Id":336, "Nombre":"Suicidios por 100.000 habitantes", "Codigo":null, "Abrev":null}
+,
+{"Id":337, "Nombre":"Defunciones por cada 100.000 habitantes", "Codigo":null, "Abrev":null}
+,
+{"Id":338, "Nombre":"Porcentaje fumadores diarios", "Codigo":null, "Abrev":null}
+,
+{"Id":339, "Nombre":"Tonnes per person\r\n", "Codigo":null, "Abrev":null}
+,
+{"Id":340, "Nombre":"Tonnes per million Euro\r\n", "Codigo":null, "Abrev":null}
+,
+{"Id":342, "Nombre":"Researchers (FTE) per million inhabitants", "Codigo":null, "Abrev":null}
+,
+{"Id":343, "Nombre":"Per 100.000 population\r\n", "Codigo":null, "Abrev":null}
+,
+{"Id":344, "Nombre":"Per 100,000 population", "Codigo":null, "Abrev":null}
+,
+{"Id":345, "Nombre":"Accidents per 100,000 employees\r\n", "Codigo":null, "Abrev":null}
+,
+{"Id":346, "Nombre":"2015 constant dollars", "Codigo":null, "Abrev":null}
+,
+{"Id":347, "Nombre":"Number of admissions \r\n", "Codigo":null, "Abrev":null}
+,
+{"Id":348, "Nombre":"Km2/Ha", "Codigo":null, "Abrev":null}
+,
+{"Id":349, "Nombre":"Fallecidos por millón", "Codigo":null, "Abrev":null}
+,
+{"Id":350, "Nombre":"Rate per 100,000 population", "Codigo":null, "Abrev":null}
+,
+{"Id":351, "Nombre":"CO2 equivalent kg per Euros ", "Codigo":null, "Abrev":null}
+,
+{"Id":352, "Nombre":"CO2 equivalent tonnes per capita", "Codigo":null, "Abrev":null}
+,
+{"Id":353, "Nombre":"Kg/inhabitant/day", "Codigo":null, "Abrev":null}
+,
+{"Id":354, "Nombre":"Tons per capita", "Codigo":null, "Abrev":null}
+,
+{"Id":355, "Nombre":"LOGIC", "Codigo":null, "Abrev":"NO~SI"}
+,
+{"Id":356, "Nombre":"Toe/M€", "Codigo":null, "Abrev":null}
+,
+{"Id":357, "Nombre":"Litres of pure alcohol per capita consumption", "Codigo":null, "Abrev":null}
+,
+{"Id":358, "Nombre":"Percentage of female deputies", "Codigo":null, "Abrev":"%"}
+,
+{"Id":359, "Nombre":"Percentage of female senators", "Codigo":null, "Abrev":"%"}
+,
+{"Id":360, "Nombre":"Percentage of female directors", "Codigo":null, "Abrev":"%"}
+,
+{"Id":361, "Nombre":"Percentage of women mayors", "Codigo":null, "Abrev":"%"}
+,
+{"Id":363, "Nombre":"Percentage of councilwomen", "Codigo":null, "Abrev":"%"}
+,
+{"Id":364, "Nombre":"Percentage points", "Codigo":null, "Abrev":null}
+,
+{"Id":365, "Nombre":"Licenses", "Codigo":null, "Abrev":null}
+,
+{"Id":366, "Nombre":"Organisations", "Codigo":null, "Abrev":null}
+,
+{"Id":367, "Nombre":"Years squared", "Codigo":null, "Abrev":null}
+,
+{"Id":369, "Nombre":"Proportion", "Codigo":null, "Abrev":null}
+,
+{"Id":370, "Nombre":"Penalties", "Codigo":null, "Abrev":"Penalties"}
+,
+{"Id":371, "Nombre":"Per 1,000 inhabitants", "Codigo":null, "Abrev":null}
+,
+{"Id":372, "Nombre":"Researchers (in individuals) per million inhabitants", "Codigo":null, "Abrev":null}
+,
+{"Id":373, "Nombre":"Euros per capita", "Codigo":null, "Abrev":null}
+,
+{"Id":374, "Nombre":"Kilograms per capita", "Codigo":null, "Abrev":null}
+,
+{"Id":375, "Nombre":"Euros to US Dollars", "Codigo":null, "Abrev":null}
+,
+{"Id":376, "Nombre":"Persons", "Codigo":null, "Abrev":null}
+,
+{"Id":377, "Nombre":"Number", "Codigo":null, "Abrev":null}
+,
+{"Id":378, "Nombre":"Range [0,1]", "Codigo":null, "Abrev":null}
+,
+{"Id":379, "Nombre":"Rango [1,6]", "Codigo":null, "Abrev":null}
+,
+{"Id":380, "Nombre":"Range [0,9]", "Codigo":null, "Abrev":null}
+,
+{"Id":381, "Nombre":"Range [0,5]", "Codigo":null, "Abrev":null}
+,
+{"Id":382, "Nombre":"Range [0,4]", "Codigo":null, "Abrev":null}
+,
+{"Id":383, "Nombre":"Per 100 inhabitants", "Codigo":null, "Abrev":null}
+,
+{"Id":384, "Nombre":"Thousand Tonnes", "Codigo":null, "Abrev":null}
+,
+{"Id":385, "Nombre":"Micrograms/cubic metre", "Codigo":null, "Abrev":null}
+,
+{"Id":386, "Nombre":"Thousands of square kilometres", "Codigo":null, "Abrev":null}
+,
+{"Id":387, "Nombre":"pH value", "Codigo":null, "Abrev":null}
+,
+{"Id":388, "Nombre":"Grams/Euro", "Codigo":null, "Abrev":null}
+,
+{"Id":389, "Nombre":"Rango [0,10]", "Codigo":null, "Abrev":null}
+,
+{"Id":390, "Nombre":"Euro / day", "Codigo":null, "Abrev":null}
+,
+{"Id":392, "Nombre":"Dolares", "Codigo":null, "Abrev":"$"}
+,
+{"Id":393, "Nombre":"Range [0,100]", "Codigo":null, "Abrev":null}
+,
+{"Id":394, "Nombre":"Range [0,20]", "Codigo":null, "Abrev":null}
+,
+{"Id":395, "Nombre":"0=NO, 1=YES", "Codigo":null, "Abrev":null}
+,
+{"Id":396, "Nombre":"Tonnes of equivalent CO2", "Codigo":null, "Abrev":null}
+,
+{"Id":397, "Nombre":"Deaths per 100,000 inhabitants", "Codigo":null, "Abrev":null}
+,
+{"Id":398, "Nombre":"Kg per thousand euros, base chain index (2020)", "Codigo":null, "Abrev":null}
+,
+{"Id":399, "Nombre":"Full-time equivalent employment", "Codigo":null, "Abrev":null}
+,
+{"Id":400, "Nombre":"Gigajoules per inhabitant", "Codigo":null, "Abrev":"GJ/hab"}
+,
+{"Id":401, "Nombre":"Terrajoules per million euros", "Codigo":null, "Abrev":"TJ/M euros"}
+,
+{"Id":402, "Nombre":"Millions of euros", "Codigo":null, "Abrev":"mill. €"}
+,
+{"Id":403, "Nombre":"Kilotons of oil equivalent", "Codigo":null, "Abrev":"ktep"}
+,
+{"Id":405, "Nombre":"Euros per inhabitant", "Codigo":null, "Abrev":null}
+,
+{"Id":406, "Nombre":"Mtep (Million tonnes of oil equivalent)", "Codigo":null, "Abrev":null}
+,
+{"Id":407, "Nombre":"Tep per capita (Tonnes of oil equivalent per capita)", "Codigo":null, "Abrev":null}
+,
+{"Id":408, "Nombre":"Watts per capita", "Codigo":null, "Abrev":null}
+,
+{"Id":409, "Nombre":"Rango [0,3]", "Codigo":null, "Abrev":null}
+,
+{"Id":410, "Nombre":"Rango [1,4]", "Codigo":null, "Abrev":null}
+,
+{"Id":411, "Nombre":"Megajoules per capita", "Codigo":null, "Abrev":null}
+,
+{"Id":412, "Nombre":"Kg of CO2 equivalent per capita", "Codigo":null, "Abrev":null}
+,
+{"Id":413, "Nombre":"Thousands of people", "Codigo":null, "Abrev":"thousands of people"}
+,
+{"Id":414, "Nombre":"Thousands of Tons CO2 equivalent", "Codigo":null, "Abrev":"thousands of t. C02 eq."}
+,
+{"Id":415, "Nombre":"Euros por unidad de consumo", "Codigo":null, "Abrev":null}
+,
+{"Id":416, "Nombre":"Euros/m2", "Codigo":null, "Abrev":null}
+,
+{"Id":417, "Nombre":"Thousands of tons net", "Codigo":null, "Abrev":null}
+,
+{"Id":418, "Nombre":"Millions of passenger-kilometers", "Codigo":null, "Abrev":null}
+,
+{"Id":419, "Nombre":"Thousands of tons", "Codigo":null, "Abrev":null}
+,
+{"Id":420, "Nombre":"Migraciones", "Codigo":null, "Abrev":null}
+,
+{"Id":421, "Nombre":"Euros/tonelada", "Codigo":null, "Abrev":null}
+,
+{"Id":422, "Nombre":"°C", "Codigo":null, "Abrev":null}
+,
+{"Id":423, "Nombre":"Rango [0,2]", "Codigo":null, "Abrev":null}
+]
+

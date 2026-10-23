@@ -1,0 +1,74 @@
+{
+    "type":"Feature",
+    "properties":{
+        "locator_designator_addressNumberExtension":null,
+        "inspireId_namespace":"ES.SCNE.CARTOCIUDAD",
+        "component_ThoroughfareName":"CALLE ESCRITOR SANCHEZ SOBRINO",
+        "component_AddressAreaName":"M\u00e1laga",
+        "component_AdminUnitName_3":"M\u00e1laga",
+        "beginLifespanVersion":"2026-04-15",
+        "locator_designator_addressNumber":"6",
+        "component_PostalDescriptor":"29018",
+        "component_AdminUnitName_4":"M\u00e1laga",
+        "component_AdminUnitName_2":"Andaluc\u00eda",
+        "dataProvider":"Direcci\u00f3n General de Catastro"
+    },
+    "id":"AD_ADDRESS_PPK_01.29.G29_290670037179",
+    "geometry":{
+        "type":"Point",
+        "coordinates":[
+            -4.373975371218706,
+            36.73491205163693
+        ]
+    },
+    "prev":"AD_ADDRESS_PPK_01.29.G29_290660412333",
+    "next":"AD_ADDRESS_PPK_01.29.G29_290670037183",
+    "links":[
+        {
+            "type":"application/json",
+            "rel":"root",
+            "title":"The landing page of this server as JSON",
+            "href":"https://api-features.idee.es?f=json"
+        },
+        {
+            "type":"text/html",
+            "rel":"root",
+            "title":"The landing page of this server as HTML",
+            "href":"https://api-features.idee.es?f=html"
+        },
+        {
+            "rel":"self",
+            "type":"application/geo+json",
+            "title":"This document as JSON",
+            "href":"https://api-features.idee.es/collections/address/items/AD_ADDRESS_PPK_01.29.G29_290670037179?f=json"
+        },
+        {
+            "rel":"alternate",
+            "type":"application/ld+json",
+            "title":"This document as RDF (JSON-LD)",
+            "href":"https://api-features.idee.es/collections/address/items/AD_ADDRESS_PPK_01.29.G29_290670037179?f=jsonld"
+        },
+        {
+            "rel":"alternate",
+            "type":"text/html",
+            "title":"This document as HTML",
+            "href":"https://api-features.idee.es/collections/address/items/AD_ADDRESS_PPK_01.29.G29_290670037179?f=html"
+        },
+        {
+            "rel":"collection",
+            "type":"application/json",
+            "title":"AD Direcci\u00f3n",
+            "href":"https://api-features.idee.es/collections/address"
+        },
+        {
+            "rel":"prev",
+            "type":"application/json",
+            "href":"https://api-features.idee.es/collections/address/items/AD_ADDRESS_PPK_01.29.G29_290660412333?f=json"
+        },
+        {
+            "rel":"next",
+            "type":"application/json",
+            "href":"https://api-features.idee.es/collections/address/items/AD_ADDRESS_PPK_01.29.G29_290670037183?f=json"
+        }
+    ]
+}

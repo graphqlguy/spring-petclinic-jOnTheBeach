@@ -1,0 +1,29 @@
+[{"Id":1, "Nombre":" ", "Factor":"1E0", "Codigo":"0", "Abrev":null}
+,{"Id":2, "Nombre":"Tens", "Factor":"1E1", "Codigo":"1", "Abrev":"Tenths"}
+,{"Id":3, "Nombre":"Houndreds", "Factor":"1E2", "Codigo":"2", "Abrev":"Hundreds"}
+,{"Id":4, "Nombre":"Thousands", "Factor":"1E3", "Codigo":"3", "Abrev":"Thousands"}
+,{"Id":5, "Nombre":"Tenths", "Factor":"1E-1", "Codigo":"-1", "Abrev":"Tenths"}
+,{"Id":6, "Nombre":"Millionths", "Factor":"1E-6", "Codigo":"-6", "Abrev":"Millionths"}
+,{"Id":7, "Nombre":"Houndredths of thousandths", "Factor":"1E-5", "Codigo":"-5", "Abrev":"Hundredths of thousandths"}
+,{"Id":8, "Nombre":"Tenths of thousandths", "Factor":"1E-4", "Codigo":"-4", "Abrev":"Tenths of thousandths"}
+,{"Id":9, "Nombre":"Thousandths", "Factor":"1E-3", "Codigo":"-3", "Abrev":"Thousandths"}
+,{"Id":10, "Nombre":"Houndredths", "Factor":"1E-2", "Codigo":"-2", "Abrev":"Hundredths"}
+,{"Id":11, "Nombre":"Tens of thousands", "Factor":"1E4", "Codigo":"4", "Abrev":"Tenths of thousands"}
+,{"Id":12, "Nombre":"Houndreds of thousands", "Factor":"1E5", "Codigo":"5", "Abrev":"Hundreds of thousands"}
+,{"Id":13, "Nombre":"Million", "Factor":"1E6", "Codigo":"6", "Abrev":"Million"}
+,{"Id":14, "Nombre":"Tens of millions", "Factor":"1E7", "Codigo":"7", "Abrev":"Tenths of millions"}
+,{"Id":15, "Nombre":"Houndreds of millions", "Factor":"1E8", "Codigo":"8", "Abrev":"Hundreds of millions"}
+,{"Id":16, "Nombre":"Billions", "Factor":"1E9", "Codigo":"9", "Abrev":"Thousands of millions"}
+,{"Id":17, "Nombre":"Tens of billions", "Factor":"1E10", "Codigo":"10", "Abrev":"Tenths of thousands of millions"}
+,{"Id":18, "Nombre":"Houndreds of billions", "Factor":"1E11", "Codigo":"11", "Abrev":"Hundreds of thousands of millions"}
+,{"Id":19, "Nombre":"Trillions", "Factor":"1E12", "Codigo":"12", "Abrev":"Trillions"}
+,{"Id":20, "Nombre":"Tens of trillions", "Factor":"1E13", "Codigo":"13", "Abrev":"Tenths of trillions"}
+,{"Id":21, "Nombre":"Houndreds of trillions", "Factor":"1E14", "Codigo":"14", "Abrev":"Hundreds of trillions"}
+,{"Id":22, "Nombre":"Quadrillions", "Factor":"1E15", "Codigo":"15", "Abrev":"Thousands of trillions"}
+,{"Id":24, "Nombre":"Ten Millionth", "Factor":"1E-7", "Codigo":"-7", "Abrev":"Ten Millionth"}
+,{"Id":25, "Nombre":"Hundred Millionth", "Factor":"1E-8", "Codigo":"-8", "Abrev":"Hundred Millionth"}
+,{"Id":26, "Nombre":"Billionth", "Factor":"1E-9", "Codigo":"-9", "Abrev":"Billionth"}
+,{"Id":27, "Nombre":"Ten Billionth", "Factor":"1E-10", "Codigo":"-10", "Abrev":"Ten Billionth"}
+,{"Id":28, "Nombre":"Hundred Billionth", "Factor":"1E-11", "Codigo":"-11", "Abrev":"Hundred Billionth"}
+,{"Id":29, "Nombre":"Trillionth", "Factor":"1E-12", "Codigo":"-12", "Abrev":"Trillionth"}
+]

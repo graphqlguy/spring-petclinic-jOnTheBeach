@@ -1,0 +1,3470 @@
+{
+ "mappings": [
+  {
+   "name": "ignAddresses: {\"bbox\": \"-4.50,36.65,-4.35,36.75\", \"size\": 3}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/idee/collections/address/items",
+    "queryParameters": {
+     "bbox": {
+      "equalTo": "-4.50,36.65,-4.35,36.75"
+     },
+     "skipGeometry": {
+      "equalTo": "true"
+     },
+     "f": {
+      "equalTo": "json"
+     },
+     "offset": {
+      "equalTo": "0"
+     },
+     "limit": {
+      "equalTo": "3"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "idee/ignAddresses.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://api-features.idee.es/collections/address/items?bbox=-4.50%2C36.65%2C-4.35%2C36.75&skipGeometry=true&f=json&offset=0&limit=3 on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignAddresses: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/idee/collections/address/items"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "idee/ignAddresses.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of ignAddresses with the first recording, from https://api-features.idee.es/collections/address/items?bbox=-4.50%2C36.65%2C-4.35%2C36.75&skipGeometry=true&f=json&offset=0&limit=3 on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignAddress: {\"id\": \"AD_ADDRESS_PPK_01.29.G29_290670037179\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/idee/collections/address/items/AD_ADDRESS_PPK_01.29.G29_290670037179",
+    "queryParameters": {
+     "skipGeometry": {
+      "equalTo": "true"
+     },
+     "f": {
+      "equalTo": "json"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "idee/ignAddress.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://api-features.idee.es/collections/address/items/AD_ADDRESS_PPK_01.29.G29_290670037179?skipGeometry=true&f=json on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignAddress: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/idee/collections/address/items/[^/]+"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "idee/ignAddress.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of ignAddress with the first recording, from https://api-features.idee.es/collections/address/items/AD_ADDRESS_PPK_01.29.G29_290670037179?skipGeometry=true&f=json on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignLandUseDatasets: {\"bbox\": \"-5.6,36.2,-3.7,37.4\", \"size\": 3}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/idee/collections/existinglandusedataset/items",
+    "queryParameters": {
+     "bbox": {
+      "equalTo": "-5.6,36.2,-3.7,37.4"
+     },
+     "skipGeometry": {
+      "equalTo": "true"
+     },
+     "f": {
+      "equalTo": "json"
+     },
+     "offset": {
+      "equalTo": "0"
+     },
+     "limit": {
+      "equalTo": "3"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "idee/ignLandUseDatasets.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://api-features.idee.es/collections/existinglandusedataset/items?bbox=-5.6%2C36.2%2C-3.7%2C37.4&skipGeometry=true&f=json&offset=0&limit=3 on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignLandUseDatasets: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/idee/collections/existinglandusedataset/items"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "idee/ignLandUseDatasets.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of ignLandUseDatasets with the first recording, from https://api-features.idee.es/collections/existinglandusedataset/items?bbox=-5.6%2C36.2%2C-3.7%2C37.4&skipGeometry=true&f=json&offset=0&limit=3 on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignLandUseAreas: {\"bbox\": \"-4.50,36.65,-4.35,36.75\", \"size\": 3}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/idee/collections/existinglanduseobject/items",
+    "queryParameters": {
+     "bbox": {
+      "equalTo": "-4.50,36.65,-4.35,36.75"
+     },
+     "skipGeometry": {
+      "equalTo": "true"
+     },
+     "f": {
+      "equalTo": "json"
+     },
+     "offset": {
+      "equalTo": "0"
+     },
+     "limit": {
+      "equalTo": "3"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "idee/ignLandUseAreas.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://api-features.idee.es/collections/existinglanduseobject/items?bbox=-4.50%2C36.65%2C-4.35%2C36.75&skipGeometry=true&f=json&offset=0&limit=3 on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignLandUseAreas: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/idee/collections/existinglanduseobject/items"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "idee/ignLandUseAreas.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of ignLandUseAreas with the first recording, from https://api-features.idee.es/collections/existinglanduseobject/items?bbox=-4.50%2C36.65%2C-4.35%2C36.75&skipGeometry=true&f=json&offset=0&limit=3 on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignLandUseArea: {\"id\": \"0000cc4a-fcfb-43f6-af1b-6104787622f7\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/idee/collections/existinglanduseobject/items/0000cc4a-fcfb-43f6-af1b-6104787622f7",
+    "queryParameters": {
+     "skipGeometry": {
+      "equalTo": "true"
+     },
+     "f": {
+      "equalTo": "json"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "idee/ignLandUseArea.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://api-features.idee.es/collections/existinglanduseobject/items/0000cc4a-fcfb-43f6-af1b-6104787622f7?skipGeometry=true&f=json on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignLandUseArea: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/idee/collections/existinglanduseobject/items/[^/]+"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "idee/ignLandUseArea.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of ignLandUseArea with the first recording, from https://api-features.idee.es/collections/existinglanduseobject/items/0000cc4a-fcfb-43f6-af1b-6104787622f7?skipGeometry=true&f=json on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignLandCoverUnits: {\"bbox\": \"-4.50,36.65,-4.35,36.75\", \"size\": 3}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/idee/collections/landcoverunit/items",
+    "queryParameters": {
+     "bbox": {
+      "equalTo": "-4.50,36.65,-4.35,36.75"
+     },
+     "skipGeometry": {
+      "equalTo": "true"
+     },
+     "f": {
+      "equalTo": "json"
+     },
+     "offset": {
+      "equalTo": "0"
+     },
+     "limit": {
+      "equalTo": "3"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "idee/ignLandCoverUnits.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://api-features.idee.es/collections/landcoverunit/items?bbox=-4.50%2C36.65%2C-4.35%2C36.75&skipGeometry=true&f=json&offset=0&limit=3 on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignLandCoverUnits: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/idee/collections/landcoverunit/items"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "idee/ignLandCoverUnits.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of ignLandCoverUnits with the first recording, from https://api-features.idee.es/collections/landcoverunit/items?bbox=-4.50%2C36.65%2C-4.35%2C36.75&skipGeometry=true&f=json&offset=0&limit=3 on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignLandCoverUnit: {\"id\": \"0000cc4a-fcfb-43f6-af1b-6104787622f7\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/idee/collections/landcoverunit/items/0000cc4a-fcfb-43f6-af1b-6104787622f7",
+    "queryParameters": {
+     "skipGeometry": {
+      "equalTo": "true"
+     },
+     "f": {
+      "equalTo": "json"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "idee/ignLandCoverUnit.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://api-features.idee.es/collections/landcoverunit/items/0000cc4a-fcfb-43f6-af1b-6104787622f7?skipGeometry=true&f=json on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignLandCoverUnit: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/idee/collections/landcoverunit/items/[^/]+"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "idee/ignLandCoverUnit.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of ignLandCoverUnit with the first recording, from https://api-features.idee.es/collections/landcoverunit/items/0000cc4a-fcfb-43f6-af1b-6104787622f7?skipGeometry=true&f=json on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignHydroNodes: {\"bbox\": \"-4.50,36.65,-4.35,36.75\", \"size\": 3}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/idee/collections/hydronode/items",
+    "queryParameters": {
+     "bbox": {
+      "equalTo": "-4.50,36.65,-4.35,36.75"
+     },
+     "skipGeometry": {
+      "equalTo": "true"
+     },
+     "f": {
+      "equalTo": "json"
+     },
+     "offset": {
+      "equalTo": "0"
+     },
+     "limit": {
+      "equalTo": "3"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "idee/ignHydroNodes.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://api-features.idee.es/collections/hydronode/items?bbox=-4.50%2C36.65%2C-4.35%2C36.75&skipGeometry=true&f=json&offset=0&limit=3 on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignHydroNodes: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/idee/collections/hydronode/items"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "idee/ignHydroNodes.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of ignHydroNodes with the first recording, from https://api-features.idee.es/collections/hydronode/items?bbox=-4.50%2C36.65%2C-4.35%2C36.75&skipGeometry=true&f=json&offset=0&limit=3 on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignHydroNode: {\"id\": \"ES060HYHYNP0000008048155\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/idee/collections/hydronode/items/ES060HYHYNP0000008048155",
+    "queryParameters": {
+     "skipGeometry": {
+      "equalTo": "true"
+     },
+     "f": {
+      "equalTo": "json"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "idee/ignHydroNode.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://api-features.idee.es/collections/hydronode/items/ES060HYHYNP0000008048155?skipGeometry=true&f=json on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignHydroNode: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/idee/collections/hydronode/items/[^/]+"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "idee/ignHydroNode.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of ignHydroNode with the first recording, from https://api-features.idee.es/collections/hydronode/items/ES060HYHYNP0000008048155?skipGeometry=true&f=json on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignWatercourseLinks: {\"bbox\": \"-4.50,36.65,-4.35,36.75\", \"size\": 3}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/idee/collections/watercourselink/items",
+    "queryParameters": {
+     "bbox": {
+      "equalTo": "-4.50,36.65,-4.35,36.75"
+     },
+     "skipGeometry": {
+      "equalTo": "true"
+     },
+     "f": {
+      "equalTo": "json"
+     },
+     "offset": {
+      "equalTo": "0"
+     },
+     "limit": {
+      "equalTo": "3"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "idee/ignWatercourseLinks.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://api-features.idee.es/collections/watercourselink/items?bbox=-4.50%2C36.65%2C-4.35%2C36.75&skipGeometry=true&f=json&offset=0&limit=3 on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignWatercourseLinks: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/idee/collections/watercourselink/items"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "idee/ignWatercourseLinks.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of ignWatercourseLinks with the first recording, from https://api-features.idee.es/collections/watercourselink/items?bbox=-4.50%2C36.65%2C-4.35%2C36.75&skipGeometry=true&f=json&offset=0&limit=3 on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignWatercourseLink: {\"id\": \"ES060HYWCLL0000008012603\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/idee/collections/watercourselink/items/ES060HYWCLL0000008012603",
+    "queryParameters": {
+     "skipGeometry": {
+      "equalTo": "true"
+     },
+     "f": {
+      "equalTo": "json"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "idee/ignWatercourseLink.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://api-features.idee.es/collections/watercourselink/items/ES060HYWCLL0000008012603?skipGeometry=true&f=json on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignWatercourseLink: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/idee/collections/watercourselink/items/[^/]+"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "idee/ignWatercourseLink.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of ignWatercourseLink with the first recording, from https://api-features.idee.es/collections/watercourselink/items/ES060HYWCLL0000008012603?skipGeometry=true&f=json on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignWatercourseLinkSequences: {\"bbox\": \"-4.50,36.65,-4.35,36.75\", \"size\": 3}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/idee/collections/watercourselinksequence/items",
+    "queryParameters": {
+     "bbox": {
+      "equalTo": "-4.50,36.65,-4.35,36.75"
+     },
+     "skipGeometry": {
+      "equalTo": "true"
+     },
+     "f": {
+      "equalTo": "json"
+     },
+     "offset": {
+      "equalTo": "0"
+     },
+     "limit": {
+      "equalTo": "3"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "idee/ignWatercourseLinkSequences.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://api-features.idee.es/collections/watercourselinksequence/items?bbox=-4.50%2C36.65%2C-4.35%2C36.75&skipGeometry=true&f=json&offset=0&limit=3 on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignWatercourseLinkSequences: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/idee/collections/watercourselinksequence/items"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "idee/ignWatercourseLinkSequences.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of ignWatercourseLinkSequences with the first recording, from https://api-features.idee.es/collections/watercourselinksequence/items?bbox=-4.50%2C36.65%2C-4.35%2C36.75&skipGeometry=true&f=json&offset=0&limit=3 on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignWaterCrossings: {\"bbox\": \"-5.6,36.2,-3.7,37.4\", \"size\": 3}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/idee/collections/crossing/items",
+    "queryParameters": {
+     "bbox": {
+      "equalTo": "-5.6,36.2,-3.7,37.4"
+     },
+     "skipGeometry": {
+      "equalTo": "true"
+     },
+     "f": {
+      "equalTo": "json"
+     },
+     "offset": {
+      "equalTo": "0"
+     },
+     "limit": {
+      "equalTo": "3"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "idee/ignWaterCrossings.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://api-features.idee.es/collections/crossing/items?bbox=-5.6%2C36.2%2C-3.7%2C37.4&skipGeometry=true&f=json&offset=0&limit=3 on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignWaterCrossings: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/idee/collections/crossing/items"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "idee/ignWaterCrossings.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of ignWaterCrossings with the first recording, from https://api-features.idee.es/collections/crossing/items?bbox=-5.6%2C36.2%2C-3.7%2C37.4&skipGeometry=true&f=json&offset=0&limit=3 on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignWaterCrossing: {\"id\": \"ES050HYCRSL0000001421929\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/idee/collections/crossing/items/ES050HYCRSL0000001421929",
+    "queryParameters": {
+     "skipGeometry": {
+      "equalTo": "true"
+     },
+     "f": {
+      "equalTo": "json"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "idee/ignWaterCrossing.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://api-features.idee.es/collections/crossing/items/ES050HYCRSL0000001421929?skipGeometry=true&f=json on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignWaterCrossing: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/idee/collections/crossing/items/[^/]+"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "idee/ignWaterCrossing.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of ignWaterCrossing with the first recording, from https://api-features.idee.es/collections/crossing/items/ES050HYCRSL0000001421929?skipGeometry=true&f=json on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignDams: {\"bbox\": \"-5.6,36.2,-3.7,37.4\", \"size\": 3}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/idee/collections/damorweir/items",
+    "queryParameters": {
+     "bbox": {
+      "equalTo": "-5.6,36.2,-3.7,37.4"
+     },
+     "skipGeometry": {
+      "equalTo": "true"
+     },
+     "f": {
+      "equalTo": "json"
+     },
+     "offset": {
+      "equalTo": "0"
+     },
+     "limit": {
+      "equalTo": "3"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "idee/ignDams.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://api-features.idee.es/collections/damorweir/items?bbox=-5.6%2C36.2%2C-3.7%2C37.4&skipGeometry=true&f=json&offset=0&limit=3 on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignDams: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/idee/collections/damorweir/items"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "idee/ignDams.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of ignDams with the first recording, from https://api-features.idee.es/collections/damorweir/items?bbox=-5.6%2C36.2%2C-3.7%2C37.4&skipGeometry=true&f=json&offset=0&limit=3 on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignDam: {\"id\": \"ES050HYDAML0000000719239\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/idee/collections/damorweir/items/ES050HYDAML0000000719239",
+    "queryParameters": {
+     "skipGeometry": {
+      "equalTo": "true"
+     },
+     "f": {
+      "equalTo": "json"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "idee/ignDam.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://api-features.idee.es/collections/damorweir/items/ES050HYDAML0000000719239?skipGeometry=true&f=json on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignDam: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/idee/collections/damorweir/items/[^/]+"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "idee/ignDam.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of ignDam with the first recording, from https://api-features.idee.es/collections/damorweir/items/ES050HYDAML0000000719239?skipGeometry=true&f=json on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignDrainageBasins: {\"bbox\": \"-4.50,36.65,-4.35,36.75\", \"size\": 3}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/idee/collections/drainagebasin/items",
+    "queryParameters": {
+     "bbox": {
+      "equalTo": "-4.50,36.65,-4.35,36.75"
+     },
+     "skipGeometry": {
+      "equalTo": "true"
+     },
+     "f": {
+      "equalTo": "json"
+     },
+     "offset": {
+      "equalTo": "0"
+     },
+     "limit": {
+      "equalTo": "3"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "idee/ignDrainageBasins.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://api-features.idee.es/collections/drainagebasin/items?bbox=-4.50%2C36.65%2C-4.35%2C36.75&skipGeometry=true&f=json&offset=0&limit=3 on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignDrainageBasins: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/idee/collections/drainagebasin/items"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "idee/ignDrainageBasins.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of ignDrainageBasins with the first recording, from https://api-features.idee.es/collections/drainagebasin/items?bbox=-4.50%2C36.65%2C-4.35%2C36.75&skipGeometry=true&f=json&offset=0&limit=3 on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignWaterfalls: {\"bbox\": \"-10.0,35.0,5.0,44.0\", \"size\": 3}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/idee/collections/falls/items",
+    "queryParameters": {
+     "bbox": {
+      "equalTo": "-10.0,35.0,5.0,44.0"
+     },
+     "skipGeometry": {
+      "equalTo": "true"
+     },
+     "f": {
+      "equalTo": "json"
+     },
+     "offset": {
+      "equalTo": "0"
+     },
+     "limit": {
+      "equalTo": "3"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "idee/ignWaterfalls.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://api-features.idee.es/collections/falls/items?bbox=-10.0%2C35.0%2C5.0%2C44.0&skipGeometry=true&f=json&offset=0&limit=3 on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignWaterfalls: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/idee/collections/falls/items"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "idee/ignWaterfalls.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of ignWaterfalls with the first recording, from https://api-features.idee.es/collections/falls/items?bbox=-10.0%2C35.0%2C5.0%2C44.0&skipGeometry=true&f=json&offset=0&limit=3 on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignWaterfall: {\"id\": \"ES010HYFLSP0000001528421\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/idee/collections/falls/items/ES010HYFLSP0000001528421",
+    "queryParameters": {
+     "skipGeometry": {
+      "equalTo": "true"
+     },
+     "f": {
+      "equalTo": "json"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "idee/ignWaterfall.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://api-features.idee.es/collections/falls/items/ES010HYFLSP0000001528421?skipGeometry=true&f=json on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignWaterfall: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/idee/collections/falls/items/[^/]+"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "idee/ignWaterfall.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of ignWaterfall with the first recording, from https://api-features.idee.es/collections/falls/items/ES010HYFLSP0000001528421?skipGeometry=true&f=json on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignFords: {\"bbox\": \"-5.6,36.2,-3.7,37.4\", \"size\": 3}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/idee/collections/ford/items",
+    "queryParameters": {
+     "bbox": {
+      "equalTo": "-5.6,36.2,-3.7,37.4"
+     },
+     "skipGeometry": {
+      "equalTo": "true"
+     },
+     "f": {
+      "equalTo": "json"
+     },
+     "offset": {
+      "equalTo": "0"
+     },
+     "limit": {
+      "equalTo": "3"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "idee/ignFords.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://api-features.idee.es/collections/ford/items?bbox=-5.6%2C36.2%2C-3.7%2C37.4&skipGeometry=true&f=json&offset=0&limit=3 on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignFords: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/idee/collections/ford/items"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "idee/ignFords.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of ignFords with the first recording, from https://api-features.idee.es/collections/ford/items?bbox=-5.6%2C36.2%2C-3.7%2C37.4&skipGeometry=true&f=json&offset=0&limit=3 on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignFord: {\"id\": \"ES050HYFORL0000001569496\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/idee/collections/ford/items/ES050HYFORL0000001569496",
+    "queryParameters": {
+     "skipGeometry": {
+      "equalTo": "true"
+     },
+     "f": {
+      "equalTo": "json"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "idee/ignFord.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://api-features.idee.es/collections/ford/items/ES050HYFORL0000001569496?skipGeometry=true&f=json on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignFord: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/idee/collections/ford/items/[^/]+"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "idee/ignFord.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of ignFord with the first recording, from https://api-features.idee.es/collections/ford/items/ES050HYFORL0000001569496?skipGeometry=true&f=json on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignShorelines: {\"bbox\": \"-4.50,36.65,-4.35,36.75\", \"size\": 3}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/idee/collections/landwaterboundary/items",
+    "queryParameters": {
+     "bbox": {
+      "equalTo": "-4.50,36.65,-4.35,36.75"
+     },
+     "skipGeometry": {
+      "equalTo": "true"
+     },
+     "f": {
+      "equalTo": "json"
+     },
+     "offset": {
+      "equalTo": "0"
+     },
+     "limit": {
+      "equalTo": "3"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "idee/ignShorelines.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://api-features.idee.es/collections/landwaterboundary/items?bbox=-4.50%2C36.65%2C-4.35%2C36.75&skipGeometry=true&f=json&offset=0&limit=3 on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignShorelines: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/idee/collections/landwaterboundary/items"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "idee/ignShorelines.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of ignShorelines with the first recording, from https://api-features.idee.es/collections/landwaterboundary/items?bbox=-4.50%2C36.65%2C-4.35%2C36.75&skipGeometry=true&f=json&offset=0&limit=3 on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignShoreline: {\"id\": \"ES000HYLWBL0000009176036\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/idee/collections/landwaterboundary/items/ES000HYLWBL0000009176036",
+    "queryParameters": {
+     "skipGeometry": {
+      "equalTo": "true"
+     },
+     "f": {
+      "equalTo": "json"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "idee/ignShoreline.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://api-features.idee.es/collections/landwaterboundary/items/ES000HYLWBL0000009176036?skipGeometry=true&f=json on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignShoreline: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/idee/collections/landwaterboundary/items/[^/]+"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "idee/ignShoreline.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of ignShoreline with the first recording, from https://api-features.idee.es/collections/landwaterboundary/items/ES000HYLWBL0000009176036?skipGeometry=true&f=json on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignLocks: {\"bbox\": \"-10.0,35.0,5.0,44.0\", \"size\": 3}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/idee/collections/lock/items",
+    "queryParameters": {
+     "bbox": {
+      "equalTo": "-10.0,35.0,5.0,44.0"
+     },
+     "skipGeometry": {
+      "equalTo": "true"
+     },
+     "f": {
+      "equalTo": "json"
+     },
+     "offset": {
+      "equalTo": "0"
+     },
+     "limit": {
+      "equalTo": "3"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "idee/ignLocks.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://api-features.idee.es/collections/lock/items?bbox=-10.0%2C35.0%2C5.0%2C44.0&skipGeometry=true&f=json&offset=0&limit=3 on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignLocks: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/idee/collections/lock/items"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "idee/ignLocks.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of ignLocks with the first recording, from https://api-features.idee.es/collections/lock/items?bbox=-10.0%2C35.0%2C5.0%2C44.0&skipGeometry=true&f=json&offset=0&limit=3 on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignLock: {\"id\": \"ES020HYLCKP0000001304687\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/idee/collections/lock/items/ES020HYLCKP0000001304687",
+    "queryParameters": {
+     "skipGeometry": {
+      "equalTo": "true"
+     },
+     "f": {
+      "equalTo": "json"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "idee/ignLock.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://api-features.idee.es/collections/lock/items/ES020HYLCKP0000001304687?skipGeometry=true&f=json on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignLock: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/idee/collections/lock/items/[^/]+"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "idee/ignLock.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of ignLock with the first recording, from https://api-features.idee.es/collections/lock/items/ES020HYLCKP0000001304687?skipGeometry=true&f=json on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignRiverBasins: {\"bbox\": \"-4.50,36.65,-4.35,36.75\", \"size\": 3}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/idee/collections/riverbasin/items",
+    "queryParameters": {
+     "bbox": {
+      "equalTo": "-4.50,36.65,-4.35,36.75"
+     },
+     "skipGeometry": {
+      "equalTo": "true"
+     },
+     "f": {
+      "equalTo": "json"
+     },
+     "offset": {
+      "equalTo": "0"
+     },
+     "limit": {
+      "equalTo": "3"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "idee/ignRiverBasins.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://api-features.idee.es/collections/riverbasin/items?bbox=-4.50%2C36.65%2C-4.35%2C36.75&skipGeometry=true&f=json&offset=0&limit=3 on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignRiverBasins: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/idee/collections/riverbasin/items"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "idee/ignRiverBasins.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of ignRiverBasins with the first recording, from https://api-features.idee.es/collections/riverbasin/items?bbox=-4.50%2C36.65%2C-4.35%2C36.75&skipGeometry=true&f=json&offset=0&limit=3 on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignShorelineConstructions: {\"bbox\": \"-4.50,36.65,-4.35,36.75\", \"size\": 3}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/idee/collections/shorelineconstruction/items",
+    "queryParameters": {
+     "bbox": {
+      "equalTo": "-4.50,36.65,-4.35,36.75"
+     },
+     "skipGeometry": {
+      "equalTo": "true"
+     },
+     "f": {
+      "equalTo": "json"
+     },
+     "offset": {
+      "equalTo": "0"
+     },
+     "limit": {
+      "equalTo": "3"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "idee/ignShorelineConstructions.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://api-features.idee.es/collections/shorelineconstruction/items?bbox=-4.50%2C36.65%2C-4.35%2C36.75&skipGeometry=true&f=json&offset=0&limit=3 on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignShorelineConstructions: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/idee/collections/shorelineconstruction/items"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "idee/ignShorelineConstructions.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of ignShorelineConstructions with the first recording, from https://api-features.idee.es/collections/shorelineconstruction/items?bbox=-4.50%2C36.65%2C-4.35%2C36.75&skipGeometry=true&f=json&offset=0&limit=3 on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignShorelineConstruction: {\"id\": \"ES060HYSHCL0000008925455\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/idee/collections/shorelineconstruction/items/ES060HYSHCL0000008925455",
+    "queryParameters": {
+     "skipGeometry": {
+      "equalTo": "true"
+     },
+     "f": {
+      "equalTo": "json"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "idee/ignShorelineConstruction.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://api-features.idee.es/collections/shorelineconstruction/items/ES060HYSHCL0000008925455?skipGeometry=true&f=json on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignShorelineConstruction: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/idee/collections/shorelineconstruction/items/[^/]+"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "idee/ignShorelineConstruction.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of ignShorelineConstruction with the first recording, from https://api-features.idee.es/collections/shorelineconstruction/items/ES060HYSHCL0000008925455?skipGeometry=true&f=json on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignStandingWaters: {\"bbox\": \"-5.6,36.2,-3.7,37.4\", \"size\": 3}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/idee/collections/standingwater/items",
+    "queryParameters": {
+     "bbox": {
+      "equalTo": "-5.6,36.2,-3.7,37.4"
+     },
+     "skipGeometry": {
+      "equalTo": "true"
+     },
+     "f": {
+      "equalTo": "json"
+     },
+     "offset": {
+      "equalTo": "0"
+     },
+     "limit": {
+      "equalTo": "3"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "idee/ignStandingWaters.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://api-features.idee.es/collections/standingwater/items?bbox=-5.6%2C36.2%2C-3.7%2C37.4&skipGeometry=true&f=json&offset=0&limit=3 on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignStandingWaters: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/idee/collections/standingwater/items"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "idee/ignStandingWaters.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of ignStandingWaters with the first recording, from https://api-features.idee.es/collections/standingwater/items?bbox=-5.6%2C36.2%2C-3.7%2C37.4&skipGeometry=true&f=json&offset=0&limit=3 on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignStandingWater: {\"id\": \"ES050HYSWTS0000000722613\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/idee/collections/standingwater/items/ES050HYSWTS0000000722613",
+    "queryParameters": {
+     "skipGeometry": {
+      "equalTo": "true"
+     },
+     "f": {
+      "equalTo": "json"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "idee/ignStandingWater.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://api-features.idee.es/collections/standingwater/items/ES050HYSWTS0000000722613?skipGeometry=true&f=json on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignStandingWater: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/idee/collections/standingwater/items/[^/]+"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "idee/ignStandingWater.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of ignStandingWater with the first recording, from https://api-features.idee.es/collections/standingwater/items/ES050HYSWTS0000000722613?skipGeometry=true&f=json on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignWatercourses: {\"bbox\": \"-4.50,36.65,-4.35,36.75\", \"size\": 3}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/idee/collections/watercourse/items",
+    "queryParameters": {
+     "bbox": {
+      "equalTo": "-4.50,36.65,-4.35,36.75"
+     },
+     "skipGeometry": {
+      "equalTo": "true"
+     },
+     "f": {
+      "equalTo": "json"
+     },
+     "offset": {
+      "equalTo": "0"
+     },
+     "limit": {
+      "equalTo": "3"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "idee/ignWatercourses.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://api-features.idee.es/collections/watercourse/items?bbox=-4.50%2C36.65%2C-4.35%2C36.75&skipGeometry=true&f=json&offset=0&limit=3 on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignWatercourses: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/idee/collections/watercourse/items"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "idee/ignWatercourses.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of ignWatercourses with the first recording, from https://api-features.idee.es/collections/watercourse/items?bbox=-4.50%2C36.65%2C-4.35%2C36.75&skipGeometry=true&f=json&offset=0&limit=3 on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignWatercourse: {\"id\": \"ES060HYWCSL0000003107221\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/idee/collections/watercourse/items/ES060HYWCSL0000003107221",
+    "queryParameters": {
+     "skipGeometry": {
+      "equalTo": "true"
+     },
+     "f": {
+      "equalTo": "json"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "idee/ignWatercourse.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://api-features.idee.es/collections/watercourse/items/ES060HYWCSL0000003107221?skipGeometry=true&f=json on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignWatercourse: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/idee/collections/watercourse/items/[^/]+"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "idee/ignWatercourse.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of ignWatercourse with the first recording, from https://api-features.idee.es/collections/watercourse/items/ES060HYWCSL0000003107221?skipGeometry=true&f=json on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignWetlands: {\"bbox\": \"-5.6,36.2,-3.7,37.4\", \"size\": 3}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/idee/collections/wetland/items",
+    "queryParameters": {
+     "bbox": {
+      "equalTo": "-5.6,36.2,-3.7,37.4"
+     },
+     "skipGeometry": {
+      "equalTo": "true"
+     },
+     "f": {
+      "equalTo": "json"
+     },
+     "offset": {
+      "equalTo": "0"
+     },
+     "limit": {
+      "equalTo": "3"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "idee/ignWetlands.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://api-features.idee.es/collections/wetland/items?bbox=-5.6%2C36.2%2C-3.7%2C37.4&skipGeometry=true&f=json&offset=0&limit=3 on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignWetlands: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/idee/collections/wetland/items"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "idee/ignWetlands.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of ignWetlands with the first recording, from https://api-features.idee.es/collections/wetland/items?bbox=-5.6%2C36.2%2C-3.7%2C37.4&skipGeometry=true&f=json&offset=0&limit=3 on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignAerodromeAreas: {\"bbox\": \"-4.50,36.65,-4.35,36.75\", \"size\": 3}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/idee/collections/aerodromearea/items",
+    "queryParameters": {
+     "bbox": {
+      "equalTo": "-4.50,36.65,-4.35,36.75"
+     },
+     "skipGeometry": {
+      "equalTo": "true"
+     },
+     "f": {
+      "equalTo": "json"
+     },
+     "offset": {
+      "equalTo": "0"
+     },
+     "limit": {
+      "equalTo": "3"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "idee/ignAerodromeAreas.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://api-features.idee.es/collections/aerodromearea/items?bbox=-4.50%2C36.65%2C-4.35%2C36.75&skipGeometry=true&f=json&offset=0&limit=3 on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignAerodromeAreas: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/idee/collections/aerodromearea/items"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "idee/ignAerodromeAreas.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of ignAerodromeAreas with the first recording, from https://api-features.idee.es/collections/aerodromearea/items?bbox=-4.50%2C36.65%2C-4.35%2C36.75&skipGeometry=true&f=json&offset=0&limit=3 on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignAerodromeArea: {\"id\": \"AEROD_A290670000001\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/idee/collections/aerodromearea/items/AEROD_A290670000001",
+    "queryParameters": {
+     "skipGeometry": {
+      "equalTo": "true"
+     },
+     "f": {
+      "equalTo": "json"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "idee/ignAerodromeArea.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://api-features.idee.es/collections/aerodromearea/items/AEROD_A290670000001?skipGeometry=true&f=json on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignAerodromeArea: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/idee/collections/aerodromearea/items/[^/]+"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "idee/ignAerodromeArea.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of ignAerodromeArea with the first recording, from https://api-features.idee.es/collections/aerodromearea/items/AEROD_A290670000001?skipGeometry=true&f=json on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignAerodromes: {\"bbox\": \"-4.50,36.65,-4.35,36.75\", \"size\": 3}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/idee/collections/aerodromenode/items",
+    "queryParameters": {
+     "bbox": {
+      "equalTo": "-4.50,36.65,-4.35,36.75"
+     },
+     "skipGeometry": {
+      "equalTo": "true"
+     },
+     "f": {
+      "equalTo": "json"
+     },
+     "offset": {
+      "equalTo": "0"
+     },
+     "limit": {
+      "equalTo": "3"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "idee/ignAerodromes.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://api-features.idee.es/collections/aerodromenode/items?bbox=-4.50%2C36.65%2C-4.35%2C36.75&skipGeometry=true&f=json&offset=0&limit=3 on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignAerodromes: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/idee/collections/aerodromenode/items"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "idee/ignAerodromes.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of ignAerodromes with the first recording, from https://api-features.idee.es/collections/aerodromenode/items?bbox=-4.50%2C36.65%2C-4.35%2C36.75&skipGeometry=true&f=json&offset=0&limit=3 on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignAerodrome: {\"id\": \"AEROD_N290674000001\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/idee/collections/aerodromenode/items/AEROD_N290674000001",
+    "queryParameters": {
+     "skipGeometry": {
+      "equalTo": "true"
+     },
+     "f": {
+      "equalTo": "json"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "idee/ignAerodrome.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://api-features.idee.es/collections/aerodromenode/items/AEROD_N290674000001?skipGeometry=true&f=json on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignAerodrome: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/idee/collections/aerodromenode/items/[^/]+"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "idee/ignAerodrome.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of ignAerodrome with the first recording, from https://api-features.idee.es/collections/aerodromenode/items/AEROD_N290674000001?skipGeometry=true&f=json on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignApronAreas: {\"bbox\": \"-4.50,36.65,-4.35,36.75\", \"size\": 3}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/idee/collections/apronarea/items",
+    "queryParameters": {
+     "bbox": {
+      "equalTo": "-4.50,36.65,-4.35,36.75"
+     },
+     "skipGeometry": {
+      "equalTo": "true"
+     },
+     "f": {
+      "equalTo": "json"
+     },
+     "offset": {
+      "equalTo": "0"
+     },
+     "limit": {
+      "equalTo": "3"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "idee/ignApronAreas.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://api-features.idee.es/collections/apronarea/items?bbox=-4.50%2C36.65%2C-4.35%2C36.75&skipGeometry=true&f=json&offset=0&limit=3 on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignApronAreas: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/idee/collections/apronarea/items"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "idee/ignApronAreas.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of ignApronAreas with the first recording, from https://api-features.idee.es/collections/apronarea/items?bbox=-4.50%2C36.65%2C-4.35%2C36.75&skipGeometry=true&f=json&offset=0&limit=3 on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignApronArea: {\"id\": \"PLATAFO290670000007\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/idee/collections/apronarea/items/PLATAFO290670000007",
+    "queryParameters": {
+     "skipGeometry": {
+      "equalTo": "true"
+     },
+     "f": {
+      "equalTo": "json"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "idee/ignApronArea.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://api-features.idee.es/collections/apronarea/items/PLATAFO290670000007?skipGeometry=true&f=json on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignApronArea: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/idee/collections/apronarea/items/[^/]+"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "idee/ignApronArea.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of ignApronArea with the first recording, from https://api-features.idee.es/collections/apronarea/items/PLATAFO290670000007?skipGeometry=true&f=json on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignRunways: {\"bbox\": \"-4.50,36.65,-4.35,36.75\", \"size\": 3}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/idee/collections/runwayarea/items",
+    "queryParameters": {
+     "bbox": {
+      "equalTo": "-4.50,36.65,-4.35,36.75"
+     },
+     "skipGeometry": {
+      "equalTo": "true"
+     },
+     "f": {
+      "equalTo": "json"
+     },
+     "offset": {
+      "equalTo": "0"
+     },
+     "limit": {
+      "equalTo": "3"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "idee/ignRunways.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://api-features.idee.es/collections/runwayarea/items?bbox=-4.50%2C36.65%2C-4.35%2C36.75&skipGeometry=true&f=json&offset=0&limit=3 on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignRunways: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/idee/collections/runwayarea/items"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "idee/ignRunways.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of ignRunways with the first recording, from https://api-features.idee.es/collections/runwayarea/items?bbox=-4.50%2C36.65%2C-4.35%2C36.75&skipGeometry=true&f=json&offset=0&limit=3 on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignRunway: {\"id\": \"PISTARO290670000002\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/idee/collections/runwayarea/items/PISTARO290670000002",
+    "queryParameters": {
+     "skipGeometry": {
+      "equalTo": "true"
+     },
+     "f": {
+      "equalTo": "json"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "idee/ignRunway.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://api-features.idee.es/collections/runwayarea/items/PISTARO290670000002?skipGeometry=true&f=json on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignRunway: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/idee/collections/runwayarea/items/[^/]+"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "idee/ignRunway.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of ignRunway with the first recording, from https://api-features.idee.es/collections/runwayarea/items/PISTARO290670000002?skipGeometry=true&f=json on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignTaxiways: {\"bbox\": \"-4.50,36.65,-4.35,36.75\", \"size\": 3}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/idee/collections/taxiwayarea/items",
+    "queryParameters": {
+     "bbox": {
+      "equalTo": "-4.50,36.65,-4.35,36.75"
+     },
+     "skipGeometry": {
+      "equalTo": "true"
+     },
+     "f": {
+      "equalTo": "json"
+     },
+     "offset": {
+      "equalTo": "0"
+     },
+     "limit": {
+      "equalTo": "3"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "idee/ignTaxiways.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://api-features.idee.es/collections/taxiwayarea/items?bbox=-4.50%2C36.65%2C-4.35%2C36.75&skipGeometry=true&f=json&offset=0&limit=3 on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignTaxiways: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/idee/collections/taxiwayarea/items"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "idee/ignTaxiways.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of ignTaxiways with the first recording, from https://api-features.idee.es/collections/taxiwayarea/items?bbox=-4.50%2C36.65%2C-4.35%2C36.75&skipGeometry=true&f=json&offset=0&limit=3 on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignTaxiway: {\"id\": \"CALLERO290670000005\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/idee/collections/taxiwayarea/items/CALLERO290670000005",
+    "queryParameters": {
+     "skipGeometry": {
+      "equalTo": "true"
+     },
+     "f": {
+      "equalTo": "json"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "idee/ignTaxiway.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://api-features.idee.es/collections/taxiwayarea/items/CALLERO290670000005?skipGeometry=true&f=json on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignTaxiway: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/idee/collections/taxiwayarea/items/[^/]+"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "idee/ignTaxiway.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of ignTaxiway with the first recording, from https://api-features.idee.es/collections/taxiwayarea/items/CALLERO290670000005?skipGeometry=true&f=json on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignCablewayLinks: {\"bbox\": \"-4.0,36.8,-2.5,37.5\", \"size\": 3}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/idee/collections/cablewaylink/items",
+    "queryParameters": {
+     "bbox": {
+      "equalTo": "-4.0,36.8,-2.5,37.5"
+     },
+     "skipGeometry": {
+      "equalTo": "true"
+     },
+     "f": {
+      "equalTo": "json"
+     },
+     "offset": {
+      "equalTo": "0"
+     },
+     "limit": {
+      "equalTo": "3"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "idee/ignCablewayLinks.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://api-features.idee.es/collections/cablewaylink/items?bbox=-4.0%2C36.8%2C-2.5%2C37.5&skipGeometry=true&f=json&offset=0&limit=3 on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignCablewayLinks: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/idee/collections/cablewaylink/items"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "idee/ignCablewayLinks.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of ignCablewayLinks with the first recording, from https://api-features.idee.es/collections/cablewaylink/items?bbox=-4.0%2C36.8%2C-2.5%2C37.5&skipGeometry=true&f=json&offset=0&limit=3 on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignCablewayLink: {\"id\": \"CABL_TR180000000007\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/idee/collections/cablewaylink/items/CABL_TR180000000007",
+    "queryParameters": {
+     "skipGeometry": {
+      "equalTo": "true"
+     },
+     "f": {
+      "equalTo": "json"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "idee/ignCablewayLink.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://api-features.idee.es/collections/cablewaylink/items/CABL_TR180000000007?skipGeometry=true&f=json on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignCablewayLink: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/idee/collections/cablewaylink/items/[^/]+"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "idee/ignCablewayLink.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of ignCablewayLink with the first recording, from https://api-features.idee.es/collections/cablewaylink/items/CABL_TR180000000007?skipGeometry=true&f=json on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignCablewayNodes: {\"bbox\": \"-4.0,36.8,-2.5,37.5\", \"size\": 3}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/idee/collections/cablewaynode/items",
+    "queryParameters": {
+     "bbox": {
+      "equalTo": "-4.0,36.8,-2.5,37.5"
+     },
+     "skipGeometry": {
+      "equalTo": "true"
+     },
+     "f": {
+      "equalTo": "json"
+     },
+     "offset": {
+      "equalTo": "0"
+     },
+     "limit": {
+      "equalTo": "3"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "idee/ignCablewayNodes.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://api-features.idee.es/collections/cablewaynode/items?bbox=-4.0%2C36.8%2C-2.5%2C37.5&skipGeometry=true&f=json&offset=0&limit=3 on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignCablewayNodes: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/idee/collections/cablewaynode/items"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "idee/ignCablewayNodes.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of ignCablewayNodes with the first recording, from https://api-features.idee.es/collections/cablewaynode/items?bbox=-4.0%2C36.8%2C-2.5%2C37.5&skipGeometry=true&f=json&offset=0&limit=3 on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignCablewayNode: {\"id\": \"CABL_N_180000000001\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/idee/collections/cablewaynode/items/CABL_N_180000000001",
+    "queryParameters": {
+     "skipGeometry": {
+      "equalTo": "true"
+     },
+     "f": {
+      "equalTo": "json"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "idee/ignCablewayNode.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://api-features.idee.es/collections/cablewaynode/items/CABL_N_180000000001?skipGeometry=true&f=json on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignCablewayNode: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/idee/collections/cablewaynode/items/[^/]+"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "idee/ignCablewayNode.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of ignCablewayNode with the first recording, from https://api-features.idee.es/collections/cablewaynode/items/CABL_N_180000000001?skipGeometry=true&f=json on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignRailwayLinks: {\"bbox\": \"-4.50,36.65,-4.35,36.75\", \"size\": 3}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/idee/collections/railwaylink/items",
+    "queryParameters": {
+     "bbox": {
+      "equalTo": "-4.50,36.65,-4.35,36.75"
+     },
+     "skipGeometry": {
+      "equalTo": "true"
+     },
+     "f": {
+      "equalTo": "json"
+     },
+     "offset": {
+      "equalTo": "0"
+     },
+     "limit": {
+      "equalTo": "3"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "idee/ignRailwayLinks.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://api-features.idee.es/collections/railwaylink/items?bbox=-4.50%2C36.65%2C-4.35%2C36.75&skipGeometry=true&f=json&offset=0&limit=3 on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignRailwayLinks: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/idee/collections/railwaylink/items"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "idee/ignRailwayLinks.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of ignRailwayLinks with the first recording, from https://api-features.idee.es/collections/railwaylink/items?bbox=-4.50%2C36.65%2C-4.35%2C36.75&skipGeometry=true&f=json&offset=0&limit=3 on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignRailwayLink: {\"id\": \"FFCC_TR290000000004\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/idee/collections/railwaylink/items/FFCC_TR290000000004",
+    "queryParameters": {
+     "skipGeometry": {
+      "equalTo": "true"
+     },
+     "f": {
+      "equalTo": "json"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "idee/ignRailwayLink.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://api-features.idee.es/collections/railwaylink/items/FFCC_TR290000000004?skipGeometry=true&f=json on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignRailwayLink: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/idee/collections/railwaylink/items/[^/]+"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "idee/ignRailwayLink.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of ignRailwayLink with the first recording, from https://api-features.idee.es/collections/railwaylink/items/FFCC_TR290000000004?skipGeometry=true&f=json on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignRailwayNodes: {\"bbox\": \"-4.50,36.65,-4.35,36.75\", \"size\": 3}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/idee/collections/railwaynode/items",
+    "queryParameters": {
+     "bbox": {
+      "equalTo": "-4.50,36.65,-4.35,36.75"
+     },
+     "skipGeometry": {
+      "equalTo": "true"
+     },
+     "f": {
+      "equalTo": "json"
+     },
+     "offset": {
+      "equalTo": "0"
+     },
+     "limit": {
+      "equalTo": "3"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "idee/ignRailwayNodes.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://api-features.idee.es/collections/railwaynode/items?bbox=-4.50%2C36.65%2C-4.35%2C36.75&skipGeometry=true&f=json&offset=0&limit=3 on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignRailwayNodes: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/idee/collections/railwaynode/items"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "idee/ignRailwayNodes.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of ignRailwayNodes with the first recording, from https://api-features.idee.es/collections/railwaynode/items?bbox=-4.50%2C36.65%2C-4.35%2C36.75&skipGeometry=true&f=json&offset=0&limit=3 on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignRailwayNode: {\"id\": \"FFCC_N_10631\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/idee/collections/railwaynode/items/FFCC_N_10631",
+    "queryParameters": {
+     "skipGeometry": {
+      "equalTo": "true"
+     },
+     "f": {
+      "equalTo": "json"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "idee/ignRailwayNode.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://api-features.idee.es/collections/railwaynode/items/FFCC_N_10631?skipGeometry=true&f=json on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignRailwayNode: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/idee/collections/railwaynode/items/[^/]+"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "idee/ignRailwayNode.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of ignRailwayNode with the first recording, from https://api-features.idee.es/collections/railwaynode/items/FFCC_N_10631?skipGeometry=true&f=json on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignRailwayStationAreas: {\"bbox\": \"-4.50,36.65,-4.35,36.75\", \"size\": 3}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/idee/collections/railwaystationarea/items",
+    "queryParameters": {
+     "bbox": {
+      "equalTo": "-4.50,36.65,-4.35,36.75"
+     },
+     "skipGeometry": {
+      "equalTo": "true"
+     },
+     "f": {
+      "equalTo": "json"
+     },
+     "offset": {
+      "equalTo": "0"
+     },
+     "limit": {
+      "equalTo": "3"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "idee/ignRailwayStationAreas.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://api-features.idee.es/collections/railwaystationarea/items?bbox=-4.50%2C36.65%2C-4.35%2C36.75&skipGeometry=true&f=json&offset=0&limit=3 on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignRailwayStationAreas: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/idee/collections/railwaystationarea/items"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "idee/ignRailwayStationAreas.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of ignRailwayStationAreas with the first recording, from https://api-features.idee.es/collections/railwaystationarea/items?bbox=-4.50%2C36.65%2C-4.35%2C36.75&skipGeometry=true&f=json&offset=0&limit=3 on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignRailwayStationArea: {\"id\": \"FCEST_A290670000002\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/idee/collections/railwaystationarea/items/FCEST_A290670000002",
+    "queryParameters": {
+     "skipGeometry": {
+      "equalTo": "true"
+     },
+     "f": {
+      "equalTo": "json"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "idee/ignRailwayStationArea.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://api-features.idee.es/collections/railwaystationarea/items/FCEST_A290670000002?skipGeometry=true&f=json on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignRailwayStationArea: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/idee/collections/railwaystationarea/items/[^/]+"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "idee/ignRailwayStationArea.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of ignRailwayStationArea with the first recording, from https://api-features.idee.es/collections/railwaystationarea/items/FCEST_A290670000002?skipGeometry=true&f=json on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignRailwayStations: {\"bbox\": \"-4.50,36.65,-4.35,36.75\", \"size\": 3}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/idee/collections/railwaystationnode/items",
+    "queryParameters": {
+     "bbox": {
+      "equalTo": "-4.50,36.65,-4.35,36.75"
+     },
+     "skipGeometry": {
+      "equalTo": "true"
+     },
+     "f": {
+      "equalTo": "json"
+     },
+     "offset": {
+      "equalTo": "0"
+     },
+     "limit": {
+      "equalTo": "3"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "idee/ignRailwayStations.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://api-features.idee.es/collections/railwaystationnode/items?bbox=-4.50%2C36.65%2C-4.35%2C36.75&skipGeometry=true&f=json&offset=0&limit=3 on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignRailwayStations: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/idee/collections/railwaystationnode/items"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "idee/ignRailwayStations.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of ignRailwayStations with the first recording, from https://api-features.idee.es/collections/railwaystationnode/items?bbox=-4.50%2C36.65%2C-4.35%2C36.75&skipGeometry=true&f=json&offset=0&limit=3 on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignRailwayStation: {\"id\": \"FCEST_N290670000002\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/idee/collections/railwaystationnode/items/FCEST_N290670000002",
+    "queryParameters": {
+     "skipGeometry": {
+      "equalTo": "true"
+     },
+     "f": {
+      "equalTo": "json"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "idee/ignRailwayStation.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://api-features.idee.es/collections/railwaystationnode/items/FCEST_N290670000002?skipGeometry=true&f=json on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignRailwayStation: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/idee/collections/railwaystationnode/items/[^/]+"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "idee/ignRailwayStation.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of ignRailwayStation with the first recording, from https://api-features.idee.es/collections/railwaystationnode/items/FCEST_N290670000002?skipGeometry=true&f=json on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignRoadLinks: {\"bbox\": \"-4.50,36.65,-4.35,36.75\", \"size\": 3}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/idee/collections/roadlink/items",
+    "queryParameters": {
+     "bbox": {
+      "equalTo": "-4.50,36.65,-4.35,36.75"
+     },
+     "skipGeometry": {
+      "equalTo": "true"
+     },
+     "f": {
+      "equalTo": "json"
+     },
+     "offset": {
+      "equalTo": "0"
+     },
+     "limit": {
+      "equalTo": "3"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "idee/ignRoadLinks.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://api-features.idee.es/collections/roadlink/items?bbox=-4.50%2C36.65%2C-4.35%2C36.75&skipGeometry=true&f=json&offset=0&limit=3 on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignRoadLinks: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/idee/collections/roadlink/items"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "idee/ignRoadLinks.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of ignRoadLinks with the first recording, from https://api-features.idee.es/collections/roadlink/items?bbox=-4.50%2C36.65%2C-4.35%2C36.75&skipGeometry=true&f=json&offset=0&limit=3 on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignRoadLink: {\"id\": \"VIAL_TR290670000001\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/idee/collections/roadlink/items/VIAL_TR290670000001",
+    "queryParameters": {
+     "skipGeometry": {
+      "equalTo": "true"
+     },
+     "f": {
+      "equalTo": "json"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "idee/ignRoadLink.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://api-features.idee.es/collections/roadlink/items/VIAL_TR290670000001?skipGeometry=true&f=json on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignRoadLink: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/idee/collections/roadlink/items/[^/]+"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "idee/ignRoadLink.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of ignRoadLink with the first recording, from https://api-features.idee.es/collections/roadlink/items/VIAL_TR290670000001?skipGeometry=true&f=json on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignRoadNodes: {\"bbox\": \"-4.50,36.65,-4.35,36.75\", \"size\": 3}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/idee/collections/roadnode/items",
+    "queryParameters": {
+     "bbox": {
+      "equalTo": "-4.50,36.65,-4.35,36.75"
+     },
+     "skipGeometry": {
+      "equalTo": "true"
+     },
+     "f": {
+      "equalTo": "json"
+     },
+     "offset": {
+      "equalTo": "0"
+     },
+     "limit": {
+      "equalTo": "3"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "idee/ignRoadNodes.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://api-features.idee.es/collections/roadnode/items?bbox=-4.50%2C36.65%2C-4.35%2C36.75&skipGeometry=true&f=json&offset=0&limit=3 on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignRoadNodes: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/idee/collections/roadnode/items"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "idee/ignRoadNodes.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of ignRoadNodes with the first recording, from https://api-features.idee.es/collections/roadnode/items?bbox=-4.50%2C36.65%2C-4.35%2C36.75&skipGeometry=true&f=json&offset=0&limit=3 on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignRoadNode: {\"id\": \"VIAL_N_1158819\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/idee/collections/roadnode/items/VIAL_N_1158819",
+    "queryParameters": {
+     "skipGeometry": {
+      "equalTo": "true"
+     },
+     "f": {
+      "equalTo": "json"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "idee/ignRoadNode.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://api-features.idee.es/collections/roadnode/items/VIAL_N_1158819?skipGeometry=true&f=json on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignRoadNode: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/idee/collections/roadnode/items/[^/]+"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "idee/ignRoadNode.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of ignRoadNode with the first recording, from https://api-features.idee.es/collections/roadnode/items/VIAL_N_1158819?skipGeometry=true&f=json on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignRoadServiceAreas: {\"bbox\": \"-5.6,36.2,-3.7,37.4\", \"size\": 3}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/idee/collections/roadservicearea/items",
+    "queryParameters": {
+     "bbox": {
+      "equalTo": "-5.6,36.2,-3.7,37.4"
+     },
+     "skipGeometry": {
+      "equalTo": "true"
+     },
+     "f": {
+      "equalTo": "json"
+     },
+     "offset": {
+      "equalTo": "0"
+     },
+     "limit": {
+      "equalTo": "3"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "idee/ignRoadServiceAreas.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://api-features.idee.es/collections/roadservicearea/items?bbox=-5.6%2C36.2%2C-3.7%2C37.4&skipGeometry=true&f=json&offset=0&limit=3 on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignRoadServiceAreas: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/idee/collections/roadservicearea/items"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "idee/ignRoadServiceAreas.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of ignRoadServiceAreas with the first recording, from https://api-features.idee.es/collections/roadservicearea/items?bbox=-5.6%2C36.2%2C-3.7%2C37.4&skipGeometry=true&f=json&offset=0&limit=3 on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignRoadServiceArea: {\"id\": \"VIEST_A110020000035\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/idee/collections/roadservicearea/items/VIEST_A110020000035",
+    "queryParameters": {
+     "skipGeometry": {
+      "equalTo": "true"
+     },
+     "f": {
+      "equalTo": "json"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "idee/ignRoadServiceArea.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://api-features.idee.es/collections/roadservicearea/items/VIEST_A110020000035?skipGeometry=true&f=json on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignRoadServiceArea: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/idee/collections/roadservicearea/items/[^/]+"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "idee/ignRoadServiceArea.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of ignRoadServiceArea with the first recording, from https://api-features.idee.es/collections/roadservicearea/items/VIEST_A110020000035?skipGeometry=true&f=json on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignPortAreas: {\"bbox\": \"-4.50,36.65,-4.35,36.75\", \"size\": 3}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/idee/collections/portarea/items",
+    "queryParameters": {
+     "bbox": {
+      "equalTo": "-4.50,36.65,-4.35,36.75"
+     },
+     "skipGeometry": {
+      "equalTo": "true"
+     },
+     "f": {
+      "equalTo": "json"
+     },
+     "offset": {
+      "equalTo": "0"
+     },
+     "limit": {
+      "equalTo": "3"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "idee/ignPortAreas.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://api-features.idee.es/collections/portarea/items?bbox=-4.50%2C36.65%2C-4.35%2C36.75&skipGeometry=true&f=json&offset=0&limit=3 on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignPortAreas: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/idee/collections/portarea/items"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "idee/ignPortAreas.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of ignPortAreas with the first recording, from https://api-features.idee.es/collections/portarea/items?bbox=-4.50%2C36.65%2C-4.35%2C36.75&skipGeometry=true&f=json&offset=0&limit=3 on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignPortArea: {\"id\": \"PUERT_A290670000009\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/idee/collections/portarea/items/PUERT_A290670000009",
+    "queryParameters": {
+     "skipGeometry": {
+      "equalTo": "true"
+     },
+     "f": {
+      "equalTo": "json"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "idee/ignPortArea.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://api-features.idee.es/collections/portarea/items/PUERT_A290670000009?skipGeometry=true&f=json on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignPortArea: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/idee/collections/portarea/items/[^/]+"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "idee/ignPortArea.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of ignPortArea with the first recording, from https://api-features.idee.es/collections/portarea/items/PUERT_A290670000009?skipGeometry=true&f=json on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignPorts: {\"bbox\": \"-5.6,36.2,-3.7,37.4\", \"size\": 3}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/idee/collections/portnode/items",
+    "queryParameters": {
+     "bbox": {
+      "equalTo": "-5.6,36.2,-3.7,37.4"
+     },
+     "skipGeometry": {
+      "equalTo": "true"
+     },
+     "f": {
+      "equalTo": "json"
+     },
+     "offset": {
+      "equalTo": "0"
+     },
+     "limit": {
+      "equalTo": "3"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "idee/ignPorts.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://api-features.idee.es/collections/portnode/items?bbox=-5.6%2C36.2%2C-3.7%2C37.4&skipGeometry=true&f=json&offset=0&limit=3 on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignPorts: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/idee/collections/portnode/items"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "idee/ignPorts.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of ignPorts with the first recording, from https://api-features.idee.es/collections/portnode/items?bbox=-5.6%2C36.2%2C-3.7%2C37.4&skipGeometry=true&f=json&offset=0&limit=3 on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignPort: {\"id\": \"PUERT_N110330000011\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/idee/collections/portnode/items/PUERT_N110330000011",
+    "queryParameters": {
+     "skipGeometry": {
+      "equalTo": "true"
+     },
+     "f": {
+      "equalTo": "json"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "idee/ignPort.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://api-features.idee.es/collections/portnode/items/PUERT_N110330000011?skipGeometry=true&f=json on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignPort: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/idee/collections/portnode/items/[^/]+"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "idee/ignPort.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of ignPort with the first recording, from https://api-features.idee.es/collections/portnode/items/PUERT_N110330000011?skipGeometry=true&f=json on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignWaterwayLinks: {\"bbox\": \"-5.6,36.2,-3.7,37.4\", \"size\": 3}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/idee/collections/waterwaylink/items",
+    "queryParameters": {
+     "bbox": {
+      "equalTo": "-5.6,36.2,-3.7,37.4"
+     },
+     "skipGeometry": {
+      "equalTo": "true"
+     },
+     "f": {
+      "equalTo": "json"
+     },
+     "offset": {
+      "equalTo": "0"
+     },
+     "limit": {
+      "equalTo": "3"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "idee/ignWaterwayLinks.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://api-features.idee.es/collections/waterwaylink/items?bbox=-5.6%2C36.2%2C-3.7%2C37.4&skipGeometry=true&f=json&offset=0&limit=3 on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignWaterwayLinks: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/idee/collections/waterwaylink/items"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "idee/ignWaterwayLinks.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of ignWaterwayLinks with the first recording, from https://api-features.idee.es/collections/waterwaylink/items?bbox=-5.6%2C36.2%2C-3.7%2C37.4&skipGeometry=true&f=json&offset=0&limit=3 on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignWaterwayLink: {\"id\": \"MARI_TR3\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/idee/collections/waterwaylink/items/MARI_TR3",
+    "queryParameters": {
+     "skipGeometry": {
+      "equalTo": "true"
+     },
+     "f": {
+      "equalTo": "json"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "idee/ignWaterwayLink.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://api-features.idee.es/collections/waterwaylink/items/MARI_TR3?skipGeometry=true&f=json on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignWaterwayLink: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/idee/collections/waterwaylink/items/[^/]+"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "idee/ignWaterwayLink.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of ignWaterwayLink with the first recording, from https://api-features.idee.es/collections/waterwaylink/items/MARI_TR3?skipGeometry=true&f=json on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignWaterwayNodes: {\"bbox\": \"-5.6,36.2,-3.7,37.4\", \"size\": 3}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/idee/collections/waterwaynode/items",
+    "queryParameters": {
+     "bbox": {
+      "equalTo": "-5.6,36.2,-3.7,37.4"
+     },
+     "skipGeometry": {
+      "equalTo": "true"
+     },
+     "f": {
+      "equalTo": "json"
+     },
+     "offset": {
+      "equalTo": "0"
+     },
+     "limit": {
+      "equalTo": "3"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "idee/ignWaterwayNodes.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://api-features.idee.es/collections/waterwaynode/items?bbox=-5.6%2C36.2%2C-3.7%2C37.4&skipGeometry=true&f=json&offset=0&limit=3 on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignWaterwayNodes: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/idee/collections/waterwaynode/items"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "idee/ignWaterwayNodes.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of ignWaterwayNodes with the first recording, from https://api-features.idee.es/collections/waterwaynode/items?bbox=-5.6%2C36.2%2C-3.7%2C37.4&skipGeometry=true&f=json&offset=0&limit=3 on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignWaterwayNode: {\"id\": \"MART_N_110333000011\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/idee/collections/waterwaynode/items/MART_N_110333000011",
+    "queryParameters": {
+     "skipGeometry": {
+      "equalTo": "true"
+     },
+     "f": {
+      "equalTo": "json"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "idee/ignWaterwayNode.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://api-features.idee.es/collections/waterwaynode/items/MART_N_110333000011?skipGeometry=true&f=json on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignWaterwayNode: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/idee/collections/waterwaynode/items/[^/]+"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "idee/ignWaterwayNode.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of ignWaterwayNode with the first recording, from https://api-features.idee.es/collections/waterwaynode/items/MART_N_110333000011?skipGeometry=true&f=json on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignKilometrePosts: {\"bbox\": \"-4.50,36.65,-4.35,36.75\", \"size\": 3}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/idee/collections/markerpost/items",
+    "queryParameters": {
+     "bbox": {
+      "equalTo": "-4.50,36.65,-4.35,36.75"
+     },
+     "skipGeometry": {
+      "equalTo": "true"
+     },
+     "f": {
+      "equalTo": "json"
+     },
+     "offset": {
+      "equalTo": "0"
+     },
+     "limit": {
+      "equalTo": "3"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "idee/ignKilometrePosts.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://api-features.idee.es/collections/markerpost/items?bbox=-4.50%2C36.65%2C-4.35%2C36.75&skipGeometry=true&f=json&offset=0&limit=3 on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignKilometrePosts: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/idee/collections/markerpost/items"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "idee/ignKilometrePosts.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of ignKilometrePosts with the first recording, from https://api-features.idee.es/collections/markerpost/items?bbox=-4.50%2C36.65%2C-4.35%2C36.75&skipGeometry=true&f=json&offset=0&limit=3 on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignKilometrePost: {\"id\": \"FFCC_TR290670000257\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/idee/collections/markerpost/items/FFCC_TR290670000257",
+    "queryParameters": {
+     "skipGeometry": {
+      "equalTo": "true"
+     },
+     "f": {
+      "equalTo": "json"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "idee/ignKilometrePost.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://api-features.idee.es/collections/markerpost/items/FFCC_TR290670000257?skipGeometry=true&f=json on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignKilometrePost: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/idee/collections/markerpost/items/[^/]+"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "idee/ignKilometrePost.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of ignKilometrePost with the first recording, from https://api-features.idee.es/collections/markerpost/items/FFCC_TR290670000257?skipGeometry=true&f=json on 2026-10-23."
+   }
+  }
+ ]
+}

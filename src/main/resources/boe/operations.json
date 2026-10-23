@@ -1,0 +1,399 @@
+{
+ "operations": [
+  {
+   "field": "boeLaws",
+   "path": "/legislacion-consolidada",
+   "arguments": [
+    {
+     "name": "query",
+     "parameter": "query",
+     "in": "query",
+     "list": false,
+     "template": "{\"query\":{\"query_string\":{\"query\":{}}}}"
+    },
+    {
+     "name": "changedFrom",
+     "parameter": "from",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "changedTo",
+     "parameter": "to",
+     "in": "query",
+     "list": false
+    }
+   ],
+   "paging": {
+    "style": "offset",
+    "start": "offset",
+    "size": "limit"
+   }
+  },
+  {
+   "field": "boeLawMetadata",
+   "path": "/legislacion-consolidada/id/{id}/metadatos",
+   "arguments": [
+    {
+     "name": "id",
+     "parameter": "id",
+     "in": "path",
+     "list": false
+    }
+   ]
+  },
+  {
+   "field": "boeLawAnalysis",
+   "path": "/legislacion-consolidada/id/{id}/analisis",
+   "arguments": [
+    {
+     "name": "id",
+     "parameter": "id",
+     "in": "path",
+     "list": false
+    }
+   ]
+  },
+  {
+   "field": "boeLawTextIndex",
+   "path": "/legislacion-consolidada/id/{id}/texto/indice",
+   "arguments": [
+    {
+     "name": "id",
+     "parameter": "id",
+     "in": "path",
+     "list": false
+    }
+   ]
+  },
+  {
+   "field": "boeDailySummary",
+   "path": "/boe/sumario/{fecha}",
+   "arguments": [
+    {
+     "name": "date",
+     "parameter": "fecha",
+     "in": "path",
+     "list": false,
+     "dateFormat": "yyyyMMdd"
+    }
+   ]
+  },
+  {
+   "field": "bormeDailySummary",
+   "path": "/borme/sumario/{fecha}",
+   "arguments": [
+    {
+     "name": "date",
+     "parameter": "fecha",
+     "in": "path",
+     "list": false,
+     "dateFormat": "yyyyMMdd"
+    }
+   ]
+  },
+  {
+   "field": "boeSubjects",
+   "path": "/datos-auxiliares/materias",
+   "arguments": []
+  },
+  {
+   "field": "boeScopes",
+   "path": "/datos-auxiliares/ambitos",
+   "arguments": []
+  },
+  {
+   "field": "boeConsolidationStatuses",
+   "path": "/datos-auxiliares/estados-consolidacion",
+   "arguments": []
+  },
+  {
+   "field": "boeDepartments",
+   "path": "/datos-auxiliares/departamentos",
+   "arguments": []
+  },
+  {
+   "field": "boeRanks",
+   "path": "/datos-auxiliares/rangos",
+   "arguments": []
+  },
+  {
+   "field": "boePriorRelations",
+   "path": "/datos-auxiliares/relaciones-anteriores",
+   "arguments": []
+  },
+  {
+   "field": "boeLaterRelations",
+   "path": "/datos-auxiliares/relaciones-posteriores",
+   "arguments": []
+  }
+ ],
+ "fields": {
+  "BoeCode": {
+   "code": {
+    "key": "codigo"
+   },
+   "text": {
+    "key": "texto"
+   }
+  },
+  "BoeLawList": {
+   "laws": {
+    "key": "data"
+   }
+  },
+  "BoeLaw": {
+   "id": {
+    "key": "identificador"
+   },
+   "title": {
+    "key": "titulo"
+   },
+   "officialNumber": {
+    "key": "numero_oficial"
+   },
+   "rank": {
+    "key": "rango"
+   },
+   "scope": {
+    "key": "ambito"
+   },
+   "department": {
+    "key": "departamento"
+   },
+   "enacted": {
+    "key": "fecha_disposicion"
+   },
+   "published": {
+    "key": "fecha_publicacion"
+   },
+   "inForceFrom": {
+    "key": "fecha_vigencia"
+   },
+   "gazette": {
+    "key": "diario"
+   },
+   "gazetteNumber": {
+    "key": "diario_numero"
+   },
+   "expired": {
+    "key": "vigencia_agotada",
+    "conversion": "yes-no"
+   },
+   "repealed": {
+    "key": "estatus_derogacion",
+    "conversion": "yes-no"
+   },
+   "annulled": {
+    "key": "estatus_anulacion",
+    "conversion": "yes-no"
+   },
+   "consolidation": {
+    "key": "estado_consolidacion"
+   },
+   "lastUpdated": {
+    "key": "fecha_actualizacion"
+   },
+   "eliUrl": {
+    "key": "url_eli"
+   },
+   "htmlUrl": {
+    "key": "url_html_consolidada"
+   }
+  },
+  "BoeLawAnalysisResult": {
+   "analyses": {
+    "key": "data"
+   }
+  },
+  "BoeLawAnalysis": {
+   "subjects": {
+    "key": "materias",
+    "conversion": "list"
+   },
+   "references": {
+    "key": "referencias"
+   }
+  },
+  "BoeSubject": {
+   "subject": {
+    "key": "materia"
+   }
+  },
+  "BoeReferences": {
+   "earlier": {
+    "key": "anteriores",
+    "conversion": "list"
+   },
+   "later": {
+    "key": "posteriores",
+    "conversion": "list"
+   }
+  },
+  "BoeEarlierReferences": {
+   "references": {
+    "key": "anterior",
+    "conversion": "list"
+   }
+  },
+  "BoeLaterReferences": {
+   "references": {
+    "key": "posterior",
+    "conversion": "list"
+   }
+  },
+  "BoeReference": {
+   "lawId": {
+    "key": "id_norma"
+   },
+   "relation": {
+    "key": "relacion"
+   },
+   "text": {
+    "key": "texto"
+   }
+  },
+  "BoeTextIndexResult": {
+   "indexes": {
+    "key": "data"
+   }
+  },
+  "BoeTextIndex": {
+   "blocks": {
+    "key": "bloque",
+    "conversion": "list"
+   }
+  },
+  "BoeTextBlock": {
+   "title": {
+    "key": "titulo"
+   },
+   "updated": {
+    "key": "fecha_actualizacion"
+   }
+  },
+  "BoeSummaryResult": {
+   "publication": {
+    "key": "data/sumario/metadatos/publicacion"
+   },
+   "date": {
+    "key": "data/sumario/metadatos/fecha_publicacion"
+   },
+   "issues": {
+    "key": "data/sumario/diario",
+    "conversion": "list"
+   }
+  },
+  "BoeIssue": {
+   "number": {
+    "key": "numero"
+   },
+   "summaryId": {
+    "key": "sumario_diario/identificador"
+   },
+   "summaryPdfUrl": {
+    "key": "sumario_diario/url_pdf/texto"
+   },
+   "summaryPdfBytes": {
+    "key": "sumario_diario/url_pdf/szBytes",
+    "conversion": "integer"
+   },
+   "sections": {
+    "key": "seccion",
+    "conversion": "list"
+   }
+  },
+  "BoeSection": {
+   "code": {
+    "key": "codigo"
+   },
+   "name": {
+    "key": "nombre"
+   },
+   "departments": {
+    "key": "departamento",
+    "conversion": "list"
+   },
+   "parts": {
+    "key": "apartado",
+    "conversion": "list"
+   },
+   "items": {
+    "key": "item",
+    "conversion": "list"
+   }
+  },
+  "BoeDepartment": {
+   "code": {
+    "key": "codigo"
+   },
+   "name": {
+    "key": "nombre"
+   },
+   "headings": {
+    "key": "epigrafe",
+    "conversion": "list"
+   },
+   "items": {
+    "key": "item",
+    "conversion": "list"
+   }
+  },
+  "BoeHeading": {
+   "name": {
+    "key": "nombre"
+   },
+   "items": {
+    "key": "item",
+    "conversion": "list"
+   }
+  },
+  "BoePart": {
+   "code": {
+    "key": "codigo"
+   },
+   "name": {
+    "key": "nombre"
+   },
+   "items": {
+    "key": "item",
+    "conversion": "list"
+   }
+  },
+  "BoeSummaryItem": {
+   "id": {
+    "key": "identificador"
+   },
+   "title": {
+    "key": "titulo"
+   },
+   "pdfUrl": {
+    "key": "url_pdf/texto"
+   },
+   "pdfBytes": {
+    "key": "url_pdf/szBytes",
+    "conversion": "integer"
+   },
+   "firstPage": {
+    "key": "url_pdf/pagina_inicial",
+    "conversion": "integer"
+   },
+   "lastPage": {
+    "key": "url_pdf/pagina_final",
+    "conversion": "integer"
+   },
+   "htmlUrl": {
+    "key": "url_html"
+   },
+   "xmlUrl": {
+    "key": "url_xml"
+   }
+  },
+  "BoeCodeList": {
+   "entries": {
+    "key": "data",
+    "conversion": "entries"
+   }
+  }
+ }
+}

@@ -1,0 +1,17 @@
+[{"Id":3, "Nombre":"Type of data", "Codigo":""}
+,
+{"Id":18, "Nombre":"Sex", "Codigo":""}
+,
+{"Id":19, "Nombre":"Municipalities", "Codigo":"MUN"}
+,
+{"Id":20, "Nombre":"Islands", "Codigo":""}
+,
+{"Id":34, "Nombre":"Municipality size", "Codigo":""}
+,
+{"Id":70, "Nombre":"Autonomous Communities and Cities", "Codigo":"CCAA"}
+,
+{"Id":115, "Nombre":"Provinces", "Codigo":"PROV"}
+,
+{"Id":349, "Nombre":"National Total", "Codigo":"NAC"}
+]
+

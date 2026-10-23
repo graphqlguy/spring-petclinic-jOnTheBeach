@@ -1,0 +1,2235 @@
+{
+ "operations": [
+  {
+   "field": "reeElectricityBalance",
+   "path": "/balance/balance-electrico",
+   "arguments": [
+    {
+     "name": "startDate",
+     "parameter": "start_date",
+     "in": "query",
+     "list": false,
+     "dateFormat": "yyyy-MM-dd'T'00:00"
+    },
+    {
+     "name": "endDate",
+     "parameter": "end_date",
+     "in": "query",
+     "list": false,
+     "dateFormat": "yyyy-MM-dd'T'23:59"
+    },
+    {
+     "name": "timeTrunc",
+     "parameter": "time_trunc",
+     "in": "query",
+     "list": false,
+     "values": {
+      "HOUR": "hour",
+      "DAY": "day",
+      "MONTH": "month",
+      "YEAR": "year"
+     }
+    }
+   ]
+  },
+  {
+   "field": "reeDemand",
+   "path": "/demanda/evolucion",
+   "arguments": [
+    {
+     "name": "startDate",
+     "parameter": "start_date",
+     "in": "query",
+     "list": false,
+     "dateFormat": "yyyy-MM-dd'T'00:00"
+    },
+    {
+     "name": "endDate",
+     "parameter": "end_date",
+     "in": "query",
+     "list": false,
+     "dateFormat": "yyyy-MM-dd'T'23:59"
+    },
+    {
+     "name": "timeTrunc",
+     "parameter": "time_trunc",
+     "in": "query",
+     "list": false,
+     "values": {
+      "HOUR": "hour",
+      "DAY": "day",
+      "MONTH": "month",
+      "YEAR": "year"
+     }
+    }
+   ]
+  },
+  {
+   "field": "reeDemandVariation",
+   "path": "/demanda/variacion-componentes",
+   "arguments": [
+    {
+     "name": "startDate",
+     "parameter": "start_date",
+     "in": "query",
+     "list": false,
+     "dateFormat": "yyyy-MM-dd'T'00:00"
+    },
+    {
+     "name": "endDate",
+     "parameter": "end_date",
+     "in": "query",
+     "list": false,
+     "dateFormat": "yyyy-MM-dd'T'23:59"
+    },
+    {
+     "name": "timeTrunc",
+     "parameter": "time_trunc",
+     "in": "query",
+     "list": false,
+     "values": {
+      "HOUR": "hour",
+      "DAY": "day",
+      "MONTH": "month",
+      "YEAR": "year"
+     }
+    }
+   ]
+  },
+  {
+   "field": "reeDemandVariationMovingYear",
+   "path": "/demanda/variacion-componentes-movil",
+   "arguments": [
+    {
+     "name": "startDate",
+     "parameter": "start_date",
+     "in": "query",
+     "list": false,
+     "dateFormat": "yyyy-MM-dd'T'00:00"
+    },
+    {
+     "name": "endDate",
+     "parameter": "end_date",
+     "in": "query",
+     "list": false,
+     "dateFormat": "yyyy-MM-dd'T'23:59"
+    },
+    {
+     "name": "timeTrunc",
+     "parameter": "time_trunc",
+     "in": "query",
+     "list": false,
+     "values": {
+      "HOUR": "hour",
+      "DAY": "day",
+      "MONTH": "month",
+      "YEAR": "year"
+     }
+    }
+   ]
+  },
+  {
+   "field": "reeConsumptionIndex",
+   "path": "/demanda/ire-general",
+   "arguments": [
+    {
+     "name": "startDate",
+     "parameter": "start_date",
+     "in": "query",
+     "list": false,
+     "dateFormat": "yyyy-MM-dd'T'00:00"
+    },
+    {
+     "name": "endDate",
+     "parameter": "end_date",
+     "in": "query",
+     "list": false,
+     "dateFormat": "yyyy-MM-dd'T'23:59"
+    },
+    {
+     "name": "timeTrunc",
+     "parameter": "time_trunc",
+     "in": "query",
+     "list": false,
+     "values": {
+      "HOUR": "hour",
+      "DAY": "day",
+      "MONTH": "month",
+      "YEAR": "year"
+     }
+    }
+   ]
+  },
+  {
+   "field": "reeConsumptionIndexYearly",
+   "path": "/demanda/ire-general-anual",
+   "arguments": [
+    {
+     "name": "startDate",
+     "parameter": "start_date",
+     "in": "query",
+     "list": false,
+     "dateFormat": "yyyy-MM-dd'T'00:00"
+    },
+    {
+     "name": "endDate",
+     "parameter": "end_date",
+     "in": "query",
+     "list": false,
+     "dateFormat": "yyyy-MM-dd'T'23:59"
+    },
+    {
+     "name": "timeTrunc",
+     "parameter": "time_trunc",
+     "in": "query",
+     "list": false,
+     "values": {
+      "HOUR": "hour",
+      "DAY": "day",
+      "MONTH": "month",
+      "YEAR": "year"
+     }
+    }
+   ]
+  },
+  {
+   "field": "reeConsumptionIndexMovingYear",
+   "path": "/demanda/ire-general-movil",
+   "arguments": [
+    {
+     "name": "startDate",
+     "parameter": "start_date",
+     "in": "query",
+     "list": false,
+     "dateFormat": "yyyy-MM-dd'T'00:00"
+    },
+    {
+     "name": "endDate",
+     "parameter": "end_date",
+     "in": "query",
+     "list": false,
+     "dateFormat": "yyyy-MM-dd'T'23:59"
+    },
+    {
+     "name": "timeTrunc",
+     "parameter": "time_trunc",
+     "in": "query",
+     "list": false,
+     "values": {
+      "HOUR": "hour",
+      "DAY": "day",
+      "MONTH": "month",
+      "YEAR": "year"
+     }
+    }
+   ]
+  },
+  {
+   "field": "reeIndustryConsumptionIndex",
+   "path": "/demanda/ire-industria",
+   "arguments": [
+    {
+     "name": "startDate",
+     "parameter": "start_date",
+     "in": "query",
+     "list": false,
+     "dateFormat": "yyyy-MM-dd'T'00:00"
+    },
+    {
+     "name": "endDate",
+     "parameter": "end_date",
+     "in": "query",
+     "list": false,
+     "dateFormat": "yyyy-MM-dd'T'23:59"
+    },
+    {
+     "name": "timeTrunc",
+     "parameter": "time_trunc",
+     "in": "query",
+     "list": false,
+     "values": {
+      "HOUR": "hour",
+      "DAY": "day",
+      "MONTH": "month",
+      "YEAR": "year"
+     }
+    }
+   ]
+  },
+  {
+   "field": "reeIndustryConsumptionIndexYearly",
+   "path": "/demanda/ire-industria-anual",
+   "arguments": [
+    {
+     "name": "startDate",
+     "parameter": "start_date",
+     "in": "query",
+     "list": false,
+     "dateFormat": "yyyy-MM-dd'T'00:00"
+    },
+    {
+     "name": "endDate",
+     "parameter": "end_date",
+     "in": "query",
+     "list": false,
+     "dateFormat": "yyyy-MM-dd'T'23:59"
+    },
+    {
+     "name": "timeTrunc",
+     "parameter": "time_trunc",
+     "in": "query",
+     "list": false,
+     "values": {
+      "HOUR": "hour",
+      "DAY": "day",
+      "MONTH": "month",
+      "YEAR": "year"
+     }
+    }
+   ]
+  },
+  {
+   "field": "reeIndustryConsumptionIndexMovingYear",
+   "path": "/demanda/ire-industria-movil",
+   "arguments": [
+    {
+     "name": "startDate",
+     "parameter": "start_date",
+     "in": "query",
+     "list": false,
+     "dateFormat": "yyyy-MM-dd'T'00:00"
+    },
+    {
+     "name": "endDate",
+     "parameter": "end_date",
+     "in": "query",
+     "list": false,
+     "dateFormat": "yyyy-MM-dd'T'23:59"
+    },
+    {
+     "name": "timeTrunc",
+     "parameter": "time_trunc",
+     "in": "query",
+     "list": false,
+     "values": {
+      "HOUR": "hour",
+      "DAY": "day",
+      "MONTH": "month",
+      "YEAR": "year"
+     }
+    }
+   ]
+  },
+  {
+   "field": "reeServicesConsumptionIndex",
+   "path": "/demanda/ire-servicios",
+   "arguments": [
+    {
+     "name": "startDate",
+     "parameter": "start_date",
+     "in": "query",
+     "list": false,
+     "dateFormat": "yyyy-MM-dd'T'00:00"
+    },
+    {
+     "name": "endDate",
+     "parameter": "end_date",
+     "in": "query",
+     "list": false,
+     "dateFormat": "yyyy-MM-dd'T'23:59"
+    },
+    {
+     "name": "timeTrunc",
+     "parameter": "time_trunc",
+     "in": "query",
+     "list": false,
+     "values": {
+      "HOUR": "hour",
+      "DAY": "day",
+      "MONTH": "month",
+      "YEAR": "year"
+     }
+    }
+   ]
+  },
+  {
+   "field": "reeServicesConsumptionIndexYearly",
+   "path": "/demanda/ire-servicios-anual",
+   "arguments": [
+    {
+     "name": "startDate",
+     "parameter": "start_date",
+     "in": "query",
+     "list": false,
+     "dateFormat": "yyyy-MM-dd'T'00:00"
+    },
+    {
+     "name": "endDate",
+     "parameter": "end_date",
+     "in": "query",
+     "list": false,
+     "dateFormat": "yyyy-MM-dd'T'23:59"
+    },
+    {
+     "name": "timeTrunc",
+     "parameter": "time_trunc",
+     "in": "query",
+     "list": false,
+     "values": {
+      "HOUR": "hour",
+      "DAY": "day",
+      "MONTH": "month",
+      "YEAR": "year"
+     }
+    }
+   ]
+  },
+  {
+   "field": "reeServicesConsumptionIndexMovingYear",
+   "path": "/demanda/ire-servicios-movil",
+   "arguments": [
+    {
+     "name": "startDate",
+     "parameter": "start_date",
+     "in": "query",
+     "list": false,
+     "dateFormat": "yyyy-MM-dd'T'00:00"
+    },
+    {
+     "name": "endDate",
+     "parameter": "end_date",
+     "in": "query",
+     "list": false,
+     "dateFormat": "yyyy-MM-dd'T'23:59"
+    },
+    {
+     "name": "timeTrunc",
+     "parameter": "time_trunc",
+     "in": "query",
+     "list": false,
+     "values": {
+      "HOUR": "hour",
+      "DAY": "day",
+      "MONTH": "month",
+      "YEAR": "year"
+     }
+    }
+   ]
+  },
+  {
+   "field": "reeOtherConsumptionIndex",
+   "path": "/demanda/ire-otras",
+   "arguments": [
+    {
+     "name": "startDate",
+     "parameter": "start_date",
+     "in": "query",
+     "list": false,
+     "dateFormat": "yyyy-MM-dd'T'00:00"
+    },
+    {
+     "name": "endDate",
+     "parameter": "end_date",
+     "in": "query",
+     "list": false,
+     "dateFormat": "yyyy-MM-dd'T'23:59"
+    },
+    {
+     "name": "timeTrunc",
+     "parameter": "time_trunc",
+     "in": "query",
+     "list": false,
+     "values": {
+      "HOUR": "hour",
+      "DAY": "day",
+      "MONTH": "month",
+      "YEAR": "year"
+     }
+    }
+   ]
+  },
+  {
+   "field": "reeOtherConsumptionIndexYearly",
+   "path": "/demanda/ire-otras-anual",
+   "arguments": [
+    {
+     "name": "startDate",
+     "parameter": "start_date",
+     "in": "query",
+     "list": false,
+     "dateFormat": "yyyy-MM-dd'T'00:00"
+    },
+    {
+     "name": "endDate",
+     "parameter": "end_date",
+     "in": "query",
+     "list": false,
+     "dateFormat": "yyyy-MM-dd'T'23:59"
+    },
+    {
+     "name": "timeTrunc",
+     "parameter": "time_trunc",
+     "in": "query",
+     "list": false,
+     "values": {
+      "HOUR": "hour",
+      "DAY": "day",
+      "MONTH": "month",
+      "YEAR": "year"
+     }
+    }
+   ]
+  },
+  {
+   "field": "reeOtherConsumptionIndexMovingYear",
+   "path": "/demanda/ire-otras-movil",
+   "arguments": [
+    {
+     "name": "startDate",
+     "parameter": "start_date",
+     "in": "query",
+     "list": false,
+     "dateFormat": "yyyy-MM-dd'T'00:00"
+    },
+    {
+     "name": "endDate",
+     "parameter": "end_date",
+     "in": "query",
+     "list": false,
+     "dateFormat": "yyyy-MM-dd'T'23:59"
+    },
+    {
+     "name": "timeTrunc",
+     "parameter": "time_trunc",
+     "in": "query",
+     "list": false,
+     "values": {
+      "HOUR": "hour",
+      "DAY": "day",
+      "MONTH": "month",
+      "YEAR": "year"
+     }
+    }
+   ]
+  },
+  {
+   "field": "reeDailyPeakDemand",
+   "path": "/demanda/demanda-maxima-diaria",
+   "arguments": [
+    {
+     "name": "startDate",
+     "parameter": "start_date",
+     "in": "query",
+     "list": false,
+     "dateFormat": "yyyy-MM-dd'T'00:00"
+    },
+    {
+     "name": "endDate",
+     "parameter": "end_date",
+     "in": "query",
+     "list": false,
+     "dateFormat": "yyyy-MM-dd'T'23:59"
+    },
+    {
+     "name": "timeTrunc",
+     "parameter": "time_trunc",
+     "in": "query",
+     "list": false,
+     "values": {
+      "HOUR": "hour",
+      "DAY": "day",
+      "MONTH": "month",
+      "YEAR": "year"
+     }
+    }
+   ]
+  },
+  {
+   "field": "reeHourlyPeakDemand",
+   "path": "/demanda/demanda-maxima-horaria",
+   "arguments": [
+    {
+     "name": "startDate",
+     "parameter": "start_date",
+     "in": "query",
+     "list": false,
+     "dateFormat": "yyyy-MM-dd'T'00:00"
+    },
+    {
+     "name": "endDate",
+     "parameter": "end_date",
+     "in": "query",
+     "list": false,
+     "dateFormat": "yyyy-MM-dd'T'23:59"
+    },
+    {
+     "name": "timeTrunc",
+     "parameter": "time_trunc",
+     "in": "query",
+     "list": false,
+     "values": {
+      "HOUR": "hour",
+      "DAY": "day",
+      "MONTH": "month",
+      "YEAR": "year"
+     }
+    }
+   ]
+  },
+  {
+   "field": "reeTransmissionLosses",
+   "path": "/demanda/perdidas-transporte",
+   "arguments": [
+    {
+     "name": "startDate",
+     "parameter": "start_date",
+     "in": "query",
+     "list": false,
+     "dateFormat": "yyyy-MM-dd'T'00:00"
+    },
+    {
+     "name": "endDate",
+     "parameter": "end_date",
+     "in": "query",
+     "list": false,
+     "dateFormat": "yyyy-MM-dd'T'23:59"
+    },
+    {
+     "name": "timeTrunc",
+     "parameter": "time_trunc",
+     "in": "query",
+     "list": false,
+     "values": {
+      "HOUR": "hour",
+      "DAY": "day",
+      "MONTH": "month",
+      "YEAR": "year"
+     }
+    }
+   ]
+  },
+  {
+   "field": "reePeakInstantaneousPower",
+   "path": "/demanda/potencia-maxima-instantanea",
+   "arguments": [
+    {
+     "name": "startDate",
+     "parameter": "start_date",
+     "in": "query",
+     "list": false,
+     "dateFormat": "yyyy-MM-dd'T'00:00"
+    },
+    {
+     "name": "endDate",
+     "parameter": "end_date",
+     "in": "query",
+     "list": false,
+     "dateFormat": "yyyy-MM-dd'T'23:59"
+    },
+    {
+     "name": "timeTrunc",
+     "parameter": "time_trunc",
+     "in": "query",
+     "list": false,
+     "values": {
+      "HOUR": "hour",
+      "DAY": "day",
+      "MONTH": "month",
+      "YEAR": "year"
+     }
+    }
+   ]
+  },
+  {
+   "field": "reePeakInstantaneousPowerVariation",
+   "path": "/demanda/potencia-maxima-instantanea-variacion",
+   "arguments": [
+    {
+     "name": "startDate",
+     "parameter": "start_date",
+     "in": "query",
+     "list": false,
+     "dateFormat": "yyyy-MM-dd'T'00:00"
+    },
+    {
+     "name": "endDate",
+     "parameter": "end_date",
+     "in": "query",
+     "list": false,
+     "dateFormat": "yyyy-MM-dd'T'23:59"
+    },
+    {
+     "name": "timeTrunc",
+     "parameter": "time_trunc",
+     "in": "query",
+     "list": false,
+     "values": {
+      "HOUR": "hour",
+      "DAY": "day",
+      "MONTH": "month",
+      "YEAR": "year"
+     }
+    }
+   ]
+  },
+  {
+   "field": "reePeakInstantaneousPowerRecord",
+   "path": "/demanda/potencia-maxima-instantanea-variacion-historico",
+   "arguments": [
+    {
+     "name": "startDate",
+     "parameter": "start_date",
+     "in": "query",
+     "list": false,
+     "dateFormat": "yyyy-MM-dd'T'00:00"
+    },
+    {
+     "name": "endDate",
+     "parameter": "end_date",
+     "in": "query",
+     "list": false,
+     "dateFormat": "yyyy-MM-dd'T'23:59"
+    },
+    {
+     "name": "timeTrunc",
+     "parameter": "time_trunc",
+     "in": "query",
+     "list": false,
+     "values": {
+      "HOUR": "hour",
+      "DAY": "day",
+      "MONTH": "month",
+      "YEAR": "year"
+     }
+    }
+   ]
+  },
+  {
+   "field": "reeGenerationByTechnology",
+   "path": "/generacion/estructura-generacion",
+   "arguments": [
+    {
+     "name": "startDate",
+     "parameter": "start_date",
+     "in": "query",
+     "list": false,
+     "dateFormat": "yyyy-MM-dd'T'00:00"
+    },
+    {
+     "name": "endDate",
+     "parameter": "end_date",
+     "in": "query",
+     "list": false,
+     "dateFormat": "yyyy-MM-dd'T'23:59"
+    },
+    {
+     "name": "timeTrunc",
+     "parameter": "time_trunc",
+     "in": "query",
+     "list": false,
+     "values": {
+      "HOUR": "hour",
+      "DAY": "day",
+      "MONTH": "month",
+      "YEAR": "year"
+     }
+    }
+   ]
+  },
+  {
+   "field": "reeRenewableShare",
+   "path": "/generacion/evolucion-renovable-no-renovable",
+   "arguments": [
+    {
+     "name": "startDate",
+     "parameter": "start_date",
+     "in": "query",
+     "list": false,
+     "dateFormat": "yyyy-MM-dd'T'00:00"
+    },
+    {
+     "name": "endDate",
+     "parameter": "end_date",
+     "in": "query",
+     "list": false,
+     "dateFormat": "yyyy-MM-dd'T'23:59"
+    },
+    {
+     "name": "timeTrunc",
+     "parameter": "time_trunc",
+     "in": "query",
+     "list": false,
+     "values": {
+      "HOUR": "hour",
+      "DAY": "day",
+      "MONTH": "month",
+      "YEAR": "year"
+     }
+    }
+   ]
+  },
+  {
+   "field": "reeRenewableGenerationByTechnology",
+   "path": "/generacion/estructura-renovables",
+   "arguments": [
+    {
+     "name": "startDate",
+     "parameter": "start_date",
+     "in": "query",
+     "list": false,
+     "dateFormat": "yyyy-MM-dd'T'00:00"
+    },
+    {
+     "name": "endDate",
+     "parameter": "end_date",
+     "in": "query",
+     "list": false,
+     "dateFormat": "yyyy-MM-dd'T'23:59"
+    },
+    {
+     "name": "timeTrunc",
+     "parameter": "time_trunc",
+     "in": "query",
+     "list": false,
+     "values": {
+      "HOUR": "hour",
+      "DAY": "day",
+      "MONTH": "month",
+      "YEAR": "year"
+     }
+    }
+   ]
+  },
+  {
+   "field": "reeGenerationByEmissions",
+   "path": "/generacion/estructura-generacion-emisiones-asociadas",
+   "arguments": [
+    {
+     "name": "startDate",
+     "parameter": "start_date",
+     "in": "query",
+     "list": false,
+     "dateFormat": "yyyy-MM-dd'T'00:00"
+    },
+    {
+     "name": "endDate",
+     "parameter": "end_date",
+     "in": "query",
+     "list": false,
+     "dateFormat": "yyyy-MM-dd'T'23:59"
+    },
+    {
+     "name": "timeTrunc",
+     "parameter": "time_trunc",
+     "in": "query",
+     "list": false,
+     "values": {
+      "HOUR": "hour",
+      "DAY": "day",
+      "MONTH": "month",
+      "YEAR": "year"
+     }
+    }
+   ]
+  },
+  {
+   "field": "reeEmissionFreeShare",
+   "path": "/generacion/evolucion-estructura-generacion-emisiones-asociadas",
+   "arguments": [
+    {
+     "name": "startDate",
+     "parameter": "start_date",
+     "in": "query",
+     "list": false,
+     "dateFormat": "yyyy-MM-dd'T'00:00"
+    },
+    {
+     "name": "endDate",
+     "parameter": "end_date",
+     "in": "query",
+     "list": false,
+     "dateFormat": "yyyy-MM-dd'T'23:59"
+    },
+    {
+     "name": "timeTrunc",
+     "parameter": "time_trunc",
+     "in": "query",
+     "list": false,
+     "values": {
+      "HOUR": "hour",
+      "DAY": "day",
+      "MONTH": "month",
+      "YEAR": "year"
+     }
+    }
+   ]
+  },
+  {
+   "field": "reeCo2Emissions",
+   "path": "/generacion/no-renovables-detalle-emisiones-CO2",
+   "arguments": [
+    {
+     "name": "startDate",
+     "parameter": "start_date",
+     "in": "query",
+     "list": false,
+     "dateFormat": "yyyy-MM-dd'T'00:00"
+    },
+    {
+     "name": "endDate",
+     "parameter": "end_date",
+     "in": "query",
+     "list": false,
+     "dateFormat": "yyyy-MM-dd'T'23:59"
+    },
+    {
+     "name": "timeTrunc",
+     "parameter": "time_trunc",
+     "in": "query",
+     "list": false,
+     "values": {
+      "HOUR": "hour",
+      "DAY": "day",
+      "MONTH": "month",
+      "YEAR": "year"
+     }
+    }
+   ]
+  },
+  {
+   "field": "reePeakRenewableGeneration",
+   "path": "/generacion/maxima-renovable",
+   "arguments": [
+    {
+     "name": "startDate",
+     "parameter": "start_date",
+     "in": "query",
+     "list": false,
+     "dateFormat": "yyyy-MM-dd'T'00:00"
+    },
+    {
+     "name": "endDate",
+     "parameter": "end_date",
+     "in": "query",
+     "list": false,
+     "dateFormat": "yyyy-MM-dd'T'23:59"
+    },
+    {
+     "name": "timeTrunc",
+     "parameter": "time_trunc",
+     "in": "query",
+     "list": false,
+     "values": {
+      "HOUR": "hour",
+      "DAY": "day",
+      "MONTH": "month",
+      "YEAR": "year"
+     }
+    }
+   ]
+  },
+  {
+   "field": "reePeakRenewableGenerationRecord",
+   "path": "/generacion/maxima-renovable-historico",
+   "arguments": [
+    {
+     "name": "startDate",
+     "parameter": "start_date",
+     "in": "query",
+     "list": false,
+     "dateFormat": "yyyy-MM-dd'T'00:00"
+    },
+    {
+     "name": "endDate",
+     "parameter": "end_date",
+     "in": "query",
+     "list": false,
+     "dateFormat": "yyyy-MM-dd'T'23:59"
+    },
+    {
+     "name": "timeTrunc",
+     "parameter": "time_trunc",
+     "in": "query",
+     "list": false,
+     "values": {
+      "HOUR": "hour",
+      "DAY": "day",
+      "MONTH": "month",
+      "YEAR": "year"
+     }
+    }
+   ]
+  },
+  {
+   "field": "reePeakEmissionFreeGenerationRecord",
+   "path": "/generacion/maxima-sin-emisiones-historico",
+   "arguments": [
+    {
+     "name": "startDate",
+     "parameter": "start_date",
+     "in": "query",
+     "list": false,
+     "dateFormat": "yyyy-MM-dd'T'00:00"
+    },
+    {
+     "name": "endDate",
+     "parameter": "end_date",
+     "in": "query",
+     "list": false,
+     "dateFormat": "yyyy-MM-dd'T'23:59"
+    },
+    {
+     "name": "timeTrunc",
+     "parameter": "time_trunc",
+     "in": "query",
+     "list": false,
+     "values": {
+      "HOUR": "hour",
+      "DAY": "day",
+      "MONTH": "month",
+      "YEAR": "year"
+     }
+    }
+   ]
+  },
+  {
+   "field": "reeExchangesWithFrance",
+   "path": "/intercambios/francia-frontera",
+   "arguments": [
+    {
+     "name": "startDate",
+     "parameter": "start_date",
+     "in": "query",
+     "list": false,
+     "dateFormat": "yyyy-MM-dd'T'00:00"
+    },
+    {
+     "name": "endDate",
+     "parameter": "end_date",
+     "in": "query",
+     "list": false,
+     "dateFormat": "yyyy-MM-dd'T'23:59"
+    },
+    {
+     "name": "timeTrunc",
+     "parameter": "time_trunc",
+     "in": "query",
+     "list": false,
+     "values": {
+      "HOUR": "hour",
+      "DAY": "day",
+      "MONTH": "month",
+      "YEAR": "year"
+     }
+    }
+   ]
+  },
+  {
+   "field": "reeExchangesWithPortugal",
+   "path": "/intercambios/portugal-frontera",
+   "arguments": [
+    {
+     "name": "startDate",
+     "parameter": "start_date",
+     "in": "query",
+     "list": false,
+     "dateFormat": "yyyy-MM-dd'T'00:00"
+    },
+    {
+     "name": "endDate",
+     "parameter": "end_date",
+     "in": "query",
+     "list": false,
+     "dateFormat": "yyyy-MM-dd'T'23:59"
+    },
+    {
+     "name": "timeTrunc",
+     "parameter": "time_trunc",
+     "in": "query",
+     "list": false,
+     "values": {
+      "HOUR": "hour",
+      "DAY": "day",
+      "MONTH": "month",
+      "YEAR": "year"
+     }
+    }
+   ]
+  },
+  {
+   "field": "reeExchangesWithMorocco",
+   "path": "/intercambios/marruecos-frontera",
+   "arguments": [
+    {
+     "name": "startDate",
+     "parameter": "start_date",
+     "in": "query",
+     "list": false,
+     "dateFormat": "yyyy-MM-dd'T'00:00"
+    },
+    {
+     "name": "endDate",
+     "parameter": "end_date",
+     "in": "query",
+     "list": false,
+     "dateFormat": "yyyy-MM-dd'T'23:59"
+    },
+    {
+     "name": "timeTrunc",
+     "parameter": "time_trunc",
+     "in": "query",
+     "list": false,
+     "values": {
+      "HOUR": "hour",
+      "DAY": "day",
+      "MONTH": "month",
+      "YEAR": "year"
+     }
+    }
+   ]
+  },
+  {
+   "field": "reeExchangesWithAndorra",
+   "path": "/intercambios/andorra-frontera",
+   "arguments": [
+    {
+     "name": "startDate",
+     "parameter": "start_date",
+     "in": "query",
+     "list": false,
+     "dateFormat": "yyyy-MM-dd'T'00:00"
+    },
+    {
+     "name": "endDate",
+     "parameter": "end_date",
+     "in": "query",
+     "list": false,
+     "dateFormat": "yyyy-MM-dd'T'23:59"
+    },
+    {
+     "name": "timeTrunc",
+     "parameter": "time_trunc",
+     "in": "query",
+     "list": false,
+     "values": {
+      "HOUR": "hour",
+      "DAY": "day",
+      "MONTH": "month",
+      "YEAR": "year"
+     }
+    }
+   ]
+  },
+  {
+   "field": "reeExchangesWithFranceByLine",
+   "path": "/intercambios/lineas-francia",
+   "arguments": [
+    {
+     "name": "startDate",
+     "parameter": "start_date",
+     "in": "query",
+     "list": false,
+     "dateFormat": "yyyy-MM-dd'T'00:00"
+    },
+    {
+     "name": "endDate",
+     "parameter": "end_date",
+     "in": "query",
+     "list": false,
+     "dateFormat": "yyyy-MM-dd'T'23:59"
+    },
+    {
+     "name": "timeTrunc",
+     "parameter": "time_trunc",
+     "in": "query",
+     "list": false,
+     "values": {
+      "HOUR": "hour",
+      "DAY": "day",
+      "MONTH": "month",
+      "YEAR": "year"
+     }
+    }
+   ]
+  },
+  {
+   "field": "reeExchangesWithPortugalByLine",
+   "path": "/intercambios/lineas-portugal",
+   "arguments": [
+    {
+     "name": "startDate",
+     "parameter": "start_date",
+     "in": "query",
+     "list": false,
+     "dateFormat": "yyyy-MM-dd'T'00:00"
+    },
+    {
+     "name": "endDate",
+     "parameter": "end_date",
+     "in": "query",
+     "list": false,
+     "dateFormat": "yyyy-MM-dd'T'23:59"
+    },
+    {
+     "name": "timeTrunc",
+     "parameter": "time_trunc",
+     "in": "query",
+     "list": false,
+     "values": {
+      "HOUR": "hour",
+      "DAY": "day",
+      "MONTH": "month",
+      "YEAR": "year"
+     }
+    }
+   ]
+  },
+  {
+   "field": "reeExchangesWithMoroccoByLine",
+   "path": "/intercambios/lineas-marruecos",
+   "arguments": [
+    {
+     "name": "startDate",
+     "parameter": "start_date",
+     "in": "query",
+     "list": false,
+     "dateFormat": "yyyy-MM-dd'T'00:00"
+    },
+    {
+     "name": "endDate",
+     "parameter": "end_date",
+     "in": "query",
+     "list": false,
+     "dateFormat": "yyyy-MM-dd'T'23:59"
+    },
+    {
+     "name": "timeTrunc",
+     "parameter": "time_trunc",
+     "in": "query",
+     "list": false,
+     "values": {
+      "HOUR": "hour",
+      "DAY": "day",
+      "MONTH": "month",
+      "YEAR": "year"
+     }
+    }
+   ]
+  },
+  {
+   "field": "reeExchangesWithAndorraByLine",
+   "path": "/intercambios/lineas-andorra",
+   "arguments": [
+    {
+     "name": "startDate",
+     "parameter": "start_date",
+     "in": "query",
+     "list": false,
+     "dateFormat": "yyyy-MM-dd'T'00:00"
+    },
+    {
+     "name": "endDate",
+     "parameter": "end_date",
+     "in": "query",
+     "list": false,
+     "dateFormat": "yyyy-MM-dd'T'23:59"
+    },
+    {
+     "name": "timeTrunc",
+     "parameter": "time_trunc",
+     "in": "query",
+     "list": false,
+     "values": {
+      "HOUR": "hour",
+      "DAY": "day",
+      "MONTH": "month",
+      "YEAR": "year"
+     }
+    }
+   ]
+  },
+  {
+   "field": "reeScheduledExchangesWithFrance",
+   "path": "/intercambios/francia-frontera-programado",
+   "arguments": [
+    {
+     "name": "startDate",
+     "parameter": "start_date",
+     "in": "query",
+     "list": false,
+     "dateFormat": "yyyy-MM-dd'T'00:00"
+    },
+    {
+     "name": "endDate",
+     "parameter": "end_date",
+     "in": "query",
+     "list": false,
+     "dateFormat": "yyyy-MM-dd'T'23:59"
+    },
+    {
+     "name": "timeTrunc",
+     "parameter": "time_trunc",
+     "in": "query",
+     "list": false,
+     "values": {
+      "HOUR": "hour",
+      "DAY": "day",
+      "MONTH": "month",
+      "YEAR": "year"
+     }
+    }
+   ]
+  },
+  {
+   "field": "reeScheduledExchangesWithPortugal",
+   "path": "/intercambios/portugal-frontera-programado",
+   "arguments": [
+    {
+     "name": "startDate",
+     "parameter": "start_date",
+     "in": "query",
+     "list": false,
+     "dateFormat": "yyyy-MM-dd'T'00:00"
+    },
+    {
+     "name": "endDate",
+     "parameter": "end_date",
+     "in": "query",
+     "list": false,
+     "dateFormat": "yyyy-MM-dd'T'23:59"
+    },
+    {
+     "name": "timeTrunc",
+     "parameter": "time_trunc",
+     "in": "query",
+     "list": false,
+     "values": {
+      "HOUR": "hour",
+      "DAY": "day",
+      "MONTH": "month",
+      "YEAR": "year"
+     }
+    }
+   ]
+  },
+  {
+   "field": "reeScheduledExchangesWithMorocco",
+   "path": "/intercambios/marruecos-frontera-programado",
+   "arguments": [
+    {
+     "name": "startDate",
+     "parameter": "start_date",
+     "in": "query",
+     "list": false,
+     "dateFormat": "yyyy-MM-dd'T'00:00"
+    },
+    {
+     "name": "endDate",
+     "parameter": "end_date",
+     "in": "query",
+     "list": false,
+     "dateFormat": "yyyy-MM-dd'T'23:59"
+    },
+    {
+     "name": "timeTrunc",
+     "parameter": "time_trunc",
+     "in": "query",
+     "list": false,
+     "values": {
+      "HOUR": "hour",
+      "DAY": "day",
+      "MONTH": "month",
+      "YEAR": "year"
+     }
+    }
+   ]
+  },
+  {
+   "field": "reeScheduledExchangesWithAndorra",
+   "path": "/intercambios/andorra-frontera-programado",
+   "arguments": [
+    {
+     "name": "startDate",
+     "parameter": "start_date",
+     "in": "query",
+     "list": false,
+     "dateFormat": "yyyy-MM-dd'T'00:00"
+    },
+    {
+     "name": "endDate",
+     "parameter": "end_date",
+     "in": "query",
+     "list": false,
+     "dateFormat": "yyyy-MM-dd'T'23:59"
+    },
+    {
+     "name": "timeTrunc",
+     "parameter": "time_trunc",
+     "in": "query",
+     "list": false,
+     "values": {
+      "HOUR": "hour",
+      "DAY": "day",
+      "MONTH": "month",
+      "YEAR": "year"
+     }
+    }
+   ]
+  },
+  {
+   "field": "reeBalearicLink",
+   "path": "/intercambios/enlace-baleares",
+   "arguments": [
+    {
+     "name": "startDate",
+     "parameter": "start_date",
+     "in": "query",
+     "list": false,
+     "dateFormat": "yyyy-MM-dd'T'00:00"
+    },
+    {
+     "name": "endDate",
+     "parameter": "end_date",
+     "in": "query",
+     "list": false,
+     "dateFormat": "yyyy-MM-dd'T'23:59"
+    },
+    {
+     "name": "timeTrunc",
+     "parameter": "time_trunc",
+     "in": "query",
+     "list": false,
+     "values": {
+      "HOUR": "hour",
+      "DAY": "day",
+      "MONTH": "month",
+      "YEAR": "year"
+     }
+    }
+   ]
+  },
+  {
+   "field": "reePhysicalExchangeBalance",
+   "path": "/intercambios/frontera-fisicos",
+   "arguments": [
+    {
+     "name": "startDate",
+     "parameter": "start_date",
+     "in": "query",
+     "list": false,
+     "dateFormat": "yyyy-MM-dd'T'00:00"
+    },
+    {
+     "name": "endDate",
+     "parameter": "end_date",
+     "in": "query",
+     "list": false,
+     "dateFormat": "yyyy-MM-dd'T'23:59"
+    },
+    {
+     "name": "timeTrunc",
+     "parameter": "time_trunc",
+     "in": "query",
+     "list": false,
+     "values": {
+      "HOUR": "hour",
+      "DAY": "day",
+      "MONTH": "month",
+      "YEAR": "year"
+     }
+    }
+   ]
+  },
+  {
+   "field": "reePhysicalExchangesAllBorders",
+   "path": "/intercambios/todas-fronteras-fisicos",
+   "arguments": [
+    {
+     "name": "startDate",
+     "parameter": "start_date",
+     "in": "query",
+     "list": false,
+     "dateFormat": "yyyy-MM-dd'T'00:00"
+    },
+    {
+     "name": "endDate",
+     "parameter": "end_date",
+     "in": "query",
+     "list": false,
+     "dateFormat": "yyyy-MM-dd'T'23:59"
+    },
+    {
+     "name": "timeTrunc",
+     "parameter": "time_trunc",
+     "in": "query",
+     "list": false,
+     "values": {
+      "HOUR": "hour",
+      "DAY": "day",
+      "MONTH": "month",
+      "YEAR": "year"
+     }
+    }
+   ]
+  },
+  {
+   "field": "reeScheduledExchangesAllBorders",
+   "path": "/intercambios/todas-fronteras-programados",
+   "arguments": [
+    {
+     "name": "startDate",
+     "parameter": "start_date",
+     "in": "query",
+     "list": false,
+     "dateFormat": "yyyy-MM-dd'T'00:00"
+    },
+    {
+     "name": "endDate",
+     "parameter": "end_date",
+     "in": "query",
+     "list": false,
+     "dateFormat": "yyyy-MM-dd'T'23:59"
+    },
+    {
+     "name": "timeTrunc",
+     "parameter": "time_trunc",
+     "in": "query",
+     "list": false,
+     "values": {
+      "HOUR": "hour",
+      "DAY": "day",
+      "MONTH": "month",
+      "YEAR": "year"
+     }
+    }
+   ]
+  },
+  {
+   "field": "reeEnergyNotSupplied",
+   "path": "/transporte/energia-no-suministrada-ens",
+   "arguments": [
+    {
+     "name": "startDate",
+     "parameter": "start_date",
+     "in": "query",
+     "list": false,
+     "dateFormat": "yyyy-MM-dd'T'00:00"
+    },
+    {
+     "name": "endDate",
+     "parameter": "end_date",
+     "in": "query",
+     "list": false,
+     "dateFormat": "yyyy-MM-dd'T'23:59"
+    },
+    {
+     "name": "timeTrunc",
+     "parameter": "time_trunc",
+     "in": "query",
+     "list": false,
+     "values": {
+      "HOUR": "hour",
+      "DAY": "day",
+      "MONTH": "month",
+      "YEAR": "year"
+     }
+    }
+   ]
+  },
+  {
+   "field": "reeGridUnavailability",
+   "path": "/transporte/indice-indisponibilidad",
+   "arguments": [
+    {
+     "name": "startDate",
+     "parameter": "start_date",
+     "in": "query",
+     "list": false,
+     "dateFormat": "yyyy-MM-dd'T'00:00"
+    },
+    {
+     "name": "endDate",
+     "parameter": "end_date",
+     "in": "query",
+     "list": false,
+     "dateFormat": "yyyy-MM-dd'T'23:59"
+    },
+    {
+     "name": "timeTrunc",
+     "parameter": "time_trunc",
+     "in": "query",
+     "list": false,
+     "values": {
+      "HOUR": "hour",
+      "DAY": "day",
+      "MONTH": "month",
+      "YEAR": "year"
+     }
+    }
+   ]
+  },
+  {
+   "field": "reeAverageInterruptionTime",
+   "path": "/transporte/tiempo-interrupcion-medio-tim",
+   "arguments": [
+    {
+     "name": "startDate",
+     "parameter": "start_date",
+     "in": "query",
+     "list": false,
+     "dateFormat": "yyyy-MM-dd'T'00:00"
+    },
+    {
+     "name": "endDate",
+     "parameter": "end_date",
+     "in": "query",
+     "list": false,
+     "dateFormat": "yyyy-MM-dd'T'23:59"
+    },
+    {
+     "name": "timeTrunc",
+     "parameter": "time_trunc",
+     "in": "query",
+     "list": false,
+     "values": {
+      "HOUR": "hour",
+      "DAY": "day",
+      "MONTH": "month",
+      "YEAR": "year"
+     }
+    }
+   ]
+  },
+  {
+   "field": "reeGridLength",
+   "path": "/transporte/kilometros-lineas",
+   "arguments": [
+    {
+     "name": "startDate",
+     "parameter": "start_date",
+     "in": "query",
+     "list": false,
+     "dateFormat": "yyyy-MM-dd'T'00:00"
+    },
+    {
+     "name": "endDate",
+     "parameter": "end_date",
+     "in": "query",
+     "list": false,
+     "dateFormat": "yyyy-MM-dd'T'23:59"
+    },
+    {
+     "name": "timeTrunc",
+     "parameter": "time_trunc",
+     "in": "query",
+     "list": false,
+     "values": {
+      "HOUR": "hour",
+      "DAY": "day",
+      "MONTH": "month",
+      "YEAR": "year"
+     }
+    }
+   ]
+  },
+  {
+   "field": "reeGridAvailability",
+   "path": "/transporte/indice-disponibilidad",
+   "arguments": [
+    {
+     "name": "startDate",
+     "parameter": "start_date",
+     "in": "query",
+     "list": false,
+     "dateFormat": "yyyy-MM-dd'T'00:00"
+    },
+    {
+     "name": "endDate",
+     "parameter": "end_date",
+     "in": "query",
+     "list": false,
+     "dateFormat": "yyyy-MM-dd'T'23:59"
+    },
+    {
+     "name": "timeTrunc",
+     "parameter": "time_trunc",
+     "in": "query",
+     "list": false,
+     "values": {
+      "HOUR": "hour",
+      "DAY": "day",
+      "MONTH": "month",
+      "YEAR": "year"
+     }
+    }
+   ]
+  },
+  {
+   "field": "reePowerOutages",
+   "path": "/transporte/numero-cortes",
+   "arguments": [
+    {
+     "name": "startDate",
+     "parameter": "start_date",
+     "in": "query",
+     "list": false,
+     "dateFormat": "yyyy-MM-dd'T'00:00"
+    },
+    {
+     "name": "endDate",
+     "parameter": "end_date",
+     "in": "query",
+     "list": false,
+     "dateFormat": "yyyy-MM-dd'T'23:59"
+    },
+    {
+     "name": "timeTrunc",
+     "parameter": "time_trunc",
+     "in": "query",
+     "list": false,
+     "values": {
+      "HOUR": "hour",
+      "DAY": "day",
+      "MONTH": "month",
+      "YEAR": "year"
+     }
+    }
+   ]
+  },
+  {
+   "field": "reeEnergyNotSuppliedAndInterruptionTime",
+   "path": "/transporte/ens-tim",
+   "arguments": [
+    {
+     "name": "startDate",
+     "parameter": "start_date",
+     "in": "query",
+     "list": false,
+     "dateFormat": "yyyy-MM-dd'T'00:00"
+    },
+    {
+     "name": "endDate",
+     "parameter": "end_date",
+     "in": "query",
+     "list": false,
+     "dateFormat": "yyyy-MM-dd'T'23:59"
+    },
+    {
+     "name": "timeTrunc",
+     "parameter": "time_trunc",
+     "in": "query",
+     "list": false,
+     "values": {
+      "HOUR": "hour",
+      "DAY": "day",
+      "MONTH": "month",
+      "YEAR": "year"
+     }
+    }
+   ]
+  },
+  {
+   "field": "reeTotalGridAvailability",
+   "path": "/transporte/indice-disponibilidad-total",
+   "arguments": [
+    {
+     "name": "startDate",
+     "parameter": "start_date",
+     "in": "query",
+     "list": false,
+     "dateFormat": "yyyy-MM-dd'T'00:00"
+    },
+    {
+     "name": "endDate",
+     "parameter": "end_date",
+     "in": "query",
+     "list": false,
+     "dateFormat": "yyyy-MM-dd'T'23:59"
+    },
+    {
+     "name": "timeTrunc",
+     "parameter": "time_trunc",
+     "in": "query",
+     "list": false,
+     "values": {
+      "HOUR": "hour",
+      "DAY": "day",
+      "MONTH": "month",
+      "YEAR": "year"
+     }
+    }
+   ]
+  },
+  {
+   "field": "reePriceComponents",
+   "path": "/mercados/componentes-precio-energia-cierre-desglose",
+   "arguments": [
+    {
+     "name": "startDate",
+     "parameter": "start_date",
+     "in": "query",
+     "list": false,
+     "dateFormat": "yyyy-MM-dd'T'00:00"
+    },
+    {
+     "name": "endDate",
+     "parameter": "end_date",
+     "in": "query",
+     "list": false,
+     "dateFormat": "yyyy-MM-dd'T'23:59"
+    },
+    {
+     "name": "timeTrunc",
+     "parameter": "time_trunc",
+     "in": "query",
+     "list": false,
+     "values": {
+      "HOUR": "hour",
+      "DAY": "day",
+      "MONTH": "month",
+      "YEAR": "year"
+     }
+    }
+   ]
+  },
+  {
+   "field": "reeAdjustmentServicesEnergy",
+   "path": "/mercados/energia-gestionada-servicios-ajuste",
+   "arguments": [
+    {
+     "name": "startDate",
+     "parameter": "start_date",
+     "in": "query",
+     "list": false,
+     "dateFormat": "yyyy-MM-dd'T'00:00"
+    },
+    {
+     "name": "endDate",
+     "parameter": "end_date",
+     "in": "query",
+     "list": false,
+     "dateFormat": "yyyy-MM-dd'T'23:59"
+    },
+    {
+     "name": "timeTrunc",
+     "parameter": "time_trunc",
+     "in": "query",
+     "list": false,
+     "values": {
+      "HOUR": "hour",
+      "DAY": "day",
+      "MONTH": "month",
+      "YEAR": "year"
+     }
+    }
+   ]
+  },
+  {
+   "field": "reeConstraintEnergy",
+   "path": "/mercados/energia-restricciones",
+   "arguments": [
+    {
+     "name": "startDate",
+     "parameter": "start_date",
+     "in": "query",
+     "list": false,
+     "dateFormat": "yyyy-MM-dd'T'00:00"
+    },
+    {
+     "name": "endDate",
+     "parameter": "end_date",
+     "in": "query",
+     "list": false,
+     "dateFormat": "yyyy-MM-dd'T'23:59"
+    },
+    {
+     "name": "timeTrunc",
+     "parameter": "time_trunc",
+     "in": "query",
+     "list": false,
+     "values": {
+      "HOUR": "hour",
+      "DAY": "day",
+      "MONTH": "month",
+      "YEAR": "year"
+     }
+    }
+   ]
+  },
+  {
+   "field": "reeConstraintPrices",
+   "path": "/mercados/precios-restricciones",
+   "arguments": [
+    {
+     "name": "startDate",
+     "parameter": "start_date",
+     "in": "query",
+     "list": false,
+     "dateFormat": "yyyy-MM-dd'T'00:00"
+    },
+    {
+     "name": "endDate",
+     "parameter": "end_date",
+     "in": "query",
+     "list": false,
+     "dateFormat": "yyyy-MM-dd'T'23:59"
+    },
+    {
+     "name": "timeTrunc",
+     "parameter": "time_trunc",
+     "in": "query",
+     "list": false,
+     "values": {
+      "HOUR": "hour",
+      "DAY": "day",
+      "MONTH": "month",
+      "YEAR": "year"
+     }
+    }
+   ]
+  },
+  {
+   "field": "reeSecondaryRegulationBand",
+   "path": "/mercados/banda-regulacion-secundaria",
+   "arguments": [
+    {
+     "name": "startDate",
+     "parameter": "start_date",
+     "in": "query",
+     "list": false,
+     "dateFormat": "yyyy-MM-dd'T'00:00"
+    },
+    {
+     "name": "endDate",
+     "parameter": "end_date",
+     "in": "query",
+     "list": false,
+     "dateFormat": "yyyy-MM-dd'T'23:59"
+    },
+    {
+     "name": "timeTrunc",
+     "parameter": "time_trunc",
+     "in": "query",
+     "list": false,
+     "values": {
+      "HOUR": "hour",
+      "DAY": "day",
+      "MONTH": "month",
+      "YEAR": "year"
+     }
+    }
+   ]
+  },
+  {
+   "field": "reeSecondaryRegulation",
+   "path": "/mercados/energia-precios-regulacion-secundaria",
+   "arguments": [
+    {
+     "name": "startDate",
+     "parameter": "start_date",
+     "in": "query",
+     "list": false,
+     "dateFormat": "yyyy-MM-dd'T'00:00"
+    },
+    {
+     "name": "endDate",
+     "parameter": "end_date",
+     "in": "query",
+     "list": false,
+     "dateFormat": "yyyy-MM-dd'T'23:59"
+    },
+    {
+     "name": "timeTrunc",
+     "parameter": "time_trunc",
+     "in": "query",
+     "list": false,
+     "values": {
+      "HOUR": "hour",
+      "DAY": "day",
+      "MONTH": "month",
+      "YEAR": "year"
+     }
+    }
+   ]
+  },
+  {
+   "field": "reeTertiaryRegulation",
+   "path": "/mercados/energia-precios-regulacion-terciaria",
+   "arguments": [
+    {
+     "name": "startDate",
+     "parameter": "start_date",
+     "in": "query",
+     "list": false,
+     "dateFormat": "yyyy-MM-dd'T'00:00"
+    },
+    {
+     "name": "endDate",
+     "parameter": "end_date",
+     "in": "query",
+     "list": false,
+     "dateFormat": "yyyy-MM-dd'T'23:59"
+    },
+    {
+     "name": "timeTrunc",
+     "parameter": "time_trunc",
+     "in": "query",
+     "list": false,
+     "values": {
+      "HOUR": "hour",
+      "DAY": "day",
+      "MONTH": "month",
+      "YEAR": "year"
+     }
+    }
+   ]
+  },
+  {
+   "field": "reeAdjustmentServicesCost",
+   "path": "/mercados/coste-servicios-ajuste",
+   "arguments": [
+    {
+     "name": "startDate",
+     "parameter": "start_date",
+     "in": "query",
+     "list": false,
+     "dateFormat": "yyyy-MM-dd'T'00:00"
+    },
+    {
+     "name": "endDate",
+     "parameter": "end_date",
+     "in": "query",
+     "list": false,
+     "dateFormat": "yyyy-MM-dd'T'23:59"
+    },
+    {
+     "name": "timeTrunc",
+     "parameter": "time_trunc",
+     "in": "query",
+     "list": false,
+     "values": {
+      "HOUR": "hour",
+      "DAY": "day",
+      "MONTH": "month",
+      "YEAR": "year"
+     }
+    }
+   ]
+  },
+  {
+   "field": "reeAdjustmentServicesVolumeVariation",
+   "path": "/mercados/volumen-energia-servicios-ajuste-variacion",
+   "arguments": [
+    {
+     "name": "startDate",
+     "parameter": "start_date",
+     "in": "query",
+     "list": false,
+     "dateFormat": "yyyy-MM-dd'T'00:00"
+    },
+    {
+     "name": "endDate",
+     "parameter": "end_date",
+     "in": "query",
+     "list": false,
+     "dateFormat": "yyyy-MM-dd'T'23:59"
+    },
+    {
+     "name": "timeTrunc",
+     "parameter": "time_trunc",
+     "in": "query",
+     "list": false,
+     "values": {
+      "HOUR": "hour",
+      "DAY": "day",
+      "MONTH": "month",
+      "YEAR": "year"
+     }
+    }
+   ]
+  },
+  {
+   "field": "reeDeviationManagementPricesBefore",
+   "path": "/mercados/energia-precios-ponderados-gestion-desvios-before",
+   "arguments": [
+    {
+     "name": "startDate",
+     "parameter": "start_date",
+     "in": "query",
+     "list": false,
+     "dateFormat": "yyyy-MM-dd'T'00:00"
+    },
+    {
+     "name": "endDate",
+     "parameter": "end_date",
+     "in": "query",
+     "list": false,
+     "dateFormat": "yyyy-MM-dd'T'23:59"
+    },
+    {
+     "name": "timeTrunc",
+     "parameter": "time_trunc",
+     "in": "query",
+     "list": false,
+     "values": {
+      "HOUR": "hour",
+      "DAY": "day",
+      "MONTH": "month",
+      "YEAR": "year"
+     }
+    }
+   ]
+  },
+  {
+   "field": "reeDeviationManagementPrices",
+   "path": "/mercados/energia-precios-ponderados-gestion-desvios",
+   "arguments": [
+    {
+     "name": "startDate",
+     "parameter": "start_date",
+     "in": "query",
+     "list": false,
+     "dateFormat": "yyyy-MM-dd'T'00:00"
+    },
+    {
+     "name": "endDate",
+     "parameter": "end_date",
+     "in": "query",
+     "list": false,
+     "dateFormat": "yyyy-MM-dd'T'23:59"
+    },
+    {
+     "name": "timeTrunc",
+     "parameter": "time_trunc",
+     "in": "query",
+     "list": false,
+     "values": {
+      "HOUR": "hour",
+      "DAY": "day",
+      "MONTH": "month",
+      "YEAR": "year"
+     }
+    }
+   ]
+  },
+  {
+   "field": "reeDeviationManagementPricesAfter",
+   "path": "/mercados/energia-precios-ponderados-gestion-desvios-after",
+   "arguments": [
+    {
+     "name": "startDate",
+     "parameter": "start_date",
+     "in": "query",
+     "list": false,
+     "dateFormat": "yyyy-MM-dd'T'00:00"
+    },
+    {
+     "name": "endDate",
+     "parameter": "end_date",
+     "in": "query",
+     "list": false,
+     "dateFormat": "yyyy-MM-dd'T'23:59"
+    },
+    {
+     "name": "timeTrunc",
+     "parameter": "time_trunc",
+     "in": "query",
+     "list": false,
+     "values": {
+      "HOUR": "hour",
+      "DAY": "day",
+      "MONTH": "month",
+      "YEAR": "year"
+     }
+    }
+   ]
+  },
+  {
+   "field": "reeElectricityPrices",
+   "path": "/mercados/precios-mercados-tiempo-real",
+   "arguments": [
+    {
+     "name": "startDate",
+     "parameter": "start_date",
+     "in": "query",
+     "list": false,
+     "dateFormat": "yyyy-MM-dd'T'00:00"
+    },
+    {
+     "name": "endDate",
+     "parameter": "end_date",
+     "in": "query",
+     "list": false,
+     "dateFormat": "yyyy-MM-dd'T'23:59"
+    },
+    {
+     "name": "timeTrunc",
+     "parameter": "time_trunc",
+     "in": "query",
+     "list": false,
+     "values": {
+      "HOUR": "hour",
+      "DAY": "day",
+      "MONTH": "month",
+      "YEAR": "year"
+     }
+    }
+   ]
+  }
+ ],
+ "fields": {
+  "ReeIndicator": {
+   "id": {
+    "key": "data/id"
+   },
+   "title": {
+    "key": "data/attributes/title"
+   },
+   "description": {
+    "key": "data/attributes/description"
+   },
+   "lastUpdate": {
+    "key": "data/attributes/last-update"
+   },
+   "series": {
+    "key": "included"
+   }
+  },
+  "ReeSeries": {
+   "title": {
+    "key": "attributes/title"
+   },
+   "description": {
+    "key": "attributes/description"
+   },
+   "kind": {
+    "key": "attributes/type"
+   },
+   "magnitude": {
+    "key": "attributes/magnitude"
+   },
+   "composite": {
+    "key": "attributes/composite"
+   },
+   "color": {
+    "key": "attributes/color"
+   },
+   "lastUpdate": {
+    "key": "attributes/last-update",
+    "conversion": "text"
+   },
+   "values": {
+    "key": "attributes/values"
+   },
+   "parts": {
+    "key": "attributes/content"
+   }
+  },
+  "ReeValue": {
+   "percentage": {
+    "key": "percentage",
+    "conversion": "number"
+   }
+  }
+ }
+}

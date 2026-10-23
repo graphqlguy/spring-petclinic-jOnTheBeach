@@ -1,0 +1,837 @@
+{
+ "mappings": [
+  {
+   "name": "nominatimSearch: {\"query\": \"Calle Larios 12, Málaga, España\", \"limit\": 1}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/nominatim/search",
+    "queryParameters": {
+     "q": {
+      "equalTo": "Calle Larios 12, Málaga, España"
+     },
+     "limit": {
+      "equalTo": "1"
+     },
+     "format": {
+      "equalTo": "jsonv2"
+     },
+     "countrycodes": {
+      "equalTo": "es"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    },
+    "bodyFileName": "nominatim/nominatimSearch.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://nominatim.openstreetmap.org/search?q=Calle%20Larios%2012%2C%20M%C3%A1laga%2C%20Espa%C3%B1a&limit=1&format=jsonv2&countrycodes=es on 2026-10-23."
+   }
+  },
+  {
+   "name": "nominatimSearch: {\"query\": \"Calle Granada 41, Málaga, España\", \"limit\": 1}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/nominatim/search",
+    "queryParameters": {
+     "q": {
+      "equalTo": "Calle Granada 41, Málaga, España"
+     },
+     "limit": {
+      "equalTo": "1"
+     },
+     "format": {
+      "equalTo": "jsonv2"
+     },
+     "countrycodes": {
+      "equalTo": "es"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    },
+    "bodyFileName": "nominatim/nominatimSearch-1.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://nominatim.openstreetmap.org/search?q=Calle%20Granada%2041%2C%20M%C3%A1laga%2C%20Espa%C3%B1a&limit=1&format=jsonv2&countrycodes=es on 2026-10-23."
+   }
+  },
+  {
+   "name": "nominatimSearch: {\"query\": \"Calle Carretería 77, Málaga, España\", \"limit\": 1}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/nominatim/search",
+    "queryParameters": {
+     "q": {
+      "equalTo": "Calle Carretería 77, Málaga, España"
+     },
+     "limit": {
+      "equalTo": "1"
+     },
+     "format": {
+      "equalTo": "jsonv2"
+     },
+     "countrycodes": {
+      "equalTo": "es"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    },
+    "bodyFileName": "nominatim/nominatimSearch-2.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://nominatim.openstreetmap.org/search?q=Calle%20Carreter%C3%ADa%2077%2C%20M%C3%A1laga%2C%20Espa%C3%B1a&limit=1&format=jsonv2&countrycodes=es on 2026-10-23."
+   }
+  },
+  {
+   "name": "nominatimSearch: {\"query\": \"Avenida de Andalucía 23, Málaga, España\", \"limit\": 1}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/nominatim/search",
+    "queryParameters": {
+     "q": {
+      "equalTo": "Avenida de Andalucía 23, Málaga, España"
+     },
+     "limit": {
+      "equalTo": "1"
+     },
+     "format": {
+      "equalTo": "jsonv2"
+     },
+     "countrycodes": {
+      "equalTo": "es"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    },
+    "bodyFileName": "nominatim/nominatimSearch-3.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://nominatim.openstreetmap.org/search?q=Avenida%20de%20Andaluc%C3%ADa%2023%2C%20M%C3%A1laga%2C%20Espa%C3%B1a&limit=1&format=jsonv2&countrycodes=es on 2026-10-23."
+   }
+  },
+  {
+   "name": "nominatimSearch: {\"query\": \"Calle Victoria 15, Málaga, España\", \"limit\": 1}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/nominatim/search",
+    "queryParameters": {
+     "q": {
+      "equalTo": "Calle Victoria 15, Málaga, España"
+     },
+     "limit": {
+      "equalTo": "1"
+     },
+     "format": {
+      "equalTo": "jsonv2"
+     },
+     "countrycodes": {
+      "equalTo": "es"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    },
+    "bodyFileName": "nominatim/nominatimSearch-4.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://nominatim.openstreetmap.org/search?q=Calle%20Victoria%2015%2C%20M%C3%A1laga%2C%20Espa%C3%B1a&limit=1&format=jsonv2&countrycodes=es on 2026-10-23."
+   }
+  },
+  {
+   "name": "nominatimSearch: {\"query\": \"Calle Alcazabilla 3, Málaga, España\", \"limit\": 1}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/nominatim/search",
+    "queryParameters": {
+     "q": {
+      "equalTo": "Calle Alcazabilla 3, Málaga, España"
+     },
+     "limit": {
+      "equalTo": "1"
+     },
+     "format": {
+      "equalTo": "jsonv2"
+     },
+     "countrycodes": {
+      "equalTo": "es"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    },
+    "bodyFileName": "nominatim/nominatimSearch-5.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://nominatim.openstreetmap.org/search?q=Calle%20Alcazabilla%203%2C%20M%C3%A1laga%2C%20Espa%C3%B1a&limit=1&format=jsonv2&countrycodes=es on 2026-10-23."
+   }
+  },
+  {
+   "name": "nominatimSearch: {\"query\": \"Paseo de Reding 19, Málaga, España\", \"limit\": 1}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/nominatim/search",
+    "queryParameters": {
+     "q": {
+      "equalTo": "Paseo de Reding 19, Málaga, España"
+     },
+     "limit": {
+      "equalTo": "1"
+     },
+     "format": {
+      "equalTo": "jsonv2"
+     },
+     "countrycodes": {
+      "equalTo": "es"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    },
+    "bodyFileName": "nominatim/nominatimSearch-6.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://nominatim.openstreetmap.org/search?q=Paseo%20de%20Reding%2019%2C%20M%C3%A1laga%2C%20Espa%C3%B1a&limit=1&format=jsonv2&countrycodes=es on 2026-10-23."
+   }
+  },
+  {
+   "name": "nominatimSearch: {\"query\": \"Calle Cuarteles 28, Málaga, España\", \"limit\": 1}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/nominatim/search",
+    "queryParameters": {
+     "q": {
+      "equalTo": "Calle Cuarteles 28, Málaga, España"
+     },
+     "limit": {
+      "equalTo": "1"
+     },
+     "format": {
+      "equalTo": "jsonv2"
+     },
+     "countrycodes": {
+      "equalTo": "es"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    },
+    "bodyFileName": "nominatim/nominatimSearch-7.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://nominatim.openstreetmap.org/search?q=Calle%20Cuarteles%2028%2C%20M%C3%A1laga%2C%20Espa%C3%B1a&limit=1&format=jsonv2&countrycodes=es on 2026-10-23."
+   }
+  },
+  {
+   "name": "nominatimSearch: {\"query\": \"Calle Mármoles 42, Málaga, España\", \"limit\": 1}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/nominatim/search",
+    "queryParameters": {
+     "q": {
+      "equalTo": "Calle Mármoles 42, Málaga, España"
+     },
+     "limit": {
+      "equalTo": "1"
+     },
+     "format": {
+      "equalTo": "jsonv2"
+     },
+     "countrycodes": {
+      "equalTo": "es"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    },
+    "bodyFileName": "nominatim/nominatimSearch-8.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://nominatim.openstreetmap.org/search?q=Calle%20M%C3%A1rmoles%2042%2C%20M%C3%A1laga%2C%20Espa%C3%B1a&limit=1&format=jsonv2&countrycodes=es on 2026-10-23."
+   }
+  },
+  {
+   "name": "nominatimSearch: {\"query\": \"Calle Héroe de Sostoa 96, Málaga, España\", \"limit\": 1}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/nominatim/search",
+    "queryParameters": {
+     "q": {
+      "equalTo": "Calle Héroe de Sostoa 96, Málaga, España"
+     },
+     "limit": {
+      "equalTo": "1"
+     },
+     "format": {
+      "equalTo": "jsonv2"
+     },
+     "countrycodes": {
+      "equalTo": "es"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    },
+    "bodyFileName": "nominatim/nominatimSearch-9.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://nominatim.openstreetmap.org/search?q=Calle%20H%C3%A9roe%20de%20Sostoa%2096%2C%20M%C3%A1laga%2C%20Espa%C3%B1a&limit=1&format=jsonv2&countrycodes=es on 2026-10-23."
+   }
+  },
+  {
+   "name": "nominatimSearch: {\"query\": \"Avenida de Velázquez 132, Málaga, España\", \"limit\": 1}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/nominatim/search",
+    "queryParameters": {
+     "q": {
+      "equalTo": "Avenida de Velázquez 132, Málaga, España"
+     },
+     "limit": {
+      "equalTo": "1"
+     },
+     "format": {
+      "equalTo": "jsonv2"
+     },
+     "countrycodes": {
+      "equalTo": "es"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    },
+    "bodyFileName": "nominatim/nominatimSearch-10.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://nominatim.openstreetmap.org/search?q=Avenida%20de%20Vel%C3%A1zquez%20132%2C%20M%C3%A1laga%2C%20Espa%C3%B1a&limit=1&format=jsonv2&countrycodes=es on 2026-10-23."
+   }
+  },
+  {
+   "name": "nominatimSearch: {\"query\": \"Calle Salitre 25, Málaga, España\", \"limit\": 1}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/nominatim/search",
+    "queryParameters": {
+     "q": {
+      "equalTo": "Calle Salitre 25, Málaga, España"
+     },
+     "limit": {
+      "equalTo": "1"
+     },
+     "format": {
+      "equalTo": "jsonv2"
+     },
+     "countrycodes": {
+      "equalTo": "es"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    },
+    "bodyFileName": "nominatim/nominatimSearch-11.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://nominatim.openstreetmap.org/search?q=Calle%20Salitre%2025%2C%20M%C3%A1laga%2C%20Espa%C3%B1a&limit=1&format=jsonv2&countrycodes=es on 2026-10-23."
+   }
+  },
+  {
+   "name": "nominatimSearch: {\"query\": \"Calle Ollerías 31, Málaga, España\", \"limit\": 1}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/nominatim/search",
+    "queryParameters": {
+     "q": {
+      "equalTo": "Calle Ollerías 31, Málaga, España"
+     },
+     "limit": {
+      "equalTo": "1"
+     },
+     "format": {
+      "equalTo": "jsonv2"
+     },
+     "countrycodes": {
+      "equalTo": "es"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    },
+    "bodyFileName": "nominatim/nominatimSearch-12.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://nominatim.openstreetmap.org/search?q=Calle%20Oller%C3%ADas%2031%2C%20M%C3%A1laga%2C%20Espa%C3%B1a&limit=1&format=jsonv2&countrycodes=es on 2026-10-23."
+   }
+  },
+  {
+   "name": "nominatimSearch: {\"query\": \"Calle Trinidad Grund 11, Málaga, España\", \"limit\": 1}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/nominatim/search",
+    "queryParameters": {
+     "q": {
+      "equalTo": "Calle Trinidad Grund 11, Málaga, España"
+     },
+     "limit": {
+      "equalTo": "1"
+     },
+     "format": {
+      "equalTo": "jsonv2"
+     },
+     "countrycodes": {
+      "equalTo": "es"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    },
+    "bodyFileName": "nominatim/nominatimSearch-13.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://nominatim.openstreetmap.org/search?q=Calle%20Trinidad%20Grund%2011%2C%20M%C3%A1laga%2C%20Espa%C3%B1a&limit=1&format=jsonv2&countrycodes=es on 2026-10-23."
+   }
+  },
+  {
+   "name": "nominatimSearch: {\"query\": \"Paseo del Parque 7, Málaga, España\", \"limit\": 1}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/nominatim/search",
+    "queryParameters": {
+     "q": {
+      "equalTo": "Paseo del Parque 7, Málaga, España"
+     },
+     "limit": {
+      "equalTo": "1"
+     },
+     "format": {
+      "equalTo": "jsonv2"
+     },
+     "countrycodes": {
+      "equalTo": "es"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    },
+    "bodyFileName": "nominatim/nominatimSearch-14.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://nominatim.openstreetmap.org/search?q=Paseo%20del%20Parque%207%2C%20M%C3%A1laga%2C%20Espa%C3%B1a&limit=1&format=jsonv2&countrycodes=es on 2026-10-23."
+   }
+  },
+  {
+   "name": "nominatimSearch: {\"query\": \"Calle Compositor Lehmberg Ruiz 18, Málaga, España\", \"limit\": 1}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/nominatim/search",
+    "queryParameters": {
+     "q": {
+      "equalTo": "Calle Compositor Lehmberg Ruiz 18, Málaga, España"
+     },
+     "limit": {
+      "equalTo": "1"
+     },
+     "format": {
+      "equalTo": "jsonv2"
+     },
+     "countrycodes": {
+      "equalTo": "es"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    },
+    "bodyFileName": "nominatim/nominatimSearch-15.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://nominatim.openstreetmap.org/search?q=Calle%20Compositor%20Lehmberg%20Ruiz%2018%2C%20M%C3%A1laga%2C%20Espa%C3%B1a&limit=1&format=jsonv2&countrycodes=es on 2026-10-23."
+   }
+  },
+  {
+   "name": "nominatimSearch: {\"query\": \"Calle Cervantes 6, Málaga, España\", \"limit\": 1}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/nominatim/search",
+    "queryParameters": {
+     "q": {
+      "equalTo": "Calle Cervantes 6, Málaga, España"
+     },
+     "limit": {
+      "equalTo": "1"
+     },
+     "format": {
+      "equalTo": "jsonv2"
+     },
+     "countrycodes": {
+      "equalTo": "es"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    },
+    "bodyFileName": "nominatim/nominatimSearch-16.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://nominatim.openstreetmap.org/search?q=Calle%20Cervantes%206%2C%20M%C3%A1laga%2C%20Espa%C3%B1a&limit=1&format=jsonv2&countrycodes=es on 2026-10-23."
+   }
+  },
+  {
+   "name": "nominatimSearch: {\"query\": \"Avenida Juan Sebastián Elcano 145, Málaga, España\", \"limit\": 1}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/nominatim/search",
+    "queryParameters": {
+     "q": {
+      "equalTo": "Avenida Juan Sebastián Elcano 145, Málaga, España"
+     },
+     "limit": {
+      "equalTo": "1"
+     },
+     "format": {
+      "equalTo": "jsonv2"
+     },
+     "countrycodes": {
+      "equalTo": "es"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    },
+    "bodyFileName": "nominatim/nominatimSearch-17.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://nominatim.openstreetmap.org/search?q=Avenida%20Juan%20Sebasti%C3%A1n%20Elcano%20145%2C%20M%C3%A1laga%2C%20Espa%C3%B1a&limit=1&format=jsonv2&countrycodes=es on 2026-10-23."
+   }
+  },
+  {
+   "name": "nominatimSearch: {\"query\": \"Paseo Marítimo de Pedregalejo 52, Málaga, España\", \"limit\": 1}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/nominatim/search",
+    "queryParameters": {
+     "q": {
+      "equalTo": "Paseo Marítimo de Pedregalejo 52, Málaga, España"
+     },
+     "limit": {
+      "equalTo": "1"
+     },
+     "format": {
+      "equalTo": "jsonv2"
+     },
+     "countrycodes": {
+      "equalTo": "es"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    },
+    "bodyFileName": "nominatim/nominatimSearch-18.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://nominatim.openstreetmap.org/search?q=Paseo%20Mar%C3%ADtimo%20de%20Pedregalejo%2052%2C%20M%C3%A1laga%2C%20Espa%C3%B1a&limit=1&format=jsonv2&countrycodes=es on 2026-10-23."
+   }
+  },
+  {
+   "name": "nominatimSearch: {\"query\": \"Avenida de Europa 88, Málaga, España\", \"limit\": 1}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/nominatim/search",
+    "queryParameters": {
+     "q": {
+      "equalTo": "Avenida de Europa 88, Málaga, España"
+     },
+     "limit": {
+      "equalTo": "1"
+     },
+     "format": {
+      "equalTo": "jsonv2"
+     },
+     "countrycodes": {
+      "equalTo": "es"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    },
+    "bodyFileName": "nominatim/nominatimSearch-19.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://nominatim.openstreetmap.org/search?q=Avenida%20de%20Europa%2088%2C%20M%C3%A1laga%2C%20Espa%C3%B1a&limit=1&format=jsonv2&countrycodes=es on 2026-10-23."
+   }
+  },
+  {
+   "name": "nominatimSearch: {\"query\": \"Calle Mauricio Moro 4, Málaga, España\", \"limit\": 1}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/nominatim/search",
+    "queryParameters": {
+     "q": {
+      "equalTo": "Calle Mauricio Moro 4, Málaga, España"
+     },
+     "limit": {
+      "equalTo": "1"
+     },
+     "format": {
+      "equalTo": "jsonv2"
+     },
+     "countrycodes": {
+      "equalTo": "es"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    },
+    "bodyFileName": "nominatim/nominatimSearch-20.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://nominatim.openstreetmap.org/search?q=Calle%20Mauricio%20Moro%204%2C%20M%C3%A1laga%2C%20Espa%C3%B1a&limit=1&format=jsonv2&countrycodes=es on 2026-10-23."
+   }
+  },
+  {
+   "name": "nominatimSearch: {\"query\": \"Calle Puerta del Mar 2, Málaga, España\", \"limit\": 1}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/nominatim/search",
+    "queryParameters": {
+     "q": {
+      "equalTo": "Calle Puerta del Mar 2, Málaga, España"
+     },
+     "limit": {
+      "equalTo": "1"
+     },
+     "format": {
+      "equalTo": "jsonv2"
+     },
+     "countrycodes": {
+      "equalTo": "es"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    },
+    "bodyFileName": "nominatim/nominatimSearch-21.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://nominatim.openstreetmap.org/search?q=Calle%20Puerta%20del%20Mar%202%2C%20M%C3%A1laga%2C%20Espa%C3%B1a&limit=1&format=jsonv2&countrycodes=es on 2026-10-23."
+   }
+  },
+  {
+   "name": "nominatimSearch: {\"query\": \"Avenida de José Ortega y Gasset 201, Málaga, España\", \"limit\": 1}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/nominatim/search",
+    "queryParameters": {
+     "q": {
+      "equalTo": "Avenida de José Ortega y Gasset 201, Málaga, España"
+     },
+     "limit": {
+      "equalTo": "1"
+     },
+     "format": {
+      "equalTo": "jsonv2"
+     },
+     "countrycodes": {
+      "equalTo": "es"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    },
+    "bodyFileName": "nominatim/nominatimSearch-22.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://nominatim.openstreetmap.org/search?q=Avenida%20de%20Jos%C3%A9%20Ortega%20y%20Gasset%20201%2C%20M%C3%A1laga%2C%20Espa%C3%B1a&limit=1&format=jsonv2&countrycodes=es on 2026-10-23."
+   }
+  },
+  {
+   "name": "nominatimSearch: {\"query\": \"Parque canino, Málaga\", \"limit\": 10}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/nominatim/search",
+    "queryParameters": {
+     "q": {
+      "equalTo": "Parque canino, Málaga"
+     },
+     "limit": {
+      "equalTo": "10"
+     },
+     "format": {
+      "equalTo": "jsonv2"
+     },
+     "countrycodes": {
+      "equalTo": "es"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    },
+    "bodyFileName": "nominatim/nominatimSearch-23.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://nominatim.openstreetmap.org/search?q=Parque%20canino%2C%20M%C3%A1laga&limit=10&format=jsonv2&countrycodes=es on 2026-10-23."
+   }
+  },
+  {
+   "name": "nominatimSearch: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/nominatim/search"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    },
+    "bodyFileName": "nominatim/nominatimSearch.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of nominatimSearch with the first recording, from https://nominatim.openstreetmap.org/search?q=Calle%20Larios%2012%2C%20M%C3%A1laga%2C%20Espa%C3%B1a&limit=1&format=jsonv2&countrycodes=es on 2026-10-23."
+   }
+  },
+  {
+   "name": "nominatimReverse: {\"latitude\": 36.7188122, \"longitude\": -4.4216645}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/nominatim/reverse",
+    "queryParameters": {
+     "lat": {
+      "equalTo": "36.7188122"
+     },
+     "lon": {
+      "equalTo": "-4.4216645"
+     },
+     "format": {
+      "equalTo": "jsonv2"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    },
+    "bodyFileName": "nominatim/nominatimReverse.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://nominatim.openstreetmap.org/reverse?lat=36.7188122&lon=-4.4216645&format=jsonv2 on 2026-10-23."
+   }
+  },
+  {
+   "name": "nominatimReverse: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/nominatim/reverse"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    },
+    "bodyFileName": "nominatim/nominatimReverse.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of nominatimReverse with the first recording, from https://nominatim.openstreetmap.org/reverse?lat=36.7188122&lon=-4.4216645&format=jsonv2 on 2026-10-23."
+   }
+  }
+ ]
+}

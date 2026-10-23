@@ -1,0 +1,38 @@
+{
+    "status": {
+        "code": "200",
+        "text": "ok"
+    },
+    "data": [
+        {
+            "fecha_actualizacion": "20251218T180434Z",
+            "identificador": "BOE-A-1999-18004",
+            "ambito": {
+                "codigo": "2",
+                "texto": "Auton\u00f3mico"
+            },
+            "departamento": {
+                "codigo": "8070",
+                "texto": "Comunidad Aut\u00f3noma de Catalu\u00f1a"
+            },
+            "rango": {
+                "codigo": "1300",
+                "texto": "Ley"
+            },
+            "fecha_disposicion": "19990730",
+            "numero_oficial": "10\/1999",
+            "titulo": "Ley 10\/1999, de 30 de julio, sobre tenencia de perros considerados potencialmente peligrosos.",
+            "diario": "Bolet\u00edn Oficial del Estado",
+            "fecha_publicacion": "19990824",
+            "diario_numero": "202",
+            "fecha_vigencia": "19991109",
+            "vigencia_agotada": "N",
+            "estado_consolidacion": {
+                "codigo": "3",
+                "texto": "Finalizado"
+            },
+            "url_eli": "https:\/\/www.boe.es\/eli\/es-ct\/l\/1999\/07\/30\/10",
+            "url_html_consolidada": "https:\/\/www.boe.es\/buscar\/act.php?id=BOE-A-1999-18004"
+        }
+    ]
+}

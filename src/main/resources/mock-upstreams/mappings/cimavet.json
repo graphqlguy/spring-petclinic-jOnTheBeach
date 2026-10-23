@@ -1,0 +1,1258 @@
+{
+ "mappings": [
+  {
+   "name": "cimaVetMedicines: {\"activeIngredient\": \"MELOXICAM\", \"speciesId\": -29}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/cimavet/medicamentos",
+    "queryParameters": {
+     "practiv1": {
+      "equalTo": "MELOXICAM"
+     },
+     "idespecie": {
+      "equalTo": "-29"
+     },
+     "pagina": {
+      "equalTo": "1"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "cimavet/cimaVetMedicines.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://cimavet.aemps.es/cimavet/rest/medicamentos?practiv1=MELOXICAM&idespecie=-29&pagina=1 on 2026-10-22."
+   }
+  },
+  {
+   "name": "cimaVetMedicines: {\"activeIngredient\": \"MELOXICAM\", \"speciesId\": -14}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/cimavet/medicamentos",
+    "queryParameters": {
+     "practiv1": {
+      "equalTo": "MELOXICAM"
+     },
+     "idespecie": {
+      "equalTo": "-14"
+     },
+     "pagina": {
+      "equalTo": "1"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "cimavet/cimaVetMedicines-1.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://cimavet.aemps.es/cimavet/rest/medicamentos?practiv1=MELOXICAM&idespecie=-14&pagina=1 on 2026-10-22."
+   }
+  },
+  {
+   "name": "cimaVetMedicines: {\"name\": \"apoquel\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/cimavet/medicamentos",
+    "queryParameters": {
+     "nombre": {
+      "equalTo": "apoquel"
+     },
+     "pagina": {
+      "equalTo": "1"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "cimavet/cimaVetMedicines-2.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://cimavet.aemps.es/cimavet/rest/medicamentos?nombre=apoquel&pagina=1 on 2026-10-22."
+   }
+  },
+  {
+   "name": "cimaVetMedicines: {\"atcCode\": \"QP52\", \"speciesId\": -29, \"marketed\": true}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/cimavet/medicamentos",
+    "queryParameters": {
+     "idespecie": {
+      "equalTo": "-29"
+     },
+     "atc": {
+      "equalTo": "QP52"
+     },
+     "comerc": {
+      "equalTo": "1"
+     },
+     "pagina": {
+      "equalTo": "1"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "cimavet/cimaVetMedicines-3.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://cimavet.aemps.es/cimavet/rest/medicamentos?idespecie=-29&atc=QP52&comerc=1&pagina=1 on 2026-10-22."
+   }
+  },
+  {
+   "name": "cimaVetMedicines: {\"activeIngredient\": \"AMOXICILINA\", \"antibiotic\": true}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/cimavet/medicamentos",
+    "queryParameters": {
+     "practiv1": {
+      "equalTo": "AMOXICILINA"
+     },
+     "antibiotico": {
+      "equalTo": "1"
+     },
+     "pagina": {
+      "equalTo": "1"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "cimavet/cimaVetMedicines-4.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://cimavet.aemps.es/cimavet/rest/medicamentos?practiv1=AMOXICILINA&antibiotico=1&pagina=1 on 2026-10-22."
+   }
+  },
+  {
+   "name": "cimaVetMedicines: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/cimavet/medicamentos"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "cimavet/cimaVetMedicines.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of cimaVetMedicines with the first recording, from https://cimavet.aemps.es/cimavet/rest/medicamentos?practiv1=MELOXICAM&idespecie=-29&pagina=1 on 2026-10-22."
+   }
+  },
+  {
+   "name": "cimaVetMedicine: {\"registrationNumber\": \"4317 ESP\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/cimavet/medicamento",
+    "queryParameters": {
+     "nregistro": {
+      "equalTo": "4317 ESP"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "cimavet/cimaVetMedicine.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://cimavet.aemps.es/cimavet/rest/medicamento?nregistro=4317%20ESP on 2026-10-22."
+   }
+  },
+  {
+   "name": "cimaVetMedicine: {\"registrationNumber\": \"EU040 CP\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/cimavet/medicamento",
+    "queryParameters": {
+     "nregistro": {
+      "equalTo": "EU040 CP"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "cimavet/cimaVetMedicine-1.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://cimavet.aemps.es/cimavet/rest/medicamento?nregistro=EU040%20CP on 2026-10-22."
+   }
+  },
+  {
+   "name": "cimaVetMedicine: {\"registrationNumber\": \"4188 ESP\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/cimavet/medicamento",
+    "queryParameters": {
+     "nregistro": {
+      "equalTo": "4188 ESP"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "cimavet/cimaVetMedicine-2.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://cimavet.aemps.es/cimavet/rest/medicamento?nregistro=4188%20ESP on 2026-10-22."
+   }
+  },
+  {
+   "name": "cimaVetMedicine: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/cimavet/medicamento"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "cimavet/cimaVetMedicine.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of cimaVetMedicine with the first recording, from https://cimavet.aemps.es/cimavet/rest/medicamento?nregistro=4317%20ESP on 2026-10-22."
+   }
+  },
+  {
+   "name": "cimaVetPresentations: {\"registrationNumber\": \"4317 ESP\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/cimavet/presentaciones",
+    "queryParameters": {
+     "nregistro": {
+      "equalTo": "4317 ESP"
+     },
+     "pagina": {
+      "equalTo": "1"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "cimavet/cimaVetPresentations.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://cimavet.aemps.es/cimavet/rest/presentaciones?nregistro=4317%20ESP&pagina=1 on 2026-10-22."
+   }
+  },
+  {
+   "name": "cimaVetPresentations: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/cimavet/presentaciones"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "cimavet/cimaVetPresentations.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of cimaVetPresentations with the first recording, from https://cimavet.aemps.es/cimavet/rest/presentaciones?nregistro=4317%20ESP&pagina=1 on 2026-10-22."
+   }
+  },
+  {
+   "name": "cimaVetPresentation: {\"nationalCode\": \"591246\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/cimavet/presentacion/591246"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "cimavet/cimaVetPresentation.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://cimavet.aemps.es/cimavet/rest/presentacion/591246 on 2026-10-22."
+   }
+  },
+  {
+   "name": "cimaVetPresentation: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/cimavet/presentacion/[^/]+"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "cimavet/cimaVetPresentation.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of cimaVetPresentation with the first recording, from https://cimavet.aemps.es/cimavet/rest/presentacion/591246 on 2026-10-22."
+   }
+  },
+  {
+   "name": "cimaVetSupplyProblems: {}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/cimavet/psuministro",
+    "queryParameters": {
+     "pagina": {
+      "equalTo": "1"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "cimavet/cimaVetSupplyProblems.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://cimavet.aemps.es/cimavet/rest/psuministro?pagina=1 on 2026-10-22."
+   }
+  },
+  {
+   "name": "cimaVetSupplyProblems: {\"page\": 1}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/cimavet/psuministro",
+    "queryParameters": {
+     "pagina": {
+      "equalTo": "2"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "cimavet/cimaVetSupplyProblems-1.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://cimavet.aemps.es/cimavet/rest/psuministro?pagina=2 on 2026-10-22."
+   }
+  },
+  {
+   "name": "cimaVetSupplyProblems: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/cimavet/psuministro"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "cimavet/cimaVetSupplyProblems.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of cimaVetSupplyProblems with the first recording, from https://cimavet.aemps.es/cimavet/rest/psuministro?pagina=1 on 2026-10-22."
+   }
+  },
+  {
+   "name": "cimaVetRegisterChanges: {\"since\": \"2026-10-01\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/cimavet/registroCambios",
+    "queryParameters": {
+     "fecha": {
+      "equalTo": "01/10/2026"
+     },
+     "pagina": {
+      "equalTo": "1"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "cimavet/cimaVetRegisterChanges.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://cimavet.aemps.es/cimavet/rest/registroCambios?fecha=01%2F10%2F2026&pagina=1 on 2026-10-22."
+   }
+  },
+  {
+   "name": "cimaVetRegisterChanges: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/cimavet/registroCambios"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "cimavet/cimaVetRegisterChanges.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of cimaVetRegisterChanges with the first recording, from https://cimavet.aemps.es/cimavet/rest/registroCambios?fecha=01%2F10%2F2026&pagina=1 on 2026-10-22."
+   }
+  },
+  {
+   "name": "cimaVetSpecies: {}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/cimavet/maestras",
+    "queryParameters": {
+     "maestra": {
+      "equalTo": "7"
+     },
+     "pagina": {
+      "equalTo": "1"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "cimavet/cimaVetSpecies.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://cimavet.aemps.es/cimavet/rest/maestras?maestra=7&pagina=1 on 2026-10-22."
+   }
+  },
+  {
+   "name": "cimaVetSpecies: {\"name\": \"perr\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/cimavet/maestras",
+    "queryParameters": {
+     "nombre": {
+      "equalTo": "perr"
+     },
+     "maestra": {
+      "equalTo": "7"
+     },
+     "pagina": {
+      "equalTo": "1"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "cimavet/cimaVetSpecies-1.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://cimavet.aemps.es/cimavet/rest/maestras?nombre=perr&maestra=7&pagina=1 on 2026-10-22."
+   }
+  },
+  {
+   "name": "cimaVetSpecies: {\"name\": \"gat\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/cimavet/maestras",
+    "queryParameters": {
+     "nombre": {
+      "equalTo": "gat"
+     },
+     "maestra": {
+      "equalTo": "7"
+     },
+     "pagina": {
+      "equalTo": "1"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "cimavet/cimaVetSpecies-2.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://cimavet.aemps.es/cimavet/rest/maestras?nombre=gat&maestra=7&pagina=1 on 2026-10-22."
+   }
+  },
+  {
+   "name": "cimaVetSpecies: {\"page\": 1}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/cimavet/maestras",
+    "queryParameters": {
+     "maestra": {
+      "equalTo": "7"
+     },
+     "pagina": {
+      "equalTo": "2"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "cimavet/cimaVetSpecies-3.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://cimavet.aemps.es/cimavet/rest/maestras?maestra=7&pagina=2 on 2026-10-22."
+   }
+  },
+  {
+   "name": "cimaVetSpecies: {\"page\": 2}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/cimavet/maestras",
+    "queryParameters": {
+     "maestra": {
+      "equalTo": "7"
+     },
+     "pagina": {
+      "equalTo": "3"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "cimavet/cimaVetSpecies-4.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://cimavet.aemps.es/cimavet/rest/maestras?maestra=7&pagina=3 on 2026-10-22."
+   }
+  },
+  {
+   "name": "cimaVetSpecies: {\"page\": 3}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/cimavet/maestras",
+    "queryParameters": {
+     "maestra": {
+      "equalTo": "7"
+     },
+     "pagina": {
+      "equalTo": "4"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "cimavet/cimaVetSpecies-5.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://cimavet.aemps.es/cimavet/rest/maestras?maestra=7&pagina=4 on 2026-10-22."
+   }
+  },
+  {
+   "name": "cimaVetSpecies: {\"page\": 4}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/cimavet/maestras",
+    "queryParameters": {
+     "maestra": {
+      "equalTo": "7"
+     },
+     "pagina": {
+      "equalTo": "5"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "cimavet/cimaVetSpecies-6.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://cimavet.aemps.es/cimavet/rest/maestras?maestra=7&pagina=5 on 2026-10-22."
+   }
+  },
+  {
+   "name": "cimaVetSpecies: {\"page\": 5}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/cimavet/maestras",
+    "queryParameters": {
+     "maestra": {
+      "equalTo": "7"
+     },
+     "pagina": {
+      "equalTo": "6"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "cimavet/cimaVetSpecies-7.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://cimavet.aemps.es/cimavet/rest/maestras?maestra=7&pagina=6 on 2026-10-22."
+   }
+  },
+  {
+   "name": "cimaVetSpecies: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/cimavet/maestras"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "cimavet/cimaVetSpecies.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of cimaVetSpecies with the first recording, from https://cimavet.aemps.es/cimavet/rest/maestras?maestra=7&pagina=1 on 2026-10-22."
+   }
+  },
+  {
+   "name": "cimaVetActiveIngredients: {\"name\": \"meloxicam\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/cimavet/maestras",
+    "queryParameters": {
+     "nombre": {
+      "equalTo": "meloxicam"
+     },
+     "maestra": {
+      "equalTo": "1"
+     },
+     "pagina": {
+      "equalTo": "1"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "cimavet/cimaVetActiveIngredients.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://cimavet.aemps.es/cimavet/rest/maestras?nombre=meloxicam&maestra=1&pagina=1 on 2026-10-22."
+   }
+  },
+  {
+   "name": "cimaVetActiveIngredients: {}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/cimavet/maestras",
+    "queryParameters": {
+     "maestra": {
+      "equalTo": "1"
+     },
+     "pagina": {
+      "equalTo": "1"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "cimavet/cimaVetActiveIngredients-1.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://cimavet.aemps.es/cimavet/rest/maestras?maestra=1&pagina=1 on 2026-10-22."
+   }
+  },
+  {
+   "name": "cimaVetActiveIngredients: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/cimavet/maestras"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "cimavet/cimaVetActiveIngredients.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of cimaVetActiveIngredients with the first recording, from https://cimavet.aemps.es/cimavet/rest/maestras?nombre=meloxicam&maestra=1&pagina=1 on 2026-10-22."
+   }
+  },
+  {
+   "name": "cimaVetPharmaceuticalForms: {}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/cimavet/maestras",
+    "queryParameters": {
+     "maestra": {
+      "equalTo": "2"
+     },
+     "pagina": {
+      "equalTo": "1"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "cimavet/cimaVetPharmaceuticalForms.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://cimavet.aemps.es/cimavet/rest/maestras?maestra=2&pagina=1 on 2026-10-22."
+   }
+  },
+  {
+   "name": "cimaVetPharmaceuticalForms: {\"name\": \"comprimido\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/cimavet/maestras",
+    "queryParameters": {
+     "nombre": {
+      "equalTo": "comprimido"
+     },
+     "maestra": {
+      "equalTo": "2"
+     },
+     "pagina": {
+      "equalTo": "1"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "cimavet/cimaVetPharmaceuticalForms-1.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://cimavet.aemps.es/cimavet/rest/maestras?nombre=comprimido&maestra=2&pagina=1 on 2026-10-22."
+   }
+  },
+  {
+   "name": "cimaVetPharmaceuticalForms: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/cimavet/maestras"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "cimavet/cimaVetPharmaceuticalForms.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of cimaVetPharmaceuticalForms with the first recording, from https://cimavet.aemps.es/cimavet/rest/maestras?maestra=2&pagina=1 on 2026-10-22."
+   }
+  },
+  {
+   "name": "cimaVetAdministrationRoutes: {}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/cimavet/maestras",
+    "queryParameters": {
+     "maestra": {
+      "equalTo": "3"
+     },
+     "pagina": {
+      "equalTo": "1"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "cimavet/cimaVetAdministrationRoutes.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://cimavet.aemps.es/cimavet/rest/maestras?maestra=3&pagina=1 on 2026-10-22."
+   }
+  },
+  {
+   "name": "cimaVetAdministrationRoutes: {\"name\": \"oral\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/cimavet/maestras",
+    "queryParameters": {
+     "nombre": {
+      "equalTo": "oral"
+     },
+     "maestra": {
+      "equalTo": "3"
+     },
+     "pagina": {
+      "equalTo": "1"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "cimavet/cimaVetAdministrationRoutes-1.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://cimavet.aemps.es/cimavet/rest/maestras?nombre=oral&maestra=3&pagina=1 on 2026-10-22."
+   }
+  },
+  {
+   "name": "cimaVetAdministrationRoutes: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/cimavet/maestras"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "cimavet/cimaVetAdministrationRoutes.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of cimaVetAdministrationRoutes with the first recording, from https://cimavet.aemps.es/cimavet/rest/maestras?maestra=3&pagina=1 on 2026-10-22."
+   }
+  },
+  {
+   "name": "cimaVetLaboratories: {}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/cimavet/maestras",
+    "queryParameters": {
+     "maestra": {
+      "equalTo": "4"
+     },
+     "pagina": {
+      "equalTo": "1"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "cimavet/cimaVetLaboratories.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://cimavet.aemps.es/cimavet/rest/maestras?maestra=4&pagina=1 on 2026-10-22."
+   }
+  },
+  {
+   "name": "cimaVetLaboratories: {\"name\": \"zoetis\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/cimavet/maestras",
+    "queryParameters": {
+     "nombre": {
+      "equalTo": "zoetis"
+     },
+     "maestra": {
+      "equalTo": "4"
+     },
+     "pagina": {
+      "equalTo": "1"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "cimavet/cimaVetLaboratories-1.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://cimavet.aemps.es/cimavet/rest/maestras?nombre=zoetis&maestra=4&pagina=1 on 2026-10-22."
+   }
+  },
+  {
+   "name": "cimaVetLaboratories: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/cimavet/maestras"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "cimavet/cimaVetLaboratories.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of cimaVetLaboratories with the first recording, from https://cimavet.aemps.es/cimavet/rest/maestras?maestra=4&pagina=1 on 2026-10-22."
+   }
+  },
+  {
+   "name": "cimaVetAtcCodes: {}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/cimavet/maestras",
+    "queryParameters": {
+     "maestra": {
+      "equalTo": "5"
+     },
+     "pagina": {
+      "equalTo": "1"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "cimavet/cimaVetAtcCodes.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://cimavet.aemps.es/cimavet/rest/maestras?maestra=5&pagina=1 on 2026-10-22."
+   }
+  },
+  {
+   "name": "cimaVetAtcCodes: {\"name\": \"meloxicam\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/cimavet/maestras",
+    "queryParameters": {
+     "nombre": {
+      "equalTo": "meloxicam"
+     },
+     "maestra": {
+      "equalTo": "5"
+     },
+     "pagina": {
+      "equalTo": "1"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "cimavet/cimaVetAtcCodes-1.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://cimavet.aemps.es/cimavet/rest/maestras?nombre=meloxicam&maestra=5&pagina=1 on 2026-10-22."
+   }
+  },
+  {
+   "name": "cimaVetAtcCodes: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/cimavet/maestras"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "cimavet/cimaVetAtcCodes.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of cimaVetAtcCodes with the first recording, from https://cimavet.aemps.es/cimavet/rest/maestras?maestra=5&pagina=1 on 2026-10-22."
+   }
+  },
+  {
+   "name": "cimaVetExcipients: {}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/cimavet/maestras",
+    "queryParameters": {
+     "maestra": {
+      "equalTo": "6"
+     },
+     "pagina": {
+      "equalTo": "1"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "cimavet/cimaVetExcipients.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://cimavet.aemps.es/cimavet/rest/maestras?maestra=6&pagina=1 on 2026-10-22."
+   }
+  },
+  {
+   "name": "cimaVetExcipients: {\"name\": \"lactosa\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/cimavet/maestras",
+    "queryParameters": {
+     "nombre": {
+      "equalTo": "lactosa"
+     },
+     "maestra": {
+      "equalTo": "6"
+     },
+     "pagina": {
+      "equalTo": "1"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "cimavet/cimaVetExcipients-1.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://cimavet.aemps.es/cimavet/rest/maestras?nombre=lactosa&maestra=6&pagina=1 on 2026-10-22."
+   }
+  },
+  {
+   "name": "cimaVetExcipients: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/cimavet/maestras"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "cimavet/cimaVetExcipients.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of cimaVetExcipients with the first recording, from https://cimavet.aemps.es/cimavet/rest/maestras?maestra=6&pagina=1 on 2026-10-22."
+   }
+  },
+  {
+   "name": "cimaVetIndications: {}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/cimavet/maestras",
+    "queryParameters": {
+     "maestra": {
+      "equalTo": "11"
+     },
+     "pagina": {
+      "equalTo": "1"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "cimavet/cimaVetIndications.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://cimavet.aemps.es/cimavet/rest/maestras?maestra=11&pagina=1 on 2026-10-22."
+   }
+  },
+  {
+   "name": "cimaVetIndications: {\"name\": \"leish\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/cimavet/maestras",
+    "queryParameters": {
+     "nombre": {
+      "equalTo": "leish"
+     },
+     "maestra": {
+      "equalTo": "11"
+     },
+     "pagina": {
+      "equalTo": "1"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "cimavet/cimaVetIndications-1.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://cimavet.aemps.es/cimavet/rest/maestras?nombre=leish&maestra=11&pagina=1 on 2026-10-22."
+   }
+  },
+  {
+   "name": "cimaVetIndications: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/cimavet/maestras"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "cimavet/cimaVetIndications.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of cimaVetIndications with the first recording, from https://cimavet.aemps.es/cimavet/rest/maestras?maestra=11&pagina=1 on 2026-10-22."
+   }
+  },
+  {
+   "name": "cimaVetClinicalSigns: {}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/cimavet/maestras",
+    "queryParameters": {
+     "maestra": {
+      "equalTo": "12"
+     },
+     "pagina": {
+      "equalTo": "1"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "cimavet/cimaVetClinicalSigns.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://cimavet.aemps.es/cimavet/rest/maestras?maestra=12&pagina=1 on 2026-10-22."
+   }
+  },
+  {
+   "name": "cimaVetClinicalSigns: {\"name\": \"vómito\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/cimavet/maestras",
+    "queryParameters": {
+     "nombre": {
+      "equalTo": "vómito"
+     },
+     "maestra": {
+      "equalTo": "12"
+     },
+     "pagina": {
+      "equalTo": "1"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "cimavet/cimaVetClinicalSigns-1.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://cimavet.aemps.es/cimavet/rest/maestras?nombre=v%C3%B3mito&maestra=12&pagina=1 on 2026-10-22."
+   }
+  },
+  {
+   "name": "cimaVetClinicalSigns: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/cimavet/maestras"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "cimavet/cimaVetClinicalSigns.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of cimaVetClinicalSigns with the first recording, from https://cimavet.aemps.es/cimavet/rest/maestras?maestra=12&pagina=1 on 2026-10-22."
+   }
+  }
+ ]
+}

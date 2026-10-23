@@ -1,0 +1,631 @@
+# The fields of the Spanish National Statistics Institute (INE), its JSON API at servicios.ine.es/wstempus, in English.
+# The INE documents each function of the API on a web page, so a generator wrote these fields, their types and
+# src/main/resources/ine/operations.json from those pages and from answers recorded from the service. The names and
+# descriptions are written by hand. Each field is fetched by a RestOperationFetcher, see IneConfiguration.
+
+extend type Query {
+    # The INE publishes its figures as statistical operations, such as the population of the municipalities (operation
+    # 22). An operation has tables, a table has series, and a series has values over time. Table 2882 holds the
+    # population of every municipality of the province of Málaga, and series DPOP13663 the population of the city of
+    # Málaga.
+
+    """
+    The statistical operations the INE publishes, such as the population of the municipalities or the consumer price
+    index, 500 to a page
+    """
+    ineOperations(
+        "The page to return, from 1. Each page holds up to 500 operations."
+        page: Int
+    ): [IneOperation]
+
+    "One statistical operation by its id or code"
+    ineOperation(
+        "The id or code of the statistical operation, such as 22 for the population of the municipalities"
+        operation: ID!
+    ): IneOperation
+
+    "Every variable the INE uses to break down its figures, such as Sex, Municipalities or Provinces"
+    ineVariables(
+        "The page to return, from 1. Each page holds up to 500 variables."
+        page: Int
+    ): [IneVariable]
+
+    "The variables one statistical operation breaks its figures down by"
+    ineOperationVariables(
+        "The id or code of the statistical operation, such as 22 for the population of the municipalities"
+        operation: ID!
+    ): [IneVariable]
+
+    """
+    The values of a variable, such as every municipality of Spain with its INE code. Large variables have thousands of
+    values; ineOperationVariableValues narrows them to one operation.
+    """
+    ineVariableValues(
+        "The id of the variable, such as 19 for municipalities"
+        variableId: ID!
+    ): [IneValue]
+
+    "The values of a variable that one statistical operation uses"
+    ineOperationVariableValues(
+        "The id of the variable, such as 19 for municipalities"
+        variableId: ID!
+        "The id or code of the statistical operation, such as 22 for the population of the municipalities"
+        operation: ID!
+    ): [IneValue]
+
+    "The values below one value of a variable, such as the municipalities of a province"
+    ineChildValues(
+        "The id of the variable, such as 19 for municipalities"
+        variableId: ID!
+        "The id of the value, such as 30 for the province of Málaga"
+        valueId: ID!
+    ): [IneValue]
+
+    "The tables of a statistical operation, such as Population by province and sex, with their ids for ineTableData"
+    ineOperationTables(
+        "The id or code of the statistical operation, such as 22 for the population of the municipalities"
+        operation: ID!
+    ): [IneTable]
+
+    "The selection groups of a table, such as Municipalities and Sex"
+    ineTableGroups(
+        "The id of the table, such as 2882 for the population of the municipalities of Málaga"
+        tableId: ID!
+    ): [IneTableGroup]
+
+    "The values of one selection group of a table, such as the municipalities of table 2882"
+    ineTableGroupValues(
+        "The id of the table, such as 2882 for the population of the municipalities of Málaga"
+        tableId: ID!
+        "The id of the group, which ineTableGroups gives"
+        groupId: ID!
+    ): [IneValue]
+
+    "The series of a table, each with its code for ineSeriesData"
+    ineTableSeries(
+        "The id of the table, such as 2882 for the population of the municipalities of Málaga"
+        tableId: ID!
+    ): [IneSeries]
+
+    """
+    The figures of every series of a table, with the last values of each. For the population of every municipality of
+    Málaga, tableId 2882 with last 1.
+    """
+    ineTableData(
+        "The id of the table, such as 2882 for the population of the municipalities of Málaga"
+        tableId: ID!
+        "How many of the latest values of each series to return, such as 1 for the latest"
+        last: Int
+    ): [IneSeriesData]
+
+    "One series by its code, with its unit and scale"
+    ineSeries(
+        "The code of the series, such as DPOP13663 for the population of the city of Málaga"
+        code: ID!
+    ): IneSeries
+
+    "The values of one series over time, such as the population of the city of Málaga each year"
+    ineSeriesData(
+        "The code of the series, such as DPOP13663 for the population of the city of Málaga"
+        code: ID!
+        "How many of the latest values to return, such as 5"
+        last: Int
+        "The range of dates to return, written as 20200101:20251231"
+        dates: String
+    ): IneSeriesData
+
+    "The values of the variables that define a series, such as Málaga and Total for the population of the city"
+    ineSeriesValues(
+        "The code of the series, such as DPOP13663 for the population of the city of Málaga"
+        code: ID!
+    ): [IneValue]
+
+    "How often the INE publishes figures, such as Monthly or Annual, with the ids the tables and series use"
+    inePeriodicities: [IneCodedName]
+
+    "The publications of the INE, such as the official population figures, with how often they appear"
+    inePublications: [InePublication]
+
+    "The publications of one statistical operation"
+    ineOperationPublications(
+        "The id or code of the statistical operation, such as 22 for the population of the municipalities"
+        operation: ID!
+    ): [InePublication]
+
+    "The dates on which one publication appeared or will appear, past and planned"
+    inePublicationDates(
+        "The id of the publication, such as 29"
+        publicationId: ID!
+    ): [InePublicationDate]
+
+    "The classifications the INE uses, such as CNAE 2009 for economic activities"
+    ineClassifications: [IneClassification]
+
+    "The classifications one statistical operation uses"
+    ineOperationClassifications(
+        "The id or code of the statistical operation, such as 22 for the population of the municipalities"
+        operation: ID!
+    ): [IneClassification]
+
+    "The units of the figures, such as Persons or Euros"
+    ineUnits: [IneUnit]
+
+    "The scales of the figures, such as Thousands, with their factors"
+    ineScales: [IneScale]
+
+    "One unit of the figures by its id, such as 3 for Persons"
+    ineUnit(
+        "The id of the unit, which the unitId of a series gives"
+        unitId: ID!
+    ): IneUnit
+
+    "One scale of the figures by its id, such as 3 for Hundreds"
+    ineScale(
+        "The id of the scale, which the scaleId of a series gives"
+        scaleId: ID!
+    ): IneScale
+
+    "How often figures are published, by the id, such as 12 for Annual"
+    inePeriodicity(
+        "The id of the periodicity, which the periodicityId of a table or series gives"
+        periodicityId: ID!
+    ): IneCodedName
+
+    "One variable by its id, such as 19 for Municipalities"
+    ineVariable(
+        "The id of the variable, such as 19 for municipalities"
+        variableId: ID!
+    ): IneVariable
+
+    """
+    Every series of a statistical operation, 500 to a page, such as the series of the Housing Price Index (operation
+    15). An operation such as the population of the municipalities has tens of thousands of series; ineSeriesByValues
+    finds the few that matter.
+    """
+    ineOperationSeries(
+        "The id or code of the statistical operation, such as 22 for the population of the municipalities"
+        operation: ID!
+        "The page to return, from 1. Each page holds up to 500 series."
+        page: Int
+    ): [IneSeries]
+
+    """
+    One series by its code, with its operation, periodicity, publication, unit and scale written out in full, instead of
+    the ids that ineSeries gives
+    """
+    ineSeriesDetail(
+        "The code of the series, such as DPOP13663 for the population of the city of Málaga"
+        code: ID!
+    ): IneSeriesDetail
+
+    """
+    The tables of a statistical operation with their periodicity, publication and first and last periods written out in
+    full
+    """
+    ineOperationTablesDetail(
+        "The id or code of the statistical operation, such as 22 for the population of the municipalities"
+        operation: ID!
+    ): [IneTableDetail]
+
+    """
+    The figures of every series of a table, like ineTableData, with the values of the variables that define each series,
+    such as the province and the sex. Use it to tell the series of a table apart.
+    """
+    ineTableDataWithMetadata(
+        "The id of the table, such as 2882 for the population of the municipalities of Málaga"
+        tableId: ID!
+        "How many of the latest values of each series to return, such as 1 for the latest"
+        last: Int
+    ): [IneSeriesDataWithMetadata]
+
+    """
+    The values of the variables that define a series, like ineSeriesValues, with each variable and the values above each
+    value, such as the province of a municipality, written out in full
+    """
+    ineSeriesValuesDetail(
+        "The code of the series, such as DPOP13663 for the population of the city of Málaga"
+        code: ID!
+    ): [IneValueDetail]
+
+    """
+    The series of a statistical operation that match up to four values of its variables, such as the series of operation
+    22 for the province of Málaga (variable 115, value 30) and both sexes (variable 18, value 451). Write each filter as
+    variableId:valueId, such as 115:30; ineOperationVariables and ineOperationVariableValues give the ids. A filter
+    written variableId: alone matches every value of the variable.
+    """
+    ineSeriesByValues(
+        "The id or code of the statistical operation, such as 22 for the population of the municipalities"
+        operation: ID!
+        "Only the series published this often, by the id inePeriodicities gives, such as 12 for Annual"
+        periodicityId: Int
+        "The first filter, such as 115:30 for the province of Málaga"
+        filter1: String
+        "The second filter, such as 18:451 for both sexes"
+        filter2: String
+        "The third filter"
+        filter3: String
+        "The fourth filter"
+        filter4: String
+    ): [IneSeries]
+
+    """
+    The values of the series of a statistical operation that match up to four values of its variables, written the same
+    way as for ineSeriesByValues. The values carry ids instead of words; ineSeriesData gives words.
+    """
+    ineDataByValues(
+        "The id or code of the statistical operation, such as 22 for the population of the municipalities"
+        operation: ID!
+        "Only the series published this often, by the id inePeriodicities gives, such as 12 for Annual"
+        periodicityId: Int
+        "How many of the latest values of each series to return, such as 1 for the latest"
+        last: Int
+        "The first filter, such as 115:30 for the province of Málaga"
+        filter1: String
+        "The second filter, such as 18:451 for both sexes"
+        filter2: String
+        "The third filter"
+        filter3: String
+        "The fourth filter"
+        filter4: String
+    ): [IneSeriesDataByValues]
+}
+
+"A statistical operation of the INE, such as the population of the municipalities"
+type IneOperation {
+    "The id of the operation, for the operation arguments, such as 22"
+    id: Int
+    "The code of the operation, which the operation arguments also take, such as DPOP"
+    code: String
+    "The code of the operation in the National Statistics Plan, such as 30245"
+    ioeCode: String
+    "The name of the operation, in English"
+    name: String
+    "The path of the page of the operation on www.ine.es"
+    url: String
+}
+
+"A variable the INE breaks its figures down by, such as Sex or Municipalities"
+type IneVariable {
+    "The id of the variable, for the variableId arguments, such as 19 for Municipalities"
+    id: Int
+    "The name of the variable, in English"
+    name: String
+    "The short code of the variable, such as MUN, or an empty text"
+    code: String
+}
+
+"A value of a variable, such as Málaga for the variable Municipalities"
+type IneValue {
+    "The id of the value, such as 485 for the municipality of Málaga"
+    id: Int
+    "The id of the variable the value belongs to"
+    variableId: Int
+    "The name of the value, such as Málaga"
+    name: String
+    "The official code of the value, such as 29067, the INE code of the municipality of Málaga"
+    code: String
+    "The ids of the values above this one, such as the province of a municipality"
+    parentIds: [Int]
+}
+
+"A table of a statistical operation"
+type IneTable {
+    "The id of the table, for the tableId arguments, such as 2852"
+    id: Int
+    "The name of the table, such as Population by province and sex."
+    name: String
+    "The short code of the table, such as NAC-PROV"
+    code: String
+    "How often the table is updated, by the id inePeriodicities gives: 12 for Annual"
+    periodicityId: Int
+    "The id of the publication the table belongs to"
+    publicationId: Int
+    "The id of the period of the first figures"
+    firstPeriodId: Int
+    "The year of the first figures, such as 1996"
+    firstYear: String
+    "The id of the period of the latest figures"
+    lastPeriodId: Int
+    "The year of the latest figures, such as 2025"
+    lastYear: String
+    "The reference date of the latest figures, or the text null"
+    referenceEnd: String
+    "When the table last changed"
+    lastModified: DateTime
+}
+
+"A selection group of a table, such as Municipalities"
+type IneTableGroup {
+    "The id of the group, for the groupId argument of ineTableGroupValues"
+    id: Int
+    "The name of the group, such as Sex"
+    name: String
+}
+
+"A series of figures over time, such as the population of the city of Málaga"
+type IneSeries {
+    "The numeric id of the series"
+    id: Int
+    "The code of the series, for the code arguments, such as DPOP13663"
+    code: String
+    "What the series counts, such as Málaga. Total. Total inhabitants. Persons."
+    name: String
+    "The id of the statistical operation of the series"
+    operationId: Int
+    "The number of decimals of the figures"
+    decimals: Int
+    "How often the series gets a new value, by the id inePeriodicities gives"
+    periodicityId: Int
+    "The id of the publication the series belongs to"
+    publicationId: Int
+    "The id of the classification of the series, or null"
+    classificationId: Int
+    "The scale of the figures, by the id ineScales gives"
+    scaleId: Int
+    "The unit of the figures, by the id ineUnits gives: 3 for Persons"
+    unitId: Int
+}
+
+"A series with its values over time"
+type IneSeriesData {
+    "The code of the series, such as DPOP13663"
+    code: String
+    "What the series counts"
+    name: String
+    "The unit of the values, such as Persons"
+    unit: String
+    "The scale of the values, such as Thousands, or null for units"
+    scale: String
+    "The values, oldest first"
+    data: [IneDataPoint]
+}
+
+"One value of a series"
+type IneDataPoint {
+    "The date the value refers to, such as 1 January 2025 for the population at that day"
+    date: DateTime
+    "The year of the value"
+    year: Int
+    "The period within the year, such as Y for the whole year or M01 for January"
+    period: String
+    "How final the value is, such as Final value or Provisional"
+    dataType: String
+    "The value, such as 599063 people"
+    value: Float
+}
+
+"An entry of a list of the INE, with its id and code"
+type IneCodedName {
+    "The id of the entry"
+    id: Int
+    "The name, such as Monthly"
+    name: String
+    "The short code, such as M"
+    code: String
+}
+
+"A publication of the INE, such as the official population figures"
+type InePublication {
+    "The id of the publication, for inePublicationDates"
+    id: Int
+    "The name of the publication, in English"
+    name: String
+    "How often it appears, by the id inePeriodicities gives"
+    periodicityId: Int
+    "How often it appears, in words"
+    periodicity: String
+    "The id of its latest release, which inePublicationDates lists"
+    latestDateId: Int
+    "The address of the publication"
+    url: String
+}
+
+"A release of a publication, past or planned"
+type InePublicationDate {
+    "The id of the release"
+    id: Int
+    "The id of the publication"
+    publicationId: Int
+    "The name of the release, such as the publication followed by its year"
+    name: String
+    "When the release appeared or will appear"
+    date: DateTime
+    "The id of the period the release covers"
+    periodId: Int
+    "The year the release covers"
+    year: Int
+    "The release date in words when it is not fixed, such as Depende de BOE (it depends on the official gazette)"
+    dateText: String
+}
+
+"A classification the INE uses, such as CNAE 2009 for economic activities"
+type IneClassification {
+    "The id of the classification"
+    id: Int
+    "The name of the classification, such as CNAE 2009"
+    name: String
+    "The date the classification came into use"
+    date: DateTime
+}
+
+"A unit of the figures of the INE"
+type IneUnit {
+    "The id of the unit, such as 3 for Persons"
+    id: Int
+    "The name of the unit, such as Euros"
+    name: String
+    "The code of the unit, or null"
+    code: String
+    "The abbreviation, such as €, or null"
+    abbreviation: String
+}
+
+"A scale of the figures of the INE"
+type IneScale {
+    "The id of the scale"
+    id: Int
+    "The name of the scale, such as Thousands, or a blank for units"
+    name: String
+    "The factor of the scale, such as 1E3 for thousands"
+    factor: String
+    "The code of the scale, the power of ten, such as 3"
+    code: String
+    "The abbreviation, such as Thousands, or null"
+    abbreviation: String
+}
+
+"A series with its operation, periodicity, publication, unit and scale written out in full"
+type IneSeriesDetail {
+    "The numeric id of the series"
+    id: Int
+    "The code of the series, such as DPOP13663"
+    code: String
+    "What the series counts"
+    name: String
+    "The number of decimals of the figures"
+    decimals: Int
+    "The statistical operation of the series"
+    operation: IneOperation
+    "How often the series gets a new value"
+    periodicity: IneCodedName
+    "The publication the series belongs to"
+    publication: InePublicationDetail
+    "The id of the classification of the series, or null"
+    classificationId: Int
+    "The scale of the figures"
+    scale: IneScale
+    "The unit of the figures"
+    unit: IneUnit
+}
+
+"A publication of the INE with its periodicity, operations and latest release written out in full"
+type InePublicationDetail {
+    "The id of the publication, for inePublicationDates"
+    id: Int
+    "The name of the publication, in English"
+    name: String
+    "How often it appears"
+    periodicity: IneCodedName
+    "The statistical operations it publishes"
+    operations: [IneOperation]
+    "Its latest release"
+    latestRelease: InePublicationDate
+}
+
+"A table of a statistical operation with its periodicity, publication and periods written out in full"
+type IneTableDetail {
+    "The id of the table, for the tableId arguments, such as 2852"
+    id: Int
+    "The name of the table, such as Population by province and sex."
+    name: String
+    "The short code of the table, such as NAC-PROV"
+    code: String
+    "How often the table is updated"
+    periodicity: IneCodedName
+    "The publication the table belongs to"
+    publication: InePublicationDetail
+    "The period of the first figures"
+    firstPeriod: InePeriod
+    "The year of the first figures, such as 1996"
+    firstYear: String
+    "The period of the latest figures"
+    lastPeriod: InePeriod
+    "The year of the latest figures, such as 2025"
+    lastYear: String
+    "The reference date of the latest figures, or the text null"
+    referenceEnd: String
+    "When the table last changed"
+    lastModified: DateTime
+}
+
+"A period within a year that the INE publishes figures for, such as a month or the whole year"
+type InePeriod {
+    "The id of the period, such as 28 for the whole year"
+    id: Int
+    "The number of the period within the year, such as 1"
+    value: Int
+    "The periodicity the period belongs to"
+    periodicity: IneCodedName
+    "The day of the month the period starts on"
+    startDay: String
+    "The month the period starts in"
+    startMonth: String
+    "The code of the period, such as 01"
+    code: String
+    "The short name, such as Y for the year or M01 for January"
+    name: String
+    "The name in words, such as Year or January"
+    longName: String
+}
+
+"A series with its values over time and the values of the variables that define it"
+type IneSeriesDataWithMetadata {
+    "The code of the series, such as DPOP13462"
+    code: String
+    "What the series counts"
+    name: String
+    "The unit of the values, such as Persons"
+    unit: String
+    "The scale of the values, such as Thousands, or a blank for units"
+    scale: String
+    "The values of the variables that define the series, such as Málaga for Provinces"
+    metadata: [IneMetadataValue]
+    "The values, oldest first"
+    data: [IneDataPoint]
+}
+
+"The value of one variable that defines a series, such as Málaga for the variable Provinces"
+type IneMetadataValue {
+    "The id of the value, such as 30 for the province of Málaga"
+    id: Int
+    "The name of the variable, such as Provinces"
+    variable: String
+    "The name of the value, such as Málaga"
+    name: String
+    "The official code of the value, such as 29 for the province of Málaga"
+    code: String
+}
+
+"A value of a variable with the variable and the values above it written out in full"
+type IneValueDetail {
+    "The id of the value, such as 485 for the municipality of Málaga"
+    id: Int
+    "The variable the value belongs to"
+    variable: IneVariable
+    "The name of the value, such as Málaga"
+    name: String
+    "The official code of the value, such as 29067"
+    code: String
+    "The values above this one, such as the province of a municipality and its functional urban area"
+    parents: [IneValue]
+}
+
+"A series with its values over time, as ids"
+type IneSeriesDataByValues {
+    "The code of the series, such as DPOP36296"
+    code: String
+    "What the series counts"
+    name: String
+    "The unit of the values, by the id ineUnit reads"
+    unitId: Int
+    "The scale of the values, by the id ineScale reads"
+    scaleId: Int
+    "The values, oldest first"
+    data: [IneDataPointByIds]
+}
+
+"One value of a series, as ids"
+type IneDataPointByIds {
+    "The date the value refers to"
+    date: DateTime
+    "The year of the value"
+    year: Int
+    "The id of the period within the year, such as 28 for the whole year"
+    periodId: Int
+    "How final the value is, by id, such as 1 for a final value"
+    dataTypeId: Int
+    "The value"
+    value: Float
+    "Whether the value is withheld for statistical secrecy"
+    secret: Boolean
+}

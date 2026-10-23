@@ -1,0 +1,73 @@
+{
+    "type":"FeatureCollection",
+    "features":[
+        {
+            "type":"Feature",
+            "properties":{
+                "cpro":29,
+                "nombre":"Lugar sin top\u00f3nimo conocido",
+                "fecha":"2025-10-20T10:48:00.616511",
+                "idpob":179999999
+            },
+            "id":27,
+            "geometry":null
+        },
+        {
+            "type":"Feature",
+            "properties":{
+                "cpro":29,
+                "nombre":"Lugar sin top\u00f3nimo conocido",
+                "fecha":"2025-10-20T10:47:59.848246",
+                "idpob":179999999
+            },
+            "id":174,
+            "geometry":null
+        },
+        {
+            "type":"Feature",
+            "properties":{
+                "cpro":29,
+                "nombre":"Lugar sin top\u00f3nimo conocido",
+                "fecha":"2025-10-20T10:47:59.861762",
+                "idpob":179999999
+            },
+            "id":194,
+            "geometry":null
+        }
+    ],
+    "numberMatched":60860,
+    "numberReturned":3,
+    "links":[
+        {
+            "type":"application/geo+json",
+            "rel":"self",
+            "title":"This document as GeoJSON",
+            "href":"https://api-features.ign.es/collections/sin_toponimo/items?f=json&bbox=-5.6,36.2,-3.7,37.4&skipGeometry=true&limit=3"
+        },
+        {
+            "rel":"alternate",
+            "type":"application/ld+json",
+            "title":"This document as RDF (JSON-LD)",
+            "href":"https://api-features.ign.es/collections/sin_toponimo/items?f=jsonld&bbox=-5.6,36.2,-3.7,37.4&skipGeometry=true&limit=3"
+        },
+        {
+            "type":"text/html",
+            "rel":"alternate",
+            "title":"This document as HTML",
+            "href":"https://api-features.ign.es/collections/sin_toponimo/items?f=html&bbox=-5.6,36.2,-3.7,37.4&skipGeometry=true&limit=3"
+        },
+        {
+            "type":"application/geo+json",
+            "rel":"next",
+            "title":"Items (next)",
+            "href":"https://api-features.ign.es/collections/sin_toponimo/items?offset=3&bbox=-5.6,36.2,-3.7,37.4&skipGeometry=true&limit=3"
+        },
+        {
+            "type":"application/json",
+            "title":"Lugar sin top\u00f3nimo conocido",
+            "rel":"collection",
+            "href":"https://api-features.ign.es/collections/sin_toponimo"
+        }
+    ],
+    "timeStamp":"2026-10-22T23:44:59.510157Z"
+}

@@ -1,0 +1,109 @@
+{
+    "type":"FeatureCollection",
+    "features":[
+        {
+            "type":"Feature",
+            "properties":{
+                "hydroid_localid":"ES020HYLCKP0000000000001",
+                "id_demarcd":"Duero",
+                "nombre":null,
+                "condicion":"http://inspire.ec.europa.eu/codelist/ConditionOfFacilityValue/functional",
+                "fuente":"5053",
+                "resolucion":5,
+                "nilreason_nombre":"other:unpopulated",
+                "nil_nombre":true,
+                "nativeness":null,
+                "id_demarc":"ES020",
+                "fecha_alta":"2019-02-26",
+                "condiciond":"En uso",
+                "fuented":"Direcci\u00f3n General del Agua",
+                "nilreason_varios":null,
+                "nil_varios":null,
+                "script":null
+            },
+            "id":"ES020HYLCKP0000001304687",
+            "geometry":null
+        },
+        {
+            "type":"Feature",
+            "properties":{
+                "hydroid_localid":"ES020HYLCKP0000000000002",
+                "id_demarcd":"Duero",
+                "nombre":null,
+                "condicion":"http://inspire.ec.europa.eu/codelist/ConditionOfFacilityValue/functional",
+                "fuente":"5053",
+                "resolucion":5,
+                "nilreason_nombre":"other:unpopulated",
+                "nil_nombre":true,
+                "nativeness":null,
+                "id_demarc":"ES020",
+                "fecha_alta":"2019-02-26",
+                "condiciond":"En uso",
+                "fuented":"Direcci\u00f3n General del Agua",
+                "nilreason_varios":null,
+                "nil_varios":null,
+                "script":null
+            },
+            "id":"ES020HYLCKP0000001304688",
+            "geometry":null
+        },
+        {
+            "type":"Feature",
+            "properties":{
+                "hydroid_localid":"ES020HYLCKP0000000000003",
+                "id_demarcd":"Duero",
+                "nombre":null,
+                "condicion":"http://inspire.ec.europa.eu/codelist/ConditionOfFacilityValue/functional",
+                "fuente":"5053",
+                "resolucion":5,
+                "nilreason_nombre":"other:unpopulated",
+                "nil_nombre":true,
+                "nativeness":null,
+                "id_demarc":"ES020",
+                "fecha_alta":"2019-02-26",
+                "condiciond":"En uso",
+                "fuented":"Direcci\u00f3n General del Agua",
+                "nilreason_varios":null,
+                "nil_varios":null,
+                "script":null
+            },
+            "id":"ES020HYLCKP0000001304689",
+            "geometry":null
+        }
+    ],
+    "numberMatched":14,
+    "numberReturned":3,
+    "links":[
+        {
+            "type":"application/geo+json",
+            "rel":"self",
+            "title":"This document as GeoJSON",
+            "href":"https://api-features.idee.es/collections/lock/items?f=json&bbox=-10.0,35.0,5.0,44.0&skipGeometry=true&limit=3"
+        },
+        {
+            "rel":"alternate",
+            "type":"application/ld+json",
+            "title":"This document as RDF (JSON-LD)",
+            "href":"https://api-features.idee.es/collections/lock/items?f=jsonld&bbox=-10.0,35.0,5.0,44.0&skipGeometry=true&limit=3"
+        },
+        {
+            "type":"text/html",
+            "rel":"alternate",
+            "title":"This document as HTML",
+            "href":"https://api-features.idee.es/collections/lock/items?f=html&bbox=-10.0,35.0,5.0,44.0&skipGeometry=true&limit=3"
+        },
+        {
+            "type":"application/geo+json",
+            "rel":"next",
+            "title":"Items (next)",
+            "href":"https://api-features.idee.es/collections/lock/items?offset=3&bbox=-10.0,35.0,5.0,44.0&skipGeometry=true&limit=3"
+        },
+        {
+            "type":"application/json",
+            "title":"HY-P Esclusa",
+            "rel":"collection",
+            "href":"https://api-features.idee.es/collections/lock"
+        }
+    ],
+    "timeStamp":"2026-10-22T23:48:09.294136Z"
+}

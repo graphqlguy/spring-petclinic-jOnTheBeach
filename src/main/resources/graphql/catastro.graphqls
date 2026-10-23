@@ -1,0 +1,453 @@
+# The fields of the Catastro, the land registry of Spain, at ovc.catastro.meh.es, over SOAP: its street directory
+# (OVCCallejero) and its service of coordinates (OVCCoordenadas). A generator wrote these fields and
+# src/main/resources/catastro/operations.json from the two WSDLs, and their types from answers recorded from the
+# service, because the WSDLs leave the answers untyped. The names and descriptions are written by hand in English. The
+# fields return the data the Catastro publishes to anyone: the parcels, their buildings and units, their use, surface
+# and year of construction, never their owners. Each field is fetched by a SoapOperationTable fetcher, see
+# CatastroConfiguration.
+
+extend type Query {
+    # A parcel has a cadastral reference of 14 characters, such as 3148502UF7634N for the building at Calle Marqués de
+    # Larios 12 in Málaga, and each unit in it, such as a flat or a shop, adds 6 more, such as 3148502UF7634N0001BU. The
+    # Catastro writes provinces, municipalities and streets in capitals, such as MALAGA and MARQUES DE LARIOS, and
+    # street types as codes, such as CL for calle and AV for avenida.
+
+    """
+    The provinces the Catastro covers, with their codes. The Basque Country and Navarre keep their own land registries,
+    so the list leaves them out.
+    """
+    catastroProvinces: CatastroProvinceAnswer
+
+    "The municipalities of a province, or the ones whose name starts with a text, with their codes"
+    catastroMunicipalities(
+        "The province, in capitals, such as MALAGA"
+        province: String!
+        "Only the municipalities whose name starts with this, in capitals, such as TORREMOLINOS"
+        name: String
+    ): CatastroMunicipalityAnswer
+
+    """
+    The streets of a municipality whose name contains a text, with their types and codes. The Catastro names Calle
+    Larios as CL MARQUES DE LARIOS.
+    """
+    catastroStreets(
+        "The province, in capitals, such as MALAGA"
+        province: String!
+        "The municipality, in capitals, such as MALAGA or TORREMOLINOS"
+        municipality: String!
+        """
+        The type of street, as a code: CL for calle, AV for avenida, PS for paseo, PZ for plaza, CR for carretera. The
+        words CALLE, AVENIDA, PASEO, PLAZA, CARRETERA and CAMINO work too.
+        """
+        streetType: String
+        "Words of the name of the street, in capitals, such as LARIOS"
+        name: String
+    ): CatastroStreetAnswer
+
+    """
+    The parcel at a number of a street, with its cadastral reference. When the number does not exist, the Catastro
+    answers the numbers nearest to it.
+    """
+    catastroStreetNumbers(
+        "The province, in capitals, such as MALAGA"
+        province: String!
+        "The municipality, in capitals, such as MALAGA or TORREMOLINOS"
+        municipality: String!
+        """
+        The type of street, as a code: CL for calle, AV for avenida, PS for paseo, PZ for plaza, CR for carretera. The
+        words CALLE, AVENIDA, PASEO, PLAZA, CARRETERA and CAMINO work too.
+        """
+        streetType: String!
+        "The name of the street as the Catastro writes it, such as MARQUES DE LARIOS"
+        street: String!
+        "The number, such as 12"
+        number: String!
+    ): CatastroNumberAnswer
+
+    """
+    The units of the building at an address, such as its flats and shops, each with its cadastral reference, floor and
+    door. Give a floor and door for one unit, with its use, surface and year of construction.
+    """
+    catastroPropertiesAtAddress(
+        "The province, in capitals, such as MALAGA"
+        province: String!
+        "The municipality, in capitals, such as MALAGA or TORREMOLINOS"
+        municipality: String!
+        "The type of street, as a code, such as CL, or as a word, such as CALLE"
+        streetType: String!
+        """
+        The name of the street as the Catastro writes it, such as MARQUES DE LARIOS for Calle Larios. catastroStreets
+        finds it from a word of the name.
+        """
+        street: String!
+        "The number, such as 12"
+        number: String!
+        "The block, when the address has several"
+        block: String
+        "The staircase, such as 1"
+        stair: String
+        "The floor, such as 03 or 00 for the ground floor"
+        floor: String
+        "The door, such as 01"
+        door: String
+    ): CatastroPropertyAnswer
+
+    """
+    A parcel or a unit by its cadastral reference. A parcel lists its units; a unit comes with its use, such as
+    Residencial, its surface, its year of construction and its parts.
+    """
+    catastroProperty(
+        "The province, in capitals. The reference alone is enough."
+        province: String
+        "The municipality, in capitals. The reference alone is enough."
+        municipality: String
+        """
+        The cadastral reference: 14 characters for a parcel, such as 3148502UF7634N, or 20 for one unit in it, such as
+        3148502UF7634N0001BU
+        """
+        reference: String!
+    ): CatastroPropertyAnswer
+
+    "A rural parcel by its polygon and parcel numbers in a municipality, as rural land is numbered"
+    catastroRuralParcel(
+        "The province, in capitals, such as MALAGA"
+        province: String!
+        "The municipality, in capitals, such as MALAGA or TORREMOLINOS"
+        municipality: String!
+        "The number of the polygon, such as 3"
+        polygon: String!
+        "The number of the parcel in the polygon, such as 6"
+        parcel: String!
+    ): CatastroPropertyAnswer
+
+    """
+    The parcel at a point on the map, with its cadastral reference and address. The point of an owner's home is
+    Owner.location.
+    """
+    catastroParcelAt(
+        "The longitude of the point, such as -4.4216645"
+        longitude: Float!
+        "The latitude of the point, such as 36.7188122"
+        latitude: Float!
+    ): CatastroCoordinatesAnswer
+
+    "The parcels around a point, nearest first, with their distance in metres and address"
+    catastroParcelsNear(
+        "The longitude of the point, such as -4.4216645"
+        longitude: Float!
+        "The latitude of the point, such as 36.7188122"
+        latitude: Float!
+    ): CatastroNearbyAnswer
+
+    "Where a parcel is on the map, by its cadastral reference, with its address"
+    catastroParcelPosition(
+        "The province, in capitals. The reference alone is enough."
+        province: String
+        "The municipality, in capitals. The reference alone is enough."
+        municipality: String
+        "The cadastral reference of the parcel, 14 characters, such as 3148502UF7634N"
+        reference: String!
+    ): CatastroCoordinatesAnswer
+}
+
+"Why an answer of the Catastro is empty"
+type CatastroError {
+    "The code of the error, such as 5"
+    code: String
+    "The error in Spanish, such as NO EXISTE NINGÚN INMUEBLE CON LOS PARÁMETROS INDICADOS (no property matches)"
+    description: String
+}
+
+"The provinces the Catastro covers"
+type CatastroProvinceAnswer {
+    "The number of provinces"
+    count: Int
+    "The provinces"
+    provinces: [CatastroProvince]
+}
+
+"A province"
+type CatastroProvince {
+    "The INE code of the province, such as 29"
+    code: String
+    "The name, such as MALAGA"
+    name: String
+}
+
+"Municipalities of a province"
+type CatastroMunicipalityAnswer {
+    "The number of municipalities that match"
+    count: Int
+    "The municipalities"
+    municipalities: [CatastroMunicipality]
+    "The number of errors, or null for an answer without errors"
+    errorCount: Int
+    "Why the answer of the Catastro is empty, such as an unknown reference"
+    errors: [CatastroError]
+}
+
+"A municipality"
+type CatastroMunicipality {
+    "The name, such as TORREMOLINOS"
+    name: String
+    "The code of the province in the Catastro"
+    cadastralProvinceCode: String
+    "The code of the municipality in the Catastro, such as 103"
+    cadastralCode: String
+    "The INE code of the province, such as 29"
+    provinceCode: String
+    "The INE code of the municipality within its province, such as 901"
+    municipalityCode: String
+}
+
+"Streets of a municipality"
+type CatastroStreetAnswer {
+    "The number of streets that match"
+    count: Int
+    "The streets"
+    streets: [CatastroStreet]
+    "The number of errors, or null for an answer without errors"
+    errorCount: Int
+    "Why the answer of the Catastro is empty, such as an unknown reference"
+    errors: [CatastroError]
+}
+
+"A street, as the Catastro names it"
+type CatastroStreet {
+    "The INE code of the province"
+    provinceCode: String
+    "The INE code of the municipality"
+    municipalityCode: String
+    "The code of the street in the Catastro"
+    code: String
+    "The type of street, as a code, such as CL"
+    type: String
+    "The name, such as MARQUES DE LARIOS"
+    name: String
+}
+
+"The parcels at a number of a street"
+type CatastroNumberAnswer {
+    "The number of parcels found"
+    count: Int
+    "The parcels and their numbers"
+    numbers: [CatastroNumber]
+    "The number of errors, or null for an answer without errors"
+    errorCount: Int
+    "Why the answer of the Catastro is empty, such as an unknown reference"
+    errors: [CatastroError]
+}
+
+"A number of a street and its parcel"
+type CatastroNumber {
+    "The cadastral reference of the parcel, 14 characters, such as 3148502UF7634N"
+    reference: String
+    "The number, such as 12"
+    number: String
+    "The letter after the number, such as A, or a blank"
+    letter: String
+}
+
+"The properties of a parcel, or one unit in detail"
+type CatastroPropertyAnswer {
+    "The number of units listed, when the answer is a list"
+    count: Int
+    "The number of constructions of the unit"
+    constructionCount: Int
+    "The number of crops of a rural parcel"
+    cropCount: Int
+    "The units of the parcel, such as its flats, when it has several"
+    units: [CatastroUnitSummary]
+    "The unit in detail, when the answer is one unit"
+    unit: CatastroUnit
+    "The constructions of the unit, such as a flat and its storeroom"
+    constructions: [CatastroConstruction]
+    "The crops of a rural parcel, such as citrus or olives"
+    crops: [CatastroCrop]
+    "The number of errors, or null for an answer without errors"
+    errorCount: Int
+    "Why the answer of the Catastro is empty, such as an unknown reference"
+    errors: [CatastroError]
+}
+
+"A unit of a parcel, such as a flat or a shop, as a list shows it"
+type CatastroUnitSummary {
+    "The cadastral reference of the unit, 20 characters, such as 3148502UF7634N0001BU"
+    reference: String
+    "The INE code of the province, such as 29 for Málaga"
+    provinceCode: String
+    "The INE code of the municipality within the province, such as 67 for Málaga"
+    municipalityCode: String
+    "The code of the municipality in the Catastro, such as 900"
+    cadastralMunicipalityCode: String
+    "The province, such as MÁLAGA"
+    province: String
+    "The municipality, such as MALAGA"
+    municipality: String
+    "The code of the street in the Catastro"
+    streetCode: String
+    "The type of street, as a code, such as CL for calle"
+    streetType: String
+    "The name of the street, such as MARQUES DE LARIOS"
+    street: String
+    "The number, such as 12"
+    number: String
+    "The second number of a building with two, or 0"
+    secondNumber: String
+    "The staircase, such as 1"
+    staircase: String
+    "The floor, such as 03, or 00 for the ground floor"
+    floor: String
+    "The door, such as 01"
+    door: String
+    "The postal code, such as 29005"
+    postalCode: String
+    "The district of the municipality, as a number"
+    district: String
+}
+
+"A unit of a parcel in detail: where it is, what it is used for, its surface and its age"
+type CatastroUnit {
+    "UR for urban property, RU for rural"
+    kind: String
+    "The cadastral reference of the unit, 20 characters"
+    reference: String
+    "The address in one line, such as CL MARQUES DE LARIOS 12 Es:1 Pl:03 Pt:01 29005 MALAGA (MÁLAGA)"
+    address: String
+    "What the unit is used for, such as Residencial, Comercial or Almacen-Estacionamiento"
+    use: String
+    "The built surface, in square metres"
+    surfaceSquareMetres: Int
+    "The share of the unit in the building, in percent, such as 0.1"
+    share: Float
+    "The year the unit was built, such as 1974"
+    yearBuilt: Int
+    "The INE code of the province, such as 29 for Málaga"
+    provinceCode: String
+    "The INE code of the municipality within the province, such as 67 for Málaga"
+    municipalityCode: String
+    "The code of the municipality in the Catastro, such as 900"
+    cadastralMunicipalityCode: String
+    "The province, such as MÁLAGA"
+    province: String
+    "The municipality, such as MALAGA"
+    municipality: String
+    "The code of the street in the Catastro"
+    streetCode: String
+    "The type of street, as a code, such as CL for calle"
+    streetType: String
+    "The name of the street, such as MARQUES DE LARIOS"
+    street: String
+    "The number, such as 12"
+    number: String
+    "The second number of a building with two, or 0"
+    secondNumber: String
+    "The staircase, such as 1"
+    staircase: String
+    "The floor, such as 03, or 00 for the ground floor"
+    floor: String
+    "The door, such as 01"
+    door: String
+    "The postal code, such as 29005"
+    postalCode: String
+    "The district of the municipality, as a number"
+    district: String
+    "The code of the zone of a rural parcel"
+    ruralZone: String
+    "The polygon of a rural parcel, such as 3"
+    polygon: String
+    "The number of a rural parcel in its polygon, such as 6"
+    parcel: String
+    "The name of the place of a rural parcel, such as NAVARRETE"
+    placeName: String
+    "The code of the place of a rural parcel"
+    placeCode: String
+}
+
+"A construction of a unit, such as a flat, an office or a storeroom"
+type CatastroConstruction {
+    "What it is, such as VIVIENDA (home), OFICINA or ALMACEN"
+    use: String
+    "The staircase"
+    staircase: String
+    "The floor"
+    floor: String
+    "The door"
+    door: String
+    "The surface, in square metres"
+    surfaceSquareMetres: Int
+}
+
+"A crop of a rural parcel"
+type CatastroCrop {
+    "The code of the part of the parcel"
+    code: String
+    "The code of the crop, such as NR"
+    cropCode: String
+    "The crop, in Spanish, such as AGRIOS REGADÍO (irrigated citrus)"
+    crop: String
+    "The intensity of the crop, as a code"
+    intensity: String
+    "The surface of the crop, in square metres"
+    surfaceSquareMetres: Int
+}
+
+"The parcels at a point, or the point of a parcel"
+type CatastroCoordinatesAnswer {
+    "The number of parcels found"
+    count: Int
+    "The parcels and their points"
+    parcels: [CatastroParcelPoint]
+    "The number of errors, or null for an answer without errors"
+    errorCount: Int
+    "Why the answer of the Catastro is empty, such as an unknown reference"
+    errors: [CatastroError]
+}
+
+"A parcel and its point on the map"
+type CatastroParcelPoint {
+    "The cadastral reference of the parcel, 14 characters, such as 3148502UF7634N"
+    reference: String
+    "The longitude of the centre of the parcel"
+    longitude: Float
+    "The latitude of the centre of the parcel"
+    latitude: Float
+    "The coordinate system of the point, EPSG:4326"
+    srs: String
+    "The address, such as CL MARQUES DE LARIOS 12 MALAGA (MÁLAGA)"
+    address: String
+}
+
+"The parcels around a point"
+type CatastroNearbyAnswer {
+    "The number of points asked about"
+    count: Int
+    "The longitude of the point"
+    longitude: Float
+    "The latitude of the point"
+    latitude: Float
+    "The parcels around the point, nearest first"
+    parcels: [CatastroNearbyParcel]
+    "The number of errors, or null for an answer without errors"
+    errorCount: Int
+    "Why the answer of the Catastro is empty, such as an unknown reference"
+    errors: [CatastroError]
+}
+
+"A parcel near a point, with its distance"
+type CatastroNearbyParcel {
+    "The cadastral reference of the parcel, 14 characters"
+    reference: String
+    "The INE code of the province"
+    provinceCode: String
+    "The INE code of the municipality"
+    municipalityCode: String
+    "The code of the street in the Catastro"
+    streetCode: String
+    "The number"
+    number: String
+    "The address, such as CL MARQUES DE LARIOS 14 MALAGA (MÁLAGA)"
+    address: String
+    "How far the parcel is from the point, in metres"
+    distanceInMetres: Float
+}

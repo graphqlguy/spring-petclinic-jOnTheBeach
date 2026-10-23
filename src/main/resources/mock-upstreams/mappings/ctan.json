@@ -1,0 +1,1770 @@
+{
+ "mappings": [
+  {
+   "name": "ctanConsortia: {}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ctan/consorcios"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ctan/ctanConsortia.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://api.ctan.es/v1/Consorcios/consorcios on 2026-10-22."
+   }
+  },
+  {
+   "name": "ctanConsortia: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ctan/consorcios"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ctan/ctanConsortia.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of ctanConsortia with the first recording, from https://api.ctan.es/v1/Consorcios/consorcios on 2026-10-22."
+   }
+  },
+  {
+   "name": "ctanMunicipalities: {}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ctan/4/municipios/"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ctan/ctanMunicipalities.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://api.ctan.es/v1/Consorcios/4/municipios/ on 2026-10-22."
+   }
+  },
+  {
+   "name": "ctanMunicipalities: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ctan/[^/]+/municipios/"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ctan/ctanMunicipalities.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of ctanMunicipalities with the first recording, from https://api.ctan.es/v1/Consorcios/4/municipios/ on 2026-10-22."
+   }
+  },
+  {
+   "name": "ctanMunicipality: {\"municipalityId\": \"1\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ctan/4/municipios/1"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ctan/ctanMunicipality.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://api.ctan.es/v1/Consorcios/4/municipios/1 on 2026-10-22."
+   }
+  },
+  {
+   "name": "ctanMunicipality: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ctan/[^/]+/municipios/[^/]+"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ctan/ctanMunicipality.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of ctanMunicipality with the first recording, from https://api.ctan.es/v1/Consorcios/4/municipios/1 on 2026-10-22."
+   }
+  },
+  {
+   "name": "ctanTownsInMunicipality: {\"municipalityId\": \"1\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ctan/4/municipios/1/nucleos"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ctan/ctanTownsInMunicipality.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://api.ctan.es/v1/Consorcios/4/municipios/1/nucleos on 2026-10-22."
+   }
+  },
+  {
+   "name": "ctanTownsInMunicipality: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ctan/[^/]+/municipios/[^/]+/nucleos"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ctan/ctanTownsInMunicipality.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of ctanTownsInMunicipality with the first recording, from https://api.ctan.es/v1/Consorcios/4/municipios/1/nucleos on 2026-10-22."
+   }
+  },
+  {
+   "name": "ctanTowns: {}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ctan/4/nucleos"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ctan/ctanTowns.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://api.ctan.es/v1/Consorcios/4/nucleos on 2026-10-22."
+   }
+  },
+  {
+   "name": "ctanTowns: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ctan/[^/]+/nucleos"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ctan/ctanTowns.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of ctanTowns with the first recording, from https://api.ctan.es/v1/Consorcios/4/nucleos on 2026-10-22."
+   }
+  },
+  {
+   "name": "ctanTown: {\"townId\": \"1\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ctan/4/nucleos/1"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ctan/ctanTown.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://api.ctan.es/v1/Consorcios/4/nucleos/1 on 2026-10-22."
+   }
+  },
+  {
+   "name": "ctanTown: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ctan/[^/]+/nucleos/[^/]+"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ctan/ctanTown.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of ctanTown with the first recording, from https://api.ctan.es/v1/Consorcios/4/nucleos/1 on 2026-10-22."
+   }
+  },
+  {
+   "name": "ctanLinesInTown: {\"townId\": \"107\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ctan/4/nucleos/107/lineas"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ctan/ctanLinesInTown.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://api.ctan.es/v1/Consorcios/4/nucleos/107/lineas on 2026-10-22."
+   }
+  },
+  {
+   "name": "ctanLinesInTown: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ctan/[^/]+/nucleos/[^/]+/lineas"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ctan/ctanLinesInTown.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of ctanLinesInTown with the first recording, from https://api.ctan.es/v1/Consorcios/4/nucleos/107/lineas on 2026-10-22."
+   }
+  },
+  {
+   "name": "ctanStopsInTown: {\"townId\": \"107\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ctan/4/nucleos/107/paradas"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ctan/ctanStopsInTown.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://api.ctan.es/v1/Consorcios/4/nucleos/107/paradas on 2026-10-22."
+   }
+  },
+  {
+   "name": "ctanStopsInTown: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ctan/[^/]+/nucleos/[^/]+/paradas"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ctan/ctanStopsInTown.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of ctanStopsInTown with the first recording, from https://api.ctan.es/v1/Consorcios/4/nucleos/107/paradas on 2026-10-22."
+   }
+  },
+  {
+   "name": "ctanLinesInMunicipalityTown: {\"municipalityId\": \"1\", \"townId\": \"1\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ctan/4/municipios/1/nucleos/1/lineas"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ctan/ctanLinesInMunicipalityTown.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://api.ctan.es/v1/Consorcios/4/municipios/1/nucleos/1/lineas on 2026-10-22."
+   }
+  },
+  {
+   "name": "ctanLinesInMunicipalityTown: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ctan/[^/]+/municipios/[^/]+/nucleos/[^/]+/lineas"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ctan/ctanLinesInMunicipalityTown.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of ctanLinesInMunicipalityTown with the first recording, from https://api.ctan.es/v1/Consorcios/4/municipios/1/nucleos/1/lineas on 2026-10-22."
+   }
+  },
+  {
+   "name": "ctanStopsInMunicipalityTown: {\"municipalityId\": \"1\", \"townId\": \"1\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ctan/4/municipios/1/nucleos/1/paradas"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ctan/ctanStopsInMunicipalityTown.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://api.ctan.es/v1/Consorcios/4/municipios/1/nucleos/1/paradas on 2026-10-22."
+   }
+  },
+  {
+   "name": "ctanStopsInMunicipalityTown: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ctan/[^/]+/municipios/[^/]+/nucleos/[^/]+/paradas"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ctan/ctanStopsInMunicipalityTown.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of ctanStopsInMunicipalityTown with the first recording, from https://api.ctan.es/v1/Consorcios/4/municipios/1/nucleos/1/paradas on 2026-10-22."
+   }
+  },
+  {
+   "name": "ctanLines: {}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ctan/4/lineas"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ctan/ctanLines.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://api.ctan.es/v1/Consorcios/4/lineas on 2026-10-22."
+   }
+  },
+  {
+   "name": "ctanLines: {\"latitude\": 36.7213, \"longitude\": -4.4214}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ctan/4/lineas",
+    "queryParameters": {
+     "latitud": {
+      "equalTo": "36.7213"
+     },
+     "longitud": {
+      "equalTo": "-4.4214"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ctan/ctanLines-1.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://api.ctan.es/v1/Consorcios/4/lineas?latitud=36.7213&longitud=-4.4214 on 2026-10-22."
+   }
+  },
+  {
+   "name": "ctanLines: {\"latitude\": 36.6233, \"longitude\": -4.4985}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ctan/4/lineas",
+    "queryParameters": {
+     "latitud": {
+      "equalTo": "36.6233"
+     },
+     "longitud": {
+      "equalTo": "-4.4985"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ctan/ctanLines-2.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://api.ctan.es/v1/Consorcios/4/lineas?latitud=36.6233&longitud=-4.4985 on 2026-10-22."
+   }
+  },
+  {
+   "name": "ctanLines: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ctan/[^/]+/lineas"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ctan/ctanLines.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of ctanLines with the first recording, from https://api.ctan.es/v1/Consorcios/4/lineas on 2026-10-22."
+   }
+  },
+  {
+   "name": "ctanLineStops: {\"lineId\": \"1\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ctan/4/lineas/1/paradas"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ctan/ctanLineStops.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://api.ctan.es/v1/Consorcios/4/lineas/1/paradas on 2026-10-22."
+   }
+  },
+  {
+   "name": "ctanLineStops: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ctan/[^/]+/lineas/[^/]+/paradas"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ctan/ctanLineStops.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of ctanLineStops with the first recording, from https://api.ctan.es/v1/Consorcios/4/lineas/1/paradas on 2026-10-22."
+   }
+  },
+  {
+   "name": "ctanLineTimetable: {\"lineId\": \"1\", \"frequencyId\": \"1\", \"day\": 23, \"month\": 10}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ctan/4/horarios_lineas",
+    "queryParameters": {
+     "idLinea": {
+      "equalTo": "1"
+     },
+     "idFrecuencia": {
+      "equalTo": "1"
+     },
+     "dia": {
+      "equalTo": "23"
+     },
+     "mes": {
+      "equalTo": "10"
+     },
+     "lang": {
+      "equalTo": "EN"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ctan/ctanLineTimetable.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://api.ctan.es/v1/Consorcios/4/horarios_lineas?idLinea=1&idFrecuencia=1&dia=23&mes=10&lang=EN on 2026-10-22."
+   }
+  },
+  {
+   "name": "ctanLineTimetable: {\"lineId\": \"160\", \"day\": 23, \"month\": 10}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ctan/4/horarios_lineas",
+    "queryParameters": {
+     "idLinea": {
+      "equalTo": "160"
+     },
+     "dia": {
+      "equalTo": "23"
+     },
+     "mes": {
+      "equalTo": "10"
+     },
+     "lang": {
+      "equalTo": "EN"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ctan/ctanLineTimetable-1.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://api.ctan.es/v1/Consorcios/4/horarios_lineas?idLinea=160&dia=23&mes=10&lang=EN on 2026-10-22."
+   }
+  },
+  {
+   "name": "ctanLineTimetable: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ctan/[^/]+/horarios_lineas"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ctan/ctanLineTimetable.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of ctanLineTimetable with the first recording, from https://api.ctan.es/v1/Consorcios/4/horarios_lineas?idLinea=1&idFrecuencia=1&dia=23&mes=10&lang=EN on 2026-10-22."
+   }
+  },
+  {
+   "name": "ctanTimetableBetweenTowns: {\"fromTownId\": \"1\", \"toTownId\": \"107\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ctan/4/horarios_origen_destino",
+    "queryParameters": {
+     "idNucleoOrigen": {
+      "equalTo": "1"
+     },
+     "idNucleoDestino": {
+      "equalTo": "107"
+     },
+     "lang": {
+      "equalTo": "EN"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ctan/ctanTimetableBetweenTowns.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://api.ctan.es/v1/Consorcios/4/horarios_origen_destino?idNucleoOrigen=1&idNucleoDestino=107&lang=EN on 2026-10-22."
+   }
+  },
+  {
+   "name": "ctanTimetableBetweenTowns: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ctan/[^/]+/horarios_origen_destino"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ctan/ctanTimetableBetweenTowns.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of ctanTimetableBetweenTowns with the first recording, from https://api.ctan.es/v1/Consorcios/4/horarios_origen_destino?idNucleoOrigen=1&idNucleoDestino=107&lang=EN on 2026-10-22."
+   }
+  },
+  {
+   "name": "ctanStopsNear: {\"latitude\": 36.7213, \"longitude\": -4.4214}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ctan/4/paradas/",
+    "queryParameters": {
+     "latitud": {
+      "equalTo": "36.7213"
+     },
+     "longitud": {
+      "equalTo": "-4.4214"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ctan/ctanStopsNear.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://api.ctan.es/v1/Consorcios/4/paradas/?latitud=36.7213&longitud=-4.4214 on 2026-10-22."
+   }
+  },
+  {
+   "name": "ctanStopsNear: {\"latitude\": 36.6233, \"longitude\": -4.4985}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ctan/4/paradas/",
+    "queryParameters": {
+     "latitud": {
+      "equalTo": "36.6233"
+     },
+     "longitud": {
+      "equalTo": "-4.4985"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ctan/ctanStopsNear-1.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://api.ctan.es/v1/Consorcios/4/paradas/?latitud=36.6233&longitud=-4.4985 on 2026-10-22."
+   }
+  },
+  {
+   "name": "ctanStopsNear: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ctan/[^/]+/paradas/"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ctan/ctanStopsNear.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of ctanStopsNear with the first recording, from https://api.ctan.es/v1/Consorcios/4/paradas/?latitud=36.7213&longitud=-4.4214 on 2026-10-22."
+   }
+  },
+  {
+   "name": "ctanStop: {\"stopId\": \"149\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ctan/4/paradas/149"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ctan/ctanStop.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://api.ctan.es/v1/Consorcios/4/paradas/149 on 2026-10-22."
+   }
+  },
+  {
+   "name": "ctanStop: {\"stopId\": \"2082\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ctan/4/paradas/2082"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ctan/ctanStop-1.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://api.ctan.es/v1/Consorcios/4/paradas/2082 on 2026-10-22."
+   }
+  },
+  {
+   "name": "ctanStop: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ctan/[^/]+/paradas/[^/]+"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ctan/ctanStop.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of ctanStop with the first recording, from https://api.ctan.es/v1/Consorcios/4/paradas/149 on 2026-10-22."
+   }
+  },
+  {
+   "name": "ctanDepartures: {\"stopId\": \"149\", \"from\": \"23-10-2026 10:00\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ctan/4/paradas/149/servicios",
+    "queryParameters": {
+     "horaIni": {
+      "equalTo": "23-10-2026 10:00"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ctan/ctanDepartures.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://api.ctan.es/v1/Consorcios/4/paradas/149/servicios?horaIni=23-10-2026%2010%3A00 on 2026-10-22."
+   }
+  },
+  {
+   "name": "ctanDepartures: {\"stopId\": \"149\", \"from\": \"23-10-2026 18:00\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ctan/4/paradas/149/servicios",
+    "queryParameters": {
+     "horaIni": {
+      "equalTo": "23-10-2026 18:00"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ctan/ctanDepartures-1.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://api.ctan.es/v1/Consorcios/4/paradas/149/servicios?horaIni=23-10-2026%2018%3A00 on 2026-10-22."
+   }
+  },
+  {
+   "name": "ctanDepartures: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ctan/[^/]+/paradas/[^/]+/servicios"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ctan/ctanDepartures.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of ctanDepartures with the first recording, from https://api.ctan.es/v1/Consorcios/4/paradas/149/servicios?horaIni=23-10-2026%2010%3A00 on 2026-10-22."
+   }
+  },
+  {
+   "name": "ctanZones: {}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ctan/4/zonas",
+    "queryParameters": {
+     "lang": {
+      "equalTo": "EN"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ctan/ctanZones.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://api.ctan.es/v1/Consorcios/4/zonas?lang=EN on 2026-10-22."
+   }
+  },
+  {
+   "name": "ctanZones: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ctan/[^/]+/zonas"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ctan/ctanZones.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of ctanZones with the first recording, from https://api.ctan.es/v1/Consorcios/4/zonas?lang=EN on 2026-10-22."
+   }
+  },
+  {
+   "name": "ctanStopsInZone: {\"zoneId\": \"C\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ctan/4/zonas/C/paradas"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ctan/ctanStopsInZone.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://api.ctan.es/v1/Consorcios/4/zonas/C/paradas on 2026-10-22."
+   }
+  },
+  {
+   "name": "ctanStopsInZone: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ctan/[^/]+/zonas/[^/]+/paradas"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ctan/ctanStopsInZone.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of ctanStopsInZone with the first recording, from https://api.ctan.es/v1/Consorcios/4/zonas/C/paradas on 2026-10-22."
+   }
+  },
+  {
+   "name": "ctanZoneJumps: {}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ctan/4/saltos"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ctan/ctanZoneJumps.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://api.ctan.es/v1/Consorcios/4/saltos on 2026-10-22."
+   }
+  },
+  {
+   "name": "ctanZoneJumps: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ctan/[^/]+/saltos"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ctan/ctanZoneJumps.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of ctanZoneJumps with the first recording, from https://api.ctan.es/v1/Consorcios/4/saltos on 2026-10-22."
+   }
+  },
+  {
+   "name": "ctanJumpsBetweenTowns: {\"fromTownId\": \"1\", \"toTownId\": \"111\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ctan/4/calculo_saltos/",
+    "queryParameters": {
+     "origen": {
+      "equalTo": "1"
+     },
+     "destino": {
+      "equalTo": "111"
+     },
+     "lang": {
+      "equalTo": "EN"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ctan/ctanJumpsBetweenTowns.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://api.ctan.es/v1/Consorcios/4/calculo_saltos/?origen=1&destino=111&lang=EN on 2026-10-22."
+   }
+  },
+  {
+   "name": "ctanJumpsBetweenTowns: {\"fromTownId\": \"1\", \"toTownId\": \"107\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ctan/4/calculo_saltos/",
+    "queryParameters": {
+     "origen": {
+      "equalTo": "1"
+     },
+     "destino": {
+      "equalTo": "107"
+     },
+     "lang": {
+      "equalTo": "EN"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ctan/ctanJumpsBetweenTowns-1.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://api.ctan.es/v1/Consorcios/4/calculo_saltos/?origen=1&destino=107&lang=EN on 2026-10-22."
+   }
+  },
+  {
+   "name": "ctanJumpsBetweenTowns: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ctan/[^/]+/calculo_saltos/"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ctan/ctanJumpsBetweenTowns.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of ctanJumpsBetweenTowns with the first recording, from https://api.ctan.es/v1/Consorcios/4/calculo_saltos/?origen=1&destino=111&lang=EN on 2026-10-22."
+   }
+  },
+  {
+   "name": "ctanInterurbanFares: {}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ctan/4/tarifas_interurbanas"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ctan/ctanInterurbanFares.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://api.ctan.es/v1/Consorcios/4/tarifas_interurbanas on 2026-10-22."
+   }
+  },
+  {
+   "name": "ctanInterurbanFares: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ctan/[^/]+/tarifas_interurbanas"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ctan/ctanInterurbanFares.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of ctanInterurbanFares with the first recording, from https://api.ctan.es/v1/Consorcios/4/tarifas_interurbanas on 2026-10-22."
+   }
+  },
+  {
+   "name": "ctanUrbanFares: {}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ctan/4/tarifas_urbanas"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ctan/ctanUrbanFares.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://api.ctan.es/v1/Consorcios/4/tarifas_urbanas on 2026-10-22."
+   }
+  },
+  {
+   "name": "ctanUrbanFares: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ctan/[^/]+/tarifas_urbanas"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ctan/ctanUrbanFares.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of ctanUrbanFares with the first recording, from https://api.ctan.es/v1/Consorcios/4/tarifas_urbanas on 2026-10-22."
+   }
+  },
+  {
+   "name": "ctanTransportModes: {}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ctan/4/modostransporte",
+    "queryParameters": {
+     "lang": {
+      "equalTo": "EN"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ctan/ctanTransportModes.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://api.ctan.es/v1/Consorcios/4/modostransporte?lang=EN on 2026-10-22."
+   }
+  },
+  {
+   "name": "ctanTransportModes: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ctan/[^/]+/modostransporte"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ctan/ctanTransportModes.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of ctanTransportModes with the first recording, from https://api.ctan.es/v1/Consorcios/4/modostransporte?lang=EN on 2026-10-22."
+   }
+  },
+  {
+   "name": "ctanTransportMode: {\"modeId\": \"2\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ctan/4/modostransporte/2",
+    "queryParameters": {
+     "lang": {
+      "equalTo": "EN"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ctan/ctanTransportMode.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://api.ctan.es/v1/Consorcios/4/modostransporte/2?lang=EN on 2026-10-22."
+   }
+  },
+  {
+   "name": "ctanTransportMode: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ctan/[^/]+/modostransporte/[^/]+"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ctan/ctanTransportMode.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of ctanTransportMode with the first recording, from https://api.ctan.es/v1/Consorcios/4/modostransporte/2?lang=EN on 2026-10-22."
+   }
+  },
+  {
+   "name": "ctanLinesByMode: {\"modeId\": \"2\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ctan/4/modostransporte/2/lineas"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ctan/ctanLinesByMode.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://api.ctan.es/v1/Consorcios/4/modostransporte/2/lineas on 2026-10-22."
+   }
+  },
+  {
+   "name": "ctanLinesByMode: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ctan/[^/]+/modostransporte/[^/]+/lineas"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ctan/ctanLinesByMode.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of ctanLinesByMode with the first recording, from https://api.ctan.es/v1/Consorcios/4/modostransporte/2/lineas on 2026-10-22."
+   }
+  },
+  {
+   "name": "ctanFrequencies: {}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ctan/4/frecuencias",
+    "queryParameters": {
+     "lang": {
+      "equalTo": "EN"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ctan/ctanFrequencies.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://api.ctan.es/v1/Consorcios/4/frecuencias?lang=EN on 2026-10-22."
+   }
+  },
+  {
+   "name": "ctanFrequencies: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ctan/[^/]+/frecuencias"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ctan/ctanFrequencies.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of ctanFrequencies with the first recording, from https://api.ctan.es/v1/Consorcios/4/frecuencias?lang=EN on 2026-10-22."
+   }
+  },
+  {
+   "name": "ctanAbbreviations: {}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ctan/4/abreviaturas",
+    "queryParameters": {
+     "lang": {
+      "equalTo": "EN"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ctan/ctanAbbreviations.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://api.ctan.es/v1/Consorcios/4/abreviaturas?lang=EN on 2026-10-22."
+   }
+  },
+  {
+   "name": "ctanAbbreviations: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ctan/[^/]+/abreviaturas"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ctan/ctanAbbreviations.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of ctanAbbreviations with the first recording, from https://api.ctan.es/v1/Consorcios/4/abreviaturas?lang=EN on 2026-10-22."
+   }
+  },
+  {
+   "name": "ctanPointOfInterestCategories: {}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ctan/4/tipos_lugares_interes/",
+    "queryParameters": {
+     "lang": {
+      "equalTo": "EN"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ctan/ctanPointOfInterestCategories.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://api.ctan.es/v1/Consorcios/4/tipos_lugares_interes/?lang=EN on 2026-10-22."
+   }
+  },
+  {
+   "name": "ctanPointOfInterestCategories: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ctan/[^/]+/tipos_lugares_interes/"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ctan/ctanPointOfInterestCategories.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of ctanPointOfInterestCategories with the first recording, from https://api.ctan.es/v1/Consorcios/4/tipos_lugares_interes/?lang=EN on 2026-10-22."
+   }
+  },
+  {
+   "name": "ctanPointsOfInterest: {}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ctan/4/lugares_interes",
+    "queryParameters": {
+     "lang": {
+      "equalTo": "EN"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ctan/ctanPointsOfInterest.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://api.ctan.es/v1/Consorcios/4/lugares_interes?lang=EN on 2026-10-22."
+   }
+  },
+  {
+   "name": "ctanPointsOfInterest: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ctan/[^/]+/lugares_interes"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ctan/ctanPointsOfInterest.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of ctanPointsOfInterest with the first recording, from https://api.ctan.es/v1/Consorcios/4/lugares_interes?lang=EN on 2026-10-22."
+   }
+  },
+  {
+   "name": "ctanPointsOfInterestInMunicipality: {\"municipalityId\": \"1\", \"categoryId\": \"7\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ctan/4/municipios/1/lugares_interes",
+    "queryParameters": {
+     "idTipo": {
+      "equalTo": "7"
+     },
+     "lang": {
+      "equalTo": "EN"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ctan/ctanPointsOfInterestInMunicipality.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://api.ctan.es/v1/Consorcios/4/municipios/1/lugares_interes?idTipo=7&lang=EN on 2026-10-22."
+   }
+  },
+  {
+   "name": "ctanPointsOfInterestInMunicipality: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ctan/[^/]+/municipios/[^/]+/lugares_interes"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ctan/ctanPointsOfInterestInMunicipality.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of ctanPointsOfInterestInMunicipality with the first recording, from https://api.ctan.es/v1/Consorcios/4/municipios/1/lugares_interes?idTipo=7&lang=EN on 2026-10-22."
+   }
+  },
+  {
+   "name": "ctanSalesPoints: {}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ctan/4/puntos_venta",
+    "queryParameters": {
+     "lang": {
+      "equalTo": "EN"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ctan/ctanSalesPoints.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://api.ctan.es/v1/Consorcios/4/puntos_venta?lang=EN on 2026-10-22."
+   }
+  },
+  {
+   "name": "ctanSalesPoints: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ctan/[^/]+/puntos_venta"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ctan/ctanSalesPoints.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of ctanSalesPoints with the first recording, from https://api.ctan.es/v1/Consorcios/4/puntos_venta?lang=EN on 2026-10-22."
+   }
+  },
+  {
+   "name": "ctanNewsCategories: {\"consortiumId\": 2}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ctan/2/categorias_noticias"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ctan/ctanNewsCategories.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://api.ctan.es/v1/Consorcios/2/categorias_noticias on 2026-10-22."
+   }
+  },
+  {
+   "name": "ctanNewsCategories: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ctan/[^/]+/categorias_noticias"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ctan/ctanNewsCategories.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of ctanNewsCategories with the first recording, from https://api.ctan.es/v1/Consorcios/2/categorias_noticias on 2026-10-22."
+   }
+  },
+  {
+   "name": "ctanNews: {\"consortiumId\": 2}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ctan/2/noticias",
+    "queryParameters": {
+     "lang": {
+      "equalTo": "EN"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ctan/ctanNews.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://api.ctan.es/v1/Consorcios/2/noticias?lang=EN on 2026-10-22."
+   }
+  },
+  {
+   "name": "ctanNews: {}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ctan/4/noticias",
+    "queryParameters": {
+     "lang": {
+      "equalTo": "EN"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ctan/ctanNews-1.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://api.ctan.es/v1/Consorcios/4/noticias?lang=EN on 2026-10-22."
+   }
+  },
+  {
+   "name": "ctanNews: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ctan/[^/]+/noticias"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ctan/ctanNews.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of ctanNews with the first recording, from https://api.ctan.es/v1/Consorcios/2/noticias?lang=EN on 2026-10-22."
+   }
+  },
+  {
+   "name": "ctanNewsItem: {\"consortiumId\": 2, \"newsId\": \"1205\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ctan/2/noticias/1205",
+    "queryParameters": {
+     "lang": {
+      "equalTo": "ES"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ctan/ctanNewsItem.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://api.ctan.es/v1/Consorcios/2/noticias/1205?lang=ES on 2026-10-22."
+   }
+  },
+  {
+   "name": "ctanNewsItem: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ctan/[^/]+/noticias/[^/]+"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ctan/ctanNewsItem.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of ctanNewsItem with the first recording, from https://api.ctan.es/v1/Consorcios/2/noticias/1205?lang=ES on 2026-10-22."
+   }
+  },
+  {
+   "name": "ctanLineNews: {\"consortiumId\": 2, \"lineId\": \"321\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ctan/2/lineas/321/noticias",
+    "queryParameters": {
+     "lang": {
+      "equalTo": "ES"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ctan/ctanLineNews.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://api.ctan.es/v1/Consorcios/2/lineas/321/noticias?lang=ES on 2026-10-22."
+   }
+  },
+  {
+   "name": "ctanLineNews: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ctan/[^/]+/lineas/[^/]+/noticias"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ctan/ctanLineNews.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of ctanLineNews with the first recording, from https://api.ctan.es/v1/Consorcios/2/lineas/321/noticias?lang=ES on 2026-10-22."
+   }
+  },
+  {
+   "name": "ctanCorridors: {\"consortiumId\": 2}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ctan/2/corredores/"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ctan/ctanCorridors.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://api.ctan.es/v1/Consorcios/2/corredores/ on 2026-10-22."
+   }
+  },
+  {
+   "name": "ctanCorridors: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ctan/[^/]+/corredores/"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ctan/ctanCorridors.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of ctanCorridors with the first recording, from https://api.ctan.es/v1/Consorcios/2/corredores/ on 2026-10-22."
+   }
+  },
+  {
+   "name": "ctanCorridor: {\"consortiumId\": 2, \"corridorId\": \"40\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ctan/2/corredores/40"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ctan/ctanCorridor.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://api.ctan.es/v1/Consorcios/2/corredores/40 on 2026-10-22."
+   }
+  },
+  {
+   "name": "ctanCorridor: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ctan/[^/]+/corredores/[^/]+"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ctan/ctanCorridor.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of ctanCorridor with the first recording, from https://api.ctan.es/v1/Consorcios/2/corredores/40 on 2026-10-22."
+   }
+  },
+  {
+   "name": "ctanCorridorBlocks: {\"consortiumId\": 2, \"corridorId\": \"40\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ctan/2/corredores/40/bloques"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ctan/ctanCorridorBlocks.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://api.ctan.es/v1/Consorcios/2/corredores/40/bloques on 2026-10-22."
+   }
+  },
+  {
+   "name": "ctanCorridorBlocks: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ctan/[^/]+/corredores/[^/]+/bloques"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ctan/ctanCorridorBlocks.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of ctanCorridorBlocks with the first recording, from https://api.ctan.es/v1/Consorcios/2/corredores/40/bloques on 2026-10-22."
+   }
+  },
+  {
+   "name": "ctanCorridorTimetable: {\"consortiumId\": 2, \"corridorId\": \"40\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ctan/2/horarios_corredor",
+    "queryParameters": {
+     "idCorredor": {
+      "equalTo": "40"
+     },
+     "lang": {
+      "equalTo": "EN"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ctan/ctanCorridorTimetable.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://api.ctan.es/v1/Consorcios/2/horarios_corredor?idCorredor=40&lang=EN on 2026-10-22."
+   }
+  },
+  {
+   "name": "ctanCorridorTimetable: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ctan/[^/]+/horarios_corredor"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ctan/ctanCorridorTimetable.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of ctanCorridorTimetable with the first recording, from https://api.ctan.es/v1/Consorcios/2/horarios_corredor?idCorredor=40&lang=EN on 2026-10-22."
+   }
+  }
+ ]
+}

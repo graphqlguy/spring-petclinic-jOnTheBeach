@@ -1,0 +1,351 @@
+# The fields of the open data API of the Boletín Oficial del Estado (BOE), Spain's official gazette, at
+# www.boe.es/datosabiertos/api. The BOE documents each operation on a web page, so a generator wrote these fields, their
+# types and src/main/resources/boe/operations.json from those pages and from answers recorded from the service. The
+# names and descriptions are written by hand in English. The operations that answer XML alone, such as the text of one
+# article, are left out. Each field is fetched by a RestOperationFetcher, see BoeConfiguration.
+
+extend type Query {
+    # The BOE keeps every Spanish law in a consolidated version, the text with all its later changes. Each law has an
+    # identifier, such as BOE-A-2023-7936 for Ley 7/2023, the law on the protection of the rights and welfare of
+    # animals, which sets the rules for keeping pets in Spain. The answers are in Spanish.
+
+    """
+    Searches the consolidated laws of Spain, state and regional, newest change first. The query is a search in the
+    syntax of Lucene, in Spanish: titulo:(bienestar animales) for the laws with both words in the title, or animales for
+    the laws that mention animals anywhere.
+    """
+    boeLaws(
+        """
+        The search, such as titulo:(bienestar animales) or "perros potencialmente peligrosos" (potentially dangerous
+        dogs)
+        """
+        query: String
+        "Only the laws last changed on or after this day, written as 20260101"
+        changedFrom: String
+        "Only the laws last changed on or before this day, written as 20261231"
+        changedTo: String
+        "The page to return. Pages count from 0."
+        page: Int! = 0
+        "The number of results on a page, from 1 to 100"
+        size: Int! = 10
+    ): BoeLawList
+
+    """
+    The details of one law: its title, rank, issuing department, dates, whether it is still in force, and the addresses
+    of its text
+    """
+    boeLawMetadata(
+        "The identifier of the law, such as BOE-A-2023-7936 for Ley 7/2023 on the welfare of animals. boeLaws gives it."
+        id: ID!
+    ): BoeLawList
+
+    """
+    The analysis of one law: the subjects it is filed under, the notes of the BOE, and the laws it changes or that
+    changed it, such as a later law that amends one of its articles
+    """
+    boeLawAnalysis(
+        "The identifier of the law, such as BOE-A-2023-7936 for Ley 7/2023 on the welfare of animals. boeLaws gives it."
+        id: ID!
+    ): BoeLawAnalysisResult
+
+    """
+    The parts of the text of one law, such as its preamble and each article, with the day each part last changed and the
+    address of its text
+    """
+    boeLawTextIndex(
+        "The identifier of the law, such as BOE-A-2023-7936 for Ley 7/2023 on the welfare of animals. boeLaws gives it."
+        id: ID!
+    ): BoeTextIndexResult
+
+    """
+    The summary of the BOE of one day: every disposition it published, by section and department, with the addresses of
+    their texts. A day of the BOE holds hundreds of dispositions, so select few fields.
+    """
+    boeDailySummary(
+        "The day of the BOE, such as 2026-10-22. The BOE appears from Monday to Saturday."
+        date: Date!
+    ): BoeSummaryResult
+
+    """
+    The summary of the BORME of one day, the gazette of the companies register: the announcements of new companies,
+    changes and closures, by province
+    """
+    bormeDailySummary(
+        "The day of the BORME, such as 2026-10-22"
+        date: Date!
+    ): BoeSummaryResult
+
+    """
+    The subjects the BOE files laws under, such as Animales de compañía (pets), each with its code. The list holds
+    thousands of subjects.
+    """
+    boeSubjects: BoeCodeList
+
+    "The scopes of the laws: Estatal (the state) and Autonómico (a region)"
+    boeScopes: BoeCodeList
+
+    "The states of the consolidation of a law: Finalizado (up to date) and Desactualizado (out of date)"
+    boeConsolidationStatuses: BoeCodeList
+
+    "The ministries and other bodies that issue laws, each with its code"
+    boeDepartments: BoeCodeList
+
+    "The ranks of the laws, such as Ley, Real Decreto or Orden"
+    boeRanks: BoeCodeList
+
+    "The ways a law can affect an earlier one, such as DEROGA (repeals) or MODIFICA (amends)"
+    boePriorRelations: BoeCodeList
+
+    "The ways a later law can affect a law, such as SE DEROGA (is repealed) or SE MODIFICA (is amended)"
+    boeLaterRelations: BoeCodeList
+}
+
+"Whether a call to the BOE worked"
+type BoeStatus {
+    "The status, such as 200"
+    code: String
+    "The status in words, such as ok"
+    text: String
+}
+
+"A value of one of the lists of the BOE, with its code and its Spanish text"
+type BoeCode {
+    "The code, such as 1300 for the rank Ley"
+    code: String
+    "The text, such as Ley or Estatal"
+    text: String
+}
+
+"Consolidated laws of Spain"
+type BoeLawList {
+    "Whether the call worked, as the BOE reports it"
+    status: BoeStatus
+    "The laws"
+    laws: [BoeLaw]
+}
+
+"A consolidated law of Spain, state or regional"
+type BoeLaw {
+    "The identifier of the law, such as BOE-A-2023-7936"
+    id: ID
+    "The full title, such as Ley 7/2023, de 28 de marzo, de protección de los derechos y el bienestar de los animales."
+    title: String
+    "The number of the law, such as 7/2023"
+    officialNumber: String
+    "The rank of the law, such as Ley or Real Decreto"
+    rank: BoeCode
+    "Whether it is a law of the state (Estatal) or of a region (Autonómico)"
+    scope: BoeCode
+    "The ministry or regional government that issued it, such as Comunitat Valenciana"
+    department: BoeCode
+    "The day it was signed, written as 20230328"
+    enacted: String
+    "The day it was published, written as 20230329"
+    published: String
+    "The day it came into force, written as 20230329"
+    inForceFrom: String
+    "The gazette that published it, such as Boletín Oficial del Estado"
+    gazette: String
+    "The number of the gazette that published it"
+    gazetteNumber: String
+    "Whether the law is no longer in force"
+    expired: Boolean
+    "Whether the law was repealed"
+    repealed: Boolean
+    "Whether a court annulled the law"
+    annulled: Boolean
+    "Whether the consolidated text is up to date: Finalizado or Desactualizado"
+    consolidation: BoeCode
+    "When the consolidated text last changed, written as 20260917T074529Z"
+    lastUpdated: String
+    "The European Legislation Identifier of the law, as an address"
+    eliUrl: String
+    "The address of the consolidated text on www.boe.es"
+    htmlUrl: String
+}
+
+"The analysis of a law"
+type BoeLawAnalysisResult {
+    "Whether the call worked, as the BOE reports it"
+    status: BoeStatus
+    "The analysis, as a list of one"
+    analyses: [BoeLawAnalysis]
+}
+
+"The subjects of a law and its relations to other laws"
+type BoeLawAnalysis {
+    "The subjects the law is filed under"
+    subjects: [BoeSubject]
+    "The laws this law changes, and the laws that changed it"
+    references: BoeReferences
+}
+
+"A subject a law is filed under"
+type BoeSubject {
+    "The subject, such as Animales de compañía"
+    subject: BoeCode
+}
+
+"The relations of a law to other laws"
+type BoeReferences {
+    "What the law does to earlier laws"
+    earlier: [BoeEarlierReferences]
+    "What later laws did to this one"
+    later: [BoeLaterReferences]
+}
+
+"Earlier laws that a law affects"
+type BoeEarlierReferences {
+    "The references"
+    references: [BoeReference]
+}
+
+"Later laws that affected a law"
+type BoeLaterReferences {
+    "The references"
+    references: [BoeReference]
+}
+
+"A relation between two laws"
+type BoeReference {
+    "The identifier of the other law, such as BOE-A-2007-19321"
+    lawId: ID
+    "The relation, such as MODIFICA (amends) or SE DEROGA (is repealed)"
+    relation: BoeCode
+    "What the relation covers, in Spanish, such as the articles it amends"
+    text: String
+}
+
+"The parts of the text of a law"
+type BoeTextIndexResult {
+    "Whether the call worked, as the BOE reports it"
+    status: BoeStatus
+    "The index, as a list of one"
+    indexes: [BoeTextIndex]
+}
+
+"The index of the text of a law"
+type BoeTextIndex {
+    "The parts of the text, in order"
+    blocks: [BoeTextBlock]
+}
+
+"A part of the text of a law, such as an article"
+type BoeTextBlock {
+    "The id of the part, such as a3 for article 3 or pr for the preamble"
+    id: String
+    "The title of the part, such as Artículo 3. Definiciones."
+    title: String
+    "The day the part last changed, written as 20230329"
+    updated: String
+    "The address of the text of the part in the API, which answers XML"
+    url: String
+}
+
+"The summary of the gazette of one day"
+type BoeSummaryResult {
+    "Whether the call worked, as the BOE reports it"
+    status: BoeStatus
+    "The gazette: BOE or BORME"
+    publication: String
+    "The day, written as 20261022"
+    date: String
+    "The issues of the gazette that day, usually one"
+    issues: [BoeIssue]
+}
+
+"An issue of the gazette"
+type BoeIssue {
+    "The number of the issue in its year, such as 262"
+    number: String
+    "The identifier of the summary, such as BOE-S-2026-262"
+    summaryId: String
+    "The address of the summary as a PDF"
+    summaryPdfUrl: String
+    "The size of the PDF, in bytes"
+    summaryPdfBytes: Int
+    "The sections of the issue"
+    sections: [BoeSection]
+}
+
+"A section of the gazette, such as I. Disposiciones generales"
+type BoeSection {
+    "The code of the section, such as 1"
+    code: String
+    "The name of the section, such as I. Disposiciones generales"
+    name: String
+    "The ministries and bodies that publish in the section"
+    departments: [BoeDepartment]
+    "The parts of a section of the BORME, such as CONVOCATORIAS DE JUNTAS"
+    parts: [BoePart]
+    "The dispositions of a section of the BORME without parts"
+    items: [BoeSummaryItem]
+}
+
+"A ministry or other body that publishes in a section of the gazette"
+type BoeDepartment {
+    "The code of the body"
+    code: String
+    "The name of the body, such as MINISTERIO DE AGRICULTURA, PESCA Y ALIMENTACIÓN"
+    name: String
+    "The headings of its dispositions"
+    headings: [BoeHeading]
+    "Its dispositions without a heading"
+    items: [BoeSummaryItem]
+}
+
+"A heading that groups dispositions, such as Acuerdos internacionales administrativos"
+type BoeHeading {
+    "The heading"
+    name: String
+    "The dispositions under it"
+    items: [BoeSummaryItem]
+}
+
+"A part of a section of the BORME"
+type BoePart {
+    "The code of the part, such as 002"
+    code: String
+    "The name of the part, such as CONVOCATORIAS DE JUNTAS (calls to general meetings)"
+    name: String
+    "The announcements of the part"
+    items: [BoeSummaryItem]
+}
+
+"A disposition or announcement in the gazette of a day"
+type BoeSummaryItem {
+    "The identifier, such as BOE-A-2026-21947"
+    id: ID
+    "The title, in Spanish"
+    title: String
+    "The control number of the disposition, such as 2026/16469"
+    control: String
+    "The address of the PDF of the disposition"
+    pdfUrl: String
+    "The size of the PDF, in bytes"
+    pdfBytes: Int
+    "The first page of the disposition in the gazette of the day"
+    firstPage: Int
+    "The last page of the disposition"
+    lastPage: Int
+    "The address of the text as a web page"
+    htmlUrl: String
+    "The address of the text as XML"
+    xmlUrl: String
+}
+
+"A list of codes of the BOE and their texts"
+type BoeCodeList {
+    "Whether the call worked, as the BOE reports it"
+    status: BoeStatus
+    "The codes and their texts"
+    entries: [BoeCodeEntry]
+}
+
+"A code of the BOE and its text"
+type BoeCodeEntry {
+    "The code, such as 1300"
+    key: String
+    "The text, such as Ley"
+    value: String
+}

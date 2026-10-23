@@ -1,0 +1,104 @@
+{
+    "type":"FeatureCollection",
+    "features":[
+        {
+            "type":"Feature",
+            "properties":{
+                "id_red":"2",
+                "ficticio":true,
+                "fuented":"Instituto Geogr\u00e1fico Nacional",
+                "id_tramo":"1",
+                "id_curso":"20012",
+                "nativeness":null,
+                "tramo_izda":"-5",
+                "nombre":"R\u00edo Guadalhorce",
+                "script":null,
+                "hydroid_localid":"ES060HYWCLL00000000000000020012",
+                "tramo_dcha":"3",
+                "fuente":"5001",
+                "fecha_alta":"2019-05-20",
+                "nodo_ini":"#HY-N_HYDRONODE_1",
+                "nilreason_nombre":null,
+                "id_demarc":"ES060",
+                "nodo_fin":"#HY-N_HYDRONODE_2",
+                "nilreason_varios":null,
+                "id_demarcd":"Cuencas Mediterr\u00e1neas Andaluzas",
+                "dir_flujo":"27001",
+                "nil_nombre":null,
+                "dir_flujod":"En direcci\u00f3n de las aguas",
+                "longitud":4025.296,
+                "resolucion":5,
+                "nil_varios":null
+            },
+            "id":"ES060HYWCLL0000008012603",
+            "geometry":null
+        },
+        {
+            "type":"Feature",
+            "properties":{
+                "id_red":"2",
+                "ficticio":true,
+                "fuented":"Instituto Geogr\u00e1fico Nacional",
+                "id_tramo":"3",
+                "id_curso":"20012",
+                "nativeness":null,
+                "tramo_izda":"-2",
+                "nombre":"R\u00edo Guadalhorce",
+                "script":null,
+                "hydroid_localid":"ES060HYWCLL00000000000000020012",
+                "tramo_dcha":"-3",
+                "fuente":"5001",
+                "fecha_alta":"2019-05-20",
+                "nodo_ini":"#HY-N_HYDRONODE_2",
+                "nilreason_nombre":null,
+                "id_demarc":"ES060",
+                "nodo_fin":"#HY-N_HYDRONODE_4",
+                "nilreason_varios":null,
+                "id_demarcd":"Cuencas Mediterr\u00e1neas Andaluzas",
+                "dir_flujo":"27001",
+                "nil_nombre":null,
+                "dir_flujod":"En direcci\u00f3n de las aguas",
+                "longitud":2634.463,
+                "resolucion":5,
+                "nil_varios":null
+            },
+            "id":"ES060HYWCLL0000008012604",
+            "geometry":null
+        }
+    ],
+    "numberMatched":274,
+    "numberReturned":2,
+    "links":[
+        {
+            "type":"application/geo+json",
+            "rel":"self",
+            "title":"This document as GeoJSON",
+            "href":"https://api-features.idee.es/collections/watercourselink/items?f=json&bbox=-4.50,36.65,-4.35,36.75&skipGeometry=true&limit=3"
+        },
+        {
+            "rel":"alternate",
+            "type":"application/ld+json",
+            "title":"This document as RDF (JSON-LD)",
+            "href":"https://api-features.idee.es/collections/watercourselink/items?f=jsonld&bbox=-4.50,36.65,-4.35,36.75&skipGeometry=true&limit=3"
+        },
+        {
+            "type":"text/html",
+            "rel":"alternate",
+            "title":"This document as HTML",
+            "href":"https://api-features.idee.es/collections/watercourselink/items?f=html&bbox=-4.50,36.65,-4.35,36.75&skipGeometry=true&limit=3"
+        },
+        {
+            "type":"application/geo+json",
+            "rel":"next",
+            "title":"Items (next)",
+            "href":"https://api-features.idee.es/collections/watercourselink/items?offset=3&bbox=-4.50,36.65,-4.35,36.75&skipGeometry=true&limit=3"
+        },
+        {
+            "type":"application/json",
+            "title":"HY-N Enlace de curso de agua",
+            "rel":"collection",
+            "href":"https://api-features.idee.es/collections/watercourselink"
+        }
+    ],
+    "timeStamp":"2026-10-22T23:42:18.904921Z"
+}

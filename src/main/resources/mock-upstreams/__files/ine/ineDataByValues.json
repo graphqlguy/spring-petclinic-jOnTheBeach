@@ -1,0 +1,88 @@
+[{"COD":"DPOP36296", "Nombre":"Málaga. Total. Persons. Total. ", "FK_Unidad":3, "FK_Escala":1, "Data":[{"Fecha":1609455600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2021, "Valor":1695651.0, "Secreto":false}
+]
+}
+,{"COD":"DPOP36294", "Nombre":"Málaga. From 101 to 500. Persons. Total. ", "FK_Unidad":3, "FK_Escala":1, "Data":[{"Fecha":1609455600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2021, "Valor":5024.0, "Secreto":false}
+]
+}
+,{"COD":"DPOP35319", "Nombre":"Málaga. From 50,001 to 100,000. Municipality. Total. ", "FK_Unidad":134, "FK_Escala":1, "Data":[{"Fecha":1609455600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2021, "Valor":6.0, "Secreto":false}
+]
+}
+,{"COD":"DPOP36961", "Nombre":"Málaga. Total. Total inhabitants. Absolute Variation. ", "FK_Unidad":3, "FK_Escala":1, "Data":[{"Fecha":1609455600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2021, "Valor":9731.0, "Secreto":false}
+]
+}
+,{"COD":"DPOP35317", "Nombre":"Málaga. Over 500,000. Municipality. Total. ", "FK_Unidad":134, "FK_Escala":1, "Data":[{"Fecha":1609455600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2021, "Valor":1.0, "Secreto":false}
+]
+}
+,{"COD":"DPOP36287", "Nombre":"Málaga. From 100,001 to 500,000. Persons. Total. ", "FK_Unidad":3, "FK_Escala":1, "Data":[{"Fecha":1609455600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2021, "Valor":147958.0, "Secreto":false}
+]
+}
+,{"COD":"DPOP13462", "Nombre":"Málaga. Total. Total inhabitants. Persons. ", "FK_Unidad":3, "FK_Escala":1, "Data":[{"Fecha":1735686000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2025, "Valor":1791092.0, "Secreto":false}
+]
+}
+,{"COD":"DPOP36292", "Nombre":"Málaga. From 1,001 to 2,000. Persons. Total. ", "FK_Unidad":3, "FK_Escala":1, "Data":[{"Fecha":1609455600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2021, "Valor":25887.0, "Secreto":false}
+]
+}
+,{"COD":"DPOP35320", "Nombre":"Málaga. From 30,001 to 50,000. Municipality. Total. ", "FK_Unidad":134, "FK_Escala":1, "Data":[{"Fecha":1609455600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2021, "Valor":4.0, "Secreto":false}
+]
+}
+,{"COD":"DPOP35321", "Nombre":"Málaga. From 20,001 to 30,000. Municipality. Total. ", "FK_Unidad":134, "FK_Escala":1, "Data":[{"Fecha":1609455600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2021, "Valor":4.0, "Secreto":false}
+]
+}
+,{"COD":"DPOP35328", "Nombre":"Málaga. From 101 to 500. Municipality. Total. ", "FK_Unidad":134, "FK_Escala":1, "Data":[{"Fecha":1609455600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2021, "Valor":16.0, "Secreto":false}
+]
+}
+,{"COD":"DPOP35322", "Nombre":"Málaga. From 10,001 to 20,000. Municipality. Total. ", "FK_Unidad":134, "FK_Escala":1, "Data":[{"Fecha":1609455600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2021, "Valor":3.0, "Secreto":false}
+]
+}
+,{"COD":"DPOP36286", "Nombre":"Málaga. From 50,001 to 100,000. Persons. Total. ", "FK_Unidad":3, "FK_Escala":1, "Data":[{"Fecha":1609455600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2021, "Valor":462481.0, "Secreto":false}
+]
+}
+,{"COD":"DPOP36288", "Nombre":"Málaga. From 20,001 to 50,000. Persons. Total. ", "FK_Unidad":3, "FK_Escala":1, "Data":[{"Fecha":1609455600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2021, "Valor":264554.0, "Secreto":false}
+]
+}
+,{"COD":"DPOP35330", "Nombre":"Málaga. Total. Municipality. Total. ", "FK_Unidad":134, "FK_Escala":1, "Data":[{"Fecha":1609455600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2021, "Valor":103.0, "Secreto":false}
+]
+}
+,{"COD":"DPOP35327", "Nombre":"Málaga. From 501 to 1,000. Municipality. Total. ", "FK_Unidad":134, "FK_Escala":1, "Data":[{"Fecha":1609455600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2021, "Valor":13.0, "Secreto":false}
+]
+}
+,{"COD":"DPOP35325", "Nombre":"Málaga. From 2,001 to 3,000. Municipality. Total. ", "FK_Unidad":134, "FK_Escala":1, "Data":[{"Fecha":1609455600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2021, "Valor":12.0, "Secreto":false}
+]
+}
+,{"COD":"DPOP35329", "Nombre":"Málaga. Less than 101. Municipality. Total. ", "FK_Unidad":134, "FK_Escala":1, "Data":[{"Fecha":1609455600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2021, "Valor":0.0, "Secreto":false}
+]
+}
+,{"COD":"DPOP35324", "Nombre":"Málaga. From 3,001 to 5,000. Municipality. Total. ", "FK_Unidad":134, "FK_Escala":1, "Data":[{"Fecha":1609455600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2021, "Valor":17.0, "Secreto":false}
+]
+}
+,{"COD":"DPOP36289", "Nombre":"Málaga. From 10,001 to 20,000. Persons. Total. ", "FK_Unidad":3, "FK_Escala":1, "Data":[{"Fecha":1609455600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2021, "Valor":49122.0, "Secreto":false}
+]
+}
+,{"COD":"DPOP36293", "Nombre":"Málaga. From 501 to 1,000. Persons. Total. ", "FK_Unidad":3, "FK_Escala":1, "Data":[{"Fecha":1609455600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2021, "Valor":9419.0, "Secreto":false}
+]
+}
+,{"COD":"DPOP35326", "Nombre":"Málaga. From 1,001 to 2,000. Municipality. Total. ", "FK_Unidad":134, "FK_Escala":1, "Data":[{"Fecha":1609455600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2021, "Valor":17.0, "Secreto":false}
+]
+}
+,{"COD":"DPOP36291", "Nombre":"Málaga. From 2,001 to 5,000. Persons. Total. ", "FK_Unidad":3, "FK_Escala":1, "Data":[{"Fecha":1609455600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2021, "Valor":89938.0, "Secreto":false}
+]
+}
+,{"COD":"DPOP35323", "Nombre":"Málaga. From 5,001 to 10,000. Municipality. Total. ", "FK_Unidad":134, "FK_Escala":1, "Data":[{"Fecha":1609455600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2021, "Valor":9.0, "Secreto":false}
+]
+}
+,{"COD":"DPOP36290", "Nombre":"Málaga. From 5,001 to 10,000. Persons. Total. ", "FK_Unidad":3, "FK_Escala":1, "Data":[{"Fecha":1609455600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2021, "Valor":63863.0, "Secreto":false}
+]
+}
+,{"COD":"DPOP36960", "Nombre":"Málaga. Total. Total inhabitants. Relative Variation. ", "FK_Unidad":101, "FK_Escala":1, "Data":[{"Fecha":1609455600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2021, "Valor":0.58, "Secreto":false}
+]
+}
+,{"COD":"DPOP36285", "Nombre":"Málaga. Over 500,000. Persons. Total. ", "FK_Unidad":3, "FK_Escala":1, "Data":[{"Fecha":1609455600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2021, "Valor":577405.0, "Secreto":false}
+]
+}
+,{"COD":"DPOP36295", "Nombre":"Málaga. Less than 101. Persons. Total. ", "FK_Unidad":3, "FK_Escala":1, "Data":[{"Fecha":1609455600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2021, "Valor":0.0, "Secreto":false}
+]
+}
+,{"COD":"DPOP35318", "Nombre":"Málaga. From 100,001 to 500,000. Municipality. Total. ", "FK_Unidad":134, "FK_Escala":1, "Data":[{"Fecha":1609455600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2021, "Valor":1.0, "Secreto":false}
+]
+}
+]

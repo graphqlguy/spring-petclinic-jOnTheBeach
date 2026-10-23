@@ -1,0 +1,832 @@
+{
+ "mappings": [
+  {
+   "name": "fuelStationsInMunicipality: {\"municipalityId\": \"4544\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/fuel/EstacionesTerrestres/FiltroMunicipio/4544"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    },
+    "bodyFileName": "fuel/fuelStationsInMunicipality.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://energia.serviciosmin.gob.es/ServiciosRESTCarburantes/PreciosCarburantes/EstacionesTerrestres/FiltroMunicipio/4544 on 2026-10-23."
+   }
+  },
+  {
+   "name": "fuelStationsInMunicipality: {\"municipalityId\": \"4521\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/fuel/EstacionesTerrestres/FiltroMunicipio/4521"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    },
+    "bodyFileName": "fuel/fuelStationsInMunicipality-1.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://energia.serviciosmin.gob.es/ServiciosRESTCarburantes/PreciosCarburantes/EstacionesTerrestres/FiltroMunicipio/4521 on 2026-10-23."
+   }
+  },
+  {
+   "name": "fuelStationsInMunicipality: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/fuel/EstacionesTerrestres/FiltroMunicipio/[^/]+"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    },
+    "bodyFileName": "fuel/fuelStationsInMunicipality.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of fuelStationsInMunicipality with the first recording, from https://energia.serviciosmin.gob.es/ServiciosRESTCarburantes/PreciosCarburantes/EstacionesTerrestres/FiltroMunicipio/4544 on 2026-10-23."
+   }
+  },
+  {
+   "name": "fuelStationsInMunicipalityForProduct: {\"municipalityId\": \"4521\", \"product\": \"DIESEL_A\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/fuel/EstacionesTerrestres/FiltroMunicipioProducto/4521/4"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    },
+    "bodyFileName": "fuel/fuelStationsInMunicipalityForProduct.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://energia.serviciosmin.gob.es/ServiciosRESTCarburantes/PreciosCarburantes/EstacionesTerrestres/FiltroMunicipioProducto/4521/4 on 2026-10-23."
+   }
+  },
+  {
+   "name": "fuelStationsInMunicipalityForProduct: {\"municipalityId\": \"4544\", \"product\": \"GASOLINE_95_E5\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/fuel/EstacionesTerrestres/FiltroMunicipioProducto/4544/1"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    },
+    "bodyFileName": "fuel/fuelStationsInMunicipalityForProduct-1.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://energia.serviciosmin.gob.es/ServiciosRESTCarburantes/PreciosCarburantes/EstacionesTerrestres/FiltroMunicipioProducto/4544/1 on 2026-10-23."
+   }
+  },
+  {
+   "name": "fuelStationsInMunicipalityForProduct: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/fuel/EstacionesTerrestres/FiltroMunicipioProducto/[^/]+/[^/]+"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    },
+    "bodyFileName": "fuel/fuelStationsInMunicipalityForProduct.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of fuelStationsInMunicipalityForProduct with the first recording, from https://energia.serviciosmin.gob.es/ServiciosRESTCarburantes/PreciosCarburantes/EstacionesTerrestres/FiltroMunicipioProducto/4521/4 on 2026-10-23."
+   }
+  },
+  {
+   "name": "fuelStationsInProvince: {\"provinceId\": \"29\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/fuel/EstacionesTerrestres/FiltroProvincia/29"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    },
+    "bodyFileName": "fuel/fuelStationsInProvince.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://energia.serviciosmin.gob.es/ServiciosRESTCarburantes/PreciosCarburantes/EstacionesTerrestres/FiltroProvincia/29 on 2026-10-23."
+   }
+  },
+  {
+   "name": "fuelStationsInProvince: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/fuel/EstacionesTerrestres/FiltroProvincia/[^/]+"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    },
+    "bodyFileName": "fuel/fuelStationsInProvince.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of fuelStationsInProvince with the first recording, from https://energia.serviciosmin.gob.es/ServiciosRESTCarburantes/PreciosCarburantes/EstacionesTerrestres/FiltroProvincia/29 on 2026-10-23."
+   }
+  },
+  {
+   "name": "fuelStationsInProvinceForProduct: {\"provinceId\": \"29\", \"product\": \"GASOLINE_95_E5\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/fuel/EstacionesTerrestres/FiltroProvinciaProducto/29/1"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    },
+    "bodyFileName": "fuel/fuelStationsInProvinceForProduct.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://energia.serviciosmin.gob.es/ServiciosRESTCarburantes/PreciosCarburantes/EstacionesTerrestres/FiltroProvinciaProducto/29/1 on 2026-10-23."
+   }
+  },
+  {
+   "name": "fuelStationsInProvinceForProduct: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/fuel/EstacionesTerrestres/FiltroProvinciaProducto/[^/]+/[^/]+"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    },
+    "bodyFileName": "fuel/fuelStationsInProvinceForProduct.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of fuelStationsInProvinceForProduct with the first recording, from https://energia.serviciosmin.gob.es/ServiciosRESTCarburantes/PreciosCarburantes/EstacionesTerrestres/FiltroProvinciaProducto/29/1 on 2026-10-23."
+   }
+  },
+  {
+   "name": "fuelStationsInMunicipalityOn: {\"date\": \"2026-10-01\", \"municipalityId\": \"4544\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/fuel/EstacionesTerrestresHist/FiltroMunicipio/01-10-2026/4544"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    },
+    "bodyFileName": "fuel/fuelStationsInMunicipalityOn.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://energia.serviciosmin.gob.es/ServiciosRESTCarburantes/PreciosCarburantes/EstacionesTerrestresHist/FiltroMunicipio/01-10-2026/4544 on 2026-10-23."
+   }
+  },
+  {
+   "name": "fuelStationsInMunicipalityOn: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/fuel/EstacionesTerrestresHist/FiltroMunicipio/[^/]+/[^/]+"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    },
+    "bodyFileName": "fuel/fuelStationsInMunicipalityOn.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of fuelStationsInMunicipalityOn with the first recording, from https://energia.serviciosmin.gob.es/ServiciosRESTCarburantes/PreciosCarburantes/EstacionesTerrestresHist/FiltroMunicipio/01-10-2026/4544 on 2026-10-23."
+   }
+  },
+  {
+   "name": "fuelStationsInMunicipalityForProductOn: {\"date\": \"2026-10-01\", \"municipalityId\": \"4521\", \"product\": \"DIESEL_A\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/fuel/EstacionesTerrestresHist/FiltroMunicipioProducto/01-10-2026/4521/4"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    },
+    "bodyFileName": "fuel/fuelStationsInMunicipalityForProductOn.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://energia.serviciosmin.gob.es/ServiciosRESTCarburantes/PreciosCarburantes/EstacionesTerrestresHist/FiltroMunicipioProducto/01-10-2026/4521/4 on 2026-10-23."
+   }
+  },
+  {
+   "name": "fuelStationsInMunicipalityForProductOn: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/fuel/EstacionesTerrestresHist/FiltroMunicipioProducto/[^/]+/[^/]+/[^/]+"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    },
+    "bodyFileName": "fuel/fuelStationsInMunicipalityForProductOn.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of fuelStationsInMunicipalityForProductOn with the first recording, from https://energia.serviciosmin.gob.es/ServiciosRESTCarburantes/PreciosCarburantes/EstacionesTerrestresHist/FiltroMunicipioProducto/01-10-2026/4521/4 on 2026-10-23."
+   }
+  },
+  {
+   "name": "fuelStationsInProvinceOn: {\"date\": \"2026-10-01\", \"provinceId\": \"29\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/fuel/EstacionesTerrestresHist/FiltroProvincia/01-10-2026/29"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    },
+    "bodyFileName": "fuel/fuelStationsInProvinceOn.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://energia.serviciosmin.gob.es/ServiciosRESTCarburantes/PreciosCarburantes/EstacionesTerrestresHist/FiltroProvincia/01-10-2026/29 on 2026-10-23."
+   }
+  },
+  {
+   "name": "fuelStationsInProvinceOn: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/fuel/EstacionesTerrestresHist/FiltroProvincia/[^/]+/[^/]+"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    },
+    "bodyFileName": "fuel/fuelStationsInProvinceOn.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of fuelStationsInProvinceOn with the first recording, from https://energia.serviciosmin.gob.es/ServiciosRESTCarburantes/PreciosCarburantes/EstacionesTerrestresHist/FiltroProvincia/01-10-2026/29 on 2026-10-23."
+   }
+  },
+  {
+   "name": "fuelStationsInProvinceForProductOn: {\"date\": \"2026-10-01\", \"provinceId\": \"29\", \"product\": \"DIESEL_A\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/fuel/EstacionesTerrestresHist/FiltroProvinciaProducto/01-10-2026/29/4"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    },
+    "bodyFileName": "fuel/fuelStationsInProvinceForProductOn.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://energia.serviciosmin.gob.es/ServiciosRESTCarburantes/PreciosCarburantes/EstacionesTerrestresHist/FiltroProvinciaProducto/01-10-2026/29/4 on 2026-10-23."
+   }
+  },
+  {
+   "name": "fuelStationsInProvinceForProductOn: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/fuel/EstacionesTerrestresHist/FiltroProvinciaProducto/[^/]+/[^/]+/[^/]+"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    },
+    "bodyFileName": "fuel/fuelStationsInProvinceForProductOn.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of fuelStationsInProvinceForProductOn with the first recording, from https://energia.serviciosmin.gob.es/ServiciosRESTCarburantes/PreciosCarburantes/EstacionesTerrestresHist/FiltroProvinciaProducto/01-10-2026/29/4 on 2026-10-23."
+   }
+  },
+  {
+   "name": "fuelMarineStationsInProvince: {\"provinceId\": \"29\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/fuel/PostesMaritimos/FiltroProvincia/29"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    },
+    "bodyFileName": "fuel/fuelMarineStationsInProvince.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://energia.serviciosmin.gob.es/ServiciosRESTCarburantes/PreciosCarburantes/PostesMaritimos/FiltroProvincia/29 on 2026-10-23."
+   }
+  },
+  {
+   "name": "fuelMarineStationsInProvince: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/fuel/PostesMaritimos/FiltroProvincia/[^/]+"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    },
+    "bodyFileName": "fuel/fuelMarineStationsInProvince.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of fuelMarineStationsInProvince with the first recording, from https://energia.serviciosmin.gob.es/ServiciosRESTCarburantes/PreciosCarburantes/PostesMaritimos/FiltroProvincia/29 on 2026-10-23."
+   }
+  },
+  {
+   "name": "fuelMarineStationsInProvinceForProduct: {\"provinceId\": \"29\", \"product\": \"GASOLINE_95_E5\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/fuel/PostesMaritimos/FiltroProvinciaProducto/29/1"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    },
+    "bodyFileName": "fuel/fuelMarineStationsInProvinceForProduct.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://energia.serviciosmin.gob.es/ServiciosRESTCarburantes/PreciosCarburantes/PostesMaritimos/FiltroProvinciaProducto/29/1 on 2026-10-23."
+   }
+  },
+  {
+   "name": "fuelMarineStationsInProvinceForProduct: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/fuel/PostesMaritimos/FiltroProvinciaProducto/[^/]+/[^/]+"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    },
+    "bodyFileName": "fuel/fuelMarineStationsInProvinceForProduct.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of fuelMarineStationsInProvinceForProduct with the first recording, from https://energia.serviciosmin.gob.es/ServiciosRESTCarburantes/PreciosCarburantes/PostesMaritimos/FiltroProvinciaProducto/29/1 on 2026-10-23."
+   }
+  },
+  {
+   "name": "fuelMarineStationsInMunicipality: {\"municipalityId\": \"4521\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/fuel/PostesMaritimos/FiltroMunicipio/4521"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    },
+    "bodyFileName": "fuel/fuelMarineStationsInMunicipality.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://energia.serviciosmin.gob.es/ServiciosRESTCarburantes/PreciosCarburantes/PostesMaritimos/FiltroMunicipio/4521 on 2026-10-23."
+   }
+  },
+  {
+   "name": "fuelMarineStationsInMunicipality: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/fuel/PostesMaritimos/FiltroMunicipio/[^/]+"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    },
+    "bodyFileName": "fuel/fuelMarineStationsInMunicipality.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of fuelMarineStationsInMunicipality with the first recording, from https://energia.serviciosmin.gob.es/ServiciosRESTCarburantes/PreciosCarburantes/PostesMaritimos/FiltroMunicipio/4521 on 2026-10-23."
+   }
+  },
+  {
+   "name": "fuelMarineStationsInMunicipalityForProduct: {\"municipalityId\": \"4521\", \"product\": \"GASOLINE_95_E5\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/fuel/PostesMaritimos/FiltroMunicipioProducto/4521/1"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    },
+    "bodyFileName": "fuel/fuelMarineStationsInMunicipalityForProduct.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://energia.serviciosmin.gob.es/ServiciosRESTCarburantes/PreciosCarburantes/PostesMaritimos/FiltroMunicipioProducto/4521/1 on 2026-10-23."
+   }
+  },
+  {
+   "name": "fuelMarineStationsInMunicipalityForProduct: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/fuel/PostesMaritimos/FiltroMunicipioProducto/[^/]+/[^/]+"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    },
+    "bodyFileName": "fuel/fuelMarineStationsInMunicipalityForProduct.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of fuelMarineStationsInMunicipalityForProduct with the first recording, from https://energia.serviciosmin.gob.es/ServiciosRESTCarburantes/PreciosCarburantes/PostesMaritimos/FiltroMunicipioProducto/4521/1 on 2026-10-23."
+   }
+  },
+  {
+   "name": "fuelStationsInRegion: {\"regionId\": \"18\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/fuel/EstacionesTerrestres/FiltroCCAA/18"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    },
+    "bodyFileName": "fuel/fuelStationsInRegion.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://energia.serviciosmin.gob.es/ServiciosRESTCarburantes/PreciosCarburantes/EstacionesTerrestres/FiltroCCAA/18 on 2026-10-23."
+   }
+  },
+  {
+   "name": "fuelStationsInRegion: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/fuel/EstacionesTerrestres/FiltroCCAA/[^/]+"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    },
+    "bodyFileName": "fuel/fuelStationsInRegion.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of fuelStationsInRegion with the first recording, from https://energia.serviciosmin.gob.es/ServiciosRESTCarburantes/PreciosCarburantes/EstacionesTerrestres/FiltroCCAA/18 on 2026-10-23."
+   }
+  },
+  {
+   "name": "fuelStationsInRegionForProduct: {\"regionId\": \"18\", \"product\": \"GASOLINE_95_E5\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/fuel/EstacionesTerrestres/FiltroCCAAProducto/18/1"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    },
+    "bodyFileName": "fuel/fuelStationsInRegionForProduct.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://energia.serviciosmin.gob.es/ServiciosRESTCarburantes/PreciosCarburantes/EstacionesTerrestres/FiltroCCAAProducto/18/1 on 2026-10-23."
+   }
+  },
+  {
+   "name": "fuelStationsInRegionForProduct: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/fuel/EstacionesTerrestres/FiltroCCAAProducto/[^/]+/[^/]+"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    },
+    "bodyFileName": "fuel/fuelStationsInRegionForProduct.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of fuelStationsInRegionForProduct with the first recording, from https://energia.serviciosmin.gob.es/ServiciosRESTCarburantes/PreciosCarburantes/EstacionesTerrestres/FiltroCCAAProducto/18/1 on 2026-10-23."
+   }
+  },
+  {
+   "name": "fuelStationsInRegionOn: {\"date\": \"2026-10-01\", \"regionId\": \"18\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/fuel/EstacionesTerrestresHist/FiltroCCAA/01-10-2026/18"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    },
+    "bodyFileName": "fuel/fuelStationsInRegionOn.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://energia.serviciosmin.gob.es/ServiciosRESTCarburantes/PreciosCarburantes/EstacionesTerrestresHist/FiltroCCAA/01-10-2026/18 on 2026-10-23."
+   }
+  },
+  {
+   "name": "fuelStationsInRegionOn: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/fuel/EstacionesTerrestresHist/FiltroCCAA/[^/]+/[^/]+"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    },
+    "bodyFileName": "fuel/fuelStationsInRegionOn.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of fuelStationsInRegionOn with the first recording, from https://energia.serviciosmin.gob.es/ServiciosRESTCarburantes/PreciosCarburantes/EstacionesTerrestresHist/FiltroCCAA/01-10-2026/18 on 2026-10-23."
+   }
+  },
+  {
+   "name": "fuelStationsInRegionForProductOn: {\"date\": \"2026-10-01\", \"regionId\": \"18\", \"product\": \"DIESEL_A\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/fuel/EstacionesTerrestresHist/FiltroCCAAProducto/01-10-2026/18/4"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    },
+    "bodyFileName": "fuel/fuelStationsInRegionForProductOn.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://energia.serviciosmin.gob.es/ServiciosRESTCarburantes/PreciosCarburantes/EstacionesTerrestresHist/FiltroCCAAProducto/01-10-2026/18/4 on 2026-10-23."
+   }
+  },
+  {
+   "name": "fuelStationsInRegionForProductOn: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/fuel/EstacionesTerrestresHist/FiltroCCAAProducto/[^/]+/[^/]+/[^/]+"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    },
+    "bodyFileName": "fuel/fuelStationsInRegionForProductOn.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of fuelStationsInRegionForProductOn with the first recording, from https://energia.serviciosmin.gob.es/ServiciosRESTCarburantes/PreciosCarburantes/EstacionesTerrestresHist/FiltroCCAAProducto/01-10-2026/18/4 on 2026-10-23."
+   }
+  },
+  {
+   "name": "fuelMarineStationsInRegion: {\"regionId\": \"01\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/fuel/PostesMaritimos/FiltroCCAA/01"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    },
+    "bodyFileName": "fuel/fuelMarineStationsInRegion.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://energia.serviciosmin.gob.es/ServiciosRESTCarburantes/PreciosCarburantes/PostesMaritimos/FiltroCCAA/01 on 2026-10-23."
+   }
+  },
+  {
+   "name": "fuelMarineStationsInRegion: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/fuel/PostesMaritimos/FiltroCCAA/[^/]+"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    },
+    "bodyFileName": "fuel/fuelMarineStationsInRegion.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of fuelMarineStationsInRegion with the first recording, from https://energia.serviciosmin.gob.es/ServiciosRESTCarburantes/PreciosCarburantes/PostesMaritimos/FiltroCCAA/01 on 2026-10-23."
+   }
+  },
+  {
+   "name": "fuelProducts: {}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/fuel/Listados/ProductosPetroliferos/"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    },
+    "bodyFileName": "fuel/fuelProducts.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://energia.serviciosmin.gob.es/ServiciosRESTCarburantes/PreciosCarburantes/Listados/ProductosPetroliferos/ on 2026-10-23."
+   }
+  },
+  {
+   "name": "fuelProducts: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/fuel/Listados/ProductosPetroliferos/"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    },
+    "bodyFileName": "fuel/fuelProducts.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of fuelProducts with the first recording, from https://energia.serviciosmin.gob.es/ServiciosRESTCarburantes/PreciosCarburantes/Listados/ProductosPetroliferos/ on 2026-10-23."
+   }
+  },
+  {
+   "name": "fuelRegions: {}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/fuel/Listados/ComunidadesAutonomas/"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    },
+    "bodyFileName": "fuel/fuelRegions.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://energia.serviciosmin.gob.es/ServiciosRESTCarburantes/PreciosCarburantes/Listados/ComunidadesAutonomas/ on 2026-10-23."
+   }
+  },
+  {
+   "name": "fuelRegions: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/fuel/Listados/ComunidadesAutonomas/"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    },
+    "bodyFileName": "fuel/fuelRegions.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of fuelRegions with the first recording, from https://energia.serviciosmin.gob.es/ServiciosRESTCarburantes/PreciosCarburantes/Listados/ComunidadesAutonomas/ on 2026-10-23."
+   }
+  },
+  {
+   "name": "fuelProvinces: {}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/fuel/Listados/Provincias/"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    },
+    "bodyFileName": "fuel/fuelProvinces.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://energia.serviciosmin.gob.es/ServiciosRESTCarburantes/PreciosCarburantes/Listados/Provincias/ on 2026-10-23."
+   }
+  },
+  {
+   "name": "fuelProvinces: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/fuel/Listados/Provincias/"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    },
+    "bodyFileName": "fuel/fuelProvinces.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of fuelProvinces with the first recording, from https://energia.serviciosmin.gob.es/ServiciosRESTCarburantes/PreciosCarburantes/Listados/Provincias/ on 2026-10-23."
+   }
+  },
+  {
+   "name": "fuelProvincesOfRegion: {\"regionId\": \"01\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/fuel/Listados/ProvinciasPorComunidad/01"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    },
+    "bodyFileName": "fuel/fuelProvincesOfRegion.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://energia.serviciosmin.gob.es/ServiciosRESTCarburantes/PreciosCarburantes/Listados/ProvinciasPorComunidad/01 on 2026-10-23."
+   }
+  },
+  {
+   "name": "fuelProvincesOfRegion: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/fuel/Listados/ProvinciasPorComunidad/[^/]+"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    },
+    "bodyFileName": "fuel/fuelProvincesOfRegion.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of fuelProvincesOfRegion with the first recording, from https://energia.serviciosmin.gob.es/ServiciosRESTCarburantes/PreciosCarburantes/Listados/ProvinciasPorComunidad/01 on 2026-10-23."
+   }
+  },
+  {
+   "name": "fuelMunicipalitiesOfProvince: {\"provinceId\": \"29\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/fuel/Listados/MunicipiosPorProvincia/29"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    },
+    "bodyFileName": "fuel/fuelMunicipalitiesOfProvince.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://energia.serviciosmin.gob.es/ServiciosRESTCarburantes/PreciosCarburantes/Listados/MunicipiosPorProvincia/29 on 2026-10-23."
+   }
+  },
+  {
+   "name": "fuelMunicipalitiesOfProvince: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/fuel/Listados/MunicipiosPorProvincia/[^/]+"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    },
+    "bodyFileName": "fuel/fuelMunicipalitiesOfProvince.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of fuelMunicipalitiesOfProvince with the first recording, from https://energia.serviciosmin.gob.es/ServiciosRESTCarburantes/PreciosCarburantes/Listados/MunicipiosPorProvincia/29 on 2026-10-23."
+   }
+  }
+ ]
+}

@@ -1,0 +1,1076 @@
+{
+ "operations": [
+  {
+   "field": "fuelStationsInMunicipality",
+   "path": "/EstacionesTerrestres/FiltroMunicipio/{IDMunicipio}",
+   "arguments": [
+    {
+     "name": "municipalityId",
+     "parameter": "IDMunicipio",
+     "in": "path",
+     "list": false
+    }
+   ]
+  },
+  {
+   "field": "fuelStationsInMunicipalityForProduct",
+   "path": "/EstacionesTerrestres/FiltroMunicipioProducto/{IDMunicipio}/{IDProducto}",
+   "arguments": [
+    {
+     "name": "municipalityId",
+     "parameter": "IDMunicipio",
+     "in": "path",
+     "list": false
+    },
+    {
+     "name": "product",
+     "parameter": "IDProducto",
+     "in": "path",
+     "list": false,
+     "values": {
+      "GASOLINE_95_E5": "1",
+      "GASOLINE_95_E10": "23",
+      "GASOLINE_95_E25": "24",
+      "GASOLINE_95_E85": "25",
+      "GASOLINE_95_E5_PREMIUM": "20",
+      "GASOLINE_98_E5": "3",
+      "GASOLINE_98_E10": "21",
+      "DIESEL_A": "4",
+      "DIESEL_PREMIUM": "5",
+      "DIESEL_B": "6",
+      "DIESEL_C": "7",
+      "BIOETHANOL": "16",
+      "BIODIESEL": "8",
+      "LPG": "17",
+      "CNG": "18",
+      "LNG": "19",
+      "HYDROGEN": "22",
+      "LOW_SULPHUR_FUEL_OIL": "9",
+      "SPECIAL_FUEL_OIL": "10",
+      "MARINE_DIESEL": "11",
+      "AVIATION_GASOLINE": "12",
+      "JET_A1": "13",
+      "JET_A2": "14",
+      "ADBLUE": "26",
+      "RENEWABLE_DIESEL": "27",
+      "RENEWABLE_GASOLINE": "28",
+      "METHANOL": "29",
+      "AMMONIA": "30",
+      "COMPRESSED_BIOGAS": "31",
+      "LIQUEFIED_BIOGAS": "32"
+     }
+    }
+   ]
+  },
+  {
+   "field": "fuelStationsInProvince",
+   "path": "/EstacionesTerrestres/FiltroProvincia/{IDProvincia}",
+   "arguments": [
+    {
+     "name": "provinceId",
+     "parameter": "IDProvincia",
+     "in": "path",
+     "list": false
+    }
+   ]
+  },
+  {
+   "field": "fuelStationsInProvinceForProduct",
+   "path": "/EstacionesTerrestres/FiltroProvinciaProducto/{IDProvincia}/{IDProducto}",
+   "arguments": [
+    {
+     "name": "provinceId",
+     "parameter": "IDProvincia",
+     "in": "path",
+     "list": false
+    },
+    {
+     "name": "product",
+     "parameter": "IDProducto",
+     "in": "path",
+     "list": false,
+     "values": {
+      "GASOLINE_95_E5": "1",
+      "GASOLINE_95_E10": "23",
+      "GASOLINE_95_E25": "24",
+      "GASOLINE_95_E85": "25",
+      "GASOLINE_95_E5_PREMIUM": "20",
+      "GASOLINE_98_E5": "3",
+      "GASOLINE_98_E10": "21",
+      "DIESEL_A": "4",
+      "DIESEL_PREMIUM": "5",
+      "DIESEL_B": "6",
+      "DIESEL_C": "7",
+      "BIOETHANOL": "16",
+      "BIODIESEL": "8",
+      "LPG": "17",
+      "CNG": "18",
+      "LNG": "19",
+      "HYDROGEN": "22",
+      "LOW_SULPHUR_FUEL_OIL": "9",
+      "SPECIAL_FUEL_OIL": "10",
+      "MARINE_DIESEL": "11",
+      "AVIATION_GASOLINE": "12",
+      "JET_A1": "13",
+      "JET_A2": "14",
+      "ADBLUE": "26",
+      "RENEWABLE_DIESEL": "27",
+      "RENEWABLE_GASOLINE": "28",
+      "METHANOL": "29",
+      "AMMONIA": "30",
+      "COMPRESSED_BIOGAS": "31",
+      "LIQUEFIED_BIOGAS": "32"
+     }
+    }
+   ]
+  },
+  {
+   "field": "fuelStationsInMunicipalityOn",
+   "path": "/EstacionesTerrestresHist/FiltroMunicipio/{FECHA}/{IDMunicipio}",
+   "arguments": [
+    {
+     "name": "date",
+     "parameter": "FECHA",
+     "in": "path",
+     "list": false,
+     "dateFormat": "dd-MM-yyyy"
+    },
+    {
+     "name": "municipalityId",
+     "parameter": "IDMunicipio",
+     "in": "path",
+     "list": false
+    }
+   ]
+  },
+  {
+   "field": "fuelStationsInMunicipalityForProductOn",
+   "path": "/EstacionesTerrestresHist/FiltroMunicipioProducto/{FECHA}/{IDMunicipio}/{IDProducto}",
+   "arguments": [
+    {
+     "name": "date",
+     "parameter": "FECHA",
+     "in": "path",
+     "list": false,
+     "dateFormat": "dd-MM-yyyy"
+    },
+    {
+     "name": "municipalityId",
+     "parameter": "IDMunicipio",
+     "in": "path",
+     "list": false
+    },
+    {
+     "name": "product",
+     "parameter": "IDProducto",
+     "in": "path",
+     "list": false,
+     "values": {
+      "GASOLINE_95_E5": "1",
+      "GASOLINE_95_E10": "23",
+      "GASOLINE_95_E25": "24",
+      "GASOLINE_95_E85": "25",
+      "GASOLINE_95_E5_PREMIUM": "20",
+      "GASOLINE_98_E5": "3",
+      "GASOLINE_98_E10": "21",
+      "DIESEL_A": "4",
+      "DIESEL_PREMIUM": "5",
+      "DIESEL_B": "6",
+      "DIESEL_C": "7",
+      "BIOETHANOL": "16",
+      "BIODIESEL": "8",
+      "LPG": "17",
+      "CNG": "18",
+      "LNG": "19",
+      "HYDROGEN": "22",
+      "LOW_SULPHUR_FUEL_OIL": "9",
+      "SPECIAL_FUEL_OIL": "10",
+      "MARINE_DIESEL": "11",
+      "AVIATION_GASOLINE": "12",
+      "JET_A1": "13",
+      "JET_A2": "14",
+      "ADBLUE": "26",
+      "RENEWABLE_DIESEL": "27",
+      "RENEWABLE_GASOLINE": "28",
+      "METHANOL": "29",
+      "AMMONIA": "30",
+      "COMPRESSED_BIOGAS": "31",
+      "LIQUEFIED_BIOGAS": "32"
+     }
+    }
+   ]
+  },
+  {
+   "field": "fuelStationsInProvinceOn",
+   "path": "/EstacionesTerrestresHist/FiltroProvincia/{FECHA}/{IDProvincia}",
+   "arguments": [
+    {
+     "name": "date",
+     "parameter": "FECHA",
+     "in": "path",
+     "list": false,
+     "dateFormat": "dd-MM-yyyy"
+    },
+    {
+     "name": "provinceId",
+     "parameter": "IDProvincia",
+     "in": "path",
+     "list": false
+    }
+   ]
+  },
+  {
+   "field": "fuelStationsInProvinceForProductOn",
+   "path": "/EstacionesTerrestresHist/FiltroProvinciaProducto/{FECHA}/{IDProvincia}/{IDProducto}",
+   "arguments": [
+    {
+     "name": "date",
+     "parameter": "FECHA",
+     "in": "path",
+     "list": false,
+     "dateFormat": "dd-MM-yyyy"
+    },
+    {
+     "name": "provinceId",
+     "parameter": "IDProvincia",
+     "in": "path",
+     "list": false
+    },
+    {
+     "name": "product",
+     "parameter": "IDProducto",
+     "in": "path",
+     "list": false,
+     "values": {
+      "GASOLINE_95_E5": "1",
+      "GASOLINE_95_E10": "23",
+      "GASOLINE_95_E25": "24",
+      "GASOLINE_95_E85": "25",
+      "GASOLINE_95_E5_PREMIUM": "20",
+      "GASOLINE_98_E5": "3",
+      "GASOLINE_98_E10": "21",
+      "DIESEL_A": "4",
+      "DIESEL_PREMIUM": "5",
+      "DIESEL_B": "6",
+      "DIESEL_C": "7",
+      "BIOETHANOL": "16",
+      "BIODIESEL": "8",
+      "LPG": "17",
+      "CNG": "18",
+      "LNG": "19",
+      "HYDROGEN": "22",
+      "LOW_SULPHUR_FUEL_OIL": "9",
+      "SPECIAL_FUEL_OIL": "10",
+      "MARINE_DIESEL": "11",
+      "AVIATION_GASOLINE": "12",
+      "JET_A1": "13",
+      "JET_A2": "14",
+      "ADBLUE": "26",
+      "RENEWABLE_DIESEL": "27",
+      "RENEWABLE_GASOLINE": "28",
+      "METHANOL": "29",
+      "AMMONIA": "30",
+      "COMPRESSED_BIOGAS": "31",
+      "LIQUEFIED_BIOGAS": "32"
+     }
+    }
+   ]
+  },
+  {
+   "field": "fuelMarineStationsInProvince",
+   "path": "/PostesMaritimos/FiltroProvincia/{IDProvincia}",
+   "arguments": [
+    {
+     "name": "provinceId",
+     "parameter": "IDProvincia",
+     "in": "path",
+     "list": false
+    }
+   ]
+  },
+  {
+   "field": "fuelMarineStationsInProvinceForProduct",
+   "path": "/PostesMaritimos/FiltroProvinciaProducto/{IDProvincia}/{IDProducto}",
+   "arguments": [
+    {
+     "name": "provinceId",
+     "parameter": "IDProvincia",
+     "in": "path",
+     "list": false
+    },
+    {
+     "name": "product",
+     "parameter": "IDProducto",
+     "in": "path",
+     "list": false,
+     "values": {
+      "GASOLINE_95_E5": "1",
+      "GASOLINE_95_E10": "23",
+      "GASOLINE_95_E25": "24",
+      "GASOLINE_95_E85": "25",
+      "GASOLINE_95_E5_PREMIUM": "20",
+      "GASOLINE_98_E5": "3",
+      "GASOLINE_98_E10": "21",
+      "DIESEL_A": "4",
+      "DIESEL_PREMIUM": "5",
+      "DIESEL_B": "6",
+      "DIESEL_C": "7",
+      "BIOETHANOL": "16",
+      "BIODIESEL": "8",
+      "LPG": "17",
+      "CNG": "18",
+      "LNG": "19",
+      "HYDROGEN": "22",
+      "LOW_SULPHUR_FUEL_OIL": "9",
+      "SPECIAL_FUEL_OIL": "10",
+      "MARINE_DIESEL": "11",
+      "AVIATION_GASOLINE": "12",
+      "JET_A1": "13",
+      "JET_A2": "14",
+      "ADBLUE": "26",
+      "RENEWABLE_DIESEL": "27",
+      "RENEWABLE_GASOLINE": "28",
+      "METHANOL": "29",
+      "AMMONIA": "30",
+      "COMPRESSED_BIOGAS": "31",
+      "LIQUEFIED_BIOGAS": "32"
+     }
+    }
+   ]
+  },
+  {
+   "field": "fuelMarineStationsInMunicipality",
+   "path": "/PostesMaritimos/FiltroMunicipio/{IDMunicipio}",
+   "arguments": [
+    {
+     "name": "municipalityId",
+     "parameter": "IDMunicipio",
+     "in": "path",
+     "list": false
+    }
+   ]
+  },
+  {
+   "field": "fuelMarineStationsInMunicipalityForProduct",
+   "path": "/PostesMaritimos/FiltroMunicipioProducto/{IDMunicipio}/{IDProducto}",
+   "arguments": [
+    {
+     "name": "municipalityId",
+     "parameter": "IDMunicipio",
+     "in": "path",
+     "list": false
+    },
+    {
+     "name": "product",
+     "parameter": "IDProducto",
+     "in": "path",
+     "list": false,
+     "values": {
+      "GASOLINE_95_E5": "1",
+      "GASOLINE_95_E10": "23",
+      "GASOLINE_95_E25": "24",
+      "GASOLINE_95_E85": "25",
+      "GASOLINE_95_E5_PREMIUM": "20",
+      "GASOLINE_98_E5": "3",
+      "GASOLINE_98_E10": "21",
+      "DIESEL_A": "4",
+      "DIESEL_PREMIUM": "5",
+      "DIESEL_B": "6",
+      "DIESEL_C": "7",
+      "BIOETHANOL": "16",
+      "BIODIESEL": "8",
+      "LPG": "17",
+      "CNG": "18",
+      "LNG": "19",
+      "HYDROGEN": "22",
+      "LOW_SULPHUR_FUEL_OIL": "9",
+      "SPECIAL_FUEL_OIL": "10",
+      "MARINE_DIESEL": "11",
+      "AVIATION_GASOLINE": "12",
+      "JET_A1": "13",
+      "JET_A2": "14",
+      "ADBLUE": "26",
+      "RENEWABLE_DIESEL": "27",
+      "RENEWABLE_GASOLINE": "28",
+      "METHANOL": "29",
+      "AMMONIA": "30",
+      "COMPRESSED_BIOGAS": "31",
+      "LIQUEFIED_BIOGAS": "32"
+     }
+    }
+   ]
+  },
+  {
+   "field": "fuelStationsInRegion",
+   "path": "/EstacionesTerrestres/FiltroCCAA/{IDCCAA}",
+   "arguments": [
+    {
+     "name": "regionId",
+     "parameter": "IDCCAA",
+     "in": "path",
+     "list": false
+    }
+   ]
+  },
+  {
+   "field": "fuelStationsInRegionForProduct",
+   "path": "/EstacionesTerrestres/FiltroCCAAProducto/{IDCCAA}/{IDProducto}",
+   "arguments": [
+    {
+     "name": "regionId",
+     "parameter": "IDCCAA",
+     "in": "path",
+     "list": false
+    },
+    {
+     "name": "product",
+     "parameter": "IDProducto",
+     "in": "path",
+     "list": false,
+     "values": {
+      "GASOLINE_95_E5": "1",
+      "GASOLINE_95_E10": "23",
+      "GASOLINE_95_E25": "24",
+      "GASOLINE_95_E85": "25",
+      "GASOLINE_95_E5_PREMIUM": "20",
+      "GASOLINE_98_E5": "3",
+      "GASOLINE_98_E10": "21",
+      "DIESEL_A": "4",
+      "DIESEL_PREMIUM": "5",
+      "DIESEL_B": "6",
+      "DIESEL_C": "7",
+      "BIOETHANOL": "16",
+      "BIODIESEL": "8",
+      "LPG": "17",
+      "CNG": "18",
+      "LNG": "19",
+      "HYDROGEN": "22",
+      "LOW_SULPHUR_FUEL_OIL": "9",
+      "SPECIAL_FUEL_OIL": "10",
+      "MARINE_DIESEL": "11",
+      "AVIATION_GASOLINE": "12",
+      "JET_A1": "13",
+      "JET_A2": "14",
+      "ADBLUE": "26",
+      "RENEWABLE_DIESEL": "27",
+      "RENEWABLE_GASOLINE": "28",
+      "METHANOL": "29",
+      "AMMONIA": "30",
+      "COMPRESSED_BIOGAS": "31",
+      "LIQUEFIED_BIOGAS": "32"
+     }
+    }
+   ]
+  },
+  {
+   "field": "fuelStationsInRegionOn",
+   "path": "/EstacionesTerrestresHist/FiltroCCAA/{FECHA}/{IDCCAA}",
+   "arguments": [
+    {
+     "name": "date",
+     "parameter": "FECHA",
+     "in": "path",
+     "list": false,
+     "dateFormat": "dd-MM-yyyy"
+    },
+    {
+     "name": "regionId",
+     "parameter": "IDCCAA",
+     "in": "path",
+     "list": false
+    }
+   ]
+  },
+  {
+   "field": "fuelStationsInRegionForProductOn",
+   "path": "/EstacionesTerrestresHist/FiltroCCAAProducto/{FECHA}/{IDCCAA}/{IDProducto}",
+   "arguments": [
+    {
+     "name": "date",
+     "parameter": "FECHA",
+     "in": "path",
+     "list": false,
+     "dateFormat": "dd-MM-yyyy"
+    },
+    {
+     "name": "regionId",
+     "parameter": "IDCCAA",
+     "in": "path",
+     "list": false
+    },
+    {
+     "name": "product",
+     "parameter": "IDProducto",
+     "in": "path",
+     "list": false,
+     "values": {
+      "GASOLINE_95_E5": "1",
+      "GASOLINE_95_E10": "23",
+      "GASOLINE_95_E25": "24",
+      "GASOLINE_95_E85": "25",
+      "GASOLINE_95_E5_PREMIUM": "20",
+      "GASOLINE_98_E5": "3",
+      "GASOLINE_98_E10": "21",
+      "DIESEL_A": "4",
+      "DIESEL_PREMIUM": "5",
+      "DIESEL_B": "6",
+      "DIESEL_C": "7",
+      "BIOETHANOL": "16",
+      "BIODIESEL": "8",
+      "LPG": "17",
+      "CNG": "18",
+      "LNG": "19",
+      "HYDROGEN": "22",
+      "LOW_SULPHUR_FUEL_OIL": "9",
+      "SPECIAL_FUEL_OIL": "10",
+      "MARINE_DIESEL": "11",
+      "AVIATION_GASOLINE": "12",
+      "JET_A1": "13",
+      "JET_A2": "14",
+      "ADBLUE": "26",
+      "RENEWABLE_DIESEL": "27",
+      "RENEWABLE_GASOLINE": "28",
+      "METHANOL": "29",
+      "AMMONIA": "30",
+      "COMPRESSED_BIOGAS": "31",
+      "LIQUEFIED_BIOGAS": "32"
+     }
+    }
+   ]
+  },
+  {
+   "field": "fuelMarineStationsInRegion",
+   "path": "/PostesMaritimos/FiltroCCAA/{IDCCAA}",
+   "arguments": [
+    {
+     "name": "regionId",
+     "parameter": "IDCCAA",
+     "in": "path",
+     "list": false
+    }
+   ]
+  },
+  {
+   "field": "fuelProducts",
+   "path": "/Listados/ProductosPetroliferos/",
+   "arguments": []
+  },
+  {
+   "field": "fuelRegions",
+   "path": "/Listados/ComunidadesAutonomas/",
+   "arguments": []
+  },
+  {
+   "field": "fuelProvinces",
+   "path": "/Listados/Provincias/",
+   "arguments": []
+  },
+  {
+   "field": "fuelProvincesOfRegion",
+   "path": "/Listados/ProvinciasPorComunidad/{IDCCAA}",
+   "arguments": [
+    {
+     "name": "regionId",
+     "parameter": "IDCCAA",
+     "in": "path",
+     "list": false
+    }
+   ]
+  },
+  {
+   "field": "fuelMunicipalitiesOfProvince",
+   "path": "/Listados/MunicipiosPorProvincia/{IDProvincia}",
+   "arguments": [
+    {
+     "name": "provinceId",
+     "parameter": "IDProvincia",
+     "in": "path",
+     "list": false
+    }
+   ]
+  }
+ ],
+ "fields": {
+  "FuelStationList": {
+   "reportedAt": {
+    "key": "Fecha"
+   },
+   "stations": {
+    "key": "ListaEESSPrecio"
+   },
+   "note": {
+    "key": "Nota"
+   },
+   "result": {
+    "key": "ResultadoConsulta"
+   }
+  },
+  "FuelStation": {
+   "id": {
+    "key": "IDEESS"
+   },
+   "brand": {
+    "key": "Rótulo"
+   },
+   "address": {
+    "key": "Dirección"
+   },
+   "postalCode": {
+    "key": "C.P."
+   },
+   "locality": {
+    "key": "Localidad"
+   },
+   "municipality": {
+    "key": "Municipio"
+   },
+   "province": {
+    "key": "Provincia"
+   },
+   "municipalityId": {
+    "key": "IDMunicipio"
+   },
+   "provinceId": {
+    "key": "IDProvincia"
+   },
+   "regionId": {
+    "key": "IDCCAA"
+   },
+   "latitude": {
+    "key": "Latitud",
+    "conversion": "decimal-comma"
+   },
+   "longitude": {
+    "key": "Longitud (WGS84)",
+    "conversion": "decimal-comma"
+   },
+   "openingHours": {
+    "key": "Horario"
+   },
+   "saleType": {
+    "key": "Tipo Venta"
+   },
+   "reportedBy": {
+    "key": "Remisión"
+   },
+   "roadSide": {
+    "key": "Margen"
+   },
+   "gasoline95E5Price": {
+    "key": "Precio Gasolina 95 E5",
+    "conversion": "decimal-comma"
+   },
+   "gasoline95E10Price": {
+    "key": "Precio Gasolina 95 E10",
+    "conversion": "decimal-comma"
+   },
+   "gasoline95E25Price": {
+    "key": "Precio Gasolina 95 E25",
+    "conversion": "decimal-comma"
+   },
+   "gasoline95E85Price": {
+    "key": "Precio Gasolina 95 E85",
+    "conversion": "decimal-comma"
+   },
+   "gasoline95E5PremiumPrice": {
+    "key": "Precio Gasolina 95 E5 Premium",
+    "conversion": "decimal-comma"
+   },
+   "gasoline98E5Price": {
+    "key": "Precio Gasolina 98 E5",
+    "conversion": "decimal-comma"
+   },
+   "gasoline98E10Price": {
+    "key": "Precio Gasolina 98 E10",
+    "conversion": "decimal-comma"
+   },
+   "renewableGasolinePrice": {
+    "key": "Precio Gasolina Renovable",
+    "conversion": "decimal-comma"
+   },
+   "dieselAPrice": {
+    "key": "Precio Gasoleo A",
+    "conversion": "decimal-comma"
+   },
+   "dieselBPrice": {
+    "key": "Precio Gasoleo B",
+    "conversion": "decimal-comma"
+   },
+   "dieselPremiumPrice": {
+    "key": "Precio Gasoleo Premium",
+    "conversion": "decimal-comma"
+   },
+   "renewableDieselPrice": {
+    "key": "Precio Diésel Renovable",
+    "conversion": "decimal-comma"
+   },
+   "biodieselPrice": {
+    "key": "Precio Biodiesel",
+    "conversion": "decimal-comma"
+   },
+   "bioethanolPrice": {
+    "key": "Precio Bioetanol",
+    "conversion": "decimal-comma"
+   },
+   "lpgPrice": {
+    "key": "Precio Gases licuados del petróleo",
+    "conversion": "decimal-comma"
+   },
+   "compressedNaturalGasPrice": {
+    "key": "Precio Gas Natural Comprimido",
+    "conversion": "decimal-comma"
+   },
+   "liquefiedNaturalGasPrice": {
+    "key": "Precio Gas Natural Licuado",
+    "conversion": "decimal-comma"
+   },
+   "compressedBiogasPrice": {
+    "key": "Precio Biogas Natural Comprimido",
+    "conversion": "decimal-comma"
+   },
+   "liquefiedBiogasPrice": {
+    "key": "Precio Biogas Natural Licuado",
+    "conversion": "decimal-comma"
+   },
+   "hydrogenPrice": {
+    "key": "Precio Hidrogeno",
+    "conversion": "decimal-comma"
+   },
+   "methanolPrice": {
+    "key": "Precio Metanol",
+    "conversion": "decimal-comma"
+   },
+   "ammoniaPrice": {
+    "key": "Precio Amoniaco",
+    "conversion": "decimal-comma"
+   },
+   "adbluePrice": {
+    "key": "Precio Adblue",
+    "conversion": "decimal-comma"
+   },
+   "bioethanolPercent": {
+    "key": "% BioEtanol",
+    "conversion": "decimal-comma"
+   },
+   "methylEsterPercent": {
+    "key": "% Éster metílico",
+    "conversion": "decimal-comma"
+   }
+  },
+  "FuelProductStationList": {
+   "reportedAt": {
+    "key": "Fecha"
+   },
+   "stations": {
+    "key": "ListaEESSPrecio"
+   },
+   "note": {
+    "key": "Nota"
+   },
+   "result": {
+    "key": "ResultadoConsulta"
+   }
+  },
+  "FuelProductStation": {
+   "id": {
+    "key": "IDEESS"
+   },
+   "brand": {
+    "key": "Rótulo"
+   },
+   "address": {
+    "key": "Dirección"
+   },
+   "postalCode": {
+    "key": "C.P."
+   },
+   "locality": {
+    "key": "Localidad"
+   },
+   "municipality": {
+    "key": "Municipio"
+   },
+   "province": {
+    "key": "Provincia"
+   },
+   "municipalityId": {
+    "key": "IDMunicipio"
+   },
+   "provinceId": {
+    "key": "IDProvincia"
+   },
+   "regionId": {
+    "key": "IDCCAA"
+   },
+   "latitude": {
+    "key": "Latitud",
+    "conversion": "decimal-comma"
+   },
+   "longitude": {
+    "key": "Longitud (WGS84)",
+    "conversion": "decimal-comma"
+   },
+   "openingHours": {
+    "key": "Horario"
+   },
+   "saleType": {
+    "key": "Tipo Venta"
+   },
+   "reportedBy": {
+    "key": "Remisión"
+   },
+   "roadSide": {
+    "key": "Margen"
+   },
+   "price": {
+    "key": "PrecioProducto",
+    "conversion": "decimal-comma"
+   }
+  },
+  "FuelMarineStationList": {
+   "reportedAt": {
+    "key": "Fecha"
+   },
+   "stations": {
+    "key": "ListaEESSPrecio"
+   },
+   "note": {
+    "key": "Nota"
+   },
+   "result": {
+    "key": "ResultadoConsulta"
+   }
+  },
+  "FuelMarineStation": {
+   "id": {
+    "key": "IDPosteMaritimo"
+   },
+   "brand": {
+    "key": "Rótulo"
+   },
+   "address": {
+    "key": "Dirección"
+   },
+   "postalCode": {
+    "key": "C.P."
+   },
+   "locality": {
+    "key": "Localidad"
+   },
+   "municipality": {
+    "key": "Municipio"
+   },
+   "province": {
+    "key": "Provincia"
+   },
+   "municipalityId": {
+    "key": "IDMunicipio"
+   },
+   "provinceId": {
+    "key": "IDProvincia"
+   },
+   "regionId": {
+    "key": "IDCCAA"
+   },
+   "latitude": {
+    "key": "Latitud",
+    "conversion": "decimal-comma"
+   },
+   "longitude": {
+    "key": "Longitud (WGS84)",
+    "conversion": "decimal-comma"
+   },
+   "openingHours": {
+    "key": "Horario"
+   },
+   "saleType": {
+    "key": "Tipo Venta"
+   },
+   "reportedBy": {
+    "key": "Remisión"
+   },
+   "port": {
+    "key": "Puerto"
+   },
+   "gasoline95E5Price": {
+    "key": "Precio Gasolina 95 E5",
+    "conversion": "decimal-comma"
+   },
+   "gasoline95E10Price": {
+    "key": "Precio Gasolina 95 E10",
+    "conversion": "decimal-comma"
+   },
+   "gasoline95E25Price": {
+    "key": "Precio Gasolina 95 E25",
+    "conversion": "decimal-comma"
+   },
+   "gasoline95E85Price": {
+    "key": "Precio Gasolina 95 E85",
+    "conversion": "decimal-comma"
+   },
+   "renewableGasolinePrice": {
+    "key": "Precio Gasolina Renovable",
+    "conversion": "decimal-comma"
+   },
+   "dieselAPrice": {
+    "key": "Precio Gasoleo A habitual",
+    "conversion": "decimal-comma"
+   },
+   "dieselBPrice": {
+    "key": "Precio Gasoleo B",
+    "conversion": "decimal-comma"
+   },
+   "marineDieselPrice": {
+    "key": "Precio Gasóleo para uso marítimo",
+    "conversion": "decimal-comma"
+   },
+   "renewableDieselPrice": {
+    "key": "Precio Diésel Renovable",
+    "conversion": "decimal-comma"
+   },
+   "compressedBiogasPrice": {
+    "key": "Precio Biogas Natural Comprimido",
+    "conversion": "decimal-comma"
+   },
+   "liquefiedBiogasPrice": {
+    "key": "Precio Biogas Natural Licuado",
+    "conversion": "decimal-comma"
+   },
+   "methanolPrice": {
+    "key": "Precio Metanol",
+    "conversion": "decimal-comma"
+   },
+   "ammoniaPrice": {
+    "key": "Precio Amoniaco",
+    "conversion": "decimal-comma"
+   },
+   "adbluePrice": {
+    "key": "Precio Adblue",
+    "conversion": "decimal-comma"
+   }
+  },
+  "FuelProductMarineStationList": {
+   "reportedAt": {
+    "key": "Fecha"
+   },
+   "stations": {
+    "key": "ListaEESSPrecio"
+   },
+   "note": {
+    "key": "Nota"
+   },
+   "result": {
+    "key": "ResultadoConsulta"
+   }
+  },
+  "FuelProductMarineStation": {
+   "id": {
+    "key": "IDPosteMaritimo"
+   },
+   "brand": {
+    "key": "Rótulo"
+   },
+   "address": {
+    "key": "Dirección"
+   },
+   "postalCode": {
+    "key": "C.P."
+   },
+   "locality": {
+    "key": "Localidad"
+   },
+   "municipality": {
+    "key": "Municipio"
+   },
+   "province": {
+    "key": "Provincia"
+   },
+   "municipalityId": {
+    "key": "IDMunicipio"
+   },
+   "provinceId": {
+    "key": "IDProvincia"
+   },
+   "regionId": {
+    "key": "IDCCAA"
+   },
+   "latitude": {
+    "key": "Latitud",
+    "conversion": "decimal-comma"
+   },
+   "longitude": {
+    "key": "Longitud (WGS84)",
+    "conversion": "decimal-comma"
+   },
+   "openingHours": {
+    "key": "Horario"
+   },
+   "saleType": {
+    "key": "Tipo Venta"
+   },
+   "reportedBy": {
+    "key": "Remisión"
+   },
+   "port": {
+    "key": "Puerto"
+   },
+   "price": {
+    "key": "PrecioProducto",
+    "conversion": "decimal-comma"
+   }
+  },
+  "FuelProduct": {
+   "id": {
+    "key": "IDProducto"
+   },
+   "name": {
+    "key": "NombreProducto"
+   },
+   "abbreviation": {
+    "key": "NombreProductoAbreviatura"
+   }
+  },
+  "FuelRegion": {
+   "id": {
+    "key": "IDCCAA"
+   },
+   "name": {
+    "key": "CCAA"
+   }
+  },
+  "FuelProvince": {
+   "id": {
+    "key": "IDPovincia"
+   },
+   "name": {
+    "key": "Provincia"
+   },
+   "regionId": {
+    "key": "IDCCAA"
+   },
+   "region": {
+    "key": "CCAA"
+   }
+  },
+  "FuelMunicipality": {
+   "id": {
+    "key": "IDMunicipio"
+   },
+   "name": {
+    "key": "Municipio"
+   },
+   "provinceId": {
+    "key": "IDProvincia"
+   },
+   "province": {
+    "key": "Provincia"
+   },
+   "regionId": {
+    "key": "IDCCAA"
+   },
+   "region": {
+    "key": "CCAA"
+   }
+  }
+ }
+}

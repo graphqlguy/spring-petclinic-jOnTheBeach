@@ -1,0 +1,112 @@
+{
+    "type":"FeatureCollection",
+    "features":[
+        {
+            "type":"Feature",
+            "properties":{
+                "fuente":"5001",
+                "nil_nombre":true,
+                "fuented":"Instituto Geogr\u00e1fico Nacional",
+                "nil_varios":null,
+                "nombre":null,
+                "longitud":82.769,
+                "nativeness":null,
+                "id_demarc":"ES050",
+                "resolucion":5,
+                "script":null,
+                "hydroid_localid":"ES050HYFORL0000000002241",
+                "id_demarcd":"Guadalquivir",
+                "fecha_alta":"2019-04-10",
+                "nilreason_nombre":"other:unpopulated",
+                "condicion":"http://inspire.ec.europa.eu/codelist/ConditionOfFacilityValue/functional",
+                "nilreason_varios":null,
+                "condiciond":"En uso"
+            },
+            "id":"ES050HYFORL0000001569496",
+            "geometry":null
+        },
+        {
+            "type":"Feature",
+            "properties":{
+                "fuente":"5001",
+                "nil_nombre":true,
+                "fuented":"Instituto Geogr\u00e1fico Nacional",
+                "nil_varios":null,
+                "nombre":null,
+                "longitud":3.251,
+                "nativeness":null,
+                "id_demarc":"ES050",
+                "resolucion":5,
+                "script":null,
+                "hydroid_localid":"ES050HYFORL0000000002242",
+                "id_demarcd":"Guadalquivir",
+                "fecha_alta":"2019-04-10",
+                "nilreason_nombre":"other:unpopulated",
+                "condicion":"http://inspire.ec.europa.eu/codelist/ConditionOfFacilityValue/functional",
+                "nilreason_varios":null,
+                "condiciond":"En uso"
+            },
+            "id":"ES050HYFORL0000001569497",
+            "geometry":null
+        },
+        {
+            "type":"Feature",
+            "properties":{
+                "fuente":"5001",
+                "nil_nombre":true,
+                "fuented":"Instituto Geogr\u00e1fico Nacional",
+                "nil_varios":null,
+                "nombre":null,
+                "longitud":17.085,
+                "nativeness":null,
+                "id_demarc":"ES050",
+                "resolucion":5,
+                "script":null,
+                "hydroid_localid":"ES050HYFORL0000000002250",
+                "id_demarcd":"Guadalquivir",
+                "fecha_alta":"2019-04-10",
+                "nilreason_nombre":"other:unpopulated",
+                "condicion":"http://inspire.ec.europa.eu/codelist/ConditionOfFacilityValue/functional",
+                "nilreason_varios":null,
+                "condiciond":"En uso"
+            },
+            "id":"ES050HYFORL0000001569505",
+            "geometry":null
+        }
+    ],
+    "numberMatched":212,
+    "numberReturned":3,
+    "links":[
+        {
+            "type":"application/geo+json",
+            "rel":"self",
+            "title":"This document as GeoJSON",
+            "href":"https://api-features.idee.es/collections/ford/items?f=json&bbox=-5.6,36.2,-3.7,37.4&skipGeometry=true&limit=3"
+        },
+        {
+            "rel":"alternate",
+            "type":"application/ld+json",
+            "title":"This document as RDF (JSON-LD)",
+            "href":"https://api-features.idee.es/collections/ford/items?f=jsonld&bbox=-5.6,36.2,-3.7,37.4&skipGeometry=true&limit=3"
+        },
+        {
+            "type":"text/html",
+            "rel":"alternate",
+            "title":"This document as HTML",
+            "href":"https://api-features.idee.es/collections/ford/items?f=html&bbox=-5.6,36.2,-3.7,37.4&skipGeometry=true&limit=3"
+        },
+        {
+            "type":"application/geo+json",
+            "rel":"next",
+            "title":"Items (next)",
+            "href":"https://api-features.idee.es/collections/ford/items?offset=3&bbox=-5.6,36.2,-3.7,37.4&skipGeometry=true&limit=3"
+        },
+        {
+            "type":"application/json",
+            "title":"HY-P Vado",
+            "rel":"collection",
+            "href":"https://api-features.idee.es/collections/ford"
+        }
+    ],
+    "timeStamp":"2026-10-22T23:42:35.375318Z"
+}

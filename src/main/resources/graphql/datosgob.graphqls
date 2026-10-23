@@ -1,0 +1,398 @@
+# The fields of datos.gob.es, the national catalogue of the open data of Spain, which lists the datasets of every public
+# body, from ministries to town halls, at datos.gob.es/apidata. Its Swagger document answered a server error on 22
+# October 2026, so a generator wrote these fields, their types and src/main/resources/datosgob/operations.json from the
+# paths of the catalogue and from answers recorded from it. The names and descriptions are written by hand in English.
+# Each field is fetched by a RestOperationFetcher, see DatosGobConfiguration.
+
+extend type Query {
+    # The catalogue answers in linked data: every dataset, publisher and theme is identified by an address. The datasets
+    # of the city of Málaga have the publisher L01290672, and the parks for dogs of Málaga are the dataset
+    # l01290672-parques-caninos1.
+
+    "The datasets of the national catalogue of open data, a page at a time. Sort by -modified for the latest."
+    datosGobDatasets(
+        "The order of the datasets, by a property: -modified for the latest changed first, title for alphabetical order"
+        sort: String
+        "The page to return. Pages count from 0."
+        page: Int! = 0
+        "The number of datasets on a page, from 1 to 100"
+        size: Int! = 10
+    ): DatosGobDatasetPage
+
+    "The datasets whose title contains these words, in Spanish, such as parques caninos (parks for dogs)"
+    datosGobDatasetsByTitle(
+        "Words of the title, in Spanish, such as parques caninos"
+        title: String!
+        "The order of the datasets, by a property: -modified for the latest changed first, title for alphabetical order"
+        sort: String
+        "The page to return. Pages count from 0."
+        page: Int! = 0
+        "The number of datasets on a page, from 1 to 100"
+        size: Int! = 10
+    ): DatosGobDatasetPage
+
+    "The datasets tagged with a keyword, in Spanish, such as perros (dogs) or mascotas (pets)"
+    datosGobDatasetsByKeyword(
+        "The keyword, in Spanish, such as perros"
+        keyword: String!
+        "The order of the datasets, by a property: -modified for the latest changed first, title for alphabetical order"
+        sort: String
+        "The page to return. Pages count from 0."
+        page: Int! = 0
+        "The number of datasets on a page, from 1 to 100"
+        size: Int! = 10
+    ): DatosGobDatasetPage
+
+    """
+    The datasets of a theme of the catalogue, such as salud (health) or medio-ambiente (environment). datosGobThemes
+    lists the themes.
+    """
+    datosGobDatasetsByTheme(
+        "The theme, as the last part of its address, such as salud or medio-ambiente"
+        theme: String!
+        "The order of the datasets, by a property: -modified for the latest changed first, title for alphabetical order"
+        sort: String
+        "The page to return. Pages count from 0."
+        page: Int! = 0
+        "The number of datasets on a page, from 1 to 100"
+        size: Int! = 10
+    ): DatosGobDatasetPage
+
+    "The datasets of one publisher, such as L01290672 for the city of Málaga"
+    datosGobDatasetsByPublisher(
+        """
+        The code of the publisher in the directory of public bodies (DIR3), such as L01290672 for the city of Málaga or
+        A01004456 for the Junta de Andalucía
+        """
+        publisher: String!
+        "The order of the datasets, by a property: -modified for the latest changed first, title for alphabetical order"
+        sort: String
+        "The page to return. Pages count from 0."
+        page: Int! = 0
+        "The number of datasets on a page, from 1 to 100"
+        size: Int! = 10
+    ): DatosGobDatasetPage
+
+    "The datasets offered in one format, such as csv or json"
+    datosGobDatasetsByFormat(
+        "The format, in lower case, such as csv, json or geojson"
+        format: String!
+        "The order of the datasets, by a property: -modified for the latest changed first, title for alphabetical order"
+        sort: String
+        "The page to return. Pages count from 0."
+        page: Int! = 0
+        "The number of datasets on a page, from 1 to 100"
+        size: Int! = 10
+    ): DatosGobDatasetPage
+
+    """
+    The datasets that cover one place: a province, an autonomous community or the whole country. The datasets of the
+    province of Málaga take kind Provincia and place Malaga.
+    """
+    datosGobDatasetsByPlace(
+        "The kind of place: Provincia, Autonomia or Pais"
+        kind: String!
+        "The place, as the catalogue writes it, such as Malaga, Andalucia or España"
+        place: String!
+        "The order of the datasets, by a property: -modified for the latest changed first, title for alphabetical order"
+        sort: String
+        "The page to return. Pages count from 0."
+        page: Int! = 0
+        "The number of datasets on a page, from 1 to 100"
+        size: Int! = 10
+    ): DatosGobDatasetPage
+
+    "The datasets that changed between two moments"
+    datosGobDatasetsModified(
+        "The start, written as 2026-10-01T00:00Z"
+        begin: String!
+        "The end, written as 2026-10-20T00:00Z"
+        end: String!
+        "The order of the datasets, by a property: -modified for the latest changed first, title for alphabetical order"
+        sort: String
+        "The page to return. Pages count from 0."
+        page: Int! = 0
+        "The number of datasets on a page, from 1 to 100"
+        size: Int! = 10
+    ): DatosGobDatasetPage
+
+    "One dataset by its id, such as l01290672-parques-caninos1, as a page of one"
+    datosGobDataset(
+        "The id of the dataset, the last part of its address, such as l01290672-parques-caninos1"
+        id: ID!
+    ): DatosGobDatasetPage
+
+    "The distributions of the catalogue, the files and APIs through which the datasets can be downloaded"
+    datosGobDistributions(
+        "The page to return. Pages count from 0."
+        page: Int! = 0
+        "The number of results on a page, from 1 to 100"
+        size: Int! = 10
+    ): DatosGobDistributionPage
+
+    "The distributions of one dataset: its files, such as a CSV or a GeoJSON, with their addresses"
+    datosGobDistributionsOfDataset(
+        "The id of the dataset, such as l01290672-parques-caninos1"
+        id: ID!
+        "The page to return. Pages count from 0."
+        page: Int! = 0
+        "The number of results on a page, from 1 to 100"
+        size: Int! = 10
+    ): DatosGobDistributionPage
+
+    "The distributions in one format, such as geojson"
+    datosGobDistributionsByFormat(
+        "The format, in lower case, such as csv or geojson"
+        format: String!
+        "The page to return. Pages count from 0."
+        page: Int! = 0
+        "The number of results on a page, from 1 to 100"
+        size: Int! = 10
+    ): DatosGobDistributionPage
+
+    "The addresses of the public bodies that publish in the catalogue, such as the city of Málaga"
+    datosGobPublishers(
+        "The page to return. Pages count from 0."
+        page: Int! = 0
+        "The number of results on a page, from 1 to 100"
+        size: Int! = 10
+    ): DatosGobAddressPage
+
+    "The addresses of the themes of the catalogue"
+    datosGobThemes(
+        "The page to return. Pages count from 0."
+        page: Int! = 0
+        "The number of results on a page, from 1 to 100"
+        size: Int! = 10
+    ): DatosGobAddressPage
+
+    "The areas the datasets of the catalogue cover, with their bounding boxes"
+    datosGobSpatialCoverages(
+        "The page to return. Pages count from 0."
+        page: Int! = 0
+        "The number of results on a page, from 1 to 100"
+        size: Int! = 10
+    ): DatosGobSpatialPage
+
+    """
+    The sectors of the classification of the public sector of the Spanish open data standard (NTI), such as Salud or
+    Medio ambiente
+    """
+    datosGobPublicSectors(
+        "The page to return. Pages count from 0."
+        page: Int! = 0
+        "The number of results on a page, from 1 to 100"
+        size: Int! = 10
+    ): DatosGobConceptPage
+
+    "The provinces of Spain as the open data standard names them, such as Malaga, with their communities"
+    datosGobProvinces(
+        "The page to return. Pages count from 0."
+        page: Int! = 0
+        "The number of results on a page, from 1 to 100"
+        size: Int! = 10
+    ): DatosGobTerritoryPage
+
+    "One province, by its name"
+    datosGobProvince(
+        "The name of the province, as the standard writes it, such as Malaga"
+        name: String!
+    ): DatosGobTerritoryPage
+
+    "The autonomous communities of Spain as the open data standard names them, such as Andalucia"
+    datosGobRegions(
+        "The page to return. Pages count from 0."
+        page: Int! = 0
+        "The number of results on a page, from 1 to 100"
+        size: Int! = 10
+    ): DatosGobTerritoryPage
+
+    "One autonomous community, by its name"
+    datosGobRegion(
+        "The name of the community, as the standard writes it, such as Andalucia"
+        name: String!
+    ): DatosGobTerritoryPage
+
+    "The country, Spain"
+    datosGobCountry(
+        "The name of the country: España"
+        name: String!
+    ): DatosGobTerritoryPage
+}
+
+"A page of datasets of the national catalogue"
+type DatosGobDatasetPage {
+    "The number of the page, from 0"
+    page: Int
+    "The number of items on a page"
+    itemsPerPage: Int
+    "The position of the first item of the page in the whole list, from 1"
+    startIndex: Int
+    "The datasets"
+    datasets: [DatosGobDataset]
+}
+
+"A dataset of the national catalogue of open data"
+type DatosGobDataset {
+    """
+    The address of the dataset, such as https://datos.gob.es/catalogo/l01290672-parques-caninos1. Its last part is the
+    id that datosGobDataset takes.
+    """
+    id: ID
+    "The identifier the publisher gives the dataset"
+    identifier: String
+    "The title, in each language, such as Parques Caninos"
+    titles: [String]
+    "The description, in each language"
+    descriptions: [String]
+    "The keywords, such as perros"
+    keywords: [String]
+    "The themes, as addresses ending in the theme, such as .../sector/salud"
+    themes: [String]
+    "The address of the publisher, ending in its DIR3 code, such as .../Organismo/L01290672"
+    publisher: String
+    "The day the dataset was first published, as the catalogue writes it, such as jue, 01 ene 2009"
+    issued: String
+    "The day it last changed, written the same way"
+    modified: String
+    "Until when the data is valid"
+    valid: String
+    "The places the dataset covers, as addresses, such as .../territorio/Provincia/Malaga"
+    spatial: [String]
+    "The languages, as addresses of the EU authority tables, such as .../language/SPA"
+    languages: [String]
+    "The license, such as the address of CC BY 4.0"
+    license: String
+    "Addresses of documents about the dataset"
+    references: [String]
+    "The standard or description the dataset follows"
+    conformsTo: String
+    "The address of the period the dataset covers"
+    temporal: String
+    "How often the dataset is updated, such as every month, as the catalogue sends it"
+    frequency: JSON
+    "The kind of resource, the address of dcat#Dataset"
+    type: String
+    "The files and services the dataset is offered in"
+    distributions: [DatosGobDistribution]
+}
+
+"A page of distributions of the national catalogue"
+type DatosGobDistributionPage {
+    "The number of the page, from 0"
+    page: Int
+    "The number of items on a page"
+    itemsPerPage: Int
+    "The position of the first item of the page in the whole list, from 1"
+    startIndex: Int
+    "The distributions"
+    distributions: [DatosGobDistribution]
+}
+
+"A file or service through which a dataset can be downloaded"
+type DatosGobDistribution {
+    "The address of the distribution in the catalogue"
+    id: ID
+    "The identifier the publisher gives the distribution"
+    identifier: String
+    "The title, such as CSV Sistema Referencia EPSG 4326, in each language"
+    titles: [String]
+    "The address where the data can be reached"
+    accessUrl: String
+    "The address of the file to download, when it differs"
+    downloadUrl: String
+    "The format, as a media type such as text/csv or as the address of a file type of the EU"
+    format: String
+    "The size of the file, in bytes"
+    byteSize: Float
+    "Addresses of related resources, such as the service that holds the data"
+    relations: [String]
+    "The kind of resource, the address of dcat#Distribution"
+    type: String
+}
+
+"A page of addresses of the catalogue"
+type DatosGobAddressPage {
+    "The number of the page, from 0"
+    page: Int
+    "The number of items on a page"
+    itemsPerPage: Int
+    "The position of the first item of the page in the whole list, from 1"
+    startIndex: Int
+    "The addresses, such as the address of a publisher ending in its DIR3 code"
+    addresses: [String]
+}
+
+"A page of areas the datasets cover"
+type DatosGobSpatialPage {
+    "The number of the page, from 0"
+    page: Int
+    "The number of items on a page"
+    itemsPerPage: Int
+    "The position of the first item of the page in the whole list, from 1"
+    startIndex: Int
+    "The areas"
+    areas: [DatosGobSpatial]
+}
+
+"An area a dataset covers"
+type DatosGobSpatial {
+    "The address of the area"
+    id: ID
+    "The bounding box of the area, as a WKT polygon"
+    bbox: String
+    "The kind of resource"
+    type: String
+}
+
+"A page of sectors of the public sector classification"
+type DatosGobConceptPage {
+    "The number of the page, from 0"
+    page: Int
+    "The number of items on a page"
+    itemsPerPage: Int
+    "The position of the first item of the page in the whole list, from 1"
+    startIndex: Int
+    "The sectors"
+    concepts: [DatosGobConcept]
+}
+
+"A sector of the classification of the public sector, such as Salud"
+type DatosGobConcept {
+    "The address of the sector, ending in its id, such as .../sector/salud"
+    id: ID
+    "The name of the sector, such as Sector público"
+    label: String
+    "The address of the classification"
+    scheme: String
+    "The kind of resource, the address of skos#Concept"
+    type: String
+}
+
+"A page of territories of Spain"
+type DatosGobTerritoryPage {
+    "The number of the page, from 0"
+    page: Int
+    "The number of items on a page"
+    itemsPerPage: Int
+    "The position of the first item of the page in the whole list, from 1"
+    startIndex: Int
+    "The territories"
+    territories: [DatosGobTerritory]
+}
+
+"A province, autonomous community or the country, as the open data standard names it"
+type DatosGobTerritory {
+    "The address of the territory, such as .../territorio/Provincia/Malaga"
+    id: ID
+    "The name of the territory, such as Málaga"
+    label: String
+    "The address of the autonomous community of a province"
+    region: String
+    "The address of the country"
+    country: String
+    "The same territory in DBpedia"
+    sameAs: String
+    "The kinds of resource"
+    types: [String]
+}

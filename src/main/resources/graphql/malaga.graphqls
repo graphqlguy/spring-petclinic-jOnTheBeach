@@ -1,0 +1,134 @@
+# The fields of the open data of the city of Málaga, at datosabiertos.malaga.eu: its parks and beaches for dogs, its
+# drinking fountains and the buses of the EMT, the city buses. These fields are written by hand, see
+# MalagaGraphQLController. The catalogue of every dataset of the city is in malagacatalog.graphqls. Every field that
+# calls the portal may be null, so that an error of the portal leaves the rest of an answer standing.
+
+extend type Query {
+    """
+    The parks and beaches for dogs of the city of Málaga, 22 of them, with their surface, fountain, opening hours
+    and position. Filter by whether they have a fountain, separate zones for small and large dogs, or are a beach.
+    """
+    malagaDogParks(
+        "true for the parks with a drinking fountain, false for the ones without"
+        hasFountain: Boolean
+        "true for the parks with separate zones for small and large dogs"
+        twoZones: Boolean
+        "true for the beaches for dogs, false for the parks"
+        beach: Boolean
+    ): [MalagaDogPark!]
+
+    """
+    The parks and beaches for dogs of the city of Málaga nearest to a point, nearest first, with the distance to
+    each. Owner.nearestDogParks does the same from an owner's home.
+    """
+    malagaDogParksNear(
+        "The latitude of the point, such as 36.7188 for Calle Larios in the centre of Málaga"
+        latitude: Float!
+        "The longitude of the point, such as -4.4217"
+        longitude: Float!
+        "How many parks to return, from 1 to 20"
+        first: Int! = 3
+    ): [MalagaDogPark!]
+
+    """
+    The public drinking fountains of the city of Málaga nearest to a point, nearest first, with the distance to
+    each. Useful for a walk with a dog on a hot day.
+    """
+    malagaDrinkingFountainsNear(
+        "The latitude of the point"
+        latitude: Float!
+        "The longitude of the point"
+        longitude: Float!
+        "How many fountains to return, from 1 to 20"
+        first: Int! = 5
+    ): [MalagaDrinkingFountain!]
+
+    """
+    Where each bus of the EMT, the city buses of Málaga, is now, as the buses last reported. Give a line for its buses
+    alone.
+    """
+    malagaBuses(
+        "Only the buses of this line, such as 1 or C1"
+        line: String
+    ): [MalagaBus!]
+}
+
+extend type Owner {
+    """
+    The parks and beaches for dogs of the city of Málaga nearest to the owner's home, nearest first, with the distance
+    to each. The city lists its own parks alone, so owners in other towns get an empty list. For an owner known by name, select it through owners(filter: {lastName: ...}) { content { ... } }, which
+    works without the owner's id.
+    """
+    nearestDogParks(
+        "How many parks to return, from 1 to 20"
+        first: Int! = 3
+    ): [MalagaDogPark!]
+
+    """
+    The public drinking fountains of the city of Málaga nearest to the owner's home, nearest first. Owners in other
+    towns get an empty list. For an owner known by name, select it through owners(filter: {lastName: ...}) { content { ... } }, which
+    works without the owner's id.
+    """
+    nearestDrinkingFountains(
+        "How many fountains to return, from 1 to 20"
+        first: Int! = 3
+    ): [MalagaDrinkingFountain!]
+}
+
+"A park or beach for dogs of the city of Málaga"
+type MalagaDogPark {
+    "The id of the park in the city's register"
+    id: ID!
+    "The name, such as Parque canino San Miguel or Playa canina Arroyo Totalán"
+    name: String!
+    "The address, in capitals, such as CALLE ALBÉNIZ, 43"
+    address: String
+    "Whether it is a beach for dogs, where dogs may swim"
+    beach: Boolean!
+    "The surface, in square metres, or null when the city has not measured it"
+    surfaceSquareMetres: Int
+    "Whether it has a drinking fountain"
+    hasFountain: Boolean
+    "Whether it has separate zones for small and large dogs"
+    twoZones: Boolean
+    "The opening hours in summer and winter, in Spanish, or null when the city has not given them"
+    openingHours: String
+    "Whether it is adapted to people with reduced mobility"
+    accessible: Boolean
+    "The latitude"
+    latitude: Float!
+    "The longitude"
+    longitude: Float!
+    "How far it is from the point of the search or the owner's home, in metres, in a straight line. Null in a plain list."
+    distanceInMetres: Int
+}
+
+"A public drinking fountain of the city of Málaga"
+type MalagaDrinkingFountain {
+    "The name the city gives it, usually the street or park it stands in, such as Guerrero Strachan"
+    name: String
+    "The latitude"
+    latitude: Float!
+    "The longitude"
+    longitude: Float!
+    "How far it is from the point of the search or the owner's home, in metres, in a straight line"
+    distanceInMetres: Int
+}
+
+"A bus of the EMT, the city buses of Málaga, where it was at its last report"
+type MalagaBus {
+    "The number of the bus"
+    busId: ID!
+    "The line it runs, such as 1, 75 or C1"
+    line: String!
+    "1 for the outbound trip, 2 for the return"
+    direction: Int
+    "The code of the stop it last left"
+    lastStopId: String
+    "When the bus last reported, in the local time of Málaga, written as 2026-10-23 00:55:08"
+    updatedAt: String
+    "The latitude"
+    latitude: Float!
+    "The longitude"
+    longitude: Float!
+}
