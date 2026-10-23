@@ -1,0 +1,21 @@
+[{"Id":280, "FK_Publicacion":29, "Nombre":"Official population figures from the Municipal Register at 1 January (RD figures) 2011", "Fecha":1301382000000, "FK_Periodo":28, "Anyo":2011}
+,{"Id":621, "FK_Publicacion":29, "Nombre":"Official population figures from the Municipal Register at 1 January (RD figures) 2011", "Fecha":1325145600000, "FK_Periodo":28, "Anyo":2011}
+,{"Id":1232, "FK_Publicacion":29, "Nombre":"Official population figures from the Municipal Register at 1 January (RD figures) 2012", "Fecha":1357120800000, "FK_Periodo":28, "Anyo":2012}
+,{"Id":1785, "FK_Publicacion":29, "Nombre":"Official population figures from the Municipal Register at 1 January (RD figures) 2013", "Fecha":1388397600000, "FK_Periodo":28, "Anyo":2013}
+,{"Id":2054, "FK_Publicacion":29, "Nombre":"Official population figures from the Municipal Register at 1 January (RD figures) 2014", "Fecha":1419242400000, "FK_Periodo":28, "Anyo":2014}
+,{"Id":2449, "FK_Publicacion":29, "Nombre":"Official population figures from the Municipal Register at 1 January (RD figures) 2013", "Fecha":1417428000000, "FK_Periodo":28, "Anyo":2013}
+,{"Id":3045, "FK_Publicacion":29, "Nombre":"Official population figures from the Municipal Register at 1 January (RD figures) 2015", "Fecha":1450342800000, "FK_Periodo":28, "Anyo":2015}
+,{"Id":3809, "FK_Publicacion":29, "Nombre":"Official population figures from the Municipal Register at 1 January (RD figures) 01/01/2016", "Fecha":1482141600000, "FK_Periodo":28, "Anyo":2016}
+,{"Id":4113, "FK_Publicacion":29, "Nombre":"Official population figures from the Municipal Register at 1 January (RD figures) 01/01/2017", "Fecha":1514541600000, "FK_Periodo":28, "Anyo":2017}
+,{"Id":4412, "FK_Publicacion":29, "Nombre":"Official population figures from the Municipal Register at 1 January (RD figures) 1998", "Fecha":1522659600000, "FK_Periodo":28, "Anyo":1998}
+,{"Id":4443, "FK_Publicacion":29, "Nombre":"Official population figures from the Municipal Register at 1 January (RD figures) 2010", "Fecha":1523955600000, "FK_Periodo":28, "Anyo":2010}
+,{"Id":6646, "FK_Publicacion":29, "Nombre":"Official population figures from the Municipal Register at 1 January (RD figures) 01/01/2018", "Fecha":1546423200000, "FK_Periodo":28, "Anyo":2018}
+,{"Id":7979, "FK_Publicacion":29, "Nombre":"Official population figures from the Municipal Register at 1 January (RD figures) 2019", "Fecha":1577440800000, "FK_Periodo":28, "Anyo":2019}
+,{"Id":8276, "FK_Publicacion":29, "Nombre":"Official population figures from the Municipal Register at 1 January (RD figures) 2020", "Fecha":1609322400000, "FK_Periodo":28, "Anyo":2020}
+,{"Id":9286, "FK_Publicacion":29, "Nombre":"Official population figures from the Municipal Register at 1 January (RD figures) 2021", "Fecha":1640253600000, "FK_Periodo":28, "Anyo":2021}
+,{"Id":9442, "FK_Publicacion":29, "Nombre":"Official population figures from the Municipal Register at 1 January (RD figures) 2022", "Fecha":1671616800000, "FK_Periodo":28, "Anyo":2022}
+,{"Id":10681, "FK_Publicacion":29, "Nombre":"Official population figures from the Municipal Register at 1 January (RD figures) 2023", "Fecha":1703584800000, "FK_Periodo":28, "Anyo":2023}
+,{"Id":10688, "FK_Publicacion":29, "Nombre":"Official population figures from the Municipal Register at 1 January (RD figures) 01/01/2024", "Fecha":1734084000000, "FK_Periodo":28, "Anyo":2024}
+,{"Id":11746, "FK_Publicacion":29, "Nombre":"Official population figures from the Municipal Register at 1 January (RD figures) 2025-01-01", "Fecha":1765447200000, "FK_Periodo":28, "Anyo":2025}
+,{"Id":12389, "FK_Publicacion":29, "Nombre":"Official population figures from the Municipal Register at 1 January (RD figures) 2026", "LiteralFecha":"Depende de BOE", "FK_Periodo":28, "Anyo":2026}
+]

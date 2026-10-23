@@ -1,0 +1,467 @@
+[{"Id":1, "Nombre":"Hotel Tourism Short-Term Trends (HOS/HPI/ADR/REVPAR) ", "FK_Periodicidad":1, "FK_PubFechaAct":12674}
+,{"Id":2, "Nombre":"Non-hotel Tourist Accommodation Occupancy Survey (TAOS) ", "FK_Periodicidad":1, "FK_PubFechaAct":12687}
+,{"Id":3, "Nombre":"Mortgages ", "FK_Periodicidad":1, "FK_PubFechaAct":12681}
+,{"Id":4, "Nombre":"Services Sector Activity Indicators ", "FK_Periodicidad":1, "FK_PubFechaAct":12696}
+,{"Id":5, "Nombre":"Retail Trade Indices ", "FK_Periodicidad":1, "FK_PubFechaAct":12682}
+,{"Id":6, "Nombre":"Industrial Turnover Index  ", "FK_Periodicidad":1, "FK_PubFechaAct":12697}
+,{"Id":7, "Nombre":"Industrial New Orders Received Index  ", "FK_Periodicidad":1, "FK_PubFechaAct":8079}
+,{"Id":8, "Nombre":"Consumer Price Index  ", "FK_Periodicidad":1, "FK_PubFechaAct":12694}
+,{"Id":9, "Nombre":"Harmonized Consumer Price Indices", "FK_Periodicidad":1, "FK_PubFechaAct":12695}
+,{"Id":10, "Nombre":"Industrial Production Index ", "FK_Periodicidad":1, "FK_PubFechaAct":12690}
+,{"Id":11, "Nombre":"Industrial Price Index ", "FK_Periodicidad":1, "FK_PubFechaAct":12677}
+,{"Id":12, "Nombre":"Export (IPRIX) and Import (IPRIM) Price Indices of Industrial Products", "FK_Periodicidad":1, "FK_PubFechaAct":12686}
+,{"Id":13, "Nombre":"Passenger Transport Statistic", "FK_Periodicidad":1, "FK_PubFechaAct":1691}
+,{"Id":14, "Nombre":"Quarterly Spanish National Accounts ", "FK_Periodicidad":3, "FK_PubFechaAct":12680}
+,{"Id":15, "Nombre":"Economically Active Population Survey ", "FK_Periodicidad":3, "FK_PubFechaAct":1512}
+,{"Id":18, "Nombre":"COD", "FK_Periodicidad":1, "FK_PubFechaAct":601}
+,{"Id":19, "Nombre":"Foreign Trade in Services Indices ", "FK_Periodicidad":3, "FK_PubFechaAct":2204}
+,{"Id":20, "Nombre":"Services Sector Price Index ", "FK_Periodicidad":3, "FK_PubFechaAct":12667}
+,{"Id":21, "Nombre":"Housing Price Index ", "FK_Periodicidad":3, "FK_PubFechaAct":12660}
+,{"Id":22, "Nombre":"Unpaid Bills of Exchange ", "FK_Periodicidad":1, "FK_PubFechaAct":2764}
+,{"Id":24, "Nombre":"Mercantile Companies ", "FK_Periodicidad":1, "FK_PubFechaAct":12692}
+,{"Id":25, "Nombre":"Z_Advance of quarterly GDP ", "FK_Periodicidad":3, "FK_PubFechaAct":2187}
+,{"Id":26, "Nombre":"Quarterly Non-Financial Accounts for the Institutional Sectors ", "FK_Periodicidad":3, "FK_PubFechaAct":12685}
+,{"Id":27, "Nombre":"Harmonised Labour Cost Index ", "FK_Periodicidad":3, "FK_PubFechaAct":12661}
+,{"Id":28, "Nombre":"Statistics on Transfer of Property Rights ", "FK_Periodicidad":1, "FK_PubFechaAct":12679}
+,{"Id":29, "Nombre":"Official population figures from the Municipal Register at 1 January (RD figures)  ", "FK_Periodicidad":12, "FK_PubFechaAct":11746}
+,{"Id":30, "Nombre":"Central Business Directory  ", "FK_Periodicidad":12, "FK_PubFechaAct":12897}
+,{"Id":31, "Nombre":"Population and Housing Census  ", "FK_Periodicidad":12, "FK_PubFechaAct":13020}
+,{"Id":32, "Nombre":"Economically Active Population Survey. Annual average of the four quarters  ", "FK_Periodicidad":12, "FK_PubFechaAct":1787}
+,{"Id":33, "Nombre":"Economically Active Population Survey ", "FK_Periodicidad":6, "FK_PubFechaAct":1833}
+,{"Id":38, "Nombre":"Basic Demographic Indicators ", "FK_Periodicidad":12, "FK_PubFechaAct":12919}
+,{"Id":39, "Nombre":"Basic Demographic Indicators ", "FK_Periodicidad":1, "FK_PubFechaAct":1185}
+,{"Id":40, "Nombre":"Consumer Price Index. Annual averages ", "FK_Periodicidad":12, "FK_PubFechaAct":12964}
+,{"Id":46, "Nombre":"Annual Industrial Price Index  ", "FK_Periodicidad":12, "FK_PubFechaAct":311}
+,{"Id":47, "Nombre":"Annual Industrial Production Index  ", "FK_Periodicidad":12, "FK_PubFechaAct":316}
+,{"Id":48, "Nombre":"Housing Price Index. Weightings", "FK_Periodicidad":12, "FK_PubFechaAct":13048}
+,{"Id":49, "Nombre":"Housing Price Index. Annual averages ", "FK_Periodicidad":12, "FK_PubFechaAct":13049}
+,{"Id":50, "Nombre":"Retail Trade Indices. Quarterly ", "FK_Periodicidad":3, "FK_PubFechaAct":1361}
+,{"Id":53, "Nombre":"Industrial New Orders Received Index. Weightings", "FK_Periodicidad":12, "FK_PubFechaAct":4418}
+,{"Id":55, "Nombre":"Industrial Turnover Index. Weightings", "FK_Periodicidad":12, "FK_PubFechaAct":10805}
+,{"Id":57, "Nombre":"Industrial Companies Survey  ", "FK_Periodicidad":12, "FK_PubFechaAct":13055}
+,{"Id":58, "Nombre":"Short-term retail trade survey. Monthly  ", "FK_Periodicidad":1, "FK_PubFechaAct":350}
+,{"Id":59, "Nombre":"Short-term retail trade survey. Quarterly ", "FK_Periodicidad":3, "FK_PubFechaAct":351}
+,{"Id":60, "Nombre":"Long-Term Population Projections  ", "FK_Periodicidad":12, "FK_PubFechaAct":4396}
+,{"Id":61, "Nombre":"Business Confidence Index  ", "FK_Periodicidad":3, "FK_PubFechaAct":12698}
+,{"Id":63, "Nombre":"Survey on Production Methods in Agricultural Operations  ", "FK_Periodicidad":12, "FK_PubFechaAct":609}
+,{"Id":64, "Nombre":"List of place name: Population of the Continuous Municipal Register by Population Unit", "FK_Periodicidad":12, "Url":"https://www.ine.es/dyngs/INEbase/operacion.htm?c=Estadistica_C&cid=1254736177010&idp=1254735572981", "FK_PubFechaAct":12356}
+,{"Id":65, "Nombre":"Continuous Register Statistics  ", "FK_Periodicidad":12, "FK_PubFechaAct":9596}
+,{"Id":66, "Nombre":"Life Tables ", "FK_Periodicidad":12, "FK_PubFechaAct":11743}
+,{"Id":67, "Nombre":"List of municipalities, provinces, Autonomous Communities and their codes", "FK_Periodicidad":12, "FK_PubFechaAct":12357}
+,{"Id":68, "Nombre":"Annual Trade Survey ", "FK_Periodicidad":12, "FK_PubFechaAct":13057}
+,{"Id":71, "Nombre":"Growth and structure Indicators  ", "FK_Periodicidad":12, "FK_PubFechaAct":12915}
+,{"Id":72, "Nombre":"Publication of CPI link coefficients", "FK_Periodicidad":12, "FK_PubFechaAct":null}
+,{"Id":74, "Nombre":"Death statistics according to cause of death  ", "FK_Periodicidad":12, "FK_PubFechaAct":12377}
+,{"Id":75, "Nombre":"Book Publishing Activity Statistic  ", "FK_Periodicidad":12, "FK_PubFechaAct":8904}
+,{"Id":76, "Nombre":"Statistical use of the register of Spaniards resident abroad  ", "FK_Periodicidad":12, "FK_PubFechaAct":12313}
+,{"Id":77, "Nombre":"Statistics on Biotechnology Use ", "FK_Periodicidad":12, "FK_PubFechaAct":12314}
+,{"Id":78, "Nombre":"High Technology Indicators ", "FK_Periodicidad":12, "FK_PubFechaAct":12322}
+,{"Id":79, "Nombre":"Most frequent first names ", "FK_Periodicidad":12, "FK_PubFechaAct":12359}
+,{"Id":80, "Nombre":"Most frequent surnames  ", "FK_Periodicidad":12, "FK_PubFechaAct":13051}
+,{"Id":81, "Nombre":"University Education Statistics ", "FK_Periodicidad":12, "FK_PubFechaAct":641}
+,{"Id":82, "Nombre":"Spanish Regional Accounts. Base 2008 ", "FK_Periodicidad":12, "FK_PubFechaAct":1797}
+,{"Id":84, "Nombre":"Annual Services Survey ", "FK_Periodicidad":12, "FK_PubFechaAct":13058}
+,{"Id":85, "Nombre":"Statistics on Products in the Services Sector ", "FK_Periodicidad":12, "FK_PubFechaAct":12318}
+,{"Id":87, "Nombre":"Four-yearly Wage Structure Survey ", "FK_Periodicidad":105, "FK_PubFechaAct":11890}
+,{"Id":88, "Nombre":"Annual Industrial Products Survey ", "FK_Periodicidad":12, "FK_PubFechaAct":13775}
+,{"Id":90, "Nombre":"Registered Health Professionals Statistic", "FK_Periodicidad":12, "FK_PubFechaAct":12371}
+,{"Id":91, "Nombre":"Magistrates Court Statistics ", "FK_Periodicidad":12, "FK_PubFechaAct":6711}
+,{"Id":92, "Nombre":"ICT Sector Indicators", "FK_Periodicidad":12, "FK_PubFechaAct":12323}
+,{"Id":93, "Nombre":"Residenctial Variation Statistics ", "FK_Periodicidad":12, "FK_PubFechaAct":9429}
+,{"Id":94, "Nombre":"Survey on the Use of Information and Communication Technologies and Electronic Commerce in Companies  ", "FK_Periodicidad":12, "FK_PubFechaAct":12326}
+,{"Id":95, "Nombre":"Statistics on Lawsuits in Urban Leases", "FK_Periodicidad":12, "FK_PubFechaAct":8726}
+,{"Id":96, "Nombre":"Module on the Economically Active Population Survey (Employment of persons with disabilities)  ", "FK_Periodicidad":12, "FK_PubFechaAct":656}
+,{"Id":97, "Nombre":"Survey on water use in the agrarian sector", "FK_Periodicidad":12, "FK_PubFechaAct":8132}
+,{"Id":98, "Nombre":"Short-term projections of the population", "FK_Periodicidad":12, "FK_PubFechaAct":1417}
+,{"Id":100, "Nombre":"Survey on Industry Expenditure on Environmental Protection ", "FK_Periodicidad":12, "FK_PubFechaAct":12335}
+,{"Id":101, "Nombre":"Private Education Financing and Expenditure Statistic ", "FK_Periodicidad":12, "FK_PubFechaAct":9557}
+,{"Id":103, "Nombre":"Spanish National Accounts  ", "FK_Periodicidad":12, "FK_PubFechaAct":4563}
+,{"Id":104, "Nombre":"Statistics on the generation of waste", "FK_Periodicidad":12, "FK_PubFechaAct":11792}
+,{"Id":105, "Nombre":"Agrarian Census", "FK_Periodicidad":12, "FK_PubFechaAct":9271}
+,{"Id":106, "Nombre":"Statistics on Annulments, Separations and Divorces ", "FK_Periodicidad":12, "FK_PubFechaAct":13766}
+,{"Id":107, "Nombre":"The foreign affiliate trade statistics of Spanish companies abroad (Outward FATS)", "FK_Periodicidad":12, "FK_PubFechaAct":12325}
+,{"Id":108, "Nombre":"Statistics on the Adult Convicted Population", "FK_Periodicidad":12, "FK_PubFechaAct":12375}
+,{"Id":109, "Nombre":"Statistics on the Convicted Minor Population", "FK_Periodicidad":12, "FK_PubFechaAct":12376}
+,{"Id":110, "Nombre":"Inward FATS ", "FK_Periodicidad":12, "FK_PubFechaAct":12324}
+,{"Id":112, "Nombre":"Statistics on Products in the Trade Sector ", "FK_Periodicidad":12, "FK_PubFechaAct":12317}
+,{"Id":113, "Nombre":"Continuous Household Survey", "FK_Periodicidad":12, "FK_PubFechaAct":8645}
+,{"Id":114, "Nombre":"Demographic Information Database (in project phase)  ", "FK_Periodicidad":100, "FK_PubFechaAct":null}
+,{"Id":115, "Nombre":"Household Projection  ", "FK_Periodicidad":12, "FK_PubFechaAct":12366}
+,{"Id":116, "Nombre":"Migration Statistics", "FK_Periodicidad":12, "FK_PubFechaAct":10065}
+,{"Id":117, "Nombre":"Population Figures", "FK_Periodicidad":6, "FK_PubFechaAct":9547}
+,{"Id":118, "Nombre":"Organisation (normalisation of standard definitions)  ", "FK_Periodicidad":100, "FK_PubFechaAct":null}
+,{"Id":119, "Nombre":"Spanish Tourism Satellite Account (STSA) ", "FK_Periodicidad":12, "FK_PubFechaAct":null}
+,{"Id":120, "Nombre":"Spanish National Accounts. Base 2000 ", "FK_Periodicidad":100, "FK_PubFechaAct":null}
+,{"Id":121, "Nombre":"Spanish Regional Accounts. Base 2000 ", "FK_Periodicidad":12, "FK_PubFechaAct":1247}
+,{"Id":123, "Nombre":"Satellite Accounts for Cooperatives and Mutuals ", "FK_Periodicidad":100, "FK_PubFechaAct":null}
+,{"Id":124, "Nombre":"Spanish National Accounts. Base 2008. Origin and Destination Tables.  ", "FK_Periodicidad":12, "FK_PubFechaAct":1347}
+,{"Id":127, "Nombre":"Spanish Tourism Satellite Account. Base 2008 ", "FK_Periodicidad":12, "FK_PubFechaAct":1784}
+,{"Id":129, "Nombre":"Statistical Register of Agrarian Operations ", "FK_Periodicidad":100, "FK_PubFechaAct":null}
+,{"Id":131, "Nombre":"Survey on the Structure of Agricultural Operations  ", "FK_Periodicidad":12, "FK_PubFechaAct":12024}
+,{"Id":133, "Nombre":"Register of Possible Research Companies and Public Research Institutions  ", "FK_Periodicidad":100, "FK_PubFechaAct":null}
+,{"Id":135, "Nombre":"Statistics on R&D Activities in the Public Administration Sector ", "FK_Periodicidad":12, "FK_PubFechaAct":12891}
+,{"Id":136, "Nombre":"Statistics on R&D Activities in the Private Institution Sector", "FK_Periodicidad":12, "FK_PubFechaAct":12893}
+,{"Id":137, "Nombre":"Statistics on R&D Activities in the Higher Education Sector ", "FK_Periodicidad":12, "FK_PubFechaAct":12892}
+,{"Id":138, "Nombre":"Technological Innovation in Companies Survey ", "FK_Periodicidad":12, "FK_PubFechaAct":11795}
+,{"Id":140, "Nombre":"Intermediate Consumption and Investment  ", "FK_Periodicidad":100, "FK_PubFechaAct":null}
+,{"Id":141, "Nombre":"Globalisation Indicators (in project phase) ", "FK_Periodicidad":100, "FK_PubFechaAct":null}
+,{"Id":142, "Nombre":"System for the Collection of Economic Information on the Environment  ", "FK_Periodicidad":100, "FK_PubFechaAct":null}
+,{"Id":143, "Nombre":"Environmental Statistics on Water ", "FK_Periodicidad":100, "FK_PubFechaAct":null}
+,{"Id":145, "Nombre":"Energy Consumption Survey ", "FK_Periodicidad":12, "FK_PubFechaAct":12315}
+,{"Id":146, "Nombre":"Environmental Accounts  ", "FK_Periodicidad":100, "FK_PubFechaAct":null}
+,{"Id":147, "Nombre":"Sustainable Development Indicators ", "FK_Periodicidad":100, "FK_PubFechaAct":null}
+,{"Id":148, "Nombre":"Agri-environmental indicators (in project phase) ", "FK_Periodicidad":100, "FK_PubFechaAct":null}
+,{"Id":151, "Nombre":"Taxi Statistics  ", "FK_Periodicidad":12, "FK_PubFechaAct":6826}
+,{"Id":152, "Nombre":"Private Education Financing and Expenditure  ", "FK_Periodicidad":12, "FK_PubFechaAct":661}
+,{"Id":153, "Nombre":"Labour Cost Survey ", "FK_Periodicidad":100, "FK_PubFechaAct":null}
+,{"Id":158, "Nombre":"Research on Private Accommodation for Tourist Use (in project phase) ", "FK_Periodicidad":100, "FK_PubFechaAct":null}
+,{"Id":160, "Nombre":"Purchasing Power Parities Survey (PPP) ", "FK_Periodicidad":100, "FK_PubFechaAct":null}
+,{"Id":161, "Nombre":"Labour Price Index", "FK_Periodicidad":12, "FK_PubFechaAct":12349}
+,{"Id":162, "Nombre":"Annual Labour Cost Survey ", "FK_Periodicidad":12, "FK_PubFechaAct":12351}
+,{"Id":163, "Nombre":"Annual Wage Structure Survey ", "FK_Periodicidad":12, "FK_PubFechaAct":12348}
+,{"Id":165, "Nombre":"Employment of Persons with Disabilities  ", "FK_Periodicidad":12, "Url":"https://www.ine.es/dyngs/INEbase/operacion.htm?c=Estadistica_C&cid=1254736055502&idp=1254735976621", "FK_PubFechaAct":11756}
+,{"Id":169, "Nombre":"University Entrance Exams ", "FK_Periodicidad":12, "FK_PubFechaAct":948}
+,{"Id":170, "Nombre":"Hospital Morbidity Survey ", "FK_Periodicidad":12, "FK_PubFechaAct":12367}
+,{"Id":172, "Nombre":"Disability, Independence and Dependency Situations Survey  ", "FK_Periodicidad":100, "FK_PubFechaAct":12996}
+,{"Id":173, "Nombre":"Social Indicators ", "FK_Periodicidad":100, "FK_PubFechaAct":null}
+,{"Id":174, "Nombre":"Time Use Survey  ", "FK_Periodicidad":12, "FK_PubFechaAct":6647}
+,{"Id":175, "Nombre":"Survey on Equipment and Use of Information and Communication Technologies (ICT) in Households \r\n", "FK_Periodicidad":12, "FK_PubFechaAct":11770}
+,{"Id":176, "Nombre":"Survey on the Transition from Education/Training to Labour Market Insertion ", "FK_Periodicidad":12, "FK_PubFechaAct":8222}
+,{"Id":178, "Nombre":"Survey on Homeless Persons (SHP)  ", "FK_Periodicidad":12, "FK_PubFechaAct":9519}
+,{"Id":179, "Nombre":"Women and Men in Spain ", "FK_Periodicidad":12, "FK_PubFechaAct":8102}
+,{"Id":181, "Nombre":"Survey on Household Expenditure on Education  ", "FK_Periodicidad":12, "FK_PubFechaAct":11802}
+,{"Id":185, "Nombre":"Development of Model-based Estimators ", "FK_Periodicidad":100, "FK_PubFechaAct":null}
+,{"Id":186, "Nombre":"Activity Rate Projections  ", "FK_Periodicidad":12, "FK_PubFechaAct":3226}
+,{"Id":187, "Nombre":"Rail Transport Statistics ", "FK_Periodicidad":3, "FK_PubFechaAct":12657}
+,{"Id":189, "Nombre":"Survey on Human Resources in Science and Technology ", "FK_Periodicidad":12, "FK_PubFechaAct":null}
+,{"Id":190, "Nombre":"Inventory in Hotel Establishments (in project phase)", "FK_Periodicidad":100, "FK_PubFechaAct":null}
+,{"Id":194, "Nombre":"Survey on Access by Companies to Finance ", "FK_Periodicidad":12, "FK_PubFechaAct":null}
+,{"Id":195, "Nombre":"Building Censuses  ", "FK_Periodicidad":12, "FK_PubFechaAct":1335}
+,{"Id":199, "Nombre":"List of Population Units for Specified Populations  ", "FK_Periodicidad":100, "FK_PubFechaAct":null}
+,{"Id":200, "Nombre":"Intercensal estimates of population", "FK_Periodicidad":12, "FK_PubFechaAct":1326}
+,{"Id":201, "Nombre":"Longitudinal Demographic Study (LDS) ", "FK_Periodicidad":100, "FK_PubFechaAct":null}
+,{"Id":202, "Nombre":"Monthly Short-Term Demographic Estimates ", "FK_Periodicidad":100, "FK_PubFechaAct":null}
+,{"Id":203, "Nombre":"Flows of Residence Permits for Foreign Nationals (in project phase)  ", "FK_Periodicidad":100, "FK_PubFechaAct":null}
+,{"Id":205, "Nombre":"Survey on the Resident Population and Foreign Migration (SRPFM) ", "FK_Periodicidad":100, "FK_PubFechaAct":null}
+,{"Id":206, "Nombre":"Socio-demographic and Generation Survey (ESOGE) (in project phase) ", "FK_Periodicidad":100, "FK_PubFechaAct":null}
+,{"Id":208, "Nombre":"Community Labour Force Survey (CLFS) ", "FK_Periodicidad":100, "FK_PubFechaAct":null}
+,{"Id":210, "Nombre":"Migration Survey  ", "FK_Periodicidad":100, "FK_PubFechaAct":null}
+,{"Id":211, "Nombre":"National Immigrant Survey ", "FK_Periodicidad":100, "FK_PubFechaAct":null}
+,{"Id":212, "Nombre":"European Security Survey (in project phase) ", "FK_Periodicidad":100, "FK_PubFechaAct":null}
+,{"Id":218, "Nombre":"Survey on Homeless Persons (Centres) ", "FK_Periodicidad":12, "FK_PubFechaAct":946}
+,{"Id":219, "Nombre":"Survey on Households and the Environment  ", "FK_Periodicidad":100, "FK_PubFechaAct":null}
+,{"Id":220, "Nombre":"Statistical Geographical Information System ", "FK_Periodicidad":100, "FK_PubFechaAct":null}
+,{"Id":221, "Nombre":"Datawarehouse System for the Demographic Information System  ", "FK_Periodicidad":100, "FK_PubFechaAct":null}
+,{"Id":222, "Nombre":"Statistical Yearbook of Spain ", "FK_Periodicidad":100, "FK_PubFechaAct":null}
+,{"Id":223, "Nombre":"Spain in Figures ", "FK_Periodicidad":100, "FK_PubFechaAct":null}
+,{"Id":224, "Nombre":"Monthly Statistical Bulletin ", "FK_Periodicidad":100, "FK_PubFechaAct":null}
+,{"Id":225, "Nombre":"TEMPUS 2 Database  ", "FK_Periodicidad":100, "FK_PubFechaAct":null}
+,{"Id":226, "Nombre":"INEbase Database  ", "FK_Periodicidad":100, "FK_PubFechaAct":null}
+,{"Id":227, "Nombre":"Historical Censuses ", "FK_Periodicidad":100, "FK_PubFechaAct":null}
+,{"Id":228, "Nombre":"Assisted and Automatic Encoding and Preparation of Computer Applications", "FK_Periodicidad":100, "FK_PubFechaAct":null}
+,{"Id":229, "Nombre":"Adaptation of International Classifications to National Reality ", "FK_Periodicidad":100, "FK_PubFechaAct":null}
+,{"Id":230, "Nombre":"European Health Survey ", "FK_Periodicidad":12, "FK_PubFechaAct":8647}
+,{"Id":232, "Nombre":"Survey on the Labour Insertion of University Graduates  ", "FK_Periodicidad":12, "FK_PubFechaAct":8185}
+,{"Id":233, "Nombre":"Social Integration and Health Survey (SSIH)  ", "FK_Periodicidad":12, "FK_PubFechaAct":1436}
+,{"Id":234, "Nombre":"National Health Survey (NHS)  ", "FK_Periodicidad":12, "FK_PubFechaAct":4464}
+,{"Id":235, "Nombre":"Labour and Geographical Mobility Statistics", "FK_Periodicidad":12, "FK_PubFechaAct":10159}
+,{"Id":236, "Nombre":"Fictitious to be consulted", "FK_Periodicidad":12, "FK_PubFechaAct":8077}
+,{"Id":237, "Nombre":"Living Quality Indicators", "FK_Periodicidad":12, "Url":"https://www.ine.es/dynt3/ICV/index.html", "FK_PubFechaAct":13023}
+,{"Id":239, "Nombre":"Material flow accounts  ", "FK_Periodicidad":12, "FK_PubFechaAct":681}
+,{"Id":265, "Nombre":"Survey on Adult Population Involvement in Learning Activities ", "FK_Periodicidad":12, "FK_PubFechaAct":10201}
+,{"Id":266, "Nombre":"Economically Active Population Survey (Employment wage decile)  ", "FK_Periodicidad":12, "FK_PubFechaAct":1416}
+,{"Id":267, "Nombre":"Statistics on R&D Activities", "FK_Periodicidad":12, "FK_PubFechaAct":11790}
+,{"Id":268, "Nombre":"Harmonised Demographics of Companies  ", "FK_Periodicidad":12, "FK_PubFechaAct":11789}
+,{"Id":272, "Nombre":"Bankruptcy Proceedings Statistics. Annual", "FK_Periodicidad":12, "FK_PubFechaAct":8796}
+,{"Id":273, "Nombre":"Consumer Price Index Constant Taxes  ", "FK_Periodicidad":1, "FK_PubFechaAct":3836}
+,{"Id":274, "Nombre":"De facto populations from 1900 to 1991  ", "FK_Periodicidad":12, "FK_PubFechaAct":933}
+,{"Id":275, "Nombre":"DPOD division publication  ", "FK_Periodicidad":12, "FK_PubFechaAct":934}
+,{"Id":280, "Nombre":"Air Emissions Satellite Account. Base 2010 ", "FK_Periodicidad":12, "FK_PubFechaAct":957}
+,{"Id":281, "Nombre":"Environmental Taxes  ", "FK_Periodicidad":12, "FK_PubFechaAct":null}
+,{"Id":283, "Nombre":"Living Conditions Survey. Intergenerational transmission of poverty and welfare", "FK_Periodicidad":12, "FK_PubFechaAct":951}
+,{"Id":284, "Nombre":"Quarterly Spanish National Accounts. Base 1995 ", "FK_Periodicidad":3, "FK_PubFechaAct":953}
+,{"Id":287, "Nombre":"Bankruptcy Proceedings Statistics ", "FK_Periodicidad":3, "FK_PubFechaAct":8769}
+,{"Id":288, "Nombre":"Spanish National Accounts. Base 2008. Accounts charts  ", "FK_Periodicidad":12, "FK_PubFechaAct":1447}
+,{"Id":289, "Nombre":"Mortgages ", "FK_Periodicidad":12, "FK_PubFechaAct":12845}
+,{"Id":292, "Nombre":"Passenger Transport. Former", "FK_Periodicidad":1, "FK_PubFechaAct":1237}
+,{"Id":293, "Nombre":"Economically Active Population Survey (Subsample variables)  ", "FK_Periodicidad":12, "FK_PubFechaAct":1328}
+,{"Id":297, "Nombre":"Mercantile Companies ", "FK_Periodicidad":12, "FK_PubFechaAct":13732}
+,{"Id":298, "Nombre":"Statistics on Transfer of Property Rights ", "FK_Periodicidad":12, "FK_PubFechaAct":12841}
+,{"Id":299, "Nombre":"Unpaid Bills of Exchange Statistics. Annual", "FK_Periodicidad":12, "FK_PubFechaAct":3114}
+,{"Id":300, "Nombre":"Industrial Price Index. Annual Averages ", "FK_Periodicidad":12, "FK_PubFechaAct":12971}
+,{"Id":301, "Nombre":"Export (IPRIX) and Import (IPRIM) Price Indices of Industrial Products. Annual averages ", "FK_Periodicidad":12, "FK_PubFechaAct":12981}
+,{"Id":306, "Nombre":"Industrial Price Index. Weightings  ", "FK_Periodicidad":12, "FK_PubFechaAct":13001}
+,{"Id":307, "Nombre":"Export (IPRIX) and Import (IPRIM) Price Indices of Industrial Products. Weightings  ", "FK_Periodicidad":12, "FK_PubFechaAct":13002}
+,{"Id":308, "Nombre":"CPI weightings  ", "FK_Periodicidad":12, "FK_PubFechaAct":3110}
+,{"Id":309, "Nombre":"Passenger Transport Statistics (City and inter-city)  ", "FK_Periodicidad":12, "FK_PubFechaAct":1306}
+,{"Id":310, "Nombre":"Services Sector Activity Indicators. Weightings  ", "FK_Periodicidad":12, "FK_PubFechaAct":13041}
+,{"Id":311, "Nombre":"Population and Housing Censuses 2011. Population resident in group establishments  ", "FK_Periodicidad":12, "FK_PubFechaAct":1327}
+,{"Id":312, "Nombre":"Statistics on Domestic and Gender Violence ", "FK_Periodicidad":12, "FK_PubFechaAct":12372}
+,{"Id":313, "Nombre":"Retail Trade Indices. Weightings", "FK_Periodicidad":12, "FK_PubFechaAct":12515}
+,{"Id":315, "Nombre":"Wages of Persons with Disabilities", "FK_Periodicidad":12, "Url":"https://www.ine.es/dyngs/INEbase/operacion.htm?c=Estadistica_C&cid=1254736176911&idp=1254735976621", "FK_PubFechaAct":12353}
+,{"Id":316, "Nombre":"Module on Economically Active Population Survey. (Transition from working life to retirement)", "FK_Periodicidad":12, "FK_PubFechaAct":1357}
+,{"Id":317, "Nombre":"Industrial Production Index. Weightings", "FK_Periodicidad":12, "FK_PubFechaAct":10806}
+,{"Id":318, "Nombre":"Survey of shelters and care services for homeless people and people in housing exclusion", "FK_Periodicidad":14, "FK_PubFechaAct":12873}
+,{"Id":319, "Nombre":"Services Sector Price Index. Annual averages", "FK_Periodicidad":12, "FK_PubFechaAct":12850}
+,{"Id":324, "Nombre":"Spanish National Accounts. Base 2008. 2000-2012 Series. Main results", "FK_Periodicidad":12, "FK_PubFechaAct":1389}
+,{"Id":325, "Nombre":"Spanish Regional Accounts. Household final consumption expenditure", "FK_Periodicidad":12, "FK_PubFechaAct":12301}
+,{"Id":326, "Nombre":"Consumption indicators for VATs territorial distribution", "FK_Periodicidad":12, "Url":"https://www.ine.es/dyngs/INEbase/operacion.htm?c=Estadistica_C&cid=1254736167628&idp=1254735576581", "FK_PubFechaAct":12302}
+,{"Id":327, "Nombre":"Annual data (Bank of Spain)", "FK_Periodicidad":12, "FK_PubFechaAct":1400}
+,{"Id":328, "Nombre":"Quarterly data (Bank of Spain)", "FK_Periodicidad":3, "FK_PubFechaAct":2545}
+,{"Id":329, "Nombre":"Monthly data (Bank of Spain)", "FK_Periodicidad":1, "FK_PubFechaAct":1402}
+,{"Id":330, "Nombre":"Economically Active Population Survey", "FK_Periodicidad":3, "FK_PubFechaAct":12622}
+,{"Id":336, "Nombre":"Economically Active Population Survey. ", "FK_Periodicidad":6, "FK_PubFechaAct":4513}
+,{"Id":337, "Nombre":"Environmental accounts. Atmospheric emissions accounts", "FK_Periodicidad":12, "FK_PubFechaAct":12328}
+,{"Id":338, "Nombre":"Environmental accounts. Environmental Tax Account", "FK_Periodicidad":12, "FK_PubFechaAct":11788}
+,{"Id":339, "Nombre":"Environmental accounts. Material Flow Account", "FK_Periodicidad":12, "FK_PubFechaAct":13046}
+,{"Id":340, "Nombre":"Statistics on the collection and treatment of waste", "FK_Periodicidad":12, "FK_PubFechaAct":11791}
+,{"Id":341, "Nombre":"Economically Active Population Survey.  Annual average for the four quarters.", "FK_Periodicidad":12, "FK_PubFechaAct":13037}
+,{"Id":342, "Nombre":"Statistics on water supply and sewerage", "FK_Periodicidad":12, "FK_PubFechaAct":12804}
+,{"Id":343, "Nombre":"Libraries Statistics", "FK_Periodicidad":12, "FK_PubFechaAct":6873}
+,{"Id":344, "Nombre":"Living Conditions Survey", "FK_Periodicidad":12, "FK_PubFechaAct":13809}
+,{"Id":345, "Nombre":"Foreclosure Statistics", "FK_Periodicidad":3, "FK_PubFechaAct":12669}
+,{"Id":346, "Nombre":"Business Turnover Index", "FK_Periodicidad":1, "FK_PubFechaAct":12701}
+,{"Id":347, "Nombre":"Economically Active Population Survey. Subsample Variables.", "FK_Periodicidad":12, "FK_PubFechaAct":12347}
+,{"Id":348, "Nombre":"Economically Active Population Survey. Wage decile of the main job", "FK_Periodicidad":12, "Url":"https://ine.es/dyngs/INEbase/es/operacion.htm?c=Estadistica_C&cid=1254736176918&menu=resultados&idp=1254735976595#!tabs-1254736195128", "FK_PubFechaAct":11755}
+,{"Id":349, "Nombre":"Migration Indicators", "FK_Periodicidad":12, "FK_PubFechaAct":12914}
+,{"Id":350, "Nombre":"Living Conditions Survey. Module on housing conditions", "FK_Periodicidad":12, "FK_PubFechaAct":1768}
+,{"Id":351, "Nombre":"Satellite accounts water", "FK_Periodicidad":12, "FK_PubFechaAct":6645}
+,{"Id":352, "Nombre":"Survey on the use of water in the manufacturing industry sector", "FK_Periodicidad":12, "FK_PubFechaAct":1793}
+,{"Id":353, "Nombre":"Weights HICP", "FK_Periodicidad":12, "FK_PubFechaAct":13005}
+,{"Id":354, "Nombre":"Business Confidence Index: Module of Opinion over the economic business and.", "FK_Periodicidad":12, "FK_PubFechaAct":8031}
+,{"Id":355, "Nombre":"Passenger Transport Statistics", "FK_Periodicidad":1, "FK_PubFechaAct":12691}
+,{"Id":356, "Nombre":"Passenger Transport Statistics (Urban and interurban)", "FK_Periodicidad":12, "FK_PubFechaAct":1972}
+,{"Id":357, "Nombre":"Working Time Survey", "FK_Periodicidad":12, "FK_PubFechaAct":1844}
+,{"Id":358, "Nombre":"Wage Survey for Industry and Services", "FK_Periodicidad":3, "FK_PubFechaAct":1845}
+,{"Id":359, "Nombre":"Business Turnover Index. Weights", "FK_Periodicidad":12, "FK_PubFechaAct":13043}
+,{"Id":360, "Nombre":"Quarterly Labour Cost Survey", "FK_Periodicidad":3, "FK_PubFechaAct":12670}
+,{"Id":363, "Nombre":"Population and housing censuses. Related population", "FK_Periodicidad":12, "FK_PubFechaAct":1920}
+,{"Id":364, "Nombre":"Vital Statistics ", "FK_Periodicidad":1, "FK_PubFechaAct":12866}
+,{"Id":365, "Nombre":"Vital Statistics (Marriages, Births and Deaths) ", "FK_Periodicidad":12, "FK_PubFechaAct":13729}
+,{"Id":370, "Nombre":"Rebasing population EAPS. Series ", "FK_Periodicidad":12, "FK_PubFechaAct":null}
+,{"Id":372, "Nombre":"Rebasing population EAPS. Series ", "FK_Periodicidad":12, "FK_PubFechaAct":1993}
+,{"Id":373, "Nombre":"Harmonised labour cost index. Weights", "FK_Periodicidad":12, "FK_PubFechaAct":13012}
+,{"Id":374, "Nombre":"Economically Active Population Survey Modules. Population base 2001", "FK_Periodicidad":12, "FK_PubFechaAct":12350}
+,{"Id":377, "Nombre":"Death statistics according to cause of death", "FK_Periodicidad":1, "FK_PubFechaAct":12902}
+,{"Id":381, "Nombre":"Household Budget Survey ", "FK_Periodicidad":12, "FK_PubFechaAct":12373}
+,{"Id":382, "Nombre":"Half-yearly data (Bank of Spain)", "FK_Periodicidad":6, "FK_PubFechaAct":2053}
+,{"Id":383, "Nombre":"Spanish National Accounts. Base 2010. Main results", "FK_Periodicidad":12, "FK_PubFechaAct":4495}
+,{"Id":386, "Nombre":"National Tourism Survey", "FK_Periodicidad":1, "FK_PubFechaAct":null}
+,{"Id":388, "Nombre":"Material Price Indices and National Labour Force Indices", "FK_Periodicidad":1, "FK_PubFechaAct":13799}
+,{"Id":398, "Nombre":"Wages of Persons with Disabilities", "FK_Periodicidad":105, "FK_PubFechaAct":2078}
+,{"Id":399, "Nombre":"Statistics on the Flows of the Economically Active Population", "FK_Periodicidad":3, "FK_PubFechaAct":12621}
+,{"Id":400, "Nombre":"Population Projections", "FK_Periodicidad":12, "FK_PubFechaAct":12365}
+,{"Id":401, "Nombre":"Press releases Demography", "FK_Periodicidad":100, "FK_PubFechaAct":2147}
+,{"Id":402, "Nombre":"Spanish National Accounts. Base 2010. Accounts charts", "FK_Periodicidad":12, "FK_PubFechaAct":2146}
+,{"Id":403, "Nombre":"Regional Accounting of Spain", "FK_Periodicidad":12, "FK_PubFechaAct":12312}
+,{"Id":404, "Nombre":"Review of Statistics on R&D activities", "FK_Periodicidad":12, "FK_PubFechaAct":2148}
+,{"Id":405, "Nombre":"Urban Audit", "FK_Periodicidad":12, "Url":"https://www.ine.es/dyngs/INEbase/es/operacion.htm?c=Estadistica_C&cid=1254736176957&idp=1254735976608", "FK_PubFechaAct":12370}
+,{"Id":406, "Nombre":"The Foreign Trade in Services Survey", "FK_Periodicidad":3, "FK_PubFechaAct":10135}
+,{"Id":407, "Nombre":"Tourist Movement on Borders", "FK_Periodicidad":1, "FK_PubFechaAct":12689}
+,{"Id":408, "Nombre":"Tourist Expenditure Survey", "FK_Periodicidad":1, "FK_PubFechaAct":12688}
+,{"Id":409, "Nombre":"National Tourism Survey", "FK_Periodicidad":3, "FK_PubFechaAct":null}
+,{"Id":410, "Nombre":"Unpaid Bills of Exchange. Quarterly", "FK_Periodicidad":3, "FK_PubFechaAct":2762}
+,{"Id":411, "Nombre":"Annual data (GSAI)", "FK_Periodicidad":12, "FK_PubFechaAct":2485}
+,{"Id":412, "Nombre":"Monthly data (GSAI)", "FK_Periodicidad":1, "FK_PubFechaAct":2486}
+,{"Id":413, "Nombre":"Monthly data (AEAT)", "FK_Periodicidad":1, "FK_PubFechaAct":2487}
+,{"Id":414, "Nombre":"Survey on International Mobility of Students", "FK_Periodicidad":12, "FK_PubFechaAct":2502}
+,{"Id":415, "Nombre":"Foreclosure Statistics. Annual", "FK_Periodicidad":12, "FK_PubFechaAct":12843}
+,{"Id":416, "Nombre":"Quarterly data (GSAI)", "FK_Periodicidad":3, "FK_PubFechaAct":2543}
+,{"Id":417, "Nombre":"Competitiveness Guarantee Index", "FK_Periodicidad":1, "FK_PubFechaAct":12699}
+,{"Id":418, "Nombre":"Linking Coefficients IMM", "FK_Periodicidad":1, "FK_PubFechaAct":2560}
+,{"Id":420, "Nombre":"Living Conditions Survey Modules. 2013 Base", "FK_Periodicidad":12, "FK_PubFechaAct":12369}
+,{"Id":424, "Nombre":"Spanish National Accounts 2010 Base Origin and Destination Tables", "FK_Periodicidad":12, "FK_PubFechaAct":4527}
+,{"Id":427, "Nombre":"Men and Women in Spain. Employment", "FK_Periodicidad":12, "FK_PubFechaAct":13711}
+,{"Id":429, "Nombre":"Economically Active Population Survey Modules. Population base 2001", "FK_Periodicidad":12, "FK_PubFechaAct":2603}
+,{"Id":443, "Nombre":"Residents Travel Survey. Monthly", "FK_Periodicidad":1, "FK_PubFechaAct":13713}
+,{"Id":444, "Nombre":"Services Foreign Trade Survey", "FK_Periodicidad":12, "FK_PubFechaAct":10167}
+,{"Id":445, "Nombre":"Residents Travel Survey", "FK_Periodicidad":3, "FK_PubFechaAct":12678}
+,{"Id":447, "Nombre":"Annual non-financial accounts for the Institutional Sectors.", "FK_Periodicidad":12, "FK_PubFechaAct":12306}
+,{"Id":448, "Nombre":"Tourist movements by Spaniards", "FK_Periodicidad":1, "FK_PubFechaAct":2691}
+,{"Id":449, "Nombre":"Tourist movements by Spaniards", "FK_Periodicidad":12, "FK_PubFechaAct":2692}
+,{"Id":450, "Nombre":"Stock and Supply Short-term Survey", "FK_Periodicidad":1, "FK_PubFechaAct":13008}
+,{"Id":451, "Nombre":"Short-Term Survey on Stocks and Inventories. Weightings", "FK_Periodicidad":12, "FK_PubFechaAct":12659}
+,{"Id":452, "Nombre":"Men and Women in Spain. Wages", "FK_Periodicidad":12, "FK_PubFechaAct":13070}
+,{"Id":453, "Nombre":"Women and Men in Spain. Education", "FK_Periodicidad":12, "FK_PubFechaAct":12864}
+,{"Id":454, "Nombre":"Women and Men in Spain. Science", "FK_Periodicidad":12, "FK_PubFechaAct":11936}
+,{"Id":455, "Nombre":"Women and Men in Spain. Violence", "FK_Periodicidad":12, "FK_PubFechaAct":12989}
+,{"Id":456, "Nombre":"Women and Men in Spain. Power", "FK_Periodicidad":12, "FK_PubFechaAct":12988}
+,{"Id":457, "Nombre":"Men and women in Spain. Time use", "FK_Periodicidad":12, "FK_PubFechaAct":2712}
+,{"Id":458, "Nombre":"Men and women in Spain. Health", "FK_Periodicidad":12, "FK_PubFechaAct":2713}
+,{"Id":459, "Nombre":"Statistics on Acquisition of Spanish Citizenship (ANES)", "FK_Periodicidad":12, "FK_PubFechaAct":13725}
+,{"Id":460, "Nombre":"Spanish National Accounts. Base 2010. Detailed Results ", "FK_Periodicidad":12, "FK_PubFechaAct":6799}
+,{"Id":461, "Nombre":"Tourism Satellite Account of Spain. Base 2010", "FK_Periodicidad":12, "FK_PubFechaAct":11794}
+,{"Id":462, "Nombre":"Residents Travel Survey. Annual results", "FK_Periodicidad":12, "FK_PubFechaAct":13744}
+,{"Id":468, "Nombre":"Most frequent names of newborns", "FK_Periodicidad":12, "FK_PubFechaAct":3239}
+,{"Id":469, "Nombre":"Short-Term Stock and Inventory Survey", "FK_Periodicidad":3, "FK_PubFechaAct":12658}
+,{"Id":470, "Nombre":"CPI weightings", "FK_Periodicidad":12, "FK_PubFechaAct":12990}
+,{"Id":471, "Nombre":"Tourist movements on borders", "FK_Periodicidad":12, "FK_PubFechaAct":13000}
+,{"Id":472, "Nombre":"Tourist Expenditure Survey", "FK_Periodicidad":12, "FK_PubFechaAct":13777}
+,{"Id":479, "Nombre":"Migration Statistics", "FK_Periodicidad":6, "FK_PubFechaAct":9551}
+,{"Id":480, "Nombre":"Rail Transport Statistics. Annual", "FK_Periodicidad":12, "FK_PubFechaAct":13797}
+,{"Id":481, "Nombre":"DIS", "FK_Periodicidad":12, "FK_PubFechaAct":8226}
+,{"Id":483, "Nombre":"Population figures", "FK_Periodicidad":12, "FK_PubFechaAct":3993}
+,{"Id":484, "Nombre":"Environmental accounts: Environmental protection expenditure account", "FK_Periodicidad":12, "FK_PubFechaAct":11798}
+,{"Id":485, "Nombre":"Environmental accounts: Physical energy flow accounts", "FK_Periodicidad":12, "FK_PubFechaAct":11787}
+,{"Id":486, "Nombre":"Harmonised Consumer Price Indexes. Annual averages", "FK_Periodicidad":12, "FK_PubFechaAct":13004}
+,{"Id":489, "Nombre":"Fertility Survey", "FK_Periodicidad":12, "FK_PubFechaAct":12384}
+,{"Id":490, "Nombre":"Environmental accounts: assets and environmental services", "FK_Periodicidad":12, "FK_PubFechaAct":11796}
+,{"Id":492, "Nombre":"Indicators of the 2030 Agenda for Sustainable Development (INE)", "FK_Periodicidad":12, "FK_PubFechaAct":12916}
+,{"Id":493, "Nombre":"Annual National Accounts of Spain: main aggregates", "FK_Periodicidad":12, "Url":"https://ine.es/dyngs/INEbase/es/operacion.htm?c=Estadistica_C&cid=1254736177057&idp=1254735576581", "FK_PubFechaAct":12305}
+,{"Id":494, "Nombre":"Annual National Accounts of Spain: aggregated by branch of industry", "FK_Periodicidad":12, "FK_PubFechaAct":12304}
+,{"Id":496, "Nombre":"Annual National Accounts of Spain: tables of Origin and Destination", "FK_Periodicidad":12, "FK_PubFechaAct":12307}
+,{"Id":497, "Nombre":"Annual National Accounts of Spain: tables Input-Output", "FK_Periodicidad":12, "FK_PubFechaAct":11732}
+,{"Id":498, "Nombre":"SDG: Publication of FNMT [Spanish Mint]", "FK_Periodicidad":12, "FK_PubFechaAct":6736}
+,{"Id":506, "Nombre":"SDG: Publication of the MAPA mapping service", "FK_Periodicidad":12, "FK_PubFechaAct":6763}
+,{"Id":507, "Nombre":"Household income distribution atlas", "FK_Periodicidad":12, "Url":"https://www.ine.es/dyngs/INEbase/es/operacion.htm?c=Estadistica_C&cid=1254736177088&idp=1254735976608", "FK_PubFechaAct":12378}
+,{"Id":508, "Nombre":"SDG: Publication of MTFP [Ministry of the Digital Transformation and Public Function]", "FK_Periodicidad":12, "FK_PubFechaAct":6798}
+,{"Id":510, "Nombre":"SDG: Bank of Spain", "FK_Periodicidad":12, "FK_PubFechaAct":6810}
+,{"Id":511, "Nombre":"SDG: Publication of MSCB [Ministry of Health, Consumer Affairs and Welfare]", "FK_Periodicidad":12, "FK_PubFechaAct":6818}
+,{"Id":512, "Nombre":"Environmental Accounts: Waste Account", "FK_Periodicidad":12, "FK_PubFechaAct":11785}
+,{"Id":513, "Nombre":"SDG: Publication of MITECO [Ministry of the Environmental Transition and Demographic Challenge]", "FK_Periodicidad":12, "FK_PubFechaAct":6840}
+,{"Id":514, "Nombre":"SDG: Publication of MINT [Spanish Home Office]", "FK_Periodicidad":12, "FK_PubFechaAct":6841}
+,{"Id":515, "Nombre":"(68008) Statistical Yearbook of the Ministry of the Interior", "FK_Periodicidad":12, "FK_PubFechaAct":6842}
+,{"Id":516, "Nombre":"(70048) Traffic Accidents with Victims Statistics", "FK_Periodicidad":12, "FK_PubFechaAct":6843}
+,{"Id":517, "Nombre":"(68025) Statistics of the Integral Monitoring System in Gender Violence Cases (GV system or VIOGEN)", "FK_Periodicidad":12, "FK_PubFechaAct":6844}
+,{"Id":518, "Nombre":"(68020) General Statistics on the Inmate Population. Monthly Periodicity", "FK_Periodicidad":12, "FK_PubFechaAct":6845}
+,{"Id":519, "Nombre":"(31127) Accounts of General Government", "FK_Periodicidad":12, "FK_PubFechaAct":6846}
+,{"Id":520, "Nombre":"(31125) Statistics on the Settlement of State Budgets and of its Public Bodies, Companies and Foundations", "FK_Periodicidad":12, "FK_PubFechaAct":6847}
+,{"Id":521, "Nombre":"(65007) Violence against Women Macro-Survey", "FK_Periodicidad":12, "FK_PubFechaAct":6848}
+,{"Id":522, "Nombre":"(68001) Security Statistics: Police Actions", "FK_Periodicidad":12, "FK_PubFechaAct":6876}
+,{"Id":523, "Nombre":"(23033) Wild Species Diversity Statistics", "FK_Periodicidad":12, "FK_PubFechaAct":6878}
+,{"Id":524, "Nombre":"(01142) Catch Statistics and Sea Fishing Landings", "FK_Periodicidad":12, "FK_PubFechaAct":7994}
+,{"Id":525, "Nombre":"(01049) Red Contable Agraria Nacional [National Network of Farm Accounts] (RECAN)", "FK_Periodicidad":12, "FK_PubFechaAct":7995}
+,{"Id":526, "Nombre":"(04001) National Forest Inventory", "FK_Periodicidad":12, "FK_PubFechaAct":7996}
+,{"Id":527, "Nombre":"(23030) Statistics on Sustainable Forest Management", "FK_Periodicidad":12, "FK_PubFechaAct":7997}
+,{"Id":528, "Nombre":"(32063) Statistics on Personal Income Tax Filers", "FK_Periodicidad":12, "FK_PubFechaAct":7998}
+,{"Id":529, "Nombre":"(32068) Statistics on Income from Economic Activities", "FK_Periodicidad":12, "FK_PubFechaAct":7999}
+,{"Id":530, "Nombre":"(41001) Non-University Education Statistics (Centres, Enrolment, Graduates and Personal)", "FK_Periodicidad":12, "FK_PubFechaAct":8005}
+,{"Id":531, "Nombre":"(42184) International Adult Competency Assessment Programme (PIAAC Programme for the International Assessment of Adult Competences of the OECD)", "FK_Periodicidad":107, "FK_PubFechaAct":8006}
+,{"Id":532, "Nombre":"(41022) Information Society Statistics and Communication in Non-University Educational Institutions", "FK_Periodicidad":12, "FK_PubFechaAct":8007}
+,{"Id":533, "Nombre":"(37142) Balance of Payments and International Investment Position", "FK_Periodicidad":12, "FK_PubFechaAct":8008}
+,{"Id":534, "Nombre":"(37145) Financial Skills Survey (HBS [Household Budget Survey])", "FK_Periodicidad":12, "FK_PubFechaAct":8009}
+,{"Id":535, "Nombre":"SDG - Environmental Accounts: Atmospheric Emissions Account (30084)", "FK_Periodicidad":12, "FK_PubFechaAct":8010}
+,{"Id":536, "Nombre":"(85004) Official Development Assistance Statistics (ODA) of Spain", "FK_Periodicidad":12, "FK_PubFechaAct":8023}
+,{"Id":538, "Nombre":"(01165) Ecological Production Statistics", "FK_Periodicidad":12, "FK_PubFechaAct":8034}
+,{"Id":539, "Nombre":"Monthly Cube", "FK_Periodicidad":1, "FK_PubFechaAct":9387}
+,{"Id":542, "Nombre":"Experimental: COVID-19 mobility", "FK_Periodicidad":30, "FK_PubFechaAct":9374}
+,{"Id":543, "Nombre":"Publication for non-PEN operations. Annual", "FK_Periodicidad":12, "FK_PubFechaAct":8126}
+,{"Id":544, "Nombre":"Estimated number of weekly deaths", "FK_Periodicidad":7, "Url":"https://www.ine.es/dyngs/INEbase/es/operacion.htm?c=Estadistica_C&cid=1254736177074&idp=1254735573002", "FK_PubFechaAct":12811}
+,{"Id":545, "Nombre":"Quadrennial Structure of Earnings Survey", "FK_Periodicidad":105, "FK_PubFechaAct":null}
+,{"Id":547, "Nombre":"SDG: Publication of MTMA [Ministry of Transport, Mobility and the Urban Agenda]", "FK_Periodicidad":12, "FK_PubFechaAct":8152}
+,{"Id":548, "Nombre":"Experimental: Retail Trade Daily Index", "FK_Periodicidad":30, "FK_PubFechaAct":12938}
+,{"Id":551, "Nombre":"(21021) Monitoring of the State of Surface Waters", "FK_Periodicidad":12, "FK_PubFechaAct":8234}
+,{"Id":552, "Nombre":"Disability Statistics and Labour Market: Working Life", "FK_Periodicidad":12, "Url":"https://www.ine.es/dyngs/INEbase/operacion.htm?c=Estadistica_C&cid=1254736177069&idp=1254735976621", "FK_PubFechaAct":12352}
+,{"Id":553, "Nombre":"(23042) Inventory of Air Pollutant Emissions", "FK_Periodicidad":12, "FK_PubFechaAct":8237}
+,{"Id":554, "Nombre":"(23031) Natural Areas or of Interest. Annual.", "FK_Periodicidad":12, "FK_PubFechaAct":8239}
+,{"Id":555, "Nombre":"Pension Table", "FK_Periodicidad":12, "FK_PubFechaAct":10222}
+,{"Id":556, "Nombre":"Experimental: Tourist dwellings in Spain", "FK_Periodicidad":1, "FK_PubFechaAct":13747}
+,{"Id":557, "Nombre":"(79001) Opinion Barometers", "FK_Periodicidad":12, "FK_PubFechaAct":8270}
+,{"Id":558, "Nombre":"Experimental: Distribution of destination spending by foreign visitors on their visits to Spain", "FK_Periodicidad":12, "FK_PubFechaAct":13032}
+,{"Id":559, "Nombre":"Experimental: Distribution of destination spending by foreign visitors on their visits to Spain", "FK_Periodicidad":3, "FK_PubFechaAct":13752}
+,{"Id":560, "Nombre":"(54063) Statistics of Mandatory Notifiable Diseases", "FK_Periodicidad":12, "FK_PubFechaAct":8585}
+,{"Id":561, "Nombre":"SDG: Publication of MCUD [Ministry of Culture and Sport]", "FK_Periodicidad":12, "FK_PubFechaAct":8619}
+,{"Id":562, "Nombre":"Monthly Births Estimates", "FK_Periodicidad":1, "Url":"https://www.ine.es/dyngs/INEbase/es/operacion.htm?c=Estadistica_C&cid=1254736177079&idp=1254735573002", "FK_PubFechaAct":12827}
+,{"Id":563, "Nombre":"Experimental: Company Demographic Profile", "FK_Periodicidad":3, "FK_PubFechaAct":13795}
+,{"Id":564, "Nombre":"(32078) Functional Classification of Public Administration Expenditure (FCPAE)", "FK_Periodicidad":12, "FK_PubFechaAct":8670}
+,{"Id":565, "Nombre":"Functional Classification of Public Administration Expenditure (FCPAE)", "FK_Periodicidad":12, "FK_PubFechaAct":8669}
+,{"Id":566, "Nombre":"Quarterly publication for non-PEN operations", "FK_Periodicidad":3, "FK_PubFechaAct":8679}
+,{"Id":568, "Nombre":"Publication of Exploitation of Educational Variables in the Economically Active Population Survey: Education Level and Lifelong Learning", "FK_Periodicidad":12, "FK_PubFechaAct":8713}
+,{"Id":570, "Nombre":"GroupsPeriod - Continuous Register Statistics", "FK_Periodicidad":12, "FK_PubFechaAct":9950}
+,{"Id":571, "Nombre":"Experimental: Occupancy in tourist accommodations. Monthly", "FK_Periodicidad":1, "FK_PubFechaAct":13811}
+,{"Id":572, "Nombre":"Experimental: Occupancy in tourist accommodations. Annual", "FK_Periodicidad":12, "FK_PubFechaAct":13810}
+,{"Id":574, "Nombre":"ODS- Public Debt under the Excessive Deficit Protocol (ANNUAL)", "FK_Periodicidad":12, "FK_PubFechaAct":8795}
+,{"Id":575, "Nombre":"(32075) Non-financial Operations of the General Government Sector and its Subsectors", "FK_Periodicidad":12, "FK_PubFechaAct":8820}
+,{"Id":576, "Nombre":"Hotel Occupancy Survey. Annual", "FK_Periodicidad":12, "FK_PubFechaAct":8854}
+,{"Id":577, "Nombre":"Non-hotel Tourist Accommodation Occupancy Survey. Annual", "FK_Periodicidad":12, "FK_PubFechaAct":9413}
+,{"Id":578, "Nombre":"GroupsPeriod - Annual National Accounts of Spain: aggregated by branch of industry", "FK_Periodicidad":12, "FK_PubFechaAct":10177}
+,{"Id":579, "Nombre":"(68052) Statistics on the Treatment and Exploitation of Human Beings", "FK_Periodicidad":12, "FK_PubFechaAct":null}
+,{"Id":580, "Nombre":"Rental Housing Price Index", "FK_Periodicidad":12, "Url":"https://www.ine.es/experimental/ipva/experimental_precios_vivienda_alquiler.htm", "FK_PubFechaAct":13069}
+,{"Id":581, "Nombre":"Experimental: Multidimensional Quality of Life Indicator", "FK_Periodicidad":12, "FK_PubFechaAct":12875}
+,{"Id":582, "Nombre":"Groups period -  Statistical Analysis of the Central Business Directory", "FK_Periodicidad":12, "FK_PubFechaAct":12888}
+,{"Id":583, "Nombre":"Publication for non-PEN operations. Five-yearly", "FK_Periodicidad":108, "FK_PubFechaAct":9284}
+,{"Id":584, "Nombre":"CALENDAR", "FK_Periodicidad":100, "FK_PubFechaAct":13801}
+,{"Id":585, "Nombre":"Publication for non-PEN operations. Four-yearly Base 2003", "FK_Periodicidad":111, "FK_PubFechaAct":9288}
+,{"Id":586, "Nombre":"Publication for non-PEN operations. Annual yet to be determined", "FK_Periodicidad":107, "FK_PubFechaAct":9289}
+,{"Id":587, "Nombre":"(23031) Natural Areas or of Interest. Triennial.", "FK_Periodicidad":112, "FK_PubFechaAct":9290}
+,{"Id":588, "Nombre":"(41022) Information Society Statistics and Communication in Non-University Educational Institutions. Annual yet to be determined", "FK_Periodicidad":107, "FK_PubFechaAct":9300}
+,{"Id":589, "Nombre":"(65007) Violence against Women Macro-Survey. Annual yet to be determined", "FK_Periodicidad":107, "FK_PubFechaAct":9301}
+,{"Id":590, "Nombre":"National Health Survey. Annual yet to be determined", "FK_Periodicidad":107, "FK_PubFechaAct":10835}
+,{"Id":591, "Nombre":"Survey on the Involvement of the Adult Population in Learning Activities. Annual yet to be determined", "FK_Periodicidad":107, "FK_PubFechaAct":11822}
+,{"Id":592, "Nombre":"(23031) Natural Areas or of Interest. Annual yet to be determined", "FK_Periodicidad":107, "FK_PubFechaAct":9304}
+,{"Id":593, "Nombre":"(23033) Wild Species Diversity Statistics. Annual yet to be determined", "FK_Periodicidad":107, "FK_PubFechaAct":9305}
+,{"Id":594, "Nombre":"(41022) Information Society Statistics and Communication in Non-University Educational Institutions. Odd-year biennial", "FK_Periodicidad":13, "FK_PubFechaAct":9310}
+,{"Id":595, "Nombre":"Measurement of inbound tourism using mobile phone positioning", "FK_Periodicidad":1, "FK_PubFechaAct":12991}
+,{"Id":596, "Nombre":"Measuring the outbound tourism based on the position of mobile phones", "FK_Periodicidad":1, "FK_PubFechaAct":13805}
+,{"Id":597, "Nombre":"Measurement of interprovincial domestic tourism based on mobile phone positioning", "FK_Periodicidad":1, "FK_PubFechaAct":13806}
+,{"Id":598, "Nombre":"(50052) Culture Satellite Account", "FK_Periodicidad":12, "FK_PubFechaAct":9384}
+,{"Id":599, "Nombre":"(50057) Exploitation of the Economically Active Population Survey in the Cultural Sphere, instead of the Satellite Account", "FK_Periodicidad":12, "FK_PubFechaAct":9389}
+,{"Id":602, "Nombre":"(80024) Central Registry of Persons. Statistical Bulletin of the Personnel in the Service of the Public Administrations", "FK_Periodicidad":12, "FK_PubFechaAct":9473}
+,{"Id":603, "Nombre":"(32077) Taxes and Social Security Contributions", "FK_Periodicidad":12, "FK_PubFechaAct":9474}
+,{"Id":604, "Nombre":"Quarterly Accounts Non-Financial Accounts for Institutional Sectors (only for SDG)", "FK_Periodicidad":12, "FK_PubFechaAct":9494}
+,{"Id":605, "Nombre":"Quarterly National Accounts (only for SDG)", "FK_Periodicidad":12, "FK_PubFechaAct":9495}
+,{"Id":607, "Nombre":"(01160) Phytosanitary Products Commercialisation Survey", "FK_Periodicidad":12, "FK_PubFechaAct":9573}
+,{"Id":608, "Nombre":"Survey on Essential Characteristics of Population and housing (ECEPOV)", "FK_Periodicidad":12, "FK_PubFechaAct":9943}
+,{"Id":609, "Nombre":"(43041) Activity of the Consejo Superior de Investigaciones Científicas [High Council of Scientific Research] (MCIN [Ministry of Science, Innovation and Universities])", "FK_Periodicidad":12, "FK_PubFechaAct":9587}
+,{"Id":610, "Nombre":"Continuous Population Statistics", "FK_Periodicidad":3, "FK_PubFechaAct":12632}
+,{"Id":612, "Nombre":"Distribution of spending by residents on their visits abroad by country of destination", "FK_Periodicidad":12, "FK_PubFechaAct":13064}
+,{"Id":613, "Nombre":"Distribution of spending by residents on their visits abroad by country of destination", "FK_Periodicidad":1, "FK_PubFechaAct":13807}
+,{"Id":616, "Nombre":"Indicators of Business Confidence. Energy Opinion Module", "FK_Periodicidad":3, "Url":"https://www.ine.es/dyngs/INEbase/es/operacion.htm?c=Estadistica_C&cid=1254736163552&menu=resultados&idp=1254735576550#!tabs-1254736195794", "FK_PubFechaAct":10042}
+,{"Id":617, "Nombre":"Economically Active Population Survey. Monthly", "FK_Periodicidad":1, "FK_PubFechaAct":10063}
+,{"Id":619, "Nombre":"(01048) Salaries and Monthly National Average Farm Indices and Annual", "FK_Periodicidad":12, "FK_PubFechaAct":10150}
+,{"Id":620, "Nombre":"(01053) Economic Accounts of Agriculture", "FK_Periodicidad":12, "FK_PubFechaAct":10151}
+,{"Id":622, "Nombre":"Migration Statistics and Changes of Residence", "FK_Periodicidad":12, "FK_PubFechaAct":12974}
+,{"Id":626, "Nombre":"Service Sector Production Index", "FK_Periodicidad":1, "Url":"https://ine.es/dyngs/INEbase/es/operacion.htm?c=Estadistica_C&cid=1254736177099&idp=1254735576778", "FK_PubFechaAct":12700}
+,{"Id":627, "Nombre":"Service Sector Production Index. Weightings", "FK_Periodicidad":12, "FK_PubFechaAct":13042}
+,{"Id":629, "Nombre":"International Supply of Services by Modes of Supply", "FK_Periodicidad":12, "FK_PubFechaAct":12345}
+,{"Id":630, "Nombre":"Services Trade by Enterprise Characteristics (STEC)", "FK_Periodicidad":12, "FK_PubFechaAct":12344}
+,{"Id":631, "Nombre":"Groups period -  ECM [Incarceration Statistics for Minors]", "FK_Periodicidad":12, "FK_PubFechaAct":12905}
+,{"Id":632, "Nombre":"Estimated number of monthly deaths", "FK_Periodicidad":1, "FK_PubFechaAct":12819}
+,{"Id":633, "Nombre":"Population census. In detail", "T3_Periodicidad":"Minutely", "FK_PubFechaAct":282}
+,{"Id":634, "Nombre":"Groups period -  Annual census", "FK_Periodicidad":12, "FK_PubFechaAct":13021}
+,{"Id":635, "Nombre":"Groups period. Traveller module", "FK_Periodicidad":12, "FK_PubFechaAct":13745}
+,{"Id":636, "Nombre":"Environmental Scorecard", "FK_Periodicidad":12, "Url":"https://ine.es/dyngs/INEbase/operacion.htm?c=Estadistica_C&cid=1254736177113&idp=1254735976603", "FK_PubFechaAct":13771}
+,{"Id":637, "Nombre":"Service Sector Price Indices. Weightings", "FK_Periodicidad":12, "FK_PubFechaAct":13734}
+,{"Id":638, "Nombre":"Groups Period. VS", "FK_Periodicidad":12, "FK_PubFechaAct":12911}
+,{"Id":640, "Nombre":"Resident Tourism Survey. HVD. Three-Year Periodicity", "FK_Periodicidad":106, "FK_PubFechaAct":11945}
+,{"Id":641, "Nombre":"Publication for non-PEN operations. Biennial", "FK_Periodicidad":14, "FK_PubFechaAct":10891}
+,{"Id":643, "Nombre":"Annual population census.HVD Indicators", "FK_Periodicidad":12, "FK_PubFechaAct":11915}
+,{"Id":644, "Nombre":"Spain Health Survey", "FK_Periodicidad":12, "Url":"https://www.ine.es/dyngs/INEbase/operacion.htm?c=Estadistica_C&cid=1254736177114&idp=1254735573175", "FK_PubFechaAct":12382}
+,{"Id":645, "Nombre":"Source-Destination Table of the digital economy", "FK_Periodicidad":12, "FK_PubFechaAct":null}
+,{"Id":646, "Nombre":"Social Economy Satellite Account", "FK_Periodicidad":12, "FK_PubFechaAct":13026}
+,{"Id":647, "Nombre":"Structural Business Statistics: Construction Sector", "FK_Periodicidad":12, "Url":"https://www.ine.es/dyngs/INEbase/es/operacion.htm?c=Estadistica_C&cid=1254736177121&idp=1254735576550", "FK_PubFechaAct":12342}
+,{"Id":648, "Nombre":"Statistics on Global Value Chains", "FK_Periodicidad":12, "FK_PubFechaAct":11820}
+,{"Id":649, "Nombre":"Quarterly Air Emissions Account", "FK_Periodicidad":3, "FK_PubFechaAct":13778}
+,{"Id":650, "Nombre":"Resident Tourism Survey. HVD. Annual Periodicity", "FK_Periodicidad":12, "FK_PubFechaAct":12920}
+,{"Id":651, "Nombre":"Annual Population Census. Migration, education and relationship with the activity.", "FK_Periodicidad":12, "FK_PubFechaAct":12358}
+,{"Id":652, "Nombre":"Annual Population Census. Employment and activity.", "FK_Periodicidad":12, "FK_PubFechaAct":12889}
+,{"Id":653, "Nombre":"Annual Population Census. Years of arrival and previous residence.", "FK_Periodicidad":12, "FK_PubFechaAct":13800}
+,{"Id":654, "Nombre":"Rental Housing Benchmark Index", "FK_Periodicidad":1, "FK_PubFechaAct":12956}
+,{"Id":655, "Nombre":"Farm Structure Survey: Modules", "FK_Periodicidad":12, "FK_PubFechaAct":11985}
+,{"Id":656, "Nombre":"Tourism Accommodation Occupancy Survey. HVD", "FK_Periodicidad":12, "FK_PubFechaAct":null}
+,{"Id":657, "Nombre":"Dashboard Trade in Value Added", "FK_Periodicidad":12, "Url":"https://www.ine.es/dyngs/INEbase/operacion.htm?c=Estadistica_C&cid=1254736177122&idp=1254735976606", "FK_PubFechaAct":13746}
+,{"Id":658, "Nombre":"Annual population census. SDG", "FK_Periodicidad":12, "FK_PubFechaAct":12022}
+,{"Id":660, "Nombre":"Activity-Related Statistics from Administrative Data.Monthly", "FK_Periodicidad":1, "FK_PubFechaAct":null}
+,{"Id":661, "Nombre":"Activity-Related Statistics from Administrative Data.Weekly", "FK_Periodicidad":8, "FK_PubFechaAct":null}
+,{"Id":662, "Nombre":"Experimental: Enterprise multi-location viewer (VIME [Enterprise Multi-location Viewer])", "FK_Periodicidad":12, "Url":"https://www.ine.es/experimental/VIME/experimental_visualizador_empresarial.htm", "FK_PubFechaAct":12998}
+,{"Id":663, "Nombre":"Environmental Accounts: Environmental Grants Account and Other Similar Transfers", "FK_Periodicidad":12, "Url":"https://www.ine.es/dyngs/INEbase/es/operacion.htm?c=Estadistica_C&cid=1254736177118&idp=1254735976603", "FK_PubFechaAct":12878}
+,{"Id":664, "Nombre":"Construction Production Index", "FK_Periodicidad":1, "Url":"https://www.ine.es/dyngs/INEbase/es/operacion.htm?c=Estadistica_C&cid=1254736177119&idp=1254735576757", "FK_PubFechaAct":12693}
+,{"Id":666, "Nombre":"Survey on homeless care facilities. Annual yet to be determined", "FK_Periodicidad":107, "FK_PubFechaAct":12857}
+,{"Id":667, "Nombre":"Annual Population Census. Civil status", "FK_Periodicidad":12, "FK_PubFechaAct":13047}
+,{"Id":668, "Nombre":"Statistics on Global Value Chains", "FK_Periodicidad":106, "FK_PubFechaAct":12876}
+,{"Id":669, "Nombre":"(20061)  Permanent Survey on the Transport of Goods by Road", "FK_Periodicidad":12, "FK_PubFechaAct":12880}
+,{"Id":671, "Nombre":"Encuesta de condiciones de Vida. Módulo de Salud", "FK_Periodicidad":113, "FK_PubFechaAct":12987}
+,{"Id":672, "Nombre":"Procesos Electorales", "FK_Periodicidad":100, "FK_PubFechaAct":13754}
+,{"Id":673, "Nombre":"Índice de Producción de la Construcción. Ponderaciones", "FK_Periodicidad":12, "FK_PubFechaAct":13030}
+,{"Id":674, "Nombre":"Life Conditions Survey. Housing access difficulties", "FK_Periodicidad":12, "FK_PubFechaAct":13019}
+,{"Id":675, "Nombre":"Continuous Population Statistics. Yearly", "FK_Periodicidad":12, "FK_PubFechaAct":13044}
+,{"Id":676, "Nombre":"Experimental: Estimador Adelantado de la Encuesta de Turismo de Residentes", "FK_Periodicidad":1, "Url":"https://ine.es/experimental/etr/experimental_etr.htm", "FK_PubFechaAct":13717}
+,{"Id":677, "Nombre":"Electoral register figures", "FK_Periodicidad":1, "FK_PubFechaAct":13763}
+,{"Id":678, "Nombre":"Encuesta de Inclusión Financiera", "FK_Periodicidad":107, "FK_PubFechaAct":null}
+,{"Id":679, "Nombre":"Censo de viviendas", "FK_Periodicidad":107, "FK_PubFechaAct":null}
+,{"Id":680, "Nombre":"Estadística sobre Relación con la Actividad a partir de Datos Administrativos.Trimestral", "FK_Periodicidad":3, "FK_PubFechaAct":null}
+,{"Id":681, "Nombre":"Estadística Integrada Sobre Turismo Receptor (FRONTUR-EGATUR)", "FK_Periodicidad":1, "FK_PubFechaAct":null}
+,{"Id":682, "Nombre":"Estadística Integrada Sobre Turismo Receptor (FRONTUR-EGATUR)", "FK_Periodicidad":12, "FK_PubFechaAct":null}
+,{"Id":683, "Nombre":"Contabilidad nacional anual de España: agregados por rama de actividad. Balances no financieros por rama de actividad", "FK_Periodicidad":12, "FK_PubFechaAct":null}
+,{"Id":684, "Nombre":"Cifras de electores. Publicación mensual", "FK_Periodicidad":1, "FK_PubFechaAct":null}
+]

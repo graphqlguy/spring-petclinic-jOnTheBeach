@@ -1,0 +1,77 @@
+{
+    "type":"Feature",
+    "properties":{
+        "n_andenes":null,
+        "id_estfc":290670000002,
+        "stationcode":"02005",
+        "fecha_alta":"2018-02-18T00:00:00",
+        "formofnode":"http://inspire.ec.europa.eu/codelist/FormOfRailwayNodeValue/railwayStop",
+        "nil_nombre":null,
+        "nil_varios":true,
+        "nilreason_n_andenes":"unknown",
+        "nombre":"Estaci\u00f3n de Los Prados-A. V.",
+        "use":"passengers",
+        "nilreason_nombre":null,
+        "nilreason_varios":"other:unpopulated",
+        "nil_n_andenes":true
+    },
+    "id":"FCEST_N290670000002",
+    "geometry":{
+        "type":"Point",
+        "coordinates":[
+            -4.476931080300104,
+            36.69827141675802,
+            14.830000000001746
+        ]
+    },
+    "prev":"FCEST_N290630000009",
+    "next":"FCEST_N290670000003",
+    "links":[
+        {
+            "type":"application/json",
+            "rel":"root",
+            "title":"The landing page of this server as JSON",
+            "href":"https://api-features.idee.es?f=json"
+        },
+        {
+            "type":"text/html",
+            "rel":"root",
+            "title":"The landing page of this server as HTML",
+            "href":"https://api-features.idee.es?f=html"
+        },
+        {
+            "rel":"self",
+            "type":"application/geo+json",
+            "title":"This document as JSON",
+            "href":"https://api-features.idee.es/collections/railwaystationnode/items/FCEST_N290670000002?f=json"
+        },
+        {
+            "rel":"alternate",
+            "type":"application/ld+json",
+            "title":"This document as RDF (JSON-LD)",
+            "href":"https://api-features.idee.es/collections/railwaystationnode/items/FCEST_N290670000002?f=jsonld"
+        },
+        {
+            "rel":"alternate",
+            "type":"text/html",
+            "title":"This document as HTML",
+            "href":"https://api-features.idee.es/collections/railwaystationnode/items/FCEST_N290670000002?f=html"
+        },
+        {
+            "rel":"collection",
+            "type":"application/json",
+            "title":"TN-RA Nodo de estaci\u00f3n ferroviaria",
+            "href":"https://api-features.idee.es/collections/railwaystationnode"
+        },
+        {
+            "rel":"prev",
+            "type":"application/json",
+            "href":"https://api-features.idee.es/collections/railwaystationnode/items/FCEST_N290630000009?f=json"
+        },
+        {
+            "rel":"next",
+            "type":"application/json",
+            "href":"https://api-features.idee.es/collections/railwaystationnode/items/FCEST_N290670000003?f=json"
+        }
+    ]
+}

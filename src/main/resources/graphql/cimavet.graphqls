@@ -1,0 +1,588 @@
+# The fields of CIMAVet, the register of veterinary medicines of the Spanish Agency of Medicines and Medical Devices
+# (AEMPS), at cimavet.aemps.es. A generator wrote them, their types and src/main/resources/cimavet/operations.json from
+# answers recorded from the service, and the names and descriptions are written by hand in English. Each field is
+# fetched by a RestOperationFetcher, see CimaVetConfiguration.
+
+extend type Query {
+    # CIMAVet lists every veterinary medicine authorized in Spain: what it contains, which species it treats, what it is
+    # indicated for, and whether it is on the market. The service answers in Spanish, so names of medicines, active
+    # ingredients and species are Spanish words, such as MELOXICAM, Perros (dogs) or Gatos (cats).
+
+    """
+    Veterinary medicines authorized in Spain, 25 to a page, filtered by name, active ingredient, species, ATC code,
+    laboratory, or whether they are on the market or are antibiotics. Give at least one filter. For example,
+    activeIngredient MELOXICAM with speciesId -29 lists the meloxicam medicines for dogs. cimaVetMedicine gives
+    everything about one of them.
+    """
+    cimaVetMedicines(
+        """
+        Only the medicines whose name contains this text, in upper or lower case, such as APOQUEL. The names say which
+        species they are for, such as PARA PERROS (for dogs) or PARA GATOS (for cats).
+        """
+        name: String
+        "Only the medicines with this active ingredient, in Spanish, such as MELOXICAM or AMOXICILINA"
+        activeIngredient: String
+        """
+        Only the medicines for this species, by the id cimaVetSpecies gives. The negative ids group the animals of a
+        species: -29 for dogs (Perros), -14 for cats (Gatos).
+        """
+        speciesId: Int
+        """
+        Only the medicines in this ATC veterinary group or below it, such as QP52 for anthelmintics (worm treatments).
+        cimaVetAtcCodes lists the codes.
+        """
+        atcCode: String
+        "Only the medicines of a laboratory whose name contains this text"
+        laboratory: String
+        "true for the medicines on the market, false for the others"
+        marketed: Boolean
+        "true for antibiotics, false for the other medicines"
+        antibiotic: Boolean
+        "The page to return. Pages count from 0, and each one holds 25 results."
+        page: Int! = 0
+    ): CimaVetMedicinePage
+
+    """
+    Everything the register holds about one veterinary medicine: its active ingredients and their amounts, the species
+    it treats, its indications, contraindications, interactions and adverse reactions for each species, its withdrawal
+    periods, its packs and its documents. Null when no medicine has the registration number.
+    """
+    cimaVetMedicine(
+        "The registration number of the medicine, such as 4317 ESP or EU040 CP. cimaVetMedicines gives it."
+        registrationNumber: String!
+    ): CimaVetMedicine
+
+    """
+    The packs of veterinary medicines, 25 to a page, such as a box of 10 tablets, each with its national code. Give the
+    registration number of a medicine for its packs.
+    """
+    cimaVetPresentations(
+        "The registration number of the medicine, such as 4317 ESP"
+        registrationNumber: String
+        "The national code of one pack, such as 591246"
+        nationalCode: String
+        "The page to return. Pages count from 0, and each one holds 25 results."
+        page: Int! = 0
+    ): CimaVetPresentationPage
+
+    """
+    One pack of a veterinary medicine by its national code, the six digits printed on the box. Null when no pack has the
+    code.
+    """
+    cimaVetPresentation(
+        "The national code of the pack, such as 591246"
+        nationalCode: String!
+    ): CimaVetPresentation
+
+    """
+    The packs of veterinary medicines that are short in Spain now, 25 to a page, with when the problem started, when it
+    is expected to end, and what the agency advises.
+    """
+    cimaVetSupplyProblems(
+        "The page to return. Pages count from 0, and each one holds 25 results."
+        page: Int! = 0
+    ): CimaVetSupplyProblemPage
+
+    "The changes to the register since a day, 25 to a page: medicines added, removed or changed, such as a new leaflet."
+    cimaVetRegisterChanges(
+        "The first day of the changes, such as 2026-10-01"
+        since: Date!
+        "The page to return. Pages count from 0, and each one holds 25 results."
+        page: Int! = 0
+    ): CimaVetRegisterChangePage
+
+    """
+    The species and kinds of animal the register knows, 25 to a page, with their ids for the speciesId argument of
+    cimaVetMedicines. Each species has a negative id that groups its kinds, such as -29 for Perros (dogs), and a
+    positive id for each kind, such as Cachorros (puppies). The names are Spanish.
+    """
+    cimaVetSpecies(
+        "Only the entries whose name contains this text, in upper or lower case"
+        name: String
+        "The page to return. Pages count from 0, and each one holds 25 results."
+        page: Int! = 0
+    ): CimaVetSpeciesPage
+
+    "The active ingredients of veterinary medicines, 25 to a page, with their Spanish names, such as MELOXICAM."
+    cimaVetActiveIngredients(
+        "Only the entries whose name contains this text, in upper or lower case"
+        name: String
+        "The page to return. Pages count from 0, and each one holds 25 results."
+        page: Int! = 0
+    ): CimaVetCodedEntryPage
+
+    """
+    The pharmaceutical forms of veterinary medicines, 25 to a page, such as COMPRIMIDO (tablet) or SUSPENSIÓN ORAL (oral
+    suspension).
+    """
+    cimaVetPharmaceuticalForms(
+        "Only the entries whose name contains this text, in upper or lower case"
+        name: String
+        "The page to return. Pages count from 0, and each one holds 25 results."
+        page: Int! = 0
+    ): CimaVetEntryPage
+
+    """
+    The routes of administration of veterinary medicines, 25 to a page, such as VÍA ORAL (by mouth) or ADMINISTRACIÓN EN
+    AGUA DE BEBIDA (in the drinking water).
+    """
+    cimaVetAdministrationRoutes(
+        "Only the entries whose name contains this text, in upper or lower case"
+        name: String
+        "The page to return. Pages count from 0, and each one holds 25 results."
+        page: Int! = 0
+    ): CimaVetCodedEntryPage
+
+    "The laboratories that hold or market veterinary medicines in Spain, 25 to a page."
+    cimaVetLaboratories(
+        "Only the entries whose name contains this text, in upper or lower case"
+        name: String
+        "The page to return. Pages count from 0, and each one holds 25 results."
+        page: Int! = 0
+    ): CimaVetEntryPage
+
+    """
+    The codes of the ATC veterinary classification, 25 to a page, with the Spanish name of each group or substance. QP52
+    is the group of anthelmintics, QJ01 the antibacterials for systemic use.
+    """
+    cimaVetAtcCodes(
+        "Only the entries whose name contains this text, in upper or lower case"
+        name: String
+        "The page to return. Pages count from 0, and each one holds 25 results."
+        page: Int! = 0
+    ): CimaVetAtcCodePage
+
+    "The excipients of veterinary medicines, the ingredients other than the active ones, 25 to a page."
+    cimaVetExcipients(
+        "Only the entries whose name contains this text, in upper or lower case"
+        name: String
+        "The page to return. Pages count from 0, and each one holds 25 results."
+        page: Int! = 0
+    ): CimaVetEntryPage
+
+    """
+    What veterinary medicines are indicated for, 25 to a page, in Spanish, such as Infección por protozoos Leishmania
+    infantum.
+    """
+    cimaVetIndications(
+        "Only the entries whose name contains this text, in upper or lower case"
+        name: String
+        "The page to return. Pages count from 0, and each one holds 25 results."
+        page: Int! = 0
+    ): CimaVetEntryPage
+
+    """
+    The clinical signs and adverse reactions the register names, 25 to a page, in Spanish, such as Anorexia or Vómitos
+    con sangre (vomiting blood).
+    """
+    cimaVetClinicalSigns(
+        "Only the entries whose name contains this text, in upper or lower case"
+        name: String
+        "The page to return. Pages count from 0, and each one holds 25 results."
+        page: Int! = 0
+    ): CimaVetEntryPage
+}
+
+"One page of the veterinary medicines that match a search"
+type CimaVetMedicinePage {
+    "The number of medicines that match, across all pages"
+    totalCount: Int
+    "The medicines on this page"
+    medicines: [CimaVetMedicine]
+}
+
+"""
+A veterinary medicine authorized in Spain. A search fills in the main fields; cimaVetMedicine fills in all of them,
+including its species, indications, contraindications, interactions, adverse reactions, withdrawal periods and packs.
+"""
+type CimaVetMedicine {
+    "The registration number of the medicine, such as 4317 ESP. The medicine fields take it as registrationNumber."
+    registrationNumber: String
+    """
+    The name of the medicine with its strength and form, in Spanish, such as ANIMELOXAN 1,5 mg/ml SUSPENSION ORAL PARA
+    PERROS (oral suspension for dogs)
+    """
+    name: String
+    "The names of the active ingredients, separated by commas"
+    activeIngredientNames: String
+    "The names of the excipients, separated by semicolons"
+    excipientNames: String
+    "The laboratory that holds the authorization"
+    holder: String
+    "The laboratory that sells the medicine in Spain"
+    marketer: String
+    "How the medicine is dispensed, such as Sujeto a prescripción veterinaria (needs a veterinary prescription)"
+    dispensing: CimaVetCategory
+    "The kind of medicine, such as FARMACOLOGICO (pharmacological)"
+    medicineType: CimaVetCategory
+    """
+    Who may give the medicine, such as Bajo control ó supervisión del veterinario (under a vet's control or supervision)
+    """
+    administeredBy: CimaVetCategory
+    "When the medicine was authorized, and revoked if it was"
+    status: CimaVetStatus
+    "Whether the medicine is on the market in Spain now"
+    marketed: Boolean
+    "Whether the medicine needs a prescription"
+    prescription: Boolean
+    "Whether the medicine is a narcotic"
+    narcotic: Boolean
+    "Whether the medicine is a psychotropic"
+    psychotropic: Boolean
+    "Whether the agency has published safety notes about the medicine"
+    hasSafetyNotes: Boolean
+    """
+    Whether the European Medicines Agency authorized the medicine for the whole European Union, in place of the Spanish
+    agency
+    """
+    centrallyAuthorized: Boolean
+    "The documents of the medicine, such as its package leaflet"
+    documents: [CimaVetDocument]
+    "The day the medicine was first authorized"
+    firstAuthorized: Date
+    "Whether a pack of the medicine is short in Spain now. cimaVetSupplyProblems lists the packs that are short."
+    hasSupplyProblems: Boolean
+    "Whether the medicine is an antibiotic"
+    antibiotic: Boolean
+    "Whether the medicine takes part in the pilot of the electronic package leaflet"
+    electronicLeafletPilot: Boolean
+    """
+    The groups of the ATC veterinary classification the medicine belongs to, from the widest to the narrowest, such as
+    QM01 then QM01AC06 for meloxicam
+    """
+    atcCodes: [CimaVetAtc]
+    "The forms of the medicine, such as a tablet or an oral suspension"
+    pharmaceuticalForms: [CimaVetPharmaceuticalForm]
+    "The ways the medicine is given, such as by mouth"
+    administrationRoutes: [CimaVetAdministrationRoute]
+    "The active ingredients, each with its amount in one dose or unit"
+    activeIngredients: [CimaVetIngredient]
+    "The excipients, each with its amount"
+    excipients: [CimaVetIngredient]
+    "The species and kinds of animal the medicine is authorized for"
+    species: [CimaVetSpecies]
+    """
+    What the medicine is indicated for in each species, such as Dolor osteomuscular (pain in the muscles and bones) in
+    Perros (dogs)
+    """
+    indications: [CimaVetSpeciesTerm]
+    """
+    When the medicine must not be used in each species, such as Cachorros menores de 6 semanas de edad (puppies under 6
+    weeks old)
+    """
+    contraindications: [CimaVetSpeciesTerm]
+    "The medicines and substances it interacts with, for each species"
+    interactions: [CimaVetSpeciesTerm]
+    "The adverse reactions seen in each species, with how often they happen"
+    adverseReactions: [CimaVetAdverseReaction]
+    """
+    How long to wait after the last dose before meat, milk or eggs of a treated animal may be eaten, for each species,
+    form, route and tissue. The entries for dogs and cats leave the amount empty.
+    """
+    withdrawalPeriods: [CimaVetWithdrawalPeriod]
+    "The packs of the medicine, such as a box of 30 tablets, each with its national code"
+    presentations: [CimaVetPresentationSummary]
+}
+
+"When a medicine or a pack was authorized, and when its authorization was revoked"
+type CimaVetStatus {
+    "The day it was authorized"
+    authorized: Date
+    "The day its authorization was revoked, or null"
+    revoked: Date
+}
+
+"A value from one of the register's lists, such as how a medicine is dispensed, with its id and its Spanish name"
+type CimaVetCategory {
+    "The id of the value in its list"
+    id: Int
+    "The Spanish name of the value"
+    name: String
+}
+
+"A species or kind of animal, such as Perros (dogs) or Cachorros (puppies)"
+type CimaVetSpecies {
+    """
+    The id of the species, for the speciesId argument of cimaVetMedicines. A negative id groups the kinds of a species,
+    such as -29 for all dogs.
+    """
+    id: Int
+    "The Spanish name, such as Perros (dogs), Gatos (cats) or Gatitos (kittens)"
+    name: String
+}
+
+"The form of a medicine, such as COMPRIMIDO (tablet)"
+type CimaVetPharmaceuticalForm {
+    "The id of the form"
+    id: Int
+    "The Spanish name of the form, such as SUSPENSIÓN ORAL (oral suspension)"
+    name: String
+}
+
+"A way a medicine is given, such as VÍA ORAL (by mouth)"
+type CimaVetAdministrationRoute {
+    "The id of the route"
+    id: Int
+    "The Spanish name of the route, such as VÍA ORAL or VÍA SUBCUTÁNEA"
+    name: String
+}
+
+"A group of the ATC veterinary classification that a medicine belongs to"
+type CimaVetAtc {
+    "The ATC code, such as QM01AC06 for meloxicam. Veterinary codes start with Q."
+    code: String
+    "The Spanish name of the group, such as Meloxicam"
+    name: String
+    "How deep the group is, from 1 for the widest to 5 for a single substance"
+    level: Int
+    "Whether the group holds antibiotics"
+    antibiotic: Boolean
+}
+
+"An active ingredient or an excipient of a medicine, with its amount"
+type CimaVetIngredient {
+    "The id of the ingredient in the register"
+    id: Int
+    "The code of the ingredient in the register, such as 7153A for meloxicam"
+    code: String
+    "The Spanish name of the ingredient, such as MELOXICAM"
+    name: String
+    "The amount in one dose or unit, as a number written as text, such as 1.5"
+    amount: String
+    "The unit of the amount, such as mg"
+    unit: String
+    "The place of the ingredient in the list of the medicine, from 1"
+    order: Int
+}
+
+"An indication, contraindication or interaction of a medicine for one species, as a term of the register's lists"
+type CimaVetSpeciesTerm {
+    "The species the term applies to"
+    species: CimaVetSpecies
+    "The id of the term in the register"
+    id: Int
+    "The term in Spanish, such as Dolor osteomuscular (muscle and bone pain)"
+    name: String
+}
+
+"An adverse reaction to a medicine in one species, with how often it happens"
+type CimaVetAdverseReaction {
+    "The species the reaction was seen in"
+    species: CimaVetSpecies
+    "The id of the reaction in the list cimaVetClinicalSigns reads"
+    id: Int
+    "The reaction in Spanish, such as Anorexia"
+    name: String
+    """
+    How often the reaction happens, such as Frecuentemente (more than 1 but fewer than 10 animals in 100) or
+    Desconocido/Indeterminado (unknown)
+    """
+    frequency: CimaVetCategory
+}
+
+"How long to wait after the last dose before a tissue of a treated animal may be eaten, for one species, form and route"
+type CimaVetWithdrawalPeriod {
+    "The species"
+    species: CimaVetSpecies
+    "The form of the medicine"
+    pharmaceuticalForm: CimaVetPharmaceuticalForm
+    "The route of administration"
+    administrationRoute: CimaVetAdministrationRoute
+    "The tissue that may be eaten after the wait, such as Carne (meat)"
+    tissue: CimaVetCategory
+    "The length of the wait, as a number written as text, such as 7"
+    amount: String
+    "The unit of the wait, such as Días (days)"
+    timeUnit: CimaVetCategory
+}
+
+"A document of a medicine, as a PDF file"
+type CimaVetDocument {
+    """
+    The kind of document: 1 for the summary of product characteristics, 2 for the package leaflet, 3 for the public
+    assessment report
+    """
+    type: Int
+    "The address of the PDF file"
+    url: String
+    "Whether the agency also publishes the document in sections"
+    hasSections: Boolean
+    "The day the document was last updated"
+    updated: Date
+}
+
+"A pack of a medicine, as the medicine lists it"
+type CimaVetPresentationSummary {
+    "The national code of the pack, the six digits printed on the box, such as 591246. cimaVetPresentation takes it."
+    nationalCode: String
+    "The name of the medicine and the content of the pack, in Spanish"
+    name: String
+    "When the pack was authorized, and revoked if it was"
+    status: CimaVetStatus
+    "Whether the pack is on the market in Spain now"
+    marketed: Boolean
+    "Whether the pack is short in Spain now"
+    hasSupplyProblems: Boolean
+}
+
+"One page of packs of veterinary medicines"
+type CimaVetPresentationPage {
+    "The number of packs that match, across all pages"
+    totalCount: Int
+    "The packs on this page"
+    presentations: [CimaVetPresentation]
+}
+
+"A pack of a veterinary medicine, such as a box of 30 tablets, with its national code"
+type CimaVetPresentation {
+    "The registration number of the medicine, such as 4317 ESP. The medicine fields take it as registrationNumber."
+    registrationNumber: String
+    """
+    The name of the medicine with its strength and form, in Spanish, such as ANIMELOXAN 1,5 mg/ml SUSPENSION ORAL PARA
+    PERROS (oral suspension for dogs)
+    """
+    name: String
+    "The names of the active ingredients, separated by commas"
+    activeIngredientNames: String
+    "The names of the excipients, separated by semicolons"
+    excipientNames: String
+    "The laboratory that holds the authorization"
+    holder: String
+    "The laboratory that sells the medicine in Spain"
+    marketer: String
+    "How the medicine is dispensed, such as Sujeto a prescripción veterinaria (needs a veterinary prescription)"
+    dispensing: CimaVetCategory
+    "The kind of medicine, such as FARMACOLOGICO (pharmacological)"
+    medicineType: CimaVetCategory
+    """
+    Who may give the medicine, such as Bajo control ó supervisión del veterinario (under a vet's control or supervision)
+    """
+    administeredBy: CimaVetCategory
+    "When the medicine was authorized, and revoked if it was"
+    status: CimaVetStatus
+    "Whether the medicine is on the market in Spain now"
+    marketed: Boolean
+    "Whether the medicine needs a prescription"
+    prescription: Boolean
+    "Whether the medicine is a narcotic"
+    narcotic: Boolean
+    "Whether the medicine is a psychotropic"
+    psychotropic: Boolean
+    "Whether the agency has published safety notes about the medicine"
+    hasSafetyNotes: Boolean
+    """
+    Whether the European Medicines Agency authorized the medicine for the whole European Union, in place of the Spanish
+    agency
+    """
+    centrallyAuthorized: Boolean
+    "The documents of the medicine, such as its package leaflet"
+    documents: [CimaVetDocument]
+    "The national code of the pack, the six digits printed on the box"
+    nationalCode: String
+    "The active ingredients, with their amounts"
+    activeIngredients: [CimaVetIngredient]
+}
+
+"One page of the packs of veterinary medicines that are short in Spain"
+type CimaVetSupplyProblemPage {
+    "The number of packs that match, across all pages"
+    totalCount: Int
+    "The packs on this page"
+    problems: [CimaVetSupplyProblem]
+}
+
+"A pack of a veterinary medicine that is short in Spain"
+type CimaVetSupplyProblem {
+    "The registration number of the medicine"
+    registrationNumber: String
+    "The national code of the pack that is short"
+    nationalCode: String
+    "The name of the medicine and the content of the pack, in Spanish"
+    name: String
+    "The day the shortage started"
+    started: Date
+    "The day the shortage is expected to end"
+    expectedEnd: Date
+    "Whether the shortage is still going on"
+    active: Boolean
+    "What the agency says about the shortage and the alternatives, in Spanish"
+    notes: String
+}
+
+"One page of changes to the register of veterinary medicines"
+type CimaVetRegisterChangePage {
+    "The number of changes that match, across all pages"
+    totalCount: Int
+    "The changes on this page"
+    changes: [CimaVetRegisterChange]
+}
+
+"A change to a medicine in the register"
+type CimaVetRegisterChange {
+    "The registration number of the medicine that changed"
+    registrationNumber: String
+    "When the change was made"
+    changedAt: DateTime
+    "The kind of change: 1 for a medicine added to the register, 2 for one removed, 3 for a change to one"
+    kind: Int
+    "What changed, in Spanish, such as otros (other changes)"
+    changes: [String]
+}
+
+"One page of the species the register knows"
+type CimaVetSpeciesPage {
+    "The number of species that match, across all pages"
+    totalCount: Int
+    "The species on this page"
+    species: [CimaVetSpecies]
+}
+
+"One page of a list of the register whose entries have a code"
+type CimaVetCodedEntryPage {
+    "The number of entries that match, across all pages"
+    totalCount: Int
+    "The entries on this page"
+    entries: [CimaVetCodedEntry]
+}
+
+"An entry of a list of the register, such as an active ingredient, with its code"
+type CimaVetCodedEntry {
+    "The id of the entry"
+    id: Int
+    "The code of the entry in the register, such as 7153A for meloxicam"
+    code: String
+    "The Spanish name of the entry, such as MELOXICAM"
+    name: String
+}
+
+"One page of a list of the register"
+type CimaVetEntryPage {
+    "The number of entries that match, across all pages"
+    totalCount: Int
+    "The entries on this page"
+    entries: [CimaVetEntry]
+}
+
+"An entry of a list of the register, such as a laboratory or an indication"
+type CimaVetEntry {
+    "The id of the entry. The list of laboratories gives 0 for every laboratory."
+    id: Int
+    "The Spanish name of the entry"
+    name: String
+}
+
+"One page of the codes of the ATC veterinary classification"
+type CimaVetAtcCodePage {
+    "The number of codes that match, across all pages"
+    totalCount: Int
+    "The codes on this page"
+    codes: [CimaVetAtcCode]
+}
+
+"A code of the ATC veterinary classification"
+type CimaVetAtcCode {
+    "The ATC code, such as QM01AC06. Veterinary codes start with Q."
+    code: String
+    "The Spanish name of the group or substance, such as Meloxicam"
+    name: String
+}

@@ -1,0 +1,151 @@
+{
+    "type":"FeatureCollection",
+    "features":[
+        {
+            "type":"Feature",
+            "properties":{
+                "id_demarcd":"Guadalquivir",
+                "elevacion":241.0,
+                "origen_z":null,
+                "nil_varios":true,
+                "fecha_alta":"2018-09-12",
+                "persist":null,
+                "origen_zd":null,
+                "nativeness":null,
+                "tipo_aest":"2002",
+                "persistd":"No aplicable",
+                "resolucion":5,
+                "script":"Latn",
+                "tipo_aestd":"Embalse",
+                "nivel_agua":null,
+                "nilreason_elevacion":null,
+                "drainsbasin":null,
+                "nivel_aguad":null,
+                "nilreason_nombre":null,
+                "nil_elevacion":null,
+                "hydroid_localid":"ES050HYSWTS0000000000001",
+                "origen":"8002",
+                "area":140334.436,
+                "nombre":"Embalse de Malpasillo",
+                "origend":"Artificial",
+                "fuente":"5001",
+                "nilreason_varios":"other:unpopulated",
+                "id_demarc":"ES050",
+                "marea":false,
+                "fuented":"Instituto Geogr\u00e1fico Nacional",
+                "nil_nombre":null
+            },
+            "id":"ES050HYSWTS0000000722613",
+            "geometry":null
+        },
+        {
+            "type":"Feature",
+            "properties":{
+                "id_demarcd":"Guadalquivir",
+                "elevacion":445.0,
+                "origen_z":null,
+                "nil_varios":true,
+                "fecha_alta":"2018-09-12",
+                "persist":null,
+                "origen_zd":null,
+                "nativeness":null,
+                "tipo_aest":"2002",
+                "persistd":"No aplicable",
+                "resolucion":5,
+                "script":"Latn",
+                "tipo_aestd":"Embalse",
+                "nivel_agua":null,
+                "nilreason_elevacion":null,
+                "drainsbasin":null,
+                "nivel_aguad":null,
+                "nilreason_nombre":null,
+                "nil_elevacion":null,
+                "hydroid_localid":"ES050HYSWTS0000000000002",
+                "origen":"8002",
+                "area":107165.923,
+                "nombre":"Embalse del Bizarron",
+                "origend":"Artificial",
+                "fuente":"5001",
+                "nilreason_varios":"other:unpopulated",
+                "id_demarc":"ES050",
+                "marea":false,
+                "fuented":"Instituto Geogr\u00e1fico Nacional",
+                "nil_nombre":null
+            },
+            "id":"ES050HYSWTS0000000722614",
+            "geometry":null
+        },
+        {
+            "type":"Feature",
+            "properties":{
+                "id_demarcd":"Guadalquivir",
+                "elevacion":274.0,
+                "origen_z":null,
+                "nil_varios":true,
+                "fecha_alta":"2018-09-12",
+                "persist":null,
+                "origen_zd":null,
+                "nativeness":null,
+                "tipo_aest":"2002",
+                "persistd":"No aplicable",
+                "resolucion":5,
+                "script":"Latn",
+                "tipo_aestd":"Embalse",
+                "nivel_agua":null,
+                "nilreason_elevacion":null,
+                "drainsbasin":null,
+                "nivel_aguad":null,
+                "nilreason_nombre":null,
+                "nil_elevacion":null,
+                "hydroid_localid":"ES050HYSWTS0000000000003",
+                "origen":"8002",
+                "area":3127563.651,
+                "nombre":"Embalse de La Puebla de Cazalla",
+                "origend":"Artificial",
+                "fuente":"5001",
+                "nilreason_varios":"other:unpopulated",
+                "id_demarc":"ES050",
+                "marea":false,
+                "fuented":"Instituto Geogr\u00e1fico Nacional",
+                "nil_nombre":null
+            },
+            "id":"ES050HYSWTS0000000722615",
+            "geometry":null
+        }
+    ],
+    "numberMatched":1123,
+    "numberReturned":3,
+    "links":[
+        {
+            "type":"application/geo+json",
+            "rel":"self",
+            "title":"This document as GeoJSON",
+            "href":"https://api-features.idee.es/collections/standingwater/items?f=json&bbox=-5.6,36.2,-3.7,37.4&skipGeometry=true&limit=3"
+        },
+        {
+            "rel":"alternate",
+            "type":"application/ld+json",
+            "title":"This document as RDF (JSON-LD)",
+            "href":"https://api-features.idee.es/collections/standingwater/items?f=jsonld&bbox=-5.6,36.2,-3.7,37.4&skipGeometry=true&limit=3"
+        },
+        {
+            "type":"text/html",
+            "rel":"alternate",
+            "title":"This document as HTML",
+            "href":"https://api-features.idee.es/collections/standingwater/items?f=html&bbox=-5.6,36.2,-3.7,37.4&skipGeometry=true&limit=3"
+        },
+        {
+            "type":"application/geo+json",
+            "rel":"next",
+            "title":"Items (next)",
+            "href":"https://api-features.idee.es/collections/standingwater/items?offset=3&bbox=-5.6,36.2,-3.7,37.4&skipGeometry=true&limit=3"
+        },
+        {
+            "type":"application/json",
+            "title":"HY-P Aguas estancadas",
+            "rel":"collection",
+            "href":"https://api-features.idee.es/collections/standingwater"
+        }
+    ],
+    "timeStamp":"2026-10-22T23:42:49.926678Z"
+}

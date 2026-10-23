@@ -1,0 +1,1759 @@
+[{"Id":349, "Nombre":"National Total", "Codigo":"NAC"}
+,
+{"Id":954, "Nombre":"Total", "Codigo":""}
+,
+{"Id":70, "Nombre":"Autonomous Communities and Cities", "Codigo":"CCAA"}
+,
+{"Id":516, "Nombre":"Nationality", "Codigo":"1"}
+,
+{"Id":955, "Nombre":"Crops, pastures and orchards", "Codigo":""}
+,
+{"Id":956, "Nombre":"UAA and Other Lands", "Codigo":""}
+,
+{"Id":601, "Nombre":"Subcity", "Codigo":"SUBCITY"}
+,
+{"Id":332, "Nombre":"Generation", "Codigo":"4"}
+,
+{"Id":599, "Nombre":"supracity", "Codigo":"FUA"}
+,
+{"Id":600, "Nombre":"Conurbation", "Codigo":"KERNEL"}
+,
+{"Id":846, "Nombre":"Districts", "Codigo":"DIST"}
+,
+{"Id":847, "Nombre":"Sections", "Codigo":"SECC"}
+,
+{"Id":19, "Nombre":"Municipalities", "Codigo":"MUN"}
+,
+{"Id":913, "Nombre":"Breeding or fattening cattle", "Codigo":""}
+,
+{"Id":1, "Nombre":"Type of trade", "Codigo":""}
+,
+{"Id":2, "Nombre":"Groups of Products", "Codigo":""}
+,
+{"Id":3, "Nombre":"Type of data", "Codigo":""}
+,
+{"Id":4, "Nombre":"Periodo", "Codigo":""}
+,
+{"Id":5, "Nombre":"GDPmp components, supply", "Codigo":""}
+,
+{"Id":6, "Nombre":"GDPmp components, demand ", "Codigo":""}
+,
+{"Id":7, "Nombre":"Statistics", "Codigo":""}
+,
+{"Id":8, "Nombre":"Prices", "Codigo":""}
+,
+{"Id":9, "Nombre":"Transactions and balances (national)", "Codigo":""}
+,
+{"Id":10, "Nombre":"Branches of activity", "Codigo":""}
+,
+{"Id":11, "Nombre":"Employment Aggregates ", "Codigo":""}
+,
+{"Id":12, "Nombre":"GDPmp components, income", "Codigo":""}
+,
+{"Id":16, "Nombre":"Branch of activity -CNAE93", "Codigo":""}
+,
+{"Id":18, "Nombre":"Sex", "Codigo":""}
+,
+{"Id":20, "Nombre":"Islands", "Codigo":""}
+,
+{"Id":26, "Nombre":"Tenancy regime of the main dwelling", "Codigo":""}
+,
+{"Id":27, "Nombre":"Availability of hot water", "Codigo":""}
+,
+{"Id":28, "Nombre":"Energy source used to heat water", "Codigo":""}
+,
+{"Id":29, "Nombre":"Availability of heating", "Codigo":""}
+,
+{"Id":30, "Nombre":"Energy source used for heating", "Codigo":""}
+,
+{"Id":31, "Nombre":"Availability of dwellings other than the main dwelling", "Codigo":""}
+,
+{"Id":33, "Nombre":"Households and persons", "Codigo":""}
+,
+{"Id":34, "Nombre":"Municipality size", "Codigo":""}
+,
+{"Id":35, "Nombre":"Density of population", "Codigo":""}
+,
+{"Id":36, "Nombre":"Composition of the household ", "Codigo":""}
+,
+{"Id":37, "Nombre":"Type of household", "Codigo":""}
+,
+{"Id":46, "Nombre":"Main source of household income", "Codigo":""}
+,
+{"Id":47, "Nombre":"Level of regular net monthly household income", "Codigo":""}
+,
+{"Id":55, "Nombre":"Grupos de gasto (2 dígitos)", "Codigo":""}
+,
+{"Id":57, "Nombre":"Total real and average expenditure, percent distribution and indices over the expenditure average", "Codigo":""}
+,
+{"Id":64, "Nombre":"Average quantities consumed", "Codigo":""}
+,
+{"Id":66, "Nombre":"Total expenditure and unitary value", "Codigo":""}
+,
+{"Id":71, "Nombre":"Base Year", "Codigo":""}
+,
+{"Id":72, "Nombre":"Expenditure subgroups (3 digits)", "Codigo":""}
+,
+{"Id":73, "Nombre":"Expenditure codes (4 digits)", "Codigo":""}
+,
+{"Id":74, "Nombre":"Expenditure codes (5 digits)", "Codigo":""}
+,
+{"Id":77, "Nombre":"Expenditure codes with physical amount", "Codigo":""}
+,
+{"Id":86, "Nombre":"Total and average expenses (monetary)", "Codigo":""}
+,
+{"Id":88, "Nombre":"Main economic variables", "Codigo":""}
+,
+{"Id":92, "Nombre":"Persons/Hours", "Codigo":""}
+,
+{"Id":94, "Nombre":"TYPE OF CATEGORY", "Codigo":""}
+,
+{"Id":95, "Nombre":"TOURIST AREAS", "Codigo":""}
+,
+{"Id":96, "Nombre":"Residence", "Codigo":""}
+,
+{"Id":97, "Nombre":"Place of birth", "Codigo":""}
+,
+{"Id":101, "Nombre":"Form of organisation of the journey", "Codigo":""}
+,
+{"Id":103, "Nombre":"TOURIST SITES", "Codigo":""}
+,
+{"Id":105, "Nombre":"RATES", "Codigo":""}
+,
+{"Id":106, "Nombre":"RENT MODALITY", "Codigo":""}
+,
+{"Id":108, "Nombre":"Employed in each survey and net change index", "Codigo":""}
+,
+{"Id":109, "Nombre":"Unemployed in each survey and net change index", "Codigo":""}
+,
+{"Id":110, "Nombre":"CNAE 2009 Branch of Activity", "Codigo":""}
+,
+{"Id":111, "Nombre":"Branch of activity (main job) CNAE 2009", "Codigo":""}
+,
+{"Id":112, "Nombre":"Branch of activity (secondary job) CNAE 2009", "Codigo":""}
+,
+{"Id":113, "Nombre":"Group", "Codigo":""}
+,
+{"Id":114, "Nombre":"Relationship with economic activity", "Codigo":""}
+,
+{"Id":115, "Nombre":"Provinces", "Codigo":"PROV"}
+,
+{"Id":116, "Nombre":"Age", "Codigo":""}
+,
+{"Id":117, "Nombre":"Economic sector", "Codigo":""}
+,
+{"Id":118, "Nombre":"Professional Status", "Codigo":""}
+,
+{"Id":119, "Nombre":"Type of contract or labour relationship", "Codigo":""}
+,
+{"Id":120, "Nombre":"Type of working day", "Codigo":""}
+,
+{"Id":121, "Nombre":"Time spent on the job search", "Codigo":""}
+,
+{"Id":122, "Nombre":"Inactivity situation", "Codigo":""}
+,
+{"Id":123, "Nombre":"Rates", "Codigo":""}
+,
+{"Id":124, "Nombre":"Number de hours employed in unregulated studies (during the last four weeks)", "Codigo":""}
+,
+{"Id":125, "Nombre":"Average number of hours", "Codigo":""}
+,
+{"Id":126, "Nombre":"Regulated studies in progress", "Codigo":""}
+,
+{"Id":127, "Nombre":"Unregulated studies in progress", "Codigo":""}
+,
+{"Id":128, "Nombre":"Work or do not work overtime hours", "Codigo":""}
+,
+{"Id":129, "Nombre":"Total of overtime hours worked in a week by wage earners", "Codigo":""}
+,
+{"Id":130, "Nombre":"Age when finnished training", "Codigo":""}
+,
+{"Id":131, "Nombre":"Number of hours usually worked at the current job", "Codigo":""}
+,
+{"Id":132, "Nombre":"Total of overtime hours worked in a week by wage earners", "Codigo":""}
+,
+{"Id":133, "Nombre":"Time elapsed since leaving their last job", "Codigo":""}
+,
+{"Id":134, "Nombre":"Type of administration", "Codigo":""}
+,
+{"Id":135, "Nombre":"Time residing in Spain", "Codigo":""}
+,
+{"Id":136, "Nombre":"Relationship to the reference person", "Codigo":""}
+,
+{"Id":137, "Nombre":"Educational level attained", "Codigo":""}
+,
+{"Id":138, "Nombre":"Current studies", "Codigo":""}
+,
+{"Id":139, "Nombre":"Regulated studies", "Codigo":""}
+,
+{"Id":140, "Nombre":"Marital status", "Codigo":""}
+,
+{"Id":141, "Nombre":"Nationality", "Codigo":""}
+,
+{"Id":142, "Nombre":"Areas of nationality", "Codigo":""}
+,
+{"Id":143, "Nombre":"Wish to modify normal working hours", "Codigo":""}
+,
+{"Id":144, "Nombre":"Time that they have been working in their current job", "Codigo":""}
+,
+{"Id":145, "Nombre":"Branch of activity (main job)", "Codigo":""}
+,
+{"Id":146, "Nombre":"Professional situation of the main job", "Codigo":""}
+,
+{"Id":147, "Nombre":"Cause of reduced activity", "Codigo":""}
+,
+{"Id":148, "Nombre":"Economic sectors of the main job", "Codigo":""}
+,
+{"Id":149, "Nombre":"Method used in looking for work", "Codigo":""}
+,
+{"Id":150, "Nombre":"Main class of inactivity", "Codigo":""}
+,
+{"Id":151, "Nombre":"Occupation (main job)", "Codigo":""}
+,
+{"Id":152, "Nombre":"Time since the start or renewal of the contract", "Codigo":""}
+,
+{"Id":153, "Nombre":"Professional situation of the secondary job", "Codigo":""}
+,
+{"Id":154, "Nombre":"Reasons for greater activity", "Codigo":""}
+,
+{"Id":155, "Nombre":"Economic sectors of second job", "Codigo":""}
+,
+{"Id":156, "Nombre":"Number of ways of actively searching for work", "Codigo":""}
+,
+{"Id":157, "Nombre":"Branch of activity (secondary job)", "Codigo":""}
+,
+{"Id":158, "Nombre":"Occupation (secondary job)", "Codigo":""}
+,
+{"Id":159, "Nombre":"Secondary class of inactivity", "Codigo":""}
+,
+{"Id":160, "Nombre":"Duration of the contract or labour relationship", "Codigo":""}
+,
+{"Id":161, "Nombre":"Type of working day in the job sought", "Codigo":""}
+,
+{"Id":162, "Nombre":"Occupation", "Codigo":""}
+,
+{"Id":163, "Nombre":"CNAE 93 Branch of Activity", "Codigo":""}
+,
+{"Id":164, "Nombre":"Reasons for not working", "Codigo":""}
+,
+{"Id":166, "Nombre":"Relation with the activity", "Codigo":""}
+,
+{"Id":167, "Nombre":"Unit", "Codigo":""}
+,
+{"Id":168, "Nombre":"Number of effective hours worked during the week in the main job", "Codigo":""}
+,
+{"Id":169, "Nombre":"Reasons for working part time", "Codigo":""}
+,
+{"Id":170, "Nombre":"Reason for not looking for a job", "Codigo":""}
+,
+{"Id":171, "Nombre":"Social and economic condition", "Codigo":""}
+,
+{"Id":172, "Nombre":"Family dwellings", "Codigo":""}
+,
+{"Id":173, "Nombre":"Number of persons in the dwelling", "Codigo":""}
+,
+{"Id":174, "Nombre":"Number of active persons in the dwelling", "Codigo":""}
+,
+{"Id":175, "Nombre":"Number of employed persons in the dwelling", "Codigo":""}
+,
+{"Id":176, "Nombre":"Number of unemployed in the dwelling", "Codigo":""}
+,
+{"Id":177, "Nombre":"Persons between 16 and 25 years old living with the reference person", "Codigo":""}
+,
+{"Id":178, "Nombre":"Economic sectors of second job CNAE 2009", "Codigo":""}
+,
+{"Id":179, "Nombre":"CNAE 2009 Economic sector of the last job", "Codigo":""}
+,
+{"Id":180, "Nombre":"Number of persons who live in the dwelling with the reference person", "Codigo":""}
+,
+{"Id":181, "Nombre":"Students between 16 and 25 years old living with the reference person", "Codigo":""}
+,
+{"Id":182, "Nombre":"Number of active persons among the remaining members of the dwelling", "Codigo":""}
+,
+{"Id":183, "Nombre":"Number of unemployed among the remaining members of the dwelling", "Codigo":""}
+,
+{"Id":184, "Nombre":"Situation with respects to the activity of the dwelling's reference person", "Codigo":""}
+,
+{"Id":185, "Nombre":"Class of inactivity of the dwelling's reference person", "Codigo":""}
+,
+{"Id":186, "Nombre":"Number of income recipients in the dwelling", "Codigo":""}
+,
+{"Id":187, "Nombre":"Tasas anual y de la media de la cifra de negocios", "Codigo":""}
+,
+{"Id":188, "Nombre":"Depending on whether or not the reference person receives income", "Codigo":""}
+,
+{"Id":189, "Nombre":"Number of unemployed that live in the dwelling with the reference person", "Codigo":""}
+,
+{"Id":190, "Nombre":"Proportion of unemployed", "Codigo":""}
+,
+{"Id":191, "Nombre":"Main magnitudes", "Codigo":""}
+,
+{"Id":192, "Nombre":"Sector of the level of education attained", "Codigo":""}
+,
+{"Id":193, "Nombre":"Sector of regulated education in progress", "Codigo":""}
+,
+{"Id":194, "Nombre":"Sector of unregulated education in progress", "Codigo":""}
+,
+{"Id":195, "Nombre":"Objective of the (unregulated) training", "Codigo":""}
+,
+{"Id":196, "Nombre":"Corporate participation in the (unregulated) training", "Codigo":""}
+,
+{"Id":197, "Nombre":"Days worked at home", "Codigo":""}
+,
+{"Id":198, "Nombre":"Saturdays worked per month", "Codigo":""}
+,
+{"Id":199, "Nombre":"Sundays worked per month", "Codigo":""}
+,
+{"Id":200, "Nombre":"Days worked at the evening", "Codigo":""}
+,
+{"Id":201, "Nombre":"Days worked at night", "Codigo":""}
+,
+{"Id":202, "Nombre":"Type of working day", "Codigo":""}
+,
+{"Id":203, "Nombre":"Job with a switch system", "Codigo":""}
+,
+{"Id":204, "Nombre":"Type of job post", "Codigo":""}
+,
+{"Id":205, "Nombre":"Number of persons working in the establishment", "Codigo":""}
+,
+{"Id":206, "Nombre":"Hired via a temporary employment agency", "Codigo":""}
+,
+{"Id":207, "Nombre":"Participation of a public employment office", "Codigo":""}
+,
+{"Id":208, "Nombre":"Reason of having a temporary contract or work relationship", "Codigo":""}
+,
+{"Id":209, "Nombre":"Job where they wish to work more hours", "Codigo":""}
+,
+{"Id":210, "Nombre":"Reason for looking for another job", "Codigo":""}
+,
+{"Id":211, "Nombre":"Situation before the job search", "Codigo":""}
+,
+{"Id":212, "Nombre":"Reason for leaving the last job", "Codigo":""}
+,
+{"Id":213, "Nombre":"Professional status in the last job", "Codigo":""}
+,
+{"Id":214, "Nombre":"Occupation in the last job", "Codigo":""}
+,
+{"Id":215, "Nombre":"Economic sector of the last job", "Codigo":""}
+,
+{"Id":216, "Nombre":"Reason for not looking for a job due to taking care of dependent persons", "Codigo":""}
+,
+{"Id":217, "Nombre":"Data for dwellings and persons", "Codigo":""}
+,
+{"Id":218, "Nombre":"Unit of measure", "Codigo":""}
+,
+{"Id":219, "Nombre":"Classification according to R.I.", "Codigo":""}
+,
+{"Id":220, "Nombre":"Classification according to O.I.", "Codigo":""}
+,
+{"Id":221, "Nombre":"Relationship with economic activity", "Codigo":""}
+,
+{"Id":222, "Nombre":"Type of indicator", "Codigo":""}
+,
+{"Id":223, "Nombre":"Effective hours worked in the main job", "Codigo":""}
+,
+{"Id":224, "Nombre":"Unemployment situation by sex", "Codigo":""}
+,
+{"Id":225, "Nombre":"Economic sectors", "Codigo":""}
+,
+{"Id":229, "Nombre":"Salary/Labour Line Items", "Codigo":""}
+,
+{"Id":230, "Nombre":"Cost components", "Codigo":""}
+,
+{"Id":233, "Nombre":"Working time", "Codigo":""}
+,
+{"Id":238, "Nombre":"Rate of exchange", "Codigo":""}
+,
+{"Id":239, "Nombre":"Mortgage cancellation", "Codigo":""}
+,
+{"Id":240, "Nombre":"Nature of the property", "Codigo":""}
+,
+{"Id":241, "Nombre":"Capital loaned", "Codigo":""}
+,
+{"Id":242, "Nombre":"Interests", "Codigo":""}
+,
+{"Id":243, "Nombre":"Extension periods", "Codigo":""}
+,
+{"Id":244, "Nombre":"Entity which grants the loan", "Codigo":""}
+,
+{"Id":245, "Nombre":"Length of Time in years", "Codigo":""}
+,
+{"Id":246, "Nombre":"Chattels", "Codigo":""}
+,
+{"Id":247, "Nombre":"Financial concept", "Codigo":""}
+,
+{"Id":249, "Nombre":"Turnover/ Employed personnel", "Codigo":""}
+,
+{"Id":255, "Nombre":"Sales Group", "Codigo":""}
+,
+{"Id":257, "Nombre":"Economic destination of goods (CNAE-93)", "Codigo":""}
+,
+{"Id":258, "Nombre":"Economic destination of the goods (NACE-2009)\r\n", "Codigo":""}
+,
+{"Id":259, "Nombre":"Demographic phenomenon", "Codigo":""}
+,
+{"Id":260, "Nombre":"Demographic concepts", "Codigo":""}
+,
+{"Id":261, "Nombre":"Derived demographic concepts 2", "Codigo":""}
+,
+{"Id":264, "Nombre":"Urban or Non-urban whole\r\n", "Codigo":""}
+,
+{"Id":265, "Nombre":"COICOP groups ", "Codigo":""}
+,
+{"Id":266, "Nombre":"Subgroups 2001", "Codigo":""}
+,
+{"Id":267, "Nombre":"Classes 2001", "Codigo":""}
+,
+{"Id":268, "Nombre":"Subclasses 2001", "Codigo":""}
+,
+{"Id":269, "Nombre":"Special groups 2001", "Codigo":""}
+,
+{"Id":270, "Nombre":"Headings 2001", "Codigo":""}
+,
+{"Id":271, "Nombre":"COICOP groups 1992", "Codigo":""}
+,
+{"Id":272, "Nombre":"Subgroups 1992", "Codigo":""}
+,
+{"Id":273, "Nombre":"Classes 1992", "Codigo":""}
+,
+{"Id":274, "Nombre":"Subclasses 1992", "Codigo":""}
+,
+{"Id":275, "Nombre":"Headings 1992", "Codigo":""}
+,
+{"Id":276, "Nombre":"Special groups 1992", "Codigo":""}
+,
+{"Id":277, "Nombre":"Groups 1992", "Codigo":""}
+,
+{"Id":278, "Nombre":"Groups 1983", "Codigo":""}
+,
+{"Id":279, "Nombre":"Headings 1983", "Codigo":""}
+,
+{"Id":280, "Nombre":"Subclasses 1983", "Codigo":""}
+,
+{"Id":281, "Nombre":"Special groups 1983", "Codigo":""}
+,
+{"Id":282, "Nombre":"Groups 1976", "Codigo":""}
+,
+{"Id":283, "Nombre":"Headings 1976", "Codigo":""}
+,
+{"Id":284, "Nombre":"Subclasses 1976", "Codigo":""}
+,
+{"Id":285, "Nombre":"Provincial capitals", "Codigo":""}
+,
+{"Id":288, "Nombre":"Classes 2006", "Codigo":""}
+,
+{"Id":289, "Nombre":"Subclasses 2006", "Codigo":""}
+,
+{"Id":290, "Nombre":"Subgroups 2006", "Codigo":""}
+,
+{"Id":291, "Nombre":"Divisions ", "Codigo":""}
+,
+{"Id":293, "Nombre":"Groups ", "Codigo":""}
+,
+{"Id":294, "Nombre":"Indices corrected for calendar effects, based on CNAE-2009 ", "Codigo":""}
+,
+{"Id":295, "Nombre":"CNAE-2009 sections ", "Codigo":""}
+,
+{"Id":296, "Nombre":"Economic destination of the goods", "Codigo":""}
+,
+{"Id":297, "Nombre":"CNAE-93 sections and subsections ", "Codigo":""}
+,
+{"Id":298, "Nombre":"Economic destination of the goods (Base 2000)", "Codigo":""}
+,
+{"Id":299, "Nombre":"Sections and subsections (Base 2000)", "Codigo":""}
+,
+{"Id":300, "Nombre":"Divisions (Base 2000)", "Codigo":""}
+,
+{"Id":301, "Nombre":"Economic destination of the goods (Base 90)", "Codigo":""}
+,
+{"Id":302, "Nombre":"Sections and subsections (Base 90)", "Codigo":""}
+,
+{"Id":303, "Nombre":"Divisions (Base 90)", "Codigo":""}
+,
+{"Id":304, "Nombre":"Economic destination of the goods (Base 2000) exports", "Codigo":""}
+,
+{"Id":305, "Nombre":"Economic destination of the goods (Base 2000) imports", "Codigo":""}
+,
+{"Id":306, "Nombre":"Economic activities (History Base 90)", "Codigo":""}
+,
+{"Id":307, "Nombre":"Economic destination of the goods (Base 2005)", "Codigo":""}
+,
+{"Id":308, "Nombre":"Divisions (Base 2005)", "Codigo":""}
+,
+{"Id":309, "Nombre":"Place of reference of the demographic phenomenon", "Codigo":""}
+,
+{"Id":310, "Nombre":"Periodicity", "Codigo":""}
+,
+{"Id":311, "Nombre":"Edad de la madre", "Codigo":""}
+,
+{"Id":319, "Nombre":"HICP subindex", "Codigo":""}
+,
+{"Id":328, "Nombre":"Cities", "Codigo":""}
+,
+{"Id":336, "Nombre":"Wage-earner stratum", "Codigo":""}
+,
+{"Id":337, "Nombre":"Legal condition", "Codigo":""}
+,
+{"Id":338, "Nombre":"Main activity", "Codigo":""}
+,
+{"Id":340, "Nombre":"Type of transaction", "Codigo":""}
+,
+{"Id":341, "Nombre":"Extended Balance\r\nof Payments Services Classification (EBOPS)", "Codigo":""}
+,
+{"Id":345, "Nombre":"Estado de la vivienda", "Codigo":""}
+,
+{"Id":355, "Nombre":"Simple age", "Codigo":""}
+,
+{"Id":356, "Nombre":"Age Totals", "Codigo":""}
+,
+{"Id":357, "Nombre":"Age semi-brackets", "Codigo":""}
+,
+{"Id":360, "Nombre":"Age groups", "Codigo":""}
+,
+{"Id":364, "Nombre":"Percentages", "Codigo":""}
+,
+{"Id":368, "Nombre":"Economic activity (CNAE-93)", "Codigo":""}
+,
+{"Id":369, "Nombre":"Economic activity (CNAE-09)", "Codigo":""}
+,
+{"Id":372, "Nombre":"Type of bankruptcy", "Codigo":""}
+,
+{"Id":374, "Nombre":"Type of procedure", "Codigo":""}
+,
+{"Id":375, "Nombre":"Existence of anticipated proposal", "Codigo":""}
+,
+{"Id":376, "Nombre":"Content of the proposal", "Codigo":""}
+,
+{"Id":377, "Nombre":"GDPmp components, demand (to desappear)", "Codigo":""}
+,
+{"Id":378, "Nombre":"GDPmp components, supply (to desappear)", "Codigo":""}
+,
+{"Id":379, "Nombre":"Transactions and balances (with the rest of the world)", "Codigo":""}
+,
+{"Id":381, "Nombre":"Levels and Rates", "Codigo":""}
+,
+{"Id":382, "Nombre":"Type of data: Rates", "Codigo":""}
+,
+{"Id":384, "Nombre":"SECTORS ", "Codigo":""}
+,
+{"Id":386, "Nombre":"RELATIONSHIP WITH THE ACTIVITY ", "Codigo":""}
+,
+{"Id":387, "Nombre":"DIVISIONS", "Codigo":""}
+,
+{"Id":389, "Nombre":"SECTIONS ", "Codigo":""}
+,
+{"Id":390, "Nombre":"SUBSECTIONS", "Codigo":""}
+,
+{"Id":391, "Nombre":"GROUPS", "Codigo":""}
+,
+{"Id":393, "Nombre":"CNAE VARIABLE TOTALS\r\n", "Codigo":""}
+,
+{"Id":394, "Nombre":"CLASSES", "Codigo":""}
+,
+{"Id":395, "Nombre":"ECONOMIC DESTINATION OF THE GOODS", "Codigo":""}
+,
+{"Id":406, "Nombre":"EUROSTAT_Age", "Codigo":""}
+,
+{"Id":429, "Nombre":"Type of sampling", "Codigo":""}
+,
+{"Id":430, "Nombre":"Turnover", "Codigo":""}
+,
+{"Id":431, "Nombre":"Countries and Continents", "Codigo":""}
+,
+{"Id":432, "Nombre":"Countries", "Codigo":""}
+,
+{"Id":433, "Nombre":"Touristic Concept", "Codigo":""}
+,
+{"Id":434, "Nombre":"CNAE-09 Groups (Base 2005)", "Codigo":""}
+,
+{"Id":435, "Nombre":"Continents", "Codigo":""}
+,
+{"Id":440, "Nombre":"Divisions", "Codigo":""}
+,
+{"Id":441, "Nombre":"Sections", "Codigo":""}
+,
+{"Id":445, "Nombre":"CNAE-2009 divisions corrected for the calendar effect ", "Codigo":""}
+,
+{"Id":446, "Nombre":"Groups", "Codigo":""}
+,
+{"Id":447, "Nombre":"CNAE-2009 groups corrected for calendar effects ", "Codigo":""}
+,
+{"Id":448, "Nombre":"Indices corrected for calendar effects, based on CNAE-74", "Codigo":""}
+,
+{"Id":449, "Nombre":"Indices corrected for calendar effects, based on CNAE-93", "Codigo":""}
+,
+{"Id":450, "Nombre":"CNAE-2009 sections corrected for calendar effects ", "Codigo":""}
+,
+{"Id":451, "Nombre":"Geographical Areas of the Rest of the World", "Codigo":""}
+,
+{"Id":452, "Nombre":"Order of birth", "Codigo":""}
+,
+{"Id":456, "Nombre":"OCCUPATIONS", "Codigo":""}
+,
+{"Id":457, "Nombre":"Occupation", "Codigo":""}
+,
+{"Id":458, "Nombre":"TOTAL OCCUPATIONS", "Codigo":""}
+,
+{"Id":460, "Nombre":"Professional Status ", "Codigo":""}
+,
+{"Id":461, "Nombre":"STUDY SECTORS", "Codigo":""}
+,
+{"Id":462, "Nombre":"TOTAL EDUCATION CLASSIFICATION", "Codigo":""}
+,
+{"Id":463, "Nombre":"LEVEL OF TRAINING ATTAINED - CNED-A", "Codigo":""}
+,
+{"Id":464, "Nombre":"EDUCATIONAL LEVELS - CNED-P", "Codigo":""}
+,
+{"Id":469, "Nombre":"QUANTITY", "Codigo":""}
+,
+{"Id":470, "Nombre":"ACTIVITY SITUATION", "Codigo":""}
+,
+{"Id":472, "Nombre":"Reasons for having a part-time job, for not searching for a job and for leaving the last job", "Codigo":""}
+,
+{"Id":474, "Nombre":"Reason why they worked a number of hours different to the usual", "Codigo":""}
+,
+{"Id":476, "Nombre":"YES/NO", "Codigo":""}
+,
+{"Id":478, "Nombre":"TYPE OF TRANSPORT", "Codigo":""}
+,
+{"Id":479, "Nombre":"Urban Audit Indicators", "Codigo":""}
+,
+{"Id":480, "Nombre":"GOODS AND SERVICES TRANSACTIONS", "Codigo":""}
+,
+{"Id":481, "Nombre":"DISTRIBUTION TRANSACTIONS", "Codigo":""}
+,
+{"Id":482, "Nombre":"ACCOUNTING BALANCES", "Codigo":""}
+,
+{"Id":483, "Nombre":"COLLECTION HEADINGS", "Codigo":""}
+,
+{"Id":484, "Nombre":"Economic destination of goods fitted by working days", "Codigo":""}
+,
+{"Id":486, "Nombre":"Occupation NCO-11", "Codigo":""}
+,
+{"Id":487, "Nombre":"Occupation NCO-11 (secondary job)", "Codigo":""}
+,
+{"Id":488, "Nombre":"Occupation NCO-11 (main job)", "Codigo":""}
+,
+{"Id":489, "Nombre":"CAPITALS", "Codigo":""}
+,
+{"Id":490, "Nombre":"Relationship with the activity", "Codigo":""}
+,
+{"Id":491, "Nombre":"Sections ", "Codigo":""}
+,
+{"Id":492, "Nombre":"Derived demographic concepts 1 ", "Codigo":""}
+,
+{"Id":494, "Nombre":"TRANSACTION OF DISTRIBUTION OF WAGE EARNER REMUNERATION", "Codigo":""}
+,
+{"Id":495, "Nombre":"GVA ACCOUNTING BALANCE", "Codigo":""}
+,
+{"Id":496, "Nombre":"GFCG GOODS AND SERVICES TRANSACTION", "Codigo":""}
+,
+{"Id":497, "Nombre":"COICOP groups 2006", "Codigo":""}
+,
+{"Id":498, "Nombre":"Headings 2006", "Codigo":""}
+,
+{"Id":499, "Nombre":"Special groups 2006", "Codigo":""}
+,
+{"Id":500, "Nombre":"Proffesional Status", "Codigo":""}
+,
+{"Id":501, "Nombre":"Prices_ESA", "Codigo":""}
+,
+{"Id":502, "Nombre":"Employment by Branch of Activity CTA", "Codigo":""}
+,
+{"Id":503, "Nombre":"Dwelling regime", "Codigo":""}
+,
+{"Id":504, "Nombre":"Branch of activity- CNAE2009", "Codigo":""}
+,
+{"Id":505, "Nombre":"Householder", "Codigo":""}
+,
+{"Id":506, "Nombre":"CNAE GROUPS", "Codigo":""}
+,
+{"Id":507, "Nombre":"COICOP groups 2011", "Codigo":""}
+,
+{"Id":508, "Nombre":"Special groups 2011", "Codigo":""}
+,
+{"Id":509, "Nombre":"Headings 2011", "Codigo":""}
+,
+{"Id":510, "Nombre":"Classes 2011", "Codigo":""}
+,
+{"Id":511, "Nombre":"Subclasses 2011", "Codigo":""}
+,
+{"Id":512, "Nombre":"Subgroups 2011", "Codigo":""}
+,
+{"Id":514, "Nombre":"Name", "Codigo":""}
+,
+{"Id":515, "Nombre":"CENSUS", "Codigo":""}
+,
+{"Id":517, "Nombre":"Surname", "Codigo":""}
+,
+{"Id":518, "Nombre":"Type of surname ", "Codigo":""}
+,
+{"Id":519, "Nombre":"NON CONSIDERED VARIABLE", "Codigo":""}
+,
+{"Id":520, "Nombre":"Occupation in the last job ", "Codigo":""}
+,
+{"Id":524, "Nombre":"Main Results of Accounting", "Codigo":""}
+,
+{"Id":525, "Nombre":"Resources and employment", "Codigo":""}
+,
+{"Id":528, "Nombre":"Regional groups (NUTS 1)", "Codigo":""}
+,
+{"Id":529, "Nombre":"Gross Added Value of activities", "Codigo":""}
+,
+{"Id":530, "Nombre":"Gross fixed capital formation of activities", "Codigo":""}
+,
+{"Id":533, "Nombre":"Type of sector", "Codigo":""}
+,
+{"Id":536, "Nombre":"Nationality of the reference person ", "Codigo":""}
+,
+{"Id":538, "Nombre":"Percentages of income per consumption unit ", "Codigo":""}
+,
+{"Id":539, "Nombre":"Relationship with economic activity in the previous period", "Codigo":""}
+,
+{"Id":542, "Nombre":"Classes", "Codigo":""}
+,
+{"Id":543, "Nombre":"Type of market", "Codigo":""}
+,
+{"Id":544, "Nombre":"Correction of effects", "Codigo":""}
+,
+{"Id":545, "Nombre":"Type of housing", "Codigo":"2613"}
+,
+{"Id":546, "Nombre":"Age of the reference person ", "Codigo":""}
+,
+{"Id":548, "Nombre":"Sex of the reference person", "Codigo":""}
+,
+{"Id":549, "Nombre":"Problems that the dwelling and its environment suffer ", "Codigo":""}
+,
+{"Id":550, "Nombre":"EAPS Groups", "Codigo":""}
+,
+{"Id":551, "Nombre":"Persons in each survey and net change index", "Codigo":""}
+,
+{"Id":552, "Nombre":"PROFESSIONAL SITUATION", "Codigo":""}
+,
+{"Id":553, "Nombre":"Professional situation of the main job", "Codigo":""}
+,
+{"Id":554, "Nombre":"Professional situation of the secondary job", "Codigo":""}
+,
+{"Id":555, "Nombre":"RELATION WITH ECONOMIC ACTIVITY", "Codigo":""}
+,
+{"Id":556, "Nombre":"GROUPING LEVELS OF TRAINING", "Codigo":""}
+,
+{"Id":557, "Nombre":"Type of material deprivation ", "Codigo":""}
+,
+{"Id":558, "Nombre":"Difficulty making ends meet", "Codigo":""}
+,
+{"Id":559, "Nombre":"Domain", "Codigo":""}
+,
+{"Id":560, "Nombre":"Indicator", "Codigo":""}
+,
+{"Id":561, "Nombre":"Concept (FORMER DSD BDE)", "Codigo":""}
+,
+{"Id":562, "Nombre":"Reasons why it was not possible to fill the existing job vacancies during the previous period", "Codigo":""}
+,
+{"Id":563, "Nombre":"Reasons why there are no job vacancies", "Codigo":""}
+,
+{"Id":565, "Nombre":"Type of establishment", "Codigo":""}
+,
+{"Id":567, "Nombre":"Acquisition title", "Codigo":""}
+,
+{"Id":568, "Nombre":"Business situation", "Codigo":""}
+,
+{"Id":571, "Nombre":"Type of dissolution", "Codigo":""}
+,
+{"Id":572, "Nombre":"Range of capital", "Codigo":""}
+,
+{"Id":574, "Nombre":"EDUCATIONAL LEVEL GROUPS", "Codigo":""}
+,
+{"Id":576, "Nombre":"Marital status of the mother", "Codigo":""}
+,
+{"Id":577, "Nombre":"Cause of death", "Codigo":""}
+,
+{"Id":578, "Nombre":"Body ", "Codigo":""}
+,
+{"Id":579, "Nombre":"Reference persons", "Codigo":""}
+,
+{"Id":580, "Nombre":"Reason for the journey", "Codigo":""}
+,
+{"Id":581, "Nombre":"Destination of tourism ", "Codigo":""}
+,
+{"Id":582, "Nombre":"Semi-ranks of spouse age 2", "Codigo":""}
+,
+{"Id":583, "Nombre":"Materials and Manpower", "Codigo":""}
+,
+{"Id":584, "Nombre":"Groups of spouse age 2", "Codigo":""}
+,
+{"Id":585, "Nombre":"Total of spouse age 2", "Codigo":""}
+,
+{"Id":587, "Nombre":"Type of journey", "Codigo":""}
+,
+{"Id":588, "Nombre":"According to duration", "Codigo":""}
+,
+{"Id":589, "Nombre":"Institutional Sector", "Codigo":""}
+,
+{"Id":590, "Nombre":"Counterpart institutional sector", "Codigo":""}
+,
+{"Id":591, "Nombre":"Balance of payments", "Codigo":""}
+,
+{"Id":592, "Nombre":"Accounting entry", "Codigo":""}
+,
+{"Id":593, "Nombre":"International accounts item", "Codigo":""}
+,
+{"Id":594, "Nombre":"Functional category", "Codigo":""}
+,
+{"Id":595, "Nombre":"Instrument and assets classification", "Codigo":""}
+,
+{"Id":596, "Nombre":"Maturity", "Codigo":""}
+,
+{"Id":597, "Nombre":"Currency", "Codigo":""}
+,
+{"Id":598, "Nombre":"Compiliation methodology", "Codigo":""}
+,
+{"Id":602, "Nombre":"Consolidation", "Codigo":""}
+,
+{"Id":604, "Nombre":"Activity classification", "Codigo":"ACTIVITY"}
+,
+{"Id":605, "Nombre":"Activity classification", "Codigo":"EXPENDITURE"}
+,
+{"Id":606, "Nombre":"Transformation", "Codigo":""}
+,
+{"Id":607, "Nombre":"Cust breakdown", "Codigo":""}
+,
+{"Id":608, "Nombre":"Period detail", "Codigo":""}
+,
+{"Id":609, "Nombre":"Form of regulation of labour relations ", "Codigo":""}
+,
+{"Id":611, "Nombre":"Trade effects", "Codigo":""}
+,
+{"Id":612, "Nombre":"Generation/ages", "Codigo":""}
+,
+{"Id":613, "Nombre":"Type of visitor", "Codigo":""}
+,
+{"Id":614, "Nombre":"Modifications in the collective agreement conditions ", "Codigo":""}
+,
+{"Id":615, "Nombre":"Personal situation", "Codigo":""}
+,
+{"Id":616, "Nombre":"Sustainable Development Indicators", "Codigo":""}
+,
+{"Id":617, "Nombre":"Number of children", "Codigo":""}
+,
+{"Id":618, "Nombre":"Level of income", "Codigo":""}
+,
+{"Id":619, "Nombre":"Gender gap", "Codigo":""}
+,
+{"Id":620, "Nombre":"Age of child", "Codigo":""}
+,
+{"Id":621, "Nombre":"Reason of the full time extended leave of absence", "Codigo":""}
+,
+{"Id":622, "Nombre":"Percentile", "Codigo":""}
+,
+{"Id":625, "Nombre":"Semi-brackets of percentiles", "Codigo":""}
+,
+{"Id":626, "Nombre":"Groups of percentiles ", "Codigo":""}
+,
+{"Id":628, "Nombre":"Multiples of Interprofessional Minimum Wage", "Codigo":""}
+,
+{"Id":629, "Nombre":"EBOPS groups", "Codigo":""}
+,
+{"Id":630, "Nombre":"Period of extended leave of absence", "Codigo":""}
+,
+{"Id":631, "Nombre":"Relation with justice", "Codigo":""}
+,
+{"Id":632, "Nombre":"Type of violence", "Codigo":""}
+,
+{"Id":633, "Nombre":"Interim measures", "Codigo":""}
+,
+{"Id":634, "Nombre":"Relationship between the victim and the offender", "Codigo":""}
+,
+{"Id":635, "Nombre":"Political Parties", "Codigo":""}
+,
+{"Id":636, "Nombre":"Representation scopes", "Codigo":""}
+,
+{"Id":637, "Nombre":"Parliamentary groups", "Codigo":""}
+,
+{"Id":638, "Nombre":"Position", "Codigo":""}
+,
+{"Id":639, "Nombre":"Institutional Bodies", "Codigo":""}
+,
+{"Id":640, "Nombre":"Royal Academies", "Codigo":""}
+,
+{"Id":641, "Nombre":"Parental gap", "Codigo":""}
+,
+{"Id":642, "Nombre":"Tourism origin", "Codigo":""}
+,
+{"Id":643, "Nombre":"Educational concept", "Codigo":""}
+,
+{"Id":644, "Nombre":"Call for the University Entrance Exam ", "Codigo":""}
+,
+{"Id":645, "Nombre":"Cultural activity", "Codigo":""}
+,
+{"Id":646, "Nombre":"Professional category", "Codigo":""}
+,
+{"Id":647, "Nombre":"Statistical measures of percentiles", "Codigo":""}
+,
+{"Id":648, "Nombre":"Technical concepts", "Codigo":""}
+,
+{"Id":649, "Nombre":"Field of operation", "Codigo":""}
+,
+{"Id":650, "Nombre":"Frequency", "Codigo":""}
+,
+{"Id":651, "Nombre":"Razón de usar Internet", "Codigo":""}
+,
+{"Id":652, "Nombre":"Study field", "Codigo":""}
+,
+{"Id":653, "Nombre":"Enseñanza que se imparte", "Codigo":""}
+,
+{"Id":654, "Nombre":"Lista de actividades de ocio armonizada", "Codigo":""}
+,
+{"Id":655, "Nombre":"Quien fija el horario de trabajo", "Codigo":""}
+,
+{"Id":656, "Nombre":"Redución de las horas trabajadas por el cuidado de niños", "Codigo":""}
+,
+{"Id":657, "Nombre":"Type of work", "Codigo":""}
+,
+{"Id":658, "Nombre":"Duración en horas", "Codigo":""}
+,
+{"Id":659, "Nombre":"Conceptos sanitarios", "Codigo":""}
+,
+{"Id":660, "Nombre":"Fuente", "Codigo":""}
+,
+{"Id":661, "Nombre":"Valoración del estado de salud", "Codigo":""}
+,
+{"Id":663, "Nombre":"Clase social basada en la ocupación", "Codigo":""}
+,
+{"Id":664, "Nombre":"Intensidad", "Codigo":""}
+,
+{"Id":665, "Nombre":"Dependencia funcional", "Codigo":""}
+,
+{"Id":666, "Nombre":"Tiempo transcurrido", "Codigo":""}
+,
+{"Id":667, "Nombre":"Limitation", "Codigo":""}
+,
+{"Id":668, "Nombre":"Tipo de problema sanitario", "Codigo":""}
+,
+{"Id":669, "Nombre":"Lugar del accidente", "Codigo":""}
+,
+{"Id":670, "Nombre":"Motivo de la consulta médica", "Codigo":""}
+,
+{"Id":671, "Nombre":"Body mass", "Codigo":""}
+,
+{"Id":672, "Nombre":"Type of food", "Codigo":""}
+,
+{"Id":674, "Nombre":"Duración de la lactancia", "Codigo":""}
+,
+{"Id":675, "Nombre":"Tipo de lactancia", "Codigo":""}
+,
+{"Id":676, "Nombre":"Persona que realiza la actividad en el hogar", "Codigo":""}
+,
+{"Id":677, "Nombre":"Tobacco use", "Codigo":""}
+,
+{"Id":678, "Nombre":"Tiempo de exposición", "Codigo":""}
+,
+{"Id":679, "Nombre":"Problema medioambiental", "Codigo":""}
+,
+{"Id":680, "Nombre":"Tipo de discapacidad", "Codigo":""}
+,
+{"Id":682, "Nombre":"Número de personas con discapacidad", "Codigo":""}
+,
+{"Id":683, "Nombre":"Sexo del cuidador principal", "Codigo":""}
+,
+{"Id":684, "Nombre":"Decile of wages and salaries", "Codigo":""}
+,
+{"Id":689, "Nombre":"Tiempo de residencia en el municipio", "Codigo":""}
+,
+{"Id":691, "Nombre":"Relationship between workplace and residence", "Codigo":""}
+,
+{"Id":692, "Nombre":"Location of municipality of previous residence", "Codigo":""}
+,
+{"Id":693, "Nombre":"Tipo de hábitat anterior", "Codigo":""}
+,
+{"Id":694, "Nombre":"Ubicación del municipio de nacimiento", "Codigo":""}
+,
+{"Id":696, "Nombre":"Curso Académico", "Codigo":""}
+,
+{"Id":697, "Nombre":"Agrupaciones de Sectores de Estudios", "Codigo":""}
+,
+{"Id":698, "Nombre":"Number of recipients", "Codigo":""}
+,
+{"Id":699, "Nombre":"Method of acquiring nationality", "Codigo":""}
+,
+{"Id":701, "Nombre":"month of death", "Codigo":""}
+,
+{"Id":702, "Nombre":"Marital status of partner 1", "Codigo":""}
+,
+{"Id":703, "Nombre":"Marital status of partner 2", "Codigo":""}
+,
+{"Id":704, "Nombre":"Type of delivery", "Codigo":""}
+,
+{"Id":705, "Nombre":"Maturity", "Codigo":""}
+,
+{"Id":706, "Nombre":"Nationality of the mother", "Codigo":""}
+,
+{"Id":707, "Nombre":"Father's nationality", "Codigo":""}
+,
+{"Id":708, "Nombre":"Healthcare", "Codigo":""}
+,
+{"Id":709, "Nombre":"Mother's educational level", "Codigo":""}
+,
+{"Id":710, "Nombre":"Father's educational level", "Codigo":""}
+,
+{"Id":711, "Nombre":"Order of live birth", "Codigo":""}
+,
+{"Id":713, "Nombre":"Mother's place of birth", "Codigo":""}
+,
+{"Id":714, "Nombre":"Father's place of birth", "Codigo":""}
+,
+{"Id":715, "Nombre":"Father's age", "Codigo":""}
+,
+{"Id":716, "Nombre":"Intervalo intergenésico", "Codigo":""}
+,
+{"Id":717, "Nombre":"Weight at birth", "Codigo":""}
+,
+{"Id":718, "Nombre":"Supervivencia del nacido", "Codigo":""}
+,
+{"Id":719, "Nombre":"Gestation weeks", "Codigo":""}
+,
+{"Id":721, "Nombre":"Age of partner 1", "Codigo":""}
+,
+{"Id":723, "Nombre":"Sex of the contracting parties", "Codigo":""}
+,
+{"Id":724, "Nombre":"Nationality of partner 1", "Codigo":""}
+,
+{"Id":725, "Nombre":"Nationality of partner 2", "Codigo":""}
+,
+{"Id":726, "Nombre":"Month of celebration", "Codigo":""}
+,
+{"Id":727, "Nombre":"Form of celebration", "Codigo":""}
+,
+{"Id":728, "Nombre":"Según otras religiones", "Codigo":""}
+,
+{"Id":729, "Nombre":"Lugar de nacimiento del cónyuge 1", "Codigo":""}
+,
+{"Id":730, "Nombre":"Lugar de nacimiento del cónyuge 2", "Codigo":""}
+,
+{"Id":731, "Nombre":"Delivery multiplicity", "Codigo":""}
+,
+{"Id":735, "Nombre":"Delivery multiplicity/vitality", "Codigo":""}
+,
+{"Id":737, "Nombre":"Month of birth", "Codigo":""}
+,
+{"Id":738, "Nombre":"Type of marriage dissolution", "Codigo":""}
+,
+{"Id":739, "Nombre":"Type of marriage dissolution", "Codigo":""}
+,
+{"Id":740, "Nombre":"Tipo de matrimonio según sexo", "Codigo":""}
+,
+{"Id":741, "Nombre":"GROUPINGS OCCUPATIONS", "Codigo":""}
+,
+{"Id":742, "Nombre":"Job seniority", "Codigo":""}
+,
+{"Id":743, "Nombre":"Duration of marriage", "Codigo":""}
+,
+{"Id":745, "Nombre":"Procedure duration", "Codigo":""}
+,
+{"Id":746, "Nombre":"Separation type", "Codigo":""}
+,
+{"Id":747, "Nombre":"Divorce type", "Codigo":""}
+,
+{"Id":748, "Nombre":"Spouse who must pay the compensatory pension", "Codigo":""}
+,
+{"Id":749, "Nombre":"Spouse who must pay alimony", "Codigo":""}
+,
+{"Id":750, "Nombre":"Spouse filing suit", "Codigo":""}
+,
+{"Id":751, "Nombre":"Spouse granted custody", "Codigo":""}
+,
+{"Id":752, "Nombre":"Whether or not there is prior separation", "Codigo":""}
+,
+{"Id":753, "Nombre":"Type of marriage according to nationality of the spouses", "Codigo":""}
+,
+{"Id":754, "Nombre":"Husband's age", "Codigo":""}
+,
+{"Id":755, "Nombre":"Wife's age", "Codigo":""}
+,
+{"Id":756, "Nombre":"Husband's nationality", "Codigo":""}
+,
+{"Id":757, "Nombre":"Wife¿s nationality", "Codigo":""}
+,
+{"Id":758, "Nombre":"Husband¿s marital status", "Codigo":""}
+,
+{"Id":759, "Nombre":"Wife's marital status", "Codigo":""}
+,
+{"Id":760, "Nombre":"Number of minor or adult dependent children", "Codigo":""}
+,
+{"Id":762, "Nombre":"ECOICOP Groups", "Codigo":""}
+,
+{"Id":763, "Nombre":"ECOICOP sub-groups", "Codigo":""}
+,
+{"Id":764, "Nombre":"ECOICOP classes", "Codigo":""}
+,
+{"Id":765, "Nombre":"ECOICOP subclasses", "Codigo":""}
+,
+{"Id":766, "Nombre":"Status of the legal matter", "Codigo":""}
+,
+{"Id":767, "Nombre":"Asuntos civiles resueltos", "Codigo":""}
+,
+{"Id":768, "Nombre":"Tipo de asunto jurídico", "Codigo":""}
+,
+{"Id":769, "Nombre":"Asuntos penales resueltos", "Codigo":""}
+,
+{"Id":771, "Nombre":"Relationship between place of birth and residence", "Codigo":""}
+,
+{"Id":773, "Nombre":"Size of municipality of residence", "Codigo":""}
+,
+{"Id":774, "Nombre":"Size of municipality of birth", "Codigo":""}
+,
+{"Id":777, "Nombre":"País de origen o destino", "Codigo":""}
+,
+{"Id":778, "Nombre":" Valores especiales", "Codigo":""}
+,
+{"Id":779, "Nombre":"Type of transport by content", "Codigo":""}
+,
+{"Id":780, "Nombre":"Type of transport by destination", "Codigo":""}
+,
+{"Id":781, "Nombre":"Transport unit type", "Codigo":""}
+,
+{"Id":782, "Nombre":"Freight", "Codigo":""}
+,
+{"Id":783, "Nombre":"Significant type of rail accident", "Codigo":""}
+,
+{"Id":784, "Nombre":"Tipo de precursor de accidente ferroviario", "Codigo":""}
+,
+{"Id":785, "Nombre":"Serious injuries and fatalities", "Codigo":""}
+,
+{"Id":786, "Nombre":"Type of dangerous merchandise", "Codigo":""}
+,
+{"Id":787, "Nombre":"NST (Standard goods classification for transport statistics) 2007 ", "Codigo":""}
+,
+{"Id":788, "Nombre":"Units of measurement", "Codigo":""}
+,
+{"Id":789, "Nombre":"Accidents with hazardous goods", "Codigo":""}
+,
+{"Id":790, "Nombre":"Accident victim type", "Codigo":""}
+,
+{"Id":791, "Nombre":"Type of rail accident", "Codigo":""}
+,
+{"Id":792, "Nombre":"TABLE_IDENTIFIER", "Codigo":""}
+,
+{"Id":794, "Nombre":"Interest rate", "Codigo":""}
+,
+{"Id":796, "Nombre":"COICOP/EPF sub-groups", "Codigo":""}
+,
+{"Id":797, "Nombre":"COICOP/EPF classes", "Codigo":""}
+,
+{"Id":798, "Nombre":"COICOP/EPF subclasses", "Codigo":""}
+,
+{"Id":799, "Nombre":"Employed stratum", "Codigo":""}
+,
+{"Id":800, "Nombre":"Place of payment", "Codigo":""}
+,
+{"Id":801, "Nombre":"Expenditure quintile", "Codigo":""}
+,
+{"Id":802, "Nombre":"Compra por internet", "Codigo":""}
+,
+{"Id":803, "Nombre":"Tipo de gasto", "Codigo":""}
+,
+{"Id":806, "Nombre":"CUST_BREAKDOWN_LB", "Codigo":"CUST_BREAKDOWN_LB"}
+,
+{"Id":807, "Nombre":"Códigos de gasto con cantidad física (ECOICOP/EPF)", "Codigo":""}
+,
+{"Id":808, "Nombre":"Gross Divorce Rate", "Codigo":""}
+,
+{"Id":809, "Nombre":"Types of penalties", "Codigo":""}
+,
+{"Id":810, "Nombre":"Number of crimes", "Codigo":""}
+,
+{"Id":811, "Nombre":"Number of penalties", "Codigo":""}
+,
+{"Id":812, "Nombre":"Duration of the sentence", "Codigo":""}
+,
+{"Id":813, "Nombre":"Commission grade", "Codigo":""}
+,
+{"Id":815, "Nombre":"Measures taken", "Codigo":""}
+,
+{"Id":816, "Nombre":"Number of measures taken", "Codigo":""}
+,
+{"Id":817, "Nombre":"Number of criminal offences", "Codigo":""}
+,
+{"Id":818, "Nombre":"Countries and Continents", "Codigo":""}
+,
+{"Id":820, "Nombre":"Crimes Misdemeanours", "Codigo":""}
+,
+{"Id":821, "Nombre":"Actividades de trabajo no remunerado ", "Codigo":""}
+,
+{"Id":822, "Nombre":"Horas trabajadas no remuneradas", "Codigo":""}
+,
+{"Id":823, "Nombre":"Indicador (últimos datos)", "Codigo":""}
+,
+{"Id":824, "Nombre":"Tipo de dato (últimos datos)", "Codigo":""}
+,
+{"Id":825, "Nombre":"Time period collection", "Codigo":""}
+,
+{"Id":826, "Nombre":"LCI_ACTIVITY", "Codigo":""}
+,
+{"Id":828, "Nombre":"Inequality indicators", "Codigo":""}
+,
+{"Id":831, "Nombre":"Sentences and measures", "Codigo":""}
+,
+{"Id":832, "Nombre":"Victim's place of birth", "Codigo":""}
+,
+{"Id":833, "Nombre":"Place of birth of the accused", "Codigo":""}
+,
+{"Id":834, "Nombre":"Age of the victim", "Codigo":""}
+,
+{"Id":835, "Nombre":"Age of the accused", "Codigo":""}
+,
+{"Id":837, "Nombre":"Sentenced", "Codigo":""}
+,
+{"Id":838, "Nombre":"NACE Group A10", "Codigo":""}
+,
+{"Id":839, "Nombre":"NACE Group A21", "Codigo":""}
+,
+{"Id":840, "Nombre":"NACE Group A64", "Codigo":""}
+,
+{"Id":841, "Nombre":"Pronunciamiento de la sentencia", "Codigo":""}
+,
+{"Id":842, "Nombre":"Causa del litigio", "Codigo":""}
+,
+{"Id":843, "Nombre":"Dictamen del decreto", "Codigo":""}
+,
+{"Id":844, "Nombre":"Tipo de arrendamiento", "Codigo":""}
+,
+{"Id":845, "Nombre":"Year of arrival in Spain", "Codigo":""}
+,
+{"Id":848, "Nombre":"Income distribution", "Codigo":""}
+,
+{"Id":849, "Nombre":"Distribution of income source", "Codigo":""}
+,
+{"Id":850, "Nombre":"Population of missing municipalities", "Codigo":""}
+,
+{"Id":851, "Nombre":"Motivo para no contratar servicios para el cuidado de hijos", "Codigo":""}
+,
+{"Id":852, "Nombre":"Medidas adptadas para el cuidado de familiares dependientes", "Codigo":""}
+,
+{"Id":853, "Nombre":"Formula para dejar de trabajar", "Codigo":""}
+,
+{"Id":855, "Nombre":"Situación matrimonial de la madre", "Codigo":""}
+,
+{"Id":858, "Nombre":"Type of stock", "Codigo":""}
+,
+{"Id":859, "Nombre":"Active population", "Codigo":""}
+,
+{"Id":860, "Nombre":"Previous marital status", "Codigo":""}
+,
+{"Id":861, "Nombre":"Lugar de nacimiento del esposo", "Codigo":""}
+,
+{"Id":862, "Nombre":"Lugar de nacimiento de la esposa", "Codigo":""}
+,
+{"Id":863, "Nombre":"Father's occupation", "Codigo":""}
+,
+{"Id":864, "Nombre":"Occupation of the mother", "Codigo":""}
+,
+{"Id":865, "Nombre":"Relationship with the father's activity", "Codigo":""}
+,
+{"Id":866, "Nombre":"Relationship with the activity of the mother", "Codigo":""}
+,
+{"Id":867, "Nombre":"Normality of delivery", "Codigo":""}
+,
+{"Id":868, "Nombre":"Multiplicity/sex", "Codigo":""}
+,
+{"Id":869, "Nombre":"Educational level of spouse 1", "Codigo":""}
+,
+{"Id":870, "Nombre":"Educational level of spouse 2", "Codigo":""}
+,
+{"Id":871, "Nombre":"Spouse 1's occupation", "Codigo":""}
+,
+{"Id":872, "Nombre":"Spouse 2's occupation", "Codigo":""}
+,
+{"Id":873, "Nombre":"Áreas de movilidad", "Codigo":""}
+,
+{"Id":875, "Nombre":"Geographical regions of Spain", "Codigo":""}
+,
+{"Id":876, "Nombre":"Scenario", "Codigo":""}
+,
+{"Id":877, "Nombre":"Control of the company", "Codigo":""}
+,
+{"Id":878, "Nombre":"Tipo de indicador", "Codigo":""}
+,
+{"Id":879, "Nombre":"Supervisory tasks other workers", "Codigo":""}
+,
+{"Id":880, "Nombre":"Relationship with the activity of spouse 1", "Codigo":""}
+,
+{"Id":881, "Nombre":"Relationship with the activity of spouse 2", "Codigo":""}
+,
+{"Id":882, "Nombre":"Tipo de representación", "Codigo":""}
+,
+{"Id":883, "Nombre":"Personas con y sin discapacidad", "Codigo":""}
+,
+{"Id":884, "Nombre":"Situaciones en relación a la Seguridad Social", "Codigo":""}
+,
+{"Id":887, "Nombre":"Degree of urbanization", "Codigo":""}
+,
+{"Id":890, "Nombre":"UAA tenure regime", "Codigo":""}
+,
+{"Id":893, "Nombre":"Indicadores agricolas", "Codigo":""}
+,
+{"Id":894, "Nombre":"Tipo de tareas informáticas", "Codigo":""}
+,
+{"Id":895, "Nombre":"Business Confidence Indicators", "Codigo":""}
+,
+{"Id":896, "Nombre":"Use of productive capacity in industry", "Codigo":""}
+,
+{"Id":897, "Nombre":"Conceptos demográficos de empresas", "Codigo":""}
+,
+{"Id":898, "Nombre":"Indicadores ODS", "Codigo":""}
+,
+{"Id":899, "Nombre":"Tamaño de alojamiento", "Codigo":""}
+,
+{"Id":900, "Nombre":"Tipo de alojamiento", "Codigo":""}
+,
+{"Id":901, "Nombre":"Cohortes", "Codigo":""}
+,
+{"Id":902, "Nombre":"ERTE", "Codigo":""}
+,
+{"Id":903, "Nombre":"COMPOSITE_BREAKDOWN", "Codigo":""}
+,
+{"Id":904, "Nombre":"REPORTING_TYPE", "Codigo":""}
+,
+{"Id":905, "Nombre":"PRODUCT", "Codigo":""}
+,
+{"Id":906, "Nombre":"Duración de la ausencia", "Codigo":""}
+,
+{"Id":908, "Nombre":"Legal personality of the owner", "Codigo":""}
+,
+{"Id":909, "Nombre":"Farm size according to UAA (Ha.)", "Codigo":""}
+,
+{"Id":910, "Nombre":"Tipo de explotación según SAU y UG", "Codigo":""}
+,
+{"Id":911, "Nombre":"TEO", "Codigo":""}
+,
+{"Id":912, "Nombre":"General distribution of the holding", "Codigo":""}
+,
+{"Id":914, "Nombre":"Ecological certification of farms", "Codigo":""}
+,
+{"Id":915, "Nombre":"Agricultural training of the head ", "Codigo":""}
+,
+{"Id":916, "Nombre":"Percentage of time worked (TWYU section)", "Codigo":""}
+,
+{"Id":917, "Nombre":"OAL NOT related to holding", "Codigo":""}
+,
+{"Id":918, "Nombre":"% NV represented by the OALs over the total NV", "Codigo":""}
+,
+{"Id":919, "Nombre":"Security plan", "Codigo":""}
+,
+{"Id":920, "Nombre":"Manure storage type ", "Codigo":""}
+,
+{"Id":921, "Nombre":"Type of fertilizer used", "Codigo":""}
+,
+{"Id":922, "Nombre":"Export and import of manure", "Codigo":""}
+,
+{"Id":923, "Nombre":"Rural development measures", "Codigo":""}
+,
+{"Id":924, "Nombre":"Cattle stabling type", "Codigo":""}
+,
+{"Id":925, "Nombre":"Farm labour force", "Codigo":""}
+,
+{"Id":926, "Nombre":"Agricultural training courses for the head (last 12 months)", "Codigo":""}
+,
+{"Id":927, "Nombre":"Work on the owner's holding", "Codigo":""}
+,
+{"Id":928, "Nombre":"Head of the holding", "Codigo":""}
+,
+{"Id":929, "Nombre":"Type of pig stabling", "Codigo":""}
+,
+{"Id":930, "Nombre":"Type of coops for laying hens", "Codigo":""}
+,
+{"Id":931, "Nombre":"Animal species", "Codigo":""}
+,
+{"Id":932, "Nombre":"Types of cattle", "Codigo":""}
+,
+{"Id":933, "Nombre":"Tamaño de la vivienda", "Codigo":""}
+,
+{"Id":935, "Nombre":"Farm size according to LSU", "Codigo":""}
+,
+{"Id":936, "Nombre":"Cría o engorde de ganado ecológico", "Codigo":""}
+,
+{"Id":937, "Nombre":"UAA (without orchards)", "Codigo":""}
+,
+{"Id":938, "Nombre":"Months (tranches)", "Codigo":""}
+,
+{"Id":939, "Nombre":"Crops and  pastures", "Codigo":""}
+,
+{"Id":940, "Nombre":"OLA NOT related to holding", "Codigo":""}
+,
+{"Id":941, "Nombre":"Total", "Codigo":""}
+,
+{"Id":942, "Nombre":"Basic characteristics of the farm", "Codigo":""}
+,
+{"Id":943, "Nombre":"Type of Transfer", "Codigo":""}
+,
+{"Id":944, "Nombre":"Conceptos demográficos de empresas en el periodo anterior", "Codigo":""}
+,
+{"Id":945, "Nombre":"Farm size according to TSP (€)", "Codigo":""}
+,
+{"Id":946, "Nombre":"Farm size according to TWYU", "Codigo":""}
+,
+{"Id":947, "Nombre":"Con/Sin SAU", "Codigo":""}
+,
+{"Id":948, "Nombre":"Tipo de ganado estabulado", "Codigo":""}
+,
+{"Id":949, "Nombre":"Experience as a head", "Codigo":""}
+,
+{"Id":951, "Nombre":"UAA", "Codigo":""}
+,
+{"Id":952, "Nombre":"With or without OLA", "Codigo":""}
+,
+{"Id":953, "Nombre":"Counties", "Codigo":""}
+,
+{"Id":957, "Nombre":"Outdoors UAA", "Codigo":""}
+,
+{"Id":958, "Nombre":"Types of crops and pastures II", "Codigo":""}
+,
+{"Id":959, "Nombre":"Distribución general de la ST de la explotación", "Codigo":""}
+,
+{"Id":960, "Nombre":"Manure application techniques", "Codigo":""}
+,
+{"Id":961, "Nombre":"Cattle types", "Codigo":""}
+,
+{"Id":962, "Nombre":"Total", "Codigo":""}
+,
+{"Id":963, "Nombre":"Total", "Codigo":""}
+,
+{"Id":964, "Nombre":"General TEO", "Codigo":""}
+,
+{"Id":965, "Nombre":"Main TEO", "Codigo":""}
+,
+{"Id":966, "Nombre":"TEO Individuals", "Codigo":""}
+,
+{"Id":967, "Nombre":"UAA and Surfaces", "Codigo":""}
+,
+{"Id":968, "Nombre":"Distribución general de la superficie ecológica", "Codigo":""}
+,
+{"Id":969, "Nombre":"Crop Type III", "Codigo":""}
+,
+{"Id":970, "Nombre":"Crop Type IV", "Codigo":""}
+,
+{"Id":971, "Nombre":"Type of cattle", "Codigo":""}
+,
+{"Id":972, "Nombre":"Cría o engorde de ganado", "Codigo":""}
+,
+{"Id":973, "Nombre":"Physical p. and Legal p. ", "Codigo":""}
+,
+{"Id":974, "Nombre":"Types of Physical p. and Legal p. ", "Codigo":""}
+,
+{"Id":975, "Nombre":"Total", "Codigo":""}
+,
+{"Id":976, "Nombre":"General distribution of the SAU of the farm", "Codigo":""}
+,
+{"Id":977, "Nombre":"Distribución general de la SAU de la explotación", "Codigo":""}
+,
+{"Id":978, "Nombre":"Total", "Codigo":""}
+,
+{"Id":979, "Nombre":"Con/Sin UGT", "Codigo":""}
+,
+{"Id":980, "Nombre":"Tramos de UGT", "Codigo":""}
+,
+{"Id":981, "Nombre":"Cría o engorde de ganado", "Codigo":""}
+,
+{"Id":982, "Nombre":"Tipo de cultivos IV", "Codigo":""}
+,
+{"Id":983, "Nombre":"Type of activity", "Codigo":""}
+,
+{"Id":984, "Nombre":"Holder/Relative/Non-relative", "Codigo":""}
+,
+{"Id":985, "Nombre":"Labour type", "Codigo":""}
+,
+{"Id":986, "Nombre":"Hired labour type", "Codigo":""}
+,
+{"Id":990, "Nombre":"Total", "Codigo":""}
+,
+{"Id":991, "Nombre":"Type of stabling", "Codigo":""}
+,
+{"Id":992, "Nombre":"With solid or liquid manure", "Codigo":""}
+,
+{"Id":998, "Nombre":"Limitations on participation in the work market due to caring for dependent people", "Codigo":""}
+,
+{"Id":999, "Nombre":"Total", "Codigo":""}
+,
+{"Id":1000, "Nombre":"Type of entity", "Codigo":""}
+,
+{"Id":1001, "Nombre":"Antigüedad del contrato de arrendamiento", "Codigo":""}
+,
+{"Id":1002, "Nombre":"Intervalos de error", "Codigo":""}
+,
+{"Id":1005, "Nombre":"Affiliation within a business group", "Codigo":""}
+,
+{"Id":1006, "Nombre":"Business group", "Codigo":""}
+,
+{"Id":1007, "Nombre":"Size of the company", "Codigo":""}
+,
+{"Id":1009, "Nombre":"Access to different types of health care", "Codigo":""}
+,
+{"Id":1010, "Nombre":"Reasons why health care has not been accessed", "Codigo":""}
+,
+{"Id":1013, "Nombre":"Age (persons above 16 years of age)", "Codigo":""}
+,
+{"Id":1014, "Nombre":"Relationship between the place of residence and place of studies", "Codigo":""}
+,
+{"Id":1015, "Nombre":"Type of current studies", "Codigo":""}
+,
+{"Id":1016, "Nombre":"Type of material", "Codigo":""}
+,
+{"Id":1017, "Nombre":"Container waste", "Codigo":""}
+,
+{"Id":1018, "Nombre":"Secondary raw materials", "Codigo":""}
+,
+{"Id":1019, "Nombre":"Type of consumption", "Codigo":""}
+,
+{"Id":1020, "Nombre":"Type of energy flow", "Codigo":""}
+,
+{"Id":1021, "Nombre":"Marine Demarcation", "Codigo":""}
+,
+{"Id":1022, "Nombre":"Taxonomic group", "Codigo":""}
+,
+{"Id":1023, "Nombre":"Environmental indicator", "Codigo":""}
+,
+{"Id":1024, "Nombre":"CINE groupings-A 2011", "Codigo":""}
+,
+{"Id":1025, "Nombre":"Maritime/Non-maritime areas", "Codigo":""}
+,
+{"Id":1026, "Nombre":"HVD Indicators", "Codigo":""}
+,
+{"Id":1027, "Nombre":"Related to the most frequent activity", "Codigo":""}
+,
+{"Id":1028, "Nombre":"Accommodation booking mode", "Codigo":""}
+,
+{"Id":1029, "Nombre":"Transport reservation mode", "Codigo":""}
+,
+{"Id":1030, "Nombre":"Destination", "Codigo":""}
+,
+{"Id":1031, "Nombre":"Nivel de satisfacción", "Codigo":""}
+,
+{"Id":1032, "Nombre":"Operaciones y flujos", "Codigo":""}
+,
+{"Id":1034, "Nombre":"Net wealth percentile", "Codigo":""}
+,
+{"Id":1035, "Nombre":"Type of asset/debt", "Codigo":""}
+,
+{"Id":1036, "Nombre":"Size of destination municipalities", "Codigo":""}
+,
+{"Id":1037, "Nombre":"Type of reasons", "Codigo":""}
+,
+{"Id":1038, "Nombre":"Tipo de ejercicio", "Codigo":""}
+,
+{"Id":1039, "Nombre":"Weekly time interval", "Codigo":""}
+,
+{"Id":1040, "Nombre":"Year of arrival to the Autonomous Community", "Codigo":""}
+,
+{"Id":1041, "Nombre":"Year of arrival in Province", "Codigo":""}
+,
+{"Id":1042, "Nombre":"Year of arrival in the Municipality", "Codigo":""}
+,
+{"Id":1043, "Nombre":"Mes", "Codigo":""}
+,
+{"Id":1045, "Nombre":"Branches of activity and Households", "Codigo":""}
+,
+{"Id":1046, "Nombre":"Exports, imports and services", "Codigo":""}
+,
+{"Id":1047, "Nombre":"Mode of supply", "Codigo":""}
+,
+{"Id":1048, "Nombre":"Categorías HVD", "Codigo":""}
+,
+{"Id":1049, "Nombre":"Irrigation method", "Codigo":""}
+,
+{"Id":1050, "Nombre":"Irrigation methods", "Codigo":""}
+,
+{"Id":1051, "Nombre":"Types of methods", "Codigo":""}
+,
+{"Id":1052, "Nombre":"Total", "Codigo":""}
+,
+{"Id":1053, "Nombre":"General distribution of the surface", "Codigo":""}
+,
+{"Id":1054, "Nombre":"Crops and pastures", "Codigo":""}
+,
+{"Id":1055, "Nombre":"Types of crops I", "Codigo":""}
+,
+{"Id":1056, "Nombre":"Types of crops II", "Codigo":""}
+,
+{"Id":1057, "Nombre":"Origin of irrigation water", "Codigo":""}
+,
+{"Id":1062, "Nombre":"Type of waste", "Codigo":""}
+,
+{"Id":1064, "Nombre":"Employment status", "Codigo":""}
+,
+{"Id":1065, "Nombre":"Demographic characteristics", "Codigo":""}
+,
+{"Id":1066, "Nombre":"Type of ICT use", "Codigo":""}
+,
+{"Id":1068, "Nombre":"Type of rate", "Codigo":""}
+,
+{"Id":1069, "Nombre":"Type of control", "Codigo":""}
+,
+{"Id":1070, "Nombre":"Economic structure", "Codigo":""}
+,
+{"Id":1071, "Nombre":"sectors/unit", "Codigo":""}
+,
+{"Id":1072, "Nombre":"Actividades CNAE 2009", "Codigo":""}
+,
+{"Id":1073, "Nombre":"Environmental issues", "Codigo":""}
+,
+{"Id":1085, "Nombre":"Type of indicator", "Codigo":""}
+,
+{"Id":1086, "Nombre":"Branches of activity", "Codigo":""}
+,
+{"Id":1087, "Nombre":"Fruit species", "Codigo":""}
+,
+{"Id":1088, "Nombre":"Age ranges", "Codigo":""}
+,
+{"Id":1089, "Nombre":"Density ranges", "Codigo":""}
+,
+{"Id":1090, "Nombre":"Type of machinery", "Codigo":""}
+,
+{"Id":1091, "Nombre":"Tractor type by power (Kw)", "Codigo":""}
+,
+{"Id":1092, "Nombre":"Tillage method", "Codigo":""}
+,
+{"Id":1093, "Nombre":"Winter cover", "Codigo":""}
+,
+{"Id":1094, "Nombre":"Agricultural Surface Drainage", "Codigo":""}
+,
+{"Id":1095, "Nombre":"Indicadores de Calidad de Vida", "Codigo":""}
+,
+{"Id":1096, "Nombre":"Irrigated area", "Codigo":""}
+,
+{"Id":1097, "Nombre":"Machinery management", "Codigo":""}
+,
+{"Id":1098, "Nombre":"Confidence level", "Codigo":""}
+,
+{"Id":1099, "Nombre":"Arable Land", "Codigo":""}
+,
+{"Id":1100, "Nombre":"Type of equipment for renewable energy production", "Codigo":""}
+,
+{"Id":1101, "Nombre":"Total", "Codigo":""}
+,
+{"Id":1102, "Nombre":"Species", "Codigo":""}
+,
+{"Id":1103, "Nombre":"Types", "Codigo":""}
+,
+{"Id":1104, "Nombre":"Total", "Codigo":""}
+,
+{"Id":1105, "Nombre":"Equipment I", "Codigo":""}
+,
+{"Id":1106, "Nombre":"Equipment II", "Codigo":""}
+,
+{"Id":1107, "Nombre":"Nivel de seguridad", "Codigo":""}
+,
+{"Id":1108, "Nombre":"Precision techniques", "Codigo":""}
+,
+{"Id":1109, "Nombre":"Participation in activities", "Codigo":""}
+,
+{"Id":1110, "Nombre":"Evaluación", "Codigo":""}
+,
+{"Id":1111, "Nombre":"Sources of water", "Codigo":""}
+,
+{"Id":1112, "Nombre":"Type of use", "Codigo":""}
+,
+{"Id":1113, "Nombre":"Destination", "Codigo":""}
+,
+{"Id":1114, "Nombre":"Régimen de la Seguridad Social", "Codigo":""}
+,
+{"Id":1115, "Nombre":"Relationship to activity (Administrative sources)", "Codigo":""}
+,
+{"Id":1117, "Nombre":"Unit cost", "Codigo":""}
+,
+{"Id":1118, "Nombre":"Valor Añadido Interior", "Codigo":""}
+,
+{"Id":1119, "Nombre":"Valor Añadido Exterior", "Codigo":""}
+,
+{"Id":1120, "Nombre":"Porcentaje de Valor Añadido", "Codigo":""}
+,
+{"Id":1121, "Nombre":"Empleo Interior", "Codigo":""}
+,
+{"Id":1122, "Nombre":"Gases de Efecto Invernadero", "Codigo":""}
+,
+{"Id":1123, "Nombre":"Days registered", "Codigo":""}
+,
+{"Id":1124, "Nombre":"Number of jobs", "Codigo":""}
+,
+{"Id":1125, "Nombre":"Registered occupational status", "Codigo":""}
+,
+{"Id":1126, "Nombre":"Labour demand of the Spanish Public Employment Service (SEPE).", "Codigo":""}
+,
+{"Id":1127, "Nombre":"Social security (INSS) contributory benefits", "Codigo":""}
+,
+{"Id":1129, "Nombre":"Subclases COICOP/EPF Cantidades Físicas", "Codigo":""}
+,
+{"Id":1130, "Nombre":"Study population age", "Codigo":""}
+,
+{"Id":1131, "Nombre":"Business function", "Codigo":""}
+,
+{"Id":1133, "Nombre":"Type of goods", "Codigo":""}
+,
+{"Id":1135, "Nombre":"Type of services", "Codigo":""}
+,
+{"Id":1136, "Nombre":"Conceptos empresariales", "Codigo":""}
+,
+{"Id":1137, "Nombre":"Reasons", "Codigo":""}
+,
+{"Id":1138, "Nombre":"Barriers", "Codigo":""}
+,
+{"Id":1139, "Nombre":"Events", "Codigo":""}
+,
+{"Id":1140, "Nombre":"Changes", "Codigo":""}
+,
+{"Id":1141, "Nombre":"Level of importance", "Codigo":""}
+,
+{"Id":1142, "Nombre":"Degree of qualification", "Codigo":""}
+,
+{"Id":1144, "Nombre":"Type of Business Partner", "Codigo":""}
+,
+{"Id":1145, "Nombre":"Domain", "Codigo":""}
+,
+{"Id":1146, "Nombre":"Division", "Codigo":""}
+,
+{"Id":1147, "Nombre":"Group", "Codigo":""}
+,
+{"Id":1148, "Nombre":"CVG", "Codigo":""}
+,
+{"Id":1149, "Nombre":"Added items Volunteering", "Codigo":""}
+,
+{"Id":1150, "Nombre":"Physical effort", "Codigo":""}
+,
+{"Id":1151, "Nombre":"Cost burden", "Codigo":""}
+,
+{"Id":1152, "Nombre":"Type of health cost", "Codigo":""}
+,
+{"Id":1153, "Nombre":"Grade of limitation", "Codigo":""}
+,
+{"Id":1154, "Nombre":"Product", "Codigo":"PRODCOM"}
+,
+{"Id":1155, "Nombre":"PRODCOM Sector", "Codigo":""}
+,
+{"Id":1156, "Nombre":"CPA Sector", "Codigo":"CPA"}
+,
+{"Id":1157, "Nombre":"Municipios de mas de 100.000 habitantes", "Codigo":""}
+,
+{"Id":1158, "Nombre":"Location of residence one year ago", "Codigo":""}
+,
+{"Id":1159, "Nombre":"Transfer type", "Codigo":""}
+,
+{"Id":1160, "Nombre":"2025 y posterior", "Codigo":""}
+,
+{"Id":1161, "Nombre":"Type of forest fire", "Codigo":""}
+,
+{"Id":1162, "Nombre":"Tipo de elector", "Codigo":""}
+,
+{"Id":1163, "Nombre":"Tipo de elección", "Codigo":""}
+,
+{"Id":1164, "Nombre":"Indicador OCE", "Codigo":""}
+,
+{"Id":1166, "Nombre":"Saldo de Valor Añadido", "Codigo":""}
+,
+{"Id":1167, "Nombre":"Flujo", "Codigo":""}
+,
+{"Id":1168, "Nombre":"Consulados", "Codigo":""}
+,
+{"Id":1169, "Nombre":"EATIM", "Codigo":""}
+,
+{"Id":1170, "Nombre":"Trabajo con horario atípico", "Codigo":""}
+]
+

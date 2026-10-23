@@ -1,0 +1,68 @@
+{
+    "type":"Feature",
+    "properties":{
+        "fecha_modif":"2021-05-18T10:15:28",
+        "tip_nodo":"http://inspire.ec.europa.eu/codelist/FormOfRailwayNodeValue/junction",
+        "nilreason_tip_nodofc":null,
+        "id":10631,
+        "nil_tip_nodofc":null
+    },
+    "id":"FFCC_N_10631",
+    "geometry":{
+        "type":"Point",
+        "coordinates":[
+            -4.477768661221103,
+            36.69857712159671
+        ]
+    },
+    "prev":"FFCC_N_10630",
+    "next":"FFCC_N_10632",
+    "links":[
+        {
+            "type":"application/json",
+            "rel":"root",
+            "title":"The landing page of this server as JSON",
+            "href":"https://api-features.idee.es?f=json"
+        },
+        {
+            "type":"text/html",
+            "rel":"root",
+            "title":"The landing page of this server as HTML",
+            "href":"https://api-features.idee.es?f=html"
+        },
+        {
+            "rel":"self",
+            "type":"application/geo+json",
+            "title":"This document as JSON",
+            "href":"https://api-features.idee.es/collections/railwaynode/items/FFCC_N_10631?f=json"
+        },
+        {
+            "rel":"alternate",
+            "type":"application/ld+json",
+            "title":"This document as RDF (JSON-LD)",
+            "href":"https://api-features.idee.es/collections/railwaynode/items/FFCC_N_10631?f=jsonld"
+        },
+        {
+            "rel":"alternate",
+            "type":"text/html",
+            "title":"This document as HTML",
+            "href":"https://api-features.idee.es/collections/railwaynode/items/FFCC_N_10631?f=html"
+        },
+        {
+            "rel":"collection",
+            "type":"application/json",
+            "title":"TN-RA Nodo ferroviario",
+            "href":"https://api-features.idee.es/collections/railwaynode"
+        },
+        {
+            "rel":"prev",
+            "type":"application/json",
+            "href":"https://api-features.idee.es/collections/railwaynode/items/FFCC_N_10630?f=json"
+        },
+        {
+            "rel":"next",
+            "type":"application/json",
+            "href":"https://api-features.idee.es/collections/railwaynode/items/FFCC_N_10632?f=json"
+        }
+    ]
+}

@@ -1,0 +1,167 @@
+[{"Id":6, "Cod_IOE":"30211", "Nombre":"Harmonised Labour Cost Index  ", "Codigo":"ICLA", "Url":"/dyngs/INEbase/en/operacion.htm?c=Estadistica_C&cid=1254736053992&idp=1254735976596"}
+,{"Id":7, "Cod_IOE":"30168", "Nombre":"Transfer of Property Rights Statistics", "Codigo":"ETDP", "Url":"/dyngs/INEbase/en/operacion.htm?c=Estadistica_C&cid=1254736171438&idp=1254735576606"}
+,{"Id":8, "Cod_IOE":"30243", "Nombre":"Population and Housing Censuses  ", "Codigo":"CENSOPV", "Url":"/dyngs/INEbase/en/operacion.htm?c=Estadistica_C&cid=1254736177108&idp=1254735572981"}
+,{"Id":10, "Cod_IOE":"30256", "Nombre":"Urban Indicators", "Codigo":"UA", "Url":"https://www.ine.es/dyngs/INEbase/es/operacion.htm?c=Estadistica_C&cid=1254736176957&idp=1254735976608"}
+,{"Id":14, "Cod_IOE":"30182", "Nombre":"Services Sector Price Indices ", "Codigo":"IPS", "Url":"/dyngs/INEbase/en/operacion.htm?c=Estadistica_C&cid=1254736176864&idp=1254735576778"}
+,{"Id":15, "Cod_IOE":"30457", "Nombre":"Housing Price Index (HPI) ", "Codigo":"IPV", "Url":"/dyngs/INEbase/en/operacion.htm?c=Estadistica_C&cid=1254736152838&idp=1254735976607"}
+,{"Id":16, "Cod_IOE":"", "Nombre":"Name Distribution", "Codigo":"TNOM", "Url":"https://www.ine.es/dyngs/INEbase/es/operacion.htm?c=Estadistica_C&cid=1254736177009&idp=1254735572981"}
+,{"Id":18, "Cod_IOE":"30180", "Nombre":"Harmonised Index of Consumer Prices (HICP) ", "Codigo":"IPCA", "Url":"/dyngs/INEbase/en/operacion.htm?c=Estadistica_C&cid=1254736176803&idp=1254735976607"}
+,{"Id":20, "Cod_IOE":"30013", "Nombre":"Quarterly Spanish National Accounts. Base 2000 ", "Codigo":"CNTR2000"}
+,{"Id":22, "Cod_IOE":"30245", "Nombre":"Official population figures of the Spanish Municipalities: Revision of the Municipal Register", "Codigo":"DPOP", "Url":"/dyngs/INEbase/en/operacion.htm?c=Estadistica_C&cid=1254736177011&idp=1254734710990"}
+,{"Id":23, "Cod_IOE":"30417", "Nombre":"Deaths according to Cause of Death ", "Codigo":"ECM", "Url":"/dyngs/INEbase/en/operacion.htm?c=Estadistica_C&cid=1254736176780&idp=1254735573175"}
+,{"Id":24, "Cod_IOE":"30048", "Nombre":"Industrial Companies Survey ", "Codigo":"EEE:IND", "Url":"/dyngs/INEbase/en/operacion.htm?c=Estadistica_C&cid=1254736143952&idp=1254735576715"}
+,{"Id":25, "Cod_IOE":"30138", "Nombre":"Consumer Price Index (CPI) ", "Codigo":"IPC", "Url":"/dyngs/INEbase/en/operacion.htm?c=Estadistica_C&cid=1254736176802&idp=1254735976607"}
+,{"Id":26, "Cod_IOE":"30050", "Nombre":"Industrial Production Indices ", "Codigo":"IPI", "Url":"/dyngs/INEbase/en/operacion.htm?c=Estadistica_C&cid=1254736145519&idp=1254735576715"}
+,{"Id":27, "Cod_IOE":"30051", "Nombre":"Industrial Price Indices ", "Codigo":"IPRI", "Url":"/dyngs/INEbase/en/operacion.htm?c=Estadistica_C&cid=1254736147699&idp=1254735576715"}
+,{"Id":31, "Cod_IOE":"30183", "Nombre":"Services Sector Activity Indicators ", "Codigo":"IAS", "Url":"/dyngs/INEbase/en/operacion.htm?c=Estadistica_C&cid=1254736176863&idp=1254735576778"}
+,{"Id":32, "Cod_IOE":"30103", "Nombre":"Retail Trade Indices ", "Codigo":"ICM", "Url":"/dyngs/INEbase/en/operacion.htm?c=Estadistica_C&cid=1254736176900&idp=1254735576799"}
+,{"Id":33, "Cod_IOE":"30264", "Nombre":"Basic Demographic Indicators ", "Codigo":"IDB", "Url":"/dyngs/INEbase/en/operacion.htm?c=Estadistica_C&cid=1254736177003&idp=1254735573002"}
+,{"Id":39, "Cod_IOE":"30162", "Nombre":"Tourist Accommodation Occupancy Survey ", "Codigo":"EOT"}
+,{"Id":40, "Cod_IOE":"30149", "Nombre":"Mortgages Statistic", "Codigo":"HPT", "Url":"/dyngs/INEbase/en/operacion.htm?c=Estadistica_C&cid=1254736170236&idp=1254735576606"}
+,{"Id":42, "Cod_IOE":"30052", "Nombre":"Industrial Turnover Indices", "Codigo":"ICN", "Url":"/dyngs/INEbase/en/operacion.htm?c=Estadistica_C&cid=1254736148782&idp=1254735576715"}
+,{"Id":43, "Cod_IOE":"30203", "Nombre":"Statistical Use of the Central Business Directory", "Codigo":"DIR", "Url":"/dyngs/INEbase/en/operacion.htm?c=Estadistica_C&cid=1254736160707&idp=1254735576550"}
+,{"Id":44, "Cod_IOE":"30198", "Nombre":"International Trade in Services Survey and Other International Operations", "Codigo":"ICES", "Url":"/dyngs/INEbase/en/operacion.htm?c=Estadistica_C&cid=1254736174702&idp=1254735576778"}
+,{"Id":48, "Cod_IOE":"30071", "Nombre":"Export and Import Price Indices of Industrial Products ", "Codigo":"IPRX-M", "Url":"/dyngs/INEbase/en/operacion.htm?c=Estadistica_C&cid=1254736148943&idp=1254735576715"}
+,{"Id":49, "Cod_IOE":"", "Nombre":"Surname Distribution", "Codigo":"APEL", "Url":"https://www.ine.es/dyngs/INEbase/es/operacion.htm?c=Estadistica_C&cid=1254736177009&idp=1254735572981"}
+,{"Id":61, "Cod_IOE":"30222", "Nombre":"Holiday Dwelling Price Index  ", "Codigo":"IPAP", "Url":"/dyngs/INEbase/en/operacion.htm?c=Estadistica_C&cid=1254736176962&idp=1254735576863"}
+,{"Id":62, "Cod_IOE":"30223", "Nombre":"Campsite Price Index ", "Codigo":"IPAC", "Url":"/dyngs/INEbase/en/operacion.htm?c=Estadistica_C&cid=1254736176961&idp=1254735576863"}
+,{"Id":63, "Cod_IOE":"30229", "Nombre":"Rural Tourism Accommodation Price Index  ", "Codigo":"IPTR", "Url":"/dyngs/INEbase/en/operacion.htm?c=Estadistica_C&cid=1254736176963&idp=1254735576863"}
+,{"Id":66, "Cod_IOE":"30463", "Nombre":"Annulments, Separations and Divorces ", "Codigo":"ENSD", "Url":"/dyngs/INEbase/en/operacion.htm?c=Estadistica_C&cid=1254736176798&idp=1254735573206"}
+,{"Id":67, "Cod_IOE":"30233", "Nombre":"Statistics on Products in the Trade Sector ", "Codigo":"EPSC", "Url":"/dyngs/INEbase/en/operacion.htm?c=Estadistica_C&cid=1254736176903&idp=1254735576799"}
+,{"Id":70, "Cod_IOE":"30276", "Nombre":"Household Projection ", "Codigo":"PROH", "Url":"https://www.ine.es/dyngs/INEbase/es/operacion.htm?c=Estadistica_C&cid=1254736176954&idp=1254735572981"}
+,{"Id":71, "Cod_IOE":"30277", "Nombre":"Migration Statistic", "Codigo":"EM", "Url":"/dyngs/INEbase/en/operacion.htm?c=Estadistica_C&cid=1254736177000&idp=1254735573002"}
+,{"Id":79, "Cod_IOE":"30015", "Nombre":"Indices for the Regional Distribution of VAT and Special Taxes on Beer, Alcohol and  Derived Beverages and Intermediate Products ", "Codigo":"IRIVA", "Url":"/dyngs/INEbase/en/operacion.htm?c=Estadistica_C&cid=1254736167628&idp=1254735576581"}
+,{"Id":86, "Cod_IOE":"30021", "Nombre":"Quarterly Non-financial Accounts for the Institutional Sectors. Base 2008 ", "Codigo":"CTNFSI"}
+,{"Id":91, "Cod_IOE":"30044", "Nombre":"Survey on the Structure of Agricultural Operations  ", "Codigo":"EEA", "Url":"/dyngs/INEbase/en/operacion.htm?c=Estadistica_C&cid=1254736176854&idp=1254735727106"}
+,{"Id":93, "Cod_IOE":"30049", "Nombre":"Annual Industrial Products Survey ", "Codigo":"EIAP", "Url":"/dyngs/INEbase/en/operacion.htm?c=Estadistica_C&cid=1254736149053&idp=1254735576715"}
+,{"Id":99, "Cod_IOE":"30057", "Nombre":"Statistics on R&D Activities in the Business Sector ", "Codigo":"I+D:E", "Url":"/dyngs/INEbase/en/operacion.htm?c=Estadistica_C&cid=1254736176754&idp=1254735576669"}
+,{"Id":100, "Cod_IOE":"30058", "Nombre":"Statistics on R&D Activities in the Public Administration Sector", "Codigo":"I+D:AP", "Url":"/dyngs/INEbase/en/operacion.htm?c=Estadistica_C&cid=1254736176754&idp=1254735576669"}
+,{"Id":101, "Cod_IOE":"30059", "Nombre":"Statistics on R&D Activities in the Private Non-Profit Institutions Sector", "Codigo":"I+D:ISFL", "Url":"/dyngs/INEbase/en/operacion.htm?c=Estadistica_C&cid=1254736176754&idp=1254735576669"}
+,{"Id":102, "Cod_IOE":"30060", "Nombre":"Statistics on R&D Activities in the Higher Education Sector", "Codigo":"I+D:ES", "Url":"/dyngs/INEbase/en/operacion.htm?c=Estadistica_C&cid=1254736176754&idp=1254735576669"}
+,{"Id":103, "Cod_IOE":"30061", "Nombre":"Innovation in Companies Survey", "Codigo":"PITEC", "Url":"/dyngs/INEbase/en/operacion.htm?c=Estadistica_C&cid=1254736176755&idp=1254735576669"}
+,{"Id":104, "Cod_IOE":"30062", "Nombre":"Energy and Material Price Indices and National Labour Force Indices  ", "Codigo":"IMM", "Url":"/dyngs/INEbase/en/operacion.htm?c=Estadistica_C&cid=1254736154972&idp=1254735576757"}
+,{"Id":107, "Cod_IOE":"30066", "Nombre":"Statistics on Activities for the Protection of the Environment", "Codigo":"EAPM", "Url":"/dyngs/INEbase/en/operacion.htm?c=Estadistica_C&cid=1254736176846&idp=1254735976612"}
+,{"Id":110, "Cod_IOE":"30070", "Nombre":"Energy Consumption Survey ", "Codigo":"ECE", "Url":"/dyngs/INEbase/en/operacion.htm?c=Estadistica_C&cid=1254736146240&idp=1254735576715"}
+,{"Id":115, "Cod_IOE":"30081", "Nombre":"Information and Communications Technologies (ICT) Sector Indicators ", "Codigo":"ITIC", "Url":"/dyngs/INEbase/en/operacion.htm?c=Estadistica_C&cid=1254736176742&idp=1254735576692"}
+,{"Id":116, "Cod_IOE":"30082", "Nombre":"Statistics on Affiliates of Spanish Companies Abroad ", "Codigo":"FILEXT", "Url":"/dyngs/INEbase/en/operacion.htm?c=Estadistica_C&cid=1254736162975&idp=1254735576550"}
+,{"Id":121, "Cod_IOE":"30133", "Nombre":"Four-yearly Wage Structure Survey ", "Codigo":"EAES:Q", "Url":"/dyngs/INEbase/en/operacion.htm?c=Estadistica_C&cid=1254736177025&idp=1254735976596"}
+,{"Id":125, "Cod_IOE":"30151", "Nombre":"Mercantile Companies Statistic", "Codigo":"SM", "Url":"/dyngs/INEbase/en/operacion.htm?c=Estadistica_C&cid=1254736177026&idp=1254735576550"}
+,{"Id":129, "Cod_IOE":"30169", "Nombre":"Survey on the Use of Information and Communication Technologies and Electronic Commerce in Companies  ", "Codigo":"ETICCE", "Url":"/dyngs/INEbase/en/operacion.htm?c=Estadistica_C&cid=1254736176743&idp=1254735576692"}
+,{"Id":130, "Cod_IOE":"30177", "Nombre":"Annual Services Survey  ", "Codigo":"EEE:SER", "Url":"/dyngs/INEbase/en/operacion.htm?c=Estadistica_C&cid=1254736176865&idp=1254735576778"}
+,{"Id":132, "Cod_IOE":"30179", "Nombre":"Hotel Price Index ", "Codigo":"IPH", "Url":"/dyngs/INEbase/en/operacion.htm?c=Estadistica_C&cid=1254736177015&idp=1254735576863"}
+,{"Id":137, "Cod_IOE":"30185", "Nombre":"Labour Price Index", "Codigo":"IPT", "Url":"/dyngs/INEbase/en/operacion.htm?c=Estadistica_C&cid=1254736177027&idp=1254735976596"}
+,{"Id":139, "Cod_IOE":"30188", "Nombre":"Annual Labour Cost Survey ", "Codigo":"EACL", "Url":"/dyngs/INEbase/en/operacion.htm?c=Estadistica_C&cid=1254736060920&idp=1254735976596"}
+,{"Id":140, "Cod_IOE":"30189", "Nombre":"Annual Wage Structure Survey ", "Codigo":"EAES", "Url":"/dyngs/INEbase/en/operacion.htm?c=Estadistica_C&cid=1254736177025&idp=1254735976596"}
+,{"Id":141, "Cod_IOE":"30197", "Nombre":"High Technology Indicators ", "Codigo":"IAT", "Url":"https://www.ine.es/dyngs/INEbase/es/operacion.htm?c=Estadistica_C&cid=1254736176979&idp=1254735576669"}
+,{"Id":142, "Cod_IOE":"30320", "Nombre":"Statistics on the Employment of Persons with Disabilities  ", "Codigo":"EPD", "Url":"/dyngs/INEbase/en/operacion.htm?c=Estadistica_C&cid=1254736055502&idp=1254735976621"}
+,{"Id":147, "Cod_IOE":"30414", "Nombre":"Hospital Morbidity Survey ", "Codigo":"EMH", "Url":"/dyngs/INEbase/en/operacion.htm?c=Estadistica_C&cid=1254736176778&idp=1254735573175"}
+,{"Id":148, "Cod_IOE":"30416", "Nombre":"Statistiscs on Registered Health Professionals  ", "Codigo":"EPS", "Url":"/dyngs/INEbase/en/operacion.htm?c=Estadistica_C&cid=1254736176781&idp=1254735573175"}
+,{"Id":150, "Cod_IOE":"30418", "Nombre":"Disability, Independence and Dependency Situations Survey ", "Codigo":"EDAD", "Url":"/dyngs/INEbase/en/operacion.htm?c=Estadistica_C&cid=1254736176782&idp=1254735573175"}
+,{"Id":153, "Cod_IOE":"30450", "Nombre":"Survey on Equipment and Use of Information and Communication Technologies in Households ", "Codigo":"TICH", "Url":"/dyngs/INEbase/en/operacion.htm?c=Estadistica_C&cid=1254736176741&idp=1254735976608"}
+,{"Id":155, "Cod_IOE":"30453", "Nombre":"Living Conditions Survey (LCS) ", "Codigo":"ECV", "Url":"/dyngs/INEbase/en/operacion.htm?c=Estadistica_C&cid=1254736176807&idp=1254735976608"}
+,{"Id":161, "Cod_IOE":"30460", "Nombre":"Survey on Household Expenditure on Education ", "Codigo":"EGHE", "Url":"/dyngs/INEbase/en/operacion.htm?c=Estadistica_C&cid=1254736176983&idp=1254735573113"}
+,{"Id":163, "Cod_IOE":"30199", "Nombre":"Business Confidence Indicators", "Codigo":"ICE", "Url":"/dyngs/INEbase/en/operacion.htm?c=Estadistica_C&cid=1254736163552&idp=1254735576550"}
+,{"Id":166, "Cod_IOE":"30204", "Nombre":"Harmonised Business Demographics", "Codigo":"DAE", "Url":"/dyngs/INEbase/en/operacion.htm?c=Estadistica_C&cid=1254736161927&idp=1254735576550"}
+,{"Id":171, "Cod_IOE":"30221", "Nombre":"Rail Transport Statistics ", "Codigo":"TF", "Url":"/dyngs/INEbase/en/operacion.htm?c=Estadistica_C&cid=1254736177040&idp=1254735576820"}
+,{"Id":174, "Cod_IOE":"30224", "Nombre":"Statistics on Biotechnology Use  ", "Codigo":"BIOT", "Url":"/dyngs/INEbase/en/operacion.htm?c=Estadistica_C&cid=1254736176808&idp=1254735576669"}
+,{"Id":177, "Cod_IOE":"30227", "Nombre":"Statistics on Affiliates of Foreign Companies in Spain", "Codigo":"EEPG", "Url":"/dyngs/INEbase/en/operacion.htm?c=Estadistica_C&cid=1254736161127&idp=1254735576550"}
+,{"Id":178, "Cod_IOE":"30228", "Nombre":"Statistics on Products in the Services Sector ", "Codigo":"EPSS", "Url":"/dyngs/INEbase/en/operacion.htm?c=Estadistica_C&cid=1254736176898&idp=1254735576778"}
+,{"Id":180, "Cod_IOE":"30230", "Nombre":"Indicators on the Profitability of the Hotel Sector ", "Codigo":"IRSH", "Url":"/dyngs/INEbase/en/operacion.htm?c=Estadistica_C&cid=1254736177015&idp=1254735576863"}
+,{"Id":189, "Cod_IOE":"30261", "Nombre":"List of place name: Population of the Continuous Municipal Register by Population Unit", "Codigo":"NOM", "Url":"/dyngs/INEbase/en/operacion.htm?c=Estadistica_C&cid=1254736177010&idp=1254735572981"}
+,{"Id":197, "Cod_IOE":"30271", "Nombre":"Life Tables ", "Codigo":"TM", "Url":"/dyngs/INEbase/en/operacion.htm?c=Estadistica_C&cid=1254736177004&idp=1254735573002"}
+,{"Id":205, "Cod_IOE":"30310", "Nombre":"Economically Active Population Flows  ", "Codigo":"EFPA", "Url":"/dyngs/INEbase/en/operacion.htm?c=Estadistica_C&cid=1254736176907&idp=1254735976595"}
+,{"Id":213, "Cod_IOE":"30466", "Nombre":"Statistics on the Adult Convicted Population", "Codigo":"CONA", "Url":"/dyngs/INEbase/en/operacion.htm?c=Estadistica_C&cid=1254736176793&idp=1254735573206"}
+,{"Id":214, "Cod_IOE":"30467", "Nombre":"Statistics on the Convicted Minor Population", "Codigo":"CONM", "Url":"/dyngs/INEbase/en/operacion.htm?c=Estadistica_C&cid=1254736176795&idp=1254735573206"}
+,{"Id":215, "Cod_IOE":"30468", "Nombre":"Statistics on Domestic Violence and Gender Violence", "Codigo":"VGD", "Url":"/dyngs/INEbase/en/operacion.htm?c=Estadistica_C&cid=1254736176866&idp=1254735573206"}
+,{"Id":216, "Cod_IOE":"30469", "Nombre":"Survey of Shelters and Care Services for Homeless People and People in Housing Exclusion", "Codigo":"APSH", "Url":"/dyngs/INEbase/en/operacion.htm?c=Estadistica_C&cid=1254736176925&idp=1254735976608"}
+,{"Id":229, "Cod_IOE":"54088", "Nombre":"European Health Survey  ", "Codigo":"EES", "Url":"/dyngs/INEbase/en/operacion.htm?c=Estadistica_C&cid=1254736176784&idp=1254735573175"}
+,{"Id":230, "Cod_IOE":"85001", "Nombre":"Statistical use of the Register of Spaniards resident abroad  ", "Codigo":"PERE", "Url":"/dyngs/INEbase/en/operacion.htm?c=Estadistica_C&cid=1254736177014&idp=1254734710990"}
+,{"Id":233, "Cod_IOE":"54009", "Nombre":"National Health Survey (NHS) ", "Codigo":"ENSE", "Url":"/dyngs/INEbase/en/operacion.htm?c=Estadistica_C&cid=1254736176783&idp=1254735573175"}
+,{"Id":234, "Cod_IOE":"30209", "Nombre":"Labour Market and Migration Statistics ", "Codigo":"EMLG", "Url":"/dyngs/INEbase/en/operacion.htm?c=Estadistica_C&cid=1254736176909&idp=1254735976597"}
+,{"Id":236, "Cod_IOE":"30471", "Nombre":"Quality of Life Indicators", "Codigo":"ICV", "Url":"https://www.ine.es/dynt3/ICV/index.html"}
+,{"Id":237, "Cod_IOE":"30024", "Nombre":"Quarterly Spanish National Accounts: main aggregates", "Codigo":"CNTR2010", "Url":"/dyngs/INEbase/en/operacion.htm?c=Estadistica_C&cid=1254736164439&idp=1254735576581"}
+,{"Id":238, "Cod_IOE":"30235", "Nombre":"Hotel Occupancy Survey ", "Codigo":"EOH", "Url":"/dyngs/INEbase/en/operacion.htm?c=Estadistica_C&cid=1254736177015&idp=1254735576863"}
+,{"Id":239, "Cod_IOE":"30236", "Nombre":"Holiday Dwelling Occupancy Survey ", "Codigo":"EOAP", "Url":"/dyngs/INEbase/en/operacion.htm?c=Estadistica_C&cid=1254736176962&idp=1254735576863"}
+,{"Id":240, "Cod_IOE":"30237", "Nombre":"Campsite Occupancy Survey  ", "Codigo":"EOAC", "Url":"/dyngs/INEbase/en/operacion.htm?c=Estadistica_C&cid=1254736176961&idp=1254735576863"}
+,{"Id":241, "Cod_IOE":"30238", "Nombre":"Rural Tourist Accommodation Occupancy Survey ", "Codigo":"EOTR", "Url":"/dyngs/INEbase/en/operacion.htm?c=Estadistica_C&cid=1254736176963&idp=1254735576863"}
+,{"Id":246, "Cod_IOE":"30026", "Nombre":"Quarterly Non-financial Accounts for the Institutional Sectors", "Codigo":"CTNFSI", "Url":"/dyngs/INEbase/en/operacion.htm?c=Estadistica_C&cid=1254736165305&idp=1254735576581"}
+,{"Id":248, "Cod_IOE":"30027", "Nombre":"Spanish Tourism Satellite Account. Base 2010", "Codigo":"CSTE", "Url":"/dyngs/INEbase/en/operacion.htm?c=Estadistica_C&cid=1254736169169&idp=1254735576863"}
+,{"Id":249, "Cod_IOE":"30063", "Nombre":"Stock and Supply Short-term Survey", "Codigo":"ECSE", "Url":"/dyngs/INEbase/en/operacion.htm?c=Estadistica_C&cid=1254736176995&idp=1254735576799"}
+,{"Id":250, "Cod_IOE":"30234", "Nombre":"Services Sector Production Index", "Codigo":"IPSS", "Url":"https://ine.es/dyngs/INEbase/es/operacion.htm?c=Estadistica_C&cid=1254736177099&idp=1254735576778"}
+,{"Id":252, "Cod_IOE":"30331", "Nombre":"Statistics on the Wage of Persons with Disabilities  ", "Codigo":"SPD", "Url":"/dyngs/INEbase/en/operacion.htm?c=Estadistica_C&cid=1254736176911&idp=1254735976621"}
+,{"Id":254, "Cod_IOE":"30220", "Nombre":"Hotel Income Index ", "Codigo":"IIH"}
+,{"Id":256, "Cod_IOE":"30232", "Nombre":"Annual Trade Survey", "Codigo":"EEE:COM", "Url":"/dyngs/INEbase/en/operacion.htm?c=Estadistica_C&cid=1254736176902&idp=1254735576799"}
+,{"Id":257, "Cod_IOE":"30025", "Nombre":"Regional Accounting of Spain", "Codigo":"CRE", "Url":"/dyngs/INEbase/en/operacion.htm?c=Estadistica_C&cid=1254736167628&idp=1254735576581"}
+,{"Id":258, "Cod_IOE":"30083", "Nombre":"Business Turnover Index", "Codigo":"ICNE", "Url":"/dyngs/INEbase/en/operacion.htm?c=Estadistica_C&cid=1254736176958&idp=1254735576550"}
+,{"Id":259, "Cod_IOE":"30153", "Nombre":"Foreclosure Statistics", "Codigo":"EH", "Url":"/dyngs/INEbase/en/operacion.htm?c=Estadistica_C&cid=1254736176993&idp=1254735576606"}
+,{"Id":285, "Cod_IOE":"30077", "Nombre":"Surveys on Water Supply and Sewerage", "Codigo":"SSA", "Url":"/dyngs/INEbase/en/operacion.htm?c=Estadistica_C&cid=1254736176834&idp=1254735976602"}
+,{"Id":286, "Cod_IOE":"30078", "Nombre":"Surveys on Waste Generation", "Codigo":"EGR", "Url":"/dyngs/INEbase/en/operacion.htm?c=Estadistica_C&cid=1254736176841&idp=1254735976612"}
+,{"Id":287, "Cod_IOE":"30079", "Nombre":"Statistics on the Collection and Treatment of Waste", "Codigo":"RTR", "Url":"/dyngs/INEbase/en/operacion.htm?c=Estadistica_C&cid=1254736176844&idp=1254735976612"}
+,{"Id":288, "Cod_IOE":"30084", "Nombre":"Environmental Accounts:  Air Emission Accounts", "Codigo":"CMEA:A", "Url":"/dyngs/INEbase/en/operacion.htm?c=Estadistica_C&cid=1254736176941&idp=1254735976603"}
+,{"Id":289, "Cod_IOE":"30085", "Nombre":"Environmental Accounts: Environmental Tax Account", "Codigo":"CIAMB", "Url":"/dyngs/INEbase/en/operacion.htm?c=Estadistica_C&cid=1254736176942&idp=1254735976603"}
+,{"Id":290, "Cod_IOE":"30086", "Nombre":"Environmental Accounts: Material Flow Account", "Codigo":"CFM", "Url":"/dyngs/INEbase/en/operacion.htm?c=Estadistica_C&cid=1254736176943&idp=1254735976603"}
+,{"Id":293, "Cod_IOE":"30308", "Nombre":"Economically Active Population Survey", "Codigo":"EPA", "Url":"/dyngs/INEbase/en/operacion.htm?c=Estadistica_C&cid=1254736176918&idp=1254735976595"}
+,{"Id":297, "Cod_IOE":"30163", "Nombre":"Passenger Transport Statistics ", "Codigo":"TV", "Url":"/dyngs/INEbase/en/operacion.htm?c=Estadistica_C&cid=1254736176906&idp=1254735576820"}
+,{"Id":303, "Cod_IOE":"30187", "Nombre":"Quarterly Labour Cost Survey (QLCS)", "Codigo":"ETCL", "Url":"/dyngs/INEbase/en/operacion.htm?c=Estadistica_C&cid=1254736045053&idp=1254735976596"}
+,{"Id":305, "Cod_IOE":"30302", "Nombre":"Vital Statistics: Marriages ", "Codigo":"MNPM", "Url":"/dyngs/INEbase/en/operacion.htm?c=Estadistica_C&cid=1254736176999&idp=1254735573002"}
+,{"Id":306, "Cod_IOE":"30303", "Nombre":"Vital Statistics: Deliveries ", "Codigo":"MNP_PAR"}
+,{"Id":307, "Cod_IOE":"30304", "Nombre":"Vital Statistics: Births ", "Codigo":"MNPN", "Url":"/dyngs/INEbase/en/operacion.htm?c=Estadistica_C&cid=1254736177007&idp=1254735573002"}
+,{"Id":308, "Cod_IOE":"", "Nombre":"Vital Statistics: Late Foetal Deaths ", "Codigo":"MNP_MFT"}
+,{"Id":309, "Cod_IOE":"30306", "Nombre":"Vital Statistics: Deaths Statistics", "Codigo":"MNPD", "Url":"/dyngs/INEbase/en/operacion.htm?c=Estadistica_C&cid=1254736177008&idp=1254735573002"}
+,{"Id":311, "Cod_IOE":"30301", "Nombre":"Vital Statistics (Provisional Results)  ", "Codigo":"MNP_RP"}
+,{"Id":314, "Cod_IOE":"30458", "Nombre":"Household Budget Survey (HBS) ", "Codigo":"EPF", "Url":"/dyngs/INEbase/en/operacion.htm?c=Estadistica_C&cid=1254736176806&idp=1254735976608"}
+,{"Id":326, "Cod_IOE":"30278", "Nombre":"Population Projections", "Codigo":"PROP", "Url":"https://www.ine.es/dyngs/INEbase/es/operacion.htm?c=Estadistica_C&cid=1254736176953&idp=1254735572981"}
+,{"Id":328, "Cod_IOE":"30239", "Nombre":"Hostel Occupancy Survey", "Codigo":"EOA", "Url":"/dyngs/INEbase/en/operacion.htm?c=Estadistica_C&cid=1254736176964&idp=1254735576863"}
+,{"Id":329, "Cod_IOE":"16029", "Nombre":"Tourist Expenditure Survey", "Codigo":"EG", "Url":"/dyngs/INEbase/en/operacion.htm?c=Estadistica_C&cid=1254736177002&idp=1254735576863"}
+,{"Id":330, "Cod_IOE":"16028", "Nombre":"Tourist movement on borders", "Codigo":"FR", "Url":"/dyngs/INEbase/en/operacion.htm?c=Estadistica_C&cid=1254736176996&idp=1254735576863"}
+,{"Id":331, "Cod_IOE":"", "Nombre":"Competitiveness Guarantee Index", "Codigo":"IGC", "Url":"https://www.ine.es/ss/Satellite?c=Page&p=1254735893337&pagename=ProductosYServicios%2FPYSLayout&cid=1259947704944&L=1"}
+,{"Id":333, "Cod_IOE":"30456", "Nombre":"Women and Men in Spain", "Codigo":"MYH", "Url":"/dyngs/INEbase/en/operacion.htm?c=Estadistica_C&cid=1254736176984&idp=1254735576508"}
+,{"Id":334, "Cod_IOE":"16023", "Nombre":"Residents Travel Survey", "Codigo":"ETR", "Url":"/dyngs/INEbase/en/operacion.htm?c=Estadistica_C&cid=1254736176990&idp=1254735576863"}
+,{"Id":336, "Cod_IOE":"30279", "Nombre":"Statistics on Acquisition of Spanish Citizenship of Residents", "Codigo":"ANES", "Url":"/dyngs/INEbase/en/operacion.htm?c=Estadistica_C&cid=1254736177001&idp=1254735573002"}
+,{"Id":338, "Cod_IOE":"30088", "Nombre":"Environmental Accounts: Environmental protection expenditure account", "Codigo":"CGPM", "Url":"/dyngs/INEbase/en/operacion.htm?c=Estadistica_C&cid=1254736177048&idp=1254735976603"}
+,{"Id":339, "Cod_IOE":"30090", "Nombre":"Environmental Accounts: Physical energy flow accounts", "Codigo":"CFFE", "Url":"/dyngs/INEbase/en/operacion.htm?c=Estadistica_C&cid=1254736177046&idp=1254735976603"}
+,{"Id":340, "Cod_IOE":"30317", "Nombre":"Fertility Survey", "Codigo":"EF", "Url":"/dyngs/INEbase/en/operacion.htm?c=Estadistica_C&cid=1254736177006&idp=1254735573002"}
+,{"Id":342, "Cod_IOE":"30089", "Nombre":"Environmental Accounts: Assets Account and Environmental Services", "Codigo":"BSA", "Url":"/dyngs/INEbase/en/operacion.htm?c=Estadistica_C&cid=1254736177053&idp=1254735976603"}
+,{"Id":343, "Cod_IOE":"30800", "Nombre":"Indicators of the 2030 Agenda for Sustainable Development", "Codigo":"ODS"}
+,{"Id":344, "Cod_IOE":"30029", "Nombre":"Annual National Accounts of Spain: main aggregates", "Codigo":"CNE", "Url":"/dyngs/INEbase/en/operacion.htm?c=Estadistica_C&cid=1254736177057&idp=1254735576581"}
+,{"Id":345, "Cod_IOE":"30030", "Nombre":"Annual National Accounts of Spain: aggregated by branch of industry", "Codigo":"CNEAG", "Url":"/dyngs/INEbase/en/operacion.htm?c=Estadistica_C&cid=1254736177056&idp=1254735576581"}
+,{"Id":346, "Cod_IOE":"30031", "Nombre":"Annual non-financial accounts for the Institutional Sectors", "Codigo":"CNFSI", "Url":"/dyngs/INEbase/en/operacion.htm?c=Estadistica_C&cid=1254736177054&idp=1254735576581"}
+,{"Id":348, "Cod_IOE":"30032", "Nombre":"Annual National Accounts of Spain: Supply and Use tables", "Codigo":"CNE:TOD", "Url":"/dyngs/INEbase/en/operacion.htm?c=Estadistica_C&cid=1254736177059&idp=1254735576581"}
+,{"Id":349, "Cod_IOE":"30033", "Nombre":"Annual National Accounts of Spain: tables Input-Output", "Codigo":"CNE:TIO", "Url":"/dyngs/INEbase/en/operacion.htm?c=Estadistica_C&cid=1254736177058&idp=1254735576581"}
+,{"Id":353, "Cod_IOE":"30325", "Nombre":"Household Income Distribution Atlas", "Codigo":"ADRH", "Url":"https://www.ine.es/dyngs/INEbase/es/operacion.htm?c=Estadistica_C&cid=1254736177088&idp=1254735976608"}
+,{"Id":371, "Cod_IOE":"30095", "Nombre":"Environmental Accounts: Waste Account", "Codigo":"CRS", "Url":"/dyngs/INEbase/en/operacion.htm?c=Estadistica_C&cid=1254736177062&idp=1254735976603"}
+,{"Id":406, "Cod_IOE":"30324", "Nombre":"Estimate of number of weekly deaths (EoWD)", "Codigo":"EDES", "Url":"https://www.ine.es/dyngs/INEbase/es/operacion.htm?c=Estadistica_C&cid=1254736177074&idp=1254735573002"}
+,{"Id":407, "Cod_IOE":"", "Nombre":"Quadrennial Salary Structure Survey", "Codigo":"EAES:Q"}
+,{"Id":409, "Cod_IOE":"30332", "Nombre":"Professional Life of People with Disabilities", "Codigo":"VLPD", "Url":"https://www.ine.es/dyngs/INEbase/operacion.htm?c=Estadistica_C&cid=1254736177069&idp=1254735976621"}
+,{"Id":410, "Cod_IOE":"", "Nombre":"Tourist dwellings in Spain", "Codigo":"VTE", "Url":"https://www.ine.es/experimental/viv_turistica/experimental_viv_turistica.htm"}
+,{"Id":412, "Cod_IOE":"", "Nombre":"Distribution of destination spending by foreign visitors on their visits to Spain", "Codigo":"GDVE", "Url":"https://www.ine.es/experimental/gasto_tarjetas/trimestral.htm"}
+,{"Id":424, "Cod_IOE":"30323", "Nombre":"Monthly Estimates of Births", "Codigo":"EMN", "Url":"https://www.ine.es/dyngs/INEbase/es/operacion.htm?c=Estadistica_C&cid=1254736177079&idp=1254735573002"}
+,{"Id":425, "Cod_IOE":"", "Nombre":"Daily retail trade of large companies", "Codigo":"CDMGE", "Url":"https://www.ine.es/experimental/cdmge/"}
+,{"Id":426, "Cod_IOE":"", "Nombre":"Company Demographic Profile", "Codigo":"CODEM", "Url":"https://www.ine.es/experimental/codem/experimental_codem.htm"}
+,{"Id":429, "Cod_IOE":"", "Nombre":"Occupation in tourist accommodations", "Codigo":"OAT", "Url":"https://www.ine.es/experimental/ocupacion/experimental_ocupacion.htm"}
+,{"Id":432, "Cod_IOE":"", "Nombre":"Rental Housing Price Index.", "Codigo":"IPVA"}
+,{"Id":433, "Cod_IOE":"", "Nombre":"Multidimensional Quality of Life Indicator", "Codigo":"IMCV", "Url":"https://www.ine.es/experimental/imcv/experimental_ind_multi_calidad_vida.htm"}
+,{"Id":436, "Cod_IOE":"", "Nombre":"Measuring the inbound tourism based on the position of mobile phones", "Codigo":"TMOV_R", "Url":"https://www.ine.es/experimental/turismo_moviles/experimental_turismo_moviles.htm#!turismo_receptor"}
+,{"Id":437, "Cod_IOE":"", "Nombre":"Measurement of outbound tourism using mobile phones positioning", "Codigo":"TMOV_E", "Url":"https://www.ine.es/experimental/turismo_moviles/experimental_turismo_moviles.htm#!turismo_emisor"}
+,{"Id":438, "Cod_IOE":"", "Nombre":"Measuring the interprovincial domestic tourism based on the position of mobile phones", "Codigo":"TMOV_I", "Url":"https://www.ine.es/experimental/turismo_moviles/experimental_turismo_moviles_interno.htm"}
+,{"Id":450, "Cod_IOE":"30282", "Nombre":"Continuous Population Statistics", "Codigo":"ECP", "Url":"https://www.ine.es/dyngs/INEbase/es/operacion.htm?c=Estadistica_C&cid=1254736177095&idp=1254735572981"}
+,{"Id":452, "Cod_IOE":"", "Nombre":"Distribution of spending by residents on their visits abroad by country of destination", "Codigo":"GDRE", "Url":"https://www.ine.es/experimental/turismo_gasto/turistas_residentes_gasto_extranjero.htm"}
+,{"Id":455, "Cod_IOE":"30283", "Nombre":"Migration Statistics and Changes of Residence", "Codigo":"EMCR", "Url":"https://www.ine.es/dyngs/INEbase/operacion.htm?c=Estadistica_C&cid=1254736177098&idp=1254735573002"}
+,{"Id":463, "Cod_IOE":"30281", "Nombre":"Population Census", "Codigo":"CENSOP", "Url":"/dyngs/INEbase/en/operacion.htm?c=Estadistica_C&cid=1254736176992&idp=1254735572981"}
+,{"Id":464, "Cod_IOE":"30098", "Nombre":"International Supply of Services by Modes of Supply (MoS)", "Codigo":"MOS", "Url":"https://www.ine.es/dyngs/INEbase/es/operacion.htm?c=Estadistica_C&cid=1254736177111&idp=1254735576778"}
+,{"Id":465, "Cod_IOE":"30240", "Nombre":"International Trade in Services by Company Characteristics (STEC)", "Codigo":"STEC", "Url":"https://www.ine.es/dyngs/INEbase/es/operacion.htm?c=Estadistica_C&cid=1254736177112&idp=1254735576778"}
+,{"Id":468, "Cod_IOE":"30206", "Nombre":"Environmental Indicators", "Codigo":"IMA", "Url":"https://ine.es/dyngs/INEbase/operacion.htm?c=Estadistica_C&cid=1254736177113&idp=1254735976603"}
+,{"Id":470, "Cod_IOE":"30473", "Nombre":"Spain Health Survey", "Codigo":"EDSE", "Url":"https://www.ine.es/dyngs/INEbase/operacion.htm?c=Estadistica_C&cid=1254736177114&idp=1254735573175"}
+,{"Id":472, "Cod_IOE":"30092", "Nombre":"Social Economy Satellite Account", "Codigo":"CSES", "Url":"https://www.ine.es/dyngs/INEbase/es/operacion.htm?c=Estadistica_C&cid=1254736177120&idp=1254735576581"}
+,{"Id":473, "Cod_IOE":"30292", "Nombre":"Structural Business Statistics: Construction Sector", "Codigo":"EEECN"}
+,{"Id":474, "Cod_IOE":"30099", "Nombre":"Statistics on Global Value Chains", "Codigo":"ECVG", "Url":"https://www.ine.es/dyngs/INEbase/es/operacion.htm?c=Estadistica_C&cid=1254736177116&idp=1254735576550"}
+,{"Id":476, "Cod_IOE":"", "Nombre":"Quarterly Air Emission Accounts", "Codigo":"CMEA:T", "Url":"https://www.ine.es/experimental/ceatr/experimental_ceatr.htm"}
+,{"Id":481, "Cod_IOE":"", "Nombre":"Rental Housing Benchmark Index", "Codigo":"IRAV", "Url":"https://www.ine.es/dyngs/INEbase/es/operacion.htm?c=Estadistica_C&cid=1254736177110&idp=1254735976607"}
+,{"Id":482, "Cod_IOE":"30801", "Nombre":"Dashboard Trade in Value Added", "Codigo":"TIVA", "Url":"https://www.ine.es/dyngs/INEbase/en/operacion.htm?c=Estadistica_C&cid=1254736177122&idp=1254735976606"}
+,{"Id":484, "Cod_IOE":"", "Nombre":"Enterprise multi-location viewer (VIME [Enterprise Multi-location Viewer])", "Codigo":"VIME", "Url":"https://www.ine.es/experimental/VIME/experimental_visualizador_empresarial.htm"}
+,{"Id":485, "Cod_IOE":"30284", "Nombre":"Environmental Accounts: Environmental Grants Account and Other Similar Transfers", "Codigo":"CSMOT", "Url":"https://www.ine.es/dyngs/INEbase/es/operacion.htm?c=Estadistica_C&cid=1254736177118&idp=1254735976603"}
+,{"Id":486, "Cod_IOE":"30293", "Nombre":"Construction Production Index", "Codigo":"IPCO", "Url":"/dyngs/INEbase/en/operacion.htm?c=Estadistica_C&cid=1254736177119&idp=1254735576757"}
+,{"Id":489, "Cod_IOE":"", "Nombre":"Procesos electorales", "Codigo":"ELEC"}
+,{"Id":490, "Cod_IOE":"", "Nombre":"Cifras del censo electoral", "Codigo":"OCE"}
+,{"Id":495, "Cod_IOE":"", "Nombre":"Cifras de electores. Publicación mensual", "Codigo":"OCE"}
+]

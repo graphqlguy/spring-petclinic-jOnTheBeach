@@ -1,0 +1,115 @@
+{
+    "type":"FeatureCollection",
+    "features":[
+        {
+            "type":"Feature",
+            "properties":{
+                "nombre":"Helipuerto del Hospital de Especialidades Virgen de la Victoria",
+                "id_aerodro":290674000001,
+                "lenght_uom":null,
+                "nilreason_tip_pista":null,
+                "width_uom":null,
+                "nil_tip_pista":null,
+                "designador":null,
+                "nilreason_nombre":null,
+                "tip_pista":"https://inspire.ec.europa.eu/codelist/RunwayTypeValue/FATO",
+                "nilreason_varios":"other:unpopulated",
+                "length":null,
+                "nil_nombre":null,
+                "width":null,
+                "nil_varios":true,
+                "surfacecomposition":null,
+                "nilreason_designador":"unknown",
+                "fecha_alta":"2018-03-12T16:07:19.717019",
+                "nil_designador":true
+            },
+            "id":"PISTARO290670000002",
+            "geometry":null
+        },
+        {
+            "type":"Feature",
+            "properties":{
+                "nombre":"Helipuerto Hospital Regional Universitario de M\u00e1laga",
+                "id_aerodro":290674000004,
+                "lenght_uom":null,
+                "nilreason_tip_pista":null,
+                "width_uom":null,
+                "nil_tip_pista":null,
+                "designador":null,
+                "nilreason_nombre":null,
+                "tip_pista":"https://inspire.ec.europa.eu/codelist/RunwayTypeValue/FATO",
+                "nilreason_varios":"other:unpopulated",
+                "length":null,
+                "nil_nombre":null,
+                "width":null,
+                "nil_varios":true,
+                "surfacecomposition":"https://inspire.ec.europa.eu/codelist/SurfaceCompositionValue/asphalt",
+                "nilreason_designador":"unknown",
+                "fecha_alta":"2024-07-01T00:00:00",
+                "nil_designador":true
+            },
+            "id":"PISTARO290670000014",
+            "geometry":null
+        },
+        {
+            "type":"Feature",
+            "properties":{
+                "nombre":"Helipuerto Comisar\u00eda Provincial Polic\u00eda Nacional",
+                "id_aerodro":290674000005,
+                "lenght_uom":null,
+                "nilreason_tip_pista":null,
+                "width_uom":null,
+                "nil_tip_pista":null,
+                "designador":null,
+                "nilreason_nombre":null,
+                "tip_pista":"https://inspire.ec.europa.eu/codelist/RunwayTypeValue/FATO",
+                "nilreason_varios":"other:unpopulated",
+                "length":null,
+                "nil_nombre":null,
+                "width":null,
+                "nil_varios":true,
+                "surfacecomposition":"https://inspire.ec.europa.eu/codelist/SurfaceCompositionValue/concrete",
+                "nilreason_designador":"unknown",
+                "fecha_alta":"2024-07-01T00:00:00",
+                "nil_designador":true
+            },
+            "id":"PISTARO290670000016",
+            "geometry":null
+        }
+    ],
+    "numberMatched":6,
+    "numberReturned":3,
+    "links":[
+        {
+            "type":"application/geo+json",
+            "rel":"self",
+            "title":"This document as GeoJSON",
+            "href":"https://api-features.idee.es/collections/runwayarea/items?f=json&bbox=-4.50,36.65,-4.35,36.75&skipGeometry=true&limit=3"
+        },
+        {
+            "rel":"alternate",
+            "type":"application/ld+json",
+            "title":"This document as RDF (JSON-LD)",
+            "href":"https://api-features.idee.es/collections/runwayarea/items?f=jsonld&bbox=-4.50,36.65,-4.35,36.75&skipGeometry=true&limit=3"
+        },
+        {
+            "type":"text/html",
+            "rel":"alternate",
+            "title":"This document as HTML",
+            "href":"https://api-features.idee.es/collections/runwayarea/items?f=html&bbox=-4.50,36.65,-4.35,36.75&skipGeometry=true&limit=3"
+        },
+        {
+            "type":"application/geo+json",
+            "rel":"next",
+            "title":"Items (next)",
+            "href":"https://api-features.idee.es/collections/runwayarea/items?offset=3&bbox=-4.50,36.65,-4.35,36.75&skipGeometry=true&limit=3"
+        },
+        {
+            "type":"application/json",
+            "title":"TN-A \u00c1rea de pista",
+            "rel":"collection",
+            "href":"https://api-features.idee.es/collections/runwayarea"
+        }
+    ],
+    "timeStamp":"2026-10-22T23:43:05.838403Z"
+}

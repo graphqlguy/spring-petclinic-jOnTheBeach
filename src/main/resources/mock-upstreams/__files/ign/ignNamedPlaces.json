@@ -1,0 +1,79 @@
+{
+    "type":"FeatureCollection",
+    "features":[
+        {
+            "type":"Feature",
+            "properties":{
+                "codigo_ngbe":"2.1.8",
+                "fuente":"MITMA.IGN.BTN25",
+                "etiqueta":"Guadalmar",
+                "tipo":"Barrio",
+                "tiponombre":"identificador_geografico",
+                "fecha":"2023-07-06"
+            },
+            "id":"2429954",
+            "geometry":null
+        },
+        {
+            "type":"Feature",
+            "properties":{
+                "codigo_ngbe":"2.2.1",
+                "fuente":"MITMA.IGN.BTN25",
+                "etiqueta":"Carranza",
+                "tipo":"Construcci\u00f3n/instalaci\u00f3n abierta",
+                "tiponombre":"identificador_geografico",
+                "fecha":"2023-07-03"
+            },
+            "id":"2429955",
+            "geometry":null
+        },
+        {
+            "type":"Feature",
+            "properties":{
+                "codigo_ngbe":"2.1.8",
+                "fuente":"MITMA.IGN.BTN25",
+                "etiqueta":"Mainake",
+                "tipo":"Barrio",
+                "tiponombre":"identificador_geografico",
+                "fecha":"2023-07-06"
+            },
+            "id":"2429956",
+            "geometry":null
+        }
+    ],
+    "numberMatched":330,
+    "numberReturned":3,
+    "links":[
+        {
+            "type":"application/geo+json",
+            "rel":"self",
+            "title":"This document as GeoJSON",
+            "href":"https://api-features.ign.es/collections/namedplace/items?f=json&bbox=-4.50,36.65,-4.35,36.75&skipGeometry=true&limit=3"
+        },
+        {
+            "rel":"alternate",
+            "type":"application/ld+json",
+            "title":"This document as RDF (JSON-LD)",
+            "href":"https://api-features.ign.es/collections/namedplace/items?f=jsonld&bbox=-4.50,36.65,-4.35,36.75&skipGeometry=true&limit=3"
+        },
+        {
+            "type":"text/html",
+            "rel":"alternate",
+            "title":"This document as HTML",
+            "href":"https://api-features.ign.es/collections/namedplace/items?f=html&bbox=-4.50,36.65,-4.35,36.75&skipGeometry=true&limit=3"
+        },
+        {
+            "type":"application/geo+json",
+            "rel":"next",
+            "title":"Items (next)",
+            "href":"https://api-features.ign.es/collections/namedplace/items?offset=3&bbox=-4.50,36.65,-4.35,36.75&skipGeometry=true&limit=3"
+        },
+        {
+            "type":"application/json",
+            "title":"GN Lugar nombrado",
+            "rel":"collection",
+            "href":"https://api-features.ign.es/collections/namedplace"
+        }
+    ],
+    "timeStamp":"2026-10-22T23:44:50.054462Z"
+}

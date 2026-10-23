@@ -1,0 +1,977 @@
+{
+ "mappings": [
+  {
+   "name": "datosGobDatasets: {\"size\": 3, \"sort\": \"-modified\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/datosgob/catalog/dataset.json",
+    "queryParameters": {
+     "_sort": {
+      "equalTo": "-modified"
+     },
+     "_page": {
+      "equalTo": "0"
+     },
+     "_pageSize": {
+      "equalTo": "3"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "datosgob/datosGobDatasets.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://datos.gob.es/apidata/catalog/dataset.json?_sort=-modified&_page=0&_pageSize=3 on 2026-10-22."
+   }
+  },
+  {
+   "name": "datosGobDatasets: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/datosgob/catalog/dataset\\.json"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "datosgob/datosGobDatasets.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of datosGobDatasets with the first recording, from https://datos.gob.es/apidata/catalog/dataset.json?_sort=-modified&_page=0&_pageSize=3 on 2026-10-22."
+   }
+  },
+  {
+   "name": "datosGobDatasetsByTitle: {\"title\": \"parques caninos\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/datosgob/catalog/dataset/title/parques%20caninos.json",
+    "queryParameters": {
+     "_page": {
+      "equalTo": "0"
+     },
+     "_pageSize": {
+      "equalTo": "10"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "datosgob/datosGobDatasetsByTitle.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://datos.gob.es/apidata/catalog/dataset/title/parques%20caninos.json?_page=0&_pageSize=10 on 2026-10-22."
+   }
+  },
+  {
+   "name": "datosGobDatasetsByTitle: {\"title\": \"animales de compañía\", \"size\": 5}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/datosgob/catalog/dataset/title/animales%20de%20compa%C3%B1%C3%ADa.json",
+    "queryParameters": {
+     "_page": {
+      "equalTo": "0"
+     },
+     "_pageSize": {
+      "equalTo": "5"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "datosgob/datosGobDatasetsByTitle-1.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://datos.gob.es/apidata/catalog/dataset/title/animales%20de%20compa%C3%B1%C3%ADa.json?_page=0&_pageSize=5 on 2026-10-22."
+   }
+  },
+  {
+   "name": "datosGobDatasetsByTitle: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/datosgob/catalog/dataset/title/[^/]+\\.json"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "datosgob/datosGobDatasetsByTitle.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of datosGobDatasetsByTitle with the first recording, from https://datos.gob.es/apidata/catalog/dataset/title/parques%20caninos.json?_page=0&_pageSize=10 on 2026-10-22."
+   }
+  },
+  {
+   "name": "datosGobDatasetsByKeyword: {\"keyword\": \"perros\", \"size\": 5}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/datosgob/catalog/dataset/keyword/perros.json",
+    "queryParameters": {
+     "_page": {
+      "equalTo": "0"
+     },
+     "_pageSize": {
+      "equalTo": "5"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "datosgob/datosGobDatasetsByKeyword.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://datos.gob.es/apidata/catalog/dataset/keyword/perros.json?_page=0&_pageSize=5 on 2026-10-22."
+   }
+  },
+  {
+   "name": "datosGobDatasetsByKeyword: {\"keyword\": \"mascotas\", \"size\": 5}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/datosgob/catalog/dataset/keyword/mascotas.json",
+    "queryParameters": {
+     "_page": {
+      "equalTo": "0"
+     },
+     "_pageSize": {
+      "equalTo": "5"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "datosgob/datosGobDatasetsByKeyword-1.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://datos.gob.es/apidata/catalog/dataset/keyword/mascotas.json?_page=0&_pageSize=5 on 2026-10-22."
+   }
+  },
+  {
+   "name": "datosGobDatasetsByKeyword: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/datosgob/catalog/dataset/keyword/[^/]+\\.json"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "datosgob/datosGobDatasetsByKeyword.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of datosGobDatasetsByKeyword with the first recording, from https://datos.gob.es/apidata/catalog/dataset/keyword/perros.json?_page=0&_pageSize=5 on 2026-10-22."
+   }
+  },
+  {
+   "name": "datosGobDatasetsByTheme: {\"theme\": \"salud\", \"size\": 3}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/datosgob/catalog/dataset/theme/salud.json",
+    "queryParameters": {
+     "_page": {
+      "equalTo": "0"
+     },
+     "_pageSize": {
+      "equalTo": "3"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "datosgob/datosGobDatasetsByTheme.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://datos.gob.es/apidata/catalog/dataset/theme/salud.json?_page=0&_pageSize=3 on 2026-10-22."
+   }
+  },
+  {
+   "name": "datosGobDatasetsByTheme: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/datosgob/catalog/dataset/theme/[^/]+\\.json"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "datosgob/datosGobDatasetsByTheme.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of datosGobDatasetsByTheme with the first recording, from https://datos.gob.es/apidata/catalog/dataset/theme/salud.json?_page=0&_pageSize=3 on 2026-10-22."
+   }
+  },
+  {
+   "name": "datosGobDatasetsByPublisher: {\"publisher\": \"L01290672\", \"size\": 5}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/datosgob/catalog/dataset/publisher/L01290672.json",
+    "queryParameters": {
+     "_page": {
+      "equalTo": "0"
+     },
+     "_pageSize": {
+      "equalTo": "5"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "datosgob/datosGobDatasetsByPublisher.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://datos.gob.es/apidata/catalog/dataset/publisher/L01290672.json?_page=0&_pageSize=5 on 2026-10-22."
+   }
+  },
+  {
+   "name": "datosGobDatasetsByPublisher: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/datosgob/catalog/dataset/publisher/[^/]+\\.json"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "datosgob/datosGobDatasetsByPublisher.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of datosGobDatasetsByPublisher with the first recording, from https://datos.gob.es/apidata/catalog/dataset/publisher/L01290672.json?_page=0&_pageSize=5 on 2026-10-22."
+   }
+  },
+  {
+   "name": "datosGobDatasetsByFormat: {\"format\": \"geojson\", \"size\": 3}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/datosgob/catalog/dataset/format/geojson.json",
+    "queryParameters": {
+     "_page": {
+      "equalTo": "0"
+     },
+     "_pageSize": {
+      "equalTo": "3"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "datosgob/datosGobDatasetsByFormat.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://datos.gob.es/apidata/catalog/dataset/format/geojson.json?_page=0&_pageSize=3 on 2026-10-22."
+   }
+  },
+  {
+   "name": "datosGobDatasetsByFormat: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/datosgob/catalog/dataset/format/[^/]+\\.json"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "datosgob/datosGobDatasetsByFormat.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of datosGobDatasetsByFormat with the first recording, from https://datos.gob.es/apidata/catalog/dataset/format/geojson.json?_page=0&_pageSize=3 on 2026-10-22."
+   }
+  },
+  {
+   "name": "datosGobDatasetsByPlace: {\"kind\": \"Provincia\", \"place\": \"Malaga\", \"size\": 5}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/datosgob/catalog/dataset/spatial/Provincia/Malaga.json",
+    "queryParameters": {
+     "_page": {
+      "equalTo": "0"
+     },
+     "_pageSize": {
+      "equalTo": "5"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "datosgob/datosGobDatasetsByPlace.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://datos.gob.es/apidata/catalog/dataset/spatial/Provincia/Malaga.json?_page=0&_pageSize=5 on 2026-10-22."
+   }
+  },
+  {
+   "name": "datosGobDatasetsByPlace: {\"kind\": \"Autonomia\", \"place\": \"Andalucia\", \"size\": 3}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/datosgob/catalog/dataset/spatial/Autonomia/Andalucia.json",
+    "queryParameters": {
+     "_page": {
+      "equalTo": "0"
+     },
+     "_pageSize": {
+      "equalTo": "3"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "datosgob/datosGobDatasetsByPlace-1.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://datos.gob.es/apidata/catalog/dataset/spatial/Autonomia/Andalucia.json?_page=0&_pageSize=3 on 2026-10-22."
+   }
+  },
+  {
+   "name": "datosGobDatasetsByPlace: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/datosgob/catalog/dataset/spatial/[^/]+/[^/]+\\.json"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "datosgob/datosGobDatasetsByPlace.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of datosGobDatasetsByPlace with the first recording, from https://datos.gob.es/apidata/catalog/dataset/spatial/Provincia/Malaga.json?_page=0&_pageSize=5 on 2026-10-22."
+   }
+  },
+  {
+   "name": "datosGobDatasetsModified: {\"begin\": \"2026-10-01T00:00Z\", \"end\": \"2026-10-20T00:00Z\", \"size\": 3}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/datosgob/catalog/dataset/modified/begin/2026-10-01T00%3A00Z/end/2026-10-20T00%3A00Z.json",
+    "queryParameters": {
+     "_page": {
+      "equalTo": "0"
+     },
+     "_pageSize": {
+      "equalTo": "3"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "datosgob/datosGobDatasetsModified.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://datos.gob.es/apidata/catalog/dataset/modified/begin/2026-10-01T00%3A00Z/end/2026-10-20T00%3A00Z.json?_page=0&_pageSize=3 on 2026-10-22."
+   }
+  },
+  {
+   "name": "datosGobDatasetsModified: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/datosgob/catalog/dataset/modified/begin/[^/]+/end/[^/]+\\.json"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "datosgob/datosGobDatasetsModified.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of datosGobDatasetsModified with the first recording, from https://datos.gob.es/apidata/catalog/dataset/modified/begin/2026-10-01T00%3A00Z/end/2026-10-20T00%3A00Z.json?_page=0&_pageSize=3 on 2026-10-22."
+   }
+  },
+  {
+   "name": "datosGobDataset: {\"id\": \"l01290672-parques-caninos1\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/datosgob/catalog/dataset/l01290672-parques-caninos1.json"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "datosgob/datosGobDataset.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://datos.gob.es/apidata/catalog/dataset/l01290672-parques-caninos1.json on 2026-10-22."
+   }
+  },
+  {
+   "name": "datosGobDataset: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/datosgob/catalog/dataset/[^/]+\\.json"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "datosgob/datosGobDataset.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of datosGobDataset with the first recording, from https://datos.gob.es/apidata/catalog/dataset/l01290672-parques-caninos1.json on 2026-10-22."
+   }
+  },
+  {
+   "name": "datosGobDistributions: {\"size\": 3}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/datosgob/catalog/distribution.json",
+    "queryParameters": {
+     "_page": {
+      "equalTo": "0"
+     },
+     "_pageSize": {
+      "equalTo": "3"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "datosgob/datosGobDistributions.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://datos.gob.es/apidata/catalog/distribution.json?_page=0&_pageSize=3 on 2026-10-22."
+   }
+  },
+  {
+   "name": "datosGobDistributions: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/datosgob/catalog/distribution\\.json"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "datosgob/datosGobDistributions.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of datosGobDistributions with the first recording, from https://datos.gob.es/apidata/catalog/distribution.json?_page=0&_pageSize=3 on 2026-10-22."
+   }
+  },
+  {
+   "name": "datosGobDistributionsOfDataset: {\"id\": \"l01290672-parques-caninos1\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/datosgob/catalog/distribution/dataset/l01290672-parques-caninos1.json",
+    "queryParameters": {
+     "_page": {
+      "equalTo": "0"
+     },
+     "_pageSize": {
+      "equalTo": "10"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "datosgob/datosGobDistributionsOfDataset.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://datos.gob.es/apidata/catalog/distribution/dataset/l01290672-parques-caninos1.json?_page=0&_pageSize=10 on 2026-10-22."
+   }
+  },
+  {
+   "name": "datosGobDistributionsOfDataset: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/datosgob/catalog/distribution/dataset/[^/]+\\.json"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "datosgob/datosGobDistributionsOfDataset.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of datosGobDistributionsOfDataset with the first recording, from https://datos.gob.es/apidata/catalog/distribution/dataset/l01290672-parques-caninos1.json?_page=0&_pageSize=10 on 2026-10-22."
+   }
+  },
+  {
+   "name": "datosGobDistributionsByFormat: {\"format\": \"geojson\", \"size\": 3}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/datosgob/catalog/distribution/format/geojson.json",
+    "queryParameters": {
+     "_page": {
+      "equalTo": "0"
+     },
+     "_pageSize": {
+      "equalTo": "3"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "datosgob/datosGobDistributionsByFormat.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://datos.gob.es/apidata/catalog/distribution/format/geojson.json?_page=0&_pageSize=3 on 2026-10-22."
+   }
+  },
+  {
+   "name": "datosGobDistributionsByFormat: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/datosgob/catalog/distribution/format/[^/]+\\.json"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "datosgob/datosGobDistributionsByFormat.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of datosGobDistributionsByFormat with the first recording, from https://datos.gob.es/apidata/catalog/distribution/format/geojson.json?_page=0&_pageSize=3 on 2026-10-22."
+   }
+  },
+  {
+   "name": "datosGobPublishers: {\"size\": 10}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/datosgob/catalog/publisher.json",
+    "queryParameters": {
+     "_page": {
+      "equalTo": "0"
+     },
+     "_pageSize": {
+      "equalTo": "10"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "datosgob/datosGobPublishers.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://datos.gob.es/apidata/catalog/publisher.json?_page=0&_pageSize=10 on 2026-10-22."
+   }
+  },
+  {
+   "name": "datosGobPublishers: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/datosgob/catalog/publisher\\.json"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "datosgob/datosGobPublishers.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of datosGobPublishers with the first recording, from https://datos.gob.es/apidata/catalog/publisher.json?_page=0&_pageSize=10 on 2026-10-22."
+   }
+  },
+  {
+   "name": "datosGobThemes: {\"size\": 30}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/datosgob/catalog/theme.json",
+    "queryParameters": {
+     "_page": {
+      "equalTo": "0"
+     },
+     "_pageSize": {
+      "equalTo": "30"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "datosgob/datosGobThemes.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://datos.gob.es/apidata/catalog/theme.json?_page=0&_pageSize=30 on 2026-10-22."
+   }
+  },
+  {
+   "name": "datosGobThemes: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/datosgob/catalog/theme\\.json"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "datosgob/datosGobThemes.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of datosGobThemes with the first recording, from https://datos.gob.es/apidata/catalog/theme.json?_page=0&_pageSize=30 on 2026-10-22."
+   }
+  },
+  {
+   "name": "datosGobSpatialCoverages: {\"size\": 5}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/datosgob/catalog/spatial.json",
+    "queryParameters": {
+     "_page": {
+      "equalTo": "0"
+     },
+     "_pageSize": {
+      "equalTo": "5"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "datosgob/datosGobSpatialCoverages.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://datos.gob.es/apidata/catalog/spatial.json?_page=0&_pageSize=5 on 2026-10-22."
+   }
+  },
+  {
+   "name": "datosGobSpatialCoverages: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/datosgob/catalog/spatial\\.json"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "datosgob/datosGobSpatialCoverages.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of datosGobSpatialCoverages with the first recording, from https://datos.gob.es/apidata/catalog/spatial.json?_page=0&_pageSize=5 on 2026-10-22."
+   }
+  },
+  {
+   "name": "datosGobPublicSectors: {\"size\": 30}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/datosgob/nti/public-sector.json",
+    "queryParameters": {
+     "_page": {
+      "equalTo": "0"
+     },
+     "_pageSize": {
+      "equalTo": "30"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "datosgob/datosGobPublicSectors.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://datos.gob.es/apidata/nti/public-sector.json?_page=0&_pageSize=30 on 2026-10-22."
+   }
+  },
+  {
+   "name": "datosGobPublicSectors: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/datosgob/nti/public\\-sector\\.json"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "datosgob/datosGobPublicSectors.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of datosGobPublicSectors with the first recording, from https://datos.gob.es/apidata/nti/public-sector.json?_page=0&_pageSize=30 on 2026-10-22."
+   }
+  },
+  {
+   "name": "datosGobProvinces: {\"size\": 60}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/datosgob/nti/territory/Province.json",
+    "queryParameters": {
+     "_page": {
+      "equalTo": "0"
+     },
+     "_pageSize": {
+      "equalTo": "60"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "datosgob/datosGobProvinces.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://datos.gob.es/apidata/nti/territory/Province.json?_page=0&_pageSize=60 on 2026-10-22."
+   }
+  },
+  {
+   "name": "datosGobProvinces: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/datosgob/nti/territory/Province\\.json"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "datosgob/datosGobProvinces.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of datosGobProvinces with the first recording, from https://datos.gob.es/apidata/nti/territory/Province.json?_page=0&_pageSize=60 on 2026-10-22."
+   }
+  },
+  {
+   "name": "datosGobProvince: {\"name\": \"Malaga\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/datosgob/nti/territory/Province/Malaga.json"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "datosgob/datosGobProvince.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://datos.gob.es/apidata/nti/territory/Province/Malaga.json on 2026-10-22."
+   }
+  },
+  {
+   "name": "datosGobProvince: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/datosgob/nti/territory/Province/[^/]+\\.json"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "datosgob/datosGobProvince.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of datosGobProvince with the first recording, from https://datos.gob.es/apidata/nti/territory/Province/Malaga.json on 2026-10-22."
+   }
+  },
+  {
+   "name": "datosGobRegions: {\"size\": 20}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/datosgob/nti/territory/Autonomous-region.json",
+    "queryParameters": {
+     "_page": {
+      "equalTo": "0"
+     },
+     "_pageSize": {
+      "equalTo": "20"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "datosgob/datosGobRegions.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://datos.gob.es/apidata/nti/territory/Autonomous-region.json?_page=0&_pageSize=20 on 2026-10-22."
+   }
+  },
+  {
+   "name": "datosGobRegions: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/datosgob/nti/territory/Autonomous\\-region\\.json"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "datosgob/datosGobRegions.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of datosGobRegions with the first recording, from https://datos.gob.es/apidata/nti/territory/Autonomous-region.json?_page=0&_pageSize=20 on 2026-10-22."
+   }
+  },
+  {
+   "name": "datosGobRegion: {\"name\": \"Andalucia\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/datosgob/nti/territory/Autonomous-region/Andalucia.json"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "datosgob/datosGobRegion.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://datos.gob.es/apidata/nti/territory/Autonomous-region/Andalucia.json on 2026-10-22."
+   }
+  },
+  {
+   "name": "datosGobRegion: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/datosgob/nti/territory/Autonomous\\-region/[^/]+\\.json"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "datosgob/datosGobRegion.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of datosGobRegion with the first recording, from https://datos.gob.es/apidata/nti/territory/Autonomous-region/Andalucia.json on 2026-10-22."
+   }
+  },
+  {
+   "name": "datosGobCountry: {\"name\": \"España\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/datosgob/nti/territory/Country/Espa%C3%B1a.json"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "datosgob/datosGobCountry.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://datos.gob.es/apidata/nti/territory/Country/Espa%C3%B1a.json on 2026-10-22."
+   }
+  },
+  {
+   "name": "datosGobCountry: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/datosgob/nti/territory/Country/[^/]+\\.json"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "datosgob/datosGobCountry.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of datosGobCountry with the first recording, from https://datos.gob.es/apidata/nti/territory/Country/Espa%C3%B1a.json on 2026-10-22."
+   }
+  }
+ ]
+}

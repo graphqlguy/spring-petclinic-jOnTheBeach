@@ -1,0 +1,82 @@
+{
+    "type":"FeatureCollection",
+    "features":[
+        {
+            "type":"Feature",
+            "properties":{
+                "id_puerto":110330000011,
+                "nombre":"Puerto Deportivo de Sotogrande",
+                "id_esta_ma":"ESTA_MA110330000011",
+                "currentstatus":"functional",
+                "fecha_alta":"2024-07-01T00:00:00",
+                "href":"#TN-W_PORTNODE_PUERT_N110330000011",
+                "estadofis":"http://inspire.ec.europa.eu/codelist/ConditionOfFacilityValue/functional"
+            },
+            "id":"PUERT_N110330000011",
+            "geometry":null
+        },
+        {
+            "type":"Feature",
+            "properties":{
+                "id_puerto":180170000002,
+                "nombre":"Puerto Punta de la Mona",
+                "id_esta_ma":"ESTA_MA180170000002",
+                "currentstatus":"functional",
+                "fecha_alta":"2024-07-01T00:00:00",
+                "href":"#TN-W_PORTNODE_PUERT_N180170000002",
+                "estadofis":"http://inspire.ec.europa.eu/codelist/ConditionOfFacilityValue/functional"
+            },
+            "id":"PUERT_N180170000002",
+            "geometry":null
+        },
+        {
+            "type":"Feature",
+            "properties":{
+                "id_puerto":290250000008,
+                "nombre":"Puerto Deportivo de Benalm\u00e1dena",
+                "id_esta_ma":"ESTA_MA290250000008",
+                "currentstatus":"functional",
+                "fecha_alta":"2024-07-01T00:00:00",
+                "href":"#TN-W_PORTNODE_PUERT_N290250000008",
+                "estadofis":"http://inspire.ec.europa.eu/codelist/ConditionOfFacilityValue/functional"
+            },
+            "id":"PUERT_N290250000008",
+            "geometry":null
+        }
+    ],
+    "numberMatched":13,
+    "numberReturned":3,
+    "links":[
+        {
+            "type":"application/geo+json",
+            "rel":"self",
+            "title":"This document as GeoJSON",
+            "href":"https://api-features.idee.es/collections/portnode/items?f=json&bbox=-5.6,36.2,-3.7,37.4&skipGeometry=true&limit=3"
+        },
+        {
+            "rel":"alternate",
+            "type":"application/ld+json",
+            "title":"This document as RDF (JSON-LD)",
+            "href":"https://api-features.idee.es/collections/portnode/items?f=jsonld&bbox=-5.6,36.2,-3.7,37.4&skipGeometry=true&limit=3"
+        },
+        {
+            "type":"text/html",
+            "rel":"alternate",
+            "title":"This document as HTML",
+            "href":"https://api-features.idee.es/collections/portnode/items?f=html&bbox=-5.6,36.2,-3.7,37.4&skipGeometry=true&limit=3"
+        },
+        {
+            "type":"application/geo+json",
+            "rel":"next",
+            "title":"Items (next)",
+            "href":"https://api-features.idee.es/collections/portnode/items?offset=3&bbox=-5.6,36.2,-3.7,37.4&skipGeometry=true&limit=3"
+        },
+        {
+            "type":"application/json",
+            "title":"TN-W Nodo portuario",
+            "rel":"collection",
+            "href":"https://api-features.idee.es/collections/portnode"
+        }
+    ],
+    "timeStamp":"2026-10-22T23:44:33.543138Z"
+}

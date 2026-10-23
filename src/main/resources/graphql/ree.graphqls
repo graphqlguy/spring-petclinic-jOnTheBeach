@@ -1,0 +1,850 @@
+# The fields of REData, the open data of Red Eléctrica, the operator of the Spanish electricity grid, at
+# apidatos.ree.es, in English. Every indicator is one path, /{category}/{widget}, and answers in the same JSON:API
+# shape, so a generator wrote one field for each of the 68 widgets that answered on 23 October 2026, from the list on
+# the documentation page of the API, and one set of types from the recorded answers. The descriptions are written by
+# hand from the series each answer holds. The figures are for the whole of Spain or the peninsula. Red Eléctrica blocks
+# an address that sends many requests in a row, so a field waits for its answer before the next one is sent. Each field
+# is fetched by a RestOperationFetcher, see ReeConfiguration.
+
+extend type Query {
+    # An indicator answers a list of series, such as the generation of each technology, and each series holds its values
+    # over the period asked for, one for each hour, day, month or year. The values of energy are in MWh, of power in MW,
+    # and of prices in euros per MWh.
+
+    """
+    The balance of electricity in Spain: the generation of each renewable and non-renewable technology, the storage in
+    pumped hydro and batteries, the cross-border exchange balance and the demand at busbars, for each day or month
+    """
+    reeElectricityBalance(
+        "The first day of the period, such as 2026-10-01, in the time of Madrid"
+        startDate: Date!
+        "The last day of the period, such as 2026-10-20. It can be the same day as startDate."
+        endDate: Date!
+        "How the values are grouped. DAY, the default, is one this indicator accepts."
+        timeTrunc: ReeTimeTrunc! = DAY
+    ): ReeIndicator
+
+    "The demand for electricity in Spain over time, in MWh"
+    reeDemand(
+        "The first day of the period, such as 2026-10-01, in the time of Madrid"
+        startDate: Date!
+        "The last day of the period, such as 2026-10-20. It can be the same day as startDate."
+        endDate: Date!
+        "How the values are grouped. DAY, the default, is one this indicator accepts."
+        timeTrunc: ReeTimeTrunc! = DAY
+    ): ReeIndicator
+
+    """
+    How the demand for electricity changed against the same period of the year before, and its components: the effect of
+    working days, of temperature, and the adjusted demand. The components add up to the variation.
+    """
+    reeDemandVariation(
+        "The first day of the period, such as 2026-10-01, in the time of Madrid"
+        startDate: Date!
+        "The last day of the period, such as 2026-10-20. It can be the same day as startDate."
+        endDate: Date!
+        "How the values are grouped. MONTH, the default, is one this indicator accepts."
+        timeTrunc: ReeTimeTrunc! = MONTH
+    ): ReeIndicator
+
+    """
+    How the demand for electricity of the last twelve months changed against the twelve months before, with its
+    components: working days, temperature and adjusted demand
+    """
+    reeDemandVariationMovingYear(
+        "The first day of the period, such as 2026-10-01, in the time of Madrid"
+        startDate: Date!
+        "The last day of the period, such as 2026-10-20. It can be the same day as startDate."
+        endDate: Date!
+        "How the values are grouped. MONTH, the default, is one this indicator accepts."
+        timeTrunc: ReeTimeTrunc! = MONTH
+    ): ReeIndicator
+
+    """
+    The Red Eléctrica index (IRE) tells early how the electricity consumption of the companies with more than 450 kW
+    contracted evolves, as an index with 2021 = 100 and its growth rate, raw and corrected for working days and
+    temperature. This field gives the general index and its monthly variation.
+    """
+    reeConsumptionIndex(
+        "The first day of the period, such as 2026-10-01, in the time of Madrid"
+        startDate: Date!
+        "The last day of the period, such as 2026-10-20. It can be the same day as startDate."
+        endDate: Date!
+        "How the values are grouped. MONTH, the default, is one this indicator accepts."
+        timeTrunc: ReeTimeTrunc! = MONTH
+    ): ReeIndicator
+
+    """
+    The Red Eléctrica index (IRE) tells early how the electricity consumption of the companies with more than 450 kW
+    contracted evolves, as an index with 2021 = 100 and its growth rate, raw and corrected for working days and
+    temperature. This field gives the general index and its variation against a year before.
+    """
+    reeConsumptionIndexYearly(
+        "The first day of the period, such as 2026-10-01, in the time of Madrid"
+        startDate: Date!
+        "The last day of the period, such as 2026-10-20. It can be the same day as startDate."
+        endDate: Date!
+        "How the values are grouped. MONTH, the default, is one this indicator accepts."
+        timeTrunc: ReeTimeTrunc! = MONTH
+    ): ReeIndicator
+
+    """
+    The Red Eléctrica index (IRE) tells early how the electricity consumption of the companies with more than 450 kW
+    contracted evolves, as an index with 2021 = 100 and its growth rate, raw and corrected for working days and
+    temperature. This field gives the general index of the last twelve months.
+    """
+    reeConsumptionIndexMovingYear(
+        "The first day of the period, such as 2026-10-01, in the time of Madrid"
+        startDate: Date!
+        "The last day of the period, such as 2026-10-20. It can be the same day as startDate."
+        endDate: Date!
+        "How the values are grouped. MONTH, the default, is one this indicator accepts."
+        timeTrunc: ReeTimeTrunc! = MONTH
+    ): ReeIndicator
+
+    """
+    The Red Eléctrica index (IRE) tells early how the electricity consumption of the companies with more than 450 kW
+    contracted evolves, as an index with 2021 = 100 and its growth rate, raw and corrected for working days and
+    temperature. This field gives the index of industry and its monthly variation.
+    """
+    reeIndustryConsumptionIndex(
+        "The first day of the period, such as 2026-10-01, in the time of Madrid"
+        startDate: Date!
+        "The last day of the period, such as 2026-10-20. It can be the same day as startDate."
+        endDate: Date!
+        "How the values are grouped. MONTH, the default, is one this indicator accepts."
+        timeTrunc: ReeTimeTrunc! = MONTH
+    ): ReeIndicator
+
+    """
+    The Red Eléctrica index (IRE) tells early how the electricity consumption of the companies with more than 450 kW
+    contracted evolves, as an index with 2021 = 100 and its growth rate, raw and corrected for working days and
+    temperature. This field gives the index of industry against a year before.
+    """
+    reeIndustryConsumptionIndexYearly(
+        "The first day of the period, such as 2026-10-01, in the time of Madrid"
+        startDate: Date!
+        "The last day of the period, such as 2026-10-20. It can be the same day as startDate."
+        endDate: Date!
+        "How the values are grouped. MONTH, the default, is one this indicator accepts."
+        timeTrunc: ReeTimeTrunc! = MONTH
+    ): ReeIndicator
+
+    """
+    The Red Eléctrica index (IRE) tells early how the electricity consumption of the companies with more than 450 kW
+    contracted evolves, as an index with 2021 = 100 and its growth rate, raw and corrected for working days and
+    temperature. This field gives the index of industry of the last twelve months.
+    """
+    reeIndustryConsumptionIndexMovingYear(
+        "The first day of the period, such as 2026-10-01, in the time of Madrid"
+        startDate: Date!
+        "The last day of the period, such as 2026-10-20. It can be the same day as startDate."
+        endDate: Date!
+        "How the values are grouped. MONTH, the default, is one this indicator accepts."
+        timeTrunc: ReeTimeTrunc! = MONTH
+    ): ReeIndicator
+
+    """
+    The Red Eléctrica index (IRE) tells early how the electricity consumption of the companies with more than 450 kW
+    contracted evolves, as an index with 2021 = 100 and its growth rate, raw and corrected for working days and
+    temperature. This field gives the index of services and its monthly variation.
+    """
+    reeServicesConsumptionIndex(
+        "The first day of the period, such as 2026-10-01, in the time of Madrid"
+        startDate: Date!
+        "The last day of the period, such as 2026-10-20. It can be the same day as startDate."
+        endDate: Date!
+        "How the values are grouped. MONTH, the default, is one this indicator accepts."
+        timeTrunc: ReeTimeTrunc! = MONTH
+    ): ReeIndicator
+
+    """
+    The Red Eléctrica index (IRE) tells early how the electricity consumption of the companies with more than 450 kW
+    contracted evolves, as an index with 2021 = 100 and its growth rate, raw and corrected for working days and
+    temperature. This field gives the index of services against a year before.
+    """
+    reeServicesConsumptionIndexYearly(
+        "The first day of the period, such as 2026-10-01, in the time of Madrid"
+        startDate: Date!
+        "The last day of the period, such as 2026-10-20. It can be the same day as startDate."
+        endDate: Date!
+        "How the values are grouped. MONTH, the default, is one this indicator accepts."
+        timeTrunc: ReeTimeTrunc! = MONTH
+    ): ReeIndicator
+
+    """
+    The Red Eléctrica index (IRE) tells early how the electricity consumption of the companies with more than 450 kW
+    contracted evolves, as an index with 2021 = 100 and its growth rate, raw and corrected for working days and
+    temperature. This field gives the index of services of the last twelve months.
+    """
+    reeServicesConsumptionIndexMovingYear(
+        "The first day of the period, such as 2026-10-01, in the time of Madrid"
+        startDate: Date!
+        "The last day of the period, such as 2026-10-20. It can be the same day as startDate."
+        endDate: Date!
+        "How the values are grouped. MONTH, the default, is one this indicator accepts."
+        timeTrunc: ReeTimeTrunc! = MONTH
+    ): ReeIndicator
+
+    """
+    The Red Eléctrica index (IRE) tells early how the electricity consumption of the companies with more than 450 kW
+    contracted evolves, as an index with 2021 = 100 and its growth rate, raw and corrected for working days and
+    temperature. This field gives the index of other activities and its monthly variation.
+    """
+    reeOtherConsumptionIndex(
+        "The first day of the period, such as 2026-10-01, in the time of Madrid"
+        startDate: Date!
+        "The last day of the period, such as 2026-10-20. It can be the same day as startDate."
+        endDate: Date!
+        "How the values are grouped. MONTH, the default, is one this indicator accepts."
+        timeTrunc: ReeTimeTrunc! = MONTH
+    ): ReeIndicator
+
+    """
+    The Red Eléctrica index (IRE) tells early how the electricity consumption of the companies with more than 450 kW
+    contracted evolves, as an index with 2021 = 100 and its growth rate, raw and corrected for working days and
+    temperature. This field gives the index of other activities against a year before.
+    """
+    reeOtherConsumptionIndexYearly(
+        "The first day of the period, such as 2026-10-01, in the time of Madrid"
+        startDate: Date!
+        "The last day of the period, such as 2026-10-20. It can be the same day as startDate."
+        endDate: Date!
+        "How the values are grouped. MONTH, the default, is one this indicator accepts."
+        timeTrunc: ReeTimeTrunc! = MONTH
+    ): ReeIndicator
+
+    """
+    The Red Eléctrica index (IRE) tells early how the electricity consumption of the companies with more than 450 kW
+    contracted evolves, as an index with 2021 = 100 and its growth rate, raw and corrected for working days and
+    temperature. This field gives the index of other activities of the last twelve months.
+    """
+    reeOtherConsumptionIndexMovingYear(
+        "The first day of the period, such as 2026-10-01, in the time of Madrid"
+        startDate: Date!
+        "The last day of the period, such as 2026-10-20. It can be the same day as startDate."
+        endDate: Date!
+        "How the values are grouped. MONTH, the default, is one this indicator accepts."
+        timeTrunc: ReeTimeTrunc! = MONTH
+    ): ReeIndicator
+
+    "The highest daily demand for electricity of each month, in MWh"
+    reeDailyPeakDemand(
+        "The first day of the period, such as 2026-10-01, in the time of Madrid"
+        startDate: Date!
+        "The last day of the period, such as 2026-10-20. It can be the same day as startDate."
+        endDate: Date!
+        "How the values are grouped. MONTH, the default, is one this indicator accepts."
+        timeTrunc: ReeTimeTrunc! = MONTH
+    ): ReeIndicator
+
+    "The highest hourly demand for electricity of each month, in MWh"
+    reeHourlyPeakDemand(
+        "The first day of the period, such as 2026-10-01, in the time of Madrid"
+        startDate: Date!
+        "The last day of the period, such as 2026-10-20. It can be the same day as startDate."
+        endDate: Date!
+        "How the values are grouped. MONTH, the default, is one this indicator accepts."
+        timeTrunc: ReeTimeTrunc! = MONTH
+    ): ReeIndicator
+
+    "The energy lost in the transmission grid, next to the demand, for each day or month"
+    reeTransmissionLosses(
+        "The first day of the period, such as 2026-10-01, in the time of Madrid"
+        startDate: Date!
+        "The last day of the period, such as 2026-10-20. It can be the same day as startDate."
+        endDate: Date!
+        "How the values are grouped. DAY, the default, is one this indicator accepts."
+        timeTrunc: ReeTimeTrunc! = DAY
+    ): ReeIndicator
+
+    "The highest instantaneous power the grid supplied in each month, in MW"
+    reePeakInstantaneousPower(
+        "The first day of the period, such as 2026-10-01, in the time of Madrid"
+        startDate: Date!
+        "The last day of the period, such as 2026-10-20. It can be the same day as startDate."
+        endDate: Date!
+        "How the values are grouped. MONTH, the default, is one this indicator accepts."
+        timeTrunc: ReeTimeTrunc! = MONTH
+    ): ReeIndicator
+
+    "The highest instantaneous power of each month, in MW, and its variation against the same month of the year before"
+    reePeakInstantaneousPowerVariation(
+        "The first day of the period, such as 2026-10-01, in the time of Madrid"
+        startDate: Date!
+        "The last day of the period, such as 2026-10-20. It can be the same day as startDate."
+        endDate: Date!
+        "How the values are grouped. MONTH, the default, is one this indicator accepts."
+        timeTrunc: ReeTimeTrunc! = MONTH
+    ): ReeIndicator
+
+    "The record of instantaneous power the grid has supplied, in MW"
+    reePeakInstantaneousPowerRecord(
+        "The first day of the period, such as 2026-10-01, in the time of Madrid"
+        startDate: Date!
+        "The last day of the period, such as 2026-10-20. It can be the same day as startDate."
+        endDate: Date!
+        "How the values are grouped. MONTH, the default, is one this indicator accepts."
+        timeTrunc: ReeTimeTrunc! = MONTH
+    ): ReeIndicator
+
+    """
+    The generation of electricity in Spain by technology, such as wind, solar photovoltaic, hydro, nuclear and combined
+    cycle, each marked renewable or non-renewable, with the total
+    """
+    reeGenerationByTechnology(
+        "The first day of the period, such as 2026-10-01, in the time of Madrid"
+        startDate: Date!
+        "The last day of the period, such as 2026-10-20. It can be the same day as startDate."
+        endDate: Date!
+        "How the values are grouped. DAY, the default, is one this indicator accepts."
+        timeTrunc: ReeTimeTrunc! = DAY
+    ): ReeIndicator
+
+    "The generation of renewable and of non-renewable electricity over time, with their shares"
+    reeRenewableShare(
+        "The first day of the period, such as 2026-10-01, in the time of Madrid"
+        startDate: Date!
+        "The last day of the period, such as 2026-10-20. It can be the same day as startDate."
+        endDate: Date!
+        "How the values are grouped. DAY, the default, is one this indicator accepts."
+        timeTrunc: ReeTimeTrunc! = DAY
+    ): ReeIndicator
+
+    """
+    The renewable generation by technology: hydro, wind, solar photovoltaic, solar thermal, hydro-wind, other renewables
+    and renewable waste
+    """
+    reeRenewableGenerationByTechnology(
+        "The first day of the period, such as 2026-10-01, in the time of Madrid"
+        startDate: Date!
+        "The last day of the period, such as 2026-10-20. It can be the same day as startDate."
+        endDate: Date!
+        "How the values are grouped. DAY, the default, is one this indicator accepts."
+        timeTrunc: ReeTimeTrunc! = DAY
+    ): ReeIndicator
+
+    """
+    The generation by technology, each marked as with or without CO2 equivalent emissions: coal and combined cycle emit
+    CO2, and nuclear, hydro, wind and solar are free of emissions
+    """
+    reeGenerationByEmissions(
+        "The first day of the period, such as 2026-10-01, in the time of Madrid"
+        startDate: Date!
+        "The last day of the period, such as 2026-10-20. It can be the same day as startDate."
+        endDate: Date!
+        "How the values are grouped. DAY, the default, is one this indicator accepts."
+        timeTrunc: ReeTimeTrunc! = DAY
+    ): ReeIndicator
+
+    "The generation without CO2 equivalent emissions against the generation with them, over time"
+    reeEmissionFreeShare(
+        "The first day of the period, such as 2026-10-01, in the time of Madrid"
+        startDate: Date!
+        "The last day of the period, such as 2026-10-20. It can be the same day as startDate."
+        endDate: Date!
+        "How the values are grouped. DAY, the default, is one this indicator accepts."
+        timeTrunc: ReeTimeTrunc! = DAY
+    ): ReeIndicator
+
+    """
+    The greenhouse gas emissions of each non-renewable technology, in tonnes of CO2 equivalent, with the total and the
+    emission factor in tonnes per MWh
+    """
+    reeCo2Emissions(
+        "The first day of the period, such as 2026-10-01, in the time of Madrid"
+        startDate: Date!
+        "The last day of the period, such as 2026-10-20. It can be the same day as startDate."
+        endDate: Date!
+        "How the values are grouped. DAY, the default, is one this indicator accepts."
+        timeTrunc: ReeTimeTrunc! = DAY
+    ): ReeIndicator
+
+    "The highest renewable generation of each month"
+    reePeakRenewableGeneration(
+        "The first day of the period, such as 2026-10-01, in the time of Madrid"
+        startDate: Date!
+        "The last day of the period, such as 2026-10-20. It can be the same day as startDate."
+        endDate: Date!
+        "How the values are grouped. MONTH, the default, is one this indicator accepts."
+        timeTrunc: ReeTimeTrunc! = MONTH
+    ): ReeIndicator
+
+    "The record of renewable generation"
+    reePeakRenewableGenerationRecord(
+        "The first day of the period, such as 2026-10-01, in the time of Madrid"
+        startDate: Date!
+        "The last day of the period, such as 2026-10-20. It can be the same day as startDate."
+        endDate: Date!
+        "How the values are grouped. MONTH, the default, is one this indicator accepts."
+        timeTrunc: ReeTimeTrunc! = MONTH
+    ): ReeIndicator
+
+    "The record of generation without CO2 emissions"
+    reePeakEmissionFreeGenerationRecord(
+        "The first day of the period, such as 2026-10-01, in the time of Madrid"
+        startDate: Date!
+        "The last day of the period, such as 2026-10-20. It can be the same day as startDate."
+        endDate: Date!
+        "How the values are grouped. MONTH, the default, is one this indicator accepts."
+        timeTrunc: ReeTimeTrunc! = MONTH
+    ): ReeIndicator
+
+    "The physical exchanges of electricity with France: exports, imports and the balance"
+    reeExchangesWithFrance(
+        "The first day of the period, such as 2026-10-01, in the time of Madrid"
+        startDate: Date!
+        "The last day of the period, such as 2026-10-20. It can be the same day as startDate."
+        endDate: Date!
+        "How the values are grouped. DAY, the default, is one this indicator accepts."
+        timeTrunc: ReeTimeTrunc! = DAY
+    ): ReeIndicator
+
+    "The physical exchanges of electricity with Portugal: exports, imports and the balance"
+    reeExchangesWithPortugal(
+        "The first day of the period, such as 2026-10-01, in the time of Madrid"
+        startDate: Date!
+        "The last day of the period, such as 2026-10-20. It can be the same day as startDate."
+        endDate: Date!
+        "How the values are grouped. DAY, the default, is one this indicator accepts."
+        timeTrunc: ReeTimeTrunc! = DAY
+    ): ReeIndicator
+
+    "The physical exchanges of electricity with Morocco: exports, imports and the balance"
+    reeExchangesWithMorocco(
+        "The first day of the period, such as 2026-10-01, in the time of Madrid"
+        startDate: Date!
+        "The last day of the period, such as 2026-10-20. It can be the same day as startDate."
+        endDate: Date!
+        "How the values are grouped. DAY, the default, is one this indicator accepts."
+        timeTrunc: ReeTimeTrunc! = DAY
+    ): ReeIndicator
+
+    "The physical exchanges of electricity with Andorra: exports, imports and the balance"
+    reeExchangesWithAndorra(
+        "The first day of the period, such as 2026-10-01, in the time of Madrid"
+        startDate: Date!
+        "The last day of the period, such as 2026-10-20. It can be the same day as startDate."
+        endDate: Date!
+        "How the values are grouped. DAY, the default, is one this indicator accepts."
+        timeTrunc: ReeTimeTrunc! = DAY
+    ): ReeIndicator
+
+    """
+    The physical exchanges with France on each interconnection line, such as Irún - Errondenia or Vic - Baixas: exports,
+    imports and the balance of each
+    """
+    reeExchangesWithFranceByLine(
+        "The first day of the period, such as 2026-10-01, in the time of Madrid"
+        startDate: Date!
+        "The last day of the period, such as 2026-10-20. It can be the same day as startDate."
+        endDate: Date!
+        "How the values are grouped. DAY, the default, is one this indicator accepts."
+        timeTrunc: ReeTimeTrunc! = DAY
+    ): ReeIndicator
+
+    """
+    The physical exchanges with Portugal on each interconnection line, such as Cartelle - Lindoso or Puebla de Guzmán -
+    Tavira
+    """
+    reeExchangesWithPortugalByLine(
+        "The first day of the period, such as 2026-10-01, in the time of Madrid"
+        startDate: Date!
+        "The last day of the period, such as 2026-10-20. It can be the same day as startDate."
+        endDate: Date!
+        "How the values are grouped. DAY, the default, is one this indicator accepts."
+        timeTrunc: ReeTimeTrunc! = DAY
+    ): ReeIndicator
+
+    "The physical exchanges with Morocco on the line P. de la Cruz - Melloussa"
+    reeExchangesWithMoroccoByLine(
+        "The first day of the period, such as 2026-10-01, in the time of Madrid"
+        startDate: Date!
+        "The last day of the period, such as 2026-10-20. It can be the same day as startDate."
+        endDate: Date!
+        "How the values are grouped. DAY, the default, is one this indicator accepts."
+        timeTrunc: ReeTimeTrunc! = DAY
+    ): ReeIndicator
+
+    "The physical exchanges with Andorra on the line Adrall - Margineda"
+    reeExchangesWithAndorraByLine(
+        "The first day of the period, such as 2026-10-01, in the time of Madrid"
+        startDate: Date!
+        "The last day of the period, such as 2026-10-20. It can be the same day as startDate."
+        endDate: Date!
+        "How the values are grouped. DAY, the default, is one this indicator accepts."
+        timeTrunc: ReeTimeTrunc! = DAY
+    ): ReeIndicator
+
+    "The scheduled exchanges of electricity with France: exports, imports and the balance"
+    reeScheduledExchangesWithFrance(
+        "The first day of the period, such as 2026-10-01, in the time of Madrid"
+        startDate: Date!
+        "The last day of the period, such as 2026-10-20. It can be the same day as startDate."
+        endDate: Date!
+        "How the values are grouped. DAY, the default, is one this indicator accepts."
+        timeTrunc: ReeTimeTrunc! = DAY
+    ): ReeIndicator
+
+    "The scheduled exchanges of electricity with Portugal: exports, imports and the balance"
+    reeScheduledExchangesWithPortugal(
+        "The first day of the period, such as 2026-10-01, in the time of Madrid"
+        startDate: Date!
+        "The last day of the period, such as 2026-10-20. It can be the same day as startDate."
+        endDate: Date!
+        "How the values are grouped. DAY, the default, is one this indicator accepts."
+        timeTrunc: ReeTimeTrunc! = DAY
+    ): ReeIndicator
+
+    "The scheduled exchanges of electricity with Morocco: exports and the balance"
+    reeScheduledExchangesWithMorocco(
+        "The first day of the period, such as 2026-10-01, in the time of Madrid"
+        startDate: Date!
+        "The last day of the period, such as 2026-10-20. It can be the same day as startDate."
+        endDate: Date!
+        "How the values are grouped. DAY, the default, is one this indicator accepts."
+        timeTrunc: ReeTimeTrunc! = DAY
+    ): ReeIndicator
+
+    "The scheduled exchanges of electricity with Andorra: exports and the balance"
+    reeScheduledExchangesWithAndorra(
+        "The first day of the period, such as 2026-10-01, in the time of Madrid"
+        startDate: Date!
+        "The last day of the period, such as 2026-10-20. It can be the same day as startDate."
+        endDate: Date!
+        "How the values are grouped. DAY, the default, is one this indicator accepts."
+        timeTrunc: ReeTimeTrunc! = DAY
+    ): ReeIndicator
+
+    "The electricity sent from the peninsula to the Balearic Islands through the undersea link"
+    reeBalearicLink(
+        "The first day of the period, such as 2026-10-01, in the time of Madrid"
+        startDate: Date!
+        "The last day of the period, such as 2026-10-20. It can be the same day as startDate."
+        endDate: Date!
+        "How the values are grouped. DAY, the default, is one this indicator accepts."
+        timeTrunc: ReeTimeTrunc! = DAY
+    ): ReeIndicator
+
+    "The physical cross-border exchanges of all borders together: exports, imports and the balance"
+    reePhysicalExchangeBalance(
+        "The first day of the period, such as 2026-10-01, in the time of Madrid"
+        startDate: Date!
+        "The last day of the period, such as 2026-10-20. It can be the same day as startDate."
+        endDate: Date!
+        "How the values are grouped. DAY, the default, is one this indicator accepts."
+        timeTrunc: ReeTimeTrunc! = DAY
+    ): ReeIndicator
+
+    "The physical exchanges with each country: France, Portugal, Morocco and Andorra"
+    reePhysicalExchangesAllBorders(
+        "The first day of the period, such as 2026-10-01, in the time of Madrid"
+        startDate: Date!
+        "The last day of the period, such as 2026-10-20. It can be the same day as startDate."
+        endDate: Date!
+        "How the values are grouped. DAY, the default, is one this indicator accepts."
+        timeTrunc: ReeTimeTrunc! = DAY
+    ): ReeIndicator
+
+    "The scheduled exchanges with each country: France, Portugal, Morocco and Andorra"
+    reeScheduledExchangesAllBorders(
+        "The first day of the period, such as 2026-10-01, in the time of Madrid"
+        startDate: Date!
+        "The last day of the period, such as 2026-10-20. It can be the same day as startDate."
+        endDate: Date!
+        "How the values are grouped. DAY, the default, is one this indicator accepts."
+        timeTrunc: ReeTimeTrunc! = DAY
+    ): ReeIndicator
+
+    """
+    The energy not supplied (ENS) because of incidents in the transmission grid, accumulated over the year, a measure of
+    the quality of service
+    """
+    reeEnergyNotSupplied(
+        "The first day of the period, such as 2026-10-01, in the time of Madrid"
+        startDate: Date!
+        "The last day of the period, such as 2026-10-20. It can be the same day as startDate."
+        endDate: Date!
+        "How the values are grouped. MONTH, the default, is one this indicator accepts."
+        timeTrunc: ReeTimeTrunc! = MONTH
+    ): ReeIndicator
+
+    """
+    The rate at which the transmission grid was unavailable, by cause: scheduled maintenance, other scheduled work,
+    corrective maintenance, unforeseen circumstances, force majeure, and the total
+    """
+    reeGridUnavailability(
+        "The first day of the period, such as 2026-10-01, in the time of Madrid"
+        startDate: Date!
+        "The last day of the period, such as 2026-10-20. It can be the same day as startDate."
+        endDate: Date!
+        "How the values are grouped. MONTH, the default, is one this indicator accepts."
+        timeTrunc: ReeTimeTrunc! = MONTH
+    ): ReeIndicator
+
+    "The average interruption time (AIT) of the supply because of the transmission grid, in minutes"
+    reeAverageInterruptionTime(
+        "The first day of the period, such as 2026-10-01, in the time of Madrid"
+        startDate: Date!
+        "The last day of the period, such as 2026-10-20. It can be the same day as startDate."
+        endDate: Date!
+        "How the values are grouped. MONTH, the default, is one this indicator accepts."
+        timeTrunc: ReeTimeTrunc! = MONTH
+    ): ReeIndicator
+
+    "The length of the transmission grid, in kilometres of circuit, at 400 kV, 220 kV and 132 kV"
+    reeGridLength(
+        "The first day of the period, such as 2026-10-01, in the time of Madrid"
+        startDate: Date!
+        "The last day of the period, such as 2026-10-20. It can be the same day as startDate."
+        endDate: Date!
+        "How the values are grouped. MONTH, the default, is one this indicator accepts."
+        timeTrunc: ReeTimeTrunc! = MONTH
+    ): ReeIndicator
+
+    "The availability of the transmission grid each month, in percent"
+    reeGridAvailability(
+        "The first day of the period, such as 2026-10-01, in the time of Madrid"
+        startDate: Date!
+        "The last day of the period, such as 2026-10-20. It can be the same day as startDate."
+        endDate: Date!
+        "How the values are grouped. MONTH, the default, is one this indicator accepts."
+        timeTrunc: ReeTimeTrunc! = MONTH
+    ): ReeIndicator
+
+    "The number of power outages of the transmission grid"
+    reePowerOutages(
+        "The first day of the period, such as 2026-10-01, in the time of Madrid"
+        startDate: Date!
+        "The last day of the period, such as 2026-10-20. It can be the same day as startDate."
+        endDate: Date!
+        "How the values are grouped. MONTH, the default, is one this indicator accepts."
+        timeTrunc: ReeTimeTrunc! = MONTH
+    ): ReeIndicator
+
+    """
+    The energy not supplied and the average interruption time, for Spain, the peninsula, the Balearic Islands and the
+    Canary Islands
+    """
+    reeEnergyNotSuppliedAndInterruptionTime(
+        "The first day of the period, such as 2026-10-01, in the time of Madrid"
+        startDate: Date!
+        "The last day of the period, such as 2026-10-20. It can be the same day as startDate."
+        endDate: Date!
+        "How the values are grouped. MONTH, the default, is one this indicator accepts."
+        timeTrunc: ReeTimeTrunc! = MONTH
+    ): ReeIndicator
+
+    "The total availability of the transmission grid, in percent"
+    reeTotalGridAvailability(
+        "The first day of the period, such as 2026-10-01, in the time of Madrid"
+        startDate: Date!
+        "The last day of the period, such as 2026-10-20. It can be the same day as startDate."
+        endDate: Date!
+        "How the values are grouped. MONTH, the default, is one this indicator accepts."
+        timeTrunc: ReeTimeTrunc! = MONTH
+    ): ReeIndicator
+
+    """
+    The components of the final price of electricity, in euros per MWh: the daily and intraday markets, each adjustment
+    service, the capacity payments, the total price, and the energy it applies to
+    """
+    reePriceComponents(
+        "The first day of the period, such as 2026-10-01, in the time of Madrid"
+        startDate: Date!
+        "The last day of the period, such as 2026-10-20. It can be the same day as startDate."
+        endDate: Date!
+        "How the values are grouped. MONTH, the default, is one this indicator accepts."
+        timeTrunc: ReeTimeTrunc! = MONTH
+    ): ReeIndicator
+
+    "The energy programmed up and down for the security of the grid in the adjustment services"
+    reeAdjustmentServicesEnergy(
+        "The first day of the period, such as 2026-10-01, in the time of Madrid"
+        startDate: Date!
+        "The last day of the period, such as 2026-10-20. It can be the same day as startDate."
+        endDate: Date!
+        "How the values are grouped. MONTH, the default, is one this indicator accepts."
+        timeTrunc: ReeTimeTrunc! = MONTH
+    ): ReeIndicator
+
+    "The energy raised and lowered to solve technical constraints, in the daily schedule (PDBF) and in real time"
+    reeConstraintEnergy(
+        "The first day of the period, such as 2026-10-01, in the time of Madrid"
+        startDate: Date!
+        "The last day of the period, such as 2026-10-20. It can be the same day as startDate."
+        endDate: Date!
+        "How the values are grouped. MONTH, the default, is one this indicator accepts."
+        timeTrunc: ReeTimeTrunc! = MONTH
+    ): ReeIndicator
+
+    "The weighted average prices of solving technical constraints, in the daily schedule (PDBF) and in real time"
+    reeConstraintPrices(
+        "The first day of the period, such as 2026-10-01, in the time of Madrid"
+        startDate: Date!
+        "The last day of the period, such as 2026-10-20. It can be the same day as startDate."
+        endDate: Date!
+        "How the values are grouped. MONTH, the default, is one this indicator accepts."
+        timeTrunc: ReeTimeTrunc! = MONTH
+    ): ReeIndicator
+
+    "The secondary regulation band: the power reserved to go up and down, and its average price"
+    reeSecondaryRegulationBand(
+        "The first day of the period, such as 2026-10-01, in the time of Madrid"
+        startDate: Date!
+        "The last day of the period, such as 2026-10-20. It can be the same day as startDate."
+        endDate: Date!
+        "How the values are grouped. MONTH, the default, is one this indicator accepts."
+        timeTrunc: ReeTimeTrunc! = MONTH
+    ): ReeIndicator
+
+    "The energy of secondary regulation up and down, and its prices"
+    reeSecondaryRegulation(
+        "The first day of the period, such as 2026-10-01, in the time of Madrid"
+        startDate: Date!
+        "The last day of the period, such as 2026-10-20. It can be the same day as startDate."
+        endDate: Date!
+        "How the values are grouped. MONTH, the default, is one this indicator accepts."
+        timeTrunc: ReeTimeTrunc! = MONTH
+    ): ReeIndicator
+
+    "The energy of tertiary regulation up and down, and its prices"
+    reeTertiaryRegulation(
+        "The first day of the period, such as 2026-10-01, in the time of Madrid"
+        startDate: Date!
+        "The last day of the period, such as 2026-10-20. It can be the same day as startDate."
+        endDate: Date!
+        "How the values are grouped. MONTH, the default, is one this indicator accepts."
+        timeTrunc: ReeTimeTrunc! = MONTH
+    ): ReeIndicator
+
+    "The cost of the adjustment services of the grid, in euros"
+    reeAdjustmentServicesCost(
+        "The first day of the period, such as 2026-10-01, in the time of Madrid"
+        startDate: Date!
+        "The last day of the period, such as 2026-10-20. It can be the same day as startDate."
+        endDate: Date!
+        "How the values are grouped. MONTH, the default, is one this indicator accepts."
+        timeTrunc: ReeTimeTrunc! = MONTH
+    ): ReeIndicator
+
+    "The energy of the adjustment services and its variation against the year before"
+    reeAdjustmentServicesVolumeVariation(
+        "The first day of the period, such as 2026-10-01, in the time of Madrid"
+        startDate: Date!
+        "The last day of the period, such as 2026-10-20. It can be the same day as startDate."
+        endDate: Date!
+        "How the values are grouped. MONTH, the default, is one this indicator accepts."
+        timeTrunc: ReeTimeTrunc! = MONTH
+    ): ReeIndicator
+
+    "The prices of deviation management up and down, before the replacement reserve (RR) balance"
+    reeDeviationManagementPricesBefore(
+        "The first day of the period, such as 2026-10-01, in the time of Madrid"
+        startDate: Date!
+        "The last day of the period, such as 2026-10-20. It can be the same day as startDate."
+        endDate: Date!
+        "How the values are grouped. MONTH, the default, is one this indicator accepts."
+        timeTrunc: ReeTimeTrunc! = MONTH
+    ): ReeIndicator
+
+    "The prices of deviation management up and down, with the replacement reserve (RR) balance"
+    reeDeviationManagementPrices(
+        "The first day of the period, such as 2026-10-01, in the time of Madrid"
+        startDate: Date!
+        "The last day of the period, such as 2026-10-20. It can be the same day as startDate."
+        endDate: Date!
+        "How the values are grouped. MONTH, the default, is one this indicator accepts."
+        timeTrunc: ReeTimeTrunc! = MONTH
+    ): ReeIndicator
+
+    "The prices of deviation management after the replacement reserve (RR) balance"
+    reeDeviationManagementPricesAfter(
+        "The first day of the period, such as 2026-10-01, in the time of Madrid"
+        startDate: Date!
+        "The last day of the period, such as 2026-10-20. It can be the same day as startDate."
+        endDate: Date!
+        "How the values are grouped. MONTH, the default, is one this indicator accepts."
+        timeTrunc: ReeTimeTrunc! = MONTH
+    ): ReeIndicator
+
+    """
+    The price of electricity in the peninsula hour by hour: the regulated price for households (PVPC) and the spot price
+    of the market, in euros per MWh. Ask with timeTrunc HOUR for one day.
+    """
+    reeElectricityPrices(
+        "The first day of the period, such as 2026-10-01, in the time of Madrid"
+        startDate: Date!
+        "The last day of the period, such as 2026-10-20. It can be the same day as startDate."
+        endDate: Date!
+        "How the values are grouped. HOUR, the default, is one this indicator accepts."
+        timeTrunc: ReeTimeTrunc! = HOUR
+    ): ReeIndicator
+}
+
+"An indicator of the Spanish electricity grid"
+type ReeIndicator {
+    "The id of the indicator, such as bal1"
+    id: String
+    "The title, such as Electrical energy balance. Some titles are in Spanish."
+    title: String
+    "What the indicator measures, or null"
+    description: String
+    "When Red Eléctrica last updated the figures, written as 2026-10-20T20:46:36.000+02:00"
+    lastUpdate: String
+    "The series of the indicator, such as the generation of each technology"
+    series: [ReeSeries]
+}
+
+"A series of values of an indicator, or a group of series"
+type ReeSeries {
+    "The id of the series"
+    id: String
+    "The name of the series as the indicator groups it, such as Renewable"
+    type: String
+    "The group the series belongs to, or null"
+    groupId: String
+    "The title, such as Wind or Exports"
+    title: String
+    "What the series measures, or null"
+    description: String
+    "The kind of series, such as distinct, total, export, import or saldo (balance)"
+    kind: String
+    "The magnitude of the values, such as price or time, or null for energy"
+    magnitude: String
+    "Whether the series adds up others"
+    composite: Boolean
+    "The colour of the series in the charts of Red Eléctrica, as #RRGGBB"
+    color: String
+    "When the series last changed, as a date and time, or a number in some series"
+    lastUpdate: String
+    "The values over the period, oldest first"
+    values: [ReeValue]
+    "The series inside a group, such as the technologies of Renewable"
+    parts: [ReeSeries]
+}
+
+"One value of a series"
+type ReeValue {
+    """
+    The start of the hour, day, month or year of the value, written as 2026-10-01T00:00:00.000+02:00, or without an
+    offset, as 2026-01-01T00:00, by some indicators
+    """
+    datetime: String
+    "The value, in MWh, MW, euros per MWh or the unit of the indicator"
+    value: Float
+    "The share of the value in its group, from 0 to 1"
+    percentage: Float
+}
+
+"How the values of an indicator of Red Eléctrica are grouped over time"
+enum ReeTimeTrunc {
+    "One value for each hour"
+    HOUR
+    "One value for each day"
+    DAY
+    "One value for each month"
+    MONTH
+    "One value for each year"
+    YEAR
+}

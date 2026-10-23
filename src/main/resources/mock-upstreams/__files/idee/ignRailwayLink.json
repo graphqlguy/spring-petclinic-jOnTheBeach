@@ -1,0 +1,85 @@
+{
+    "type":"Feature",
+    "properties":{
+        "href":"#TN-RA_RAILWAYLINK_FFCC_TR290000000004",
+        "id_tramo":290000000004,
+        "numberoftracks":null,
+        "fecha_alta":"2024-09-25T09:27:09.990489",
+        "nominalgauge":null,
+        "fictitious":"false",
+        "nominalgaugecategory":null,
+        "electrified":null,
+        "nominalgauge_uom":null
+    },
+    "id":"FFCC_TR290000000004",
+    "geometry":{
+        "type":"LineString",
+        "coordinates":[
+            [
+                -4.429617040804367,
+                36.70798025676147,
+                3.059694051742554
+            ],
+            [
+                -4.429196208737989,
+                36.70802132771044,
+                3.330992698669434
+            ],
+            [
+                -4.429037496648206,
+                36.70804401700103,
+                3.318616628646851
+            ]
+        ]
+    },
+    "prev":"FFCC_TR290000000003",
+    "next":"FFCC_TR290000000005",
+    "links":[
+        {
+            "type":"application/json",
+            "rel":"root",
+            "title":"The landing page of this server as JSON",
+            "href":"https://api-features.idee.es?f=json"
+        },
+        {
+            "type":"text/html",
+            "rel":"root",
+            "title":"The landing page of this server as HTML",
+            "href":"https://api-features.idee.es?f=html"
+        },
+        {
+            "rel":"self",
+            "type":"application/geo+json",
+            "title":"This document as JSON",
+            "href":"https://api-features.idee.es/collections/railwaylink/items/FFCC_TR290000000004?f=json"
+        },
+        {
+            "rel":"alternate",
+            "type":"application/ld+json",
+            "title":"This document as RDF (JSON-LD)",
+            "href":"https://api-features.idee.es/collections/railwaylink/items/FFCC_TR290000000004?f=jsonld"
+        },
+        {
+            "rel":"alternate",
+            "type":"text/html",
+            "title":"This document as HTML",
+            "href":"https://api-features.idee.es/collections/railwaylink/items/FFCC_TR290000000004?f=html"
+        },
+        {
+            "rel":"collection",
+            "type":"application/json",
+            "title":"TN-RA Enlace ferroviario",
+            "href":"https://api-features.idee.es/collections/railwaylink"
+        },
+        {
+            "rel":"prev",
+            "type":"application/json",
+            "href":"https://api-features.idee.es/collections/railwaylink/items/FFCC_TR290000000003?f=json"
+        },
+        {
+            "rel":"next",
+            "type":"application/json",
+            "href":"https://api-features.idee.es/collections/railwaylink/items/FFCC_TR290000000005?f=json"
+        }
+    ]
+}

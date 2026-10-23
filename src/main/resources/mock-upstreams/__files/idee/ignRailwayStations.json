@@ -1,0 +1,100 @@
+{
+    "type":"FeatureCollection",
+    "features":[
+        {
+            "type":"Feature",
+            "properties":{
+                "id_estfc":290670000002,
+                "stationcode":"02005",
+                "n_andenes":null,
+                "fecha_alta":"2018-02-18T00:00:00",
+                "formofnode":"http://inspire.ec.europa.eu/codelist/FormOfRailwayNodeValue/railwayStop",
+                "nil_nombre":null,
+                "nil_varios":true,
+                "nil_n_andenes":true,
+                "nombre":"Estaci\u00f3n de Los Prados-A. V.",
+                "use":"passengers",
+                "nilreason_nombre":null,
+                "nilreason_varios":"other:unpopulated",
+                "nilreason_n_andenes":"unknown"
+            },
+            "id":"FCEST_N290670000002",
+            "geometry":null
+        },
+        {
+            "type":"Feature",
+            "properties":{
+                "id_estfc":290670000003,
+                "stationcode":"54413",
+                "n_andenes":null,
+                "fecha_alta":"2018-02-18T00:00:00",
+                "formofnode":"http://inspire.ec.europa.eu/codelist/FormOfRailwayNodeValue/railwayStop",
+                "nil_nombre":null,
+                "nil_varios":true,
+                "nil_n_andenes":true,
+                "nombre":"Estaci\u00f3n de Tren de Mar\u00eda Zambrano / Estaci\u00f3n de Metro El Perchel",
+                "use":"passengers",
+                "nilreason_nombre":null,
+                "nilreason_varios":"other:unpopulated",
+                "nilreason_n_andenes":"unknown"
+            },
+            "id":"FCEST_N290670000003",
+            "geometry":null
+        },
+        {
+            "type":"Feature",
+            "properties":{
+                "id_estfc":290670000004,
+                "stationcode":"54520",
+                "n_andenes":null,
+                "fecha_alta":"2018-02-18T00:00:00",
+                "formofnode":"http://inspire.ec.europa.eu/codelist/FormOfRailwayNodeValue/railwayStop",
+                "nil_nombre":null,
+                "nil_varios":true,
+                "nil_n_andenes":true,
+                "nombre":"Apeadero de Plaza Mayor (APD)",
+                "use":"passengers",
+                "nilreason_nombre":null,
+                "nilreason_varios":"other:unpopulated",
+                "nilreason_n_andenes":"unknown"
+            },
+            "id":"FCEST_N290670000004",
+            "geometry":null
+        }
+    ],
+    "numberMatched":31,
+    "numberReturned":3,
+    "links":[
+        {
+            "type":"application/geo+json",
+            "rel":"self",
+            "title":"This document as GeoJSON",
+            "href":"https://api-features.idee.es/collections/railwaystationnode/items?f=json&bbox=-4.50,36.65,-4.35,36.75&skipGeometry=true&limit=3"
+        },
+        {
+            "rel":"alternate",
+            "type":"application/ld+json",
+            "title":"This document as RDF (JSON-LD)",
+            "href":"https://api-features.idee.es/collections/railwaystationnode/items?f=jsonld&bbox=-4.50,36.65,-4.35,36.75&skipGeometry=true&limit=3"
+        },
+        {
+            "type":"text/html",
+            "rel":"alternate",
+            "title":"This document as HTML",
+            "href":"https://api-features.idee.es/collections/railwaystationnode/items?f=html&bbox=-4.50,36.65,-4.35,36.75&skipGeometry=true&limit=3"
+        },
+        {
+            "type":"application/geo+json",
+            "rel":"next",
+            "title":"Items (next)",
+            "href":"https://api-features.idee.es/collections/railwaystationnode/items?offset=3&bbox=-4.50,36.65,-4.35,36.75&skipGeometry=true&limit=3"
+        },
+        {
+            "type":"application/json",
+            "title":"TN-RA Nodo de estaci\u00f3n ferroviaria",
+            "rel":"collection",
+            "href":"https://api-features.idee.es/collections/railwaystationnode"
+        }
+    ],
+    "timeStamp":"2026-10-22T23:43:24.975006Z"
+}

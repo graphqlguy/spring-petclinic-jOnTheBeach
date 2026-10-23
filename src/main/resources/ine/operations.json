@@ -1,0 +1,981 @@
+{
+ "operations": [
+  {
+   "field": "ineOperations",
+   "path": "/OPERACIONES_DISPONIBLES",
+   "arguments": [
+    {
+     "name": "page",
+     "parameter": "page",
+     "in": "query",
+     "list": false
+    }
+   ]
+  },
+  {
+   "field": "ineOperation",
+   "path": "/OPERACION/{op}",
+   "arguments": [
+    {
+     "name": "operation",
+     "parameter": "op",
+     "in": "path",
+     "list": false
+    }
+   ]
+  },
+  {
+   "field": "ineVariables",
+   "path": "/VARIABLES",
+   "arguments": [
+    {
+     "name": "page",
+     "parameter": "page",
+     "in": "query",
+     "list": false
+    }
+   ]
+  },
+  {
+   "field": "ineOperationVariables",
+   "path": "/VARIABLES_OPERACION/{op}",
+   "arguments": [
+    {
+     "name": "operation",
+     "parameter": "op",
+     "in": "path",
+     "list": false
+    }
+   ]
+  },
+  {
+   "field": "ineVariableValues",
+   "path": "/VALORES_VARIABLE/{var}",
+   "arguments": [
+    {
+     "name": "variableId",
+     "parameter": "var",
+     "in": "path",
+     "list": false
+    }
+   ]
+  },
+  {
+   "field": "ineOperationVariableValues",
+   "path": "/VALORES_VARIABLEOPERACION/{var}/{op}",
+   "arguments": [
+    {
+     "name": "variableId",
+     "parameter": "var",
+     "in": "path",
+     "list": false
+    },
+    {
+     "name": "operation",
+     "parameter": "op",
+     "in": "path",
+     "list": false
+    }
+   ]
+  },
+  {
+   "field": "ineChildValues",
+   "path": "/VALORES_HIJOS/{var}/{val}",
+   "arguments": [
+    {
+     "name": "variableId",
+     "parameter": "var",
+     "in": "path",
+     "list": false
+    },
+    {
+     "name": "valueId",
+     "parameter": "val",
+     "in": "path",
+     "list": false
+    }
+   ]
+  },
+  {
+   "field": "ineOperationTables",
+   "path": "/TABLAS_OPERACION/{op}",
+   "arguments": [
+    {
+     "name": "operation",
+     "parameter": "op",
+     "in": "path",
+     "list": false
+    }
+   ]
+  },
+  {
+   "field": "ineTableGroups",
+   "path": "/GRUPOS_TABLA/{tabla}",
+   "arguments": [
+    {
+     "name": "tableId",
+     "parameter": "tabla",
+     "in": "path",
+     "list": false
+    }
+   ]
+  },
+  {
+   "field": "ineTableGroupValues",
+   "path": "/VALORES_GRUPOSTABLA/{tabla}/{grupo}",
+   "arguments": [
+    {
+     "name": "tableId",
+     "parameter": "tabla",
+     "in": "path",
+     "list": false
+    },
+    {
+     "name": "groupId",
+     "parameter": "grupo",
+     "in": "path",
+     "list": false
+    }
+   ]
+  },
+  {
+   "field": "ineTableSeries",
+   "path": "/SERIES_TABLA/{tabla}",
+   "arguments": [
+    {
+     "name": "tableId",
+     "parameter": "tabla",
+     "in": "path",
+     "list": false
+    }
+   ]
+  },
+  {
+   "field": "ineTableData",
+   "path": "/DATOS_TABLA/{tabla}",
+   "arguments": [
+    {
+     "name": "tableId",
+     "parameter": "tabla",
+     "in": "path",
+     "list": false
+    },
+    {
+     "name": "last",
+     "parameter": "nult",
+     "in": "query",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "tip": "A"
+   }
+  },
+  {
+   "field": "ineSeries",
+   "path": "/SERIE/{cod}",
+   "arguments": [
+    {
+     "name": "code",
+     "parameter": "cod",
+     "in": "path",
+     "list": false
+    }
+   ]
+  },
+  {
+   "field": "ineSeriesData",
+   "path": "/DATOS_SERIE/{cod}",
+   "arguments": [
+    {
+     "name": "code",
+     "parameter": "cod",
+     "in": "path",
+     "list": false
+    },
+    {
+     "name": "last",
+     "parameter": "nult",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "dates",
+     "parameter": "date",
+     "in": "query",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "tip": "A"
+   }
+  },
+  {
+   "field": "ineSeriesValues",
+   "path": "/VALORES_SERIE/{cod}",
+   "arguments": [
+    {
+     "name": "code",
+     "parameter": "cod",
+     "in": "path",
+     "list": false
+    }
+   ]
+  },
+  {
+   "field": "inePeriodicities",
+   "path": "/PERIODICIDADES",
+   "arguments": []
+  },
+  {
+   "field": "inePublications",
+   "path": "/PUBLICACIONES",
+   "arguments": []
+  },
+  {
+   "field": "ineOperationPublications",
+   "path": "/PUBLICACIONES_OPERACION/{op}",
+   "arguments": [
+    {
+     "name": "operation",
+     "parameter": "op",
+     "in": "path",
+     "list": false
+    }
+   ]
+  },
+  {
+   "field": "inePublicationDates",
+   "path": "/PUBLICACIONFECHA_PUBLICACION/{id}",
+   "arguments": [
+    {
+     "name": "publicationId",
+     "parameter": "id",
+     "in": "path",
+     "list": false
+    }
+   ]
+  },
+  {
+   "field": "ineClassifications",
+   "path": "/CLASIFICACIONES",
+   "arguments": []
+  },
+  {
+   "field": "ineOperationClassifications",
+   "path": "/CLASIFICACIONES_OPERACION/{op}",
+   "arguments": [
+    {
+     "name": "operation",
+     "parameter": "op",
+     "in": "path",
+     "list": false
+    }
+   ]
+  },
+  {
+   "field": "ineUnits",
+   "path": "/UNIDADES",
+   "arguments": []
+  },
+  {
+   "field": "ineScales",
+   "path": "/ESCALAS",
+   "arguments": []
+  },
+  {
+   "field": "ineUnit",
+   "path": "/UNIDAD/{id}",
+   "arguments": [
+    {
+     "name": "unitId",
+     "parameter": "id",
+     "in": "path",
+     "list": false
+    }
+   ]
+  },
+  {
+   "field": "ineScale",
+   "path": "/ESCALA/{id}",
+   "arguments": [
+    {
+     "name": "scaleId",
+     "parameter": "id",
+     "in": "path",
+     "list": false
+    }
+   ]
+  },
+  {
+   "field": "inePeriodicity",
+   "path": "/PERIODICIDAD/{id}",
+   "arguments": [
+    {
+     "name": "periodicityId",
+     "parameter": "id",
+     "in": "path",
+     "list": false
+    }
+   ]
+  },
+  {
+   "field": "ineVariable",
+   "path": "/VARIABLE/{var}",
+   "arguments": [
+    {
+     "name": "variableId",
+     "parameter": "var",
+     "in": "path",
+     "list": false
+    }
+   ]
+  },
+  {
+   "field": "ineOperationSeries",
+   "path": "/SERIES_OPERACION/{op}",
+   "arguments": [
+    {
+     "name": "operation",
+     "parameter": "op",
+     "in": "path",
+     "list": false
+    },
+    {
+     "name": "page",
+     "parameter": "page",
+     "in": "query",
+     "list": false
+    }
+   ]
+  },
+  {
+   "field": "ineSeriesDetail",
+   "path": "/SERIE/{cod}",
+   "arguments": [
+    {
+     "name": "code",
+     "parameter": "cod",
+     "in": "path",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "det": "2"
+   }
+  },
+  {
+   "field": "ineOperationTablesDetail",
+   "path": "/TABLAS_OPERACION/{op}",
+   "arguments": [
+    {
+     "name": "operation",
+     "parameter": "op",
+     "in": "path",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "det": "2"
+   }
+  },
+  {
+   "field": "ineTableDataWithMetadata",
+   "path": "/DATOS_TABLA/{tabla}",
+   "arguments": [
+    {
+     "name": "tableId",
+     "parameter": "tabla",
+     "in": "path",
+     "list": false
+    },
+    {
+     "name": "last",
+     "parameter": "nult",
+     "in": "query",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "tip": "AM"
+   }
+  },
+  {
+   "field": "ineSeriesValuesDetail",
+   "path": "/VALORES_SERIE/{cod}",
+   "arguments": [
+    {
+     "name": "code",
+     "parameter": "cod",
+     "in": "path",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "det": "1"
+   }
+  },
+  {
+   "field": "ineSeriesByValues",
+   "path": "/SERIE_METADATAOPERACION/{op}",
+   "arguments": [
+    {
+     "name": "operation",
+     "parameter": "op",
+     "in": "path",
+     "list": false
+    },
+    {
+     "name": "periodicityId",
+     "parameter": "p",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "filter1",
+     "parameter": "g1",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "filter2",
+     "parameter": "g2",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "filter3",
+     "parameter": "g3",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "filter4",
+     "parameter": "g4",
+     "in": "query",
+     "list": false
+    }
+   ]
+  },
+  {
+   "field": "ineDataByValues",
+   "path": "/DATOS_METADATAOPERACION/{op}",
+   "arguments": [
+    {
+     "name": "operation",
+     "parameter": "op",
+     "in": "path",
+     "list": false
+    },
+    {
+     "name": "periodicityId",
+     "parameter": "p",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "last",
+     "parameter": "nult",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "filter1",
+     "parameter": "g1",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "filter2",
+     "parameter": "g2",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "filter3",
+     "parameter": "g3",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "filter4",
+     "parameter": "g4",
+     "in": "query",
+     "list": false
+    }
+   ]
+  }
+ ],
+ "fields": {
+  "IneOperation": {
+   "id": {
+    "key": "Id"
+   },
+   "code": {
+    "key": "Codigo"
+   },
+   "ioeCode": {
+    "key": "Cod_IOE"
+   },
+   "name": {
+    "key": "Nombre",
+    "conversion": "text"
+   },
+   "url": {
+    "key": "Url"
+   }
+  },
+  "IneVariable": {
+   "id": {
+    "key": "Id"
+   },
+   "name": {
+    "key": "Nombre",
+    "conversion": "text"
+   },
+   "code": {
+    "key": "Codigo"
+   }
+  },
+  "IneValue": {
+   "id": {
+    "key": "Id"
+   },
+   "variableId": {
+    "key": "FK_Variable"
+   },
+   "name": {
+    "key": "Nombre",
+    "conversion": "text"
+   },
+   "code": {
+    "key": "Codigo"
+   },
+   "parentIds": {
+    "key": "FK_JerarquiaPadres"
+   }
+  },
+  "IneTable": {
+   "id": {
+    "key": "Id"
+   },
+   "name": {
+    "key": "Nombre",
+    "conversion": "text"
+   },
+   "code": {
+    "key": "Codigo"
+   },
+   "periodicityId": {
+    "key": "FK_Periodicidad"
+   },
+   "publicationId": {
+    "key": "FK_Publicacion"
+   },
+   "firstPeriodId": {
+    "key": "FK_Periodo_ini"
+   },
+   "firstYear": {
+    "key": "Anyo_Periodo_ini"
+   },
+   "lastPeriodId": {
+    "key": "FK_Periodo_fin"
+   },
+   "lastYear": {
+    "key": "Anyo_Periodo_fin"
+   },
+   "referenceEnd": {
+    "key": "FechaRef_fin"
+   },
+   "lastModified": {
+    "key": "Ultima_Modificacion",
+    "conversion": "epoch-millis-date-time"
+   }
+  },
+  "IneTableGroup": {
+   "id": {
+    "key": "Id"
+   },
+   "name": {
+    "key": "Nombre"
+   }
+  },
+  "IneSeries": {
+   "id": {
+    "key": "Id"
+   },
+   "code": {
+    "key": "COD"
+   },
+   "name": {
+    "key": "Nombre",
+    "conversion": "text"
+   },
+   "operationId": {
+    "key": "FK_Operacion"
+   },
+   "decimals": {
+    "key": "Decimales"
+   },
+   "periodicityId": {
+    "key": "FK_Periodicidad"
+   },
+   "publicationId": {
+    "key": "FK_Publicacion"
+   },
+   "classificationId": {
+    "key": "FK_Clasificacion"
+   },
+   "scaleId": {
+    "key": "FK_Escala"
+   },
+   "unitId": {
+    "key": "FK_Unidad"
+   }
+  },
+  "IneSeriesData": {
+   "code": {
+    "key": "COD"
+   },
+   "name": {
+    "key": "Nombre",
+    "conversion": "text"
+   },
+   "unit": {
+    "key": "T3_Unidad"
+   },
+   "scale": {
+    "key": "T3_Escala",
+    "conversion": "text"
+   },
+   "data": {
+    "key": "Data"
+   }
+  },
+  "IneDataPoint": {
+   "date": {
+    "key": "Fecha"
+   },
+   "year": {
+    "key": "Anyo"
+   },
+   "period": {
+    "key": "T3_Periodo"
+   },
+   "dataType": {
+    "key": "T3_TipoDato"
+   },
+   "value": {
+    "key": "Valor"
+   }
+  },
+  "IneCodedName": {
+   "id": {
+    "key": "Id"
+   },
+   "name": {
+    "key": "Nombre"
+   },
+   "code": {
+    "key": "Codigo"
+   }
+  },
+  "InePublication": {
+   "id": {
+    "key": "Id"
+   },
+   "name": {
+    "key": "Nombre",
+    "conversion": "text"
+   },
+   "periodicityId": {
+    "key": "FK_Periodicidad"
+   },
+   "periodicity": {
+    "key": "T3_Periodicidad"
+   },
+   "latestDateId": {
+    "key": "FK_PubFechaAct"
+   },
+   "url": {
+    "key": "Url"
+   }
+  },
+  "InePublicationDate": {
+   "id": {
+    "key": "Id"
+   },
+   "publicationId": {
+    "key": "FK_Publicacion"
+   },
+   "name": {
+    "key": "Nombre",
+    "conversion": "text"
+   },
+   "date": {
+    "key": "Fecha",
+    "conversion": "epoch-millis-date-time"
+   },
+   "periodId": {
+    "key": "FK_Periodo"
+   },
+   "year": {
+    "key": "Anyo"
+   },
+   "dateText": {
+    "key": "LiteralFecha"
+   }
+  },
+  "IneClassification": {
+   "id": {
+    "key": "Id"
+   },
+   "name": {
+    "key": "Nombre"
+   },
+   "date": {
+    "key": "Fecha",
+    "conversion": "epoch-millis-date-time"
+   }
+  },
+  "IneUnit": {
+   "id": {
+    "key": "Id"
+   },
+   "name": {
+    "key": "Nombre"
+   },
+   "code": {
+    "key": "Codigo"
+   },
+   "abbreviation": {
+    "key": "Abrev"
+   }
+  },
+  "IneScale": {
+   "id": {
+    "key": "Id"
+   },
+   "name": {
+    "key": "Nombre",
+    "conversion": "text"
+   },
+   "factor": {
+    "key": "Factor"
+   },
+   "code": {
+    "key": "Codigo"
+   },
+   "abbreviation": {
+    "key": "Abrev"
+   }
+  },
+  "IneSeriesDetail": {
+   "id": {
+    "key": "Id"
+   },
+   "code": {
+    "key": "COD"
+   },
+   "name": {
+    "key": "Nombre",
+    "conversion": "text"
+   },
+   "decimals": {
+    "key": "Decimales"
+   },
+   "operation": {
+    "key": "Operacion"
+   },
+   "periodicity": {
+    "key": "Periodicidad"
+   },
+   "publication": {
+    "key": "Publicacion"
+   },
+   "classificationId": {
+    "key": "FK_Clasificacion"
+   },
+   "scale": {
+    "key": "Escala"
+   },
+   "unit": {
+    "key": "Unidad"
+   }
+  },
+  "InePublicationDetail": {
+   "id": {
+    "key": "Id"
+   },
+   "name": {
+    "key": "Nombre",
+    "conversion": "text"
+   },
+   "periodicity": {
+    "key": "Periodicidad"
+   },
+   "operations": {
+    "key": "Operacion"
+   },
+   "latestRelease": {
+    "key": "PubFechaAct"
+   }
+  },
+  "IneTableDetail": {
+   "id": {
+    "key": "Id"
+   },
+   "name": {
+    "key": "Nombre",
+    "conversion": "text"
+   },
+   "code": {
+    "key": "Codigo"
+   },
+   "periodicity": {
+    "key": "Periodicidad"
+   },
+   "publication": {
+    "key": "Publicacion"
+   },
+   "firstPeriod": {
+    "key": "Periodo_ini"
+   },
+   "firstYear": {
+    "key": "Anyo_Periodo_ini"
+   },
+   "lastPeriod": {
+    "key": "Periodo_fin"
+   },
+   "lastYear": {
+    "key": "Anyo_Periodo_fin"
+   },
+   "referenceEnd": {
+    "key": "FechaRef_fin"
+   },
+   "lastModified": {
+    "key": "Ultima_Modificacion",
+    "conversion": "epoch-millis-date-time"
+   }
+  },
+  "InePeriod": {
+   "id": {
+    "key": "Id"
+   },
+   "value": {
+    "key": "Valor"
+   },
+   "periodicity": {
+    "key": "Periodicidad"
+   },
+   "startDay": {
+    "key": "Dia_inicio"
+   },
+   "startMonth": {
+    "key": "Mes_inicio"
+   },
+   "code": {
+    "key": "Codigo"
+   },
+   "name": {
+    "key": "Nombre"
+   },
+   "longName": {
+    "key": "Nombre_largo"
+   }
+  },
+  "IneSeriesDataWithMetadata": {
+   "code": {
+    "key": "COD"
+   },
+   "name": {
+    "key": "Nombre",
+    "conversion": "text"
+   },
+   "unit": {
+    "key": "T3_Unidad"
+   },
+   "scale": {
+    "key": "T3_Escala",
+    "conversion": "text"
+   },
+   "metadata": {
+    "key": "MetaData"
+   },
+   "data": {
+    "key": "Data"
+   }
+  },
+  "IneMetadataValue": {
+   "id": {
+    "key": "Id"
+   },
+   "variable": {
+    "key": "T3_Variable"
+   },
+   "name": {
+    "key": "Nombre"
+   },
+   "code": {
+    "key": "Codigo"
+   }
+  },
+  "IneValueDetail": {
+   "id": {
+    "key": "Id"
+   },
+   "variable": {
+    "key": "Variable"
+   },
+   "name": {
+    "key": "Nombre",
+    "conversion": "text"
+   },
+   "code": {
+    "key": "Codigo"
+   },
+   "parents": {
+    "key": "JerarquiaPadres"
+   }
+  },
+  "IneSeriesDataByValues": {
+   "code": {
+    "key": "COD"
+   },
+   "name": {
+    "key": "Nombre",
+    "conversion": "text"
+   },
+   "unitId": {
+    "key": "FK_Unidad"
+   },
+   "scaleId": {
+    "key": "FK_Escala"
+   },
+   "data": {
+    "key": "Data"
+   }
+  },
+  "IneDataPointByIds": {
+   "date": {
+    "key": "Fecha",
+    "conversion": "epoch-millis-date-time"
+   },
+   "year": {
+    "key": "Anyo"
+   },
+   "periodId": {
+    "key": "FK_Periodo"
+   },
+   "dataTypeId": {
+    "key": "FK_TipoDato"
+   },
+   "value": {
+    "key": "Valor"
+   },
+   "secret": {
+    "key": "Secreto"
+   }
+  }
+ }
+}

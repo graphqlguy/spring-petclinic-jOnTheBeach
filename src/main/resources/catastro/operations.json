@@ -1,0 +1,707 @@
+{
+ "operations": [
+  {
+   "field": "catastroProvinces",
+   "service": "callejero",
+   "action": "http://tempuri.org/OVCServWeb/OVCCallejero/ConsultaProvincia",
+   "parts": []
+  },
+  {
+   "field": "catastroMunicipalities",
+   "service": "callejero",
+   "action": "http://tempuri.org/OVCServWeb/OVCCallejero/ConsultaMunicipio",
+   "parts": [
+    {
+     "element": "Provincia",
+     "argument": "province",
+     "value": ""
+    },
+    {
+     "element": "Municipio",
+     "argument": "name",
+     "value": ""
+    }
+   ]
+  },
+  {
+   "field": "catastroStreets",
+   "service": "callejero",
+   "action": "http://tempuri.org/OVCServWeb/OVCCallejero/ConsultaVia",
+   "parts": [
+    {
+     "element": "Provincia",
+     "argument": "province",
+     "value": ""
+    },
+    {
+     "element": "Municipio",
+     "argument": "municipality",
+     "value": ""
+    },
+    {
+     "element": "TipoVia",
+     "argument": "streetType",
+     "value": "",
+     "values": {
+      "CALLE": "CL",
+      "AVENIDA": "AV",
+      "PASEO": "PS",
+      "PLAZA": "PZ",
+      "CARRETERA": "CR",
+      "CAMINO": "CM"
+     }
+    },
+    {
+     "element": "NombreVia",
+     "argument": "name",
+     "value": ""
+    }
+   ]
+  },
+  {
+   "field": "catastroStreetNumbers",
+   "service": "callejero",
+   "action": "http://tempuri.org/OVCServWeb/OVCCallejero/ConsultaNumero",
+   "parts": [
+    {
+     "element": "Provincia",
+     "argument": "province",
+     "value": ""
+    },
+    {
+     "element": "Municipio",
+     "argument": "municipality",
+     "value": ""
+    },
+    {
+     "element": "TipoVia",
+     "argument": "streetType",
+     "value": "",
+     "values": {
+      "CALLE": "CL",
+      "AVENIDA": "AV",
+      "PASEO": "PS",
+      "PLAZA": "PZ",
+      "CARRETERA": "CR",
+      "CAMINO": "CM"
+     }
+    },
+    {
+     "element": "NomVia",
+     "argument": "street",
+     "value": ""
+    },
+    {
+     "element": "Numero",
+     "argument": "number",
+     "value": ""
+    }
+   ]
+  },
+  {
+   "field": "catastroPropertiesAtAddress",
+   "service": "callejero",
+   "action": "http://tempuri.org/OVCServWeb/OVCCallejero/Consulta_DNPLOC",
+   "parts": [
+    {
+     "element": "Provincia",
+     "argument": "province",
+     "value": ""
+    },
+    {
+     "element": "Municipio",
+     "argument": "municipality",
+     "value": ""
+    },
+    {
+     "element": "Sigla",
+     "argument": "streetType",
+     "value": "",
+     "values": {
+      "CALLE": "CL",
+      "AVENIDA": "AV",
+      "PASEO": "PS",
+      "PLAZA": "PZ",
+      "CARRETERA": "CR",
+      "CAMINO": "CM"
+     }
+    },
+    {
+     "element": "Calle",
+     "argument": "street",
+     "value": ""
+    },
+    {
+     "element": "Numero",
+     "argument": "number",
+     "value": ""
+    },
+    {
+     "element": "Bloque",
+     "argument": "block",
+     "value": ""
+    },
+    {
+     "element": "Escalera",
+     "argument": "stair",
+     "value": ""
+    },
+    {
+     "element": "Planta",
+     "argument": "floor",
+     "value": ""
+    },
+    {
+     "element": "Puerta",
+     "argument": "door",
+     "value": ""
+    }
+   ]
+  },
+  {
+   "field": "catastroProperty",
+   "service": "callejero",
+   "action": "http://tempuri.org/OVCServWeb/OVCCallejero/Consulta_DNPRC",
+   "parts": [
+    {
+     "element": "Provincia",
+     "argument": "province",
+     "value": ""
+    },
+    {
+     "element": "Municipio",
+     "argument": "municipality",
+     "value": ""
+    },
+    {
+     "element": "RefCat",
+     "argument": "reference",
+     "value": ""
+    }
+   ]
+  },
+  {
+   "field": "catastroRuralParcel",
+   "service": "callejero",
+   "action": "http://tempuri.org/OVCServWeb/OVCCallejero/Consulta_DNPPP",
+   "parts": [
+    {
+     "element": "Provincia",
+     "argument": "province",
+     "value": ""
+    },
+    {
+     "element": "Municipio",
+     "argument": "municipality",
+     "value": ""
+    },
+    {
+     "element": "Poligono",
+     "argument": "polygon",
+     "value": ""
+    },
+    {
+     "element": "Parcela",
+     "argument": "parcel",
+     "value": ""
+    }
+   ]
+  },
+  {
+   "field": "catastroParcelAt",
+   "service": "coordenadas",
+   "action": "http://tempuri.org/OVCServWeb/OVCCoordenadas/Consulta_RCCOOR",
+   "parts": [
+    {
+     "element": "SRS",
+     "value": "EPSG:4326"
+    },
+    {
+     "element": "CoorX",
+     "argument": "longitude",
+     "value": ""
+    },
+    {
+     "element": "CoorY",
+     "argument": "latitude",
+     "value": ""
+    }
+   ]
+  },
+  {
+   "field": "catastroParcelsNear",
+   "service": "coordenadas",
+   "action": "http://tempuri.org/OVCServWeb/OVCCoordenadas/Consulta_RCCOOR_Distancia",
+   "parts": [
+    {
+     "element": "SRS",
+     "value": "EPSG:4326"
+    },
+    {
+     "element": "CoorX",
+     "argument": "longitude",
+     "value": ""
+    },
+    {
+     "element": "CoorY",
+     "argument": "latitude",
+     "value": ""
+    }
+   ]
+  },
+  {
+   "field": "catastroParcelPosition",
+   "service": "coordenadas",
+   "action": "http://tempuri.org/OVCServWeb/OVCCoordenadas/Consulta_CPMRC",
+   "parts": [
+    {
+     "element": "Provincia",
+     "argument": "province",
+     "value": ""
+    },
+    {
+     "element": "Municipio",
+     "argument": "municipality",
+     "value": ""
+    },
+    {
+     "element": "SRS",
+     "value": "EPSG:4326"
+    },
+    {
+     "element": "RefCat",
+     "argument": "reference",
+     "value": ""
+    }
+   ]
+  }
+ ],
+ "fields": {
+  "CatastroError": {
+   "code": {
+    "key": "cod"
+   },
+   "description": {
+    "key": "des"
+   }
+  },
+  "CatastroProvinceAnswer": {
+   "count": {
+    "key": "consulta_provinciero/control/cuprov",
+    "conversion": "integer"
+   },
+   "provinces": {
+    "key": "consulta_provinciero/provinciero/prov",
+    "conversion": "list"
+   }
+  },
+  "CatastroProvince": {
+   "code": {
+    "key": "cpine"
+   },
+   "name": {
+    "key": "np"
+   }
+  },
+  "CatastroMunicipalityAnswer": {
+   "count": {
+    "key": "consulta_municipiero/control/cumun",
+    "conversion": "integer"
+   },
+   "municipalities": {
+    "key": "consulta_municipiero/municipiero/muni",
+    "conversion": "list"
+   },
+   "errorCount": {
+    "key": "consulta_municipiero/control/cuerr",
+    "conversion": "integer"
+   },
+   "errors": {
+    "key": "consulta_municipiero/lerr/err",
+    "conversion": "list"
+   }
+  },
+  "CatastroMunicipality": {
+   "name": {
+    "key": "nm"
+   },
+   "cadastralProvinceCode": {
+    "key": "locat/cd"
+   },
+   "cadastralCode": {
+    "key": "locat/cmc"
+   },
+   "provinceCode": {
+    "key": "loine/cp"
+   },
+   "municipalityCode": {
+    "key": "loine/cm"
+   }
+  },
+  "CatastroStreetAnswer": {
+   "count": {
+    "key": "consulta_callejero/control/cuca",
+    "conversion": "integer"
+   },
+   "streets": {
+    "key": "consulta_callejero/callejero/calle",
+    "conversion": "list"
+   },
+   "errorCount": {
+    "key": "consulta_callejero/control/cuerr",
+    "conversion": "integer"
+   },
+   "errors": {
+    "key": "consulta_callejero/lerr/err",
+    "conversion": "list"
+   }
+  },
+  "CatastroStreet": {
+   "provinceCode": {
+    "key": "loine/cp"
+   },
+   "municipalityCode": {
+    "key": "loine/cm"
+   },
+   "code": {
+    "key": "dir/cv"
+   },
+   "type": {
+    "key": "dir/tv"
+   },
+   "name": {
+    "key": "dir/nv"
+   }
+  },
+  "CatastroNumberAnswer": {
+   "count": {
+    "key": "consulta_numerero/control/cunum",
+    "conversion": "integer"
+   },
+   "numbers": {
+    "key": "consulta_numerero/numerero/nump",
+    "conversion": "list"
+   },
+   "errorCount": {
+    "key": "consulta_numerero/control/cuerr",
+    "conversion": "integer"
+   },
+   "errors": {
+    "key": "consulta_numerero/lerr/err",
+    "conversion": "list"
+   }
+  },
+  "CatastroNumber": {
+   "reference": {
+    "key": "pc",
+    "conversion": "joined"
+   },
+   "number": {
+    "key": "num/pnp"
+   },
+   "letter": {
+    "key": "num/plp"
+   }
+  },
+  "CatastroPropertyAnswer": {
+   "count": {
+    "key": "consulta_dnp/control/cudnp",
+    "conversion": "integer"
+   },
+   "constructionCount": {
+    "key": "consulta_dnp/control/cucons",
+    "conversion": "integer"
+   },
+   "cropCount": {
+    "key": "consulta_dnp/control/cucul",
+    "conversion": "integer"
+   },
+   "units": {
+    "key": "consulta_dnp/lrcdnp/rcdnp",
+    "conversion": "list"
+   },
+   "unit": {
+    "key": "consulta_dnp/bico/bi"
+   },
+   "constructions": {
+    "key": "consulta_dnp/bico/lcons/cons",
+    "conversion": "list"
+   },
+   "crops": {
+    "key": "consulta_dnp/bico/lspr/spr",
+    "conversion": "list"
+   },
+   "errorCount": {
+    "key": "consulta_dnp/control/cuerr",
+    "conversion": "integer"
+   },
+   "errors": {
+    "key": "consulta_dnp/lerr/err",
+    "conversion": "list"
+   }
+  },
+  "CatastroUnitSummary": {
+   "reference": {
+    "key": "rc",
+    "conversion": "joined"
+   },
+   "provinceCode": {
+    "key": "dt/loine/cp"
+   },
+   "municipalityCode": {
+    "key": "dt/loine/cm"
+   },
+   "cadastralMunicipalityCode": {
+    "key": "dt/cmc"
+   },
+   "province": {
+    "key": "dt/np"
+   },
+   "municipality": {
+    "key": "dt/nm"
+   },
+   "streetCode": {
+    "key": "dt/locs/lous/lourb/dir/cv"
+   },
+   "streetType": {
+    "key": "dt/locs/lous/lourb/dir/tv"
+   },
+   "street": {
+    "key": "dt/locs/lous/lourb/dir/nv"
+   },
+   "number": {
+    "key": "dt/locs/lous/lourb/dir/pnp"
+   },
+   "secondNumber": {
+    "key": "dt/locs/lous/lourb/dir/snp"
+   },
+   "staircase": {
+    "key": "dt/locs/lous/lourb/loint/es"
+   },
+   "floor": {
+    "key": "dt/locs/lous/lourb/loint/pt"
+   },
+   "door": {
+    "key": "dt/locs/lous/lourb/loint/pu"
+   },
+   "postalCode": {
+    "key": "dt/locs/lous/lourb/dp"
+   },
+   "district": {
+    "key": "dt/locs/lous/lourb/dm"
+   }
+  },
+  "CatastroUnit": {
+   "kind": {
+    "key": "idbi/cn"
+   },
+   "reference": {
+    "key": "idbi/rc",
+    "conversion": "joined"
+   },
+   "address": {
+    "key": "ldt"
+   },
+   "use": {
+    "key": "debi/luso"
+   },
+   "surfaceSquareMetres": {
+    "key": "debi/sfc",
+    "conversion": "integer"
+   },
+   "share": {
+    "key": "debi/cpt",
+    "conversion": "decimal-comma"
+   },
+   "yearBuilt": {
+    "key": "debi/ant",
+    "conversion": "integer"
+   },
+   "provinceCode": {
+    "key": "dt/loine/cp"
+   },
+   "municipalityCode": {
+    "key": "dt/loine/cm"
+   },
+   "cadastralMunicipalityCode": {
+    "key": "dt/cmc"
+   },
+   "province": {
+    "key": "dt/np"
+   },
+   "municipality": {
+    "key": "dt/nm"
+   },
+   "streetCode": {
+    "key": "dt/locs/lous/lourb/dir/cv"
+   },
+   "streetType": {
+    "key": "dt/locs/lous/lourb/dir/tv"
+   },
+   "street": {
+    "key": "dt/locs/lous/lourb/dir/nv"
+   },
+   "number": {
+    "key": "dt/locs/lous/lourb/dir/pnp"
+   },
+   "secondNumber": {
+    "key": "dt/locs/lous/lourb/dir/snp"
+   },
+   "staircase": {
+    "key": "dt/locs/lous/lourb/loint/es"
+   },
+   "floor": {
+    "key": "dt/locs/lous/lourb/loint/pt"
+   },
+   "door": {
+    "key": "dt/locs/lous/lourb/loint/pu"
+   },
+   "postalCode": {
+    "key": "dt/locs/lous/lourb/dp"
+   },
+   "district": {
+    "key": "dt/locs/lous/lourb/dm"
+   },
+   "ruralZone": {
+    "key": "dt/locs/lors/lorus/czc"
+   },
+   "polygon": {
+    "key": "dt/locs/lors/lorus/cpp/cpo"
+   },
+   "parcel": {
+    "key": "dt/locs/lors/lorus/cpp/cpa"
+   },
+   "placeName": {
+    "key": "dt/locs/lors/lorus/npa"
+   },
+   "placeCode": {
+    "key": "dt/locs/lors/lorus/cpaj"
+   }
+  },
+  "CatastroConstruction": {
+   "use": {
+    "key": "lcd"
+   },
+   "staircase": {
+    "key": "dt/lourb/loint/es"
+   },
+   "floor": {
+    "key": "dt/lourb/loint/pt"
+   },
+   "door": {
+    "key": "dt/lourb/loint/pu"
+   },
+   "surfaceSquareMetres": {
+    "key": "dfcons/stl",
+    "conversion": "integer"
+   }
+  },
+  "CatastroCrop": {
+   "code": {
+    "key": "cspr"
+   },
+   "cropCode": {
+    "key": "dspr/ccc"
+   },
+   "crop": {
+    "key": "dspr/dcc"
+   },
+   "intensity": {
+    "key": "dspr/ip"
+   },
+   "surfaceSquareMetres": {
+    "key": "dspr/ssp",
+    "conversion": "integer"
+   }
+  },
+  "CatastroCoordinatesAnswer": {
+   "count": {
+    "key": "consulta_coordenadas/control/cucoor",
+    "conversion": "integer"
+   },
+   "parcels": {
+    "key": "consulta_coordenadas/coordenadas/coord",
+    "conversion": "list"
+   },
+   "errorCount": {
+    "key": "consulta_coordenadas/control/cuerr",
+    "conversion": "integer"
+   },
+   "errors": {
+    "key": "consulta_coordenadas/lerr/err",
+    "conversion": "list"
+   }
+  },
+  "CatastroParcelPoint": {
+   "reference": {
+    "key": "pc",
+    "conversion": "joined"
+   },
+   "longitude": {
+    "key": "geo/xcen",
+    "conversion": "decimal-comma"
+   },
+   "latitude": {
+    "key": "geo/ycen",
+    "conversion": "decimal-comma"
+   },
+   "srs": {
+    "key": "geo/srs"
+   },
+   "address": {
+    "key": "ldt"
+   }
+  },
+  "CatastroNearbyAnswer": {
+   "count": {
+    "key": "consulta_coordenadas_distancias/control/cucoor",
+    "conversion": "integer"
+   },
+   "longitude": {
+    "key": "consulta_coordenadas_distancias/coordenadas_distancias/coordd/geo/xcen",
+    "conversion": "decimal-comma"
+   },
+   "latitude": {
+    "key": "consulta_coordenadas_distancias/coordenadas_distancias/coordd/geo/ycen",
+    "conversion": "decimal-comma"
+   },
+   "parcels": {
+    "key": "consulta_coordenadas_distancias/coordenadas_distancias/coordd/lpcd/pcd",
+    "conversion": "list"
+   },
+   "errorCount": {
+    "key": "consulta_coordenadas_distancias/control/cuerr",
+    "conversion": "integer"
+   },
+   "errors": {
+    "key": "consulta_coordenadas_distancias/lerr/err",
+    "conversion": "list"
+   }
+  },
+  "CatastroNearbyParcel": {
+   "reference": {
+    "key": "pc",
+    "conversion": "joined"
+   },
+   "provinceCode": {
+    "key": "dt/loine/cp"
+   },
+   "municipalityCode": {
+    "key": "dt/loine/cm"
+   },
+   "streetCode": {
+    "key": "dt/lourb/dir/cv"
+   },
+   "number": {
+    "key": "dt/lourb/dir/pnp"
+   },
+   "address": {
+    "key": "ldt"
+   },
+   "distanceInMetres": {
+    "key": "dis",
+    "conversion": "decimal-comma"
+   }
+  }
+ }
+}

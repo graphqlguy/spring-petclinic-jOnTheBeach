@@ -1,0 +1,585 @@
+# The fields of the fuel prices of the Ministry for the Ecological Transition (MITECO), the prices every filling station
+# in Spain reports, updated every half hour, at energia.serviciosmin.gob.es. The same service also answers at
+# sedeaplicaciones.minetur.gob.es, but that host offers only TLS_RSA cipher suites, which current JDKs disable, so Java
+# cannot connect to it. The service documents its operations only on a help page that lists their paths, so a generator
+# wrote these fields, their types and src/main/resources/fuel/operations.json from that page and from answers recorded
+# from the service. The names and descriptions are written by hand in English. The operations for all of Spain answer
+# several megabytes, so the schema leaves them out and stops at autonomous communities. Each field is fetched by a
+# RestOperationFetcher, see FuelConfiguration.
+
+extend type Query {
+    # Every station field takes the ids of the ministry's own lists: fuelProvinces, fuelMunicipalitiesOfProvince and
+    # fuelProducts. Málaga is province 29 and municipality 4521; Gasolina 95 E5 is product 1 and Gasóleo A habitual
+    # (diesel) product 4.
+
+    """
+    The filling stations of a municipality with the price of every fuel they sell now, in euros per litre. For example,
+    municipalityId 4544 for Torremolinos.
+    """
+    fuelStationsInMunicipality(
+        """
+        The id of the municipality in the ministry's list, such as 4521 for Málaga or 4544 for Torremolinos.
+        fuelMunicipalitiesOfProvince lists them.
+        """
+        municipalityId: ID!
+    ): FuelStationList
+
+    """
+    The filling stations of a municipality that sell one fuel, with its price now, in euros per litre. The cheapest
+    diesel in Málaga takes municipalityId 4521 and product DIESEL_A.
+    """
+    fuelStationsInMunicipalityForProduct(
+        """
+        The id of the municipality in the ministry's list, such as 4521 for Málaga or 4544 for Torremolinos.
+        fuelMunicipalitiesOfProvince lists them.
+        """
+        municipalityId: ID!
+        "The fuel, such as DIESEL_A for the usual diesel or GASOLINE_95_E5 for the usual petrol"
+        product: FuelKind!
+    ): FuelProductStationList
+
+    """
+    The filling stations of a province with the price of every fuel they sell now. The province of Málaga has several
+    hundred stations, so select few fields, or use fuelStationsInMunicipality.
+    """
+    fuelStationsInProvince(
+        "The id of the province, such as 29 for Málaga. fuelProvinces lists them."
+        provinceId: ID!
+    ): FuelStationList
+
+    "The filling stations of a province that sell one fuel, with its price now"
+    fuelStationsInProvinceForProduct(
+        "The id of the province, such as 29 for Málaga. fuelProvinces lists them."
+        provinceId: ID!
+        "The fuel, such as DIESEL_A for the usual diesel or GASOLINE_95_E5 for the usual petrol"
+        product: FuelKind!
+    ): FuelProductStationList
+
+    "The filling stations of a municipality with the prices they had on a past day"
+    fuelStationsInMunicipalityOn(
+        "The day of the prices, such as 2026-10-01"
+        date: Date!
+        """
+        The id of the municipality in the ministry's list, such as 4521 for Málaga or 4544 for Torremolinos.
+        fuelMunicipalitiesOfProvince lists them.
+        """
+        municipalityId: ID!
+    ): FuelStationList
+
+    "The filling stations of a municipality that sold one fuel on a past day, with its price that day"
+    fuelStationsInMunicipalityForProductOn(
+        "The day of the prices, such as 2026-10-01"
+        date: Date!
+        """
+        The id of the municipality in the ministry's list, such as 4521 for Málaga or 4544 for Torremolinos.
+        fuelMunicipalitiesOfProvince lists them.
+        """
+        municipalityId: ID!
+        "The fuel, such as DIESEL_A for the usual diesel or GASOLINE_95_E5 for the usual petrol"
+        product: FuelKind!
+    ): FuelProductStationList
+
+    """
+    The filling stations of a province with the prices they had on a past day. The answer is long; prefer a
+    municipality.
+    """
+    fuelStationsInProvinceOn(
+        "The day of the prices, such as 2026-10-01"
+        date: Date!
+        "The id of the province, such as 29 for Málaga. fuelProvinces lists them."
+        provinceId: ID!
+    ): FuelStationList
+
+    "The filling stations of a province that sold one fuel on a past day, with its price that day"
+    fuelStationsInProvinceForProductOn(
+        "The day of the prices, such as 2026-10-01"
+        date: Date!
+        "The id of the province, such as 29 for Málaga. fuelProvinces lists them."
+        provinceId: ID!
+        "The fuel, such as DIESEL_A for the usual diesel or GASOLINE_95_E5 for the usual petrol"
+        product: FuelKind!
+    ): FuelProductStationList
+
+    "The fuel stations of the ports of a province, for boats, with their prices now, such as the port of Fuengirola"
+    fuelMarineStationsInProvince(
+        "The id of the province, such as 29 for Málaga. fuelProvinces lists them."
+        provinceId: ID!
+    ): FuelMarineStationList
+
+    "The fuel stations of the ports of a province that sell one fuel, with its price now"
+    fuelMarineStationsInProvinceForProduct(
+        "The id of the province, such as 29 for Málaga. fuelProvinces lists them."
+        provinceId: ID!
+        "The fuel, such as DIESEL_A for the usual diesel or GASOLINE_95_E5 for the usual petrol"
+        product: FuelKind!
+    ): FuelProductMarineStationList
+
+    "The fuel stations of the ports of a municipality, for boats, with their prices now"
+    fuelMarineStationsInMunicipality(
+        """
+        The id of the municipality in the ministry's list, such as 4521 for Málaga or 4544 for Torremolinos.
+        fuelMunicipalitiesOfProvince lists them.
+        """
+        municipalityId: ID!
+    ): FuelMarineStationList
+
+    "The fuel stations of the ports of a municipality that sell one fuel, with its price now"
+    fuelMarineStationsInMunicipalityForProduct(
+        """
+        The id of the municipality in the ministry's list, such as 4521 for Málaga or 4544 for Torremolinos.
+        fuelMunicipalitiesOfProvince lists them.
+        """
+        municipalityId: ID!
+        "The fuel, such as DIESEL_A for the usual diesel or GASOLINE_95_E5 for the usual petrol"
+        product: FuelKind!
+    ): FuelProductMarineStationList
+
+    """
+    The filling stations of an autonomous community with the price of every fuel they sell now. Andalusia has thousands
+    of stations, so select few fields, or use fuelStationsInProvince. Ceuta, regionId 18, has a few.
+    """
+    fuelStationsInRegion(
+        "The id of the autonomous community, such as 01 for Andalusia. fuelRegions lists them."
+        regionId: ID!
+    ): FuelStationList
+
+    "The filling stations of an autonomous community that sell one fuel, with its price now"
+    fuelStationsInRegionForProduct(
+        "The id of the autonomous community, such as 01 for Andalusia. fuelRegions lists them."
+        regionId: ID!
+        "The fuel, such as DIESEL_A for the usual diesel or GASOLINE_95_E5 for the usual petrol"
+        product: FuelKind!
+    ): FuelProductStationList
+
+    "The filling stations of an autonomous community with the prices they had on a past day"
+    fuelStationsInRegionOn(
+        "The day of the prices, such as 2026-10-01"
+        date: Date!
+        "The id of the autonomous community, such as 01 for Andalusia. fuelRegions lists them."
+        regionId: ID!
+    ): FuelStationList
+
+    "The filling stations of an autonomous community that sold one fuel on a past day, with its price that day"
+    fuelStationsInRegionForProductOn(
+        "The day of the prices, such as 2026-10-01"
+        date: Date!
+        "The id of the autonomous community, such as 01 for Andalusia. fuelRegions lists them."
+        regionId: ID!
+        "The fuel, such as DIESEL_A for the usual diesel or GASOLINE_95_E5 for the usual petrol"
+        product: FuelKind!
+    ): FuelProductStationList
+
+    "The fuel stations of the ports of an autonomous community, for boats, with their prices now"
+    fuelMarineStationsInRegion(
+        "The id of the autonomous community, such as 01 for Andalusia. fuelRegions lists them."
+        regionId: ID!
+    ): FuelMarineStationList
+
+    "The fuels the stations report, such as Gasolina 95 E5 or Gasóleo A, with the ids that the enum FuelKind names"
+    fuelProducts: [FuelProduct]
+
+    "The autonomous communities of Spain, such as Andalucia (01), with their ids for fuelProvincesOfRegion"
+    fuelRegions: [FuelRegion]
+
+    "The provinces of Spain, such as MÁLAGA (29), with their ids for the provinceId arguments"
+    fuelProvinces: [FuelProvince]
+
+    "The provinces of one autonomous community"
+    fuelProvincesOfRegion(
+        "The id of the autonomous community, such as 01 for Andalusia. fuelRegions lists them."
+        regionId: ID!
+    ): [FuelProvince]
+
+    """
+    The municipalities of one province, with the ids the ministry gives them for the municipalityId arguments, such as
+    4521 for Málaga
+    """
+    fuelMunicipalitiesOfProvince(
+        "The id of the province, such as 29 for Málaga. fuelProvinces lists them."
+        provinceId: ID!
+    ): [FuelMunicipality]
+}
+
+"The filling stations of a place with their prices"
+type FuelStationList {
+    "When the prices were read, written as 23/10/2026 0:43:47"
+    reportedAt: String
+    "The stations"
+    stations: [FuelStation]
+    "A note of the ministry about the prices, in Spanish"
+    note: String
+    "OK when the query worked"
+    result: String
+}
+
+"A filling station with the price of every fuel it sells"
+type FuelStation {
+    "The id of the station in the register of the ministry"
+    id: ID
+    "The brand on the sign of the station, such as REPSOL or CARREFOUR"
+    brand: String
+    "The address of the station"
+    address: String
+    "The postal code, such as 29620"
+    postalCode: String
+    "The town of the station, in capitals"
+    locality: String
+    "The municipality, such as Torremolinos"
+    municipality: String
+    "The province, in capitals, such as MÁLAGA"
+    province: String
+    "The id of the municipality in the ministry's list"
+    municipalityId: ID
+    "The id of the province, such as 29"
+    provinceId: ID
+    "The id of the autonomous community, such as 01 for Andalusia"
+    regionId: ID
+    "The latitude of the station"
+    latitude: Float
+    "The longitude of the station"
+    longitude: Float
+    "When the station is open, such as L-D: 24H for every day, all day"
+    openingHours: String
+    "P for a station open to the public, R for one that sells only to its members"
+    saleType: String
+    "A code for how the prices reach the ministry, such as dm or OM"
+    reportedBy: String
+    "The side of the road the station is on: D for right, I for left, N when it does not apply"
+    roadSide: String
+    "The price of Gasolina 95 E5, in euros per litre, or null when the station does not sell it"
+    gasoline95E5Price: Float
+    "The price of Gasolina 95 E10, in euros per litre, or null when the station does not sell it"
+    gasoline95E10Price: Float
+    "The price of Gasolina 95 E25, in euros per litre, or null when the station does not sell it"
+    gasoline95E25Price: Float
+    "The price of Gasolina 95 E85, in euros per litre, or null when the station does not sell it"
+    gasoline95E85Price: Float
+    "The price of Gasolina 95 E5 Premium, in euros per litre, or null when the station does not sell it"
+    gasoline95E5PremiumPrice: Float
+    "The price of Gasolina 98 E5, in euros per litre, or null when the station does not sell it"
+    gasoline98E5Price: Float
+    "The price of Gasolina 98 E10, in euros per litre, or null when the station does not sell it"
+    gasoline98E10Price: Float
+    "The price of Gasolina Renovable, in euros per litre, or null when the station does not sell it"
+    renewableGasolinePrice: Float
+    "The price of Gasoleo A, in euros per litre, or null when the station does not sell it"
+    dieselAPrice: Float
+    "The price of Gasoleo B, in euros per litre, or null when the station does not sell it"
+    dieselBPrice: Float
+    "The price of Gasoleo Premium, in euros per litre, or null when the station does not sell it"
+    dieselPremiumPrice: Float
+    "The price of Diésel Renovable, in euros per litre, or null when the station does not sell it"
+    renewableDieselPrice: Float
+    "The price of Biodiesel, in euros per litre, or null when the station does not sell it"
+    biodieselPrice: Float
+    "The price of Bioetanol, in euros per litre, or null when the station does not sell it"
+    bioethanolPrice: Float
+    "The price of Gases licuados del petróleo, in euros per litre, or null when the station does not sell it"
+    lpgPrice: Float
+    "The price of Gas Natural Comprimido, in euros per litre, or null when the station does not sell it"
+    compressedNaturalGasPrice: Float
+    "The price of Gas Natural Licuado, in euros per litre, or null when the station does not sell it"
+    liquefiedNaturalGasPrice: Float
+    "The price of Biogas Natural Comprimido, in euros per litre, or null when the station does not sell it"
+    compressedBiogasPrice: Float
+    "The price of Biogas Natural Licuado, in euros per litre, or null when the station does not sell it"
+    liquefiedBiogasPrice: Float
+    "The price of Hidrogeno, in euros per litre, or null when the station does not sell it"
+    hydrogenPrice: Float
+    "The price of Metanol, in euros per litre, or null when the station does not sell it"
+    methanolPrice: Float
+    "The price of Amoniaco, in euros per litre, or null when the station does not sell it"
+    ammoniaPrice: Float
+    "The price of Adblue, in euros per litre, or null when the station does not sell it"
+    adbluePrice: Float
+    "The share of bioethanol in the station's gasoline, in percent"
+    bioethanolPercent: Float
+    "The share of methyl ester (biodiesel) in the station's diesel, in percent"
+    methylEsterPercent: Float
+}
+
+"The filling stations of a place that sell one fuel"
+type FuelProductStationList {
+    "When the prices were read, written as 23/10/2026 0:43:47"
+    reportedAt: String
+    "The stations"
+    stations: [FuelProductStation]
+    "A note of the ministry about the prices, in Spanish"
+    note: String
+    "OK when the query worked"
+    result: String
+}
+
+"A filling station with the price of one fuel"
+type FuelProductStation {
+    "The id of the station in the register of the ministry"
+    id: ID
+    "The brand on the sign of the station, such as REPSOL or CARREFOUR"
+    brand: String
+    "The address of the station"
+    address: String
+    "The postal code, such as 29620"
+    postalCode: String
+    "The town of the station, in capitals"
+    locality: String
+    "The municipality, such as Torremolinos"
+    municipality: String
+    "The province, in capitals, such as MÁLAGA"
+    province: String
+    "The id of the municipality in the ministry's list"
+    municipalityId: ID
+    "The id of the province, such as 29"
+    provinceId: ID
+    "The id of the autonomous community, such as 01 for Andalusia"
+    regionId: ID
+    "The latitude of the station"
+    latitude: Float
+    "The longitude of the station"
+    longitude: Float
+    "When the station is open, such as L-D: 24H for every day, all day"
+    openingHours: String
+    "P for a station open to the public, R for one that sells only to its members"
+    saleType: String
+    "A code for how the prices reach the ministry, such as dm or OM"
+    reportedBy: String
+    "The side of the road the station is on: D for right, I for left, N when it does not apply"
+    roadSide: String
+    "The price of the fuel asked for, in euros per litre"
+    price: Float
+}
+
+"The fuel stations of the ports of a place"
+type FuelMarineStationList {
+    "When the prices were read, written as 23/10/2026 0:43:47"
+    reportedAt: String
+    "The stations"
+    stations: [FuelMarineStation]
+    "A note of the ministry about the prices, in Spanish"
+    note: String
+    "OK when the query worked"
+    result: String
+}
+
+"A fuel station in a port, for boats, with the price of every fuel it sells"
+type FuelMarineStation {
+    "The id of the marine station in the register of the ministry"
+    id: ID
+    "The brand on the sign of the station, such as REPSOL or CARREFOUR"
+    brand: String
+    "The address of the station"
+    address: String
+    "The postal code, such as 29620"
+    postalCode: String
+    "The town of the station, in capitals"
+    locality: String
+    "The municipality, such as Torremolinos"
+    municipality: String
+    "The province, in capitals, such as MÁLAGA"
+    province: String
+    "The id of the municipality in the ministry's list"
+    municipalityId: ID
+    "The id of the province, such as 29"
+    provinceId: ID
+    "The id of the autonomous community, such as 01 for Andalusia"
+    regionId: ID
+    "The latitude of the station"
+    latitude: Float
+    "The longitude of the station"
+    longitude: Float
+    "When the station is open, such as L-D: 24H for every day, all day"
+    openingHours: String
+    "P for a station open to the public, R for one that sells only to its members"
+    saleType: String
+    "A code for how the prices reach the ministry, such as dm or OM"
+    reportedBy: String
+    "The port of the station, such as FUENGIROLA"
+    port: String
+    "The price of Gasolina 95 E5, in euros per litre, or null when the station does not sell it"
+    gasoline95E5Price: Float
+    "The price of Gasolina 95 E10, in euros per litre, or null when the station does not sell it"
+    gasoline95E10Price: Float
+    "The price of Gasolina 95 E25, in euros per litre, or null when the station does not sell it"
+    gasoline95E25Price: Float
+    "The price of Gasolina 95 E85, in euros per litre, or null when the station does not sell it"
+    gasoline95E85Price: Float
+    "The price of Gasolina Renovable, in euros per litre, or null when the station does not sell it"
+    renewableGasolinePrice: Float
+    "The price of Gasoleo A habitual, in euros per litre, or null when the station does not sell it"
+    dieselAPrice: Float
+    "The price of Gasoleo B, in euros per litre, or null when the station does not sell it"
+    dieselBPrice: Float
+    "The price of Gasóleo para uso marítimo, in euros per litre, or null when the station does not sell it"
+    marineDieselPrice: Float
+    "The price of Diésel Renovable, in euros per litre, or null when the station does not sell it"
+    renewableDieselPrice: Float
+    "The price of Biogas Natural Comprimido, in euros per litre, or null when the station does not sell it"
+    compressedBiogasPrice: Float
+    "The price of Biogas Natural Licuado, in euros per litre, or null when the station does not sell it"
+    liquefiedBiogasPrice: Float
+    "The price of Metanol, in euros per litre, or null when the station does not sell it"
+    methanolPrice: Float
+    "The price of Amoniaco, in euros per litre, or null when the station does not sell it"
+    ammoniaPrice: Float
+    "The price of Adblue, in euros per litre, or null when the station does not sell it"
+    adbluePrice: Float
+}
+
+"The fuel stations of the ports of a place that sell one fuel"
+type FuelProductMarineStationList {
+    "When the prices were read, written as 23/10/2026 0:43:47"
+    reportedAt: String
+    "The stations"
+    stations: [FuelProductMarineStation]
+    "A note of the ministry about the prices, in Spanish"
+    note: String
+    "OK when the query worked"
+    result: String
+}
+
+"A fuel station in a port with the price of one fuel"
+type FuelProductMarineStation {
+    "The id of the marine station in the register of the ministry"
+    id: ID
+    "The brand on the sign of the station, such as REPSOL or CARREFOUR"
+    brand: String
+    "The address of the station"
+    address: String
+    "The postal code, such as 29620"
+    postalCode: String
+    "The town of the station, in capitals"
+    locality: String
+    "The municipality, such as Torremolinos"
+    municipality: String
+    "The province, in capitals, such as MÁLAGA"
+    province: String
+    "The id of the municipality in the ministry's list"
+    municipalityId: ID
+    "The id of the province, such as 29"
+    provinceId: ID
+    "The id of the autonomous community, such as 01 for Andalusia"
+    regionId: ID
+    "The latitude of the station"
+    latitude: Float
+    "The longitude of the station"
+    longitude: Float
+    "When the station is open, such as L-D: 24H for every day, all day"
+    openingHours: String
+    "P for a station open to the public, R for one that sells only to its members"
+    saleType: String
+    "A code for how the prices reach the ministry, such as dm or OM"
+    reportedBy: String
+    "The port of the station, such as FUENGIROLA"
+    port: String
+    "The price of the fuel asked for, in euros per litre"
+    price: Float
+}
+
+"A fuel the stations report"
+type FuelProduct {
+    "The id of the fuel, such as 1, which the enum FuelKind names for the product arguments"
+    id: ID
+    "The name of the fuel, such as Gasolina 95 E5 or Gasóleo A habitual"
+    name: String
+    "The short name of the fuel, such as G95E5"
+    abbreviation: String
+}
+
+"An autonomous community of Spain"
+type FuelRegion {
+    "The id of the community, such as 01 for Andalusia"
+    id: ID
+    "The name, such as Andalucia"
+    name: String
+}
+
+"A province of Spain"
+type FuelProvince {
+    "The id of the province, for the provinceId arguments, such as 29 for Málaga"
+    id: ID
+    "The name, in capitals, such as MÁLAGA"
+    name: String
+    "The id of its autonomous community"
+    regionId: ID
+    "The name of its autonomous community"
+    region: String
+}
+
+"A municipality of Spain, as the ministry lists it"
+type FuelMunicipality {
+    "The id of the municipality, for the municipalityId arguments, such as 4521 for Málaga"
+    id: ID
+    "The name, such as Málaga"
+    name: String
+    "The id of its province"
+    provinceId: ID
+    "The name of its province, in capitals"
+    province: String
+    "The id of its autonomous community"
+    regionId: ID
+    "The name of its autonomous community"
+    region: String
+}
+
+"A fuel the stations sell. The ministry gives each one an id, such as 4 for DIESEL_A."
+enum FuelKind {
+    "Gasolina 95 E5, the usual unleaded petrol"
+    GASOLINE_95_E5
+    "Gasolina 95 E10"
+    GASOLINE_95_E10
+    "Gasolina 95 E25"
+    GASOLINE_95_E25
+    "Gasolina 95 E85"
+    GASOLINE_95_E85
+    "Gasolina 95 E5 Premium"
+    GASOLINE_95_E5_PREMIUM
+    "Gasolina 98 E5"
+    GASOLINE_98_E5
+    "Gasolina 98 E10"
+    GASOLINE_98_E10
+    "Gasóleo A habitual, the usual diesel for cars"
+    DIESEL_A
+    "Gasóleo Premium"
+    DIESEL_PREMIUM
+    "Gasóleo B, the diesel for farm machinery"
+    DIESEL_B
+    "Gasóleo C, the diesel for heating"
+    DIESEL_C
+    "Bioetanol"
+    BIOETHANOL
+    "Biodiésel"
+    BIODIESEL
+    "Gases licuados del petróleo (autogas)"
+    LPG
+    "Gas natural comprimido"
+    CNG
+    "Gas natural licuado"
+    LNG
+    "Hidrógeno"
+    HYDROGEN
+    "Fuelóleo bajo índice azufre"
+    LOW_SULPHUR_FUEL_OIL
+    "Fuelóleo especial"
+    SPECIAL_FUEL_OIL
+    "Gasóleo para uso marítimo"
+    MARINE_DIESEL
+    "Gasolina de aviación"
+    AVIATION_GASOLINE
+    "Queroseno de aviación JET_A1"
+    JET_A1
+    "Queroseno de aviación JET_A2"
+    JET_A2
+    "Adblue"
+    ADBLUE
+    "Diésel renovable"
+    RENEWABLE_DIESEL
+    "Gasolina renovable"
+    RENEWABLE_GASOLINE
+    "Metanol"
+    METHANOL
+    "Amoniaco"
+    AMMONIA
+    "Biogas natural comprimido"
+    COMPRESSED_BIOGAS
+    "Biogas natural licuado"
+    LIQUEFIED_BIOGAS
+}

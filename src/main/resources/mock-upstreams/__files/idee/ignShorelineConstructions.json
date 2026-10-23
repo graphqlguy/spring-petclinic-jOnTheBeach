@@ -1,0 +1,115 @@
+{
+    "type":"FeatureCollection",
+    "features":[
+        {
+            "type":"Feature",
+            "properties":{
+                "id_demarc":"ES060",
+                "fuented":"Instituto Geogr\u00e1fico Nacional",
+                "script":null,
+                "id_demarcd":"Cuencas Mediterr\u00e1neas Andaluzas",
+                "resolucion":5,
+                "fecha_alta":"2019-05-22",
+                "tipo_estr":"23002",
+                "nilreason_nombre":"other:unpopulated",
+                "tipo_estrd":"Rompeolas",
+                "nilreason_varios":null,
+                "hydroid_localid":"ES060HYSHCL0000000001012",
+                "condicion":"http://inspire.ec.europa.eu/codelist/ConditionOfFacilityValue/functional",
+                "nil_nombre":true,
+                "condiciond":"En uso",
+                "nil_varios":null,
+                "nombre":null,
+                "fuente":"5001",
+                "nativeness":null
+            },
+            "id":"ES060HYSHCL0000008925455",
+            "geometry":null
+        },
+        {
+            "type":"Feature",
+            "properties":{
+                "id_demarc":"ES060",
+                "fuented":"Instituto Geogr\u00e1fico Nacional",
+                "script":null,
+                "id_demarcd":"Cuencas Mediterr\u00e1neas Andaluzas",
+                "resolucion":5,
+                "fecha_alta":"2019-05-22",
+                "tipo_estr":"23002",
+                "nilreason_nombre":"other:unpopulated",
+                "tipo_estrd":"Rompeolas",
+                "nilreason_varios":null,
+                "hydroid_localid":"ES060HYSHCL0000000001220",
+                "condicion":"http://inspire.ec.europa.eu/codelist/ConditionOfFacilityValue/functional",
+                "nil_nombre":true,
+                "condiciond":"En uso",
+                "nil_varios":null,
+                "nombre":null,
+                "fuente":"5001",
+                "nativeness":null
+            },
+            "id":"ES060HYSHCL0000008925663",
+            "geometry":null
+        },
+        {
+            "type":"Feature",
+            "properties":{
+                "id_demarc":"ES060",
+                "fuented":"Instituto Geogr\u00e1fico Nacional",
+                "script":null,
+                "id_demarcd":"Cuencas Mediterr\u00e1neas Andaluzas",
+                "resolucion":5,
+                "fecha_alta":"2019-05-22",
+                "tipo_estr":"23002",
+                "nilreason_nombre":"other:unpopulated",
+                "tipo_estrd":"Rompeolas",
+                "nilreason_varios":null,
+                "hydroid_localid":"ES060HYSHCL0000000001356",
+                "condicion":"http://inspire.ec.europa.eu/codelist/ConditionOfFacilityValue/functional",
+                "nil_nombre":true,
+                "condiciond":"En uso",
+                "nil_varios":null,
+                "nombre":null,
+                "fuente":"5001",
+                "nativeness":null
+            },
+            "id":"ES060HYSHCL0000008925799",
+            "geometry":null
+        }
+    ],
+    "numberMatched":16,
+    "numberReturned":3,
+    "links":[
+        {
+            "type":"application/geo+json",
+            "rel":"self",
+            "title":"This document as GeoJSON",
+            "href":"https://api-features.idee.es/collections/shorelineconstruction/items?f=json&bbox=-4.50,36.65,-4.35,36.75&skipGeometry=true&limit=3"
+        },
+        {
+            "rel":"alternate",
+            "type":"application/ld+json",
+            "title":"This document as RDF (JSON-LD)",
+            "href":"https://api-features.idee.es/collections/shorelineconstruction/items?f=jsonld&bbox=-4.50,36.65,-4.35,36.75&skipGeometry=true&limit=3"
+        },
+        {
+            "type":"text/html",
+            "rel":"alternate",
+            "title":"This document as HTML",
+            "href":"https://api-features.idee.es/collections/shorelineconstruction/items?f=html&bbox=-4.50,36.65,-4.35,36.75&skipGeometry=true&limit=3"
+        },
+        {
+            "type":"application/geo+json",
+            "rel":"next",
+            "title":"Items (next)",
+            "href":"https://api-features.idee.es/collections/shorelineconstruction/items?offset=3&bbox=-4.50,36.65,-4.35,36.75&skipGeometry=true&limit=3"
+        },
+        {
+            "type":"application/json",
+            "title":"HY-P Construcci\u00f3n litoral",
+            "rel":"collection",
+            "href":"https://api-features.idee.es/collections/shorelineconstruction"
+        }
+    ],
+    "timeStamp":"2026-10-22T23:42:46.359457Z"
+}

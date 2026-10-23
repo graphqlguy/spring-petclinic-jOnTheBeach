@@ -1,0 +1,67 @@
+{
+    "type":"Feature",
+    "properties":{
+        "id_nodoc":180000000001,
+        "fuente":1,
+        "fecha_alta":"2021-04-06"
+    },
+    "id":"CABL_N_180000000001",
+    "geometry":{
+        "type":"Point",
+        "coordinates":[
+            -3.405777370475751,
+            37.0833952552961,
+            0.0
+        ]
+    },
+    "prev":"CABL_N_170006099252",
+    "next":"CABL_N_180000000002",
+    "links":[
+        {
+            "type":"application/json",
+            "rel":"root",
+            "title":"The landing page of this server as JSON",
+            "href":"https://api-features.idee.es?f=json"
+        },
+        {
+            "type":"text/html",
+            "rel":"root",
+            "title":"The landing page of this server as HTML",
+            "href":"https://api-features.idee.es?f=html"
+        },
+        {
+            "rel":"self",
+            "type":"application/geo+json",
+            "title":"This document as JSON",
+            "href":"https://api-features.idee.es/collections/cablewaynode/items/CABL_N_180000000001?f=json"
+        },
+        {
+            "rel":"alternate",
+            "type":"application/ld+json",
+            "title":"This document as RDF (JSON-LD)",
+            "href":"https://api-features.idee.es/collections/cablewaynode/items/CABL_N_180000000001?f=jsonld"
+        },
+        {
+            "rel":"alternate",
+            "type":"text/html",
+            "title":"This document as HTML",
+            "href":"https://api-features.idee.es/collections/cablewaynode/items/CABL_N_180000000001?f=html"
+        },
+        {
+            "rel":"collection",
+            "type":"application/json",
+            "title":"TN-C Nodo de cable transportador",
+            "href":"https://api-features.idee.es/collections/cablewaynode"
+        },
+        {
+            "rel":"prev",
+            "type":"application/json",
+            "href":"https://api-features.idee.es/collections/cablewaynode/items/CABL_N_170006099252?f=json"
+        },
+        {
+            "rel":"next",
+            "type":"application/json",
+            "href":"https://api-features.idee.es/collections/cablewaynode/items/CABL_N_180000000002?f=json"
+        }
+    ]
+}

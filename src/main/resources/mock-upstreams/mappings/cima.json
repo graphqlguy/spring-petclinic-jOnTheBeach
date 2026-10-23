@@ -1,0 +1,913 @@
+{
+ "mappings": [
+  {
+   "name": "cimaMedicines: {\"activeIngredient\": \"meloxicam\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/cima/medicamentos",
+    "queryParameters": {
+     "practiv1": {
+      "equalTo": "meloxicam"
+     },
+     "pagina": {
+      "equalTo": "1"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json;charset=UTF-8"
+    },
+    "bodyFileName": "cima/cimaMedicines.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://cima.aemps.es/cima/rest/medicamentos?practiv1=meloxicam&pagina=1 on 2026-10-22."
+   }
+  },
+  {
+   "name": "cimaMedicines: {\"activeIngredient\": \"meloxicam\", \"marketed\": true}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/cima/medicamentos",
+    "queryParameters": {
+     "practiv1": {
+      "equalTo": "meloxicam"
+     },
+     "comerc": {
+      "equalTo": "1"
+     },
+     "pagina": {
+      "equalTo": "1"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json;charset=UTF-8"
+    },
+    "bodyFileName": "cima/cimaMedicines-1.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://cima.aemps.es/cima/rest/medicamentos?practiv1=meloxicam&comerc=1&pagina=1 on 2026-10-22."
+   }
+  },
+  {
+   "name": "cimaMedicines: {\"activeIngredient\": \"valproico\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/cima/medicamentos",
+    "queryParameters": {
+     "practiv1": {
+      "equalTo": "valproico"
+     },
+     "pagina": {
+      "equalTo": "1"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json;charset=UTF-8"
+    },
+    "bodyFileName": "cima/cimaMedicines-2.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://cima.aemps.es/cima/rest/medicamentos?practiv1=valproico&pagina=1 on 2026-10-22."
+   }
+  },
+  {
+   "name": "cimaMedicines: {\"name\": \"ibuprofeno\", \"marketed\": true}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/cima/medicamentos",
+    "queryParameters": {
+     "nombre": {
+      "equalTo": "ibuprofeno"
+     },
+     "comerc": {
+      "equalTo": "1"
+     },
+     "pagina": {
+      "equalTo": "1"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json;charset=UTF-8"
+    },
+    "bodyFileName": "cima/cimaMedicines-3.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://cima.aemps.es/cima/rest/medicamentos?nombre=ibuprofeno&comerc=1&pagina=1 on 2026-10-22."
+   }
+  },
+  {
+   "name": "cimaMedicines: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/cima/medicamentos"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json;charset=UTF-8"
+    },
+    "bodyFileName": "cima/cimaMedicines.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of cimaMedicines with the first recording, from https://cima.aemps.es/cima/rest/medicamentos?practiv1=meloxicam&pagina=1 on 2026-10-22."
+   }
+  },
+  {
+   "name": "cimaMedicine: {\"registrationNumber\": \"69094\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/cima/medicamento",
+    "queryParameters": {
+     "nregistro": {
+      "equalTo": "69094"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json;charset=UTF-8"
+    },
+    "bodyFileName": "cima/cimaMedicine.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://cima.aemps.es/cima/rest/medicamento?nregistro=69094 on 2026-10-22."
+   }
+  },
+  {
+   "name": "cimaMedicine: {\"registrationNumber\": \"68033\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/cima/medicamento",
+    "queryParameters": {
+     "nregistro": {
+      "equalTo": "68033"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json;charset=UTF-8"
+    },
+    "bodyFileName": "cima/cimaMedicine-1.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://cima.aemps.es/cima/rest/medicamento?nregistro=68033 on 2026-10-22."
+   }
+  },
+  {
+   "name": "cimaMedicine: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/cima/medicamento"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json;charset=UTF-8"
+    },
+    "bodyFileName": "cima/cimaMedicine.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of cimaMedicine with the first recording, from https://cima.aemps.es/cima/rest/medicamento?nregistro=69094 on 2026-10-22."
+   }
+  },
+  {
+   "name": "cimaPresentations: {\"registrationNumber\": \"69094\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/cima/presentaciones",
+    "queryParameters": {
+     "nregistro": {
+      "equalTo": "69094"
+     },
+     "pagina": {
+      "equalTo": "1"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json;charset=UTF-8"
+    },
+    "bodyFileName": "cima/cimaPresentations.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://cima.aemps.es/cima/rest/presentaciones?nregistro=69094&pagina=1 on 2026-10-22."
+   }
+  },
+  {
+   "name": "cimaPresentations: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/cima/presentaciones"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json;charset=UTF-8"
+    },
+    "bodyFileName": "cima/cimaPresentations.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of cimaPresentations with the first recording, from https://cima.aemps.es/cima/rest/presentaciones?nregistro=69094&pagina=1 on 2026-10-22."
+   }
+  },
+  {
+   "name": "cimaPresentation: {\"nationalCode\": \"659533\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/cima/presentacion/659533"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json;charset=UTF-8"
+    },
+    "bodyFileName": "cima/cimaPresentation.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://cima.aemps.es/cima/rest/presentacion/659533 on 2026-10-22."
+   }
+  },
+  {
+   "name": "cimaPresentation: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/cima/presentacion/[^/]+"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json;charset=UTF-8"
+    },
+    "bodyFileName": "cima/cimaPresentation.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of cimaPresentation with the first recording, from https://cima.aemps.es/cima/rest/presentacion/659533 on 2026-10-22."
+   }
+  },
+  {
+   "name": "cimaClinicalDrugs: {\"activeIngredient\": \"meloxicam\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/cima/vmpp",
+    "queryParameters": {
+     "practiv1": {
+      "equalTo": "meloxicam"
+     },
+     "pagina": {
+      "equalTo": "1"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json;charset=UTF-8"
+    },
+    "bodyFileName": "cima/cimaClinicalDrugs.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://cima.aemps.es/cima/rest/vmpp?practiv1=meloxicam&pagina=1 on 2026-10-22."
+   }
+  },
+  {
+   "name": "cimaClinicalDrugs: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/cima/vmpp"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json;charset=UTF-8"
+    },
+    "bodyFileName": "cima/cimaClinicalDrugs.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of cimaClinicalDrugs with the first recording, from https://cima.aemps.es/cima/rest/vmpp?practiv1=meloxicam&pagina=1 on 2026-10-22."
+   }
+  },
+  {
+   "name": "cimaSupplyProblems: {}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/cima/psuministro",
+    "queryParameters": {
+     "pagina": {
+      "equalTo": "1"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json;charset=UTF-8"
+    },
+    "bodyFileName": "cima/cimaSupplyProblems.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://cima.aemps.es/cima/rest/psuministro?pagina=1 on 2026-10-22."
+   }
+  },
+  {
+   "name": "cimaSupplyProblems: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/cima/psuministro"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json;charset=UTF-8"
+    },
+    "bodyFileName": "cima/cimaSupplyProblems.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of cimaSupplyProblems with the first recording, from https://cima.aemps.es/cima/rest/psuministro?pagina=1 on 2026-10-22."
+   }
+  },
+  {
+   "name": "cimaSupplyProblemsForPack: {\"nationalCode\": \"659533\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/cima/psuministro/659533"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json;charset=UTF-8"
+    },
+    "bodyFileName": "cima/cimaSupplyProblemsForPack.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://cima.aemps.es/cima/rest/psuministro/659533 on 2026-10-22."
+   }
+  },
+  {
+   "name": "cimaSupplyProblemsForPack: {\"nationalCode\": \"677694\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/cima/psuministro/677694"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json;charset=UTF-8"
+    },
+    "bodyFileName": "cima/cimaSupplyProblemsForPack-1.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://cima.aemps.es/cima/rest/psuministro/677694 on 2026-10-22."
+   }
+  },
+  {
+   "name": "cimaSupplyProblemsForPack: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/cima/psuministro/[^/]+"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json;charset=UTF-8"
+    },
+    "bodyFileName": "cima/cimaSupplyProblemsForPack.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of cimaSupplyProblemsForPack with the first recording, from https://cima.aemps.es/cima/rest/psuministro/659533 on 2026-10-22."
+   }
+  },
+  {
+   "name": "cimaRegisterChanges: {\"since\": \"2026-10-01\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/cima/registroCambios",
+    "queryParameters": {
+     "fecha": {
+      "equalTo": "01/10/2026"
+     },
+     "pagina": {
+      "equalTo": "1"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json;charset=UTF-8"
+    },
+    "bodyFileName": "cima/cimaRegisterChanges.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://cima.aemps.es/cima/rest/registroCambios?fecha=01%2F10%2F2026&pagina=1 on 2026-10-22."
+   }
+  },
+  {
+   "name": "cimaRegisterChanges: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/cima/registroCambios"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json;charset=UTF-8"
+    },
+    "bodyFileName": "cima/cimaRegisterChanges.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of cimaRegisterChanges with the first recording, from https://cima.aemps.es/cima/rest/registroCambios?fecha=01%2F10%2F2026&pagina=1 on 2026-10-22."
+   }
+  },
+  {
+   "name": "cimaSafetyNotes: {\"registrationNumber\": \"68033\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/cima/notas",
+    "queryParameters": {
+     "nregistro": {
+      "equalTo": "68033"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json;charset=UTF-8"
+    },
+    "bodyFileName": "cima/cimaSafetyNotes.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://cima.aemps.es/cima/rest/notas?nregistro=68033 on 2026-10-22."
+   }
+  },
+  {
+   "name": "cimaSafetyNotes: {\"registrationNumber\": \"69094\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/cima/notas",
+    "queryParameters": {
+     "nregistro": {
+      "equalTo": "69094"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json;charset=UTF-8"
+    },
+    "bodyFileName": "cima/cimaSafetyNotes-1.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://cima.aemps.es/cima/rest/notas?nregistro=69094 on 2026-10-22."
+   }
+  },
+  {
+   "name": "cimaSafetyNotes: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/cima/notas"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json;charset=UTF-8"
+    },
+    "bodyFileName": "cima/cimaSafetyNotes.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of cimaSafetyNotes with the first recording, from https://cima.aemps.es/cima/rest/notas?nregistro=68033 on 2026-10-22."
+   }
+  },
+  {
+   "name": "cimaInformationMaterials: {\"registrationNumber\": \"68033\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/cima/materiales",
+    "queryParameters": {
+     "nregistro": {
+      "equalTo": "68033"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json;charset=UTF-8"
+    },
+    "bodyFileName": "cima/cimaInformationMaterials.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://cima.aemps.es/cima/rest/materiales?nregistro=68033 on 2026-10-22."
+   }
+  },
+  {
+   "name": "cimaInformationMaterials: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/cima/materiales"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json;charset=UTF-8"
+    },
+    "bodyFileName": "cima/cimaInformationMaterials.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of cimaInformationMaterials with the first recording, from https://cima.aemps.es/cima/rest/materiales?nregistro=68033 on 2026-10-22."
+   }
+  },
+  {
+   "name": "cimaDocumentSections: {\"documentType\": \"SUMMARY_OF_PRODUCT_CHARACTERISTICS\", \"registrationNumber\": \"69094\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/cima/docSegmentado/secciones/1",
+    "queryParameters": {
+     "nregistro": {
+      "equalTo": "69094"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json;charset=UTF-8"
+    },
+    "bodyFileName": "cima/cimaDocumentSections.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://cima.aemps.es/cima/rest/docSegmentado/secciones/1?nregistro=69094 on 2026-10-22."
+   }
+  },
+  {
+   "name": "cimaDocumentSections: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/cima/docSegmentado/secciones/[^/]+"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json;charset=UTF-8"
+    },
+    "bodyFileName": "cima/cimaDocumentSections.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of cimaDocumentSections with the first recording, from https://cima.aemps.es/cima/rest/docSegmentado/secciones/1?nregistro=69094 on 2026-10-22."
+   }
+  },
+  {
+   "name": "cimaDocumentSection: {\"documentType\": \"SUMMARY_OF_PRODUCT_CHARACTERISTICS\", \"registrationNumber\": \"69094\", \"section\": \"4.2\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/cima/docSegmentado/contenido/1",
+    "queryParameters": {
+     "nregistro": {
+      "equalTo": "69094"
+     },
+     "seccion": {
+      "equalTo": "4.2"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json;charset=UTF-8"
+    },
+    "bodyFileName": "cima/cimaDocumentSection.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://cima.aemps.es/cima/rest/docSegmentado/contenido/1?nregistro=69094&seccion=4.2 on 2026-10-22."
+   }
+  },
+  {
+   "name": "cimaDocumentSection: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/cima/docSegmentado/contenido/[^/]+"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json;charset=UTF-8"
+    },
+    "bodyFileName": "cima/cimaDocumentSection.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of cimaDocumentSection with the first recording, from https://cima.aemps.es/cima/rest/docSegmentado/contenido/1?nregistro=69094&seccion=4.2 on 2026-10-22."
+   }
+  },
+  {
+   "name": "cimaActiveIngredients: {\"name\": \"meloxicam\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/cima/maestras",
+    "queryParameters": {
+     "nombre": {
+      "equalTo": "meloxicam"
+     },
+     "maestra": {
+      "equalTo": "1"
+     },
+     "pagina": {
+      "equalTo": "1"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json;charset=UTF-8"
+    },
+    "bodyFileName": "cima/cimaActiveIngredients.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://cima.aemps.es/cima/rest/maestras?nombre=meloxicam&maestra=1&pagina=1 on 2026-10-22."
+   }
+  },
+  {
+   "name": "cimaActiveIngredients: {\"name\": \"valproico\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/cima/maestras",
+    "queryParameters": {
+     "nombre": {
+      "equalTo": "valproico"
+     },
+     "maestra": {
+      "equalTo": "1"
+     },
+     "pagina": {
+      "equalTo": "1"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json;charset=UTF-8"
+    },
+    "bodyFileName": "cima/cimaActiveIngredients-1.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://cima.aemps.es/cima/rest/maestras?nombre=valproico&maestra=1&pagina=1 on 2026-10-22."
+   }
+  },
+  {
+   "name": "cimaActiveIngredients: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/cima/maestras"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json;charset=UTF-8"
+    },
+    "bodyFileName": "cima/cimaActiveIngredients.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of cimaActiveIngredients with the first recording, from https://cima.aemps.es/cima/rest/maestras?nombre=meloxicam&maestra=1&pagina=1 on 2026-10-22."
+   }
+  },
+  {
+   "name": "cimaPharmaceuticalForms: {\"name\": \"comprimido\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/cima/maestras",
+    "queryParameters": {
+     "nombre": {
+      "equalTo": "comprimido"
+     },
+     "maestra": {
+      "equalTo": "3"
+     },
+     "pagina": {
+      "equalTo": "1"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json;charset=UTF-8"
+    },
+    "bodyFileName": "cima/cimaPharmaceuticalForms.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://cima.aemps.es/cima/rest/maestras?nombre=comprimido&maestra=3&pagina=1 on 2026-10-22."
+   }
+  },
+  {
+   "name": "cimaPharmaceuticalForms: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/cima/maestras"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json;charset=UTF-8"
+    },
+    "bodyFileName": "cima/cimaPharmaceuticalForms.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of cimaPharmaceuticalForms with the first recording, from https://cima.aemps.es/cima/rest/maestras?nombre=comprimido&maestra=3&pagina=1 on 2026-10-22."
+   }
+  },
+  {
+   "name": "cimaAdministrationRoutes: {\"name\": \"oral\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/cima/maestras",
+    "queryParameters": {
+     "nombre": {
+      "equalTo": "oral"
+     },
+     "maestra": {
+      "equalTo": "4"
+     },
+     "pagina": {
+      "equalTo": "1"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json;charset=UTF-8"
+    },
+    "bodyFileName": "cima/cimaAdministrationRoutes.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://cima.aemps.es/cima/rest/maestras?nombre=oral&maestra=4&pagina=1 on 2026-10-22."
+   }
+  },
+  {
+   "name": "cimaAdministrationRoutes: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/cima/maestras"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json;charset=UTF-8"
+    },
+    "bodyFileName": "cima/cimaAdministrationRoutes.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of cimaAdministrationRoutes with the first recording, from https://cima.aemps.es/cima/rest/maestras?nombre=oral&maestra=4&pagina=1 on 2026-10-22."
+   }
+  },
+  {
+   "name": "cimaLaboratories: {\"name\": \"cinfa\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/cima/maestras",
+    "queryParameters": {
+     "nombre": {
+      "equalTo": "cinfa"
+     },
+     "maestra": {
+      "equalTo": "6"
+     },
+     "pagina": {
+      "equalTo": "1"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json;charset=UTF-8"
+    },
+    "bodyFileName": "cima/cimaLaboratories.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://cima.aemps.es/cima/rest/maestras?nombre=cinfa&maestra=6&pagina=1 on 2026-10-22."
+   }
+  },
+  {
+   "name": "cimaLaboratories: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/cima/maestras"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json;charset=UTF-8"
+    },
+    "bodyFileName": "cima/cimaLaboratories.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of cimaLaboratories with the first recording, from https://cima.aemps.es/cima/rest/maestras?nombre=cinfa&maestra=6&pagina=1 on 2026-10-22."
+   }
+  },
+  {
+   "name": "cimaAtcCodes: {\"name\": \"meloxicam\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/cima/maestras",
+    "queryParameters": {
+     "nombre": {
+      "equalTo": "meloxicam"
+     },
+     "maestra": {
+      "equalTo": "7"
+     },
+     "pagina": {
+      "equalTo": "1"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json;charset=UTF-8"
+    },
+    "bodyFileName": "cima/cimaAtcCodes.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://cima.aemps.es/cima/rest/maestras?nombre=meloxicam&maestra=7&pagina=1 on 2026-10-22."
+   }
+  },
+  {
+   "name": "cimaAtcCodes: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/cima/maestras"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json;charset=UTF-8"
+    },
+    "bodyFileName": "cima/cimaAtcCodes.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of cimaAtcCodes with the first recording, from https://cima.aemps.es/cima/rest/maestras?nombre=meloxicam&maestra=7&pagina=1 on 2026-10-22."
+   }
+  }
+ ]
+}

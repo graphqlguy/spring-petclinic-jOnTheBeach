@@ -1,0 +1,4078 @@
+# The fields of the API-Features service of the National Cartographic System of Spain (SCNE), run by the National
+# Geographic Institute (IGN), at api-features.idee.es. It follows the OGC API Features standard and serves the INSPIRE
+# themes of addresses, land use, land cover, hydrography and transport networks as collections of features. A generator
+# wrote one field to search each collection and one to read a feature by its id, with their types and
+# src/main/resources/idee/operations.json, from the OpenAPI document of the service, which lists the properties each
+# collection can be filtered by, and from answers recorded from it. The names and descriptions are written by hand in
+# English. Each field is fetched by a RestOperationFetcher, see IdeeConfiguration.
+
+extend type Query {
+    # Every collection takes a bounding box, such as -4.50,36.65,-4.35,36.75 for the city of Málaga, and filters on its
+    # properties by exact value. Lines and areas, such as rivers, can have long geometries, so the searches leave the
+    # geometry out unless skipGeometry is false.
+
+    """
+    The addresses of Spain from CartoCiudad: the street, the number, the postal code and the town of each entrance of a
+    building, with its point. The addresses of the street of an owner take thoroughfareName, such as CALLE VENDEJA.
+    """
+    ignAddresses(
+        """
+        Only the features inside this box, written as minLongitude,minLatitude,maxLongitude,maxLatitude, such as
+        -4.50,36.65,-4.35,36.75 for the city of Málaga
+        """
+        bbox: String
+        """
+        false for the geometry of each feature, which can be long for lines and areas. true, the default, leaves it out.
+        """
+        skipGeometry: Boolean = true
+        "Only the addresses whose localId is this value"
+        localId: String
+        "Only the addresses whose namespace is this value"
+        namespace: String
+        "Only the addresses whose thoroughfareName is this value"
+        thoroughfareName: String
+        "Only the addresses whose addressNumber is this value"
+        addressNumber: String
+        "Only the addresses whose addressNumberExtension is this value"
+        addressNumberExtension: String
+        "Only the addresses whose postalCode is this value"
+        postalCode: String
+        "Only the addresses whose addressArea is this value"
+        addressArea: String
+        "Only the addresses whose municipality is this value"
+        municipality: String
+        "Only the addresses whose province is this value"
+        province: String
+        "Only the addresses whose region is this value"
+        region: String
+        "Only the addresses whose validSince is this value"
+        validSince: String
+        "Only the addresses whose dataProvider is this value"
+        dataProvider: String
+        "The page to return. Pages count from 0."
+        page: Int! = 0
+        "The number of results on a page, from 1 to 100"
+        size: Int! = 10
+    ): IgnAddressPage
+
+    "One of the addresses by its id, with its geometry"
+    ignAddress(
+        "The id of the feature, which ignAddresses gives"
+        id: ID!
+    ): IgnAddress
+
+    "The datasets of existing land use of the SIOSE land information system, with the area each covers"
+    ignLandUseDatasets(
+        """
+        Only the features inside this box, written as minLongitude,minLatitude,maxLongitude,maxLatitude, such as
+        -4.50,36.65,-4.35,36.75 for the city of Málaga
+        """
+        bbox: String
+        """
+        false for the geometry of each feature, which can be long for lines and areas. true, the default, leaves it out.
+        """
+        skipGeometry: Boolean = true
+        "Only the land use datasets whose localId is this value"
+        localId: String
+        "Only the land use datasets whose namespace is this value"
+        namespace: String
+        "Only the land use datasets whose versionId is this value"
+        versionId: String
+        "Only the land use datasets whose name is this value"
+        name: String
+        "Only the land use datasets whose validSince is this value"
+        validSince: String
+        "Only the land use datasets whose validUntil is this value"
+        validUntil: String
+        "Only the land use datasets whose validFrom is this value"
+        validFrom: String
+        "Only the land use datasets whose validTo is this value"
+        validTo: String
+        "The page to return. Pages count from 0."
+        page: Int! = 0
+        "The number of results on a page, from 1 to 100"
+        size: Int! = 10
+    ): IgnLandUseDatasetPage
+
+    """
+    The areas of existing land use from SIOSE AR 2017, each with its use in the HILUCS classification, such as
+    residential or agricultural
+    """
+    ignLandUseAreas(
+        """
+        Only the features inside this box, written as minLongitude,minLatitude,maxLongitude,maxLatitude, such as
+        -4.50,36.65,-4.35,36.75 for the city of Málaga
+        """
+        bbox: String
+        """
+        false for the geometry of each feature, which can be long for lines and areas. true, the default, leaves it out.
+        """
+        skipGeometry: Boolean = true
+        "Only the land use areas whose localId is this value"
+        localId: String
+        "Only the land use areas whose namespace is this value"
+        namespace: String
+        "Only the land use areas whose versionId is this value"
+        versionId: String
+        "Only the land use areas whose landUse is this value"
+        landUse: String
+        "Only the land use areas whose observed is this value"
+        observed: String
+        "Only the land use areas whose validSince is this value"
+        validSince: String
+        "Only the land use areas whose validUntil is this value"
+        validUntil: String
+        "Only the land use areas whose validFrom is this value"
+        validFrom: String
+        "Only the land use areas whose validTo is this value"
+        validTo: String
+        "Only the land use areas whose href is this value"
+        href: String
+        "The page to return. Pages count from 0."
+        page: Int! = 0
+        "The number of results on a page, from 1 to 100"
+        size: Int! = 10
+    ): IgnLandUseAreaPage
+
+    "One of the land use areas by its id, with its geometry"
+    ignLandUseArea(
+        "The id of the feature, which ignLandUseAreas gives"
+        id: ID!
+    ): IgnLandUseArea
+
+    "The units of land cover from SIOSE AR 2017, each with what covers it, such as buildings, crops or woodland"
+    ignLandCoverUnits(
+        """
+        Only the features inside this box, written as minLongitude,minLatitude,maxLongitude,maxLatitude, such as
+        -4.50,36.65,-4.35,36.75 for the city of Málaga
+        """
+        bbox: String
+        """
+        false for the geometry of each feature, which can be long for lines and areas. true, the default, leaves it out.
+        """
+        skipGeometry: Boolean = true
+        "Only the land cover units whose localId is this value"
+        localId: String
+        "Only the land cover units whose namespace is this value"
+        namespace: String
+        "Only the land cover units whose versionId is this value"
+        versionId: String
+        "Only the land cover units whose observed is this value"
+        observed: String
+        "Only the land cover units whose landCoverClass is this value"
+        landCoverClass: String
+        "Only the land cover units whose validSince is this value"
+        validSince: String
+        "Only the land cover units whose validUntil is this value"
+        validUntil: String
+        "The page to return. Pages count from 0."
+        page: Int! = 0
+        "The number of results on a page, from 1 to 100"
+        size: Int! = 10
+    ): IgnLandCoverUnitPage
+
+    "One of the land cover units by its id, with its geometry"
+    ignLandCoverUnit(
+        "The id of the feature, which ignLandCoverUnits gives"
+        id: ID!
+    ): IgnLandCoverUnit
+
+    "The nodes of the network of rivers, where watercourse links meet"
+    ignHydroNodes(
+        """
+        Only the features inside this box, written as minLongitude,minLatitude,maxLongitude,maxLatitude, such as
+        -4.50,36.65,-4.35,36.75 for the city of Málaga
+        """
+        bbox: String
+        """
+        false for the geometry of each feature, which can be long for lines and areas. true, the default, leaves it out.
+        """
+        skipGeometry: Boolean = true
+        "Only the hydrographic nodes whose localId is this value"
+        localId: String
+        "Only the hydrographic nodes whose hydroId is this value"
+        hydroId: String
+        "Only the hydrographic nodes whose dateAdded is this value"
+        dateAdded: String
+        "Only the hydrographic nodes whose riverBasinDistrict is this value"
+        riverBasinDistrict: String
+        "Only the hydrographic nodes whose riverBasinDistrictText is this value"
+        riverBasinDistrictText: String
+        "Only the hydrographic nodes whose networkId is this value"
+        networkId: String
+        "Only the hydrographic nodes whose nodeId is this value"
+        nodeId: String
+        "Only the hydrographic nodes whose name is this value"
+        name: String
+        "Only the hydrographic nodes whose nodeCategory is this value"
+        nodeCategory: String
+        "Only the hydrographic nodes whose nodeCategoryText is this value"
+        nodeCategoryText: String
+        "Only the hydrographic nodes whose elevation is this value"
+        elevation: String
+        "Only the hydrographic nodes whose source is this value"
+        source: String
+        "Only the hydrographic nodes whose sourceText is this value"
+        sourceText: String
+        "Only the hydrographic nodes whose resolution is this value"
+        resolution: String
+        "Only the hydrographic nodes whose nodeCategoryNilReason is this value"
+        nodeCategoryNilReason: String
+        "Only the hydrographic nodes whose nameNilReason is this value"
+        nameNilReason: String
+        "Only the hydrographic nodes whose variosNilReason is this value"
+        variosNilReason: String
+        "Only the hydrographic nodes whose nameMissing is this value"
+        nameMissing: String
+        "Only the hydrographic nodes whose variosMissing is this value"
+        variosMissing: String
+        "Only the hydrographic nodes whose nativeness is this value"
+        nativeness: String
+        "Only the hydrographic nodes whose script is this value"
+        script: String
+        "The page to return. Pages count from 0."
+        page: Int! = 0
+        "The number of results on a page, from 1 to 100"
+        size: Int! = 10
+    ): IgnHydroNodePage
+
+    "One of the hydrographic nodes by its id, with its geometry"
+    ignHydroNode(
+        "The id of the feature, which ignHydroNodes gives"
+        id: ID!
+    ): IgnHydroNode
+
+    "The segments of watercourses in the network of rivers"
+    ignWatercourseLinks(
+        """
+        Only the features inside this box, written as minLongitude,minLatitude,maxLongitude,maxLatitude, such as
+        -4.50,36.65,-4.35,36.75 for the city of Málaga
+        """
+        bbox: String
+        """
+        false for the geometry of each feature, which can be long for lines and areas. true, the default, leaves it out.
+        """
+        skipGeometry: Boolean = true
+        "Only the watercourse links whose localId is this value"
+        localId: String
+        "Only the watercourse links whose hydroId is this value"
+        hydroId: String
+        "Only the watercourse links whose dateAdded is this value"
+        dateAdded: String
+        "Only the watercourse links whose riverBasinDistrict is this value"
+        riverBasinDistrict: String
+        "Only the watercourse links whose riverBasinDistrictText is this value"
+        riverBasinDistrictText: String
+        "Only the watercourse links whose networkId is this value"
+        networkId: String
+        "Only the watercourse links whose segmentId is this value"
+        segmentId: String
+        "Only the watercourse links whose leftSegment is this value"
+        leftSegment: String
+        "Only the watercourse links whose rightSegment is this value"
+        rightSegment: String
+        "Only the watercourse links whose startNode is this value"
+        startNode: String
+        "Only the watercourse links whose endNode is this value"
+        endNode: String
+        "Only the watercourse links whose flowDirection is this value"
+        flowDirection: String
+        "Only the watercourse links whose flowDirectionText is this value"
+        flowDirectionText: String
+        "Only the watercourse links whose fictitious is this value"
+        fictitious: String
+        "Only the watercourse links whose watercourseId is this value"
+        watercourseId: String
+        "Only the watercourse links whose name is this value"
+        name: String
+        "Only the watercourse links whose source is this value"
+        source: String
+        "Only the watercourse links whose sourceText is this value"
+        sourceText: String
+        "Only the watercourse links whose lengthMetres is this value"
+        lengthMetres: String
+        "Only the watercourse links whose resolution is this value"
+        resolution: String
+        "Only the watercourse links whose nameNilReason is this value"
+        nameNilReason: String
+        "Only the watercourse links whose variosNilReason is this value"
+        variosNilReason: String
+        "Only the watercourse links whose nameMissing is this value"
+        nameMissing: String
+        "Only the watercourse links whose variosMissing is this value"
+        variosMissing: String
+        "Only the watercourse links whose nativeness is this value"
+        nativeness: String
+        "Only the watercourse links whose script is this value"
+        script: String
+        "The page to return. Pages count from 0."
+        page: Int! = 0
+        "The number of results on a page, from 1 to 100"
+        size: Int! = 10
+    ): IgnWatercourseLinkPage
+
+    "One of the watercourse links by its id, with its geometry"
+    ignWatercourseLink(
+        "The id of the feature, which ignWatercourseLinks gives"
+        id: ID!
+    ): IgnWatercourseLink
+
+    "The sequences of segments that form one path without branches through the network of rivers"
+    ignWatercourseLinkSequences(
+        """
+        Only the features inside this box, written as minLongitude,minLatitude,maxLongitude,maxLatitude, such as
+        -4.50,36.65,-4.35,36.75 for the city of Málaga
+        """
+        bbox: String
+        """
+        false for the geometry of each feature, which can be long for lines and areas. true, the default, leaves it out.
+        """
+        skipGeometry: Boolean = true
+        "Only the watercourse link sequences whose localId is this value"
+        localId: String
+        "Only the watercourse link sequences whose hydroId is this value"
+        hydroId: String
+        "Only the watercourse link sequences whose dateAdded is this value"
+        dateAdded: String
+        "Only the watercourse link sequences whose riverBasinDistrict is this value"
+        riverBasinDistrict: String
+        "Only the watercourse link sequences whose riverBasinDistrictText is this value"
+        riverBasinDistrictText: String
+        "Only the watercourse link sequences whose watercourseId is this value"
+        watercourseId: String
+        "Only the watercourse link sequences whose networkId is this value"
+        networkId: String
+        "Only the watercourse link sequences whose name is this value"
+        name: String
+        "Only the watercourse link sequences whose source is this value"
+        source: String
+        "Only the watercourse link sequences whose sourceText is this value"
+        sourceText: String
+        "Only the watercourse link sequences whose lengthMetres is this value"
+        lengthMetres: String
+        "Only the watercourse link sequences whose resolution is this value"
+        resolution: String
+        "Only the watercourse link sequences whose nameNilReason is this value"
+        nameNilReason: String
+        "Only the watercourse link sequences whose variosNilReason is this value"
+        variosNilReason: String
+        "Only the watercourse link sequences whose nameMissing is this value"
+        nameMissing: String
+        "Only the watercourse link sequences whose variosMissing is this value"
+        variosMissing: String
+        "Only the watercourse link sequences whose nativeness is this value"
+        nativeness: String
+        "Only the watercourse link sequences whose script is this value"
+        script: String
+        "The page to return. Pages count from 0."
+        page: Int! = 0
+        "The number of results on a page, from 1 to 100"
+        size: Int! = 10
+    ): IgnWatercourseLinkSequencePage
+
+    "The man-made objects that carry water over or under an obstacle: aqueducts, bridges, culverts and siphons"
+    ignWaterCrossings(
+        """
+        Only the features inside this box, written as minLongitude,minLatitude,maxLongitude,maxLatitude, such as
+        -4.50,36.65,-4.35,36.75 for the city of Málaga
+        """
+        bbox: String
+        """
+        false for the geometry of each feature, which can be long for lines and areas. true, the default, leaves it out.
+        """
+        skipGeometry: Boolean = true
+        "Only the water crossings whose localId is this value"
+        localId: String
+        "Only the water crossings whose hydroId is this value"
+        hydroId: String
+        "Only the water crossings whose name is this value"
+        name: String
+        "Only the water crossings whose source is this value"
+        source: String
+        "Only the water crossings whose sourceText is this value"
+        sourceText: String
+        "Only the water crossings whose riverBasinDistrict is this value"
+        riverBasinDistrict: String
+        "Only the water crossings whose riverBasinDistrictText is this value"
+        riverBasinDistrictText: String
+        "Only the water crossings whose dateAdded is this value"
+        dateAdded: String
+        "Only the water crossings whose crossingType is this value"
+        crossingType: String
+        "Only the water crossings whose crossingTypeText is this value"
+        crossingTypeText: String
+        "Only the water crossings whose nodeId is this value"
+        nodeId: String
+        "Only the water crossings whose buildingId is this value"
+        buildingId: String
+        "Only the water crossings whose condition is this value"
+        condition: String
+        "Only the water crossings whose conditionText is this value"
+        conditionText: String
+        "Only the water crossings whose resolution is this value"
+        resolution: String
+        "Only the water crossings whose nameNilReason is this value"
+        nameNilReason: String
+        "Only the water crossings whose variosNilReason is this value"
+        variosNilReason: String
+        "Only the water crossings whose nameMissing is this value"
+        nameMissing: String
+        "Only the water crossings whose variosMissing is this value"
+        variosMissing: String
+        "Only the water crossings whose nativeness is this value"
+        nativeness: String
+        "Only the water crossings whose script is this value"
+        script: String
+        "The page to return. Pages count from 0."
+        page: Int! = 0
+        "The number of results on a page, from 1 to 100"
+        size: Int! = 10
+    ): IgnWaterCrossingPage
+
+    "One of the water crossings by its id, with its geometry"
+    ignWaterCrossing(
+        "The id of the feature, which ignWaterCrossings gives"
+        id: ID!
+    ): IgnWaterCrossing
+
+    "The dams and weirs that store water or control its flow"
+    ignDams(
+        """
+        Only the features inside this box, written as minLongitude,minLatitude,maxLongitude,maxLatitude, such as
+        -4.50,36.65,-4.35,36.75 for the city of Málaga
+        """
+        bbox: String
+        """
+        false for the geometry of each feature, which can be long for lines and areas. true, the default, leaves it out.
+        """
+        skipGeometry: Boolean = true
+        "Only the dams and weirs whose localId is this value"
+        localId: String
+        "Only the dams and weirs whose hydroId is this value"
+        hydroId: String
+        "Only the dams and weirs whose name is this value"
+        name: String
+        "Only the dams and weirs whose source is this value"
+        source: String
+        "Only the dams and weirs whose sourceText is this value"
+        sourceText: String
+        "Only the dams and weirs whose riverBasinDistrict is this value"
+        riverBasinDistrict: String
+        "Only the dams and weirs whose riverBasinDistrictText is this value"
+        riverBasinDistrictText: String
+        "Only the dams and weirs whose dateAdded is this value"
+        dateAdded: String
+        "Only the dams and weirs whose damType is this value"
+        damType: String
+        "Only the dams and weirs whose damTypeText is this value"
+        damTypeText: String
+        "Only the dams and weirs whose nodeId is this value"
+        nodeId: String
+        "Only the dams and weirs whose buildingId is this value"
+        buildingId: String
+        "Only the dams and weirs whose crestElevation is this value"
+        crestElevation: String
+        "Only the dams and weirs whose material is this value"
+        material: String
+        "Only the dams and weirs whose materialText is this value"
+        materialText: String
+        "Only the dams and weirs whose condition is this value"
+        condition: String
+        "Only the dams and weirs whose conditionText is this value"
+        conditionText: String
+        "Only the dams and weirs whose resolution is this value"
+        resolution: String
+        "Only the dams and weirs whose crestLength is this value"
+        crestLength: String
+        "Only the dams and weirs whose nameNilReason is this value"
+        nameNilReason: String
+        "Only the dams and weirs whose variosNilReason is this value"
+        variosNilReason: String
+        "Only the dams and weirs whose nameMissing is this value"
+        nameMissing: String
+        "Only the dams and weirs whose variosMissing is this value"
+        variosMissing: String
+        "Only the dams and weirs whose nativeness is this value"
+        nativeness: String
+        "Only the dams and weirs whose script is this value"
+        script: String
+        "The page to return. Pages count from 0."
+        page: Int! = 0
+        "The number of results on a page, from 1 to 100"
+        size: Int! = 10
+    ): IgnDamPage
+
+    "One of the dams and weirs by its id, with its geometry"
+    ignDam(
+        "The id of the feature, which ignDams gives"
+        id: ID!
+    ): IgnDam
+
+    "The areas whose runoff drains to a common outlet"
+    ignDrainageBasins(
+        """
+        Only the features inside this box, written as minLongitude,minLatitude,maxLongitude,maxLatitude, such as
+        -4.50,36.65,-4.35,36.75 for the city of Málaga
+        """
+        bbox: String
+        """
+        false for the geometry of each feature, which can be long for lines and areas. true, the default, leaves it out.
+        """
+        skipGeometry: Boolean = true
+        "Only the drainage basins whose localId is this value"
+        localId: String
+        "Only the drainage basins whose hydroId is this value"
+        hydroId: String
+        "Only the drainage basins whose name is this value"
+        name: String
+        "Only the drainage basins whose riverBasinDistrict is this value"
+        riverBasinDistrict: String
+        "Only the drainage basins whose riverBasinDistrictText is this value"
+        riverBasinDistrictText: String
+        "Only the drainage basins whose dateAdded is this value"
+        dateAdded: String
+        "Only the drainage basins whose order is this value"
+        order: String
+        "Only the drainage basins whose orderScheme is this value"
+        orderScheme: String
+        "Only the drainage basins whose orderSchemeText is this value"
+        orderSchemeText: String
+        "Only the drainage basins whose orderScope is this value"
+        orderScope: String
+        "Only the drainage basins whose orderScopeText is this value"
+        orderScopeText: String
+        "Only the drainage basins whose source is this value"
+        source: String
+        "Only the drainage basins whose sourceText is this value"
+        sourceText: String
+        "Only the drainage basins whose origin is this value"
+        origin: String
+        "Only the drainage basins whose originText is this value"
+        originText: String
+        "Only the drainage basins whose areaSquareMetres is this value"
+        areaSquareMetres: String
+        "Only the drainage basins whose resolution is this value"
+        resolution: String
+        "Only the drainage basins whose nameNilReason is this value"
+        nameNilReason: String
+        "Only the drainage basins whose variosNilReason is this value"
+        variosNilReason: String
+        "Only the drainage basins whose nameMissing is this value"
+        nameMissing: String
+        "Only the drainage basins whose variosMissing is this value"
+        variosMissing: String
+        "Only the drainage basins whose nativeness is this value"
+        nativeness: String
+        "Only the drainage basins whose script is this value"
+        script: String
+        "The page to return. Pages count from 0."
+        page: Int! = 0
+        "The number of results on a page, from 1 to 100"
+        size: Int! = 10
+    ): IgnDrainageBasinPage
+
+    "The waterfalls, where a watercourse drops vertically"
+    ignWaterfalls(
+        """
+        Only the features inside this box, written as minLongitude,minLatitude,maxLongitude,maxLatitude, such as
+        -4.50,36.65,-4.35,36.75 for the city of Málaga
+        """
+        bbox: String
+        """
+        false for the geometry of each feature, which can be long for lines and areas. true, the default, leaves it out.
+        """
+        skipGeometry: Boolean = true
+        "Only the waterfalls whose localId is this value"
+        localId: String
+        "Only the waterfalls whose hydroId is this value"
+        hydroId: String
+        "Only the waterfalls whose name is this value"
+        name: String
+        "Only the waterfalls whose riverBasinDistrict is this value"
+        riverBasinDistrict: String
+        "Only the waterfalls whose riverBasinDistrictText is this value"
+        riverBasinDistrictText: String
+        "Only the waterfalls whose dateAdded is this value"
+        dateAdded: String
+        "Only the waterfalls whose source is this value"
+        source: String
+        "Only the waterfalls whose sourceText is this value"
+        sourceText: String
+        "Only the waterfalls whose description is this value"
+        description: String
+        "Only the waterfalls whose nodeId is this value"
+        nodeId: String
+        "Only the waterfalls whose persistence is this value"
+        persistence: String
+        "Only the waterfalls whose persistenceText is this value"
+        persistenceText: String
+        "Only the waterfalls whose resolution is this value"
+        resolution: String
+        "Only the waterfalls whose script is this value"
+        script: String
+        "Only the waterfalls whose nameNilReason is this value"
+        nameNilReason: String
+        "Only the waterfalls whose variosNilReason is this value"
+        variosNilReason: String
+        "Only the waterfalls whose nameMissing is this value"
+        nameMissing: String
+        "Only the waterfalls whose variosMissing is this value"
+        variosMissing: String
+        "Only the waterfalls whose nativeness is this value"
+        nativeness: String
+        "The page to return. Pages count from 0."
+        page: Int! = 0
+        "The number of results on a page, from 1 to 100"
+        size: Int! = 10
+    ): IgnWaterfallPage
+
+    "One of the waterfalls by its id, with its geometry"
+    ignWaterfall(
+        "The id of the feature, which ignWaterfalls gives"
+        id: ID!
+    ): IgnWaterfall
+
+    "The fords, the shallow places where a watercourse can be crossed"
+    ignFords(
+        """
+        Only the features inside this box, written as minLongitude,minLatitude,maxLongitude,maxLatitude, such as
+        -4.50,36.65,-4.35,36.75 for the city of Málaga
+        """
+        bbox: String
+        """
+        false for the geometry of each feature, which can be long for lines and areas. true, the default, leaves it out.
+        """
+        skipGeometry: Boolean = true
+        "Only the fords whose localId is this value"
+        localId: String
+        "Only the fords whose hydroId is this value"
+        hydroId: String
+        "Only the fords whose name is this value"
+        name: String
+        "Only the fords whose riverBasinDistrict is this value"
+        riverBasinDistrict: String
+        "Only the fords whose riverBasinDistrictText is this value"
+        riverBasinDistrictText: String
+        "Only the fords whose dateAdded is this value"
+        dateAdded: String
+        "Only the fords whose condition is this value"
+        condition: String
+        "Only the fords whose conditionText is this value"
+        conditionText: String
+        "Only the fords whose source is this value"
+        source: String
+        "Only the fords whose sourceText is this value"
+        sourceText: String
+        "Only the fords whose lengthMetres is this value"
+        lengthMetres: String
+        "Only the fords whose resolution is this value"
+        resolution: String
+        "Only the fords whose nameNilReason is this value"
+        nameNilReason: String
+        "Only the fords whose variosNilReason is this value"
+        variosNilReason: String
+        "Only the fords whose nameMissing is this value"
+        nameMissing: String
+        "Only the fords whose variosMissing is this value"
+        variosMissing: String
+        "Only the fords whose nativeness is this value"
+        nativeness: String
+        "Only the fords whose script is this value"
+        script: String
+        "The page to return. Pages count from 0."
+        page: Int! = 0
+        "The number of results on a page, from 1 to 100"
+        size: Int! = 10
+    ): IgnFordPage
+
+    "One of the fords by its id, with its geometry"
+    ignFord(
+        "The id of the feature, which ignFords gives"
+        id: ID!
+    ): IgnFord
+
+    "The coastline at the zero level of the IGN, the reference of heights in Spain"
+    ignShorelines(
+        """
+        Only the features inside this box, written as minLongitude,minLatitude,maxLongitude,maxLatitude, such as
+        -4.50,36.65,-4.35,36.75 for the city of Málaga
+        """
+        bbox: String
+        """
+        false for the geometry of each feature, which can be long for lines and areas. true, the default, leaves it out.
+        """
+        skipGeometry: Boolean = true
+        "Only the shoreline segments whose localId is this value"
+        localId: String
+        "Only the shoreline segments whose hydroId is this value"
+        hydroId: String
+        "Only the shoreline segments whose riverBasinDistrict is this value"
+        riverBasinDistrict: String
+        "Only the shoreline segments whose dateAdded is this value"
+        dateAdded: String
+        "Only the shoreline segments whose origin is this value"
+        origin: String
+        "Only the shoreline segments whose originText is this value"
+        originText: String
+        "Only the shoreline segments whose waterLevel is this value"
+        waterLevel: String
+        "Only the shoreline segments whose waterLevelText is this value"
+        waterLevelText: String
+        "Only the shoreline segments whose source is this value"
+        source: String
+        "Only the shoreline segments whose sourceText is this value"
+        sourceText: String
+        "Only the shoreline segments whose lengthMetres is this value"
+        lengthMetres: String
+        "Only the shoreline segments whose resolution is this value"
+        resolution: String
+        "The page to return. Pages count from 0."
+        page: Int! = 0
+        "The number of results on a page, from 1 to 100"
+        size: Int! = 10
+    ): IgnShorelinePage
+
+    "One of the shoreline segments by its id, with its geometry"
+    ignShoreline(
+        "The id of the feature, which ignShorelines gives"
+        id: ID!
+    ): IgnShoreline
+
+    "The locks that raise and lower boats from one water level to another"
+    ignLocks(
+        """
+        Only the features inside this box, written as minLongitude,minLatitude,maxLongitude,maxLatitude, such as
+        -4.50,36.65,-4.35,36.75 for the city of Málaga
+        """
+        bbox: String
+        """
+        false for the geometry of each feature, which can be long for lines and areas. true, the default, leaves it out.
+        """
+        skipGeometry: Boolean = true
+        "Only the locks whose localId is this value"
+        localId: String
+        "Only the locks whose hydroId is this value"
+        hydroId: String
+        "Only the locks whose name is this value"
+        name: String
+        "Only the locks whose riverBasinDistrict is this value"
+        riverBasinDistrict: String
+        "Only the locks whose riverBasinDistrictText is this value"
+        riverBasinDistrictText: String
+        "Only the locks whose dateAdded is this value"
+        dateAdded: String
+        "Only the locks whose condition is this value"
+        condition: String
+        "Only the locks whose conditionText is this value"
+        conditionText: String
+        "Only the locks whose source is this value"
+        source: String
+        "Only the locks whose sourceText is this value"
+        sourceText: String
+        "Only the locks whose resolution is this value"
+        resolution: String
+        "Only the locks whose nameNilReason is this value"
+        nameNilReason: String
+        "Only the locks whose variosNilReason is this value"
+        variosNilReason: String
+        "Only the locks whose nameMissing is this value"
+        nameMissing: String
+        "Only the locks whose variosMissing is this value"
+        variosMissing: String
+        "Only the locks whose nativeness is this value"
+        nativeness: String
+        "Only the locks whose script is this value"
+        script: String
+        "The page to return. Pages count from 0."
+        page: Int! = 0
+        "The number of results on a page, from 1 to 100"
+        size: Int! = 10
+    ): IgnLockPage
+
+    "One of the locks by its id, with its geometry"
+    ignLock(
+        "The id of the feature, which ignLocks gives"
+        id: ID!
+    ): IgnLock
+
+    """
+    The river basins, the territories whose surface runoff all flows to the sea through one mouth, such as the basin of
+    the Guadalhorce
+    """
+    ignRiverBasins(
+        """
+        Only the features inside this box, written as minLongitude,minLatitude,maxLongitude,maxLatitude, such as
+        -4.50,36.65,-4.35,36.75 for the city of Málaga
+        """
+        bbox: String
+        """
+        false for the geometry of each feature, which can be long for lines and areas. true, the default, leaves it out.
+        """
+        skipGeometry: Boolean = true
+        "Only the river basins whose localId is this value"
+        localId: String
+        "Only the river basins whose hydroId is this value"
+        hydroId: String
+        "Only the river basins whose name is this value"
+        name: String
+        "Only the river basins whose riverBasinDistrict is this value"
+        riverBasinDistrict: String
+        "Only the river basins whose riverBasinDistrictText is this value"
+        riverBasinDistrictText: String
+        "Only the river basins whose dateAdded is this value"
+        dateAdded: String
+        "Only the river basins whose order is this value"
+        order: String
+        "Only the river basins whose orderScheme is this value"
+        orderScheme: String
+        "Only the river basins whose orderSchemeText is this value"
+        orderSchemeText: String
+        "Only the river basins whose orderScope is this value"
+        orderScope: String
+        "Only the river basins whose orderScopeText is this value"
+        orderScopeText: String
+        "Only the river basins whose source is this value"
+        source: String
+        "Only the river basins whose sourceText is this value"
+        sourceText: String
+        "Only the river basins whose origin is this value"
+        origin: String
+        "Only the river basins whose originText is this value"
+        originText: String
+        "Only the river basins whose areaSquareMetres is this value"
+        areaSquareMetres: String
+        "Only the river basins whose resolution is this value"
+        resolution: String
+        "Only the river basins whose nameNilReason is this value"
+        nameNilReason: String
+        "Only the river basins whose variosNilReason is this value"
+        variosNilReason: String
+        "Only the river basins whose nameMissing is this value"
+        nameMissing: String
+        "Only the river basins whose variosMissing is this value"
+        variosMissing: String
+        "Only the river basins whose nativeness is this value"
+        nativeness: String
+        "Only the river basins whose script is this value"
+        script: String
+        "The page to return. Pages count from 0."
+        page: Int! = 0
+        "The number of results on a page, from 1 to 100"
+        size: Int! = 10
+    ): IgnRiverBasinPage
+
+    "The man-made structures on the shore, such as piers, breakwaters and seawalls"
+    ignShorelineConstructions(
+        """
+        Only the features inside this box, written as minLongitude,minLatitude,maxLongitude,maxLatitude, such as
+        -4.50,36.65,-4.35,36.75 for the city of Málaga
+        """
+        bbox: String
+        """
+        false for the geometry of each feature, which can be long for lines and areas. true, the default, leaves it out.
+        """
+        skipGeometry: Boolean = true
+        "Only the shoreline constructions whose localId is this value"
+        localId: String
+        "Only the shoreline constructions whose hydroId is this value"
+        hydroId: String
+        "Only the shoreline constructions whose name is this value"
+        name: String
+        "Only the shoreline constructions whose riverBasinDistrict is this value"
+        riverBasinDistrict: String
+        "Only the shoreline constructions whose riverBasinDistrictText is this value"
+        riverBasinDistrictText: String
+        "Only the shoreline constructions whose dateAdded is this value"
+        dateAdded: String
+        "Only the shoreline constructions whose structureType is this value"
+        structureType: String
+        "Only the shoreline constructions whose structureTypeText is this value"
+        structureTypeText: String
+        "Only the shoreline constructions whose condition is this value"
+        condition: String
+        "Only the shoreline constructions whose conditionText is this value"
+        conditionText: String
+        "Only the shoreline constructions whose source is this value"
+        source: String
+        "Only the shoreline constructions whose sourceText is this value"
+        sourceText: String
+        "Only the shoreline constructions whose resolution is this value"
+        resolution: String
+        "Only the shoreline constructions whose nameNilReason is this value"
+        nameNilReason: String
+        "Only the shoreline constructions whose variosNilReason is this value"
+        variosNilReason: String
+        "Only the shoreline constructions whose nameMissing is this value"
+        nameMissing: String
+        "Only the shoreline constructions whose variosMissing is this value"
+        variosMissing: String
+        "Only the shoreline constructions whose nativeness is this value"
+        nativeness: String
+        "Only the shoreline constructions whose script is this value"
+        script: String
+        "The page to return. Pages count from 0."
+        page: Int! = 0
+        "The number of results on a page, from 1 to 100"
+        size: Int! = 10
+    ): IgnShorelineConstructionPage
+
+    "One of the shoreline constructions by its id, with its geometry"
+    ignShorelineConstruction(
+        "The id of the feature, which ignShorelineConstructions gives"
+        id: ID!
+    ): IgnShorelineConstruction
+
+    """
+    The lakes, ponds and reservoirs, the water entirely surrounded by land. Standing water carries leptospirosis, a
+    disease of dogs.
+    """
+    ignStandingWaters(
+        """
+        Only the features inside this box, written as minLongitude,minLatitude,maxLongitude,maxLatitude, such as
+        -4.50,36.65,-4.35,36.75 for the city of Málaga
+        """
+        bbox: String
+        """
+        false for the geometry of each feature, which can be long for lines and areas. true, the default, leaves it out.
+        """
+        skipGeometry: Boolean = true
+        "Only the bodies of standing water whose localId is this value"
+        localId: String
+        "Only the bodies of standing water whose hydroId is this value"
+        hydroId: String
+        "Only the bodies of standing water whose name is this value"
+        name: String
+        "Only the bodies of standing water whose riverBasinDistrict is this value"
+        riverBasinDistrict: String
+        "Only the bodies of standing water whose riverBasinDistrictText is this value"
+        riverBasinDistrictText: String
+        "Only the bodies of standing water whose dateAdded is this value"
+        dateAdded: String
+        "Only the bodies of standing water whose standingWaterType is this value"
+        standingWaterType: String
+        "Only the bodies of standing water whose standingWaterTypeText is this value"
+        standingWaterTypeText: String
+        "Only the bodies of standing water whose drainsBasin is this value"
+        drainsBasin: String
+        "Only the bodies of standing water whose origin is this value"
+        origin: String
+        "Only the bodies of standing water whose originText is this value"
+        originText: String
+        "Only the bodies of standing water whose tidal is this value"
+        tidal: String
+        "Only the bodies of standing water whose elevation is this value"
+        elevation: String
+        "Only the bodies of standing water whose persistence is this value"
+        persistence: String
+        "Only the bodies of standing water whose persistenceText is this value"
+        persistenceText: String
+        "Only the bodies of standing water whose waterLevel is this value"
+        waterLevel: String
+        "Only the bodies of standing water whose waterLevelText is this value"
+        waterLevelText: String
+        "Only the bodies of standing water whose areaSquareMetres is this value"
+        areaSquareMetres: String
+        "Only the bodies of standing water whose source is this value"
+        source: String
+        "Only the bodies of standing water whose sourceText is this value"
+        sourceText: String
+        "Only the bodies of standing water whose elevationSource is this value"
+        elevationSource: String
+        "Only the bodies of standing water whose elevationSourceText is this value"
+        elevationSourceText: String
+        "Only the bodies of standing water whose resolution is this value"
+        resolution: String
+        "Only the bodies of standing water whose nameNilReason is this value"
+        nameNilReason: String
+        "Only the bodies of standing water whose variosNilReason is this value"
+        variosNilReason: String
+        "Only the bodies of standing water whose nameMissing is this value"
+        nameMissing: String
+        "Only the bodies of standing water whose variosMissing is this value"
+        variosMissing: String
+        "Only the bodies of standing water whose nativeness is this value"
+        nativeness: String
+        "Only the bodies of standing water whose script is this value"
+        script: String
+        "Only the bodies of standing water whose elevationNilReason is this value"
+        elevationNilReason: String
+        "Only the bodies of standing water whose elevationMissing is this value"
+        elevationMissing: String
+        "The page to return. Pages count from 0."
+        page: Int! = 0
+        "The number of results on a page, from 1 to 100"
+        size: Int! = 10
+    ): IgnStandingWaterPage
+
+    "One of the bodies of standing water by its id, with its geometry"
+    ignStandingWater(
+        "The id of the feature, which ignStandingWaters gives"
+        id: ID!
+    ): IgnStandingWater
+
+    "The rivers, streams and canals, natural and man-made, such as the Guadalmedina"
+    ignWatercourses(
+        """
+        Only the features inside this box, written as minLongitude,minLatitude,maxLongitude,maxLatitude, such as
+        -4.50,36.65,-4.35,36.75 for the city of Málaga
+        """
+        bbox: String
+        """
+        false for the geometry of each feature, which can be long for lines and areas. true, the default, leaves it out.
+        """
+        skipGeometry: Boolean = true
+        "Only the watercourses whose localId is this value"
+        localId: String
+        "Only the watercourses whose hydroId is this value"
+        hydroId: String
+        "Only the watercourses whose name is this value"
+        name: String
+        "Only the watercourses whose linkId is this value"
+        linkId: String
+        "Only the watercourses whose riverBasinDistrict is this value"
+        riverBasinDistrict: String
+        "Only the watercourses whose riverBasinDistrictText is this value"
+        riverBasinDistrictText: String
+        "Only the watercourses whose dateAdded is this value"
+        dateAdded: String
+        "Only the watercourses whose drainsBasin is this value"
+        drainsBasin: String
+        "Only the watercourses whose watercourseType is this value"
+        watercourseType: String
+        "Only the watercourses whose watercourseTypeText is this value"
+        watercourseTypeText: String
+        "Only the watercourses whose origin is this value"
+        origin: String
+        "Only the watercourses whose originText is this value"
+        originText: String
+        "Only the watercourses whose persistence is this value"
+        persistence: String
+        "Only the watercourses whose persistenceText is this value"
+        persistenceText: String
+        "Only the watercourses whose tidal is this value"
+        tidal: String
+        "Only the watercourses whose condition is this value"
+        condition: String
+        "Only the watercourses whose conditionText is this value"
+        conditionText: String
+        "Only the watercourses whose source is this value"
+        source: String
+        "Only the watercourses whose sourceText is this value"
+        sourceText: String
+        "Only the watercourses whose order is this value"
+        order: String
+        "Only the watercourses whose orderScheme is this value"
+        orderScheme: String
+        "Only the watercourses whose orderSchemeText is this value"
+        orderSchemeText: String
+        "Only the watercourses whose orderScope is this value"
+        orderScope: String
+        "Only the watercourses whose orderScopeText is this value"
+        orderScopeText: String
+        "Only the watercourses whose widthMax is this value"
+        widthMax: String
+        "Only the watercourses whose widthMaxText is this value"
+        widthMaxText: String
+        "Only the watercourses whose widthMin is this value"
+        widthMin: String
+        "Only the watercourses whose widthMinText is this value"
+        widthMinText: String
+        "Only the watercourses whose channelled is this value"
+        channelled: String
+        "Only the watercourses whose hierarchy is this value"
+        hierarchy: String
+        "Only the watercourses whose hierarchyText is this value"
+        hierarchyText: String
+        "Only the watercourses whose segmentType is this value"
+        segmentType: String
+        "Only the watercourses whose segmentTypeText is this value"
+        segmentTypeText: String
+        "Only the watercourses whose networkType is this value"
+        networkType: String
+        "Only the watercourses whose fictitious is this value"
+        fictitious: String
+        "Only the watercourses whose situation is this value"
+        situation: String
+        "Only the watercourses whose situationText is this value"
+        situationText: String
+        "Only the watercourses whose resolution is this value"
+        resolution: String
+        "Only the watercourses whose delineationKnown is this value"
+        delineationKnown: String
+        "Only the watercourses whose lengthMetres is this value"
+        lengthMetres: String
+        "Only the watercourses whose areaSquareMetres is this value"
+        areaSquareMetres: String
+        "Only the watercourses whose elevationSource is this value"
+        elevationSource: String
+        "Only the watercourses whose elevationSourceText is this value"
+        elevationSourceText: String
+        "Only the watercourses whose nameNilReason is this value"
+        nameNilReason: String
+        "Only the watercourses whose variosNilReason is this value"
+        variosNilReason: String
+        "Only the watercourses whose nameMissing is this value"
+        nameMissing: String
+        "Only the watercourses whose variosMissing is this value"
+        variosMissing: String
+        "Only the watercourses whose nativeness is this value"
+        nativeness: String
+        "Only the watercourses whose script is this value"
+        script: String
+        "Only the watercourses whose orderNilReason is this value"
+        orderNilReason: String
+        "Only the watercourses whose orderMissing is this value"
+        orderMissing: String
+        "Only the watercourses whose delineationKnownNilReason is this value"
+        delineationKnownNilReason: String
+        "Only the watercourses whose delineationKnownMissing is this value"
+        delineationKnownMissing: String
+        "Only the watercourses whose anchoNilReason is this value"
+        anchoNilReason: String
+        "Only the watercourses whose anchoMissing is this value"
+        anchoMissing: String
+        "The page to return. Pages count from 0."
+        page: Int! = 0
+        "The number of results on a page, from 1 to 100"
+        size: Int! = 10
+    ): IgnWatercoursePage
+
+    "One of the watercourses by its id, with its geometry"
+    ignWatercourse(
+        "The id of the feature, which ignWatercourses gives"
+        id: ID!
+    ): IgnWatercourse
+
+    "The wetlands, areas flooded at times whose soil is saturated with water"
+    ignWetlands(
+        """
+        Only the features inside this box, written as minLongitude,minLatitude,maxLongitude,maxLatitude, such as
+        -4.50,36.65,-4.35,36.75 for the city of Málaga
+        """
+        bbox: String
+        """
+        false for the geometry of each feature, which can be long for lines and areas. true, the default, leaves it out.
+        """
+        skipGeometry: Boolean = true
+        "Only the wetlands whose localId is this value"
+        localId: String
+        "Only the wetlands whose hydroId is this value"
+        hydroId: String
+        "Only the wetlands whose name is this value"
+        name: String
+        "Only the wetlands whose dateAdded is this value"
+        dateAdded: String
+        "Only the wetlands whose riverBasinDistrict is this value"
+        riverBasinDistrict: String
+        "Only the wetlands whose riverBasinDistrictText is this value"
+        riverBasinDistrictText: String
+        "Only the wetlands whose wetlandType is this value"
+        wetlandType: String
+        "Only the wetlands whose kind is this value"
+        kind: String
+        "Only the wetlands whose source is this value"
+        source: String
+        "Only the wetlands whose sourceText is this value"
+        sourceText: String
+        "Only the wetlands whose tidal is this value"
+        tidal: String
+        "Only the wetlands whose resolution is this value"
+        resolution: String
+        "Only the wetlands whose areaSquareMetres is this value"
+        areaSquareMetres: String
+        "Only the wetlands whose nameNilReason is this value"
+        nameNilReason: String
+        "Only the wetlands whose variosNilReason is this value"
+        variosNilReason: String
+        "Only the wetlands whose nameMissing is this value"
+        nameMissing: String
+        "Only the wetlands whose variosMissing is this value"
+        variosMissing: String
+        "Only the wetlands whose nativeness is this value"
+        nativeness: String
+        "Only the wetlands whose script is this value"
+        script: String
+        "The page to return. Pages count from 0."
+        page: Int! = 0
+        "The number of results on a page, from 1 to 100"
+        size: Int! = 10
+    ): IgnWetlandPage
+
+    "The areas of airports, airfields and heliports"
+    ignAerodromeAreas(
+        """
+        Only the features inside this box, written as minLongitude,minLatitude,maxLongitude,maxLatitude, such as
+        -4.50,36.65,-4.35,36.75 for the city of Málaga
+        """
+        bbox: String
+        """
+        false for the geometry of each feature, which can be long for lines and areas. true, the default, leaves it out.
+        """
+        skipGeometry: Boolean = true
+        "Only the aerodrome areas whose localId is this value"
+        localId: String
+        "Only the aerodrome areas whose aerodromeType is this value"
+        aerodromeType: String
+        "Only the aerodrome areas whose aerodromeCategory is this value"
+        aerodromeCategory: String
+        "Only the aerodrome areas whose aerodromeId is this value"
+        aerodromeId: String
+        "Only the aerodrome areas whose dateAdded is this value"
+        dateAdded: String
+        "Only the aerodrome areas whose name is this value"
+        name: String
+        "Only the aerodrome areas whose href is this value"
+        href: String
+        "Only the aerodrome areas whose nameNilReason is this value"
+        nameNilReason: String
+        "Only the aerodrome areas whose variosNilReason is this value"
+        variosNilReason: String
+        "Only the aerodrome areas whose nameMissing is this value"
+        nameMissing: String
+        "Only the aerodrome areas whose variosMissing is this value"
+        variosMissing: String
+        "The page to return. Pages count from 0."
+        page: Int! = 0
+        "The number of results on a page, from 1 to 100"
+        size: Int! = 10
+    ): IgnAerodromeAreaPage
+
+    "One of the aerodrome areas by its id, with its geometry"
+    ignAerodromeArea(
+        "The id of the feature, which ignAerodromeAreas gives"
+        id: ID!
+    ): IgnAerodromeArea
+
+    "The airports, airfields and heliports as points, with their IATA and ICAO codes, such as AGP for Málaga"
+    ignAerodromes(
+        """
+        Only the features inside this box, written as minLongitude,minLatitude,maxLongitude,maxLatitude, such as
+        -4.50,36.65,-4.35,36.75 for the city of Málaga
+        """
+        bbox: String
+        """
+        false for the geometry of each feature, which can be long for lines and areas. true, the default, leaves it out.
+        """
+        skipGeometry: Boolean = true
+        "Only the aerodromes whose localId is this value"
+        localId: String
+        "Only the aerodromes whose currentStatus is this value"
+        currentStatus: String
+        "Only the aerodromes whose aerodromeType is this value"
+        aerodromeType: String
+        "Only the aerodromes whose aerodromeCategory is this value"
+        aerodromeCategory: String
+        "Only the aerodromes whose altitude is this value"
+        altitude: String
+        "Only the aerodromes whose altitudeUnit is this value"
+        altitudeUnit: String
+        "Only the aerodromes whose aerodromeId is this value"
+        aerodromeId: String
+        "Only the aerodromes whose name is this value"
+        name: String
+        "Only the aerodromes whose iataCode is this value"
+        iataCode: String
+        "Only the aerodromes whose icaoCode is this value"
+        icaoCode: String
+        "Only the aerodromes whose dateAdded is this value"
+        dateAdded: String
+        "Only the aerodromes whose iataCodeNilReason is this value"
+        iataCodeNilReason: String
+        "Only the aerodromes whose icaoCodeNilReason is this value"
+        icaoCodeNilReason: String
+        "Only the aerodromes whose iataCodeMissing is this value"
+        iataCodeMissing: String
+        "Only the aerodromes whose icaoCodeMissing is this value"
+        icaoCodeMissing: String
+        "Only the aerodromes whose nameNilReason is this value"
+        nameNilReason: String
+        "Only the aerodromes whose variosNilReason is this value"
+        variosNilReason: String
+        "Only the aerodromes whose nameMissing is this value"
+        nameMissing: String
+        "Only the aerodromes whose variosMissing is this value"
+        variosMissing: String
+        "The page to return. Pages count from 0."
+        page: Int! = 0
+        "The number of results on a page, from 1 to 100"
+        size: Int! = 10
+    ): IgnAerodromePage
+
+    "One of the aerodromes by its id, with its geometry"
+    ignAerodrome(
+        "The id of the feature, which ignAerodromes gives"
+        id: ID!
+    ): IgnAerodrome
+
+    "The aprons of airports, where aircraft park, load and refuel"
+    ignApronAreas(
+        """
+        Only the features inside this box, written as minLongitude,minLatitude,maxLongitude,maxLatitude, such as
+        -4.50,36.65,-4.35,36.75 for the city of Málaga
+        """
+        bbox: String
+        """
+        false for the geometry of each feature, which can be long for lines and areas. true, the default, leaves it out.
+        """
+        skipGeometry: Boolean = true
+        "Only the apron areas whose localId is this value"
+        localId: String
+        "Only the apron areas whose aerodromeId is this value"
+        aerodromeId: String
+        "Only the apron areas whose dateAdded is this value"
+        dateAdded: String
+        "Only the apron areas whose name is this value"
+        name: String
+        "Only the apron areas whose surface is this value"
+        surface: String
+        "Only the apron areas whose nameNilReason is this value"
+        nameNilReason: String
+        "Only the apron areas whose variosNilReason is this value"
+        variosNilReason: String
+        "Only the apron areas whose nameMissing is this value"
+        nameMissing: String
+        "Only the apron areas whose variosMissing is this value"
+        variosMissing: String
+        "The page to return. Pages count from 0."
+        page: Int! = 0
+        "The number of results on a page, from 1 to 100"
+        size: Int! = 10
+    ): IgnApronAreaPage
+
+    "One of the apron areas by its id, with its geometry"
+    ignApronArea(
+        "The id of the feature, which ignApronAreas gives"
+        id: ID!
+    ): IgnApronArea
+
+    "The runways of airports, with their length, width and surface"
+    ignRunways(
+        """
+        Only the features inside this box, written as minLongitude,minLatitude,maxLongitude,maxLatitude, such as
+        -4.50,36.65,-4.35,36.75 for the city of Málaga
+        """
+        bbox: String
+        """
+        false for the geometry of each feature, which can be long for lines and areas. true, the default, leaves it out.
+        """
+        skipGeometry: Boolean = true
+        "Only the runways whose localId is this value"
+        localId: String
+        "Only the runways whose aerodromeId is this value"
+        aerodromeId: String
+        "Only the runways whose dateAdded is this value"
+        dateAdded: String
+        "Only the runways whose name is this value"
+        name: String
+        "Only the runways whose designator is this value"
+        designator: String
+        "Only the runways whose runwayType is this value"
+        runwayType: String
+        "Only the runways whose length is this value"
+        length: String
+        "Only the runways whose width is this value"
+        width: String
+        "Only the runways whose surface is this value"
+        surface: String
+        "Only the runways whose lengthUnit is this value"
+        lengthUnit: String
+        "Only the runways whose widthUnit is this value"
+        widthUnit: String
+        "Only the runways whose nameNilReason is this value"
+        nameNilReason: String
+        "Only the runways whose variosNilReason is this value"
+        variosNilReason: String
+        "Only the runways whose nameMissing is this value"
+        nameMissing: String
+        "Only the runways whose variosMissing is this value"
+        variosMissing: String
+        "Only the runways whose designatorNilReason is this value"
+        designatorNilReason: String
+        "Only the runways whose designatorMissing is this value"
+        designatorMissing: String
+        "Only the runways whose runwayTypeNilReason is this value"
+        runwayTypeNilReason: String
+        "Only the runways whose runwayTypeMissing is this value"
+        runwayTypeMissing: String
+        "The page to return. Pages count from 0."
+        page: Int! = 0
+        "The number of results on a page, from 1 to 100"
+        size: Int! = 10
+    ): IgnRunwayPage
+
+    "One of the runways by its id, with its geometry"
+    ignRunway(
+        "The id of the feature, which ignRunways gives"
+        id: ID!
+    ): IgnRunway
+
+    "The taxiways of airports"
+    ignTaxiways(
+        """
+        Only the features inside this box, written as minLongitude,minLatitude,maxLongitude,maxLatitude, such as
+        -4.50,36.65,-4.35,36.75 for the city of Málaga
+        """
+        bbox: String
+        """
+        false for the geometry of each feature, which can be long for lines and areas. true, the default, leaves it out.
+        """
+        skipGeometry: Boolean = true
+        "Only the taxiways whose localId is this value"
+        localId: String
+        "Only the taxiways whose aerodromeId is this value"
+        aerodromeId: String
+        "Only the taxiways whose dateAdded is this value"
+        dateAdded: String
+        "Only the taxiways whose name is this value"
+        name: String
+        "Only the taxiways whose designator is this value"
+        designator: String
+        "Only the taxiways whose surface is this value"
+        surface: String
+        "Only the taxiways whose length is this value"
+        length: String
+        "Only the taxiways whose width is this value"
+        width: String
+        "Only the taxiways whose lengthUnit is this value"
+        lengthUnit: String
+        "Only the taxiways whose widthUnit is this value"
+        widthUnit: String
+        "Only the taxiways whose nameNilReason is this value"
+        nameNilReason: String
+        "Only the taxiways whose variosNilReason is this value"
+        variosNilReason: String
+        "Only the taxiways whose nameMissing is this value"
+        nameMissing: String
+        "Only the taxiways whose variosMissing is this value"
+        variosMissing: String
+        "Only the taxiways whose designatorNilReason is this value"
+        designatorNilReason: String
+        "Only the taxiways whose designatorMissing is this value"
+        designatorMissing: String
+        "The page to return. Pages count from 0."
+        page: Int! = 0
+        "The number of results on a page, from 1 to 100"
+        size: Int! = 10
+    ): IgnTaxiwayPage
+
+    "One of the taxiways by its id, with its geometry"
+    ignTaxiway(
+        "The id of the feature, which ignTaxiways gives"
+        id: ID!
+    ): IgnTaxiway
+
+    "The cable cars, chair lifts and other cableways"
+    ignCablewayLinks(
+        """
+        Only the features inside this box, written as minLongitude,minLatitude,maxLongitude,maxLatitude, such as
+        -4.50,36.65,-4.35,36.75 for the city of Málaga
+        """
+        bbox: String
+        """
+        false for the geometry of each feature, which can be long for lines and areas. true, the default, leaves it out.
+        """
+        skipGeometry: Boolean = true
+        "Only the cableway links whose localId is this value"
+        localId: String
+        "Only the cableway links whose cablewayId is this value"
+        cablewayId: String
+        "Only the cableway links whose name is this value"
+        name: String
+        "Only the cableway links whose dateAdded is this value"
+        dateAdded: String
+        "Only the cableway links whose cablewayType is this value"
+        cablewayType: String
+        "Only the cableway links whose linkSetId is this value"
+        linkSetId: String
+        "Only the cableway links whose nameNilReason is this value"
+        nameNilReason: String
+        "Only the cableway links whose nameMissing is this value"
+        nameMissing: String
+        "Only the cableway links whose variosNilReason is this value"
+        variosNilReason: String
+        "Only the cableway links whose variosMissing is this value"
+        variosMissing: String
+        "Only the cableway links whose href is this value"
+        href: String
+        "The page to return. Pages count from 0."
+        page: Int! = 0
+        "The number of results on a page, from 1 to 100"
+        size: Int! = 10
+    ): IgnCablewayLinkPage
+
+    "One of the cableway links by its id, with its geometry"
+    ignCablewayLink(
+        "The id of the feature, which ignCablewayLinks gives"
+        id: ID!
+    ): IgnCablewayLink
+
+    "The stations of the cableways"
+    ignCablewayNodes(
+        """
+        Only the features inside this box, written as minLongitude,minLatitude,maxLongitude,maxLatitude, such as
+        -4.50,36.65,-4.35,36.75 for the city of Málaga
+        """
+        bbox: String
+        """
+        false for the geometry of each feature, which can be long for lines and areas. true, the default, leaves it out.
+        """
+        skipGeometry: Boolean = true
+        "Only the cableway nodes whose localId is this value"
+        localId: String
+        "Only the cableway nodes whose cablewayNodeId is this value"
+        cablewayNodeId: String
+        "Only the cableway nodes whose source is this value"
+        source: String
+        "Only the cableway nodes whose dateAdded is this value"
+        dateAdded: String
+        "The page to return. Pages count from 0."
+        page: Int! = 0
+        "The number of results on a page, from 1 to 100"
+        size: Int! = 10
+    ): IgnCablewayNodePage
+
+    "One of the cableway nodes by its id, with its geometry"
+    ignCablewayNode(
+        "The id of the feature, which ignCablewayNodes gives"
+        id: ID!
+    ): IgnCablewayNode
+
+    "The segments of the railway network, with their gauge, tracks and electrification"
+    ignRailwayLinks(
+        """
+        Only the features inside this box, written as minLongitude,minLatitude,maxLongitude,maxLatitude, such as
+        -4.50,36.65,-4.35,36.75 for the city of Málaga
+        """
+        bbox: String
+        """
+        false for the geometry of each feature, which can be long for lines and areas. true, the default, leaves it out.
+        """
+        skipGeometry: Boolean = true
+        "Only the railway links whose localId is this value"
+        localId: String
+        "Only the railway links whose segmentId is this value"
+        segmentId: String
+        "Only the railway links whose fictitious is this value"
+        fictitious: String
+        "Only the railway links whose href is this value"
+        href: String
+        "Only the railway links whose gaugeCategory is this value"
+        gaugeCategory: String
+        "Only the railway links whose tracks is this value"
+        tracks: String
+        "Only the railway links whose electrified is this value"
+        electrified: String
+        "Only the railway links whose dateAdded is this value"
+        dateAdded: String
+        "Only the railway links whose gauge is this value"
+        gauge: String
+        "Only the railway links whose gaugeUnit is this value"
+        gaugeUnit: String
+        "The page to return. Pages count from 0."
+        page: Int! = 0
+        "The number of results on a page, from 1 to 100"
+        size: Int! = 10
+    ): IgnRailwayLinkPage
+
+    "One of the railway links by its id, with its geometry"
+    ignRailwayLink(
+        "The id of the feature, which ignRailwayLinks gives"
+        id: ID!
+    ): IgnRailwayLink
+
+    "The points of the railway network where segments meet"
+    ignRailwayNodes(
+        """
+        Only the features inside this box, written as minLongitude,minLatitude,maxLongitude,maxLatitude, such as
+        -4.50,36.65,-4.35,36.75 for the city of Málaga
+        """
+        bbox: String
+        """
+        false for the geometry of each feature, which can be long for lines and areas. true, the default, leaves it out.
+        """
+        skipGeometry: Boolean = true
+        "Only the railway nodes whose localId is this value"
+        localId: String
+        "Only the railway nodes whose nodeId is this value"
+        nodeId: String
+        "Only the railway nodes whose nodeType is this value"
+        nodeType: String
+        "Only the railway nodes whose dateModified is this value"
+        dateModified: String
+        "Only the railway nodes whose tipNodofcNilReason is this value"
+        tipNodofcNilReason: String
+        "Only the railway nodes whose tipNodofcMissing is this value"
+        tipNodofcMissing: String
+        "The page to return. Pages count from 0."
+        page: Int! = 0
+        "The number of results on a page, from 1 to 100"
+        size: Int! = 10
+    ): IgnRailwayNodePage
+
+    "One of the railway nodes by its id, with its geometry"
+    ignRailwayNode(
+        "The id of the feature, which ignRailwayNodes gives"
+        id: ID!
+    ): IgnRailwayNode
+
+    "The areas of the railway stations"
+    ignRailwayStationAreas(
+        """
+        Only the features inside this box, written as minLongitude,minLatitude,maxLongitude,maxLatitude, such as
+        -4.50,36.65,-4.35,36.75 for the city of Málaga
+        """
+        bbox: String
+        """
+        false for the geometry of each feature, which can be long for lines and areas. true, the default, leaves it out.
+        """
+        skipGeometry: Boolean = true
+        "Only the railway station areas whose localId is this value"
+        localId: String
+        "Only the railway station areas whose stationAreaId is this value"
+        stationAreaId: String
+        "Only the railway station areas whose stationId is this value"
+        stationId: String
+        "Only the railway station areas whose dateAdded is this value"
+        dateAdded: String
+        "Only the railway station areas whose name is this value"
+        name: String
+        "Only the railway station areas whose nameNilReason is this value"
+        nameNilReason: String
+        "Only the railway station areas whose variosNilReason is this value"
+        variosNilReason: String
+        "Only the railway station areas whose nameMissing is this value"
+        nameMissing: String
+        "Only the railway station areas whose variosMissing is this value"
+        variosMissing: String
+        "The page to return. Pages count from 0."
+        page: Int! = 0
+        "The number of results on a page, from 1 to 100"
+        size: Int! = 10
+    ): IgnRailwayStationAreaPage
+
+    "One of the railway station areas by its id, with its geometry"
+    ignRailwayStationArea(
+        "The id of the feature, which ignRailwayStationAreas gives"
+        id: ID!
+    ): IgnRailwayStationArea
+
+    "The railway stations as points, with their names and platforms"
+    ignRailwayStations(
+        """
+        Only the features inside this box, written as minLongitude,minLatitude,maxLongitude,maxLatitude, such as
+        -4.50,36.65,-4.35,36.75 for the city of Málaga
+        """
+        bbox: String
+        """
+        false for the geometry of each feature, which can be long for lines and areas. true, the default, leaves it out.
+        """
+        skipGeometry: Boolean = true
+        "Only the railway stations whose localId is this value"
+        localId: String
+        "Only the railway stations whose stationId is this value"
+        stationId: String
+        "Only the railway stations whose stationCode is this value"
+        stationCode: String
+        "Only the railway stations whose name is this value"
+        name: String
+        "Only the railway stations whose platforms is this value"
+        platforms: String
+        "Only the railway stations whose use is this value"
+        use: String
+        "Only the railway stations whose dateAdded is this value"
+        dateAdded: String
+        "Only the railway stations whose formOfNode is this value"
+        formOfNode: String
+        "Only the railway stations whose nameNilReason is this value"
+        nameNilReason: String
+        "Only the railway stations whose nameMissing is this value"
+        nameMissing: String
+        "Only the railway stations whose variosNilReason is this value"
+        variosNilReason: String
+        "Only the railway stations whose variosMissing is this value"
+        variosMissing: String
+        "Only the railway stations whose platformsNilReason is this value"
+        platformsNilReason: String
+        "Only the railway stations whose platformsMissing is this value"
+        platformsMissing: String
+        "The page to return. Pages count from 0."
+        page: Int! = 0
+        "The number of results on a page, from 1 to 100"
+        size: Int! = 10
+    ): IgnRailwayStationPage
+
+    "One of the railway stations by its id, with its geometry"
+    ignRailwayStation(
+        "The id of the feature, which ignRailwayStations gives"
+        id: ID!
+    ): IgnRailwayStation
+
+    "The segments of the road network, with their class, lanes and surface"
+    ignRoadLinks(
+        """
+        Only the features inside this box, written as minLongitude,minLatitude,maxLongitude,maxLatitude, such as
+        -4.50,36.65,-4.35,36.75 for the city of Málaga
+        """
+        bbox: String
+        """
+        false for the geometry of each feature, which can be long for lines and areas. true, the default, leaves it out.
+        """
+        skipGeometry: Boolean = true
+        "Only the road links whose localId is this value"
+        localId: String
+        "Only the road links whose segmentId is this value"
+        segmentId: String
+        "Only the road links whose fictitious is this value"
+        fictitious: String
+        "Only the road links whose functionalClass is this value"
+        functionalClass: String
+        "Only the road links whose lanes is this value"
+        lanes: String
+        "Only the road links whose surfaceCategory is this value"
+        surfaceCategory: String
+        "Only the road links whose href is this value"
+        href: String
+        "Only the road links whose dateAdded is this value"
+        dateAdded: String
+        "Only the road links whose formOfWay is this value"
+        formOfWay: String
+        "The page to return. Pages count from 0."
+        page: Int! = 0
+        "The number of results on a page, from 1 to 100"
+        size: Int! = 10
+    ): IgnRoadLinkPage
+
+    "One of the road links by its id, with its geometry"
+    ignRoadLink(
+        "The id of the feature, which ignRoadLinks gives"
+        id: ID!
+    ): IgnRoadLink
+
+    "The points of the road network where segments meet, such as junctions and roundabouts"
+    ignRoadNodes(
+        """
+        Only the features inside this box, written as minLongitude,minLatitude,maxLongitude,maxLatitude, such as
+        -4.50,36.65,-4.35,36.75 for the city of Málaga
+        """
+        bbox: String
+        """
+        false for the geometry of each feature, which can be long for lines and areas. true, the default, leaves it out.
+        """
+        skipGeometry: Boolean = true
+        "Only the road nodes whose localId is this value"
+        localId: String
+        "Only the road nodes whose nodeId is this value"
+        nodeId: String
+        "Only the road nodes whose nodeType is this value"
+        nodeType: String
+        "Only the road nodes whose dateModified is this value"
+        dateModified: String
+        "Only the road nodes whose nodeTypeNilReason is this value"
+        nodeTypeNilReason: String
+        "The page to return. Pages count from 0."
+        page: Int! = 0
+        "The number of results on a page, from 1 to 100"
+        size: Int! = 10
+    ): IgnRoadNodePage
+
+    "One of the road nodes by its id, with its geometry"
+    ignRoadNode(
+        "The id of the feature, which ignRoadNodes gives"
+        id: ID!
+    ): IgnRoadNode
+
+    "The service areas and rest areas next to the roads, the places for a stop on a trip with a dog"
+    ignRoadServiceAreas(
+        """
+        Only the features inside this box, written as minLongitude,minLatitude,maxLongitude,maxLatitude, such as
+        -4.50,36.65,-4.35,36.75 for the city of Málaga
+        """
+        bbox: String
+        """
+        false for the geometry of each feature, which can be long for lines and areas. true, the default, leaves it out.
+        """
+        skipGeometry: Boolean = true
+        "Only the road service areas whose localId is this value"
+        localId: String
+        "Only the road service areas whose serviceAreaId is this value"
+        serviceAreaId: String
+        "Only the road service areas whose roadPointId is this value"
+        roadPointId: String
+        "Only the road service areas whose dateAdded is this value"
+        dateAdded: String
+        "Only the road service areas whose name is this value"
+        name: String
+        "Only the road service areas whose serviceType is this value"
+        serviceType: String
+        "Only the road service areas whose nameNilReason is this value"
+        nameNilReason: String
+        "Only the road service areas whose variosNilReason is this value"
+        variosNilReason: String
+        "Only the road service areas whose nameMissing is this value"
+        nameMissing: String
+        "Only the road service areas whose variosMissing is this value"
+        variosMissing: String
+        "The page to return. Pages count from 0."
+        page: Int! = 0
+        "The number of results on a page, from 1 to 100"
+        size: Int! = 10
+    ): IgnRoadServiceAreaPage
+
+    "One of the road service areas by its id, with its geometry"
+    ignRoadServiceArea(
+        "The id of the feature, which ignRoadServiceAreas gives"
+        id: ID!
+    ): IgnRoadServiceArea
+
+    "The land areas of the sea and inland ports"
+    ignPortAreas(
+        """
+        Only the features inside this box, written as minLongitude,minLatitude,maxLongitude,maxLatitude, such as
+        -4.50,36.65,-4.35,36.75 for the city of Málaga
+        """
+        bbox: String
+        """
+        false for the geometry of each feature, which can be long for lines and areas. true, the default, leaves it out.
+        """
+        skipGeometry: Boolean = true
+        "Only the port areas whose localId is this value"
+        localId: String
+        "Only the port areas whose portAreaId is this value"
+        portAreaId: String
+        "Only the port areas whose href is this value"
+        href: String
+        "Only the port areas whose dateAdded is this value"
+        dateAdded: String
+        "Only the port areas whose name is this value"
+        name: String
+        "Only the port areas whose nameNilReason is this value"
+        nameNilReason: String
+        "Only the port areas whose variosNilReason is this value"
+        variosNilReason: String
+        "Only the port areas whose nameMissing is this value"
+        nameMissing: String
+        "Only the port areas whose variosMissing is this value"
+        variosMissing: String
+        "The page to return. Pages count from 0."
+        page: Int! = 0
+        "The number of results on a page, from 1 to 100"
+        size: Int! = 10
+    ): IgnPortAreaPage
+
+    "One of the port areas by its id, with its geometry"
+    ignPortArea(
+        "The id of the feature, which ignPortAreas gives"
+        id: ID!
+    ): IgnPortArea
+
+    "The sea and inland ports as points, such as the port of Málaga"
+    ignPorts(
+        """
+        Only the features inside this box, written as minLongitude,minLatitude,maxLongitude,maxLatitude, such as
+        -4.50,36.65,-4.35,36.75 for the city of Málaga
+        """
+        bbox: String
+        """
+        false for the geometry of each feature, which can be long for lines and areas. true, the default, leaves it out.
+        """
+        skipGeometry: Boolean = true
+        "Only the ports whose localId is this value"
+        localId: String
+        "Only the ports whose portId is this value"
+        portId: String
+        "Only the ports whose name is this value"
+        name: String
+        "Only the ports whose dateAdded is this value"
+        dateAdded: String
+        "Only the ports whose href is this value"
+        href: String
+        "Only the ports whose portStationId is this value"
+        portStationId: String
+        "Only the ports whose physicalCondition is this value"
+        physicalCondition: String
+        "Only the ports whose currentStatus is this value"
+        currentStatus: String
+        "The page to return. Pages count from 0."
+        page: Int! = 0
+        "The number of results on a page, from 1 to 100"
+        size: Int! = 10
+    ): IgnPortPage
+
+    "One of the ports by its id, with its geometry"
+    ignPort(
+        "The id of the feature, which ignPorts gives"
+        id: ID!
+    ): IgnPort
+
+    "The sea and inland waterways between two nodes"
+    ignWaterwayLinks(
+        """
+        Only the features inside this box, written as minLongitude,minLatitude,maxLongitude,maxLatitude, such as
+        -4.50,36.65,-4.35,36.75 for the city of Málaga
+        """
+        bbox: String
+        """
+        false for the geometry of each feature, which can be long for lines and areas. true, the default, leaves it out.
+        """
+        skipGeometry: Boolean = true
+        "Only the waterway links whose localId is this value"
+        localId: String
+        "Only the waterway links whose waterwayId is this value"
+        waterwayId: String
+        "Only the waterway links whose href is this value"
+        href: String
+        "Only the waterway links whose dateAdded is this value"
+        dateAdded: String
+        "The page to return. Pages count from 0."
+        page: Int! = 0
+        "The number of results on a page, from 1 to 100"
+        size: Int! = 10
+    ): IgnWaterwayLinkPage
+
+    "One of the waterway links by its id, with its geometry"
+    ignWaterwayLink(
+        "The id of the feature, which ignWaterwayLinks gives"
+        id: ID!
+    ): IgnWaterwayLink
+
+    "The points of the network of waterways"
+    ignWaterwayNodes(
+        """
+        Only the features inside this box, written as minLongitude,minLatitude,maxLongitude,maxLatitude, such as
+        -4.50,36.65,-4.35,36.75 for the city of Málaga
+        """
+        bbox: String
+        """
+        false for the geometry of each feature, which can be long for lines and areas. true, the default, leaves it out.
+        """
+        skipGeometry: Boolean = true
+        "Only the waterway nodes whose localId is this value"
+        localId: String
+        "Only the waterway nodes whose waterwayNodeId is this value"
+        waterwayNodeId: String
+        "Only the waterway nodes whose dateAdded is this value"
+        dateAdded: String
+        "The page to return. Pages count from 0."
+        page: Int! = 0
+        "The number of results on a page, from 1 to 100"
+        size: Int! = 10
+    ): IgnWaterwayNodePage
+
+    "One of the waterway nodes by its id, with its geometry"
+    ignWaterwayNode(
+        "The id of the feature, which ignWaterwayNodes gives"
+        id: ID!
+    ): IgnWaterwayNode
+
+    "The kilometre posts along the roads, with their number"
+    ignKilometrePosts(
+        """
+        Only the features inside this box, written as minLongitude,minLatitude,maxLongitude,maxLatitude, such as
+        -4.50,36.65,-4.35,36.75 for the city of Málaga
+        """
+        bbox: String
+        """
+        false for the geometry of each feature, which can be long for lines and areas. true, the default, leaves it out.
+        """
+        skipGeometry: Boolean = true
+        "Only the kilometre posts whose localId is this value"
+        localId: String
+        "Only the kilometre posts whose roadId is this value"
+        roadId: String
+        "Only the kilometre posts whose segmentId is this value"
+        segmentId: String
+        "Only the kilometre posts whose href is this value"
+        href: String
+        "Only the kilometre posts whose postId is this value"
+        postId: String
+        "Only the kilometre posts whose number is this value"
+        number: String
+        "Only the kilometre posts whose postType is this value"
+        postType: String
+        "Only the kilometre posts whose direction is this value"
+        direction: String
+        "Only the kilometre posts whose dateAdded is this value"
+        dateAdded: String
+        "Only the kilometre posts whose roadHref is this value"
+        roadHref: String
+        "Only the kilometre posts whose directionNilReason is this value"
+        directionNilReason: String
+        "Only the kilometre posts whose directionMissing is this value"
+        directionMissing: String
+        "The page to return. Pages count from 0."
+        page: Int! = 0
+        "The number of results on a page, from 1 to 100"
+        size: Int! = 10
+    ): IgnKilometrePostPage
+
+    "One of the kilometre posts by its id, with its geometry"
+    ignKilometrePost(
+        "The id of the feature, which ignKilometrePosts gives"
+        id: ID!
+    ): IgnKilometrePost
+}
+
+"""
+The addresses of Spain from CartoCiudad: the street, the number, the postal code and the town of each entrance of a
+building, with its point
+"""
+type IgnAddress {
+    "The id of the feature, for the field that reads one"
+    id: ID
+    "The geometry of the feature as GeoJSON, in WGS84, or null when the search left it out"
+    geometry: JSON
+    "The id of the feature before this one in the collection, when one feature is read"
+    previousId: String
+    "The id of the feature after this one in the collection, when one feature is read"
+    nextId: String
+    "The local id of the feature in its INSPIRE dataset"
+    localId: String
+    "The namespace of the INSPIRE id, such as ES.SCNE.CARTOCIUDAD"
+    namespace: String
+    "The street, in capitals, such as CALLE VENDEJA"
+    thoroughfareName: String
+    "The number of the address, such as 6"
+    addressNumber: String
+    "The letter or extension after the number, such as B"
+    addressNumberExtension: String
+    "The postal code, such as 29001"
+    postalCode: String
+    "The town or district of the address, such as Málaga"
+    addressArea: String
+    "The municipality, such as Málaga"
+    municipality: String
+    "The province, such as Málaga"
+    province: String
+    "The autonomous community, such as Andalucía"
+    region: String
+    "The day this version of the feature entered the dataset"
+    validSince: String
+    "Who supplied the data, such as Dirección General de Catastro"
+    dataProvider: String
+}
+
+"A page of the addresses of the IGN"
+type IgnAddressPage {
+    "The number of addresses that match, across all pages"
+    matched: Int
+    "The number of features on this page"
+    returned: Int
+    "When the service answered"
+    timeStamp: DateTime
+    "The addresses"
+    features: [IgnAddress]
+}
+
+"The datasets of existing land use of the SIOSE land information system, with the area each covers"
+type IgnLandUseDataset {
+    "The id of the feature, for the field that reads one"
+    id: ID
+    "The geometry of the feature as GeoJSON, in WGS84, or null when the search left it out"
+    geometry: JSON
+    "The id of the feature before this one in the collection, when one feature is read"
+    previousId: String
+    "The id of the feature after this one in the collection, when one feature is read"
+    nextId: String
+    "The local id of the feature in its INSPIRE dataset"
+    localId: String
+    "The namespace of the INSPIRE id, such as ES.SCNE.SIOSE"
+    namespace: String
+    "The version of the INSPIRE id, such as 2017"
+    versionId: String
+    "The name of the dataset"
+    name: String
+    "The day this version of the feature entered the dataset"
+    validSince: String
+    "The day this version of the feature left the dataset, or null while it is current"
+    validUntil: String
+    "The first day the data is valid for"
+    validFrom: String
+    "The last day the data is valid for"
+    validTo: String
+}
+
+"A page of the land use datasets of the IGN"
+type IgnLandUseDatasetPage {
+    "The number of land use datasets that match, across all pages"
+    matched: Int
+    "The number of features on this page"
+    returned: Int
+    "When the service answered"
+    timeStamp: DateTime
+    "The land use datasets"
+    features: [IgnLandUseDataset]
+}
+
+"""
+The areas of existing land use from SIOSE AR 2017, each with its use in the HILUCS classification, such as residential
+or agricultural
+"""
+type IgnLandUseArea {
+    "The id of the feature, for the field that reads one"
+    id: ID
+    "The geometry of the feature as GeoJSON, in WGS84, or null when the search left it out"
+    geometry: JSON
+    "The id of the feature before this one in the collection, when one feature is read"
+    previousId: String
+    "The id of the feature after this one in the collection, when one feature is read"
+    nextId: String
+    "The local id of the feature in its INSPIRE dataset"
+    localId: String
+    "The namespace of the INSPIRE id, such as ES.SCNE.SIOSE"
+    namespace: String
+    "The version of the INSPIRE id, such as 2017"
+    versionId: String
+    "The land use in the HILUCS classification, as the address of its code"
+    landUse: String
+    "The day the use was observed"
+    observed: String
+    "The day this version of the feature entered the dataset"
+    validSince: String
+    "The day this version of the feature left the dataset, or null while it is current"
+    validUntil: String
+    "The first day the data is valid for"
+    validFrom: String
+    "The last day the data is valid for"
+    validTo: String
+    "A link to the related feature within the dataset"
+    href: String
+}
+
+"A page of the land use areas of the IGN"
+type IgnLandUseAreaPage {
+    "The number of land use areas that match, across all pages"
+    matched: Int
+    "The number of features on this page"
+    returned: Int
+    "When the service answered"
+    timeStamp: DateTime
+    "The land use areas"
+    features: [IgnLandUseArea]
+}
+
+"The units of land cover from SIOSE AR 2017, each with what covers it, such as buildings, crops or woodland"
+type IgnLandCoverUnit {
+    "The id of the feature, for the field that reads one"
+    id: ID
+    "The geometry of the feature as GeoJSON, in WGS84, or null when the search left it out"
+    geometry: JSON
+    "The id of the feature before this one in the collection, when one feature is read"
+    previousId: String
+    "The id of the feature after this one in the collection, when one feature is read"
+    nextId: String
+    "The local id of the feature in its INSPIRE dataset"
+    localId: String
+    "The namespace of the INSPIRE id, such as ES.SCNE.SIOSE"
+    namespace: String
+    "The version of the INSPIRE id, such as 2017"
+    versionId: String
+    "The day the cover was observed"
+    observed: String
+    "What covers the land, as the address of a code of the Spanish land cover classification"
+    landCoverClass: String
+    "The day this version of the feature entered the dataset"
+    validSince: String
+    "The day this version of the feature left the dataset, or null while it is current"
+    validUntil: String
+}
+
+"A page of the land cover units of the IGN"
+type IgnLandCoverUnitPage {
+    "The number of land cover units that match, across all pages"
+    matched: Int
+    "The number of features on this page"
+    returned: Int
+    "When the service answered"
+    timeStamp: DateTime
+    "The land cover units"
+    features: [IgnLandCoverUnit]
+}
+
+"The nodes of the network of rivers, where watercourse links meet"
+type IgnHydroNode {
+    "The id of the feature, for the field that reads one"
+    id: ID
+    "The geometry of the feature as GeoJSON, in WGS84, or null when the search left it out"
+    geometry: JSON
+    "The id of the feature before this one in the collection, when one feature is read"
+    previousId: String
+    "The id of the feature after this one in the collection, when one feature is read"
+    nextId: String
+    "The local id of the feature in its INSPIRE dataset"
+    localId: String
+    "The hydrographic id of the feature, such as ES050HYDAML0000000000328"
+    hydroId: String
+    "When the feature entered the dataset"
+    dateAdded: String
+    "The code of the river basin district, such as ES060 for the Andalusian Mediterranean basins"
+    riverBasinDistrict: String
+    "What the code of riverBasinDistrict means, in Spanish"
+    riverBasinDistrictText: String
+    "The id of the hydrographic network"
+    networkId: String
+    "The id of the hydrographic node"
+    nodeId: String
+    "The name of the feature, such as Aeropuerto de Málaga-Costa del Sol"
+    name: String
+    "The category of the node, as the address of a value in an INSPIRE code list, such as junction"
+    nodeCategory: String
+    "What the code of nodeCategory means, in Spanish"
+    nodeCategoryText: String
+    "The elevation, in metres"
+    elevation: Float
+    "The source of the data, as a code of the dataset"
+    source: String
+    "What the code of source means, in Spanish"
+    sourceText: String
+    "The resolution of the source, as a code of the dataset"
+    resolution: Int
+    "Why nodeCategory is empty, as an INSPIRE nil reason, such as unknown"
+    nodeCategoryNilReason: String
+    "Why name is empty, as an INSPIRE nil reason, such as unknown"
+    nameNilReason: String
+    "Why varios is empty, as an INSPIRE nil reason, such as unknown"
+    variosNilReason: String
+    "Whether name is empty on purpose"
+    nameMissing: Boolean
+    "Whether varios is empty on purpose"
+    variosMissing: String
+    "Whether the name is the native one"
+    nativeness: String
+    "The script of the name, such as Latn"
+    script: String
+}
+
+"A page of the hydrographic nodes of the IGN"
+type IgnHydroNodePage {
+    "The number of hydrographic nodes that match, across all pages"
+    matched: Int
+    "The number of features on this page"
+    returned: Int
+    "When the service answered"
+    timeStamp: DateTime
+    "The hydrographic nodes"
+    features: [IgnHydroNode]
+}
+
+"The segments of watercourses in the network of rivers"
+type IgnWatercourseLink {
+    "The id of the feature, for the field that reads one"
+    id: ID
+    "The geometry of the feature as GeoJSON, in WGS84, or null when the search left it out"
+    geometry: JSON
+    "The id of the feature before this one in the collection, when one feature is read"
+    previousId: String
+    "The id of the feature after this one in the collection, when one feature is read"
+    nextId: String
+    "The local id of the feature in its INSPIRE dataset"
+    localId: String
+    "The hydrographic id of the feature, such as ES050HYDAML0000000000328"
+    hydroId: String
+    "When the feature entered the dataset"
+    dateAdded: String
+    "The code of the river basin district, such as ES060 for the Andalusian Mediterranean basins"
+    riverBasinDistrict: String
+    "What the code of riverBasinDistrict means, in Spanish"
+    riverBasinDistrictText: String
+    "The id of the hydrographic network"
+    networkId: String
+    "The id of the segment"
+    segmentId: String
+    "The segment to the left, in the network"
+    leftSegment: String
+    "The segment to the right, in the network"
+    rightSegment: String
+    "The node the segment starts at"
+    startNode: String
+    "The node the segment ends at"
+    endNode: String
+    "The direction of the flow along the segment, as a code of the dataset"
+    flowDirection: String
+    "What the code of flowDirection means, in Spanish"
+    flowDirectionText: String
+    "Whether the segment is fictitious, drawn to keep the network connected"
+    fictitious: Boolean
+    "The id of the watercourse"
+    watercourseId: String
+    "The name of the feature, such as Aeropuerto de Málaga-Costa del Sol"
+    name: String
+    "The source of the data, as a code of the dataset"
+    source: String
+    "What the code of source means, in Spanish"
+    sourceText: String
+    "The length, in metres"
+    lengthMetres: Float
+    "The resolution of the source, as a code of the dataset"
+    resolution: Int
+    "Why name is empty, as an INSPIRE nil reason, such as unknown"
+    nameNilReason: String
+    "Why varios is empty, as an INSPIRE nil reason, such as unknown"
+    variosNilReason: String
+    "Whether name is empty on purpose"
+    nameMissing: String
+    "Whether varios is empty on purpose"
+    variosMissing: String
+    "Whether the name is the native one"
+    nativeness: String
+    "The script of the name, such as Latn"
+    script: String
+}
+
+"A page of the watercourse links of the IGN"
+type IgnWatercourseLinkPage {
+    "The number of watercourse links that match, across all pages"
+    matched: Int
+    "The number of features on this page"
+    returned: Int
+    "When the service answered"
+    timeStamp: DateTime
+    "The watercourse links"
+    features: [IgnWatercourseLink]
+}
+
+"The sequences of segments that form one path without branches through the network of rivers"
+type IgnWatercourseLinkSequence {
+    "The id of the feature, for the field that reads one"
+    id: ID
+    "The geometry of the feature as GeoJSON, in WGS84, or null when the search left it out"
+    geometry: JSON
+    "The id of the feature before this one in the collection, when one feature is read"
+    previousId: String
+    "The id of the feature after this one in the collection, when one feature is read"
+    nextId: String
+    "The local id of the feature in its INSPIRE dataset"
+    localId: String
+    "The hydrographic id of the feature, such as ES050HYDAML0000000000328"
+    hydroId: String
+    "When the feature entered the dataset"
+    dateAdded: String
+    "The code of the river basin district, such as ES060 for the Andalusian Mediterranean basins"
+    riverBasinDistrict: String
+    "What the code of riverBasinDistrict means, in Spanish"
+    riverBasinDistrictText: String
+    "The id of the watercourse"
+    watercourseId: String
+    "The id of the hydrographic network"
+    networkId: String
+    "The name of the feature, such as Aeropuerto de Málaga-Costa del Sol"
+    name: String
+    "The source of the data, as a code of the dataset"
+    source: String
+    "What the code of source means, in Spanish"
+    sourceText: String
+    "The length, in metres"
+    lengthMetres: Float
+    "The resolution of the source, as a code of the dataset"
+    resolution: Int
+    "Why name is empty, as an INSPIRE nil reason, such as unknown"
+    nameNilReason: String
+    "Why varios is empty, as an INSPIRE nil reason, such as unknown"
+    variosNilReason: String
+    "Whether name is empty on purpose"
+    nameMissing: String
+    "Whether varios is empty on purpose"
+    variosMissing: Boolean
+    "Whether the name is the native one"
+    nativeness: String
+    "The script of the name, such as Latn"
+    script: String
+}
+
+"A page of the watercourse link sequences of the IGN"
+type IgnWatercourseLinkSequencePage {
+    "The number of watercourse link sequences that match, across all pages"
+    matched: Int
+    "The number of features on this page"
+    returned: Int
+    "When the service answered"
+    timeStamp: DateTime
+    "The watercourse link sequences"
+    features: [IgnWatercourseLinkSequence]
+}
+
+"The man-made objects that carry water over or under an obstacle: aqueducts, bridges, culverts and siphons"
+type IgnWaterCrossing {
+    "The id of the feature, for the field that reads one"
+    id: ID
+    "The geometry of the feature as GeoJSON, in WGS84, or null when the search left it out"
+    geometry: JSON
+    "The id of the feature before this one in the collection, when one feature is read"
+    previousId: String
+    "The id of the feature after this one in the collection, when one feature is read"
+    nextId: String
+    "The local id of the feature in its INSPIRE dataset"
+    localId: String
+    "The hydrographic id of the feature, such as ES050HYDAML0000000000328"
+    hydroId: String
+    "The name of the feature, such as Aeropuerto de Málaga-Costa del Sol"
+    name: String
+    "The source of the data, as a code of the dataset"
+    source: String
+    "What the code of source means, in Spanish"
+    sourceText: String
+    "The code of the river basin district, such as ES060 for the Andalusian Mediterranean basins"
+    riverBasinDistrict: String
+    "What the code of riverBasinDistrict means, in Spanish"
+    riverBasinDistrictText: String
+    "When the feature entered the dataset"
+    dateAdded: String
+    "The kind of crossing, as the address of a value in an INSPIRE code list, such as culvert"
+    crossingType: String
+    "What the code of crossingType means, in Spanish"
+    crossingTypeText: String
+    "The id of the hydrographic node"
+    nodeId: String
+    "The id of the related building"
+    buildingId: String
+    "The condition of the facility, as the address of a value in an INSPIRE code list"
+    condition: String
+    "What the code of condition means, in Spanish"
+    conditionText: String
+    "The resolution of the source, as a code of the dataset"
+    resolution: Int
+    "Why name is empty, as an INSPIRE nil reason, such as unknown"
+    nameNilReason: String
+    "Why varios is empty, as an INSPIRE nil reason, such as unknown"
+    variosNilReason: String
+    "Whether name is empty on purpose"
+    nameMissing: Boolean
+    "Whether varios is empty on purpose"
+    variosMissing: Boolean
+    "Whether the name is the native one"
+    nativeness: String
+    "The script of the name, such as Latn"
+    script: String
+}
+
+"A page of the water crossings of the IGN"
+type IgnWaterCrossingPage {
+    "The number of water crossings that match, across all pages"
+    matched: Int
+    "The number of features on this page"
+    returned: Int
+    "When the service answered"
+    timeStamp: DateTime
+    "The water crossings"
+    features: [IgnWaterCrossing]
+}
+
+"The dams and weirs that store water or control its flow"
+type IgnDam {
+    "The id of the feature, for the field that reads one"
+    id: ID
+    "The geometry of the feature as GeoJSON, in WGS84, or null when the search left it out"
+    geometry: JSON
+    "The id of the feature before this one in the collection, when one feature is read"
+    previousId: String
+    "The id of the feature after this one in the collection, when one feature is read"
+    nextId: String
+    "The local id of the feature in its INSPIRE dataset"
+    localId: String
+    "The hydrographic id of the feature, such as ES050HYDAML0000000000328"
+    hydroId: String
+    "The name of the feature, such as Aeropuerto de Málaga-Costa del Sol"
+    name: String
+    "The source of the data, as a code of the dataset"
+    source: String
+    "What the code of source means, in Spanish"
+    sourceText: String
+    "The code of the river basin district, such as ES060 for the Andalusian Mediterranean basins"
+    riverBasinDistrict: String
+    "What the code of riverBasinDistrict means, in Spanish"
+    riverBasinDistrictText: String
+    "When the feature entered the dataset"
+    dateAdded: String
+    "The kind of dam, as a code of the dataset"
+    damType: String
+    "What the code of damType means, in Spanish"
+    damTypeText: String
+    "The id of the hydrographic node"
+    nodeId: String
+    "The id of the related building"
+    buildingId: String
+    "The elevation of the crest of the dam, in metres"
+    crestElevation: Float
+    "What the dam is made of, as a code of the dataset"
+    material: String
+    "What the code of material means, in Spanish"
+    materialText: String
+    "The condition of the facility, as the address of a value in an INSPIRE code list"
+    condition: String
+    "What the code of condition means, in Spanish"
+    conditionText: String
+    "The resolution of the source, as a code of the dataset"
+    resolution: Int
+    "The length of the crest of the dam, in metres"
+    crestLength: String
+    "Why name is empty, as an INSPIRE nil reason, such as unknown"
+    nameNilReason: String
+    "Why varios is empty, as an INSPIRE nil reason, such as unknown"
+    variosNilReason: String
+    "Whether name is empty on purpose"
+    nameMissing: Boolean
+    "Whether varios is empty on purpose"
+    variosMissing: String
+    "Whether the name is the native one"
+    nativeness: String
+    "The script of the name, such as Latn"
+    script: String
+}
+
+"A page of the dams and weirs of the IGN"
+type IgnDamPage {
+    "The number of dams and weirs that match, across all pages"
+    matched: Int
+    "The number of features on this page"
+    returned: Int
+    "When the service answered"
+    timeStamp: DateTime
+    "The dams and weirs"
+    features: [IgnDam]
+}
+
+"The areas whose runoff drains to a common outlet"
+type IgnDrainageBasin {
+    "The id of the feature, for the field that reads one"
+    id: ID
+    "The geometry of the feature as GeoJSON, in WGS84, or null when the search left it out"
+    geometry: JSON
+    "The id of the feature before this one in the collection, when one feature is read"
+    previousId: String
+    "The id of the feature after this one in the collection, when one feature is read"
+    nextId: String
+    "The local id of the feature in its INSPIRE dataset"
+    localId: String
+    "The hydrographic id of the feature, such as ES050HYDAML0000000000328"
+    hydroId: String
+    "The name of the feature, such as Aeropuerto de Málaga-Costa del Sol"
+    name: String
+    "The code of the river basin district, such as ES060 for the Andalusian Mediterranean basins"
+    riverBasinDistrict: String
+    "What the code of riverBasinDistrict means, in Spanish"
+    riverBasinDistrictText: String
+    "When the feature entered the dataset"
+    dateAdded: String
+    "The order of the basin in the hierarchy of basins"
+    order: String
+    "The scheme of the order, as a code of the dataset"
+    orderScheme: String
+    "What the code of orderScheme means, in Spanish"
+    orderSchemeText: String
+    "The scope of the order, as a code of the dataset"
+    orderScope: String
+    "What the code of orderScope means, in Spanish"
+    orderScopeText: String
+    "The source of the data, as a code of the dataset"
+    source: String
+    "What the code of source means, in Spanish"
+    sourceText: String
+    "Whether the feature is natural or man-made, as a code of the dataset"
+    origin: String
+    "What the code of origin means, in Spanish"
+    originText: String
+    "The area, in square metres"
+    areaSquareMetres: Float
+    "The resolution of the source, as a code of the dataset"
+    resolution: Int
+    "Why name is empty, as an INSPIRE nil reason, such as unknown"
+    nameNilReason: String
+    "Why varios is empty, as an INSPIRE nil reason, such as unknown"
+    variosNilReason: String
+    "Whether name is empty on purpose"
+    nameMissing: String
+    "Whether varios is empty on purpose"
+    variosMissing: Boolean
+    "Whether the name is the native one"
+    nativeness: String
+    "The script of the name, such as Latn"
+    script: String
+}
+
+"A page of the drainage basins of the IGN"
+type IgnDrainageBasinPage {
+    "The number of drainage basins that match, across all pages"
+    matched: Int
+    "The number of features on this page"
+    returned: Int
+    "When the service answered"
+    timeStamp: DateTime
+    "The drainage basins"
+    features: [IgnDrainageBasin]
+}
+
+"The waterfalls, where a watercourse drops vertically"
+type IgnWaterfall {
+    "The id of the feature, for the field that reads one"
+    id: ID
+    "The geometry of the feature as GeoJSON, in WGS84, or null when the search left it out"
+    geometry: JSON
+    "The id of the feature before this one in the collection, when one feature is read"
+    previousId: String
+    "The id of the feature after this one in the collection, when one feature is read"
+    nextId: String
+    "The local id of the feature in its INSPIRE dataset"
+    localId: String
+    "The hydrographic id of the feature, such as ES050HYDAML0000000000328"
+    hydroId: String
+    "The name of the feature, such as Aeropuerto de Málaga-Costa del Sol"
+    name: String
+    "The code of the river basin district, such as ES060 for the Andalusian Mediterranean basins"
+    riverBasinDistrict: String
+    "What the code of riverBasinDistrict means, in Spanish"
+    riverBasinDistrictText: String
+    "When the feature entered the dataset"
+    dateAdded: String
+    "The source of the data, as a code of the dataset"
+    source: String
+    "What the code of source means, in Spanish"
+    sourceText: String
+    "A description of the feature"
+    description: String
+    "The id of the hydrographic node"
+    nodeId: String
+    "Whether the water is there all year, as the address of a value in an INSPIRE code list, such as seasonal"
+    persistence: String
+    "What the code of persistence means, in Spanish"
+    persistenceText: String
+    "The resolution of the source, as a code of the dataset"
+    resolution: Int
+    "The script of the name, such as Latn"
+    script: String
+    "Why name is empty, as an INSPIRE nil reason, such as unknown"
+    nameNilReason: String
+    "Why varios is empty, as an INSPIRE nil reason, such as unknown"
+    variosNilReason: String
+    "Whether name is empty on purpose"
+    nameMissing: Boolean
+    "Whether varios is empty on purpose"
+    variosMissing: Boolean
+    "Whether the name is the native one"
+    nativeness: String
+}
+
+"A page of the waterfalls of the IGN"
+type IgnWaterfallPage {
+    "The number of waterfalls that match, across all pages"
+    matched: Int
+    "The number of features on this page"
+    returned: Int
+    "When the service answered"
+    timeStamp: DateTime
+    "The waterfalls"
+    features: [IgnWaterfall]
+}
+
+"The fords, the shallow places where a watercourse can be crossed"
+type IgnFord {
+    "The id of the feature, for the field that reads one"
+    id: ID
+    "The geometry of the feature as GeoJSON, in WGS84, or null when the search left it out"
+    geometry: JSON
+    "The id of the feature before this one in the collection, when one feature is read"
+    previousId: String
+    "The id of the feature after this one in the collection, when one feature is read"
+    nextId: String
+    "The local id of the feature in its INSPIRE dataset"
+    localId: String
+    "The hydrographic id of the feature, such as ES050HYDAML0000000000328"
+    hydroId: String
+    "The name of the feature, such as Aeropuerto de Málaga-Costa del Sol"
+    name: String
+    "The code of the river basin district, such as ES060 for the Andalusian Mediterranean basins"
+    riverBasinDistrict: String
+    "What the code of riverBasinDistrict means, in Spanish"
+    riverBasinDistrictText: String
+    "When the feature entered the dataset"
+    dateAdded: String
+    "The condition of the facility, as the address of a value in an INSPIRE code list"
+    condition: String
+    "What the code of condition means, in Spanish"
+    conditionText: String
+    "The source of the data, as a code of the dataset"
+    source: String
+    "What the code of source means, in Spanish"
+    sourceText: String
+    "The length, in metres"
+    lengthMetres: Float
+    "The resolution of the source, as a code of the dataset"
+    resolution: Int
+    "Why name is empty, as an INSPIRE nil reason, such as unknown"
+    nameNilReason: String
+    "Why varios is empty, as an INSPIRE nil reason, such as unknown"
+    variosNilReason: String
+    "Whether name is empty on purpose"
+    nameMissing: Boolean
+    "Whether varios is empty on purpose"
+    variosMissing: String
+    "Whether the name is the native one"
+    nativeness: String
+    "The script of the name, such as Latn"
+    script: String
+}
+
+"A page of the fords of the IGN"
+type IgnFordPage {
+    "The number of fords that match, across all pages"
+    matched: Int
+    "The number of features on this page"
+    returned: Int
+    "When the service answered"
+    timeStamp: DateTime
+    "The fords"
+    features: [IgnFord]
+}
+
+"The coastline at the zero level of the IGN, the reference of heights in Spain"
+type IgnShoreline {
+    "The id of the feature, for the field that reads one"
+    id: ID
+    "The geometry of the feature as GeoJSON, in WGS84, or null when the search left it out"
+    geometry: JSON
+    "The id of the feature before this one in the collection, when one feature is read"
+    previousId: String
+    "The id of the feature after this one in the collection, when one feature is read"
+    nextId: String
+    "The local id of the feature in its INSPIRE dataset"
+    localId: String
+    "The hydrographic id of the feature, such as ES050HYDAML0000000000328"
+    hydroId: String
+    "The code of the river basin district, such as ES060 for the Andalusian Mediterranean basins"
+    riverBasinDistrict: String
+    "When the feature entered the dataset"
+    dateAdded: String
+    "Whether the feature is natural or man-made, as a code of the dataset"
+    origin: String
+    "What the code of origin means, in Spanish"
+    originText: String
+    "The water level the line follows, as the address of a value in an INSPIRE code list, such as meanSeaLevel"
+    waterLevel: String
+    "What the code of waterLevel means, in Spanish"
+    waterLevelText: String
+    "The source of the data, as a code of the dataset"
+    source: String
+    "What the code of source means, in Spanish"
+    sourceText: String
+    "The length, in metres"
+    lengthMetres: Float
+    "The resolution of the source, as a code of the dataset"
+    resolution: Int
+}
+
+"A page of the shoreline segments of the IGN"
+type IgnShorelinePage {
+    "The number of shoreline segments that match, across all pages"
+    matched: Int
+    "The number of features on this page"
+    returned: Int
+    "When the service answered"
+    timeStamp: DateTime
+    "The shoreline segments"
+    features: [IgnShoreline]
+}
+
+"The locks that raise and lower boats from one water level to another"
+type IgnLock {
+    "The id of the feature, for the field that reads one"
+    id: ID
+    "The geometry of the feature as GeoJSON, in WGS84, or null when the search left it out"
+    geometry: JSON
+    "The id of the feature before this one in the collection, when one feature is read"
+    previousId: String
+    "The id of the feature after this one in the collection, when one feature is read"
+    nextId: String
+    "The local id of the feature in its INSPIRE dataset"
+    localId: String
+    "The hydrographic id of the feature, such as ES050HYDAML0000000000328"
+    hydroId: String
+    "The name of the feature, such as Aeropuerto de Málaga-Costa del Sol"
+    name: String
+    "The code of the river basin district, such as ES060 for the Andalusian Mediterranean basins"
+    riverBasinDistrict: String
+    "What the code of riverBasinDistrict means, in Spanish"
+    riverBasinDistrictText: String
+    "When the feature entered the dataset"
+    dateAdded: String
+    "The condition of the facility, as the address of a value in an INSPIRE code list"
+    condition: String
+    "What the code of condition means, in Spanish"
+    conditionText: String
+    "The source of the data, as a code of the dataset"
+    source: String
+    "What the code of source means, in Spanish"
+    sourceText: String
+    "The resolution of the source, as a code of the dataset"
+    resolution: Int
+    "Why name is empty, as an INSPIRE nil reason, such as unknown"
+    nameNilReason: String
+    "Why varios is empty, as an INSPIRE nil reason, such as unknown"
+    variosNilReason: String
+    "Whether name is empty on purpose"
+    nameMissing: Boolean
+    "Whether varios is empty on purpose"
+    variosMissing: String
+    "Whether the name is the native one"
+    nativeness: String
+    "The script of the name, such as Latn"
+    script: String
+}
+
+"A page of the locks of the IGN"
+type IgnLockPage {
+    "The number of locks that match, across all pages"
+    matched: Int
+    "The number of features on this page"
+    returned: Int
+    "When the service answered"
+    timeStamp: DateTime
+    "The locks"
+    features: [IgnLock]
+}
+
+"""
+The river basins, the territories whose surface runoff all flows to the sea through one mouth, such as the basin of the
+Guadalhorce
+"""
+type IgnRiverBasin {
+    "The id of the feature, for the field that reads one"
+    id: ID
+    "The geometry of the feature as GeoJSON, in WGS84, or null when the search left it out"
+    geometry: JSON
+    "The id of the feature before this one in the collection, when one feature is read"
+    previousId: String
+    "The id of the feature after this one in the collection, when one feature is read"
+    nextId: String
+    "The local id of the feature in its INSPIRE dataset"
+    localId: String
+    "The hydrographic id of the feature, such as ES050HYDAML0000000000328"
+    hydroId: String
+    "The name of the feature, such as Aeropuerto de Málaga-Costa del Sol"
+    name: String
+    "The code of the river basin district, such as ES060 for the Andalusian Mediterranean basins"
+    riverBasinDistrict: String
+    "What the code of riverBasinDistrict means, in Spanish"
+    riverBasinDistrictText: String
+    "When the feature entered the dataset"
+    dateAdded: String
+    "The order of the basin in the hierarchy of basins"
+    order: String
+    "The scheme of the order, as a code of the dataset"
+    orderScheme: String
+    "What the code of orderScheme means, in Spanish"
+    orderSchemeText: String
+    "The scope of the order, as a code of the dataset"
+    orderScope: String
+    "What the code of orderScope means, in Spanish"
+    orderScopeText: String
+    "The source of the data, as a code of the dataset"
+    source: String
+    "What the code of source means, in Spanish"
+    sourceText: String
+    "Whether the feature is natural or man-made, as a code of the dataset"
+    origin: String
+    "What the code of origin means, in Spanish"
+    originText: String
+    "The area, in square metres"
+    areaSquareMetres: Float
+    "The resolution of the source, as a code of the dataset"
+    resolution: Int
+    "Why name is empty, as an INSPIRE nil reason, such as unknown"
+    nameNilReason: String
+    "Why varios is empty, as an INSPIRE nil reason, such as unknown"
+    variosNilReason: String
+    "Whether name is empty on purpose"
+    nameMissing: Boolean
+    "Whether varios is empty on purpose"
+    variosMissing: Boolean
+    "Whether the name is the native one"
+    nativeness: String
+    "The script of the name, such as Latn"
+    script: String
+}
+
+"A page of the river basins of the IGN"
+type IgnRiverBasinPage {
+    "The number of river basins that match, across all pages"
+    matched: Int
+    "The number of features on this page"
+    returned: Int
+    "When the service answered"
+    timeStamp: DateTime
+    "The river basins"
+    features: [IgnRiverBasin]
+}
+
+"The man-made structures on the shore, such as piers, breakwaters and seawalls"
+type IgnShorelineConstruction {
+    "The id of the feature, for the field that reads one"
+    id: ID
+    "The geometry of the feature as GeoJSON, in WGS84, or null when the search left it out"
+    geometry: JSON
+    "The id of the feature before this one in the collection, when one feature is read"
+    previousId: String
+    "The id of the feature after this one in the collection, when one feature is read"
+    nextId: String
+    "The local id of the feature in its INSPIRE dataset"
+    localId: String
+    "The hydrographic id of the feature, such as ES050HYDAML0000000000328"
+    hydroId: String
+    "The name of the feature, such as Aeropuerto de Málaga-Costa del Sol"
+    name: String
+    "The code of the river basin district, such as ES060 for the Andalusian Mediterranean basins"
+    riverBasinDistrict: String
+    "What the code of riverBasinDistrict means, in Spanish"
+    riverBasinDistrictText: String
+    "When the feature entered the dataset"
+    dateAdded: String
+    "The kind of structure, as a code of the dataset"
+    structureType: String
+    "What the code of structureType means, in Spanish"
+    structureTypeText: String
+    "The condition of the facility, as the address of a value in an INSPIRE code list"
+    condition: String
+    "What the code of condition means, in Spanish"
+    conditionText: String
+    "The source of the data, as a code of the dataset"
+    source: String
+    "What the code of source means, in Spanish"
+    sourceText: String
+    "The resolution of the source, as a code of the dataset"
+    resolution: Int
+    "Why name is empty, as an INSPIRE nil reason, such as unknown"
+    nameNilReason: String
+    "Why varios is empty, as an INSPIRE nil reason, such as unknown"
+    variosNilReason: String
+    "Whether name is empty on purpose"
+    nameMissing: Boolean
+    "Whether varios is empty on purpose"
+    variosMissing: String
+    "Whether the name is the native one"
+    nativeness: String
+    "The script of the name, such as Latn"
+    script: String
+}
+
+"A page of the shoreline constructions of the IGN"
+type IgnShorelineConstructionPage {
+    "The number of shoreline constructions that match, across all pages"
+    matched: Int
+    "The number of features on this page"
+    returned: Int
+    "When the service answered"
+    timeStamp: DateTime
+    "The shoreline constructions"
+    features: [IgnShorelineConstruction]
+}
+
+"The lakes, ponds and reservoirs, the water entirely surrounded by land"
+type IgnStandingWater {
+    "The id of the feature, for the field that reads one"
+    id: ID
+    "The geometry of the feature as GeoJSON, in WGS84, or null when the search left it out"
+    geometry: JSON
+    "The id of the feature before this one in the collection, when one feature is read"
+    previousId: String
+    "The id of the feature after this one in the collection, when one feature is read"
+    nextId: String
+    "The local id of the feature in its INSPIRE dataset"
+    localId: String
+    "The hydrographic id of the feature, such as ES050HYDAML0000000000328"
+    hydroId: String
+    "The name of the feature, such as Aeropuerto de Málaga-Costa del Sol"
+    name: String
+    "The code of the river basin district, such as ES060 for the Andalusian Mediterranean basins"
+    riverBasinDistrict: String
+    "What the code of riverBasinDistrict means, in Spanish"
+    riverBasinDistrictText: String
+    "When the feature entered the dataset"
+    dateAdded: String
+    "The kind of standing water, as a code of the dataset"
+    standingWaterType: String
+    "What the code of standingWaterType means, in Spanish"
+    standingWaterTypeText: String
+    "The basin the water drains into"
+    drainsBasin: String
+    "Whether the feature is natural or man-made, as a code of the dataset"
+    origin: String
+    "What the code of origin means, in Spanish"
+    originText: String
+    "Whether the water is affected by the tide"
+    tidal: Boolean
+    "The elevation, in metres"
+    elevation: Float
+    "Whether the water is there all year, as the address of a value in an INSPIRE code list, such as seasonal"
+    persistence: String
+    "What the code of persistence means, in Spanish"
+    persistenceText: String
+    "The water level the line follows, as the address of a value in an INSPIRE code list, such as meanSeaLevel"
+    waterLevel: String
+    "What the code of waterLevel means, in Spanish"
+    waterLevelText: String
+    "The area, in square metres"
+    areaSquareMetres: Float
+    "The source of the data, as a code of the dataset"
+    source: String
+    "What the code of source means, in Spanish"
+    sourceText: String
+    "Where the elevation comes from, as a code of the dataset"
+    elevationSource: String
+    "What the code of elevationSource means, in Spanish"
+    elevationSourceText: String
+    "The resolution of the source, as a code of the dataset"
+    resolution: Int
+    "Why name is empty, as an INSPIRE nil reason, such as unknown"
+    nameNilReason: String
+    "Why varios is empty, as an INSPIRE nil reason, such as unknown"
+    variosNilReason: String
+    "Whether name is empty on purpose"
+    nameMissing: String
+    "Whether varios is empty on purpose"
+    variosMissing: Boolean
+    "Whether the name is the native one"
+    nativeness: String
+    "The script of the name, such as Latn"
+    script: String
+    "Why elevation is empty, as an INSPIRE nil reason, such as unknown"
+    elevationNilReason: String
+    "Whether elevation is empty on purpose"
+    elevationMissing: String
+}
+
+"A page of the bodies of standing water of the IGN"
+type IgnStandingWaterPage {
+    "The number of bodies of standing water that match, across all pages"
+    matched: Int
+    "The number of features on this page"
+    returned: Int
+    "When the service answered"
+    timeStamp: DateTime
+    "The bodies of standing water"
+    features: [IgnStandingWater]
+}
+
+"The rivers, streams and canals, natural and man-made, such as the Guadalmedina"
+type IgnWatercourse {
+    "The id of the feature, for the field that reads one"
+    id: ID
+    "The geometry of the feature as GeoJSON, in WGS84, or null when the search left it out"
+    geometry: JSON
+    "The id of the feature before this one in the collection, when one feature is read"
+    previousId: String
+    "The id of the feature after this one in the collection, when one feature is read"
+    nextId: String
+    "The local id of the feature in its INSPIRE dataset"
+    localId: String
+    "The hydrographic id of the feature, such as ES050HYDAML0000000000328"
+    hydroId: String
+    "The name of the feature, such as Aeropuerto de Málaga-Costa del Sol"
+    name: String
+    "The id of the watercourse link"
+    linkId: String
+    "The code of the river basin district, such as ES060 for the Andalusian Mediterranean basins"
+    riverBasinDistrict: String
+    "What the code of riverBasinDistrict means, in Spanish"
+    riverBasinDistrictText: String
+    "When the feature entered the dataset"
+    dateAdded: String
+    "The basin the water drains into"
+    drainsBasin: String
+    "The kind of watercourse, as a code of the dataset"
+    watercourseType: String
+    "What the code of watercourseType means, in Spanish"
+    watercourseTypeText: String
+    "Whether the feature is natural or man-made, as a code of the dataset"
+    origin: String
+    "What the code of origin means, in Spanish"
+    originText: String
+    "Whether the water is there all year, as the address of a value in an INSPIRE code list, such as seasonal"
+    persistence: String
+    "What the code of persistence means, in Spanish"
+    persistenceText: String
+    "Whether the water is affected by the tide"
+    tidal: Boolean
+    "The condition of the facility, as the address of a value in an INSPIRE code list"
+    condition: String
+    "What the code of condition means, in Spanish"
+    conditionText: String
+    "The source of the data, as a code of the dataset"
+    source: String
+    "What the code of source means, in Spanish"
+    sourceText: String
+    "The order of the basin in the hierarchy of basins"
+    order: String
+    "The scheme of the order, as a code of the dataset"
+    orderScheme: String
+    "What the code of orderScheme means, in Spanish"
+    orderSchemeText: String
+    "The scope of the order, as a code of the dataset"
+    orderScope: String
+    "What the code of orderScope means, in Spanish"
+    orderScopeText: String
+    "The largest width of the watercourse, as a code of the dataset"
+    widthMax: String
+    "What the code of widthMax means, in Spanish"
+    widthMaxText: String
+    "The smallest width of the watercourse, as a code of the dataset"
+    widthMin: String
+    "What the code of widthMin means, in Spanish"
+    widthMinText: String
+    "Whether the watercourse runs in a channel"
+    channelled: String
+    "The rank of the watercourse in the network, as a code of the dataset"
+    hierarchy: String
+    "What the code of hierarchy means, in Spanish"
+    hierarchyText: String
+    "The kind of segment, as a code of the dataset"
+    segmentType: String
+    "What the code of segmentType means, in Spanish"
+    segmentTypeText: String
+    "The kind of network, as a code of the dataset"
+    networkType: String
+    "Whether the segment is fictitious, drawn to keep the network connected"
+    fictitious: String
+    "Whether the water runs on the surface or underground, as a code of the dataset"
+    situation: String
+    "What the code of situation means, in Spanish"
+    situationText: String
+    "The resolution of the source, as a code of the dataset"
+    resolution: Int
+    "Whether the outline of the feature is known"
+    delineationKnown: Boolean
+    "The length, in metres"
+    lengthMetres: Float
+    "The area, in square metres"
+    areaSquareMetres: String
+    "Where the elevation comes from, as a code of the dataset"
+    elevationSource: String
+    "What the code of elevationSource means, in Spanish"
+    elevationSourceText: String
+    "Why name is empty, as an INSPIRE nil reason, such as unknown"
+    nameNilReason: String
+    "Why varios is empty, as an INSPIRE nil reason, such as unknown"
+    variosNilReason: String
+    "Whether name is empty on purpose"
+    nameMissing: Boolean
+    "Whether varios is empty on purpose"
+    variosMissing: Boolean
+    "Whether the name is the native one"
+    nativeness: String
+    "The script of the name, such as Latn"
+    script: String
+    "Why order is empty, as an INSPIRE nil reason, such as unknown"
+    orderNilReason: String
+    "Whether order is empty on purpose"
+    orderMissing: String
+    "Why delineationKnown is empty, as an INSPIRE nil reason, such as unknown"
+    delineationKnownNilReason: String
+    "Whether delineationKnown is empty on purpose"
+    delineationKnownMissing: String
+    "Why ancho is empty, as an INSPIRE nil reason, such as unknown"
+    anchoNilReason: String
+    "Whether ancho is empty on purpose"
+    anchoMissing: String
+}
+
+"A page of the watercourses of the IGN"
+type IgnWatercoursePage {
+    "The number of watercourses that match, across all pages"
+    matched: Int
+    "The number of features on this page"
+    returned: Int
+    "When the service answered"
+    timeStamp: DateTime
+    "The watercourses"
+    features: [IgnWatercourse]
+}
+
+"The wetlands, areas flooded at times whose soil is saturated with water"
+type IgnWetland {
+    "The id of the feature, for the field that reads one"
+    id: ID
+    "The geometry of the feature as GeoJSON, in WGS84, or null when the search left it out"
+    geometry: JSON
+    "The id of the feature before this one in the collection, when one feature is read"
+    previousId: String
+    "The id of the feature after this one in the collection, when one feature is read"
+    nextId: String
+    "The local id of the feature in its INSPIRE dataset"
+    localId: String
+    "The hydrographic id of the feature, such as ES050HYDAML0000000000328"
+    hydroId: String
+    "The name of the feature, such as Aeropuerto de Málaga-Costa del Sol"
+    name: String
+    "When the feature entered the dataset"
+    dateAdded: String
+    "The code of the river basin district, such as ES060 for the Andalusian Mediterranean basins"
+    riverBasinDistrict: String
+    "What the code of riverBasinDistrict means, in Spanish"
+    riverBasinDistrictText: String
+    "The kind of wetland, as a code of the dataset"
+    wetlandType: String
+    "The kind of feature, such as Zona encharcable (land that floods) or Barrio (neighbourhood)"
+    kind: String
+    "The source of the data, as a code of the dataset"
+    source: String
+    "What the code of source means, in Spanish"
+    sourceText: String
+    "Whether the water is affected by the tide"
+    tidal: Boolean
+    "The resolution of the source, as a code of the dataset"
+    resolution: Int
+    "The area, in square metres"
+    areaSquareMetres: Float
+    "Why name is empty, as an INSPIRE nil reason, such as unknown"
+    nameNilReason: String
+    "Why varios is empty, as an INSPIRE nil reason, such as unknown"
+    variosNilReason: String
+    "Whether name is empty on purpose"
+    nameMissing: Boolean
+    "Whether varios is empty on purpose"
+    variosMissing: String
+    "Whether the name is the native one"
+    nativeness: String
+    "The script of the name, such as Latn"
+    script: String
+}
+
+"A page of the wetlands of the IGN"
+type IgnWetlandPage {
+    "The number of wetlands that match, across all pages"
+    matched: Int
+    "The number of features on this page"
+    returned: Int
+    "When the service answered"
+    timeStamp: DateTime
+    "The wetlands"
+    features: [IgnWetland]
+}
+
+"The areas of airports, airfields and heliports"
+type IgnAerodromeArea {
+    "The id of the feature, for the field that reads one"
+    id: ID
+    "The geometry of the feature as GeoJSON, in WGS84, or null when the search left it out"
+    geometry: JSON
+    "The id of the feature before this one in the collection, when one feature is read"
+    previousId: String
+    "The id of the feature after this one in the collection, when one feature is read"
+    nextId: String
+    "The local id of the feature in its INSPIRE dataset"
+    localId: String
+    "The kind of aerodrome, as the address of a value in an INSPIRE code list, such as heliportOnly"
+    aerodromeType: String
+    "The category of the aerodrome, as the address of a value in an INSPIRE code list, such as domesticNational"
+    aerodromeCategory: String
+    "The id of the aerodrome"
+    aerodromeId: String
+    "When the feature entered the dataset"
+    dateAdded: String
+    "The name of the feature, such as Aeropuerto de Málaga-Costa del Sol"
+    name: String
+    "A link to the related feature within the dataset"
+    href: String
+    "Why name is empty, as an INSPIRE nil reason, such as unknown"
+    nameNilReason: String
+    "Why varios is empty, as an INSPIRE nil reason, such as unknown"
+    variosNilReason: String
+    "Whether name is empty on purpose"
+    nameMissing: String
+    "Whether varios is empty on purpose"
+    variosMissing: Boolean
+}
+
+"A page of the aerodrome areas of the IGN"
+type IgnAerodromeAreaPage {
+    "The number of aerodrome areas that match, across all pages"
+    matched: Int
+    "The number of features on this page"
+    returned: Int
+    "When the service answered"
+    timeStamp: DateTime
+    "The aerodrome areas"
+    features: [IgnAerodromeArea]
+}
+
+"The airports, airfields and heliports as points, with their IATA and ICAO codes, such as AGP for Málaga"
+type IgnAerodrome {
+    "The id of the feature, for the field that reads one"
+    id: ID
+    "The geometry of the feature as GeoJSON, in WGS84, or null when the search left it out"
+    geometry: JSON
+    "The id of the feature before this one in the collection, when one feature is read"
+    previousId: String
+    "The id of the feature after this one in the collection, when one feature is read"
+    nextId: String
+    "The local id of the feature in its INSPIRE dataset"
+    localId: String
+    "Whether it is in use, as the address of a value in an INSPIRE code list, such as functional"
+    currentStatus: String
+    "The kind of aerodrome, as the address of a value in an INSPIRE code list, such as heliportOnly"
+    aerodromeType: String
+    "The category of the aerodrome, as the address of a value in an INSPIRE code list, such as domesticNational"
+    aerodromeCategory: String
+    "The altitude of the aerodrome"
+    altitude: String
+    "The unit of the altitude"
+    altitudeUnit: String
+    "The id of the aerodrome"
+    aerodromeId: String
+    "The name of the feature, such as Aeropuerto de Málaga-Costa del Sol"
+    name: String
+    "The IATA code of the airport, such as AGP for Málaga"
+    iataCode: String
+    "The ICAO code of the airport, such as LEMG for Málaga"
+    icaoCode: String
+    "When the feature entered the dataset"
+    dateAdded: String
+    "Why iataCode is empty, as an INSPIRE nil reason, such as unknown"
+    iataCodeNilReason: String
+    "Why icaoCode is empty, as an INSPIRE nil reason, such as unknown"
+    icaoCodeNilReason: String
+    "Whether iataCode is empty on purpose"
+    iataCodeMissing: Boolean
+    "Whether icaoCode is empty on purpose"
+    icaoCodeMissing: Boolean
+    "Why name is empty, as an INSPIRE nil reason, such as unknown"
+    nameNilReason: String
+    "Why varios is empty, as an INSPIRE nil reason, such as unknown"
+    variosNilReason: String
+    "Whether name is empty on purpose"
+    nameMissing: String
+    "Whether varios is empty on purpose"
+    variosMissing: Boolean
+}
+
+"A page of the aerodromes of the IGN"
+type IgnAerodromePage {
+    "The number of aerodromes that match, across all pages"
+    matched: Int
+    "The number of features on this page"
+    returned: Int
+    "When the service answered"
+    timeStamp: DateTime
+    "The aerodromes"
+    features: [IgnAerodrome]
+}
+
+"The aprons of airports, where aircraft park, load and refuel"
+type IgnApronArea {
+    "The id of the feature, for the field that reads one"
+    id: ID
+    "The geometry of the feature as GeoJSON, in WGS84, or null when the search left it out"
+    geometry: JSON
+    "The id of the feature before this one in the collection, when one feature is read"
+    previousId: String
+    "The id of the feature after this one in the collection, when one feature is read"
+    nextId: String
+    "The local id of the feature in its INSPIRE dataset"
+    localId: String
+    "The id of the aerodrome"
+    aerodromeId: String
+    "When the feature entered the dataset"
+    dateAdded: String
+    "The name of the feature, such as Aeropuerto de Málaga-Costa del Sol"
+    name: String
+    "What the surface is made of, as the address of a value in an INSPIRE code list, such as concrete"
+    surface: String
+    "Why name is empty, as an INSPIRE nil reason, such as unknown"
+    nameNilReason: String
+    "Why varios is empty, as an INSPIRE nil reason, such as unknown"
+    variosNilReason: String
+    "Whether name is empty on purpose"
+    nameMissing: String
+    "Whether varios is empty on purpose"
+    variosMissing: Boolean
+}
+
+"A page of the apron areas of the IGN"
+type IgnApronAreaPage {
+    "The number of apron areas that match, across all pages"
+    matched: Int
+    "The number of features on this page"
+    returned: Int
+    "When the service answered"
+    timeStamp: DateTime
+    "The apron areas"
+    features: [IgnApronArea]
+}
+
+"The runways of airports, with their length, width and surface"
+type IgnRunway {
+    "The id of the feature, for the field that reads one"
+    id: ID
+    "The geometry of the feature as GeoJSON, in WGS84, or null when the search left it out"
+    geometry: JSON
+    "The id of the feature before this one in the collection, when one feature is read"
+    previousId: String
+    "The id of the feature after this one in the collection, when one feature is read"
+    nextId: String
+    "The local id of the feature in its INSPIRE dataset"
+    localId: String
+    "The id of the aerodrome"
+    aerodromeId: String
+    "When the feature entered the dataset"
+    dateAdded: String
+    "The name of the feature, such as Aeropuerto de Málaga-Costa del Sol"
+    name: String
+    "The designator of the runway or taxiway, such as D"
+    designator: String
+    "The kind of runway, as the address of a value in an INSPIRE code list, such as FATO for a helicopter landing area"
+    runwayType: String
+    "The length"
+    length: String
+    "The width"
+    width: String
+    "What the surface is made of, as the address of a value in an INSPIRE code list, such as concrete"
+    surface: String
+    "The unit of the length"
+    lengthUnit: String
+    "The unit of the width"
+    widthUnit: String
+    "Why name is empty, as an INSPIRE nil reason, such as unknown"
+    nameNilReason: String
+    "Why varios is empty, as an INSPIRE nil reason, such as unknown"
+    variosNilReason: String
+    "Whether name is empty on purpose"
+    nameMissing: String
+    "Whether varios is empty on purpose"
+    variosMissing: Boolean
+    "Why designator is empty, as an INSPIRE nil reason, such as unknown"
+    designatorNilReason: String
+    "Whether designator is empty on purpose"
+    designatorMissing: Boolean
+    "Why runwayType is empty, as an INSPIRE nil reason, such as unknown"
+    runwayTypeNilReason: String
+    "Whether runwayType is empty on purpose"
+    runwayTypeMissing: String
+}
+
+"A page of the runways of the IGN"
+type IgnRunwayPage {
+    "The number of runways that match, across all pages"
+    matched: Int
+    "The number of features on this page"
+    returned: Int
+    "When the service answered"
+    timeStamp: DateTime
+    "The runways"
+    features: [IgnRunway]
+}
+
+"The taxiways of airports"
+type IgnTaxiway {
+    "The id of the feature, for the field that reads one"
+    id: ID
+    "The geometry of the feature as GeoJSON, in WGS84, or null when the search left it out"
+    geometry: JSON
+    "The id of the feature before this one in the collection, when one feature is read"
+    previousId: String
+    "The id of the feature after this one in the collection, when one feature is read"
+    nextId: String
+    "The local id of the feature in its INSPIRE dataset"
+    localId: String
+    "The id of the aerodrome"
+    aerodromeId: String
+    "When the feature entered the dataset"
+    dateAdded: String
+    "The name of the feature, such as Aeropuerto de Málaga-Costa del Sol"
+    name: String
+    "The designator of the runway or taxiway, such as D"
+    designator: String
+    "What the surface is made of, as the address of a value in an INSPIRE code list, such as concrete"
+    surface: String
+    "The length"
+    length: String
+    "The width"
+    width: String
+    "The unit of the length"
+    lengthUnit: String
+    "The unit of the width"
+    widthUnit: String
+    "Why name is empty, as an INSPIRE nil reason, such as unknown"
+    nameNilReason: String
+    "Why varios is empty, as an INSPIRE nil reason, such as unknown"
+    variosNilReason: String
+    "Whether name is empty on purpose"
+    nameMissing: String
+    "Whether varios is empty on purpose"
+    variosMissing: Boolean
+    "Why designator is empty, as an INSPIRE nil reason, such as unknown"
+    designatorNilReason: String
+    "Whether designator is empty on purpose"
+    designatorMissing: String
+}
+
+"A page of the taxiways of the IGN"
+type IgnTaxiwayPage {
+    "The number of taxiways that match, across all pages"
+    matched: Int
+    "The number of features on this page"
+    returned: Int
+    "When the service answered"
+    timeStamp: DateTime
+    "The taxiways"
+    features: [IgnTaxiway]
+}
+
+"The cable cars, chair lifts and other cableways"
+type IgnCablewayLink {
+    "The id of the feature, for the field that reads one"
+    id: ID
+    "The geometry of the feature as GeoJSON, in WGS84, or null when the search left it out"
+    geometry: JSON
+    "The id of the feature before this one in the collection, when one feature is read"
+    previousId: String
+    "The id of the feature after this one in the collection, when one feature is read"
+    nextId: String
+    "The local id of the feature in its INSPIRE dataset"
+    localId: String
+    "The id of the cableway"
+    cablewayId: String
+    "The name of the feature, such as Aeropuerto de Málaga-Costa del Sol"
+    name: String
+    "When the feature entered the dataset"
+    dateAdded: String
+    "The kind of cableway, as the address of a value in an INSPIRE code list, such as chairLift"
+    cablewayType: String
+    "The id of the set of links the cableway belongs to"
+    linkSetId: String
+    "Why name is empty, as an INSPIRE nil reason, such as unknown"
+    nameNilReason: String
+    "Whether name is empty on purpose"
+    nameMissing: String
+    "Why varios is empty, as an INSPIRE nil reason, such as unknown"
+    variosNilReason: String
+    "Whether varios is empty on purpose"
+    variosMissing: Boolean
+    "A link to the related feature within the dataset"
+    href: String
+}
+
+"A page of the cableway links of the IGN"
+type IgnCablewayLinkPage {
+    "The number of cableway links that match, across all pages"
+    matched: Int
+    "The number of features on this page"
+    returned: Int
+    "When the service answered"
+    timeStamp: DateTime
+    "The cableway links"
+    features: [IgnCablewayLink]
+}
+
+"The stations of the cableways"
+type IgnCablewayNode {
+    "The id of the feature, for the field that reads one"
+    id: ID
+    "The geometry of the feature as GeoJSON, in WGS84, or null when the search left it out"
+    geometry: JSON
+    "The id of the feature before this one in the collection, when one feature is read"
+    previousId: String
+    "The id of the feature after this one in the collection, when one feature is read"
+    nextId: String
+    "The local id of the feature in its INSPIRE dataset"
+    localId: String
+    "The id of the node of the cableway"
+    cablewayNodeId: String
+    "The source of the data, as a code of the dataset"
+    source: Int
+    "When the feature entered the dataset"
+    dateAdded: String
+}
+
+"A page of the cableway nodes of the IGN"
+type IgnCablewayNodePage {
+    "The number of cableway nodes that match, across all pages"
+    matched: Int
+    "The number of features on this page"
+    returned: Int
+    "When the service answered"
+    timeStamp: DateTime
+    "The cableway nodes"
+    features: [IgnCablewayNode]
+}
+
+"The segments of the railway network, with their gauge, tracks and electrification"
+type IgnRailwayLink {
+    "The id of the feature, for the field that reads one"
+    id: ID
+    "The geometry of the feature as GeoJSON, in WGS84, or null when the search left it out"
+    geometry: JSON
+    "The id of the feature before this one in the collection, when one feature is read"
+    previousId: String
+    "The id of the feature after this one in the collection, when one feature is read"
+    nextId: String
+    "The local id of the feature in its INSPIRE dataset"
+    localId: String
+    "The id of the segment"
+    segmentId: String
+    "Whether the segment is fictitious, drawn to keep the network connected"
+    fictitious: String
+    "A link to the related feature within the dataset"
+    href: String
+    "The category of the track gauge, such as broad"
+    gaugeCategory: String
+    "The number of tracks"
+    tracks: Int
+    "Whether the line is electrified"
+    electrified: String
+    "When the feature entered the dataset"
+    dateAdded: String
+    "The track gauge, such as 1668 for the Iberian gauge"
+    gauge: Int
+    "The unit of the gauge, mm"
+    gaugeUnit: String
+}
+
+"A page of the railway links of the IGN"
+type IgnRailwayLinkPage {
+    "The number of railway links that match, across all pages"
+    matched: Int
+    "The number of features on this page"
+    returned: Int
+    "When the service answered"
+    timeStamp: DateTime
+    "The railway links"
+    features: [IgnRailwayLink]
+}
+
+"The points of the railway network where segments meet"
+type IgnRailwayNode {
+    "The id of the feature, for the field that reads one"
+    id: ID
+    "The geometry of the feature as GeoJSON, in WGS84, or null when the search left it out"
+    geometry: JSON
+    "The id of the feature before this one in the collection, when one feature is read"
+    previousId: String
+    "The id of the feature after this one in the collection, when one feature is read"
+    nextId: String
+    "The local id of the feature in its INSPIRE dataset"
+    localId: String
+    "The id of the node in its network"
+    nodeId: Int
+    "The kind of node, as the address of a value in an INSPIRE code list, such as junction or railwayStop"
+    nodeType: String
+    "When the feature last changed"
+    dateModified: String
+    "Why tipNodofc is empty, as an INSPIRE nil reason, such as unknown"
+    tipNodofcNilReason: String
+    "Whether tipNodofc is empty on purpose"
+    tipNodofcMissing: String
+}
+
+"A page of the railway nodes of the IGN"
+type IgnRailwayNodePage {
+    "The number of railway nodes that match, across all pages"
+    matched: Int
+    "The number of features on this page"
+    returned: Int
+    "When the service answered"
+    timeStamp: DateTime
+    "The railway nodes"
+    features: [IgnRailwayNode]
+}
+
+"The areas of the railway stations"
+type IgnRailwayStationArea {
+    "The id of the feature, for the field that reads one"
+    id: ID
+    "The geometry of the feature as GeoJSON, in WGS84, or null when the search left it out"
+    geometry: JSON
+    "The id of the feature before this one in the collection, when one feature is read"
+    previousId: String
+    "The id of the feature after this one in the collection, when one feature is read"
+    nextId: String
+    "The local id of the feature in its INSPIRE dataset"
+    localId: String
+    "The id of the area of the station"
+    stationAreaId: String
+    "The id of the station"
+    stationId: String
+    "When the feature entered the dataset"
+    dateAdded: String
+    "The name of the feature, such as Aeropuerto de Málaga-Costa del Sol"
+    name: String
+    "Why name is empty, as an INSPIRE nil reason, such as unknown"
+    nameNilReason: String
+    "Why varios is empty, as an INSPIRE nil reason, such as unknown"
+    variosNilReason: String
+    "Whether name is empty on purpose"
+    nameMissing: String
+    "Whether varios is empty on purpose"
+    variosMissing: Boolean
+}
+
+"A page of the railway station areas of the IGN"
+type IgnRailwayStationAreaPage {
+    "The number of railway station areas that match, across all pages"
+    matched: Int
+    "The number of features on this page"
+    returned: Int
+    "When the service answered"
+    timeStamp: DateTime
+    "The railway station areas"
+    features: [IgnRailwayStationArea]
+}
+
+"The railway stations as points, with their names and platforms"
+type IgnRailwayStation {
+    "The id of the feature, for the field that reads one"
+    id: ID
+    "The geometry of the feature as GeoJSON, in WGS84, or null when the search left it out"
+    geometry: JSON
+    "The id of the feature before this one in the collection, when one feature is read"
+    previousId: String
+    "The id of the feature after this one in the collection, when one feature is read"
+    nextId: String
+    "The local id of the feature in its INSPIRE dataset"
+    localId: String
+    "The id of the station"
+    stationId: String
+    "The code of the station, such as 54413"
+    stationCode: String
+    "The name of the feature, such as Aeropuerto de Málaga-Costa del Sol"
+    name: String
+    "The number of platforms"
+    platforms: String
+    "What the station serves, such as passengers"
+    use: String
+    "When the feature entered the dataset"
+    dateAdded: String
+    "The kind of node, as the address of a value in an INSPIRE code list, such as railwayStop"
+    formOfNode: String
+    "Why name is empty, as an INSPIRE nil reason, such as unknown"
+    nameNilReason: String
+    "Whether name is empty on purpose"
+    nameMissing: String
+    "Why varios is empty, as an INSPIRE nil reason, such as unknown"
+    variosNilReason: String
+    "Whether varios is empty on purpose"
+    variosMissing: Boolean
+    "Why platforms is empty, as an INSPIRE nil reason, such as unknown"
+    platformsNilReason: String
+    "Whether platforms is empty on purpose"
+    platformsMissing: Boolean
+}
+
+"A page of the railway stations of the IGN"
+type IgnRailwayStationPage {
+    "The number of railway stations that match, across all pages"
+    matched: Int
+    "The number of features on this page"
+    returned: Int
+    "When the service answered"
+    timeStamp: DateTime
+    "The railway stations"
+    features: [IgnRailwayStation]
+}
+
+"The segments of the road network, with their class, lanes and surface"
+type IgnRoadLink {
+    "The id of the feature, for the field that reads one"
+    id: ID
+    "The geometry of the feature as GeoJSON, in WGS84, or null when the search left it out"
+    geometry: JSON
+    "The id of the feature before this one in the collection, when one feature is read"
+    previousId: String
+    "The id of the feature after this one in the collection, when one feature is read"
+    nextId: String
+    "The local id of the feature in its INSPIRE dataset"
+    localId: String
+    "The id of the segment"
+    segmentId: String
+    "Whether the segment is fictitious, drawn to keep the network connected"
+    fictitious: String
+    "The functional class of the road"
+    functionalClass: String
+    "The number of lanes"
+    lanes: String
+    "Whether the road is paved"
+    surfaceCategory: String
+    "A link to the related feature within the dataset"
+    href: String
+    "When the feature entered the dataset"
+    dateAdded: String
+    "The kind of road, as the address of a value in an INSPIRE code list, such as singleCarriageway"
+    formOfWay: String
+}
+
+"A page of the road links of the IGN"
+type IgnRoadLinkPage {
+    "The number of road links that match, across all pages"
+    matched: Int
+    "The number of features on this page"
+    returned: Int
+    "When the service answered"
+    timeStamp: DateTime
+    "The road links"
+    features: [IgnRoadLink]
+}
+
+"The points of the road network where segments meet, such as junctions and roundabouts"
+type IgnRoadNode {
+    "The id of the feature, for the field that reads one"
+    id: ID
+    "The geometry of the feature as GeoJSON, in WGS84, or null when the search left it out"
+    geometry: JSON
+    "The id of the feature before this one in the collection, when one feature is read"
+    previousId: String
+    "The id of the feature after this one in the collection, when one feature is read"
+    nextId: String
+    "The local id of the feature in its INSPIRE dataset"
+    localId: String
+    "The id of the node in its network"
+    nodeId: Int
+    "The kind of node, as the address of a value in an INSPIRE code list, such as junction or railwayStop"
+    nodeType: String
+    "When the feature last changed"
+    dateModified: String
+    "Why nodeType is empty, as an INSPIRE nil reason, such as unknown"
+    nodeTypeNilReason: String
+}
+
+"A page of the road nodes of the IGN"
+type IgnRoadNodePage {
+    "The number of road nodes that match, across all pages"
+    matched: Int
+    "The number of features on this page"
+    returned: Int
+    "When the service answered"
+    timeStamp: DateTime
+    "The road nodes"
+    features: [IgnRoadNode]
+}
+
+"The service areas and rest areas next to the roads, the places for a stop on a trip with a dog"
+type IgnRoadServiceArea {
+    "The id of the feature, for the field that reads one"
+    id: ID
+    "The geometry of the feature as GeoJSON, in WGS84, or null when the search left it out"
+    geometry: JSON
+    "The id of the feature before this one in the collection, when one feature is read"
+    previousId: String
+    "The id of the feature after this one in the collection, when one feature is read"
+    nextId: String
+    "The local id of the feature in its INSPIRE dataset"
+    localId: String
+    "The id of the service area"
+    serviceAreaId: String
+    "The id of the point of the road the area belongs to"
+    roadPointId: String
+    "When the feature entered the dataset"
+    dateAdded: String
+    "The name of the feature, such as Aeropuerto de Málaga-Costa del Sol"
+    name: String
+    "The kind of service area, such as restArea"
+    serviceType: String
+    "Why name is empty, as an INSPIRE nil reason, such as unknown"
+    nameNilReason: String
+    "Why varios is empty, as an INSPIRE nil reason, such as unknown"
+    variosNilReason: String
+    "Whether name is empty on purpose"
+    nameMissing: String
+    "Whether varios is empty on purpose"
+    variosMissing: Boolean
+}
+
+"A page of the road service areas of the IGN"
+type IgnRoadServiceAreaPage {
+    "The number of road service areas that match, across all pages"
+    matched: Int
+    "The number of features on this page"
+    returned: Int
+    "When the service answered"
+    timeStamp: DateTime
+    "The road service areas"
+    features: [IgnRoadServiceArea]
+}
+
+"The land areas of the sea and inland ports"
+type IgnPortArea {
+    "The id of the feature, for the field that reads one"
+    id: ID
+    "The geometry of the feature as GeoJSON, in WGS84, or null when the search left it out"
+    geometry: JSON
+    "The id of the feature before this one in the collection, when one feature is read"
+    previousId: String
+    "The id of the feature after this one in the collection, when one feature is read"
+    nextId: String
+    "The local id of the feature in its INSPIRE dataset"
+    localId: String
+    "The id of the port area"
+    portAreaId: String
+    "A link to the related feature within the dataset"
+    href: String
+    "When the feature entered the dataset"
+    dateAdded: String
+    "The name of the feature, such as Aeropuerto de Málaga-Costa del Sol"
+    name: String
+    "Why name is empty, as an INSPIRE nil reason, such as unknown"
+    nameNilReason: String
+    "Why varios is empty, as an INSPIRE nil reason, such as unknown"
+    variosNilReason: String
+    "Whether name is empty on purpose"
+    nameMissing: String
+    "Whether varios is empty on purpose"
+    variosMissing: Boolean
+}
+
+"A page of the port areas of the IGN"
+type IgnPortAreaPage {
+    "The number of port areas that match, across all pages"
+    matched: Int
+    "The number of features on this page"
+    returned: Int
+    "When the service answered"
+    timeStamp: DateTime
+    "The port areas"
+    features: [IgnPortArea]
+}
+
+"The sea and inland ports as points, such as the port of Málaga"
+type IgnPort {
+    "The id of the feature, for the field that reads one"
+    id: ID
+    "The geometry of the feature as GeoJSON, in WGS84, or null when the search left it out"
+    geometry: JSON
+    "The id of the feature before this one in the collection, when one feature is read"
+    previousId: String
+    "The id of the feature after this one in the collection, when one feature is read"
+    nextId: String
+    "The local id of the feature in its INSPIRE dataset"
+    localId: String
+    "The id of the port"
+    portId: String
+    "The name of the feature, such as Aeropuerto de Málaga-Costa del Sol"
+    name: String
+    "When the feature entered the dataset"
+    dateAdded: String
+    "A link to the related feature within the dataset"
+    href: String
+    "The id of the port as a station of the network"
+    portStationId: String
+    "Its physical condition, as the address of a value in an INSPIRE code list, such as functional"
+    physicalCondition: String
+    "Whether it is in use, as the address of a value in an INSPIRE code list, such as functional"
+    currentStatus: String
+}
+
+"A page of the ports of the IGN"
+type IgnPortPage {
+    "The number of ports that match, across all pages"
+    matched: Int
+    "The number of features on this page"
+    returned: Int
+    "When the service answered"
+    timeStamp: DateTime
+    "The ports"
+    features: [IgnPort]
+}
+
+"The sea and inland waterways between two nodes"
+type IgnWaterwayLink {
+    "The id of the feature, for the field that reads one"
+    id: ID
+    "The geometry of the feature as GeoJSON, in WGS84, or null when the search left it out"
+    geometry: JSON
+    "The id of the feature before this one in the collection, when one feature is read"
+    previousId: String
+    "The id of the feature after this one in the collection, when one feature is read"
+    nextId: String
+    "The local id of the feature in its INSPIRE dataset"
+    localId: String
+    "The id of the waterway"
+    waterwayId: Int
+    "A link to the related feature within the dataset"
+    href: String
+    "When the feature entered the dataset"
+    dateAdded: String
+}
+
+"A page of the waterway links of the IGN"
+type IgnWaterwayLinkPage {
+    "The number of waterway links that match, across all pages"
+    matched: Int
+    "The number of features on this page"
+    returned: Int
+    "When the service answered"
+    timeStamp: DateTime
+    "The waterway links"
+    features: [IgnWaterwayLink]
+}
+
+"The points of the network of waterways"
+type IgnWaterwayNode {
+    "The id of the feature, for the field that reads one"
+    id: ID
+    "The geometry of the feature as GeoJSON, in WGS84, or null when the search left it out"
+    geometry: JSON
+    "The id of the feature before this one in the collection, when one feature is read"
+    previousId: String
+    "The id of the feature after this one in the collection, when one feature is read"
+    nextId: String
+    "The local id of the feature in its INSPIRE dataset"
+    localId: String
+    "The id of the waterway node"
+    waterwayNodeId: String
+    "When the feature entered the dataset"
+    dateAdded: String
+}
+
+"A page of the waterway nodes of the IGN"
+type IgnWaterwayNodePage {
+    "The number of waterway nodes that match, across all pages"
+    matched: Int
+    "The number of features on this page"
+    returned: Int
+    "When the service answered"
+    timeStamp: DateTime
+    "The waterway nodes"
+    features: [IgnWaterwayNode]
+}
+
+"The kilometre posts along the roads, with their number"
+type IgnKilometrePost {
+    "The id of the feature, for the field that reads one"
+    id: ID
+    "The geometry of the feature as GeoJSON, in WGS84, or null when the search left it out"
+    geometry: JSON
+    "The id of the feature before this one in the collection, when one feature is read"
+    previousId: String
+    "The id of the feature after this one in the collection, when one feature is read"
+    nextId: String
+    "The local id of the feature in its INSPIRE dataset"
+    localId: String
+    "The id of the road or railway the post stands on"
+    roadId: String
+    "The id of the segment the post stands on"
+    segmentId: String
+    "A link to the related feature within the dataset"
+    href: String
+    "The id of the post"
+    postId: String
+    "The number, such as the kilometre of the post"
+    number: Int
+    "The kind of post"
+    postType: String
+    "The direction the posts count in, as the address of a value in an INSPIRE code list"
+    direction: String
+    "When the feature entered the dataset"
+    dateAdded: String
+    "A link to the road or railway the post stands on"
+    roadHref: String
+    "Why direction is empty, as an INSPIRE nil reason, such as unknown"
+    directionNilReason: String
+    "Whether direction is empty on purpose"
+    directionMissing: String
+}
+
+"A page of the kilometre posts of the IGN"
+type IgnKilometrePostPage {
+    "The number of kilometre posts that match, across all pages"
+    matched: Int
+    "The number of features on this page"
+    returned: Int
+    "When the service answered"
+    timeStamp: DateTime
+    "The kilometre posts"
+    features: [IgnKilometrePost]
+}

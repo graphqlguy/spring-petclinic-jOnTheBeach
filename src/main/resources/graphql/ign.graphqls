@@ -1,0 +1,1101 @@
+# The fields of the API-Features service of the National Geographic Institute (IGN), at api-features.ign.es. It follows
+# the OGC API Features standard and serves administrative units and boundaries, the geographic names of Spain, its
+# population centres, and its networks of geodetic points, levelling and tide gauges. A generator wrote one field to
+# search each collection and one to read a feature by its id, with their types and
+# src/main/resources/ign/operations.json, from the OpenAPI document of the service and from answers recorded from it.
+# The names and descriptions are written by hand in English. Each field is fetched by a RestOperationFetcher, see
+# IgnConfiguration.
+
+extend type Query {
+    # Every collection takes a bounding box, such as -4.50,36.65,-4.35,36.75 for the city of Málaga, and filters on its
+    # properties by exact value.
+
+    "The boundaries between administrative units, such as between two municipalities, with their level and legal status"
+    ignAdministrativeBoundaries(
+        """
+        Only the features inside this box, written as minLongitude,minLatitude,maxLongitude,maxLatitude, such as
+        -4.50,36.65,-4.35,36.75 for the city of Málaga
+        """
+        bbox: String
+        """
+        false for the geometry of each feature, which can be long for lines and areas. true, the default, leaves it out.
+        """
+        skipGeometry: Boolean = true
+        "Only the administrative boundaries whose gid is this value"
+        gid: String
+        "Only the administrative boundaries whose nationalCode is this value"
+        nationalCode: String
+        "Only the administrative boundaries whose country is this value"
+        country: String
+        "Only the administrative boundaries whose boundaryName is this value"
+        boundaryName: String
+        "Only the administrative boundaries whose boundaryType is this value"
+        boundaryType: String
+        "Only the administrative boundaries whose boundaryDate is this value"
+        boundaryDate: String
+        "Only the administrative boundaries whose documentUrl is this value"
+        documentUrl: String
+        "Only the administrative boundaries whose nationalLevel is this value"
+        nationalLevel: String
+        "Only the administrative boundaries whose levelName is this value"
+        levelName: String
+        "Only the administrative boundaries whose legalStatus is this value"
+        legalStatus: String
+        "Only the administrative boundaries whose accuracy is this value"
+        accuracy: String
+        "Only the administrative boundaries whose validUntil is this value"
+        validUntil: String
+        "Only the administrative boundaries whose legalStatusNilReason is this value"
+        legalStatusNilReason: String
+        "Only the administrative boundaries whose legalStatusMissing is this value"
+        legalStatusMissing: String
+        "The page to return. Pages count from 0."
+        page: Int! = 0
+        "The number of results on a page, from 1 to 100"
+        size: Int! = 10
+    ): IgnAdministrativeBoundaryPage
+
+    "One of the administrative boundaries by its id, with its geometry"
+    ignAdministrativeBoundary(
+        "The id of the feature, which ignAdministrativeBoundaries gives"
+        id: ID!
+    ): IgnAdministrativeBoundary
+
+    """
+    The administrative units of Spain: the country, the autonomous communities, the provinces and the municipalities,
+    with their national codes and NUTS codes. The municipality of Málaga takes nameunit Málaga.
+    """
+    ignAdministrativeUnits(
+        """
+        Only the features inside this box, written as minLongitude,minLatitude,maxLongitude,maxLatitude, such as
+        -4.50,36.65,-4.35,36.75 for the city of Málaga
+        """
+        bbox: String
+        """
+        false for the geometry of each feature, which can be long for lines and areas. true, the default, leaves it out.
+        """
+        skipGeometry: Boolean = true
+        "Only the administrative units whose gid is this value"
+        gid: String
+        "Only the administrative units whose country is this value"
+        country: String
+        "Only the administrative units whose nationalCode is this value"
+        nationalCode: String
+        "Only the administrative units whose name is this value"
+        name: String
+        "Only the administrative units whose nuts1 is this value"
+        nuts1: String
+        "Only the administrative units whose nuts2 is this value"
+        nuts2: String
+        "Only the administrative units whose nuts3 is this value"
+        nuts3: String
+        "Only the administrative units whose nationalLevel is this value"
+        nationalLevel: String
+        "Only the administrative units whose levelName is this value"
+        levelName: String
+        "The page to return. Pages count from 0."
+        page: Int! = 0
+        "The number of results on a page, from 1 to 100"
+        size: Int! = 10
+    ): IgnAdministrativeUnitPage
+
+    "One of the administrative units by its id, with its geometry"
+    ignAdministrativeUnit(
+        "The id of the feature, which ignAdministrativeUnits gives"
+        id: ID!
+    ): IgnAdministrativeUnit
+
+    """
+    The geographic names of Spain from the Nomenclátor Geográfico Básico: towns, hills, rivers, beaches and any other
+    named feature, with its kind and source
+    """
+    ignNamedPlaces(
+        """
+        Only the features inside this box, written as minLongitude,minLatitude,maxLongitude,maxLatitude, such as
+        -4.50,36.65,-4.35,36.75 for the city of Málaga
+        """
+        bbox: String
+        """
+        false for the geometry of each feature, which can be long for lines and areas. true, the default, leaves it out.
+        """
+        skipGeometry: Boolean = true
+        "Only the named places whose identity is this value"
+        identity: String
+        "Only the named places whose label is this value"
+        label: String
+        "Only the named places whose kind is this value"
+        kind: String
+        "Only the named places whose ngbeCode is this value"
+        ngbeCode: String
+        "Only the named places whose nameType is this value"
+        nameType: String
+        "Only the named places whose source is this value"
+        source: String
+        "Only the named places whose date is this value"
+        date: String
+        "The page to return. Pages count from 0."
+        page: Int! = 0
+        "The number of results on a page, from 1 to 100"
+        size: Int! = 10
+    ): IgnNamedPlacePage
+
+    "One of the named places by its id, with its geometry"
+    ignNamedPlace(
+        "The id of the feature, which ignNamedPlaces gives"
+        id: ID!
+    ): IgnNamedPlace
+
+    """
+    The population centres the National Statistics Institute (INE) recognizes, with their number of inhabitants and
+    whether each is the capital of its municipality
+    """
+    ignPopulationCentres(
+        """
+        Only the features inside this box, written as minLongitude,minLatitude,maxLongitude,maxLatitude, such as
+        -4.50,36.65,-4.35,36.75 for the city of Málaga
+        """
+        bbox: String
+        """
+        false for the geometry of each feature, which can be long for lines and areas. true, the default, leaves it out.
+        """
+        skipGeometry: Boolean = true
+        "Only the population centres whose settlementId is this value"
+        settlementId: String
+        "Only the population centres whose name is this value"
+        name: String
+        "Only the population centres whose provinceCode is this value"
+        provinceCode: String
+        "Only the population centres whose kind is this value"
+        kind: String
+        "Only the population centres whose inIne is this value"
+        inIne: String
+        "Only the population centres whose ineCode is this value"
+        ineCode: String
+        "Only the population centres whose inhabitants is this value"
+        inhabitants: String
+        "Only the population centres whose entityId is this value"
+        entityId: String
+        "Only the population centres whose capitalCode is this value"
+        capitalCode: String
+        "Only the population centres whose rural is this value"
+        rural: String
+        "Only the population centres whose isolated is this value"
+        isolated: String
+        "Only the population centres whose latitude is this value"
+        latitude: String
+        "Only the population centres whose lengthMetres is this value"
+        lengthMetres: String
+        "Only the population centres whose altitude is this value"
+        altitude: String
+        "Only the population centres whose date is this value"
+        date: String
+        "The page to return. Pages count from 0."
+        page: Int! = 0
+        "The number of results on a page, from 1 to 100"
+        size: Int! = 10
+    ): IgnPopulationCentrePage
+
+    "One of the population centres by its id, with its geometry"
+    ignPopulationCentre(
+        "The id of the feature, which ignPopulationCentres gives"
+        id: ID!
+    ): IgnPopulationCentre
+
+    """
+    The settlements that the INE does not count as population centres, such as scattered houses, with their inhabitants
+    """
+    ignOtherSettlements(
+        """
+        Only the features inside this box, written as minLongitude,minLatitude,maxLongitude,maxLatitude, such as
+        -4.50,36.65,-4.35,36.75 for the city of Málaga
+        """
+        bbox: String
+        """
+        false for the geometry of each feature, which can be long for lines and areas. true, the default, leaves it out.
+        """
+        skipGeometry: Boolean = true
+        "Only the other settlements whose settlementId is this value"
+        settlementId: String
+        "Only the other settlements whose name is this value"
+        name: String
+        "Only the other settlements whose provinceCode is this value"
+        provinceCode: String
+        "Only the other settlements whose kind is this value"
+        kind: String
+        "Only the other settlements whose inIne is this value"
+        inIne: String
+        "Only the other settlements whose ineCode is this value"
+        ineCode: String
+        "Only the other settlements whose inhabitants is this value"
+        inhabitants: String
+        "Only the other settlements whose entityId is this value"
+        entityId: String
+        "Only the other settlements whose capitalCode is this value"
+        capitalCode: String
+        "Only the other settlements whose rural is this value"
+        rural: String
+        "Only the other settlements whose isolated is this value"
+        isolated: String
+        "Only the other settlements whose latitude is this value"
+        latitude: String
+        "Only the other settlements whose lengthMetres is this value"
+        lengthMetres: String
+        "Only the other settlements whose altitude is this value"
+        altitude: String
+        "Only the other settlements whose date is this value"
+        date: String
+        "The page to return. Pages count from 0."
+        page: Int! = 0
+        "The number of results on a page, from 1 to 100"
+        size: Int! = 10
+    ): IgnOtherSettlementPage
+
+    "One of the other settlements by its id, with its geometry"
+    ignOtherSettlement(
+        "The id of the feature, which ignOtherSettlements gives"
+        id: ID!
+    ): IgnOtherSettlement
+
+    "The inhabited places without a known name"
+    ignUnnamedSettlements(
+        """
+        Only the features inside this box, written as minLongitude,minLatitude,maxLongitude,maxLatitude, such as
+        -4.50,36.65,-4.35,36.75 for the city of Málaga
+        """
+        bbox: String
+        """
+        false for the geometry of each feature, which can be long for lines and areas. true, the default, leaves it out.
+        """
+        skipGeometry: Boolean = true
+        "Only the unnamed settlements whose seigId is this value"
+        seigId: String
+        "Only the unnamed settlements whose settlementId is this value"
+        settlementId: String
+        "Only the unnamed settlements whose name is this value"
+        name: String
+        "Only the unnamed settlements whose provinceCode is this value"
+        provinceCode: String
+        "Only the unnamed settlements whose date is this value"
+        date: String
+        "The page to return. Pages count from 0."
+        page: Int! = 0
+        "The number of results on a page, from 1 to 100"
+        size: Int! = 10
+    ): IgnUnnamedSettlementPage
+
+    "One of the unnamed settlements by its id, with its geometry"
+    ignUnnamedSettlement(
+        "The id of the feature, which ignUnnamedSettlements gives"
+        id: ID!
+    ): IgnUnnamedSettlement
+
+    "The permanent GNSS reference stations of the IGN (ERGNSS), with their positions and the networks they belong to"
+    ignGnssStations(
+        """
+        Only the features inside this box, written as minLongitude,minLatitude,maxLongitude,maxLatitude, such as
+        -4.50,36.65,-4.35,36.75 for the city of Málaga
+        """
+        bbox: String
+        """
+        false for the geometry of each feature, which can be long for lines and areas. true, the default, leaves it out.
+        """
+        skipGeometry: Boolean = true
+        "Only the GNSS reference stations whose code is this value"
+        code: String
+        "Only the GNSS reference stations whose name is this value"
+        name: String
+        "Only the GNSS reference stations whose iersCode is this value"
+        iersCode: String
+        "Only the GNSS reference stations whose installed is this value"
+        installed: String
+        "Only the GNSS reference stations whose municipality is this value"
+        municipality: String
+        "Only the GNSS reference stations whose province is this value"
+        province: String
+        "Only the GNSS reference stations whose location is this value"
+        location: String
+        "Only the GNSS reference stations whose lengthMetres is this value"
+        lengthMetres: String
+        "Only the GNSS reference stations whose latitude is this value"
+        latitude: String
+        "Only the GNSS reference stations whose ellipsoidalHeight is this value"
+        ellipsoidalHeight: String
+        "Only the GNSS reference stations whose cartesianX is this value"
+        cartesianX: String
+        "Only the GNSS reference stations whose cartesianY is this value"
+        cartesianY: String
+        "Only the GNSS reference stations whose cartesianZ is this value"
+        cartesianZ: String
+        "Only the GNSS reference stations whose utmX is this value"
+        utmX: String
+        "Only the GNSS reference stations whose utmY is this value"
+        utmY: String
+        "Only the GNSS reference stations whose utmZone is this value"
+        utmZone: String
+        "Only the GNSS reference stations whose orthometricHeight is this value"
+        orthometricHeight: String
+        "Only the GNSS reference stations whose mainNetwork is this value"
+        mainNetwork: String
+        "Only the GNSS reference stations whose otherNetworks is this value"
+        otherNetworks: String
+        "Only the GNSS reference stations whose descriptionSheet is this value"
+        descriptionSheet: String
+        "Only the GNSS reference stations whose logUrl is this value"
+        logUrl: String
+        "The page to return. Pages count from 0."
+        page: Int! = 0
+        "The number of results on a page, from 1 to 100"
+        size: Int! = 10
+    ): IgnGnssStationPage
+
+    "One of the GNSS reference stations by its id, with its geometry"
+    ignGnssStation(
+        "The id of the feature, which ignGnssStations gives"
+        id: ID!
+    ): IgnGnssStation
+
+    "The benchmarks of the high precision levelling network of Spain (REDNAP), with their heights"
+    ignLevellingBenchmarks(
+        """
+        Only the features inside this box, written as minLongitude,minLatitude,maxLongitude,maxLatitude, such as
+        -4.50,36.65,-4.35,36.75 for the city of Málaga
+        """
+        bbox: String
+        """
+        false for the geometry of each feature, which can be long for lines and areas. true, the default, leaves it out.
+        """
+        skipGeometry: Boolean = true
+        "Only the levelling benchmarks whose number is this value"
+        number: String
+        "Only the levelling benchmarks whose name is this value"
+        name: String
+        "Only the levelling benchmarks whose municipality is this value"
+        municipality: String
+        "Only the levelling benchmarks whose province is this value"
+        province: String
+        "Only the levelling benchmarks whose kind is this value"
+        kind: String
+        "Only the levelling benchmarks whose node is this value"
+        node: String
+        "Only the levelling benchmarks whose group is this value"
+        group: String
+        "Only the levelling benchmarks whose longitude is this value"
+        longitude: String
+        "Only the levelling benchmarks whose latitude is this value"
+        latitude: String
+        "Only the levelling benchmarks whose ellipsoidalHeight is this value"
+        ellipsoidalHeight: String
+        "Only the levelling benchmarks whose orthometricHeight is this value"
+        orthometricHeight: String
+        "Only the levelling benchmarks whose descriptionSheet is this value"
+        descriptionSheet: String
+        "Only the levelling benchmarks whose line is this value"
+        line: String
+        "Only the levelling benchmarks whose lineSheet is this value"
+        lineSheet: String
+        "The page to return. Pages count from 0."
+        page: Int! = 0
+        "The number of results on a page, from 1 to 100"
+        size: Int! = 10
+    ): IgnLevellingBenchmarkPage
+
+    "One of the levelling benchmarks by its id, with its geometry"
+    ignLevellingBenchmark(
+        "The id of the feature, which ignLevellingBenchmarks gives"
+        id: ID!
+    ): IgnLevellingBenchmark
+
+    "The points of the national geodetic network by space techniques (REGENTE), with their coordinates"
+    ignRegenteGeodeticPoints(
+        """
+        Only the features inside this box, written as minLongitude,minLatitude,maxLongitude,maxLatitude, such as
+        -4.50,36.65,-4.35,36.75 for the city of Málaga
+        """
+        bbox: String
+        """
+        false for the geometry of each feature, which can be long for lines and areas. true, the default, leaves it out.
+        """
+        skipGeometry: Boolean = true
+        "Only the REGENTE geodetic points whose number is this value"
+        number: String
+        "Only the REGENTE geodetic points whose name is this value"
+        name: String
+        "Only the REGENTE geodetic points whose municipality is this value"
+        municipality: String
+        "Only the REGENTE geodetic points whose province is this value"
+        province: String
+        "Only the REGENTE geodetic points whose municipalityCode is this value"
+        municipalityCode: String
+        "Only the REGENTE geodetic points whose provinceCode is this value"
+        provinceCode: String
+        "Only the REGENTE geodetic points whose mapSheet is this value"
+        mapSheet: String
+        "Only the REGENTE geodetic points whose built is this value"
+        built: String
+        "Only the REGENTE geodetic points whose longitude is this value"
+        longitude: String
+        "Only the REGENTE geodetic points whose latitude is this value"
+        latitude: String
+        "Only the REGENTE geodetic points whose ellipsoidalHeight is this value"
+        ellipsoidalHeight: String
+        "Only the REGENTE geodetic points whose utmX is this value"
+        utmX: String
+        "Only the REGENTE geodetic points whose utmY is this value"
+        utmY: String
+        "Only the REGENTE geodetic points whose utmZone is this value"
+        utmZone: String
+        "Only the REGENTE geodetic points whose orthometricHeight is this value"
+        orthometricHeight: String
+        "Only the REGENTE geodetic points whose descriptionSheet is this value"
+        descriptionSheet: String
+        "The page to return. Pages count from 0."
+        page: Int! = 0
+        "The number of results on a page, from 1 to 100"
+        size: Int! = 10
+    ): IgnRegenteGeodeticPointPage
+
+    "One of the REGENTE geodetic points by its id, with its geometry"
+    ignRegenteGeodeticPoint(
+        "The id of the feature, which ignRegenteGeodeticPoints gives"
+        id: ID!
+    ): IgnRegenteGeodeticPoint
+
+    "The points of the lower order geodetic network (ROI), with their coordinates"
+    ignLowerOrderGeodeticPoints(
+        """
+        Only the features inside this box, written as minLongitude,minLatitude,maxLongitude,maxLatitude, such as
+        -4.50,36.65,-4.35,36.75 for the city of Málaga
+        """
+        bbox: String
+        """
+        false for the geometry of each feature, which can be long for lines and areas. true, the default, leaves it out.
+        """
+        skipGeometry: Boolean = true
+        "Only the lower order geodetic points whose number is this value"
+        number: String
+        "Only the lower order geodetic points whose name is this value"
+        name: String
+        "Only the lower order geodetic points whose municipality is this value"
+        municipality: String
+        "Only the lower order geodetic points whose province is this value"
+        province: String
+        "Only the lower order geodetic points whose municipalityCode is this value"
+        municipalityCode: String
+        "Only the lower order geodetic points whose provinceCode is this value"
+        provinceCode: String
+        "Only the lower order geodetic points whose mapSheet is this value"
+        mapSheet: String
+        "Only the lower order geodetic points whose built is this value"
+        built: String
+        "Only the lower order geodetic points whose longitude is this value"
+        longitude: String
+        "Only the lower order geodetic points whose latitude is this value"
+        latitude: String
+        "Only the lower order geodetic points whose ellipsoidalHeight is this value"
+        ellipsoidalHeight: String
+        "Only the lower order geodetic points whose utmX is this value"
+        utmX: String
+        "Only the lower order geodetic points whose utmY is this value"
+        utmY: String
+        "Only the lower order geodetic points whose utmZone is this value"
+        utmZone: String
+        "Only the lower order geodetic points whose orthometricHeight is this value"
+        orthometricHeight: String
+        "Only the lower order geodetic points whose descriptionSheet is this value"
+        descriptionSheet: String
+        "The page to return. Pages count from 0."
+        page: Int! = 0
+        "The number of results on a page, from 1 to 100"
+        size: Int! = 10
+    ): IgnLowerOrderGeodeticPointPage
+
+    "One of the lower order geodetic points by its id, with its geometry"
+    ignLowerOrderGeodeticPoint(
+        "The id of the feature, which ignLowerOrderGeodeticPoints gives"
+        id: ID!
+    ): IgnLowerOrderGeodeticPoint
+
+    "The tide gauges of the IGN along the coasts of Spain"
+    ignTideGauges(
+        """
+        Only the features inside this box, written as minLongitude,minLatitude,maxLongitude,maxLatitude, such as
+        -4.50,36.65,-4.35,36.75 for the city of Málaga
+        """
+        bbox: String
+        """
+        false for the geometry of each feature, which can be long for lines and areas. true, the default, leaves it out.
+        """
+        skipGeometry: Boolean = true
+        "Only the tide gauges whose name is this value"
+        name: String
+        "Only the tide gauges whose longitude is this value"
+        longitude: String
+        "Only the tide gauges whose latitude is this value"
+        latitude: String
+        "Only the tide gauges whose descriptionSheet is this value"
+        descriptionSheet: String
+        "Only the tide gauges whose psmslUrl is this value"
+        psmslUrl: String
+        "Only the tide gauges whose gnssStationSheet is this value"
+        gnssStationSheet: String
+        "The page to return. Pages count from 0."
+        page: Int! = 0
+        "The number of results on a page, from 1 to 100"
+        size: Int! = 10
+    ): IgnTideGaugePage
+
+    "One of the tide gauges by its id, with its geometry"
+    ignTideGauge(
+        "The id of the feature, which ignTideGauges gives"
+        id: ID!
+    ): IgnTideGauge
+}
+
+"The boundaries between administrative units, such as between two municipalities, with their level and legal status"
+type IgnAdministrativeBoundary {
+    "The id of the feature, for the field that reads one"
+    id: ID
+    "The geometry of the feature as GeoJSON, in WGS84, or null when the search left it out"
+    geometry: JSON
+    "The id of the feature before this one in the collection, when one feature is read"
+    previousId: String
+    "The id of the feature after this one in the collection, when one feature is read"
+    nextId: String
+    "The id of the record in the database of the IGN"
+    gid: String
+    "The national code of the unit or boundary, such as 34012929067 for the municipality of Málaga"
+    nationalCode: String
+    "The country, ES"
+    country: String
+    "The units on each side of the boundary, separated by #, such as Málaga#Torremolinos"
+    boundaryName: String
+    "The kind of boundary, such as Límite terrestre (on land) or Litoral (the coast)"
+    boundaryType: String
+    "The day the boundary was set or last changed"
+    boundaryDate: String
+    "The address of the official documents of the boundary at the download centre of the CNIG"
+    documentUrl: String
+    "The level of the unit, as the address of a value in an INSPIRE code list, such as 4thOrder for a municipality"
+    nationalLevel: String
+    "The level of the unit in words, such as Municipio or Provincia"
+    levelName: String
+    "Whether the boundary is agreed"
+    legalStatus: String
+    "How the boundary was measured, in Spanish"
+    accuracy: String
+    "The day this version of the feature left the dataset, or null while it is current"
+    validUntil: String
+    "Why legalStatus is empty, as an INSPIRE nil reason, such as unknown"
+    legalStatusNilReason: String
+    "Whether legalStatus is empty on purpose"
+    legalStatusMissing: Boolean
+}
+
+"A page of the administrative boundaries of the IGN"
+type IgnAdministrativeBoundaryPage {
+    "The number of administrative boundaries that match, across all pages"
+    matched: Int
+    "The number of features on this page"
+    returned: Int
+    "When the service answered"
+    timeStamp: DateTime
+    "The administrative boundaries"
+    features: [IgnAdministrativeBoundary]
+}
+
+"""
+The administrative units of Spain: the country, the autonomous communities, the provinces and the municipalities, with
+their national codes and NUTS codes
+"""
+type IgnAdministrativeUnit {
+    "The id of the feature, for the field that reads one"
+    id: ID
+    "The geometry of the feature as GeoJSON, in WGS84, or null when the search left it out"
+    geometry: JSON
+    "The id of the feature before this one in the collection, when one feature is read"
+    previousId: String
+    "The id of the feature after this one in the collection, when one feature is read"
+    nextId: String
+    "The id of the record in the database of the IGN"
+    gid: String
+    "The country, ES"
+    country: String
+    "The national code of the unit or boundary, such as 34012929067 for the municipality of Málaga"
+    nationalCode: String
+    "The name of the unit, such as Málaga"
+    name: String
+    "The NUTS 1 code of the unit, such as ES6 for the South of Spain"
+    nuts1: String
+    "The NUTS 2 code, such as ES61 for Andalusia"
+    nuts2: String
+    "The NUTS 3 code, such as ES617 for the province of Málaga"
+    nuts3: String
+    "The level of the unit, as the address of a value in an INSPIRE code list, such as 4thOrder for a municipality"
+    nationalLevel: String
+    "The level of the unit in words, such as Municipio or Provincia"
+    levelName: String
+}
+
+"A page of the administrative units of the IGN"
+type IgnAdministrativeUnitPage {
+    "The number of administrative units that match, across all pages"
+    matched: Int
+    "The number of features on this page"
+    returned: Int
+    "When the service answered"
+    timeStamp: DateTime
+    "The administrative units"
+    features: [IgnAdministrativeUnit]
+}
+
+"""
+The geographic names of Spain from the Nomenclátor Geográfico Básico: towns, hills, rivers, beaches and any other named
+feature, with its kind and source
+"""
+type IgnNamedPlace {
+    "The id of the feature, for the field that reads one"
+    id: ID
+    "The geometry of the feature as GeoJSON, in WGS84, or null when the search left it out"
+    geometry: JSON
+    "The id of the feature before this one in the collection, when one feature is read"
+    previousId: String
+    "The id of the feature after this one in the collection, when one feature is read"
+    nextId: String
+    "The id of the named place in the Nomenclátor"
+    identity: String
+    "The name, such as Guadalmar"
+    label: String
+    "The kind of feature, such as Zona encharcable (land that floods) or Barrio (neighbourhood)"
+    kind: String
+    "The code of the kind of place in the Nomenclátor Geográfico Básico, such as 2.1.8"
+    ngbeCode: String
+    "The kind of name, such as identificador_geografico"
+    nameType: String
+    "The source of the data, as a code of the dataset"
+    source: String
+    "The date of the record"
+    date: String
+}
+
+"A page of the named places of the IGN"
+type IgnNamedPlacePage {
+    "The number of named places that match, across all pages"
+    matched: Int
+    "The number of features on this page"
+    returned: Int
+    "When the service answered"
+    timeStamp: DateTime
+    "The named places"
+    features: [IgnNamedPlace]
+}
+
+"""
+The population centres the National Statistics Institute (INE) recognizes, with their number of inhabitants and whether
+each is the capital of its municipality
+"""
+type IgnPopulationCentre {
+    "The id of the feature, for the field that reads one"
+    id: ID
+    "The geometry of the feature as GeoJSON, in WGS84, or null when the search left it out"
+    geometry: JSON
+    "The id of the feature before this one in the collection, when one feature is read"
+    previousId: String
+    "The id of the feature after this one in the collection, when one feature is read"
+    nextId: String
+    "The id of the settlement"
+    settlementId: String
+    "The name of the feature, such as Aeropuerto de Málaga-Costa del Sol"
+    name: String
+    "The INE code of the province, such as 29"
+    provinceCode: Int
+    "The kind of feature, such as Zona encharcable (land that floods) or Barrio (neighbourhood)"
+    kind: String
+    "Whether the INE lists the settlement: 1 for yes, 0 for no"
+    inIne: Int
+    "The INE code of the population centre, such as 29067000201"
+    ineCode: String
+    "The number of inhabitants"
+    inhabitants: Int
+    "The id of the population entity"
+    entityId: Int
+    "Whether the place is a capital, as a code of six digits, such as 001100"
+    capitalCode: String
+    "Whether the centre is rural: 1 for yes, 0 for no"
+    rural: Int
+    "Whether the settlement is isolated: 1 for yes, 0 for no"
+    isolated: Int
+    "The latitude"
+    latitude: Float
+    "The length, in metres"
+    lengthMetres: Float
+    "The altitude, in metres"
+    altitude: Float
+    "The date of the record"
+    date: String
+}
+
+"A page of the population centres of the IGN"
+type IgnPopulationCentrePage {
+    "The number of population centres that match, across all pages"
+    matched: Int
+    "The number of features on this page"
+    returned: Int
+    "When the service answered"
+    timeStamp: DateTime
+    "The population centres"
+    features: [IgnPopulationCentre]
+}
+
+"The settlements that the INE does not count as population centres, such as scattered houses, with their inhabitants"
+type IgnOtherSettlement {
+    "The id of the feature, for the field that reads one"
+    id: ID
+    "The geometry of the feature as GeoJSON, in WGS84, or null when the search left it out"
+    geometry: JSON
+    "The id of the feature before this one in the collection, when one feature is read"
+    previousId: String
+    "The id of the feature after this one in the collection, when one feature is read"
+    nextId: String
+    "The id of the settlement"
+    settlementId: String
+    "The name of the feature, such as Aeropuerto de Málaga-Costa del Sol"
+    name: String
+    "The INE code of the province, such as 29"
+    provinceCode: Int
+    "The kind of feature, such as Zona encharcable (land that floods) or Barrio (neighbourhood)"
+    kind: String
+    "Whether the INE lists the settlement: 1 for yes, 0 for no"
+    inIne: Int
+    "The INE code of the population centre, such as 29067000201"
+    ineCode: String
+    "The number of inhabitants"
+    inhabitants: String
+    "The id of the population entity"
+    entityId: Int
+    "Whether the place is a capital, as a code of six digits, such as 001100"
+    capitalCode: String
+    "Whether the centre is rural: 1 for yes, 0 for no"
+    rural: Int
+    "Whether the settlement is isolated: 1 for yes, 0 for no"
+    isolated: Int
+    "The latitude"
+    latitude: Float
+    "The length, in metres"
+    lengthMetres: Float
+    "The altitude, in metres"
+    altitude: Float
+    "The date of the record"
+    date: String
+}
+
+"A page of the other settlements of the IGN"
+type IgnOtherSettlementPage {
+    "The number of other settlements that match, across all pages"
+    matched: Int
+    "The number of features on this page"
+    returned: Int
+    "When the service answered"
+    timeStamp: DateTime
+    "The other settlements"
+    features: [IgnOtherSettlement]
+}
+
+"The inhabited places without a known name"
+type IgnUnnamedSettlement {
+    "The id of the feature, for the field that reads one"
+    id: ID
+    "The geometry of the feature as GeoJSON, in WGS84, or null when the search left it out"
+    geometry: JSON
+    "The id of the feature before this one in the collection, when one feature is read"
+    previousId: String
+    "The id of the feature after this one in the collection, when one feature is read"
+    nextId: String
+    "The id of the place in the geographic information system of the IGN"
+    seigId: String
+    "The id of the settlement"
+    settlementId: Int
+    "The name of the feature, such as Aeropuerto de Málaga-Costa del Sol"
+    name: String
+    "The INE code of the province, such as 29"
+    provinceCode: Int
+    "The date of the record"
+    date: String
+}
+
+"A page of the unnamed settlements of the IGN"
+type IgnUnnamedSettlementPage {
+    "The number of unnamed settlements that match, across all pages"
+    matched: Int
+    "The number of features on this page"
+    returned: Int
+    "When the service answered"
+    timeStamp: DateTime
+    "The unnamed settlements"
+    features: [IgnUnnamedSettlement]
+}
+
+"The permanent GNSS reference stations of the IGN (ERGNSS), with their positions and the networks they belong to"
+type IgnGnssStation {
+    "The id of the feature, for the field that reads one"
+    id: ID
+    "The geometry of the feature as GeoJSON, in WGS84, or null when the search left it out"
+    geometry: JSON
+    "The id of the feature before this one in the collection, when one feature is read"
+    previousId: String
+    "The id of the feature after this one in the collection, when one feature is read"
+    nextId: String
+    "The code of the station, such as MALA for Málaga"
+    code: String
+    "The name of the feature, such as Aeropuerto de Málaga-Costa del Sol"
+    name: String
+    "The code of the station at the International Earth Rotation Service, such as 13443M001"
+    iersCode: String
+    "When the station was installed"
+    installed: String
+    "The municipality, such as Málaga"
+    municipality: String
+    "The province, such as Málaga"
+    province: String
+    "The place, such as Málaga, Andalucía"
+    location: String
+    "The length, in metres"
+    lengthMetres: Float
+    "The latitude"
+    latitude: Float
+    "The height above the ellipsoid, in metres"
+    ellipsoidalHeight: Float
+    "The geocentric X coordinate, in metres"
+    cartesianX: Float
+    "The geocentric Y coordinate, in metres"
+    cartesianY: Float
+    "The geocentric Z coordinate, in metres"
+    cartesianZ: Float
+    "The UTM easting, in metres"
+    utmX: Float
+    "The UTM northing, in metres"
+    utmY: Float
+    "The UTM zone, such as 30"
+    utmZone: Float
+    "The height above sea level, in metres"
+    orthometricHeight: Float
+    "The main network of the station, such as ERGNSS"
+    mainNetwork: String
+    "The other networks the station belongs to, such as EUREF"
+    otherNetworks: [String]
+    "The address of the PDF that describes the point"
+    descriptionSheet: String
+    "The address of the log of the station"
+    logUrl: String
+}
+
+"A page of the GNSS reference stations of the IGN"
+type IgnGnssStationPage {
+    "The number of GNSS reference stations that match, across all pages"
+    matched: Int
+    "The number of features on this page"
+    returned: Int
+    "When the service answered"
+    timeStamp: DateTime
+    "The GNSS reference stations"
+    features: [IgnGnssStation]
+}
+
+"The benchmarks of the high precision levelling network of Spain (REDNAP), with their heights"
+type IgnLevellingBenchmark {
+    "The id of the feature, for the field that reads one"
+    id: ID
+    "The geometry of the feature as GeoJSON, in WGS84, or null when the search left it out"
+    geometry: JSON
+    "The id of the feature before this one in the collection, when one feature is read"
+    previousId: String
+    "The id of the feature after this one in the collection, when one feature is read"
+    nextId: String
+    "The number, such as the kilometre of the post"
+    number: String
+    "The name of the feature, such as Aeropuerto de Málaga-Costa del Sol"
+    name: String
+    "The municipality, such as Málaga"
+    municipality: String
+    "The province, such as Málaga"
+    province: String
+    "The kind of feature, such as Zona encharcable (land that floods) or Barrio (neighbourhood)"
+    kind: String
+    "Whether the benchmark is a node of the network, such as Línea or no"
+    node: String
+    "The group of the benchmark"
+    group: Int
+    "The longitude in ETRS89"
+    longitude: Float
+    "The latitude in ETRS89"
+    latitude: Float
+    "The height above the ellipsoid, in metres"
+    ellipsoidalHeight: Float
+    "The height above sea level, in metres"
+    orthometricHeight: Float
+    "The address of the PDF that describes the point"
+    descriptionSheet: String
+    "The levelling line of the benchmark, such as Motril - Málaga"
+    line: String
+    "The address of the PDF that describes the levelling line"
+    lineSheet: String
+}
+
+"A page of the levelling benchmarks of the IGN"
+type IgnLevellingBenchmarkPage {
+    "The number of levelling benchmarks that match, across all pages"
+    matched: Int
+    "The number of features on this page"
+    returned: Int
+    "When the service answered"
+    timeStamp: DateTime
+    "The levelling benchmarks"
+    features: [IgnLevellingBenchmark]
+}
+
+"The points of the national geodetic network by space techniques (REGENTE), with their coordinates"
+type IgnRegenteGeodeticPoint {
+    "The id of the feature, for the field that reads one"
+    id: ID
+    "The geometry of the feature as GeoJSON, in WGS84, or null when the search left it out"
+    geometry: JSON
+    "The id of the feature before this one in the collection, when one feature is read"
+    previousId: String
+    "The id of the feature after this one in the collection, when one feature is read"
+    nextId: String
+    "The number, such as the kilometre of the post"
+    number: String
+    "The name of the feature, such as Aeropuerto de Málaga-Costa del Sol"
+    name: String
+    "The municipality, such as Málaga"
+    municipality: String
+    "The province, such as Málaga"
+    province: String
+    "The INE code of the municipality, such as 29067"
+    municipalityCode: Int
+    "The INE code of the province, such as 29"
+    provinceCode: Int
+    "The sheet of the 1:50,000 national map, such as 1053"
+    mapSheet: String
+    "When the point was built"
+    built: String
+    "The longitude in ETRS89"
+    longitude: Float
+    "The latitude in ETRS89"
+    latitude: Float
+    "The height above the ellipsoid, in metres"
+    ellipsoidalHeight: Float
+    "The UTM easting in ETRS89, in metres"
+    utmX: Float
+    "The UTM northing in ETRS89, in metres"
+    utmY: Float
+    "The UTM zone, such as 30"
+    utmZone: Int
+    "The height above sea level, in metres"
+    orthometricHeight: Float
+    "The address of the PDF that describes the point"
+    descriptionSheet: String
+}
+
+"A page of the REGENTE geodetic points of the IGN"
+type IgnRegenteGeodeticPointPage {
+    "The number of REGENTE geodetic points that match, across all pages"
+    matched: Int
+    "The number of features on this page"
+    returned: Int
+    "When the service answered"
+    timeStamp: DateTime
+    "The REGENTE geodetic points"
+    features: [IgnRegenteGeodeticPoint]
+}
+
+"The points of the lower order geodetic network (ROI), with their coordinates"
+type IgnLowerOrderGeodeticPoint {
+    "The id of the feature, for the field that reads one"
+    id: ID
+    "The geometry of the feature as GeoJSON, in WGS84, or null when the search left it out"
+    geometry: JSON
+    "The id of the feature before this one in the collection, when one feature is read"
+    previousId: String
+    "The id of the feature after this one in the collection, when one feature is read"
+    nextId: String
+    "The number, such as the kilometre of the post"
+    number: String
+    "The name of the feature, such as Aeropuerto de Málaga-Costa del Sol"
+    name: String
+    "The municipality, such as Málaga"
+    municipality: String
+    "The province, such as Málaga"
+    province: String
+    "The INE code of the municipality, such as 29067"
+    municipalityCode: Int
+    "The INE code of the province, such as 29"
+    provinceCode: Int
+    "The sheet of the 1:50,000 national map, such as 1053"
+    mapSheet: String
+    "When the point was built"
+    built: String
+    "The longitude in ETRS89"
+    longitude: Float
+    "The latitude in ETRS89"
+    latitude: Float
+    "The height above the ellipsoid, in metres"
+    ellipsoidalHeight: Float
+    "The UTM easting in ETRS89, in metres"
+    utmX: Float
+    "The UTM northing in ETRS89, in metres"
+    utmY: Float
+    "The UTM zone, such as 30"
+    utmZone: Int
+    "The height above sea level, in metres"
+    orthometricHeight: Float
+    "The address of the PDF that describes the point"
+    descriptionSheet: String
+}
+
+"A page of the lower order geodetic points of the IGN"
+type IgnLowerOrderGeodeticPointPage {
+    "The number of lower order geodetic points that match, across all pages"
+    matched: Int
+    "The number of features on this page"
+    returned: Int
+    "When the service answered"
+    timeStamp: DateTime
+    "The lower order geodetic points"
+    features: [IgnLowerOrderGeodeticPoint]
+}
+
+"The tide gauges of the IGN along the coasts of Spain"
+type IgnTideGauge {
+    "The id of the feature, for the field that reads one"
+    id: ID
+    "The geometry of the feature as GeoJSON, in WGS84, or null when the search left it out"
+    geometry: JSON
+    "The id of the feature before this one in the collection, when one feature is read"
+    previousId: String
+    "The id of the feature after this one in the collection, when one feature is read"
+    nextId: String
+    "The name of the feature, such as Aeropuerto de Málaga-Costa del Sol"
+    name: String
+    "The longitude in ETRS89"
+    longitude: Float
+    "The latitude in ETRS89"
+    latitude: Float
+    "The address of the PDF that describes the point"
+    descriptionSheet: String
+    "The address of the station at the Permanent Service for Mean Sea Level"
+    psmslUrl: String
+    "The address of the sheet of the GNSS station next to the tide gauge"
+    gnssStationSheet: String
+}
+
+"A page of the tide gauges of the IGN"
+type IgnTideGaugePage {
+    "The number of tide gauges that match, across all pages"
+    matched: Int
+    "The number of features on this page"
+    returned: Int
+    "When the service answered"
+    timeStamp: DateTime
+    "The tide gauges"
+    features: [IgnTideGauge]
+}

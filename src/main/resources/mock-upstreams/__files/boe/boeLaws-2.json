@@ -1,0 +1,158 @@
+{
+    "status": {
+        "code": "200",
+        "text": "ok"
+    },
+    "data": [
+        {
+            "fecha_actualizacion": "20260917T074529Z",
+            "identificador": "BOE-A-2023-7421",
+            "ambito": {
+                "codigo": "2",
+                "texto": "Auton\u00f3mico"
+            },
+            "departamento": {
+                "codigo": "8162",
+                "texto": "Comunitat Valenciana"
+            },
+            "rango": {
+                "codigo": "1300",
+                "texto": "Ley"
+            },
+            "fecha_disposicion": "20230313",
+            "numero_oficial": "2\/2023",
+            "titulo": "Ley 2\/2023, de 13 de marzo, de Protecci\u00f3n, Bienestar y Tenencia de animales de compa\u00f1\u00eda y otras medidas de bienestar animal.",
+            "diario": "Bolet\u00edn Oficial del Estado",
+            "fecha_publicacion": "20230322",
+            "diario_numero": "69",
+            "fecha_vigencia": "20230315",
+            "vigencia_agotada": "N",
+            "estado_consolidacion": {
+                "codigo": "3",
+                "texto": "Finalizado"
+            },
+            "url_eli": "https:\/\/www.boe.es\/eli\/es-vc\/l\/2023\/03\/13\/2",
+            "url_html_consolidada": "https:\/\/www.boe.es\/buscar\/act.php?id=BOE-A-2023-7421"
+        },
+        {
+            "fecha_actualizacion": "20251220T112049Z",
+            "identificador": "BOE-A-2019-6779",
+            "ambito": {
+                "codigo": "2",
+                "texto": "Auton\u00f3mico"
+            },
+            "departamento": {
+                "codigo": "8170",
+                "texto": "Comunidad Foral de Navarra"
+            },
+            "rango": {
+                "codigo": "1450",
+                "texto": "Ley Foral"
+            },
+            "fecha_disposicion": "20190404",
+            "numero_oficial": "19\/2019",
+            "titulo": "Ley Foral 19\/2019, de 4 de abril, de protecci\u00f3n de los animales de compa\u00f1\u00eda en Navarra.",
+            "diario": "Bolet\u00edn Oficial del Estado",
+            "fecha_publicacion": "20190508",
+            "diario_numero": "110",
+            "fecha_vigencia": "20190711",
+            "vigencia_agotada": "N",
+            "estado_consolidacion": {
+                "codigo": "3",
+                "texto": "Finalizado"
+            },
+            "url_eli": "https:\/\/www.boe.es\/eli\/es-nc\/lf\/2019\/04\/04\/19",
+            "url_html_consolidada": "https:\/\/www.boe.es\/buscar\/act.php?id=BOE-A-2019-6779"
+        },
+        {
+            "fecha_actualizacion": "20251219T194448Z",
+            "identificador": "BOE-A-2017-15288",
+            "ambito": {
+                "codigo": "2",
+                "texto": "Auton\u00f3mico"
+            },
+            "departamento": {
+                "codigo": "8100",
+                "texto": "Comunidad Aut\u00f3noma de la Regi\u00f3n de Murcia"
+            },
+            "rango": {
+                "codigo": "1300",
+                "texto": "Ley"
+            },
+            "fecha_disposicion": "20171108",
+            "numero_oficial": "6\/2017",
+            "titulo": "Ley 6\/2017, de 8 de noviembre, de protecci\u00f3n y defensa de los animales de compa\u00f1\u00eda de la Regi\u00f3n de Murcia.",
+            "diario": "Bolet\u00edn Oficial del Estado",
+            "fecha_publicacion": "20171222",
+            "diario_numero": "310",
+            "fecha_vigencia": "20171223",
+            "vigencia_agotada": "N",
+            "estado_consolidacion": {
+                "codigo": "3",
+                "texto": "Finalizado"
+            },
+            "url_eli": "https:\/\/www.boe.es\/eli\/es-mc\/l\/2017\/11\/08\/6",
+            "url_html_consolidada": "https:\/\/www.boe.es\/buscar\/act.php?id=BOE-A-2017-15288"
+        },
+        {
+            "fecha_actualizacion": "20251219T194430Z",
+            "identificador": "BOE-A-2017-12357",
+            "ambito": {
+                "codigo": "2",
+                "texto": "Auton\u00f3mico"
+            },
+            "departamento": {
+                "codigo": "8090",
+                "texto": "Comunidad Aut\u00f3noma de Galicia"
+            },
+            "rango": {
+                "codigo": "1300",
+                "texto": "Ley"
+            },
+            "fecha_disposicion": "20171003",
+            "numero_oficial": "4\/2017",
+            "titulo": "Ley 4\/2017, de 3 de octubre, de protecci\u00f3n y bienestar de los animales de compa\u00f1\u00eda en Galicia.",
+            "diario": "Bolet\u00edn Oficial del Estado",
+            "fecha_publicacion": "20171030",
+            "diario_numero": "263",
+            "fecha_vigencia": "20180111",
+            "vigencia_agotada": "N",
+            "estado_consolidacion": {
+                "codigo": "3",
+                "texto": "Finalizado"
+            },
+            "url_eli": "https:\/\/www.boe.es\/eli\/es-ga\/l\/2017\/10\/03\/4",
+            "url_html_consolidada": "https:\/\/www.boe.es\/buscar\/act.php?id=BOE-A-2017-12357"
+        },
+        {
+            "fecha_actualizacion": "20251219T191855Z",
+            "identificador": "BOE-A-2016-11097",
+            "ambito": {
+                "codigo": "2",
+                "texto": "Auton\u00f3mico"
+            },
+            "departamento": {
+                "codigo": "8131",
+                "texto": "Comunidad de Madrid"
+            },
+            "rango": {
+                "codigo": "1300",
+                "texto": "Ley"
+            },
+            "fecha_disposicion": "20160722",
+            "numero_oficial": "4\/2016",
+            "titulo": "Ley 4\/2016, de 22 de julio, de Protecci\u00f3n de los Animales de Compa\u00f1\u00eda de la Comunidad de Madrid.",
+            "diario": "Bolet\u00edn Oficial del Estado",
+            "fecha_publicacion": "20161125",
+            "diario_numero": "285",
+            "fecha_vigencia": "20170210",
+            "vigencia_agotada": "N",
+            "estado_consolidacion": {
+                "codigo": "3",
+                "texto": "Finalizado"
+            },
+            "url_eli": "https:\/\/www.boe.es\/eli\/es-md\/l\/2016\/07\/22\/4",
+            "url_html_consolidada": "https:\/\/www.boe.es\/buscar\/act.php?id=BOE-A-2016-11097"
+        }
+    ]
+}

@@ -1,0 +1,96 @@
+{
+    "type":"Feature",
+    "properties":{
+        "fecha_alta":"2019-08-08T00:00:00",
+        "nilreason_varios":"other:unpopulated",
+        "nil_varios":true,
+        "nombre":"Estaci\u00f3n de Los Prados-A. V.",
+        "id_areafc":290670000002,
+        "id_estfc":290670000002,
+        "nilreason_nombre":null,
+        "nil_nombre":null
+    },
+    "id":"FCEST_A290670000002",
+    "geometry":{
+        "type":"Polygon",
+        "coordinates":[
+            [
+                [
+                    -4.477129139999931,
+                    36.69846589000008,
+                    14.639802932739258
+                ],
+                [
+                    -4.476635079999937,
+                    36.69819330000007,
+                    14.424996376037598
+                ],
+                [
+                    -4.476718499999947,
+                    36.698077340000054,
+                    15.005792617797852
+                ],
+                [
+                    -4.477226929999972,
+                    36.69835549000004,
+                    14.776131629943848
+                ],
+                [
+                    -4.477129139999931,
+                    36.69846589000008,
+                    14.639802932739258
+                ]
+            ]
+        ]
+    },
+    "prev":"FCEST_A290630004371",
+    "next":"FCEST_A290670000003",
+    "links":[
+        {
+            "type":"application/json",
+            "rel":"root",
+            "title":"The landing page of this server as JSON",
+            "href":"https://api-features.idee.es?f=json"
+        },
+        {
+            "type":"text/html",
+            "rel":"root",
+            "title":"The landing page of this server as HTML",
+            "href":"https://api-features.idee.es?f=html"
+        },
+        {
+            "rel":"self",
+            "type":"application/geo+json",
+            "title":"This document as JSON",
+            "href":"https://api-features.idee.es/collections/railwaystationarea/items/FCEST_A290670000002?f=json"
+        },
+        {
+            "rel":"alternate",
+            "type":"application/ld+json",
+            "title":"This document as RDF (JSON-LD)",
+            "href":"https://api-features.idee.es/collections/railwaystationarea/items/FCEST_A290670000002?f=jsonld"
+        },
+        {
+            "rel":"alternate",
+            "type":"text/html",
+            "title":"This document as HTML",
+            "href":"https://api-features.idee.es/collections/railwaystationarea/items/FCEST_A290670000002?f=html"
+        },
+        {
+            "rel":"collection",
+            "type":"application/json",
+            "title":"TN-RA \u00c1rea de estaci\u00f3n ferroviaria",
+            "href":"https://api-features.idee.es/collections/railwaystationarea"
+        },
+        {
+            "rel":"prev",
+            "type":"application/json",
+            "href":"https://api-features.idee.es/collections/railwaystationarea/items/FCEST_A290630004371?f=json"
+        },
+        {
+            "rel":"next",
+            "type":"application/json",
+            "href":"https://api-features.idee.es/collections/railwaystationarea/items/FCEST_A290670000003?f=json"
+        }
+    ]
+}

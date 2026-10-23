@@ -1,0 +1,120 @@
+{
+ "mappings": [
+  {
+   "name": "malagaDogParks: {}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/malaga/recursos/ambiente/parquesCaninos/da_parquesCaninos-4326.geojson"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/geo+json"
+    },
+    "bodyFileName": "malaga/malagaDogParks.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://datosabiertos.malaga.eu/recursos/ambiente/parquesCaninos/da_parquesCaninos-4326.geojson on 2026-10-23."
+   }
+  },
+  {
+   "name": "malagaDogParks: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/malaga/recursos/ambiente/parquesCaninos/da_parquesCaninos\\-4326\\.geojson"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/geo+json"
+    },
+    "bodyFileName": "malaga/malagaDogParks.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of malagaDogParks with the first recording, from https://datosabiertos.malaga.eu/recursos/ambiente/parquesCaninos/da_parquesCaninos-4326.geojson on 2026-10-23."
+   }
+  },
+  {
+   "name": "malagaDrinkingFountains: {\"table\": \"2513b555-cd58-4a19-a9df-6bcec9bf58fc\", \"limit\": 1000}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/malaga/api/3/action/datastore_search",
+    "queryParameters": {
+     "resource_id": {
+      "equalTo": "2513b555-cd58-4a19-a9df-6bcec9bf58fc"
+     },
+     "limit": {
+      "equalTo": "1000"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json;charset=utf-8"
+    },
+    "bodyFileName": "malaga/malagaDrinkingFountains.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://datosabiertos.malaga.eu/api/3/action/datastore_search?resource_id=2513b555-cd58-4a19-a9df-6bcec9bf58fc&limit=1000 on 2026-10-23."
+   }
+  },
+  {
+   "name": "malagaDrinkingFountains: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/malaga/api/3/action/datastore_search"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json;charset=utf-8"
+    },
+    "bodyFileName": "malaga/malagaDrinkingFountains.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of malagaDrinkingFountains with the first recording, from https://datosabiertos.malaga.eu/api/3/action/datastore_search?resource_id=2513b555-cd58-4a19-a9df-6bcec9bf58fc&limit=1000 on 2026-10-23."
+   }
+  },
+  {
+   "name": "malagaBuses: {}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/malaga/recursos/transporte/EMT/EMTlineasUbicaciones/lineasyubicaciones.geojson"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/geo+json"
+    },
+    "bodyFileName": "malaga/malagaBuses.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://datosabiertos.malaga.eu/recursos/transporte/EMT/EMTlineasUbicaciones/lineasyubicaciones.geojson on 2026-10-23."
+   }
+  },
+  {
+   "name": "malagaBuses: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/malaga/recursos/transporte/EMT/EMTlineasUbicaciones/lineasyubicaciones\\.geojson"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/geo+json"
+    },
+    "bodyFileName": "malaga/malagaBuses.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of malagaBuses with the first recording, from https://datosabiertos.malaga.eu/recursos/transporte/EMT/EMTlineasUbicaciones/lineasyubicaciones.geojson on 2026-10-23."
+   }
+  }
+ ]
+}

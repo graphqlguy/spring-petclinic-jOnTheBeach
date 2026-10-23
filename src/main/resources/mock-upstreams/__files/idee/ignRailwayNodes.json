@@ -1,0 +1,76 @@
+{
+    "type":"FeatureCollection",
+    "features":[
+        {
+            "type":"Feature",
+            "properties":{
+                "id":10631,
+                "tip_nodo":"http://inspire.ec.europa.eu/codelist/FormOfRailwayNodeValue/junction",
+                "nil_tip_nodofc":null,
+                "fecha_modif":"2021-05-18T10:15:28",
+                "nilreason_tip_nodofc":null
+            },
+            "id":"FFCC_N_10631",
+            "geometry":null
+        },
+        {
+            "type":"Feature",
+            "properties":{
+                "id":10632,
+                "tip_nodo":"http://inspire.ec.europa.eu/codelist/FormOfRailwayNodeValue/junction",
+                "nil_tip_nodofc":null,
+                "fecha_modif":"2021-05-18T10:15:28",
+                "nilreason_tip_nodofc":null
+            },
+            "id":"FFCC_N_10632",
+            "geometry":null
+        },
+        {
+            "type":"Feature",
+            "properties":{
+                "id":10633,
+                "tip_nodo":"http://inspire.ec.europa.eu/codelist/FormOfRailwayNodeValue/railwayEnd",
+                "nil_tip_nodofc":null,
+                "fecha_modif":"2021-05-18T10:15:28",
+                "nilreason_tip_nodofc":null
+            },
+            "id":"FFCC_N_10633",
+            "geometry":null
+        }
+    ],
+    "numberMatched":200,
+    "numberReturned":3,
+    "links":[
+        {
+            "type":"application/geo+json",
+            "rel":"self",
+            "title":"This document as GeoJSON",
+            "href":"https://api-features.idee.es/collections/railwaynode/items?f=json&bbox=-4.50,36.65,-4.35,36.75&skipGeometry=true&limit=3"
+        },
+        {
+            "rel":"alternate",
+            "type":"application/ld+json",
+            "title":"This document as RDF (JSON-LD)",
+            "href":"https://api-features.idee.es/collections/railwaynode/items?f=jsonld&bbox=-4.50,36.65,-4.35,36.75&skipGeometry=true&limit=3"
+        },
+        {
+            "type":"text/html",
+            "rel":"alternate",
+            "title":"This document as HTML",
+            "href":"https://api-features.idee.es/collections/railwaynode/items?f=html&bbox=-4.50,36.65,-4.35,36.75&skipGeometry=true&limit=3"
+        },
+        {
+            "type":"application/geo+json",
+            "rel":"next",
+            "title":"Items (next)",
+            "href":"https://api-features.idee.es/collections/railwaynode/items?offset=3&bbox=-4.50,36.65,-4.35,36.75&skipGeometry=true&limit=3"
+        },
+        {
+            "type":"application/json",
+            "title":"TN-RA Nodo ferroviario",
+            "rel":"collection",
+            "href":"https://api-features.idee.es/collections/railwaynode"
+        }
+    ],
+    "timeStamp":"2026-10-22T23:43:19.576068Z"
+}

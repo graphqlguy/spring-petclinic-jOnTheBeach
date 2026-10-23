@@ -1,0 +1,166 @@
+{ "format" : "linked-data-api", "version" : "0.2", "result" : {"_about" : "http://datos.gob.es/apidata/catalog/dataset/format/geojson.json?_pageSize=3&_page=0", "definition" : "http://datos.gob.es/apidata/catalog/meta/dataset/format/_vformat.json", "extendedMetadataVersion" : "http://datos.gob.es/apidata/catalog/dataset/format/geojson.json?_pageSize=3&_page=0&_metadata=all", "first" : "http://datos.gob.es/apidata/catalog/dataset/format/geojson.json?_page=0", "isPartOf" : {"_about" : "http://datos.gob.es/apidata/catalog/dataset/format/geojson.json", "definition" : "http://datos.gob.es/apidata/catalog/meta/dataset/format/_vformat.json", "hasPart" : "http://datos.gob.es/apidata/catalog/dataset/format/geojson.json?_pageSize=3&_page=0", "type" : "http://purl.org/linked-data/api/vocab#ListEndpoint"}
+    , "items" : [{"_about" : "https://datos.gob.es/catalogo/l01061535-areas-caninas", "description" : [{"_value" : "Información sobre las Areas Caninas del municipio de Villanueva de la Serena.", "_lang" : "es"}
+      ], "distribution" : [{"_about" : "https://datos.gob.es/catalogo/l01061535-areas-caninas/resource/0944c4b6-83be-438e-81aa-80e9e60b70c3", "accessURL" : "http://geoserver.villanuevadelaserena.es:80/geoserver/LG3_WS_MapPublish_public/ows?SERVICE=WMS&REQUEST=GETCAPABILITIES", "format" : {"_about" : "https://datos.gob.es/catalogo/l01061535-areas-caninas/resource/0944c4b6-83be-438e-81aa-80e9e60b70c3/format", "type" : "http://purl.org/dc/terms/IMT", "value" : "text/wms"}
+        , "title" : [{"_value" : "Servicios WMS", "_lang" : "es"}
+        ], "type" : "http://www.w3.org/ns/dcat#Distribution"}
+      , {"_about" : "https://datos.gob.es/catalogo/l01061535-areas-caninas/resource/468ffc4e-0852-4335-ac65-173f476c8ebc", "accessURL" : "http://geoserver.villanuevadelaserena.es:80/geoserver/LG3_WS_MapPublish_public/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=vva_areas_caninas_105", "format" : {"_about" : "https://datos.gob.es/catalogo/l01061535-areas-caninas/resource/468ffc4e-0852-4335-ac65-173f476c8ebc/format", "type" : "http://purl.org/dc/terms/IMT", "value" : "text/wms"}
+        , "title" : [{"_value" : "leyenda_areas_caninas", "_lang" : "es"}
+        ], "type" : "http://www.w3.org/ns/dcat#Distribution"}
+      , {"_about" : "https://datos.gob.es/catalogo/l01061535-areas-caninas/resource/52f3a4a9-ce30-48e2-872b-b84719361748", "accessURL" : "http://geoserver.villanuevadelaserena.es:80/geoserver/LG3_WS_MapPublish_public/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=vva_areas_caninas_105&style=vva_areas_caninas___default_vva_areas_caninas_105", "format" : {"_about" : "https://datos.gob.es/catalogo/l01061535-areas-caninas/resource/52f3a4a9-ce30-48e2-872b-b84719361748/format", "type" : "http://purl.org/dc/terms/IMT", "value" : "text/wms"}
+        , "title" : [{"_value" : "Leyenda Areas Caninas", "_lang" : "es"}
+        ], "type" : "http://www.w3.org/ns/dcat#Distribution"}
+      , {"_about" : "https://datos.gob.es/catalogo/l01061535-areas-caninas/resource/5ffa53f4-f109-4c41-b318-6372e7a87418", "accessURL" : "http://geoserver.villanuevadelaserena.es:80/geoserver/LG3_WS_MapPublish_public/ows?SERVICE=WMS&REQUEST=GETCAPABILITIES", "format" : {"_about" : "https://datos.gob.es/catalogo/l01061535-areas-caninas/resource/5ffa53f4-f109-4c41-b318-6372e7a87418/format", "type" : "http://purl.org/dc/terms/IMT", "value" : "text/wms"}
+        , "title" : [{"_value" : "vva_areas_caninas_105", "_lang" : "es"}
+        ], "type" : "http://www.w3.org/ns/dcat#Distribution"}
+      , {"_about" : "https://datos.gob.es/catalogo/l01061535-areas-caninas/resource/6540cd73-72c1-412e-91ce-d70e16282301", "accessURL" : "http://geoserver.villanuevadelaserena.es/geoserver/wms/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=LG3_WS_MapPublish_public%3Avva_areas_caninas_105&srsName=EPSG%3A4258&outputFormat=SHAPE-ZIP", "format" : {"_about" : "https://datos.gob.es/catalogo/l01061535-areas-caninas/resource/6540cd73-72c1-412e-91ce-d70e16282301/format", "type" : "http://purl.org/dc/terms/IMT", "value" : "application/x-zipped-shp"}
+        , "title" : [{"_value" : "areas_caninas.shp", "_lang" : "es"}
+        ], "type" : "http://www.w3.org/ns/dcat#Distribution"}
+      , {"_about" : "https://datos.gob.es/catalogo/l01061535-areas-caninas/resource/6b386c3e-a44b-467e-9ab5-1503662d7850", "accessURL" : "http://ide.villanuevadelaserena.es/", "format" : {"_about" : "https://datos.gob.es/catalogo/l01061535-areas-caninas/resource/6b386c3e-a44b-467e-9ab5-1503662d7850/format", "type" : "http://purl.org/dc/terms/IMT", "value" : "text/html"}
+        , "title" : [{"_value" : "IDE GeoOpenData", "_lang" : "es"}
+        ], "type" : "http://www.w3.org/ns/dcat#Distribution"}
+      , {"_about" : "https://datos.gob.es/catalogo/l01061535-areas-caninas/resource/7cea3955-0f40-418d-a9da-e2614529d422", "accessURL" : "http://geoserver.villanuevadelaserena.es/geoserver/wfs/kml?service=WFS&version=1.0.0&request=GetFeature&typeName=LG3_WS_MapPublish_public%3Avva_areas_caninas_105&srsName=EPSG%3A4258&outputFormat=application%2Fvnd.google-earth.kml%2Bxml", "format" : {"_about" : "https://datos.gob.es/catalogo/l01061535-areas-caninas/resource/7cea3955-0f40-418d-a9da-e2614529d422/format", "type" : "http://purl.org/dc/terms/IMT", "value" : "application/vnd.google-earth.kml+xml"}
+        , "title" : [{"_value" : "areas_caninas.kml", "_lang" : "es"}
+        ], "type" : "http://www.w3.org/ns/dcat#Distribution"}
+      , {"_about" : "https://datos.gob.es/catalogo/l01061535-areas-caninas/resource/8f8368f8-84dd-4581-af64-33728c791fbc", "accessURL" : "http://geoserver.villanuevadelaserena.es/geoserver/wms/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=LG3_WS_MapPublish_public%3Avva_areas_caninas_105&srsName=EPSG%3A4258&outputFormat=csv", "format" : {"_about" : "https://datos.gob.es/catalogo/l01061535-areas-caninas/resource/8f8368f8-84dd-4581-af64-33728c791fbc/format", "type" : "http://purl.org/dc/terms/IMT", "value" : "text/csv"}
+        , "title" : [{"_value" : "areas_caninas.csv", "_lang" : "es"}
+        ], "type" : "http://www.w3.org/ns/dcat#Distribution"}
+      , {"_about" : "https://datos.gob.es/catalogo/l01061535-areas-caninas/resource/e6d064e4-6bd2-4b15-a725-caddc2a48039", "accessURL" : "http://geoserver.villanuevadelaserena.es/geoserver/wfs/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=LG3_WS_MapPublish_public%3Avva_areas_caninas_105&srsName=EPSG%3A4258&outputFormat=application%2Fjson", "format" : {"_about" : "https://datos.gob.es/catalogo/l01061535-areas-caninas/resource/e6d064e4-6bd2-4b15-a725-caddc2a48039/format", "type" : "http://purl.org/dc/terms/IMT", "value" : "application/vnd.geo+json"}
+        , "title" : [{"_value" : "areas_caninas.geojson", "_lang" : "es"}
+        ], "type" : "http://www.w3.org/ns/dcat#Distribution"}
+      ], "identifier" : "http://catalogo.villanuevadelaserena.es/dataset/0dc508da-a24c-4f1f-a334-9e0b173dde40", "issued" : "mié, 09 ene 2019 07:32:13 GMT+0000", "keyword" : [{"_value" : "Administrative units", "_lang" : "es"}
+      , {"_value" : "Areas_Caninas", "_lang" : "es"}
+      , {"_value" : "IDEVVA", "_lang" : "es"}
+      , {"_value" : "Turismo", "_lang" : "es"}
+      , {"_value" : "Unidades Administrativas", "_lang" : "es"}
+      , {"_value" : "features", "_lang" : "es"}
+      , {"_value" : "vva_areas_caninas_105", "_lang" : "es"}
+      ], "modified" : "jue, 27 jun 2019 06:13:31 GMT+0000", "publisher" : "http://datos.gob.es/recurso/sector-publico/org/Organismo/L01061535", "theme" : "http://datos.gob.es/kos/sector-publico/sector/sociedad-bienestar", "title" : [{"_value" : "Areas_Caninas", "_lang" : "es"}
+      ], "type" : "http://www.w3.org/ns/dcat#Dataset"}
+    , {"_about" : "https://datos.gob.es/catalogo/l01061535-bares-y-restaurantes", "description" : [{"_value" : "Información relativa a los bares y restaurantes de la ciudad de Villanueva de la Serena.", "_lang" : "es"}
+      ], "distribution" : [{"_about" : "https://datos.gob.es/catalogo/l01061535-bares-y-restaurantes/resource/0097323e-df80-4bfa-928f-70d0c5afcd6a", "accessURL" : "http://geoserver.villanuevadelaserena.es:80/geoserver/LG3_WS_MapPublish_public/ows?SERVICE=WMS&REQUEST=GETCAPABILITIES", "format" : {"_about" : "https://datos.gob.es/catalogo/l01061535-bares-y-restaurantes/resource/0097323e-df80-4bfa-928f-70d0c5afcd6a/format", "type" : "http://purl.org/dc/terms/IMT", "value" : "text/wms"}
+        , "title" : [{"_value" : "LG3_WS_MapPublish_public:vva_comercio_bares_105", "_lang" : "es"}
+        ], "type" : "http://www.w3.org/ns/dcat#Distribution"}
+      , {"_about" : "https://datos.gob.es/catalogo/l01061535-bares-y-restaurantes/resource/07f8b62b-4de8-4d20-aa8c-3e6facb32b0a", "accessURL" : "http://geoserver.villanuevadelaserena.es:80/geoserver/LG3_WS_MapPublish_public/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=vva_comercio_bares_105&style=vva_comercio_bares___default_vva_comercio_bares_105", "format" : {"_about" : "https://datos.gob.es/catalogo/l01061535-bares-y-restaurantes/resource/07f8b62b-4de8-4d20-aa8c-3e6facb32b0a/format", "type" : "http://purl.org/dc/terms/IMT", "value" : "text/wms"}
+        , "title" : [{"_value" : "Leyenda bares y restaurantes", "_lang" : "es"}
+        ], "type" : "http://www.w3.org/ns/dcat#Distribution"}
+      , {"_about" : "https://datos.gob.es/catalogo/l01061535-bares-y-restaurantes/resource/2a2bd797-af2f-4053-a42e-2e4ddc30017a", "accessURL" : "http://alfresco.villanuevadelaserena.es/share/proxy/alfresco-noauth/api/internal/shared/node/lFcMcSQNSXu9XeGjBp4l5A/content/bares.odt?c=force&noCache=1551169660240&a=true", "format" : {"_about" : "https://datos.gob.es/catalogo/l01061535-bares-y-restaurantes/resource/2a2bd797-af2f-4053-a42e-2e4ddc30017a/format", "type" : "http://purl.org/dc/terms/IMT", "value" : "application/vnd.oasis.opendocument.text"}
+        , "title" : [{"_value" : "Bares y Resturantes.odt", "_lang" : "es"}
+        ], "type" : "http://www.w3.org/ns/dcat#Distribution"}
+      , {"_about" : "https://datos.gob.es/catalogo/l01061535-bares-y-restaurantes/resource/31503074-38da-46cb-90b0-352a70febd05", "accessURL" : "http://geoserver.villanuevadelaserena.es/geoserver/wms/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=LG3_WS_MapPublish_public%3Avva_comercio_bares_105&srsName=EPSG%3A4258&outputFormat=SHAPE-ZIP", "format" : {"_about" : "https://datos.gob.es/catalogo/l01061535-bares-y-restaurantes/resource/31503074-38da-46cb-90b0-352a70febd05/format", "type" : "http://purl.org/dc/terms/IMT", "value" : "application/x-zipped-shp"}
+        , "title" : [{"_value" : "Bares y restaurantes.shp", "_lang" : "es"}
+        ], "type" : "http://www.w3.org/ns/dcat#Distribution"}
+      , {"_about" : "https://datos.gob.es/catalogo/l01061535-bares-y-restaurantes/resource/39d84409-c8cf-49bd-9a6f-f60c64e433a5", "accessURL" : "http://geoserver.villanuevadelaserena.es/geoserver/wfs/kml?service=WFS&version=1.0.0&request=GetFeature&typeName=LG3_WS_MapPublish_public%3Avva_comercio_bares_105&srsName=EPSG%3A4258&outputFormat=application%2Fvnd.google-earth.kml%2Bxml", "format" : {"_about" : "https://datos.gob.es/catalogo/l01061535-bares-y-restaurantes/resource/39d84409-c8cf-49bd-9a6f-f60c64e433a5/format", "type" : "http://purl.org/dc/terms/IMT", "value" : "application/vnd.google-earth.kml+xml"}
+        , "title" : [{"_value" : "Bares y Restaurantes.kml", "_lang" : "es"}
+        ], "type" : "http://www.w3.org/ns/dcat#Distribution"}
+      , {"_about" : "https://datos.gob.es/catalogo/l01061535-bares-y-restaurantes/resource/3b54039d-19c9-4d7c-8f8a-1d449f1ced28", "accessURL" : "http://geoserver.villanuevadelaserena.es:80/geoserver/LG3_WS_MapPublish_public/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=vva_comercio_bares_105", "format" : {"_about" : "https://datos.gob.es/catalogo/l01061535-bares-y-restaurantes/resource/3b54039d-19c9-4d7c-8f8a-1d449f1ced28/format", "type" : "http://purl.org/dc/terms/IMT", "value" : "text/wms"}
+        , "title" : [{"_value" : "Leyenda bares y restaurantes", "_lang" : "es"}
+        ], "type" : "http://www.w3.org/ns/dcat#Distribution"}
+      , {"_about" : "https://datos.gob.es/catalogo/l01061535-bares-y-restaurantes/resource/4db000cf-1feb-459f-bae4-b8ccd3830e89", "accessURL" : "http://alfresco.villanuevadelaserena.es/share/proxy/alfresco-noauth/api/internal/shared/node/uYnXRPVtRIWjaFYU-8z3fA/content/bares.json?c=force&noCache=1551170104082&a=true", "format" : {"_about" : "https://datos.gob.es/catalogo/l01061535-bares-y-restaurantes/resource/4db000cf-1feb-459f-bae4-b8ccd3830e89/format", "type" : "http://purl.org/dc/terms/IMT", "value" : "application/json"}
+        , "title" : [{"_value" : "Bares y Restaurantes.json", "_lang" : "es"}
+        ], "type" : "http://www.w3.org/ns/dcat#Distribution"}
+      , {"_about" : "https://datos.gob.es/catalogo/l01061535-bares-y-restaurantes/resource/7a55bea7-0c08-484e-b36a-3a34c1c7f3e0", "accessURL" : "http://alfresco.villanuevadelaserena.es/share/proxy/alfresco-noauth/api/internal/shared/node/3ZYsqH7iQ8q-wiRxEWfaXQ/content/bares.rtf?c=force&noCache=1551170010952&a=true", "format" : {"_about" : "https://datos.gob.es/catalogo/l01061535-bares-y-restaurantes/resource/7a55bea7-0c08-484e-b36a-3a34c1c7f3e0/format", "type" : "http://purl.org/dc/terms/IMT", "value" : "text/rtf"}
+        , "title" : [{"_value" : "Bares y Restaurantes.rtf", "_lang" : "es"}
+        ], "type" : "http://www.w3.org/ns/dcat#Distribution"}
+      , {"_about" : "https://datos.gob.es/catalogo/l01061535-bares-y-restaurantes/resource/7c30c218-67a0-4ac1-b257-77d4a55853c4", "accessURL" : "http://geoserver.villanuevadelaserena.es/geoserver/wms/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=LG3_WS_MapPublish_public%3Avva_comercio_bares_105&srsName=EPSG%3A4258&outputFormat=csv", "format" : {"_about" : "https://datos.gob.es/catalogo/l01061535-bares-y-restaurantes/resource/7c30c218-67a0-4ac1-b257-77d4a55853c4/format", "type" : "http://purl.org/dc/terms/IMT", "value" : "text/csv"}
+        , "title" : [{"_value" : "Bares y Restaurantes.csv", "_lang" : "es"}
+        ], "type" : "http://www.w3.org/ns/dcat#Distribution"}
+      , {"_about" : "https://datos.gob.es/catalogo/l01061535-bares-y-restaurantes/resource/7ce74f00-448e-4844-9d39-2013627a4ad7", "accessURL" : "http://alfresco.villanuevadelaserena.es/share/proxy/alfresco-noauth/api/internal/shared/node/VcBF6YNATz-zzA6-4enZ8g/content/bares.xlsx?c=force&noCache=1551170061009&a=true", "format" : {"_about" : "https://datos.gob.es/catalogo/l01061535-bares-y-restaurantes/resource/7ce74f00-448e-4844-9d39-2013627a4ad7/format", "type" : "http://purl.org/dc/terms/IMT", "value" : "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"}
+        , "title" : [{"_value" : "Bares y Restaurantes.xlsx", "_lang" : "es"}
+        ], "type" : "http://www.w3.org/ns/dcat#Distribution"}
+      , {"_about" : "https://datos.gob.es/catalogo/l01061535-bares-y-restaurantes/resource/818dfde2-34b4-441f-9435-76ae3849e884", "accessURL" : "http://geoserver.villanuevadelaserena.es/geoserver/wfs/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=LG3_WS_MapPublish_public%3Avva_comercio_bares_105&srsName=EPSG%3A4258&outputFormat=application%2Fjson", "format" : {"_about" : "https://datos.gob.es/catalogo/l01061535-bares-y-restaurantes/resource/818dfde2-34b4-441f-9435-76ae3849e884/format", "type" : "http://purl.org/dc/terms/IMT", "value" : "application/vnd.geo+json"}
+        , "title" : [{"_value" : "Bares y Restaurantes.geojson", "_lang" : "es"}
+        ], "type" : "http://www.w3.org/ns/dcat#Distribution"}
+      , {"_about" : "https://datos.gob.es/catalogo/l01061535-bares-y-restaurantes/resource/9d628a52-1020-4609-94bf-bf1dfc806f4c", "accessURL" : "http://alfresco.villanuevadelaserena.es/share/proxy/alfresco-noauth/api/internal/shared/node/w0gcVWZST2KQ5vGIkv7E3w/content/bares.pdf?c=force&noCache=1551169800008&a=true", "format" : {"_about" : "https://datos.gob.es/catalogo/l01061535-bares-y-restaurantes/resource/9d628a52-1020-4609-94bf-bf1dfc806f4c/format", "type" : "http://purl.org/dc/terms/IMT", "value" : "application/pdf"}
+        , "title" : [{"_value" : "Bares y Restaurantes.pdf", "_lang" : "es"}
+        ], "type" : "http://www.w3.org/ns/dcat#Distribution"}
+      , {"_about" : "https://datos.gob.es/catalogo/l01061535-bares-y-restaurantes/resource/b268c58b-2a1d-4254-a010-21ef9d6d50f7", "accessURL" : "http://alfresco.villanuevadelaserena.es/share/proxy/alfresco-noauth/api/internal/shared/node/EYJEnpAOR-Kuo8_RphOmuQ/content/bares.docx?c=force&noCache=1551169404247&a=true", "format" : {"_about" : "https://datos.gob.es/catalogo/l01061535-bares-y-restaurantes/resource/b268c58b-2a1d-4254-a010-21ef9d6d50f7/format", "type" : "http://purl.org/dc/terms/IMT", "value" : "application/vnd.openxmlformats-officedocument.wordprocessingml.document"}
+        , "title" : [{"_value" : "Bares y Restaurantes.docx", "_lang" : "es"}
+        ], "type" : "http://www.w3.org/ns/dcat#Distribution"}
+      , {"_about" : "https://datos.gob.es/catalogo/l01061535-bares-y-restaurantes/resource/b8b19f20-5756-4532-b31e-4fe9fc36248e", "accessURL" : "http://alfresco.villanuevadelaserena.es/share/proxy/alfresco-noauth/api/internal/shared/node/XMThdAjOTguaSMNRHPaOLQ/content/bares.xml?c=force&noCache=1551169862833&a=true", "format" : {"_about" : "https://datos.gob.es/catalogo/l01061535-bares-y-restaurantes/resource/b8b19f20-5756-4532-b31e-4fe9fc36248e/format", "type" : "http://purl.org/dc/terms/IMT", "value" : "text/xml"}
+        , "title" : [{"_value" : "Bares y Restaurantes.xml", "_lang" : "es"}
+        ], "type" : "http://www.w3.org/ns/dcat#Distribution"}
+      , {"_about" : "https://datos.gob.es/catalogo/l01061535-bares-y-restaurantes/resource/ce2c6569-552d-4835-a913-84c6302298ac", "accessURL" : "http://alfresco.villanuevadelaserena.es/share/proxy/alfresco-noauth/api/internal/shared/node/9-gbHCAxQF2vVcxbJBjXRA/content/bares.doc?c=force&noCache=1551169313665&a=true", "format" : {"_about" : "https://datos.gob.es/catalogo/l01061535-bares-y-restaurantes/resource/ce2c6569-552d-4835-a913-84c6302298ac/format", "type" : "http://purl.org/dc/terms/IMT", "value" : "application/msword"}
+        , "title" : [{"_value" : "Bares y Restaurantes.doc", "_lang" : "es"}
+        ], "type" : "http://www.w3.org/ns/dcat#Distribution"}
+      , {"_about" : "https://datos.gob.es/catalogo/l01061535-bares-y-restaurantes/resource/d40b2674-9394-4581-9ed4-0a1a71e45eae", "accessURL" : "http://alfresco.villanuevadelaserena.es/share/proxy/alfresco-noauth/api/internal/shared/node/L4d0f74LTuq6a6hxgC-vjQ/content/bares.html?c=force&noCache=1551169461671&a=true", "format" : {"_about" : "https://datos.gob.es/catalogo/l01061535-bares-y-restaurantes/resource/d40b2674-9394-4581-9ed4-0a1a71e45eae/format", "type" : "http://purl.org/dc/terms/IMT", "value" : "text/html"}
+        , "title" : [{"_value" : "Bares y Restaurantes.html", "_lang" : "es"}
+        ], "type" : "http://www.w3.org/ns/dcat#Distribution"}
+      , {"_about" : "https://datos.gob.es/catalogo/l01061535-bares-y-restaurantes/resource/e60327ee-1505-4968-bb72-87395cd64d07", "accessURL" : "http://geoserver.villanuevadelaserena.es:80/geoserver/LG3_WS_MapPublish_public/ows?SERVICE=WMS&REQUEST=GETCAPABILITIES", "format" : {"_about" : "https://datos.gob.es/catalogo/l01061535-bares-y-restaurantes/resource/e60327ee-1505-4968-bb72-87395cd64d07/format", "type" : "http://purl.org/dc/terms/IMT", "value" : "text/wms"}
+        , "title" : [{"_value" : "Servicio WMS", "_lang" : "es"}
+        ], "type" : "http://www.w3.org/ns/dcat#Distribution"}
+      , {"_about" : "https://datos.gob.es/catalogo/l01061535-bares-y-restaurantes/resource/e9941f30-fc28-4d04-b73d-8f00e3f9fbbb", "accessURL" : "http://ide.villanuevadelaserena.es/", "format" : {"_about" : "https://datos.gob.es/catalogo/l01061535-bares-y-restaurantes/resource/e9941f30-fc28-4d04-b73d-8f00e3f9fbbb/format", "type" : "http://purl.org/dc/terms/IMT", "value" : "text/html"}
+        , "title" : [{"_value" : "IDE GeoOpenData", "_lang" : "es"}
+        ], "type" : "http://www.w3.org/ns/dcat#Distribution"}
+      , {"_about" : "https://datos.gob.es/catalogo/l01061535-bares-y-restaurantes/resource/efc46157-21e3-489d-aaff-a011583a648f", "accessURL" : "http://alfresco.villanuevadelaserena.es/share/proxy/alfresco-noauth/api/internal/shared/node/f5KF2sOeTeSS6AwYAQptMA/content/bares.ods?c=force&noCache=1551169515710&a=true", "format" : {"_about" : "https://datos.gob.es/catalogo/l01061535-bares-y-restaurantes/resource/efc46157-21e3-489d-aaff-a011583a648f/format", "type" : "http://purl.org/dc/terms/IMT", "value" : "application/vnd.oasis.opendocument.spreadsheet"}
+        , "title" : [{"_value" : "Bares y Restaurantes.ods", "_lang" : "es"}
+        ], "type" : "http://www.w3.org/ns/dcat#Distribution"}
+      ], "identifier" : "http://catalogo.villanuevadelaserena.es/dataset/fb3ff601-c6fb-48dc-9ce8-8a5383af8957", "issued" : "jue, 24 nov 2016 08:25:13 GMT+0000", "keyword" : [{"_value" : "Bares y Restaurantes", "_lang" : "es"}
+      , {"_value" : "Instalaciones de producción e industriales", "_lang" : "es"}
+      , {"_value" : "Production and industrial facilities", "_lang" : "es"}
+      , {"_value" : "Tiendas", "_lang" : "es"}
+      , {"_value" : "features", "_lang" : "es"}
+      , {"_value" : "vva_comercio_bares_105", "_lang" : "es"}
+      ], "modified" : "jue, 27 jun 2019 06:16:55 GMT+0000", "publisher" : "http://datos.gob.es/recurso/sector-publico/org/Organismo/L01061535", "theme" : "http://datos.gob.es/kos/sector-publico/sector/comercio", "title" : [{"_value" : "Bares y Restaurantes", "_lang" : "es"}
+      ], "type" : "http://www.w3.org/ns/dcat#Dataset"}
+    , {"_about" : "https://datos.gob.es/catalogo/l01061535-centros-educativos", "description" : [{"_value" : "Listado de los centros educativos de Villanueva de la Serena: colegios e institutos de enseñanza secundaria. Se muestra también la información del número de alumnos y docentes por centro.", "_lang" : "es"}
+      ], "distribution" : [{"_about" : "https://datos.gob.es/catalogo/l01061535-centros-educativos/resource/05433e07-ba6b-4d0f-87c0-ff30522fe408", "accessURL" : "http://geoserver.villanuevadelaserena.es/geoserver/wms/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=LG3_WS_MapPublish_public%3Acentros_educativos_105&srsName=EPSG%3A4258&outputFormat=csv", "format" : {"_about" : "https://datos.gob.es/catalogo/l01061535-centros-educativos/resource/05433e07-ba6b-4d0f-87c0-ff30522fe408/format", "type" : "http://purl.org/dc/terms/IMT", "value" : "text/csv"}
+        , "title" : [{"_value" : "Centros educativos.csv", "_lang" : "es"}
+        ], "type" : "http://www.w3.org/ns/dcat#Distribution"}
+      , {"_about" : "https://datos.gob.es/catalogo/l01061535-centros-educativos/resource/140a23ce-6907-4dfc-b7bc-d79ba7a8c289", "accessURL" : "http://alfresco.villanuevadelaserena.es/share/proxy/alfresco-noauth/api/internal/shared/node/83afSsFdSYKm4xr8pAIB-w/content/centros-educativos.pdf?c=force&noCache=1539936714065&a=true", "format" : {"_about" : "https://datos.gob.es/catalogo/l01061535-centros-educativos/resource/140a23ce-6907-4dfc-b7bc-d79ba7a8c289/format", "type" : "http://purl.org/dc/terms/IMT", "value" : "application/pdf"}
+        , "title" : [{"_value" : "Centros educativos.pdf", "_lang" : "es"}
+        ], "type" : "http://www.w3.org/ns/dcat#Distribution"}
+      , {"_about" : "https://datos.gob.es/catalogo/l01061535-centros-educativos/resource/17133754-aa43-4a74-8316-47fccaffb6f6", "accessURL" : "http://alfresco.villanuevadelaserena.es/share/proxy/alfresco-noauth/api/internal/shared/node/bgLe_ArDT6yIiVYwiUsWKg/content/centros-educativos.xlsx?c=force&noCache=1539936658439&a=true", "format" : {"_about" : "https://datos.gob.es/catalogo/l01061535-centros-educativos/resource/17133754-aa43-4a74-8316-47fccaffb6f6/format", "type" : "http://purl.org/dc/terms/IMT", "value" : "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"}
+        , "title" : [{"_value" : "Centros educativos.xlsx", "_lang" : "es"}
+        ], "type" : "http://www.w3.org/ns/dcat#Distribution"}
+      , {"_about" : "https://datos.gob.es/catalogo/l01061535-centros-educativos/resource/2a7174dc-37ff-416d-9e57-359feeca7516", "accessURL" : "http://alfresco.villanuevadelaserena.es/share/proxy/alfresco-noauth/api/internal/shared/node/2KrYXS_8S5KgmC-pCqfAaA/content/centros-educativos.xml?c=force&noCache=1539936747336&a=true", "format" : {"_about" : "https://datos.gob.es/catalogo/l01061535-centros-educativos/resource/2a7174dc-37ff-416d-9e57-359feeca7516/format", "type" : "http://purl.org/dc/terms/IMT", "value" : "text/xml"}
+        , "title" : [{"_value" : "Centros educativos.xml", "_lang" : "es"}
+        ], "type" : "http://www.w3.org/ns/dcat#Distribution"}
+      , {"_about" : "https://datos.gob.es/catalogo/l01061535-centros-educativos/resource/33c42aaf-f095-40b7-a306-d9cfe53a32d1", "accessURL" : "http://geoserver.villanuevadelaserena.es/geoserver/wfs/kml?service=WFS&version=1.0.0&request=GetFeature&typeName=LG3_WS_MapPublish_public%3Acentros_educativos_105&srsName=EPSG%3A4258&outputFormat=application%2Fvnd.google-earth.kml%2Bxml", "format" : {"_about" : "https://datos.gob.es/catalogo/l01061535-centros-educativos/resource/33c42aaf-f095-40b7-a306-d9cfe53a32d1/format", "type" : "http://purl.org/dc/terms/IMT", "value" : "application/vnd.google-earth.kml+xml"}
+        , "title" : [{"_value" : "Centros educativos.kml", "_lang" : "es"}
+        ], "type" : "http://www.w3.org/ns/dcat#Distribution"}
+      , {"_about" : "https://datos.gob.es/catalogo/l01061535-centros-educativos/resource/3679af45-e725-4b69-a071-5e57220b109e", "accessURL" : "http://geoserver.villanuevadelaserena.es/geoserver/wfs/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=LG3_WS_MapPublish_public%3Acentros_educativos_105&srsName=EPSG%3A4258&outputFormat=application%2Fjson", "format" : {"_about" : "https://datos.gob.es/catalogo/l01061535-centros-educativos/resource/3679af45-e725-4b69-a071-5e57220b109e/format", "type" : "http://purl.org/dc/terms/IMT", "value" : "application/vnd.geo+json"}
+        , "title" : [{"_value" : "Centros educativos.geojson", "_lang" : "es"}
+        ], "type" : "http://www.w3.org/ns/dcat#Distribution"}
+      , {"_about" : "https://datos.gob.es/catalogo/l01061535-centros-educativos/resource/41cfa7d6-cc78-4123-b83d-30a89480aad4", "accessURL" : "http://geoserver.villanuevadelaserena.es:80/geoserver/LG3_WS_MapPublish_public/ows?SERVICE=WMS&REQUEST=GETCAPABILITIES", "format" : {"_about" : "https://datos.gob.es/catalogo/l01061535-centros-educativos/resource/41cfa7d6-cc78-4123-b83d-30a89480aad4/format", "type" : "http://purl.org/dc/terms/IMT", "value" : "text/wms"}
+        , "title" : [{"_value" : "centros_educativos_105", "_lang" : "es"}
+        ], "type" : "http://www.w3.org/ns/dcat#Distribution"}
+      , {"_about" : "https://datos.gob.es/catalogo/l01061535-centros-educativos/resource/ac89268b-df47-4788-9baa-9ea34004b472", "accessURL" : "http://alfresco.villanuevadelaserena.es/share/proxy/alfresco-noauth/api/internal/shared/node/UY1K9iZaRCGr04QJef55EQ/content/centros-educativos.html.zip?c=force&noCache=1539936630651&a=true", "format" : {"_about" : "https://datos.gob.es/catalogo/l01061535-centros-educativos/resource/ac89268b-df47-4788-9baa-9ea34004b472/format", "type" : "http://purl.org/dc/terms/IMT", "value" : "text/html"}
+        , "title" : [{"_value" : "Centros educativos.html", "_lang" : "es"}
+        ], "type" : "http://www.w3.org/ns/dcat#Distribution"}
+      , {"_about" : "https://datos.gob.es/catalogo/l01061535-centros-educativos/resource/b07c2622-7785-46f4-886b-e8dcf38b205a", "accessURL" : "http://geoserver.villanuevadelaserena.es/geoserver/wms/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=LG3_WS_MapPublish_public%3Acentros_educativos_105&srsName=EPSG%3A4258&outputFormat=SHAPE-ZIP", "format" : {"_about" : "https://datos.gob.es/catalogo/l01061535-centros-educativos/resource/b07c2622-7785-46f4-886b-e8dcf38b205a/format", "type" : "http://purl.org/dc/terms/IMT", "value" : "application/x-zipped-shp"}
+        , "title" : [{"_value" : "Centros educativos.shp", "_lang" : "es"}
+        ], "type" : "http://www.w3.org/ns/dcat#Distribution"}
+      , {"_about" : "https://datos.gob.es/catalogo/l01061535-centros-educativos/resource/b4b1173f-dfcd-4653-97f9-40c1730f4788", "accessURL" : "http://ide.villanuevadelaserena.es/", "format" : {"_about" : "https://datos.gob.es/catalogo/l01061535-centros-educativos/resource/b4b1173f-dfcd-4653-97f9-40c1730f4788/format", "type" : "http://purl.org/dc/terms/IMT", "value" : "text/html"}
+        , "title" : [{"_value" : "IDE GeoOpenData", "_lang" : "es"}
+        ], "type" : "http://www.w3.org/ns/dcat#Distribution"}
+      , {"_about" : "https://datos.gob.es/catalogo/l01061535-centros-educativos/resource/bbef11b6-cfa1-4903-af8a-8de52258cb37", "accessURL" : "http://geoserver.villanuevadelaserena.es:80/geoserver/LG3_WS_MapPublish_public/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=centros_educativos_105&style=centros_educativos___default_centros_educativos_105", "format" : {"_about" : "https://datos.gob.es/catalogo/l01061535-centros-educativos/resource/bbef11b6-cfa1-4903-af8a-8de52258cb37/format", "type" : "http://purl.org/dc/terms/IMT", "value" : "text/wms"}
+        , "title" : [{"_value" : "Leyenda Centros educativos", "_lang" : "es"}
+        ], "type" : "http://www.w3.org/ns/dcat#Distribution"}
+      , {"_about" : "https://datos.gob.es/catalogo/l01061535-centros-educativos/resource/cf711282-19be-4f15-9630-fe0eb726bf27", "accessURL" : "http://geoserver.villanuevadelaserena.es:80/geoserver/LG3_WS_MapPublish_public/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=centros_educativos_105", "format" : {"_about" : "https://datos.gob.es/catalogo/l01061535-centros-educativos/resource/cf711282-19be-4f15-9630-fe0eb726bf27/format", "type" : "http://purl.org/dc/terms/IMT", "value" : "text/wms"}
+        , "title" : [{"_value" : "Leyenda Centros educativos", "_lang" : "es"}
+        ], "type" : "http://www.w3.org/ns/dcat#Distribution"}
+      , {"_about" : "https://datos.gob.es/catalogo/l01061535-centros-educativos/resource/e3cd9046-effe-424e-ad03-cfcad72e6681", "accessURL" : "http://alfresco.villanuevadelaserena.es/share/proxy/alfresco-noauth/api/internal/shared/node/qfzuXLJhQOahgTFY4s-2Sw/content/centros-educativos.ods?c=force&noCache=1539936685610&a=true", "format" : {"_about" : "https://datos.gob.es/catalogo/l01061535-centros-educativos/resource/e3cd9046-effe-424e-ad03-cfcad72e6681/format", "type" : "http://purl.org/dc/terms/IMT", "value" : "application/vnd.oasis.opendocument.spreadsheet"}
+        , "title" : [{"_value" : "Centros educativos.ods", "_lang" : "es"}
+        ], "type" : "http://www.w3.org/ns/dcat#Distribution"}
+      , {"_about" : "https://datos.gob.es/catalogo/l01061535-centros-educativos/resource/febbcb46-b6f8-43b5-b382-ea110657a0f1", "accessURL" : "http://catalogo.villanuevadelaserena.es/dataset/f2b60991-a8d9-4a8f-9960-4e852b7dee07/resource/754c103f-fe60-47bf-8108-1f1088a33ce3/download/ds012018centroseducativos.json", "format" : {"_about" : "https://datos.gob.es/catalogo/l01061535-centros-educativos/resource/febbcb46-b6f8-43b5-b382-ea110657a0f1/format", "type" : "http://purl.org/dc/terms/IMT", "value" : "application/json"}
+        , "title" : [{"_value" : "Centros educativos.json", "_lang" : "es"}
+        ], "type" : "http://www.w3.org/ns/dcat#Distribution"}
+      ], "identifier" : "http://catalogo.villanuevadelaserena.es/dataset/f2b60991-a8d9-4a8f-9960-4e852b7dee07", "issued" : "mar, 22 nov 2016 15:36:18 GMT+0000", "keyword" : [{"_value" : "Alumnos", "_lang" : "es"}
+      , {"_value" : "Bachillerato", "_lang" : "es"}
+      , {"_value" : "Centros educativos", "_lang" : "es"}
+      , {"_value" : "Colegios", "_lang" : "es"}
+      , {"_value" : "Docentes", "_lang" : "es"}
+      , {"_value" : "ESO", "_lang" : "es"}
+      , {"_value" : "Educación", "_lang" : "es"}
+      , {"_value" : "Instituto", "_lang" : "es"}
+      , {"_value" : "Primaria", "_lang" : "es"}
+      , {"_value" : "Profesores", "_lang" : "es"}
+      , {"_value" : "Secundaria", "_lang" : "es"}
+      , {"_value" : "Servicios de utilidad pública y estatales", "_lang" : "es"}
+      , {"_value" : "Utility and governmental services", "_lang" : "es"}
+      , {"_value" : "centros_educativos_105", "_lang" : "es"}
+      , {"_value" : "features", "_lang" : "es"}
+      ], "modified" : "mar, 14 dic 2021 07:45:43 GMT+0000", "publisher" : "http://datos.gob.es/recurso/sector-publico/org/Organismo/L01061535", "theme" : ["http://datos.gob.es/kos/sector-publico/sector/cultura-ocio", "http://datos.gob.es/kos/sector-publico/sector/educacion", "http://datos.gob.es/kos/sector-publico/sector/sector-publico"], "title" : [{"_value" : "Centros educativos", "_lang" : "es"}
+      ], "type" : "http://www.w3.org/ns/dcat#Dataset"}
+    ], "itemsPerPage" : 3, "next" : "http://datos.gob.es/apidata/catalog/dataset/format/geojson.json?_page=1", "page" : 0, "startIndex" : 1, "type" : "http://purl.org/linked-data/api/vocab#Page"}
+}

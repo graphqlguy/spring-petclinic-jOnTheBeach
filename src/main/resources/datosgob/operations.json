@@ -1,0 +1,535 @@
+{
+ "operations": [
+  {
+   "field": "datosGobDatasets",
+   "path": "/catalog/dataset.json",
+   "arguments": [
+    {
+     "name": "sort",
+     "parameter": "_sort",
+     "in": "query",
+     "list": false
+    }
+   ],
+   "paging": {
+    "style": "page-from-zero",
+    "start": "_page",
+    "size": "_pageSize"
+   }
+  },
+  {
+   "field": "datosGobDatasetsByTitle",
+   "path": "/catalog/dataset/title/{title}.json",
+   "arguments": [
+    {
+     "name": "title",
+     "parameter": "title",
+     "in": "path",
+     "list": false
+    },
+    {
+     "name": "sort",
+     "parameter": "_sort",
+     "in": "query",
+     "list": false
+    }
+   ],
+   "paging": {
+    "style": "page-from-zero",
+    "start": "_page",
+    "size": "_pageSize"
+   }
+  },
+  {
+   "field": "datosGobDatasetsByKeyword",
+   "path": "/catalog/dataset/keyword/{keyword}.json",
+   "arguments": [
+    {
+     "name": "keyword",
+     "parameter": "keyword",
+     "in": "path",
+     "list": false
+    },
+    {
+     "name": "sort",
+     "parameter": "_sort",
+     "in": "query",
+     "list": false
+    }
+   ],
+   "paging": {
+    "style": "page-from-zero",
+    "start": "_page",
+    "size": "_pageSize"
+   }
+  },
+  {
+   "field": "datosGobDatasetsByTheme",
+   "path": "/catalog/dataset/theme/{theme}.json",
+   "arguments": [
+    {
+     "name": "theme",
+     "parameter": "theme",
+     "in": "path",
+     "list": false
+    },
+    {
+     "name": "sort",
+     "parameter": "_sort",
+     "in": "query",
+     "list": false
+    }
+   ],
+   "paging": {
+    "style": "page-from-zero",
+    "start": "_page",
+    "size": "_pageSize"
+   }
+  },
+  {
+   "field": "datosGobDatasetsByPublisher",
+   "path": "/catalog/dataset/publisher/{publisher}.json",
+   "arguments": [
+    {
+     "name": "publisher",
+     "parameter": "publisher",
+     "in": "path",
+     "list": false
+    },
+    {
+     "name": "sort",
+     "parameter": "_sort",
+     "in": "query",
+     "list": false
+    }
+   ],
+   "paging": {
+    "style": "page-from-zero",
+    "start": "_page",
+    "size": "_pageSize"
+   }
+  },
+  {
+   "field": "datosGobDatasetsByFormat",
+   "path": "/catalog/dataset/format/{format}.json",
+   "arguments": [
+    {
+     "name": "format",
+     "parameter": "format",
+     "in": "path",
+     "list": false
+    },
+    {
+     "name": "sort",
+     "parameter": "_sort",
+     "in": "query",
+     "list": false
+    }
+   ],
+   "paging": {
+    "style": "page-from-zero",
+    "start": "_page",
+    "size": "_pageSize"
+   }
+  },
+  {
+   "field": "datosGobDatasetsByPlace",
+   "path": "/catalog/dataset/spatial/{kind}/{place}.json",
+   "arguments": [
+    {
+     "name": "kind",
+     "parameter": "kind",
+     "in": "path",
+     "list": false
+    },
+    {
+     "name": "place",
+     "parameter": "place",
+     "in": "path",
+     "list": false
+    },
+    {
+     "name": "sort",
+     "parameter": "_sort",
+     "in": "query",
+     "list": false
+    }
+   ],
+   "paging": {
+    "style": "page-from-zero",
+    "start": "_page",
+    "size": "_pageSize"
+   }
+  },
+  {
+   "field": "datosGobDatasetsModified",
+   "path": "/catalog/dataset/modified/begin/{begin}/end/{end}.json",
+   "arguments": [
+    {
+     "name": "begin",
+     "parameter": "begin",
+     "in": "path",
+     "list": false
+    },
+    {
+     "name": "end",
+     "parameter": "end",
+     "in": "path",
+     "list": false
+    },
+    {
+     "name": "sort",
+     "parameter": "_sort",
+     "in": "query",
+     "list": false
+    }
+   ],
+   "paging": {
+    "style": "page-from-zero",
+    "start": "_page",
+    "size": "_pageSize"
+   }
+  },
+  {
+   "field": "datosGobDataset",
+   "path": "/catalog/dataset/{id}.json",
+   "arguments": [
+    {
+     "name": "id",
+     "parameter": "id",
+     "in": "path",
+     "list": false
+    }
+   ]
+  },
+  {
+   "field": "datosGobDistributions",
+   "path": "/catalog/distribution.json",
+   "arguments": [],
+   "paging": {
+    "style": "page-from-zero",
+    "start": "_page",
+    "size": "_pageSize"
+   }
+  },
+  {
+   "field": "datosGobDistributionsOfDataset",
+   "path": "/catalog/distribution/dataset/{id}.json",
+   "arguments": [
+    {
+     "name": "id",
+     "parameter": "id",
+     "in": "path",
+     "list": false
+    }
+   ],
+   "paging": {
+    "style": "page-from-zero",
+    "start": "_page",
+    "size": "_pageSize"
+   }
+  },
+  {
+   "field": "datosGobDistributionsByFormat",
+   "path": "/catalog/distribution/format/{format}.json",
+   "arguments": [
+    {
+     "name": "format",
+     "parameter": "format",
+     "in": "path",
+     "list": false
+    }
+   ],
+   "paging": {
+    "style": "page-from-zero",
+    "start": "_page",
+    "size": "_pageSize"
+   }
+  },
+  {
+   "field": "datosGobPublishers",
+   "path": "/catalog/publisher.json",
+   "arguments": [],
+   "paging": {
+    "style": "page-from-zero",
+    "start": "_page",
+    "size": "_pageSize"
+   }
+  },
+  {
+   "field": "datosGobThemes",
+   "path": "/catalog/theme.json",
+   "arguments": [],
+   "paging": {
+    "style": "page-from-zero",
+    "start": "_page",
+    "size": "_pageSize"
+   }
+  },
+  {
+   "field": "datosGobSpatialCoverages",
+   "path": "/catalog/spatial.json",
+   "arguments": [],
+   "paging": {
+    "style": "page-from-zero",
+    "start": "_page",
+    "size": "_pageSize"
+   }
+  },
+  {
+   "field": "datosGobPublicSectors",
+   "path": "/nti/public-sector.json",
+   "arguments": [],
+   "paging": {
+    "style": "page-from-zero",
+    "start": "_page",
+    "size": "_pageSize"
+   }
+  },
+  {
+   "field": "datosGobProvinces",
+   "path": "/nti/territory/Province.json",
+   "arguments": [],
+   "paging": {
+    "style": "page-from-zero",
+    "start": "_page",
+    "size": "_pageSize"
+   }
+  },
+  {
+   "field": "datosGobProvince",
+   "path": "/nti/territory/Province/{name}.json",
+   "arguments": [
+    {
+     "name": "name",
+     "parameter": "name",
+     "in": "path",
+     "list": false
+    }
+   ]
+  },
+  {
+   "field": "datosGobRegions",
+   "path": "/nti/territory/Autonomous-region.json",
+   "arguments": [],
+   "paging": {
+    "style": "page-from-zero",
+    "start": "_page",
+    "size": "_pageSize"
+   }
+  },
+  {
+   "field": "datosGobRegion",
+   "path": "/nti/territory/Autonomous-region/{name}.json",
+   "arguments": [
+    {
+     "name": "name",
+     "parameter": "name",
+     "in": "path",
+     "list": false
+    }
+   ]
+  },
+  {
+   "field": "datosGobCountry",
+   "path": "/nti/territory/Country/{name}.json",
+   "arguments": [
+    {
+     "name": "name",
+     "parameter": "name",
+     "in": "path",
+     "list": false
+    }
+   ]
+  }
+ ],
+ "fields": {
+  "DatosGobDatasetPage": {
+   "page": {
+    "key": "result/page"
+   },
+   "itemsPerPage": {
+    "key": "result/itemsPerPage"
+   },
+   "startIndex": {
+    "key": "result/startIndex"
+   },
+   "datasets": {
+    "key": "result/items",
+    "conversion": "list"
+   }
+  },
+  "DatosGobDataset": {
+   "id": {
+    "key": "_about"
+   },
+   "titles": {
+    "key": "title",
+    "conversion": "text-list"
+   },
+   "descriptions": {
+    "key": "description",
+    "conversion": "text-list"
+   },
+   "keywords": {
+    "key": "keyword",
+    "conversion": "text-list"
+   },
+   "themes": {
+    "key": "theme",
+    "conversion": "text-list"
+   },
+   "spatial": {
+    "key": "spatial",
+    "conversion": "text-list"
+   },
+   "languages": {
+    "key": "language",
+    "conversion": "text-list"
+   },
+   "references": {
+    "key": "references",
+    "conversion": "text-list"
+   },
+   "frequency": {
+    "key": "accrualPeriodicity"
+   },
+   "distributions": {
+    "key": "distribution",
+    "conversion": "list"
+   }
+  },
+  "DatosGobDistributionPage": {
+   "page": {
+    "key": "result/page"
+   },
+   "itemsPerPage": {
+    "key": "result/itemsPerPage"
+   },
+   "startIndex": {
+    "key": "result/startIndex"
+   },
+   "distributions": {
+    "key": "result/items",
+    "conversion": "list"
+   }
+  },
+  "DatosGobDistribution": {
+   "id": {
+    "key": "_about"
+   },
+   "titles": {
+    "key": "title",
+    "conversion": "text-list"
+   },
+   "accessUrl": {
+    "key": "accessURL"
+   },
+   "downloadUrl": {
+    "key": "downloadURL"
+   },
+   "format": {
+    "key": "format/value|format"
+   },
+   "byteSize": {
+    "key": "byteSize",
+    "conversion": "number"
+   },
+   "relations": {
+    "key": "relation",
+    "conversion": "text-list"
+   }
+  },
+  "DatosGobAddressPage": {
+   "page": {
+    "key": "result/page"
+   },
+   "itemsPerPage": {
+    "key": "result/itemsPerPage"
+   },
+   "startIndex": {
+    "key": "result/startIndex"
+   },
+   "addresses": {
+    "key": "result/items",
+    "conversion": "text-list"
+   }
+  },
+  "DatosGobSpatialPage": {
+   "page": {
+    "key": "result/page"
+   },
+   "itemsPerPage": {
+    "key": "result/itemsPerPage"
+   },
+   "startIndex": {
+    "key": "result/startIndex"
+   },
+   "areas": {
+    "key": "result/items",
+    "conversion": "list"
+   }
+  },
+  "DatosGobSpatial": {
+   "id": {
+    "key": "_about"
+   }
+  },
+  "DatosGobConceptPage": {
+   "page": {
+    "key": "result/page"
+   },
+   "itemsPerPage": {
+    "key": "result/itemsPerPage"
+   },
+   "startIndex": {
+    "key": "result/startIndex"
+   },
+   "concepts": {
+    "key": "result/items",
+    "conversion": "list"
+   }
+  },
+  "DatosGobConcept": {
+   "id": {
+    "key": "_about"
+   },
+   "label": {
+    "key": "prefLabel"
+   },
+   "scheme": {
+    "key": "inScheme"
+   }
+  },
+  "DatosGobTerritoryPage": {
+   "page": {
+    "key": "result/page"
+   },
+   "itemsPerPage": {
+    "key": "result/itemsPerPage"
+   },
+   "startIndex": {
+    "key": "result/startIndex"
+   },
+   "territories": {
+    "key": "result/items",
+    "conversion": "list"
+   }
+  },
+  "DatosGobTerritory": {
+   "id": {
+    "key": "_about"
+   },
+   "region": {
+    "key": "autonomia"
+   },
+   "country": {
+    "key": "pais"
+   },
+   "types": {
+    "key": "type",
+    "conversion": "text-list"
+   }
+  }
+ }
+}

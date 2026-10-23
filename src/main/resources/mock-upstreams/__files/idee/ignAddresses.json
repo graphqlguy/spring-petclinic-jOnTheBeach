@@ -1,0 +1,94 @@
+{
+    "type":"FeatureCollection",
+    "features":[
+        {
+            "type":"Feature",
+            "properties":{
+                "locator_designator_addressNumber":"6",
+                "component_PostalDescriptor":"29018",
+                "component_AdminUnitName_4":"M\u00e1laga",
+                "component_AdminUnitName_2":"Andaluc\u00eda",
+                "dataProvider":"Direcci\u00f3n General de Catastro",
+                "inspireId_namespace":"ES.SCNE.CARTOCIUDAD",
+                "component_ThoroughfareName":"CALLE ESCRITOR SANCHEZ SOBRINO",
+                "locator_designator_addressNumberExtension":null,
+                "component_AddressAreaName":"M\u00e1laga",
+                "component_AdminUnitName_3":"M\u00e1laga",
+                "beginLifespanVersion":"2026-04-15"
+            },
+            "id":"AD_ADDRESS_PPK_01.29.G29_290670037179",
+            "geometry":null
+        },
+        {
+            "type":"Feature",
+            "properties":{
+                "locator_designator_addressNumber":"14",
+                "component_PostalDescriptor":"29018",
+                "component_AdminUnitName_4":"M\u00e1laga",
+                "component_AdminUnitName_2":"Andaluc\u00eda",
+                "dataProvider":"Direcci\u00f3n General de Catastro",
+                "inspireId_namespace":"ES.SCNE.CARTOCIUDAD",
+                "component_ThoroughfareName":"CALLE SERRANIA DE RONDA",
+                "locator_designator_addressNumberExtension":null,
+                "component_AddressAreaName":"M\u00e1laga",
+                "component_AdminUnitName_3":"M\u00e1laga",
+                "beginLifespanVersion":"2026-04-15"
+            },
+            "id":"AD_ADDRESS_PPK_01.29.G29_290670037189",
+            "geometry":null
+        },
+        {
+            "type":"Feature",
+            "properties":{
+                "locator_designator_addressNumber":"24",
+                "component_PostalDescriptor":"29011",
+                "component_AdminUnitName_4":"M\u00e1laga",
+                "component_AdminUnitName_2":"Andaluc\u00eda",
+                "dataProvider":"Direcci\u00f3n General de Catastro",
+                "inspireId_namespace":"ES.SCNE.CARTOCIUDAD",
+                "component_ThoroughfareName":"CALLE NTRA SRA DE LOS CLARINES",
+                "locator_designator_addressNumberExtension":null,
+                "component_AddressAreaName":"M\u00e1laga",
+                "component_AdminUnitName_3":"M\u00e1laga",
+                "beginLifespanVersion":"2026-04-15"
+            },
+            "id":"AD_ADDRESS_PPK_01.29.G29_290670037232",
+            "geometry":null
+        }
+    ],
+    "numberMatched":81295,
+    "numberReturned":3,
+    "links":[
+        {
+            "type":"application/geo+json",
+            "rel":"self",
+            "title":"This document as GeoJSON",
+            "href":"https://api-features.idee.es/collections/address/items?f=json&bbox=-4.50,36.65,-4.35,36.75&skipGeometry=true&limit=3"
+        },
+        {
+            "rel":"alternate",
+            "type":"application/ld+json",
+            "title":"This document as RDF (JSON-LD)",
+            "href":"https://api-features.idee.es/collections/address/items?f=jsonld&bbox=-4.50,36.65,-4.35,36.75&skipGeometry=true&limit=3"
+        },
+        {
+            "type":"text/html",
+            "rel":"alternate",
+            "title":"This document as HTML",
+            "href":"https://api-features.idee.es/collections/address/items?f=html&bbox=-4.50,36.65,-4.35,36.75&skipGeometry=true&limit=3"
+        },
+        {
+            "type":"application/geo+json",
+            "rel":"next",
+            "title":"Items (next)",
+            "href":"https://api-features.idee.es/collections/address/items?offset=3&bbox=-4.50,36.65,-4.35,36.75&skipGeometry=true&limit=3"
+        },
+        {
+            "type":"application/json",
+            "title":"AD Direcci\u00f3n",
+            "rel":"collection",
+            "href":"https://api-features.idee.es/collections/address"
+        }
+    ],
+    "timeStamp":"2026-10-22T23:41:05.369825Z"
+}

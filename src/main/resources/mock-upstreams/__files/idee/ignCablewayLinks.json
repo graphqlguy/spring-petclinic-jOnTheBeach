@@ -1,0 +1,91 @@
+{
+    "type":"FeatureCollection",
+    "features":[
+        {
+            "type":"Feature",
+            "properties":{
+                "fecha_alta":"2021-04-06",
+                "nilreason_nombre":null,
+                "nilreason_varios":"other:unpopulated",
+                "href":"#TN-C_CABLEWAYLINK_CABL_TR180000000007",
+                "tipo_cable":"http://inspire.ec.europa.eu/codelist/CablewayTypeValue/chairLift",
+                "id_cable":180000000007,
+                "nombre":"Parador I",
+                "id_linkset":"CABLE_LI180000000007",
+                "nil_nombre":null,
+                "nil_varios":true
+            },
+            "id":"CABL_TR180000000007",
+            "geometry":null
+        },
+        {
+            "type":"Feature",
+            "properties":{
+                "fecha_alta":"2021-04-06",
+                "nilreason_nombre":null,
+                "nilreason_varios":"other:unpopulated",
+                "href":"#TN-C_CABLEWAYLINK_CABL_TR180000000008",
+                "tipo_cable":"http://inspire.ec.europa.eu/codelist/CablewayTypeValue/chairLift",
+                "id_cable":180000000008,
+                "nombre":"Antonio Jara",
+                "id_linkset":"CABLE_LI180000000008",
+                "nil_nombre":null,
+                "nil_varios":true
+            },
+            "id":"CABL_TR180000000008",
+            "geometry":null
+        },
+        {
+            "type":"Feature",
+            "properties":{
+                "fecha_alta":"2021-04-06",
+                "nilreason_nombre":null,
+                "nilreason_varios":"other:unpopulated",
+                "href":"#TN-C_CABLEWAYLINK_CABL_TR180000000014",
+                "tipo_cable":"http://inspire.ec.europa.eu/codelist/CablewayTypeValue/cabinCableCar",
+                "id_cable":180000000014,
+                "nombre":"Borreguiles",
+                "id_linkset":"CABLE_LI180000000014",
+                "nil_nombre":null,
+                "nil_varios":true
+            },
+            "id":"CABL_TR180000000014",
+            "geometry":null
+        }
+    ],
+    "numberMatched":18,
+    "numberReturned":3,
+    "links":[
+        {
+            "type":"application/geo+json",
+            "rel":"self",
+            "title":"This document as GeoJSON",
+            "href":"https://api-features.idee.es/collections/cablewaylink/items?f=json&bbox=-4.0,36.8,-2.5,37.5&skipGeometry=true&limit=3"
+        },
+        {
+            "rel":"alternate",
+            "type":"application/ld+json",
+            "title":"This document as RDF (JSON-LD)",
+            "href":"https://api-features.idee.es/collections/cablewaylink/items?f=jsonld&bbox=-4.0,36.8,-2.5,37.5&skipGeometry=true&limit=3"
+        },
+        {
+            "type":"text/html",
+            "rel":"alternate",
+            "title":"This document as HTML",
+            "href":"https://api-features.idee.es/collections/cablewaylink/items?f=html&bbox=-4.0,36.8,-2.5,37.5&skipGeometry=true&limit=3"
+        },
+        {
+            "type":"application/geo+json",
+            "rel":"next",
+            "title":"Items (next)",
+            "href":"https://api-features.idee.es/collections/cablewaylink/items?offset=3&bbox=-4.0,36.8,-2.5,37.5&skipGeometry=true&limit=3"
+        },
+        {
+            "type":"application/json",
+            "title":"TN-C Enlace de cable transportador",
+            "rel":"collection",
+            "href":"https://api-features.idee.es/collections/cablewaylink"
+        }
+    ],
+    "timeStamp":"2026-10-22T23:43:11.317322Z"
+}

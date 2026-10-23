@@ -1,0 +1,616 @@
+# The fields of CIMA, the register of medicines for people of the Spanish Agency of Medicines and Medical Devices
+# (AEMPS), at cima.aemps.es. A generator wrote them, their types and src/main/resources/cima/operations.json from
+# answers recorded from the service, and the names and descriptions are written by hand in English. Each field is
+# fetched by a RestOperationFetcher, see CimaConfiguration.
+
+extend type Query {
+    # CIMA lists every medicine for people authorized in Spain. A vet may prescribe one of them when no veterinary
+    # medicine is authorized for the condition and the species, a rule called the cascade, so the clinic reads this
+    # register next to CIMAVet. The service answers in Spanish.
+
+    """
+    Medicines for people authorized in Spain, 200 to a page, filtered by name, active ingredient, ATC code, laboratory
+    or national code, and by whether they are on the market, need a prescription, or are generics, orphan medicines or
+    biosimilars. Give at least one filter. cimaMedicine gives everything about one of them.
+    """
+    cimaMedicines(
+        "Only the medicines whose name contains this text, such as ibuprofeno"
+        name: String
+        "Only the medicines with this active ingredient, in Spanish, such as meloxicam or valproico"
+        activeIngredient: String
+        "Only the medicines in this ATC group or below it, such as M01AC06 for meloxicam"
+        atcCode: String
+        "Only the medicines of a laboratory whose name contains this text"
+        laboratory: String
+        "Only the medicine with a pack of this national code, such as 659533"
+        nationalCode: String
+        "true for the medicines on the market, false for the others"
+        marketed: Boolean
+        "true for the medicines that need a prescription"
+        prescription: Boolean
+        "true for orphan medicines, which treat rare diseases"
+        orphan: Boolean
+        "true for biosimilar medicines"
+        biosimilar: Boolean
+        "true for the medicines under additional monitoring, marked with a black triangle"
+        additionalMonitoring: Boolean
+        "The page to return. Pages count from 0, and each one holds 200 medicines."
+        page: Int! = 0
+    ): CimaMedicinePage
+
+    """
+    Everything the register holds about one medicine for people: its active ingredients, forms, routes, ATC codes,
+    packs, documents and photos. Null when no medicine has the registration number or the national code.
+    """
+    cimaMedicine(
+        "The registration number, such as 69094. cimaMedicines gives it."
+        registrationNumber: String
+        "The national code of one of its packs, such as 659533"
+        nationalCode: String
+    ): CimaMedicine
+
+    "The packs of medicines for people, 200 to a page, such as a box of 20 tablets, each with its national code"
+    cimaPresentations(
+        "The registration number of the medicine, such as 69094"
+        registrationNumber: String
+        "The national code of one pack"
+        nationalCode: String
+        "true for the packs on the market"
+        marketed: Boolean
+        "The page to return. Pages count from 0, and each one holds 200 packs."
+        page: Int! = 0
+    ): CimaPresentationPage
+
+    """
+    One pack of a medicine for people by its national code, the six digits printed on the box. Null when no pack has the
+    code.
+    """
+    cimaPresentation(
+        "The national code of the pack, such as 659533"
+        nationalCode: String!
+    ): CimaPresentation
+
+    """
+    The clinical drugs of the Spanish drug dictionary: an active ingredient, a strength and a form, such as Meloxicam 15
+    mg comprimido, with the packs that contain it and how many products on the market have it. Packs of different brands
+    with the same clinical drug can replace one another.
+    """
+    cimaClinicalDrugs(
+        "The active ingredient, in Spanish, such as meloxicam"
+        activeIngredient: String
+        "Only the clinical drugs whose description contains this text"
+        name: String
+        "Only the clinical drugs in this ATC group"
+        atcCode: String
+        "The page to return. Pages count from 0, and each one holds 200 products."
+        page: Int! = 0
+    ): CimaClinicalDrugPage
+
+    """
+    The packs of medicines for people that are short in Spain now, 200 to a page, with when the problem started, when it
+    is expected to end, and what the agency advises
+    """
+    cimaSupplyProblems(
+        "The page to return. Pages count from 0, and each one holds 200 packs."
+        page: Int! = 0
+    ): CimaSupplyProblemPage
+
+    """
+    The supply problems of one pack of a medicine for people, by its national code. An empty list means the pack is not
+    short.
+    """
+    cimaSupplyProblemsForPack(
+        "The national code of the pack, such as 659533"
+        nationalCode: String!
+    ): CimaSupplyProblemPage
+
+    """
+    The changes to the register of medicines for people since a day, 200 to a page: medicines added, removed or changed
+    """
+    cimaRegisterChanges(
+        "The first day of the changes, such as 2026-10-01"
+        since: Date!
+        "Only the changes to this medicine"
+        registrationNumber: String
+        "The page to return. Pages count from 0, and each one holds 200 changes."
+        page: Int! = 0
+    ): CimaRegisterChangePage
+
+    """
+    The safety notes the agency published about a medicine for people, such as a new warning. An empty list for a
+    medicine without notes.
+    """
+    cimaSafetyNotes(
+        "The registration number of the medicine, such as 68033"
+        registrationNumber: String!
+    ): [CimaSafetyNote]
+
+    """
+    The information materials of a medicine for people, such as a guide for patients or a card for doctors, which the
+    agency asks the laboratory to hand out. Null for a medicine without materials.
+    """
+    cimaInformationMaterials(
+        "The registration number of the medicine, such as 68033"
+        registrationNumber: String!
+    ): CimaInformationMaterials
+
+    """
+    The sections of the summary of product characteristics or of the leaflet of a medicine for people, such as 4.2
+    Posología y forma de administración (dose and how to give it). cimaDocumentSection reads one of them.
+    """
+    cimaDocumentSections(
+        "The document: the summary of product characteristics or the leaflet"
+        documentType: CimaDocumentType!
+        "The registration number of the medicine, such as 69094"
+        registrationNumber: String!
+    ): [CimaDocumentSection]
+
+    """
+    The text of one section of the summary of product characteristics or of the leaflet of a medicine for people, in
+    Spanish and as HTML, such as section 4.2 with the dose for adults
+    """
+    cimaDocumentSection(
+        "The document: the summary of product characteristics or the leaflet"
+        documentType: CimaDocumentType!
+        "The registration number of the medicine, such as 69094"
+        registrationNumber: String!
+        "The number of the section, such as 4.2. cimaDocumentSections lists them."
+        section: String!
+    ): [CimaDocumentSectionText]
+
+    "The active ingredients of medicines for people, 200 to a page, with their Spanish names, such as MELOXICAM"
+    cimaActiveIngredients(
+        "Only the entries whose name contains this text, in upper or lower case. Some lists need it."
+        name: String
+        "The page to return. Pages count from 0, and each one holds 200 active ingredients."
+        page: Int! = 0
+    ): CimaCodedEntryPage
+
+    "The pharmaceutical forms of medicines for people, 200 to a page, such as COMPRIMIDO (tablet). Give a name."
+    cimaPharmaceuticalForms(
+        "Only the entries whose name contains this text, in upper or lower case. Some lists need it."
+        name: String
+        "The page to return. Pages count from 0, and each one holds 200 forms."
+        page: Int! = 0
+    ): CimaCodedEntryPage
+
+    "The routes of administration of medicines for people, 200 to a page, such as VÍA ORAL (by mouth). Give a name."
+    cimaAdministrationRoutes(
+        "Only the entries whose name contains this text, in upper or lower case. Some lists need it."
+        name: String
+        "The page to return. Pages count from 0, and each one holds 200 routes."
+        page: Int! = 0
+    ): CimaCodedEntryPage
+
+    "The laboratories that hold or market medicines for people in Spain, 200 to a page. Give a name."
+    cimaLaboratories(
+        "Only the entries whose name contains this text, in upper or lower case. Some lists need it."
+        name: String
+        "The page to return. Pages count from 0, and each one holds 200 laboratories."
+        page: Int! = 0
+    ): CimaCodedEntryPage
+
+    """
+    The codes of the ATC classification of medicines for people, 200 to a page, with their Spanish names, such as
+    M01AC06 for meloxicam
+    """
+    cimaAtcCodes(
+        "Only the entries whose name contains this text, in upper or lower case. Some lists need it."
+        name: String
+        "The page to return. Pages count from 0, and each one holds 200 codes."
+        page: Int! = 0
+    ): CimaCodedEntryPage
+}
+
+"One page of medicines for people"
+type CimaMedicinePage {
+    "The number of medicines that match, across all pages"
+    totalCount: Int
+    "The medicines on this page"
+    medicines: [CimaMedicine]
+}
+
+"""
+A medicine for people authorized in Spain. A search fills in the main fields; cimaMedicine fills in all of them,
+including its ATC codes and packs.
+"""
+type CimaMedicine {
+    "The registration number of the medicine, such as 69094"
+    registrationNumber: String
+    """
+    The name of the medicine with its strength and form, in Spanish, such as MELOXICAM CINFA 15 mg COMPRIMIDOS EFG. EFG
+    marks a generic.
+    """
+    name: String
+    "The names of the active ingredients, separated by commas"
+    activeIngredientNames: String
+    "The laboratory that holds the authorization"
+    holder: String
+    "The laboratory that sells the medicine in Spain"
+    marketer: String
+    """
+    How the medicine may be dispensed, in Spanish, such as Medicamento Sujeto A Prescripción Médica (needs a
+    prescription) or Uso Hospitalario (hospital use only)
+    """
+    prescriptionConditions: String
+    "When the medicine was authorized, and suspended or revoked if it was"
+    status: CimaStatus
+    "Whether the medicine is on the market in Spain now"
+    marketed: Boolean
+    "Whether the medicine needs a prescription"
+    prescription: Boolean
+    "Whether the medicine is a generic"
+    generic: Boolean
+    "Whether the medicine can affect the ability to drive"
+    affectsDriving: Boolean
+    "Whether the medicine is under additional monitoring, marked with a black triangle"
+    additionalMonitoring: Boolean
+    "Whether the medicine is an orphan medicine, for a rare disease"
+    orphan: Boolean
+    "Whether the medicine is a biosimilar"
+    biosimilar: Boolean
+    """
+    Whether a pharmacist may replace the medicine with another one, and why not when the answer is no. N/A means the
+    medicine may be replaced.
+    """
+    substitution: CimaCategory
+    "Whether a pack of the medicine is short in Spain now"
+    hasSupplyProblems: Boolean
+    "Whether the agency has published safety notes about it. cimaSafetyNotes reads them."
+    hasSafetyNotes: Boolean
+    "Whether the medicine has information materials for patients or doctors. cimaInformationMaterials reads them."
+    hasInformationMaterials: Boolean
+    "Whether the European Medicines Agency authorized it for the whole European Union"
+    centrallyAuthorized: Boolean
+    "The documents of the medicine, such as its package leaflet"
+    documents: [CimaDocument]
+    "Photos of the box and of the form, such as a tablet"
+    photos: [CimaPhoto]
+    "The active ingredients, each with its amount"
+    activeIngredients: [CimaIngredient]
+    "The excipients, each with its amount"
+    excipients: [CimaIngredient]
+    "The ways the medicine is given, such as VÍA ORAL"
+    administrationRoutes: [CimaCategory]
+    "The form of the medicine, such as COMPRIMIDO (tablet)"
+    pharmaceuticalForm: CimaCategory
+    "The form in a shorter list of forms, such as COMPRIMIDO"
+    simplifiedForm: CimaCategory
+    "The substance of the medicine in the drug dictionary, such as meloxicam"
+    substance: CimaClinicalConcept
+    "The strength of the medicine, such as 15 mg"
+    strength: String
+    "The groups of the ATC classification the medicine belongs to, from the widest"
+    atcCodes: [CimaAtc]
+    "The packs of the medicine, with their national codes"
+    presentations: [CimaPresentationSummary]
+}
+
+"When a medicine or pack was authorized, and when it was suspended or revoked"
+type CimaStatus {
+    "The day it was authorized"
+    authorized: Date
+    "The day it was suspended, or null"
+    suspended: Date
+    "The day its authorization was revoked, or null"
+    revoked: Date
+}
+
+"A value from one of the register's lists, with its id and its Spanish name"
+type CimaCategory {
+    "The id of the value in its list"
+    id: Int
+    "The Spanish name of the value"
+    name: String
+}
+
+"""
+A concept of the Spanish drug dictionary, based on SNOMED CT: a substance, a clinical drug, or a clinical drug in a pack
+of a given size
+"""
+type CimaClinicalConcept {
+    "The SNOMED CT id of the concept, such as 329928008"
+    id: ID
+    "The description of the concept, such as Meloxicam 15 mg comprimido"
+    name: String
+}
+
+"A group of the ATC classification that a medicine belongs to"
+type CimaAtc {
+    "The ATC code, such as M01AC06 for meloxicam"
+    code: String
+    "The Spanish name of the group"
+    name: String
+    "How deep the group is, from 1 for the widest to 5 for a single substance"
+    level: Int
+}
+
+"An active ingredient or an excipient of a medicine, with its amount"
+type CimaIngredient {
+    "The id of the ingredient in the register"
+    id: Int
+    "The code of the ingredient, such as 7153A for meloxicam"
+    code: String
+    "The Spanish name of the ingredient, such as MELOXICAM"
+    name: String
+    "The amount, as a number written with a decimal comma, such as 15,0"
+    amount: String
+    "The unit of the amount, such as mg"
+    unit: String
+    "The place of the ingredient in the list of the medicine, from 1"
+    order: Int
+}
+
+"A document of a medicine"
+type CimaDocument {
+    "The kind of document: 1 for the summary of product characteristics, 2 for the package leaflet"
+    type: Int
+    "The address of the PDF file"
+    url: String
+    "The address of the same document as a web page"
+    htmlUrl: String
+    "Whether cimaDocumentSections can read the document one section at a time"
+    hasSections: Boolean
+    "The day the document was last updated"
+    updated: Date
+}
+
+"A photo of a medicine"
+type CimaPhoto {
+    "What the photo shows: materialas for the box, formafarmac for the form, such as a tablet"
+    type: String
+    "The address of the photo, a small JPEG"
+    url: String
+    "The day the photo was added"
+    updated: Date
+}
+
+"A pack of a medicine, as the medicine lists it"
+type CimaPresentationSummary {
+    "The national code of the pack, the six digits printed on the box, such as 659533"
+    nationalCode: String
+    "The name of the medicine and the content of the pack, in Spanish"
+    name: String
+    "When the pack was authorized"
+    status: CimaStatus
+    "Whether the pack is on the market in Spain now"
+    marketed: Boolean
+    "Whether the pack is short in Spain now"
+    hasSupplyProblems: Boolean
+    "Whether the pack is a large pack for hospitals and clinics"
+    clinicalPack: Boolean
+}
+
+"One page of packs of medicines for people"
+type CimaPresentationPage {
+    "The number of packs that match, across all pages"
+    totalCount: Int
+    "The packs on this page"
+    presentations: [CimaPresentation]
+}
+
+"A pack of a medicine for people, such as a box of 20 tablets, with its national code"
+type CimaPresentation {
+    "The registration number of the medicine, such as 69094"
+    registrationNumber: String
+    """
+    The name of the medicine with its strength and form, in Spanish, such as MELOXICAM CINFA 15 mg COMPRIMIDOS EFG. EFG
+    marks a generic.
+    """
+    name: String
+    "The names of the active ingredients, separated by commas"
+    activeIngredientNames: String
+    "The laboratory that holds the authorization"
+    holder: String
+    "The laboratory that sells the medicine in Spain"
+    marketer: String
+    """
+    How the medicine may be dispensed, in Spanish, such as Medicamento Sujeto A Prescripción Médica (needs a
+    prescription) or Uso Hospitalario (hospital use only)
+    """
+    prescriptionConditions: String
+    "When the medicine was authorized, and suspended or revoked if it was"
+    status: CimaStatus
+    "Whether the medicine is on the market in Spain now"
+    marketed: Boolean
+    "Whether the medicine needs a prescription"
+    prescription: Boolean
+    "Whether the medicine is a generic"
+    generic: Boolean
+    "Whether the medicine can affect the ability to drive"
+    affectsDriving: Boolean
+    "Whether the medicine is under additional monitoring, marked with a black triangle"
+    additionalMonitoring: Boolean
+    "Whether the medicine is an orphan medicine, for a rare disease"
+    orphan: Boolean
+    "Whether the medicine is a biosimilar"
+    biosimilar: Boolean
+    """
+    Whether a pharmacist may replace the medicine with another one, and why not when the answer is no. N/A means the
+    medicine may be replaced.
+    """
+    substitution: CimaCategory
+    "Whether a pack of the medicine is short in Spain now"
+    hasSupplyProblems: Boolean
+    "Whether the agency has published safety notes about it. cimaSafetyNotes reads them."
+    hasSafetyNotes: Boolean
+    "Whether the medicine has information materials for patients or doctors. cimaInformationMaterials reads them."
+    hasInformationMaterials: Boolean
+    "Whether the European Medicines Agency authorized it for the whole European Union"
+    centrallyAuthorized: Boolean
+    "The documents of the medicine, such as its package leaflet"
+    documents: [CimaDocument]
+    "Photos of the box and of the form, such as a tablet"
+    photos: [CimaPhoto]
+    "The active ingredients, each with its amount"
+    activeIngredients: [CimaIngredient]
+    "The excipients, each with its amount"
+    excipients: [CimaIngredient]
+    "The substance of the medicine in the drug dictionary, such as meloxicam"
+    substance: CimaClinicalConcept
+    "The national code of the pack, the six digits printed on the box"
+    nationalCode: String
+    "The clinical drug in the pack, such as Meloxicam 15 mg comprimido"
+    clinicalDrug: CimaClinicalConcept
+    "The clinical drug and the pack size, such as Meloxicam 15 mg 20 comprimidos"
+    clinicalDrugPack: CimaClinicalConcept
+    "Whether the pack is a large pack for hospitals and clinics"
+    clinicalPack: Boolean
+    "The groups of the ATC classification the medicine belongs to, from the widest"
+    atcCodes: [CimaAtc]
+}
+
+"One page of clinical drugs"
+type CimaClinicalDrugPage {
+    "The number of clinical drugs that match, across all pages"
+    totalCount: Int
+    "The clinical drugs on this page"
+    clinicalDrugs: [CimaClinicalDrug]
+}
+
+"A clinical drug in a pack of a given size, as the Spanish drug dictionary names it"
+type CimaClinicalDrug {
+    "The SNOMED CT id of the clinical drug, such as 329928008"
+    clinicalDrugId: String
+    "The clinical drug, such as Meloxicam 15 mg comprimido"
+    clinicalDrug: String
+    "The SNOMED CT id of the clinical drug in its pack size"
+    packId: String
+    "The clinical drug in its pack size, such as Meloxicam 15 mg 20 comprimidos"
+    pack: String
+    "How many packs on the market contain this clinical drug in this size"
+    marketedProducts: Int
+}
+
+"One page of packs that are short in Spain"
+type CimaSupplyProblemPage {
+    "The number of packs that match, across all pages"
+    totalCount: Int
+    "The packs on this page"
+    problems: [CimaSupplyProblem]
+}
+
+"A pack of a medicine for people that is short in Spain"
+type CimaSupplyProblem {
+    "The national code of the pack that is short"
+    nationalCode: String
+    "The name of the medicine and the content of the pack, in Spanish"
+    name: String
+    "A code for the kind of problem, as the agency numbers them. notes explains it in words."
+    problemType: Int
+    "The day the shortage started"
+    started: Date
+    "The day the shortage is expected to end"
+    expectedEnd: Date
+    "Whether the shortage is still going on"
+    active: Boolean
+    "What the agency says about the shortage and the alternatives, in Spanish"
+    notes: String
+}
+
+"One page of changes to the register"
+type CimaRegisterChangePage {
+    "The number of changes that match, across all pages"
+    totalCount: Int
+    "The changes on this page"
+    changes: [CimaRegisterChange]
+}
+
+"A change to a medicine in the register of medicines for people"
+type CimaRegisterChange {
+    "The registration number of the medicine that changed"
+    registrationNumber: String
+    "The name of the medicine"
+    name: String
+    "The laboratory that holds the authorization"
+    holder: String
+    "When the change was made"
+    changedAt: DateTime
+    "The kind of change: 1 for a medicine added to the register, 2 for one removed, 3 for a change to one"
+    kind: Int
+    """
+    What changed, as short codes in Spanish: matinf for the information materials, comerc for whether it is on the
+    market, psum for a supply problem, prosp for the leaflet, fotos for the photos, otros for anything else
+    """
+    changes: [String]
+}
+
+"A safety note the agency published about medicines for people"
+type CimaSafetyNote {
+    "The kind of note, as the agency numbers them"
+    type: Int
+    "The number of the note in its year, such as 01/2024"
+    number: String
+    "The reference of the note, such as MUH (FV), 01/2024"
+    reference: String
+    "The subject of the note, in Spanish"
+    subject: String
+    "The day the note was published"
+    published: Date
+    "The address of the note on the website of the agency"
+    url: String
+}
+
+"The information materials of a medicine"
+type CimaInformationMaterials {
+    "The materials for doctors, pharmacists and nurses"
+    forProfessionals: [CimaInformationMaterial]
+}
+
+"A guide, card or other material that the laboratory hands out"
+type CimaInformationMaterial {
+    "The name of the material, such as GUÍA PROFESIONALES SANITARIOS (Versión abril 2026)"
+    name: String
+    "The address of the material"
+    url: String
+    "The day the material was published"
+    published: Date
+}
+
+"A section of the summary of product characteristics or of the leaflet"
+type CimaDocumentSection {
+    "The number of the section, such as 4.2. cimaDocumentSection takes it."
+    section: String
+    "The title of the section, in Spanish, such as Posología y forma de administración"
+    title: String
+    "How deep the section is: 1 for a main section such as 4, 2 or more below it"
+    order: Int
+}
+
+"The text of a section of the summary of product characteristics or of the leaflet"
+type CimaDocumentSectionText {
+    "The number of the section, such as 4.2"
+    section: String
+    "The title of the section, in Spanish"
+    title: String
+    "The text of the section, in Spanish, as HTML"
+    content: String
+    "How deep the section is: 1 for a main section, 2 or more below it"
+    order: Int
+}
+
+"One page of a list of the register"
+type CimaCodedEntryPage {
+    "The number of entries that match, across all pages"
+    totalCount: Int
+    "The entries on this page"
+    entries: [CimaCodedEntry]
+}
+
+"An entry of a list of the register, such as an active ingredient or an ATC code"
+type CimaCodedEntry {
+    "The id of the entry, or null for the lists without ids"
+    id: Int
+    "The code of the entry, such as 7153A for an active ingredient or M01AC06 for an ATC code"
+    code: String
+    "The Spanish name of the entry"
+    name: String
+}
+
+"A document of a medicine for people that the register publishes in sections"
+enum CimaDocumentType {
+    "The summary of product characteristics (ficha técnica), written for doctors and pharmacists"
+    SUMMARY_OF_PRODUCT_CHARACTERISTICS
+    "The package leaflet (prospecto), written for patients"
+    PACKAGE_LEAFLET
+}

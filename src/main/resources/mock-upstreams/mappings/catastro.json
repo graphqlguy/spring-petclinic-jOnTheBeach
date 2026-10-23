@@ -1,0 +1,953 @@
+{
+ "mappings": [
+  {
+   "name": "catastroProvinces: {}",
+   "priority": 1,
+   "request": {
+    "method": "POST",
+    "urlPath": "/catastro/callejero",
+    "headers": {
+     "SOAPAction": {
+      "contains": "http://tempuri.org/OVCServWeb/OVCCallejero/ConsultaProvincia"
+     }
+    },
+    "bodyPatterns": []
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "text/xml; charset=utf-8"
+    },
+    "bodyFileName": "catastro/catastroProvinces.xml"
+   },
+   "metadata": {
+    "description": "Recorded from https://ovc.catastro.meh.es/ovcservweb/OVCSWLocalizacionRC/OVCCallejero.asmx on 2026-10-23."
+   }
+  },
+  {
+   "name": "catastroProvinces: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "POST",
+    "urlPath": "/catastro/callejero",
+    "headers": {
+     "SOAPAction": {
+      "contains": "http://tempuri.org/OVCServWeb/OVCCallejero/ConsultaProvincia"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "text/xml; charset=utf-8"
+    },
+    "bodyFileName": "catastro/catastroProvinces.xml"
+   },
+   "metadata": {
+    "description": "Answers every other call of catastroProvinces with the first recording."
+   }
+  },
+  {
+   "name": "catastroMunicipalities: {\"province\": \"MALAGA\", \"name\": \"TORREMOLINOS\"}",
+   "priority": 1,
+   "request": {
+    "method": "POST",
+    "urlPath": "/catastro/callejero",
+    "headers": {
+     "SOAPAction": {
+      "contains": "http://tempuri.org/OVCServWeb/OVCCallejero/ConsultaMunicipio"
+     }
+    },
+    "bodyPatterns": [
+     {
+      "contains": ">MALAGA<"
+     },
+     {
+      "contains": ">TORREMOLINOS<"
+     }
+    ]
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "text/xml; charset=utf-8"
+    },
+    "bodyFileName": "catastro/catastroMunicipalities.xml"
+   },
+   "metadata": {
+    "description": "Recorded from https://ovc.catastro.meh.es/ovcservweb/OVCSWLocalizacionRC/OVCCallejero.asmx on 2026-10-23."
+   }
+  },
+  {
+   "name": "catastroMunicipalities: {\"province\": \"MALAGA\", \"name\": \"MAR\"}",
+   "priority": 1,
+   "request": {
+    "method": "POST",
+    "urlPath": "/catastro/callejero",
+    "headers": {
+     "SOAPAction": {
+      "contains": "http://tempuri.org/OVCServWeb/OVCCallejero/ConsultaMunicipio"
+     }
+    },
+    "bodyPatterns": [
+     {
+      "contains": ">MALAGA<"
+     },
+     {
+      "contains": ">MAR<"
+     }
+    ]
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "text/xml; charset=utf-8"
+    },
+    "bodyFileName": "catastro/catastroMunicipalities-1.xml"
+   },
+   "metadata": {
+    "description": "Recorded from https://ovc.catastro.meh.es/ovcservweb/OVCSWLocalizacionRC/OVCCallejero.asmx on 2026-10-23."
+   }
+  },
+  {
+   "name": "catastroMunicipalities: {\"province\": \"MALAGA\", \"name\": \"ZZZ\"}",
+   "priority": 1,
+   "request": {
+    "method": "POST",
+    "urlPath": "/catastro/callejero",
+    "headers": {
+     "SOAPAction": {
+      "contains": "http://tempuri.org/OVCServWeb/OVCCallejero/ConsultaMunicipio"
+     }
+    },
+    "bodyPatterns": [
+     {
+      "contains": ">MALAGA<"
+     },
+     {
+      "contains": ">ZZZ<"
+     }
+    ]
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "text/xml; charset=utf-8"
+    },
+    "bodyFileName": "catastro/catastroMunicipalities-2.xml"
+   },
+   "metadata": {
+    "description": "Recorded from https://ovc.catastro.meh.es/ovcservweb/OVCSWLocalizacionRC/OVCCallejero.asmx on 2026-10-23."
+   }
+  },
+  {
+   "name": "catastroMunicipalities: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "POST",
+    "urlPath": "/catastro/callejero",
+    "headers": {
+     "SOAPAction": {
+      "contains": "http://tempuri.org/OVCServWeb/OVCCallejero/ConsultaMunicipio"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "text/xml; charset=utf-8"
+    },
+    "bodyFileName": "catastro/catastroMunicipalities.xml"
+   },
+   "metadata": {
+    "description": "Answers every other call of catastroMunicipalities with the first recording."
+   }
+  },
+  {
+   "name": "catastroStreets: {\"province\": \"MALAGA\", \"municipality\": \"MALAGA\", \"streetType\": \"CL\", \"name\": \"LARIOS\"}",
+   "priority": 1,
+   "request": {
+    "method": "POST",
+    "urlPath": "/catastro/callejero",
+    "headers": {
+     "SOAPAction": {
+      "contains": "http://tempuri.org/OVCServWeb/OVCCallejero/ConsultaVia"
+     }
+    },
+    "bodyPatterns": [
+     {
+      "contains": ">MALAGA<"
+     },
+     {
+      "contains": ">MALAGA<"
+     },
+     {
+      "contains": ">CL<"
+     },
+     {
+      "contains": ">LARIOS<"
+     }
+    ]
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "text/xml; charset=utf-8"
+    },
+    "bodyFileName": "catastro/catastroStreets.xml"
+   },
+   "metadata": {
+    "description": "Recorded from https://ovc.catastro.meh.es/ovcservweb/OVCSWLocalizacionRC/OVCCallejero.asmx on 2026-10-23."
+   }
+  },
+  {
+   "name": "catastroStreets: {\"province\": \"MALAGA\", \"municipality\": \"TORREMOLINOS\", \"name\": \"SAN MIGUEL\"}",
+   "priority": 1,
+   "request": {
+    "method": "POST",
+    "urlPath": "/catastro/callejero",
+    "headers": {
+     "SOAPAction": {
+      "contains": "http://tempuri.org/OVCServWeb/OVCCallejero/ConsultaVia"
+     }
+    },
+    "bodyPatterns": [
+     {
+      "contains": ">MALAGA<"
+     },
+     {
+      "contains": ">TORREMOLINOS<"
+     },
+     {
+      "contains": ">SAN MIGUEL<"
+     }
+    ]
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "text/xml; charset=utf-8"
+    },
+    "bodyFileName": "catastro/catastroStreets-1.xml"
+   },
+   "metadata": {
+    "description": "Recorded from https://ovc.catastro.meh.es/ovcservweb/OVCSWLocalizacionRC/OVCCallejero.asmx on 2026-10-23."
+   }
+  },
+  {
+   "name": "catastroStreets: {\"province\": \"MALAGA\", \"municipality\": \"MALAGA\", \"name\": \"ZZZZZZ\"}",
+   "priority": 1,
+   "request": {
+    "method": "POST",
+    "urlPath": "/catastro/callejero",
+    "headers": {
+     "SOAPAction": {
+      "contains": "http://tempuri.org/OVCServWeb/OVCCallejero/ConsultaVia"
+     }
+    },
+    "bodyPatterns": [
+     {
+      "contains": ">MALAGA<"
+     },
+     {
+      "contains": ">MALAGA<"
+     },
+     {
+      "contains": ">ZZZZZZ<"
+     }
+    ]
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "text/xml; charset=utf-8"
+    },
+    "bodyFileName": "catastro/catastroStreets-2.xml"
+   },
+   "metadata": {
+    "description": "Recorded from https://ovc.catastro.meh.es/ovcservweb/OVCSWLocalizacionRC/OVCCallejero.asmx on 2026-10-23."
+   }
+  },
+  {
+   "name": "catastroStreets: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "POST",
+    "urlPath": "/catastro/callejero",
+    "headers": {
+     "SOAPAction": {
+      "contains": "http://tempuri.org/OVCServWeb/OVCCallejero/ConsultaVia"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "text/xml; charset=utf-8"
+    },
+    "bodyFileName": "catastro/catastroStreets.xml"
+   },
+   "metadata": {
+    "description": "Answers every other call of catastroStreets with the first recording."
+   }
+  },
+  {
+   "name": "catastroStreetNumbers: {\"province\": \"MALAGA\", \"municipality\": \"MALAGA\", \"streetType\": \"CL\", \"street\": \"MARQUES DE LARIOS\", \"number\": \"12\"}",
+   "priority": 1,
+   "request": {
+    "method": "POST",
+    "urlPath": "/catastro/callejero",
+    "headers": {
+     "SOAPAction": {
+      "contains": "http://tempuri.org/OVCServWeb/OVCCallejero/ConsultaNumero"
+     }
+    },
+    "bodyPatterns": [
+     {
+      "contains": ">MALAGA<"
+     },
+     {
+      "contains": ">MALAGA<"
+     },
+     {
+      "contains": ">CL<"
+     },
+     {
+      "contains": ">MARQUES DE LARIOS<"
+     },
+     {
+      "contains": ">12<"
+     }
+    ]
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "text/xml; charset=utf-8"
+    },
+    "bodyFileName": "catastro/catastroStreetNumbers.xml"
+   },
+   "metadata": {
+    "description": "Recorded from https://ovc.catastro.meh.es/ovcservweb/OVCSWLocalizacionRC/OVCCallejero.asmx on 2026-10-23."
+   }
+  },
+  {
+   "name": "catastroStreetNumbers: {\"province\": \"MALAGA\", \"municipality\": \"TORREMOLINOS\", \"streetType\": \"CL\", \"street\": \"SAN MIGUEL\", \"number\": \"8\"}",
+   "priority": 1,
+   "request": {
+    "method": "POST",
+    "urlPath": "/catastro/callejero",
+    "headers": {
+     "SOAPAction": {
+      "contains": "http://tempuri.org/OVCServWeb/OVCCallejero/ConsultaNumero"
+     }
+    },
+    "bodyPatterns": [
+     {
+      "contains": ">MALAGA<"
+     },
+     {
+      "contains": ">TORREMOLINOS<"
+     },
+     {
+      "contains": ">CL<"
+     },
+     {
+      "contains": ">SAN MIGUEL<"
+     },
+     {
+      "contains": ">8<"
+     }
+    ]
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "text/xml; charset=utf-8"
+    },
+    "bodyFileName": "catastro/catastroStreetNumbers-1.xml"
+   },
+   "metadata": {
+    "description": "Recorded from https://ovc.catastro.meh.es/ovcservweb/OVCSWLocalizacionRC/OVCCallejero.asmx on 2026-10-23."
+   }
+  },
+  {
+   "name": "catastroStreetNumbers: {\"province\": \"MALAGA\", \"municipality\": \"MALAGA\", \"streetType\": \"CL\", \"street\": \"MARQUES DE LARIOS\", \"number\": \"999\"}",
+   "priority": 1,
+   "request": {
+    "method": "POST",
+    "urlPath": "/catastro/callejero",
+    "headers": {
+     "SOAPAction": {
+      "contains": "http://tempuri.org/OVCServWeb/OVCCallejero/ConsultaNumero"
+     }
+    },
+    "bodyPatterns": [
+     {
+      "contains": ">MALAGA<"
+     },
+     {
+      "contains": ">MALAGA<"
+     },
+     {
+      "contains": ">CL<"
+     },
+     {
+      "contains": ">MARQUES DE LARIOS<"
+     },
+     {
+      "contains": ">999<"
+     }
+    ]
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "text/xml; charset=utf-8"
+    },
+    "bodyFileName": "catastro/catastroStreetNumbers-2.xml"
+   },
+   "metadata": {
+    "description": "Recorded from https://ovc.catastro.meh.es/ovcservweb/OVCSWLocalizacionRC/OVCCallejero.asmx on 2026-10-23."
+   }
+  },
+  {
+   "name": "catastroStreetNumbers: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "POST",
+    "urlPath": "/catastro/callejero",
+    "headers": {
+     "SOAPAction": {
+      "contains": "http://tempuri.org/OVCServWeb/OVCCallejero/ConsultaNumero"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "text/xml; charset=utf-8"
+    },
+    "bodyFileName": "catastro/catastroStreetNumbers.xml"
+   },
+   "metadata": {
+    "description": "Answers every other call of catastroStreetNumbers with the first recording."
+   }
+  },
+  {
+   "name": "catastroPropertiesAtAddress: {\"province\": \"MALAGA\", \"municipality\": \"MALAGA\", \"streetType\": \"CL\", \"street\": \"MARQUES DE LARIOS\", \"number\": \"12\"}",
+   "priority": 1,
+   "request": {
+    "method": "POST",
+    "urlPath": "/catastro/callejero",
+    "headers": {
+     "SOAPAction": {
+      "contains": "http://tempuri.org/OVCServWeb/OVCCallejero/Consulta_DNPLOC"
+     }
+    },
+    "bodyPatterns": [
+     {
+      "contains": ">MALAGA<"
+     },
+     {
+      "contains": ">MALAGA<"
+     },
+     {
+      "contains": ">CL<"
+     },
+     {
+      "contains": ">MARQUES DE LARIOS<"
+     },
+     {
+      "contains": ">12<"
+     }
+    ]
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "text/xml; charset=utf-8"
+    },
+    "bodyFileName": "catastro/catastroPropertiesAtAddress.xml"
+   },
+   "metadata": {
+    "description": "Recorded from https://ovc.catastro.meh.es/ovcservweb/OVCSWLocalizacionRC/OVCCallejero.asmx on 2026-10-23."
+   }
+  },
+  {
+   "name": "catastroPropertiesAtAddress: {\"province\": \"MALAGA\", \"municipality\": \"MALAGA\", \"streetType\": \"CL\", \"street\": \"MARQUES DE LARIOS\", \"number\": \"12\", \"stair\": \"1\", \"floor\": \"03\", \"door\": \"01\"}",
+   "priority": 1,
+   "request": {
+    "method": "POST",
+    "urlPath": "/catastro/callejero",
+    "headers": {
+     "SOAPAction": {
+      "contains": "http://tempuri.org/OVCServWeb/OVCCallejero/Consulta_DNPLOC"
+     }
+    },
+    "bodyPatterns": [
+     {
+      "contains": ">MALAGA<"
+     },
+     {
+      "contains": ">MALAGA<"
+     },
+     {
+      "contains": ">CL<"
+     },
+     {
+      "contains": ">MARQUES DE LARIOS<"
+     },
+     {
+      "contains": ">12<"
+     },
+     {
+      "contains": ">1<"
+     },
+     {
+      "contains": ">03<"
+     },
+     {
+      "contains": ">01<"
+     }
+    ]
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "text/xml; charset=utf-8"
+    },
+    "bodyFileName": "catastro/catastroPropertiesAtAddress-1.xml"
+   },
+   "metadata": {
+    "description": "Recorded from https://ovc.catastro.meh.es/ovcservweb/OVCSWLocalizacionRC/OVCCallejero.asmx on 2026-10-23."
+   }
+  },
+  {
+   "name": "catastroPropertiesAtAddress: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "POST",
+    "urlPath": "/catastro/callejero",
+    "headers": {
+     "SOAPAction": {
+      "contains": "http://tempuri.org/OVCServWeb/OVCCallejero/Consulta_DNPLOC"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "text/xml; charset=utf-8"
+    },
+    "bodyFileName": "catastro/catastroPropertiesAtAddress.xml"
+   },
+   "metadata": {
+    "description": "Answers every other call of catastroPropertiesAtAddress with the first recording."
+   }
+  },
+  {
+   "name": "catastroProperty: {\"reference\": \"3148502UF7634N\"}",
+   "priority": 1,
+   "request": {
+    "method": "POST",
+    "urlPath": "/catastro/callejero",
+    "headers": {
+     "SOAPAction": {
+      "contains": "http://tempuri.org/OVCServWeb/OVCCallejero/Consulta_DNPRC"
+     }
+    },
+    "bodyPatterns": [
+     {
+      "contains": ">3148502UF7634N<"
+     }
+    ]
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "text/xml; charset=utf-8"
+    },
+    "bodyFileName": "catastro/catastroProperty.xml"
+   },
+   "metadata": {
+    "description": "Recorded from https://ovc.catastro.meh.es/ovcservweb/OVCSWLocalizacionRC/OVCCallejero.asmx on 2026-10-23."
+   }
+  },
+  {
+   "name": "catastroProperty: {\"reference\": \"3148502UF7634N0001BU\"}",
+   "priority": 1,
+   "request": {
+    "method": "POST",
+    "urlPath": "/catastro/callejero",
+    "headers": {
+     "SOAPAction": {
+      "contains": "http://tempuri.org/OVCServWeb/OVCCallejero/Consulta_DNPRC"
+     }
+    },
+    "bodyPatterns": [
+     {
+      "contains": ">3148502UF7634N0001BU<"
+     }
+    ]
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "text/xml; charset=utf-8"
+    },
+    "bodyFileName": "catastro/catastroProperty-1.xml"
+   },
+   "metadata": {
+    "description": "Recorded from https://ovc.catastro.meh.es/ovcservweb/OVCSWLocalizacionRC/OVCCallejero.asmx on 2026-10-23."
+   }
+  },
+  {
+   "name": "catastroProperty: {\"reference\": \"0000000XX0000X\"}",
+   "priority": 1,
+   "request": {
+    "method": "POST",
+    "urlPath": "/catastro/callejero",
+    "headers": {
+     "SOAPAction": {
+      "contains": "http://tempuri.org/OVCServWeb/OVCCallejero/Consulta_DNPRC"
+     }
+    },
+    "bodyPatterns": [
+     {
+      "contains": ">0000000XX0000X<"
+     }
+    ]
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "text/xml; charset=utf-8"
+    },
+    "bodyFileName": "catastro/catastroProperty-2.xml"
+   },
+   "metadata": {
+    "description": "Recorded from https://ovc.catastro.meh.es/ovcservweb/OVCSWLocalizacionRC/OVCCallejero.asmx on 2026-10-23."
+   }
+  },
+  {
+   "name": "catastroProperty: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "POST",
+    "urlPath": "/catastro/callejero",
+    "headers": {
+     "SOAPAction": {
+      "contains": "http://tempuri.org/OVCServWeb/OVCCallejero/Consulta_DNPRC"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "text/xml; charset=utf-8"
+    },
+    "bodyFileName": "catastro/catastroProperty.xml"
+   },
+   "metadata": {
+    "description": "Answers every other call of catastroProperty with the first recording."
+   }
+  },
+  {
+   "name": "catastroRuralParcel: {\"province\": \"MALAGA\", \"municipality\": \"ALHAURIN EL GRANDE\", \"polygon\": \"3\", \"parcel\": \"6\"}",
+   "priority": 1,
+   "request": {
+    "method": "POST",
+    "urlPath": "/catastro/callejero",
+    "headers": {
+     "SOAPAction": {
+      "contains": "http://tempuri.org/OVCServWeb/OVCCallejero/Consulta_DNPPP"
+     }
+    },
+    "bodyPatterns": [
+     {
+      "contains": ">MALAGA<"
+     },
+     {
+      "contains": ">ALHAURIN EL GRANDE<"
+     },
+     {
+      "contains": ">3<"
+     },
+     {
+      "contains": ">6<"
+     }
+    ]
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "text/xml; charset=utf-8"
+    },
+    "bodyFileName": "catastro/catastroRuralParcel.xml"
+   },
+   "metadata": {
+    "description": "Recorded from https://ovc.catastro.meh.es/ovcservweb/OVCSWLocalizacionRC/OVCCallejero.asmx on 2026-10-23."
+   }
+  },
+  {
+   "name": "catastroRuralParcel: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "POST",
+    "urlPath": "/catastro/callejero",
+    "headers": {
+     "SOAPAction": {
+      "contains": "http://tempuri.org/OVCServWeb/OVCCallejero/Consulta_DNPPP"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "text/xml; charset=utf-8"
+    },
+    "bodyFileName": "catastro/catastroRuralParcel.xml"
+   },
+   "metadata": {
+    "description": "Answers every other call of catastroRuralParcel with the first recording."
+   }
+  },
+  {
+   "name": "catastroParcelAt: {\"latitude\": 36.7188122, \"longitude\": -4.4216645}",
+   "priority": 1,
+   "request": {
+    "method": "POST",
+    "urlPath": "/catastro/coordenadas",
+    "headers": {
+     "SOAPAction": {
+      "contains": "http://tempuri.org/OVCServWeb/OVCCoordenadas/Consulta_RCCOOR"
+     }
+    },
+    "bodyPatterns": [
+     {
+      "contains": ">EPSG:4326<"
+     },
+     {
+      "contains": ">-4.4216645<"
+     },
+     {
+      "contains": ">36.7188122<"
+     }
+    ]
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "text/xml; charset=utf-8"
+    },
+    "bodyFileName": "catastro/catastroParcelAt.xml"
+   },
+   "metadata": {
+    "description": "Recorded from https://ovc.catastro.meh.es/ovcservweb/OVCSWLocalizacionRC/OVCCoordenadas.asmx on 2026-10-23."
+   }
+  },
+  {
+   "name": "catastroParcelAt: {\"latitude\": 36.6233, \"longitude\": -4.4985}",
+   "priority": 1,
+   "request": {
+    "method": "POST",
+    "urlPath": "/catastro/coordenadas",
+    "headers": {
+     "SOAPAction": {
+      "contains": "http://tempuri.org/OVCServWeb/OVCCoordenadas/Consulta_RCCOOR"
+     }
+    },
+    "bodyPatterns": [
+     {
+      "contains": ">EPSG:4326<"
+     },
+     {
+      "contains": ">-4.4985<"
+     },
+     {
+      "contains": ">36.6233<"
+     }
+    ]
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "text/xml; charset=utf-8"
+    },
+    "bodyFileName": "catastro/catastroParcelAt-1.xml"
+   },
+   "metadata": {
+    "description": "Recorded from https://ovc.catastro.meh.es/ovcservweb/OVCSWLocalizacionRC/OVCCoordenadas.asmx on 2026-10-23."
+   }
+  },
+  {
+   "name": "catastroParcelAt: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "POST",
+    "urlPath": "/catastro/coordenadas",
+    "headers": {
+     "SOAPAction": {
+      "contains": "http://tempuri.org/OVCServWeb/OVCCoordenadas/Consulta_RCCOOR"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "text/xml; charset=utf-8"
+    },
+    "bodyFileName": "catastro/catastroParcelAt.xml"
+   },
+   "metadata": {
+    "description": "Answers every other call of catastroParcelAt with the first recording."
+   }
+  },
+  {
+   "name": "catastroParcelsNear: {\"latitude\": 36.7188122, \"longitude\": -4.4216645}",
+   "priority": 1,
+   "request": {
+    "method": "POST",
+    "urlPath": "/catastro/coordenadas",
+    "headers": {
+     "SOAPAction": {
+      "contains": "http://tempuri.org/OVCServWeb/OVCCoordenadas/Consulta_RCCOOR_Distancia"
+     }
+    },
+    "bodyPatterns": [
+     {
+      "contains": ">EPSG:4326<"
+     },
+     {
+      "contains": ">-4.4216645<"
+     },
+     {
+      "contains": ">36.7188122<"
+     }
+    ]
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "text/xml; charset=utf-8"
+    },
+    "bodyFileName": "catastro/catastroParcelsNear.xml"
+   },
+   "metadata": {
+    "description": "Recorded from https://ovc.catastro.meh.es/ovcservweb/OVCSWLocalizacionRC/OVCCoordenadas.asmx on 2026-10-23."
+   }
+  },
+  {
+   "name": "catastroParcelsNear: {\"latitude\": 36.6, \"longitude\": -4.4}",
+   "priority": 1,
+   "request": {
+    "method": "POST",
+    "urlPath": "/catastro/coordenadas",
+    "headers": {
+     "SOAPAction": {
+      "contains": "http://tempuri.org/OVCServWeb/OVCCoordenadas/Consulta_RCCOOR_Distancia"
+     }
+    },
+    "bodyPatterns": [
+     {
+      "contains": ">EPSG:4326<"
+     },
+     {
+      "contains": ">-4.4<"
+     },
+     {
+      "contains": ">36.6<"
+     }
+    ]
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "text/xml; charset=utf-8"
+    },
+    "bodyFileName": "catastro/catastroParcelsNear-1.xml"
+   },
+   "metadata": {
+    "description": "Recorded from https://ovc.catastro.meh.es/ovcservweb/OVCSWLocalizacionRC/OVCCoordenadas.asmx on 2026-10-23."
+   }
+  },
+  {
+   "name": "catastroParcelsNear: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "POST",
+    "urlPath": "/catastro/coordenadas",
+    "headers": {
+     "SOAPAction": {
+      "contains": "http://tempuri.org/OVCServWeb/OVCCoordenadas/Consulta_RCCOOR_Distancia"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "text/xml; charset=utf-8"
+    },
+    "bodyFileName": "catastro/catastroParcelsNear.xml"
+   },
+   "metadata": {
+    "description": "Answers every other call of catastroParcelsNear with the first recording."
+   }
+  },
+  {
+   "name": "catastroParcelPosition: {\"reference\": \"3148502UF7634N\"}",
+   "priority": 1,
+   "request": {
+    "method": "POST",
+    "urlPath": "/catastro/coordenadas",
+    "headers": {
+     "SOAPAction": {
+      "contains": "http://tempuri.org/OVCServWeb/OVCCoordenadas/Consulta_CPMRC"
+     }
+    },
+    "bodyPatterns": [
+     {
+      "contains": ">EPSG:4326<"
+     },
+     {
+      "contains": ">3148502UF7634N<"
+     }
+    ]
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "text/xml; charset=utf-8"
+    },
+    "bodyFileName": "catastro/catastroParcelPosition.xml"
+   },
+   "metadata": {
+    "description": "Recorded from https://ovc.catastro.meh.es/ovcservweb/OVCSWLocalizacionRC/OVCCoordenadas.asmx on 2026-10-23."
+   }
+  },
+  {
+   "name": "catastroParcelPosition: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "POST",
+    "urlPath": "/catastro/coordenadas",
+    "headers": {
+     "SOAPAction": {
+      "contains": "http://tempuri.org/OVCServWeb/OVCCoordenadas/Consulta_CPMRC"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "text/xml; charset=utf-8"
+    },
+    "bodyFileName": "catastro/catastroParcelPosition.xml"
+   },
+   "metadata": {
+    "description": "Answers every other call of catastroParcelPosition with the first recording."
+   }
+  }
+ ]
+}

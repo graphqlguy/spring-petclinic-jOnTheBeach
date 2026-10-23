@@ -1,0 +1,1986 @@
+{
+ "operations": [
+  {
+   "field": "ignAdministrativeBoundaries",
+   "path": "/collections/administrativeboundary/items",
+   "arguments": [
+    {
+     "name": "bbox",
+     "parameter": "bbox",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "skipGeometry",
+     "parameter": "skipGeometry",
+     "in": "query",
+     "list": false,
+     "values": {
+      "true": "true",
+      "false": "false"
+     }
+    },
+    {
+     "name": "gid",
+     "parameter": "gid",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "nationalCode",
+     "parameter": "nationalcode",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "country",
+     "parameter": "country",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "boundaryName",
+     "parameter": "name_boundary",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "boundaryType",
+     "parameter": "type_boundary",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "boundaryDate",
+     "parameter": "date_boundary",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "documentUrl",
+     "parameter": "url_resource",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "nationalLevel",
+     "parameter": "nationallevel",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "levelName",
+     "parameter": "nationallevelname",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "legalStatus",
+     "parameter": "legalstatus",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "accuracy",
+     "parameter": "accuracy",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "validUntil",
+     "parameter": "endlifespanversion",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "legalStatusNilReason",
+     "parameter": "nilreason_legalstatus",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "legalStatusMissing",
+     "parameter": "nil_legalstatus",
+     "in": "query",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "f": "json"
+   },
+   "paging": {
+    "style": "offset",
+    "start": "offset",
+    "size": "limit"
+   }
+  },
+  {
+   "field": "ignAdministrativeBoundary",
+   "path": "/collections/administrativeboundary/items/{featureId}",
+   "arguments": [
+    {
+     "name": "id",
+     "parameter": "featureId",
+     "in": "path",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "f": "json"
+   }
+  },
+  {
+   "field": "ignAdministrativeUnits",
+   "path": "/collections/administrativeunit/items",
+   "arguments": [
+    {
+     "name": "bbox",
+     "parameter": "bbox",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "skipGeometry",
+     "parameter": "skipGeometry",
+     "in": "query",
+     "list": false,
+     "values": {
+      "true": "true",
+      "false": "false"
+     }
+    },
+    {
+     "name": "gid",
+     "parameter": "gid",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "country",
+     "parameter": "country",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "nationalCode",
+     "parameter": "nationalcode",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "name",
+     "parameter": "nameunit",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "nuts1",
+     "parameter": "codnut1",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "nuts2",
+     "parameter": "codnut2",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "nuts3",
+     "parameter": "codnut3",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "nationalLevel",
+     "parameter": "nationallevel",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "levelName",
+     "parameter": "nationallevelname",
+     "in": "query",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "f": "json"
+   },
+   "paging": {
+    "style": "offset",
+    "start": "offset",
+    "size": "limit"
+   }
+  },
+  {
+   "field": "ignAdministrativeUnit",
+   "path": "/collections/administrativeunit/items/{featureId}",
+   "arguments": [
+    {
+     "name": "id",
+     "parameter": "featureId",
+     "in": "path",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "f": "json"
+   }
+  },
+  {
+   "field": "ignNamedPlaces",
+   "path": "/collections/namedplace/items",
+   "arguments": [
+    {
+     "name": "bbox",
+     "parameter": "bbox",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "skipGeometry",
+     "parameter": "skipGeometry",
+     "in": "query",
+     "list": false,
+     "values": {
+      "true": "true",
+      "false": "false"
+     }
+    },
+    {
+     "name": "identity",
+     "parameter": "identidad",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "label",
+     "parameter": "etiqueta",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "kind",
+     "parameter": "tipo",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "ngbeCode",
+     "parameter": "codigo_ngbe",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "nameType",
+     "parameter": "tiponombre",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "source",
+     "parameter": "fuente",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "date",
+     "parameter": "fecha",
+     "in": "query",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "f": "json"
+   },
+   "paging": {
+    "style": "offset",
+    "start": "offset",
+    "size": "limit"
+   }
+  },
+  {
+   "field": "ignNamedPlace",
+   "path": "/collections/namedplace/items/{featureId}",
+   "arguments": [
+    {
+     "name": "id",
+     "parameter": "featureId",
+     "in": "path",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "f": "json"
+   }
+  },
+  {
+   "field": "ignPopulationCentres",
+   "path": "/collections/nuc/items",
+   "arguments": [
+    {
+     "name": "bbox",
+     "parameter": "bbox",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "skipGeometry",
+     "parameter": "skipGeometry",
+     "in": "query",
+     "list": false,
+     "values": {
+      "true": "true",
+      "false": "false"
+     }
+    },
+    {
+     "name": "settlementId",
+     "parameter": "idpob",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "name",
+     "parameter": "nombre",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "provinceCode",
+     "parameter": "cpro",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "kind",
+     "parameter": "tipo",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "inIne",
+     "parameter": "ine",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "ineCode",
+     "parameter": "codine",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "inhabitants",
+     "parameter": "habitantes",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "entityId",
+     "parameter": "enidpob",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "capitalCode",
+     "parameter": "capital",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "rural",
+     "parameter": "nucrural",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "isolated",
+     "parameter": "aislada",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "latitude",
+     "parameter": "latitud",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "lengthMetres",
+     "parameter": "longitud",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "altitude",
+     "parameter": "altitud",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "date",
+     "parameter": "fecha",
+     "in": "query",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "f": "json"
+   },
+   "paging": {
+    "style": "offset",
+    "start": "offset",
+    "size": "limit"
+   }
+  },
+  {
+   "field": "ignPopulationCentre",
+   "path": "/collections/nuc/items/{featureId}",
+   "arguments": [
+    {
+     "name": "id",
+     "parameter": "featureId",
+     "in": "path",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "f": "json"
+   }
+  },
+  {
+   "field": "ignOtherSettlements",
+   "path": "/collections/opob/items",
+   "arguments": [
+    {
+     "name": "bbox",
+     "parameter": "bbox",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "skipGeometry",
+     "parameter": "skipGeometry",
+     "in": "query",
+     "list": false,
+     "values": {
+      "true": "true",
+      "false": "false"
+     }
+    },
+    {
+     "name": "settlementId",
+     "parameter": "idpob",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "name",
+     "parameter": "nombre",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "provinceCode",
+     "parameter": "cpro",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "kind",
+     "parameter": "tipo",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "inIne",
+     "parameter": "ine",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "ineCode",
+     "parameter": "codine",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "inhabitants",
+     "parameter": "habitantes",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "entityId",
+     "parameter": "enidpob",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "capitalCode",
+     "parameter": "capital",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "rural",
+     "parameter": "nucrural",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "isolated",
+     "parameter": "aislada",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "latitude",
+     "parameter": "latitud",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "lengthMetres",
+     "parameter": "longitud",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "altitude",
+     "parameter": "altitud",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "date",
+     "parameter": "fecha",
+     "in": "query",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "f": "json"
+   },
+   "paging": {
+    "style": "offset",
+    "start": "offset",
+    "size": "limit"
+   }
+  },
+  {
+   "field": "ignOtherSettlement",
+   "path": "/collections/opob/items/{featureId}",
+   "arguments": [
+    {
+     "name": "id",
+     "parameter": "featureId",
+     "in": "path",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "f": "json"
+   }
+  },
+  {
+   "field": "ignUnnamedSettlements",
+   "path": "/collections/sin_toponimo/items",
+   "arguments": [
+    {
+     "name": "bbox",
+     "parameter": "bbox",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "skipGeometry",
+     "parameter": "skipGeometry",
+     "in": "query",
+     "list": false,
+     "values": {
+      "true": "true",
+      "false": "false"
+     }
+    },
+    {
+     "name": "seigId",
+     "parameter": "id_seig",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "settlementId",
+     "parameter": "idpob",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "name",
+     "parameter": "nombre",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "provinceCode",
+     "parameter": "cpro",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "date",
+     "parameter": "fecha",
+     "in": "query",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "f": "json"
+   },
+   "paging": {
+    "style": "offset",
+    "start": "offset",
+    "size": "limit"
+   }
+  },
+  {
+   "field": "ignUnnamedSettlement",
+   "path": "/collections/sin_toponimo/items/{featureId}",
+   "arguments": [
+    {
+     "name": "id",
+     "parameter": "featureId",
+     "in": "path",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "f": "json"
+   }
+  },
+  {
+   "field": "ignGnssStations",
+   "path": "/collections/red_ergnss/items",
+   "arguments": [
+    {
+     "name": "bbox",
+     "parameter": "bbox",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "skipGeometry",
+     "parameter": "skipGeometry",
+     "in": "query",
+     "list": false,
+     "values": {
+      "true": "true",
+      "false": "false"
+     }
+    },
+    {
+     "name": "code",
+     "parameter": "codigo",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "name",
+     "parameter": "nombre",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "iersCode",
+     "parameter": "cod_iers",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "installed",
+     "parameter": "fecha_ins",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "municipality",
+     "parameter": "nombre_muni",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "province",
+     "parameter": "nombre_prov",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "location",
+     "parameter": "localizacion",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "lengthMetres",
+     "parameter": "longitud",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "latitude",
+     "parameter": "latitud",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "ellipsoidalHeight",
+     "parameter": "altura_elipsoidal",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "cartesianX",
+     "parameter": "cartX",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "cartesianY",
+     "parameter": "cartY",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "cartesianZ",
+     "parameter": "cartZ",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "utmX",
+     "parameter": "x_UTM",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "utmY",
+     "parameter": "y_UTM",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "utmZone",
+     "parameter": "huso",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "orthometricHeight",
+     "parameter": "alt_orto",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "mainNetwork",
+     "parameter": "red_principal",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "otherNetworks",
+     "parameter": "red_secundaria",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "descriptionSheet",
+     "parameter": "resena",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "logUrl",
+     "parameter": "log",
+     "in": "query",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "f": "json"
+   },
+   "paging": {
+    "style": "offset",
+    "start": "offset",
+    "size": "limit"
+   }
+  },
+  {
+   "field": "ignGnssStation",
+   "path": "/collections/red_ergnss/items/{featureId}",
+   "arguments": [
+    {
+     "name": "id",
+     "parameter": "featureId",
+     "in": "path",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "f": "json"
+   }
+  },
+  {
+   "field": "ignLevellingBenchmarks",
+   "path": "/collections/red_nap/items",
+   "arguments": [
+    {
+     "name": "bbox",
+     "parameter": "bbox",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "skipGeometry",
+     "parameter": "skipGeometry",
+     "in": "query",
+     "list": false,
+     "values": {
+      "true": "true",
+      "false": "false"
+     }
+    },
+    {
+     "name": "number",
+     "parameter": "numero",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "name",
+     "parameter": "nombre",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "municipality",
+     "parameter": "nombre_muni",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "province",
+     "parameter": "nombre_prov",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "kind",
+     "parameter": "tipo",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "node",
+     "parameter": "nodo",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "group",
+     "parameter": "grupo",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "longitude",
+     "parameter": "longitud_etrs89",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "latitude",
+     "parameter": "latitud_etrs89",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "ellipsoidalHeight",
+     "parameter": "altitud_elipsoidal",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "orthometricHeight",
+     "parameter": "ortometrica",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "descriptionSheet",
+     "parameter": "resena",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "line",
+     "parameter": "linea",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "lineSheet",
+     "parameter": "resena_linea",
+     "in": "query",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "f": "json"
+   },
+   "paging": {
+    "style": "offset",
+    "start": "offset",
+    "size": "limit"
+   }
+  },
+  {
+   "field": "ignLevellingBenchmark",
+   "path": "/collections/red_nap/items/{featureId}",
+   "arguments": [
+    {
+     "name": "id",
+     "parameter": "featureId",
+     "in": "path",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "f": "json"
+   }
+  },
+  {
+   "field": "ignRegenteGeodeticPoints",
+   "path": "/collections/red_regente/items",
+   "arguments": [
+    {
+     "name": "bbox",
+     "parameter": "bbox",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "skipGeometry",
+     "parameter": "skipGeometry",
+     "in": "query",
+     "list": false,
+     "values": {
+      "true": "true",
+      "false": "false"
+     }
+    },
+    {
+     "name": "number",
+     "parameter": "numero",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "name",
+     "parameter": "nombre",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "municipality",
+     "parameter": "municipio",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "province",
+     "parameter": "provincia",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "municipalityCode",
+     "parameter": "cod_municipio",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "provinceCode",
+     "parameter": "cod_provincia",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "mapSheet",
+     "parameter": "hoja",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "built",
+     "parameter": "fecha_const",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "longitude",
+     "parameter": "long_etrs89",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "latitude",
+     "parameter": "lat_etrs89",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "ellipsoidalHeight",
+     "parameter": "alt_elip",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "utmX",
+     "parameter": "x_etrs89",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "utmY",
+     "parameter": "y_etrs89",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "utmZone",
+     "parameter": "huso",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "orthometricHeight",
+     "parameter": "alt_orto",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "descriptionSheet",
+     "parameter": "resena",
+     "in": "query",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "f": "json"
+   },
+   "paging": {
+    "style": "offset",
+    "start": "offset",
+    "size": "limit"
+   }
+  },
+  {
+   "field": "ignRegenteGeodeticPoint",
+   "path": "/collections/red_regente/items/{featureId}",
+   "arguments": [
+    {
+     "name": "id",
+     "parameter": "featureId",
+     "in": "path",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "f": "json"
+   }
+  },
+  {
+   "field": "ignLowerOrderGeodeticPoints",
+   "path": "/collections/red_roi/items",
+   "arguments": [
+    {
+     "name": "bbox",
+     "parameter": "bbox",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "skipGeometry",
+     "parameter": "skipGeometry",
+     "in": "query",
+     "list": false,
+     "values": {
+      "true": "true",
+      "false": "false"
+     }
+    },
+    {
+     "name": "number",
+     "parameter": "numero",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "name",
+     "parameter": "nombre",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "municipality",
+     "parameter": "municipio",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "province",
+     "parameter": "provincia",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "municipalityCode",
+     "parameter": "cod_municipio",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "provinceCode",
+     "parameter": "cod_provincia",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "mapSheet",
+     "parameter": "hoja",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "built",
+     "parameter": "fecha_const",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "longitude",
+     "parameter": "long_etrs89",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "latitude",
+     "parameter": "lat_etrs89",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "ellipsoidalHeight",
+     "parameter": "alt_elip",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "utmX",
+     "parameter": "x_etrs89",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "utmY",
+     "parameter": "y_etrs89",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "utmZone",
+     "parameter": "huso",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "orthometricHeight",
+     "parameter": "alt_orto",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "descriptionSheet",
+     "parameter": "resena",
+     "in": "query",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "f": "json"
+   },
+   "paging": {
+    "style": "offset",
+    "start": "offset",
+    "size": "limit"
+   }
+  },
+  {
+   "field": "ignLowerOrderGeodeticPoint",
+   "path": "/collections/red_roi/items/{featureId}",
+   "arguments": [
+    {
+     "name": "id",
+     "parameter": "featureId",
+     "in": "path",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "f": "json"
+   }
+  },
+  {
+   "field": "ignTideGauges",
+   "path": "/collections/red_mareografos/items",
+   "arguments": [
+    {
+     "name": "bbox",
+     "parameter": "bbox",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "skipGeometry",
+     "parameter": "skipGeometry",
+     "in": "query",
+     "list": false,
+     "values": {
+      "true": "true",
+      "false": "false"
+     }
+    },
+    {
+     "name": "name",
+     "parameter": "nombre",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "longitude",
+     "parameter": "longitud_etrs89",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "latitude",
+     "parameter": "latitud_etrs89",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "descriptionSheet",
+     "parameter": "resena",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "psmslUrl",
+     "parameter": "enlace_psmsl",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "gnssStationSheet",
+     "parameter": "estacion_ergnss",
+     "in": "query",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "f": "json"
+   },
+   "paging": {
+    "style": "offset",
+    "start": "offset",
+    "size": "limit"
+   }
+  },
+  {
+   "field": "ignTideGauge",
+   "path": "/collections/red_mareografos/items/{featureId}",
+   "arguments": [
+    {
+     "name": "id",
+     "parameter": "featureId",
+     "in": "path",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "f": "json"
+   }
+  }
+ ],
+ "fields": {
+  "IgnAdministrativeBoundary": {
+   "id": {
+    "key": "id",
+    "conversion": "identifier"
+   },
+   "previousId": {
+    "key": "prev",
+    "conversion": "text"
+   },
+   "nextId": {
+    "key": "next",
+    "conversion": "text"
+   },
+   "gid": {
+    "key": "properties/gid"
+   },
+   "nationalCode": {
+    "key": "properties/nationalcode"
+   },
+   "country": {
+    "key": "properties/country"
+   },
+   "boundaryName": {
+    "key": "properties/name_boundary"
+   },
+   "boundaryType": {
+    "key": "properties/type_boundary"
+   },
+   "boundaryDate": {
+    "key": "properties/date_boundary"
+   },
+   "documentUrl": {
+    "key": "properties/url_resource"
+   },
+   "nationalLevel": {
+    "key": "properties/nationallevel"
+   },
+   "levelName": {
+    "key": "properties/nationallevelname"
+   },
+   "legalStatus": {
+    "key": "properties/legalstatus"
+   },
+   "accuracy": {
+    "key": "properties/accuracy"
+   },
+   "validUntil": {
+    "key": "properties/endlifespanversion"
+   },
+   "legalStatusNilReason": {
+    "key": "properties/nilreason_legalstatus"
+   },
+   "legalStatusMissing": {
+    "key": "properties/nil_legalstatus"
+   }
+  },
+  "IgnAdministrativeBoundaryPage": {
+   "matched": {
+    "key": "numberMatched"
+   },
+   "returned": {
+    "key": "numberReturned"
+   }
+  },
+  "IgnAdministrativeUnit": {
+   "id": {
+    "key": "id",
+    "conversion": "identifier"
+   },
+   "previousId": {
+    "key": "prev",
+    "conversion": "text"
+   },
+   "nextId": {
+    "key": "next",
+    "conversion": "text"
+   },
+   "gid": {
+    "key": "properties/gid"
+   },
+   "country": {
+    "key": "properties/country"
+   },
+   "nationalCode": {
+    "key": "properties/nationalcode"
+   },
+   "name": {
+    "key": "properties/nameunit"
+   },
+   "nuts1": {
+    "key": "properties/codnut1"
+   },
+   "nuts2": {
+    "key": "properties/codnut2"
+   },
+   "nuts3": {
+    "key": "properties/codnut3"
+   },
+   "nationalLevel": {
+    "key": "properties/nationallevel"
+   },
+   "levelName": {
+    "key": "properties/nationallevelname"
+   }
+  },
+  "IgnAdministrativeUnitPage": {
+   "matched": {
+    "key": "numberMatched"
+   },
+   "returned": {
+    "key": "numberReturned"
+   }
+  },
+  "IgnNamedPlace": {
+   "id": {
+    "key": "id",
+    "conversion": "identifier"
+   },
+   "previousId": {
+    "key": "prev",
+    "conversion": "text"
+   },
+   "nextId": {
+    "key": "next",
+    "conversion": "text"
+   },
+   "identity": {
+    "key": "properties/identidad"
+   },
+   "label": {
+    "key": "properties/etiqueta"
+   },
+   "kind": {
+    "key": "properties/tipo"
+   },
+   "ngbeCode": {
+    "key": "properties/codigo_ngbe"
+   },
+   "nameType": {
+    "key": "properties/tiponombre"
+   },
+   "source": {
+    "key": "properties/fuente"
+   },
+   "date": {
+    "key": "properties/fecha"
+   }
+  },
+  "IgnNamedPlacePage": {
+   "matched": {
+    "key": "numberMatched"
+   },
+   "returned": {
+    "key": "numberReturned"
+   }
+  },
+  "IgnPopulationCentre": {
+   "id": {
+    "key": "id",
+    "conversion": "identifier"
+   },
+   "previousId": {
+    "key": "prev",
+    "conversion": "text"
+   },
+   "nextId": {
+    "key": "next",
+    "conversion": "text"
+   },
+   "settlementId": {
+    "key": "properties/idpob"
+   },
+   "name": {
+    "key": "properties/nombre"
+   },
+   "provinceCode": {
+    "key": "properties/cpro"
+   },
+   "kind": {
+    "key": "properties/tipo"
+   },
+   "inIne": {
+    "key": "properties/ine"
+   },
+   "ineCode": {
+    "key": "properties/codine"
+   },
+   "inhabitants": {
+    "key": "properties/habitantes"
+   },
+   "entityId": {
+    "key": "properties/enidpob"
+   },
+   "capitalCode": {
+    "key": "properties/capital"
+   },
+   "rural": {
+    "key": "properties/nucrural"
+   },
+   "isolated": {
+    "key": "properties/aislada"
+   },
+   "latitude": {
+    "key": "properties/latitud"
+   },
+   "lengthMetres": {
+    "key": "properties/longitud"
+   },
+   "altitude": {
+    "key": "properties/altitud"
+   },
+   "date": {
+    "key": "properties/fecha"
+   }
+  },
+  "IgnPopulationCentrePage": {
+   "matched": {
+    "key": "numberMatched"
+   },
+   "returned": {
+    "key": "numberReturned"
+   }
+  },
+  "IgnOtherSettlement": {
+   "id": {
+    "key": "id",
+    "conversion": "identifier"
+   },
+   "previousId": {
+    "key": "prev",
+    "conversion": "text"
+   },
+   "nextId": {
+    "key": "next",
+    "conversion": "text"
+   },
+   "settlementId": {
+    "key": "properties/idpob"
+   },
+   "name": {
+    "key": "properties/nombre"
+   },
+   "provinceCode": {
+    "key": "properties/cpro"
+   },
+   "kind": {
+    "key": "properties/tipo"
+   },
+   "inIne": {
+    "key": "properties/ine"
+   },
+   "ineCode": {
+    "key": "properties/codine"
+   },
+   "inhabitants": {
+    "key": "properties/habitantes"
+   },
+   "entityId": {
+    "key": "properties/enidpob"
+   },
+   "capitalCode": {
+    "key": "properties/capital"
+   },
+   "rural": {
+    "key": "properties/nucrural"
+   },
+   "isolated": {
+    "key": "properties/aislada"
+   },
+   "latitude": {
+    "key": "properties/latitud"
+   },
+   "lengthMetres": {
+    "key": "properties/longitud"
+   },
+   "altitude": {
+    "key": "properties/altitud"
+   },
+   "date": {
+    "key": "properties/fecha"
+   }
+  },
+  "IgnOtherSettlementPage": {
+   "matched": {
+    "key": "numberMatched"
+   },
+   "returned": {
+    "key": "numberReturned"
+   }
+  },
+  "IgnUnnamedSettlement": {
+   "id": {
+    "key": "id",
+    "conversion": "identifier"
+   },
+   "previousId": {
+    "key": "prev",
+    "conversion": "text"
+   },
+   "nextId": {
+    "key": "next",
+    "conversion": "text"
+   },
+   "seigId": {
+    "key": "properties/id_seig"
+   },
+   "settlementId": {
+    "key": "properties/idpob"
+   },
+   "name": {
+    "key": "properties/nombre"
+   },
+   "provinceCode": {
+    "key": "properties/cpro"
+   },
+   "date": {
+    "key": "properties/fecha"
+   }
+  },
+  "IgnUnnamedSettlementPage": {
+   "matched": {
+    "key": "numberMatched"
+   },
+   "returned": {
+    "key": "numberReturned"
+   }
+  },
+  "IgnGnssStation": {
+   "id": {
+    "key": "id",
+    "conversion": "identifier"
+   },
+   "previousId": {
+    "key": "prev",
+    "conversion": "text"
+   },
+   "nextId": {
+    "key": "next",
+    "conversion": "text"
+   },
+   "code": {
+    "key": "properties/codigo"
+   },
+   "name": {
+    "key": "properties/nombre"
+   },
+   "iersCode": {
+    "key": "properties/cod_iers"
+   },
+   "installed": {
+    "key": "properties/fecha_ins"
+   },
+   "municipality": {
+    "key": "properties/nombre_muni"
+   },
+   "province": {
+    "key": "properties/nombre_prov"
+   },
+   "location": {
+    "key": "properties/localizacion"
+   },
+   "lengthMetres": {
+    "key": "properties/longitud"
+   },
+   "latitude": {
+    "key": "properties/latitud"
+   },
+   "ellipsoidalHeight": {
+    "key": "properties/altura_elipsoidal"
+   },
+   "cartesianX": {
+    "key": "properties/cartX"
+   },
+   "cartesianY": {
+    "key": "properties/cartY"
+   },
+   "cartesianZ": {
+    "key": "properties/cartZ"
+   },
+   "utmX": {
+    "key": "properties/x_UTM"
+   },
+   "utmY": {
+    "key": "properties/y_UTM"
+   },
+   "utmZone": {
+    "key": "properties/huso"
+   },
+   "orthometricHeight": {
+    "key": "properties/alt_orto"
+   },
+   "mainNetwork": {
+    "key": "properties/red_principal"
+   },
+   "otherNetworks": {
+    "key": "properties/red_secundaria",
+    "conversion": "text-list"
+   },
+   "descriptionSheet": {
+    "key": "properties/resena"
+   },
+   "logUrl": {
+    "key": "properties/log"
+   }
+  },
+  "IgnGnssStationPage": {
+   "matched": {
+    "key": "numberMatched"
+   },
+   "returned": {
+    "key": "numberReturned"
+   }
+  },
+  "IgnLevellingBenchmark": {
+   "id": {
+    "key": "id",
+    "conversion": "identifier"
+   },
+   "previousId": {
+    "key": "prev",
+    "conversion": "text"
+   },
+   "nextId": {
+    "key": "next",
+    "conversion": "text"
+   },
+   "number": {
+    "key": "properties/numero"
+   },
+   "name": {
+    "key": "properties/nombre"
+   },
+   "municipality": {
+    "key": "properties/nombre_muni"
+   },
+   "province": {
+    "key": "properties/nombre_prov"
+   },
+   "kind": {
+    "key": "properties/tipo"
+   },
+   "node": {
+    "key": "properties/nodo"
+   },
+   "group": {
+    "key": "properties/grupo"
+   },
+   "longitude": {
+    "key": "properties/longitud_etrs89"
+   },
+   "latitude": {
+    "key": "properties/latitud_etrs89"
+   },
+   "ellipsoidalHeight": {
+    "key": "properties/altitud_elipsoidal"
+   },
+   "orthometricHeight": {
+    "key": "properties/ortometrica"
+   },
+   "descriptionSheet": {
+    "key": "properties/resena"
+   },
+   "line": {
+    "key": "properties/linea"
+   },
+   "lineSheet": {
+    "key": "properties/resena_linea"
+   }
+  },
+  "IgnLevellingBenchmarkPage": {
+   "matched": {
+    "key": "numberMatched"
+   },
+   "returned": {
+    "key": "numberReturned"
+   }
+  },
+  "IgnRegenteGeodeticPoint": {
+   "id": {
+    "key": "id",
+    "conversion": "identifier"
+   },
+   "previousId": {
+    "key": "prev",
+    "conversion": "text"
+   },
+   "nextId": {
+    "key": "next",
+    "conversion": "text"
+   },
+   "number": {
+    "key": "properties/numero"
+   },
+   "name": {
+    "key": "properties/nombre"
+   },
+   "municipality": {
+    "key": "properties/municipio"
+   },
+   "province": {
+    "key": "properties/provincia"
+   },
+   "municipalityCode": {
+    "key": "properties/cod_municipio"
+   },
+   "provinceCode": {
+    "key": "properties/cod_provincia"
+   },
+   "mapSheet": {
+    "key": "properties/hoja"
+   },
+   "built": {
+    "key": "properties/fecha_const"
+   },
+   "longitude": {
+    "key": "properties/long_etrs89"
+   },
+   "latitude": {
+    "key": "properties/lat_etrs89"
+   },
+   "ellipsoidalHeight": {
+    "key": "properties/alt_elip"
+   },
+   "utmX": {
+    "key": "properties/x_etrs89"
+   },
+   "utmY": {
+    "key": "properties/y_etrs89"
+   },
+   "utmZone": {
+    "key": "properties/huso"
+   },
+   "orthometricHeight": {
+    "key": "properties/alt_orto"
+   },
+   "descriptionSheet": {
+    "key": "properties/resena"
+   }
+  },
+  "IgnRegenteGeodeticPointPage": {
+   "matched": {
+    "key": "numberMatched"
+   },
+   "returned": {
+    "key": "numberReturned"
+   }
+  },
+  "IgnLowerOrderGeodeticPoint": {
+   "id": {
+    "key": "id",
+    "conversion": "identifier"
+   },
+   "previousId": {
+    "key": "prev",
+    "conversion": "text"
+   },
+   "nextId": {
+    "key": "next",
+    "conversion": "text"
+   },
+   "number": {
+    "key": "properties/numero"
+   },
+   "name": {
+    "key": "properties/nombre"
+   },
+   "municipality": {
+    "key": "properties/municipio"
+   },
+   "province": {
+    "key": "properties/provincia"
+   },
+   "municipalityCode": {
+    "key": "properties/cod_municipio"
+   },
+   "provinceCode": {
+    "key": "properties/cod_provincia"
+   },
+   "mapSheet": {
+    "key": "properties/hoja"
+   },
+   "built": {
+    "key": "properties/fecha_const"
+   },
+   "longitude": {
+    "key": "properties/long_etrs89"
+   },
+   "latitude": {
+    "key": "properties/lat_etrs89"
+   },
+   "ellipsoidalHeight": {
+    "key": "properties/alt_elip"
+   },
+   "utmX": {
+    "key": "properties/x_etrs89"
+   },
+   "utmY": {
+    "key": "properties/y_etrs89"
+   },
+   "utmZone": {
+    "key": "properties/huso"
+   },
+   "orthometricHeight": {
+    "key": "properties/alt_orto"
+   },
+   "descriptionSheet": {
+    "key": "properties/resena"
+   }
+  },
+  "IgnLowerOrderGeodeticPointPage": {
+   "matched": {
+    "key": "numberMatched"
+   },
+   "returned": {
+    "key": "numberReturned"
+   }
+  },
+  "IgnTideGauge": {
+   "id": {
+    "key": "id",
+    "conversion": "identifier"
+   },
+   "previousId": {
+    "key": "prev",
+    "conversion": "text"
+   },
+   "nextId": {
+    "key": "next",
+    "conversion": "text"
+   },
+   "name": {
+    "key": "properties/nombre"
+   },
+   "longitude": {
+    "key": "properties/longitud_etrs89"
+   },
+   "latitude": {
+    "key": "properties/latitud_etrs89"
+   },
+   "descriptionSheet": {
+    "key": "properties/resena"
+   },
+   "psmslUrl": {
+    "key": "properties/enlace_psmsl"
+   },
+   "gnssStationSheet": {
+    "key": "properties/estacion_ergnss"
+   }
+  },
+  "IgnTideGaugePage": {
+   "matched": {
+    "key": "numberMatched"
+   },
+   "returned": {
+    "key": "numberReturned"
+   }
+  }
+ }
+}

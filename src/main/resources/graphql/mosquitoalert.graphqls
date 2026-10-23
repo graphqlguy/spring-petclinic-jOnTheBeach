@@ -1,0 +1,623 @@
+# The fields of Mosquito Alert, the citizen science project of the CEAB-CSIC and its partners, at api.mosquitoalert.com.
+# A generator wrote them, their types and src/main/resources/mosquitoalert/operations.json from the OpenAPI document of
+# the service, one field for each read operation that works without signing in. The descriptions are written by hand,
+# from the ones in the OpenAPI document. Each field is fetched by a RestOperationFetcher, see
+# MosquitoAlertConfiguration.
+
+extend type Query {
+    # People send Mosquito Alert photos of mosquitoes, their bites and the places where mosquitoes breed, and experts
+    # identify the species. The tiger mosquito (Aedes albopictus) carries the heartworm of dogs and cats, so its reports
+    # near an owner matter to a clinic.
+
+    """
+    Reports of mosquitoes that people sent to Mosquito Alert with a photo, newest first, filtered by place, day and
+    species. Each one says where and when the mosquito was seen, and which species the experts identified. For the tiger
+    mosquitoes reported within 30 km of Málaga this year, pass near -4.4214,36.7213, distanceInMetres 30000, taxonIds
+    [112] and createdAfter 2026-01-01.
+    """
+    mosquitoAlertObservations(
+        """
+        The centre of the search as longitude,latitude, in that order, such as -4.4214,36.7213 for the centre of Málaga.
+        Give distanceInMetres with it.
+        """
+        near: String
+        "How far from near to search, in metres, such as 20000 for 20 km"
+        distanceInMetres: Float
+        "Only the reports from this country, by its id: 17 for Spain"
+        countryId: Int
+        "Only the reports made on or after this day, such as 2026-01-01"
+        createdAfter: Date
+        "Only the reports made on or before this day"
+        createdBefore: Date
+        "true for the reports with at least one photo"
+        hasPhotos: Boolean
+        """
+        Only the reports identified as one of these taxa, by the ids mosquitoAlertTaxa gives: 112 for the tiger mosquito
+        (Aedes albopictus), 113 for the yellow fever mosquito (Aedes aegypti), 10 for the common mosquito (Culex)
+        """
+        taxonIds: [Int!]
+        "The order of the reports. The newest come first by default."
+        orderBy: MosquitoAlertOrder
+        "The page to return. Pages count from 0."
+        page: Int! = 0
+        "The number of reports on a page, from 1 to 100"
+        size: Int! = 10
+    ): MosquitoAlertObservationPage
+
+    "One report of a mosquito by its id, with its photos and the identification of the experts"
+    mosquitoAlertObservation(
+        "The id of the report, a UUID that mosquitoAlertObservations gives"
+        id: ID!
+    ): MosquitoAlertObservation
+
+    """
+    Reports of mosquito bites that people sent to Mosquito Alert, newest first, filtered by place and day, with the
+    number of bites on each part of the body
+    """
+    mosquitoAlertBites(
+        """
+        The centre of the search as longitude,latitude, in that order, such as -4.4214,36.7213 for the centre of Málaga.
+        Give distanceInMetres with it.
+        """
+        near: String
+        "How far from near to search, in metres, such as 20000 for 20 km"
+        distanceInMetres: Float
+        "Only the reports from this country, by its id: 17 for Spain"
+        countryId: Int
+        "Only the reports made on or after this day, such as 2026-01-01"
+        createdAfter: Date
+        "Only the reports made on or before this day"
+        createdBefore: Date
+        "The order of the reports. The newest come first by default."
+        orderBy: MosquitoAlertOrder
+        "The page to return. Pages count from 0."
+        page: Int! = 0
+        "The number of reports on a page, from 1 to 100"
+        size: Int! = 10
+    ): MosquitoAlertBitePage
+
+    "One report of mosquito bites by its id"
+    mosquitoAlertBite(
+        "The id of the report, a UUID that mosquitoAlertBites gives"
+        id: ID!
+    ): MosquitoAlertBite
+
+    """
+    Reports of places where mosquitoes breed, such as a storm drain or a bucket of standing water, that people sent to
+    Mosquito Alert, newest first, filtered by place, day and kind of site
+    """
+    mosquitoAlertBreedingSites(
+        """
+        The centre of the search as longitude,latitude, in that order, such as -4.4214,36.7213 for the centre of Málaga.
+        Give distanceInMetres with it.
+        """
+        near: String
+        "How far from near to search, in metres, such as 20000 for 20 km"
+        distanceInMetres: Float
+        "Only the reports from this country, by its id: 17 for Spain"
+        countryId: Int
+        "Only the reports made on or after this day, such as 2026-01-01"
+        createdAfter: Date
+        "Only the reports made on or before this day"
+        createdBefore: Date
+        "true for the reports with at least one photo"
+        hasPhotos: Boolean
+        "Only these kinds of site"
+        siteTypes: [MosquitoAlertBreedingSiteType!]
+        "true for the sites where the person saw water"
+        hasWater: Boolean
+        "true for the sites where the person saw larvae"
+        hasLarvae: Boolean
+        "true for the sites where the person saw mosquitoes within 10 metres"
+        hasMosquitoesNear: Boolean
+        "The order of the reports. The newest come first by default."
+        orderBy: MosquitoAlertOrder
+        "The page to return. Pages count from 0."
+        page: Int! = 0
+        "The number of reports on a page, from 1 to 100"
+        size: Int! = 10
+    ): MosquitoAlertBreedingSitePage
+
+    "One report of a place where mosquitoes breed, by its id"
+    mosquitoAlertBreedingSite(
+        "The id of the report, a UUID that mosquitoAlertBreedingSites gives"
+        id: ID!
+    ): MosquitoAlertBreedingSite
+
+    """
+    The places and days of the reports of mosquitoes within a distance of a point, with the taxon the experts
+    identified, as light points for a map. The answer has every matching report on one page, so keep the distance small,
+    such as 10000 metres, or narrow the days.
+    """
+    mosquitoAlertObservationPoints(
+        "The centre of the search as longitude,latitude, such as -4.4214,36.7213 for Málaga"
+        near: String!
+        "How far from near to search, in metres, such as 10000"
+        distanceInMetres: Float!
+        "Only the reports made on or after this day, such as 2026-01-01"
+        createdAfter: Date
+        "Only the reports made on or before this day"
+        createdBefore: Date
+        "Only the reports identified as one of these taxa, such as 112 for the tiger mosquito"
+        taxonIds: [Int!]
+    ): [MosquitoAlertObservationPoint]
+
+    """
+    The places and days of the reports of mosquito bites within a distance of a point, as light points for a map. The
+    answer has every matching report on one page, so keep the distance small.
+    """
+    mosquitoAlertBitePoints(
+        "The centre of the search as longitude,latitude, such as -4.4214,36.7213 for Málaga"
+        near: String!
+        "How far from near to search, in metres, such as 10000"
+        distanceInMetres: Float!
+        "Only the reports made on or after this day, such as 2026-01-01"
+        createdAfter: Date
+        "Only the reports made on or before this day"
+        createdBefore: Date
+    ): [MosquitoAlertReportPoint]
+
+    """
+    The places and days of the reports of places where mosquitoes breed within a distance of a point, as light points
+    for a map. The answer has every matching report on one page, so keep the distance small.
+    """
+    mosquitoAlertBreedingSitePoints(
+        "The centre of the search as longitude,latitude, such as -4.4214,36.7213 for Málaga"
+        near: String!
+        "How far from near to search, in metres, such as 10000"
+        distanceInMetres: Float!
+        "Only the reports made on or after this day, such as 2026-01-01"
+        createdAfter: Date
+        "Only the reports made on or before this day"
+        createdBefore: Date
+    ): [MosquitoAlertBreedingSitePoint]
+
+    """
+    The taxa the experts identify mosquitoes as, such as the species Aedes albopictus (the tiger mosquito) or the genus
+    Culex, with their ids for the taxonIds argument of mosquitoAlertObservations
+    """
+    mosquitoAlertTaxa(
+        "Only the taxa of these ranks"
+        ranks: [MosquitoAlertTaxonRank!]
+        """
+        true for the taxa the project watches, such as the tiger mosquito. These are the ones a question about
+        mosquitoes needs.
+        """
+        relevant: Boolean
+        "The page to return. Pages count from 0."
+        page: Int! = 0
+        "The number of taxa on a page, from 1 to 100"
+        size: Int! = 10
+    ): MosquitoAlertTaxonPage
+
+    "One taxon by its id, such as 112 for the tiger mosquito"
+    mosquitoAlertTaxon(
+        "The id of the taxon, such as 112"
+        id: ID!
+    ): MosquitoAlertTaxon
+
+    """
+    One taxon with the taxa below it, such as the genus Aedes with its species. Select children inside children for the
+    levels below.
+    """
+    mosquitoAlertTaxonTree(
+        "The id of the taxon at the top of the tree"
+        id: ID!
+    ): MosquitoAlertTaxonTreeNode
+
+    """
+    The whole tree of the taxa the experts use, from the class of insects down to the species. Select children inside
+    children for the levels below.
+    """
+    mosquitoAlertTaxonRoot: MosquitoAlertTaxonTreeNode
+}
+
+"Where and when a mosquito was reported, as a light point for a map"
+type MosquitoAlertObservationPoint {
+    "The id of the report, which mosquitoAlertObservation reads"
+    id: ID
+    "The latitude"
+    latitude: Float
+    "The longitude"
+    longitude: Float
+    "When Mosquito Alert received the report"
+    received: DateTime
+    """
+    The taxon the experts identified, by the id mosquitoAlertTaxa gives, such as 112 for the tiger mosquito (Aedes
+    albopictus), or null
+    """
+    taxonId: Int
+}
+
+"Where and when a breeding site was reported, as a light point for a map"
+type MosquitoAlertBreedingSitePoint {
+    "The id of the report, which mosquitoAlertBreedingSite reads"
+    id: ID
+    "The latitude"
+    latitude: Float
+    "The longitude"
+    longitude: Float
+    "When Mosquito Alert received the report"
+    received: DateTime
+    "The kind of site, such as storm_drain"
+    siteType: String
+    "Whether the person saw water"
+    hasWater: Boolean
+}
+
+"Where and when a bite was reported, as a light point for a map"
+type MosquitoAlertReportPoint {
+    "The id of the report"
+    id: ID
+    "The latitude"
+    latitude: Float
+    "The longitude"
+    longitude: Float
+    "When Mosquito Alert received the report"
+    received: DateTime
+}
+
+"One page of reports of mosquitoes"
+type MosquitoAlertObservationPage {
+    "The number of reports that match, across all pages"
+    totalCount: Int
+    "The reports on this page"
+    results: [MosquitoAlertObservation]
+}
+
+"A report of a mosquito that a person sent with a photo. The experts of the project identify the species in the photo."
+type MosquitoAlertObservation {
+    "The id of the report, a UUID"
+    id: ID
+    "A short code for the report, such as QuEI, which the app shows its sender"
+    shortId: String
+    "When the person made the report, in UTC"
+    createdAt: DateTime
+    """
+    When the person made the report, in the local time of the place, written without an offset, such as
+    2026-10-07T13:48:56
+    """
+    createdAtLocal: String
+    "When the app sent the report"
+    sentAt: DateTime
+    "When the server received the report"
+    receivedAt: DateTime
+    "When the report last changed, for example when experts identified it"
+    updatedAt: DateTime
+    "Where the report was made"
+    location: MosquitoAlertLocation
+    "What the person wrote with the report, in their language, or null"
+    note: String
+    "The tags of the report, which campaigns use"
+    tags: [String]
+    "Whether the report is public"
+    published: Boolean
+    "Where it happened: indoors, outdoors or vehicle, or an empty text when the person did not say"
+    environment: String
+    "When in the day it happened, such as now or last_morning, or an empty text when the person did not say"
+    moment: String
+    "The photos of the mosquito"
+    photos: [MosquitoAlertPhoto]
+    """
+    Which species the experts or the model identified in the photos, and how sure they are. Null until someone has
+    looked at it.
+    """
+    identification: MosquitoAlertIdentification
+    "What the person said the mosquito looked like, or null"
+    appearance: MosquitoAlertAppearance
+}
+
+"One page of reports of mosquito bites"
+type MosquitoAlertBitePage {
+    "The number of reports that match, across all pages"
+    totalCount: Int
+    "The reports on this page"
+    results: [MosquitoAlertBite]
+}
+
+"A report of mosquito bites that a person received"
+type MosquitoAlertBite {
+    "The id of the report, a UUID"
+    id: ID
+    "A short code for the report, such as QuEI, which the app shows its sender"
+    shortId: String
+    "When the person made the report, in UTC"
+    createdAt: DateTime
+    """
+    When the person made the report, in the local time of the place, written without an offset, such as
+    2026-10-07T13:48:56
+    """
+    createdAtLocal: String
+    "When the app sent the report"
+    sentAt: DateTime
+    "When the server received the report"
+    receivedAt: DateTime
+    "When the report last changed, for example when experts identified it"
+    updatedAt: DateTime
+    "Where the report was made"
+    location: MosquitoAlertLocation
+    "What the person wrote with the report, in their language, or null"
+    note: String
+    "The tags of the report, which campaigns use"
+    tags: [String]
+    "Whether the report is public"
+    published: Boolean
+    "Where it happened: indoors, outdoors or vehicle, or an empty text when the person did not say"
+    environment: String
+    "When in the day it happened, such as now or last_morning, or an empty text when the person did not say"
+    moment: String
+    "How many bites, on each part of the body"
+    counts: MosquitoAlertBiteCounts
+}
+
+"The number of mosquito bites a report counts, on each part of the body"
+type MosquitoAlertBiteCounts {
+    "The number of bites in all"
+    total: Int
+    "The bites on the head"
+    head: Int
+    "The bites on the left arm"
+    leftArm: Int
+    "The bites on the right arm"
+    rightArm: Int
+    "The bites on the chest"
+    chest: Int
+    "The bites on the left leg"
+    leftLeg: Int
+    "The bites on the right leg"
+    rightLeg: Int
+}
+
+"One page of reports of places where mosquitoes breed"
+type MosquitoAlertBreedingSitePage {
+    "The number of reports that match, across all pages"
+    totalCount: Int
+    "The reports on this page"
+    results: [MosquitoAlertBreedingSite]
+}
+
+"A report of a place where mosquitoes breed, such as a storm drain or a bucket of standing water"
+type MosquitoAlertBreedingSite {
+    "The id of the report, a UUID"
+    id: ID
+    "A short code for the report, such as QuEI, which the app shows its sender"
+    shortId: String
+    "When the person made the report, in UTC"
+    createdAt: DateTime
+    """
+    When the person made the report, in the local time of the place, written without an offset, such as
+    2026-10-07T13:48:56
+    """
+    createdAtLocal: String
+    "When the app sent the report"
+    sentAt: DateTime
+    "When the server received the report"
+    receivedAt: DateTime
+    "When the report last changed, for example when experts identified it"
+    updatedAt: DateTime
+    "Where the report was made"
+    location: MosquitoAlertLocation
+    "What the person wrote with the report, in their language, or null"
+    note: String
+    "The tags of the report, which campaigns use"
+    tags: [String]
+    "Whether the report is public"
+    published: Boolean
+    "The photos of the site"
+    photos: [MosquitoAlertPhoto]
+    "The kind of site, in lower case, such as storm_drain, basin, bucket, fountain, small_container, well or other"
+    siteType: String
+    "Whether the person saw water in the site, or null when they did not say"
+    hasWater: Boolean
+    "Whether the site is in a public place, or null"
+    inPublicArea: Boolean
+    "Whether the person saw mosquitoes within 10 metres of the site, or null"
+    hasMosquitoesNear: Boolean
+    "Whether the person saw larvae in the site, or null"
+    hasLarvae: Boolean
+}
+
+"Where a report was made"
+type MosquitoAlertLocation {
+    "How the app found the place: auto for the phone's GPS, manual when the person picked it on a map"
+    source: String
+    "The latitude and longitude of the place"
+    point: MosquitoAlertPoint
+    "The time zone of the place, such as Europe/Madrid"
+    timezone: String
+    "The name of the place, such as Málaga, Málaga, Andalucía, Spain"
+    displayName: String
+    "The country of the place"
+    country: MosquitoAlertCountry
+    """
+    The regions the place lies in, from the widest to the narrowest, such as Andalucía, then the province of Málaga,
+    then the town
+    """
+    administrativeAreas: [MosquitoAlertAdministrativeArea]
+}
+
+"A point on the map"
+type MosquitoAlertPoint {
+    "The latitude, such as 36.72 in Málaga"
+    latitude: Float
+    "The longitude, such as -4.42 in Málaga"
+    longitude: Float
+}
+
+"A country"
+type MosquitoAlertCountry {
+    "The id of the country, for the countryId argument: 17 for Spain"
+    id: Int
+    "The name of the country in English, such as Spain"
+    name: String
+    "The three-letter ISO 3166-1 code of the country, such as ESP"
+    iso3Code: String
+}
+
+"A region a place lies in, as the NUTS classification of Eurostat names it"
+type MosquitoAlertAdministrativeArea {
+    "The name of the region, such as Andalucía"
+    name: String
+    "The code of the region, such as ES61 for Andalucía or ES617 for Málaga"
+    code: String
+    "The classification the code comes from, such as NUTS"
+    source: String
+    "How narrow the region is: 2 for a region such as Andalucía, 3 for a province, 4 for a town"
+    level: Int
+}
+
+"A photo sent with a report"
+type MosquitoAlertPhoto {
+    "The id of the photo, a UUID"
+    id: ID
+    "The address of the photo. It can change over time, so read it again before use."
+    url: String
+}
+
+"Which species the experts or the model identified in the photos of a report"
+type MosquitoAlertIdentification {
+    "The photo the identification is based on"
+    photo: MosquitoAlertPhoto
+    "How many experts annotated the report"
+    annotations: Int
+    "The species and how sure the identification is"
+    result: MosquitoAlertIdentificationResult
+    "What the experts wrote to the person, in their language, or null"
+    publicNote: String
+}
+
+"The outcome of an identification"
+type MosquitoAlertIdentificationResult {
+    "Who identified the species: expert for the experts, ai for the model"
+    source: String
+    "The species or genus identified, such as Aedes albopictus"
+    taxon: MosquitoAlertTaxon
+    "Whether the identification is sure enough to rely on"
+    highConfidence: Boolean
+    "How sure the identification is, from 0 to 1"
+    confidence: Float
+    "How sure the identification is, in words, such as Confirmed"
+    confidenceLabel: String
+    "How uncertain the identification is, from 0 to 1"
+    uncertainty: Float
+    "How much the experts agreed, from 0 to 1"
+    agreement: Float
+    "The sex of the mosquito and whether it had fed, when the experts could tell"
+    characteristics: MosquitoAlertCharacteristics
+}
+
+"What the experts could tell about one mosquito"
+type MosquitoAlertCharacteristics {
+    "female or male. Only females bite."
+    sex: String
+    "Whether the mosquito had fed on blood, or null"
+    bloodFed: Boolean
+    "Whether the mosquito carried eggs, or null"
+    gravid: Boolean
+}
+
+"What the person said a mosquito looked like, by the species each part of its body resembles"
+type MosquitoAlertAppearance {
+    "The species the person thought it was, in lower case, such as albopictus or culex"
+    species: String
+    "The species whose thorax it resembles"
+    thorax: String
+    "The species whose abdomen it resembles"
+    abdomen: String
+    "The species whose legs it resembles"
+    legs: String
+}
+
+"One page of taxa"
+type MosquitoAlertTaxonPage {
+    "The number of taxa that match, across all pages"
+    totalCount: Int
+    "The taxa on this page"
+    results: [MosquitoAlertTaxon]
+}
+
+"A species, genus or other taxon that experts identify mosquitoes as"
+type MosquitoAlertTaxon {
+    "The id of the taxon, for the taxonIds argument of mosquitoAlertObservations"
+    id: Int
+    "The scientific name, such as Aedes albopictus"
+    name: String
+    "The common name in English, such as Tiger mosquito, or null"
+    commonName: String
+    "The rank of the taxon, in lower case, such as species, species_complex or genus"
+    rank: String
+    "Whether the name is written in italics, as scientific names of species are"
+    italicize: Boolean
+    "Whether the project watches this taxon, as it does the tiger mosquito"
+    relevant: Boolean
+}
+
+"A taxon with the taxa below it"
+type MosquitoAlertTaxonTreeNode {
+    "The id of the taxon"
+    id: Int
+    "The scientific name, such as Culicidae"
+    name: String
+    "The common name in English, or null"
+    commonName: String
+    "The rank of the taxon, in lower case, such as family or genus"
+    rank: String
+    "Whether the name is written in italics"
+    italicize: Boolean
+    "Whether the project watches this taxon"
+    relevant: Boolean
+    "The taxa one rank below this one"
+    children: [MosquitoAlertTaxonTreeNode]
+}
+
+"The order of a list of Mosquito Alert reports"
+enum MosquitoAlertOrder {
+    "The newest reports first"
+    NEWEST_FIRST
+    "The oldest reports first"
+    OLDEST_FIRST
+    "The reports nearest to the point first. Needs near."
+    NEAREST_FIRST
+    "The reports farthest from the point first. Needs near."
+    FARTHEST_FIRST
+    "The reports the server received last first"
+    LAST_RECEIVED_FIRST
+    "The reports the server received first first"
+    FIRST_RECEIVED_FIRST
+}
+
+"A kind of place where mosquitoes breed"
+enum MosquitoAlertBreedingSiteType {
+    "A basin or pond"
+    BASIN
+    "A bucket"
+    BUCKET
+    "A fountain"
+    FOUNTAIN
+    "A small container, such as a flower pot saucer"
+    SMALL_CONTAINER
+    "A storm drain"
+    STORM_DRAIN
+    "A well"
+    WELL
+    "Any other place"
+    OTHER
+}
+
+"The rank of a taxon, from the widest to the narrowest"
+enum MosquitoAlertTaxonRank {
+    "A class, such as Insecta"
+    CLASS
+    "An order, such as Diptera"
+    ORDER
+    "A family, such as Culicidae"
+    FAMILY
+    "A genus, such as Aedes"
+    GENUS
+    "A subgenus"
+    SUBGENUS
+    "A group of species that look alike in photos"
+    SPECIES_COMPLEX
+    "A species, such as Aedes albopictus"
+    SPECIES
+}

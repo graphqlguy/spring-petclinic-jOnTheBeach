@@ -1,0 +1,67 @@
+{
+    "type":"Feature",
+    "properties":{
+        "tip_nodo":"http://inspire.ec.europa.eu/codelist/FormOfRoadNodeValue/junction",
+        "id":1158819,
+        "fecha_modif":"2023-09-21T00:00:00",
+        "nilreason_tip_nodo":null
+    },
+    "id":"VIAL_N_1158819",
+    "geometry":{
+        "type":"Point",
+        "coordinates":[
+            -4.425566074999949,
+            36.715780765000034
+        ]
+    },
+    "prev":"VIAL_N_1158818",
+    "next":"VIAL_N_115882",
+    "links":[
+        {
+            "type":"application/json",
+            "rel":"root",
+            "title":"The landing page of this server as JSON",
+            "href":"https://api-features.idee.es?f=json"
+        },
+        {
+            "type":"text/html",
+            "rel":"root",
+            "title":"The landing page of this server as HTML",
+            "href":"https://api-features.idee.es?f=html"
+        },
+        {
+            "rel":"self",
+            "type":"application/geo+json",
+            "title":"This document as JSON",
+            "href":"https://api-features.idee.es/collections/roadnode/items/VIAL_N_1158819?f=json"
+        },
+        {
+            "rel":"alternate",
+            "type":"application/ld+json",
+            "title":"This document as RDF (JSON-LD)",
+            "href":"https://api-features.idee.es/collections/roadnode/items/VIAL_N_1158819?f=jsonld"
+        },
+        {
+            "rel":"alternate",
+            "type":"text/html",
+            "title":"This document as HTML",
+            "href":"https://api-features.idee.es/collections/roadnode/items/VIAL_N_1158819?f=html"
+        },
+        {
+            "rel":"collection",
+            "type":"application/json",
+            "title":"TN-RO Nodo de carretera",
+            "href":"https://api-features.idee.es/collections/roadnode"
+        },
+        {
+            "rel":"prev",
+            "type":"application/json",
+            "href":"https://api-features.idee.es/collections/roadnode/items/VIAL_N_1158818?f=json"
+        },
+        {
+            "rel":"next",
+            "type":"application/json",
+            "href":"https://api-features.idee.es/collections/roadnode/items/VIAL_N_115882?f=json"
+        }
+    ]
+}

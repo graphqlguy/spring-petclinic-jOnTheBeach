@@ -1,0 +1,816 @@
+{
+    "status": {
+        "code": "200",
+        "text": "ok"
+    },
+    "data": [
+        {
+            "bloque": [
+                {
+                    "id": "no",
+                    "titulo": "",
+                    "fecha_actualizacion": "20230329",
+                    "url": "https:\/\/www.boe.es\/datosabiertos\/api\/legislacion-consolidada\/id\/BOE-A-2023-7936\/texto\/bloque\/no"
+                },
+                {
+                    "id": "pr",
+                    "titulo": "[preambulo]",
+                    "fecha_actualizacion": "20230329",
+                    "url": "https:\/\/www.boe.es\/datosabiertos\/api\/legislacion-consolidada\/id\/BOE-A-2023-7936\/texto\/bloque\/pr"
+                },
+                {
+                    "id": "tp",
+                    "titulo": "T\u00cdTULO PRELIMINAR",
+                    "fecha_actualizacion": "20230329",
+                    "url": "https:\/\/www.boe.es\/datosabiertos\/api\/legislacion-consolidada\/id\/BOE-A-2023-7936\/texto\/bloque\/tp"
+                },
+                {
+                    "id": "a1",
+                    "titulo": "Art\u00edculo\u00a01",
+                    "fecha_actualizacion": "20230329",
+                    "url": "https:\/\/www.boe.es\/datosabiertos\/api\/legislacion-consolidada\/id\/BOE-A-2023-7936\/texto\/bloque\/a1"
+                },
+                {
+                    "id": "a2",
+                    "titulo": "Art\u00edculo\u00a02",
+                    "fecha_actualizacion": "20230329",
+                    "url": "https:\/\/www.boe.es\/datosabiertos\/api\/legislacion-consolidada\/id\/BOE-A-2023-7936\/texto\/bloque\/a2"
+                },
+                {
+                    "id": "a3",
+                    "titulo": "Art\u00edculo\u00a03",
+                    "fecha_actualizacion": "20230329",
+                    "url": "https:\/\/www.boe.es\/datosabiertos\/api\/legislacion-consolidada\/id\/BOE-A-2023-7936\/texto\/bloque\/a3"
+                },
+                {
+                    "id": "ti",
+                    "titulo": "T\u00cdTULO I",
+                    "fecha_actualizacion": "20230329",
+                    "url": "https:\/\/www.boe.es\/datosabiertos\/api\/legislacion-consolidada\/id\/BOE-A-2023-7936\/texto\/bloque\/ti"
+                },
+                {
+                    "id": "ci",
+                    "titulo": "CAP\u00cdTULO I",
+                    "fecha_actualizacion": "20230329",
+                    "url": "https:\/\/www.boe.es\/datosabiertos\/api\/legislacion-consolidada\/id\/BOE-A-2023-7936\/texto\/bloque\/ci"
+                },
+                {
+                    "id": "a4",
+                    "titulo": "Art\u00edculo\u00a04",
+                    "fecha_actualizacion": "20230329",
+                    "url": "https:\/\/www.boe.es\/datosabiertos\/api\/legislacion-consolidada\/id\/BOE-A-2023-7936\/texto\/bloque\/a4"
+                },
+                {
+                    "id": "a5",
+                    "titulo": "Art\u00edculo\u00a05",
+                    "fecha_actualizacion": "20230329",
+                    "url": "https:\/\/www.boe.es\/datosabiertos\/api\/legislacion-consolidada\/id\/BOE-A-2023-7936\/texto\/bloque\/a5"
+                },
+                {
+                    "id": "a6",
+                    "titulo": "Art\u00edculo\u00a06",
+                    "fecha_actualizacion": "20230329",
+                    "url": "https:\/\/www.boe.es\/datosabiertos\/api\/legislacion-consolidada\/id\/BOE-A-2023-7936\/texto\/bloque\/a6"
+                },
+                {
+                    "id": "a7",
+                    "titulo": "Art\u00edculo\u00a07",
+                    "fecha_actualizacion": "20230329",
+                    "url": "https:\/\/www.boe.es\/datosabiertos\/api\/legislacion-consolidada\/id\/BOE-A-2023-7936\/texto\/bloque\/a7"
+                },
+                {
+                    "id": "a8",
+                    "titulo": "Art\u00edculo\u00a08",
+                    "fecha_actualizacion": "20230329",
+                    "url": "https:\/\/www.boe.es\/datosabiertos\/api\/legislacion-consolidada\/id\/BOE-A-2023-7936\/texto\/bloque\/a8"
+                },
+                {
+                    "id": "ci-2",
+                    "titulo": "CAP\u00cdTULO II",
+                    "fecha_actualizacion": "20230329",
+                    "url": "https:\/\/www.boe.es\/datosabiertos\/api\/legislacion-consolidada\/id\/BOE-A-2023-7936\/texto\/bloque\/ci-2"
+                },
+                {
+                    "id": "a9",
+                    "titulo": "Art\u00edculo\u00a09",
+                    "fecha_actualizacion": "20230329",
+                    "url": "https:\/\/www.boe.es\/datosabiertos\/api\/legislacion-consolidada\/id\/BOE-A-2023-7936\/texto\/bloque\/a9"
+                },
+                {
+                    "id": "a1-2",
+                    "titulo": "Art\u00edculo\u00a010",
+                    "fecha_actualizacion": "20230329",
+                    "url": "https:\/\/www.boe.es\/datosabiertos\/api\/legislacion-consolidada\/id\/BOE-A-2023-7936\/texto\/bloque\/a1-2"
+                },
+                {
+                    "id": "a1-3",
+                    "titulo": "Art\u00edculo\u00a011",
+                    "fecha_actualizacion": "20230329",
+                    "url": "https:\/\/www.boe.es\/datosabiertos\/api\/legislacion-consolidada\/id\/BOE-A-2023-7936\/texto\/bloque\/a1-3"
+                },
+                {
+                    "id": "a1-4",
+                    "titulo": "Art\u00edculo\u00a012",
+                    "fecha_actualizacion": "20230329",
+                    "url": "https:\/\/www.boe.es\/datosabiertos\/api\/legislacion-consolidada\/id\/BOE-A-2023-7936\/texto\/bloque\/a1-4"
+                },
+                {
+                    "id": "ci-3",
+                    "titulo": "CAP\u00cdTULO III",
+                    "fecha_actualizacion": "20230329",
+                    "url": "https:\/\/www.boe.es\/datosabiertos\/api\/legislacion-consolidada\/id\/BOE-A-2023-7936\/texto\/bloque\/ci-3"
+                },
+                {
+                    "id": "a1-5",
+                    "titulo": "Art\u00edculo\u00a013",
+                    "fecha_actualizacion": "20230329",
+                    "url": "https:\/\/www.boe.es\/datosabiertos\/api\/legislacion-consolidada\/id\/BOE-A-2023-7936\/texto\/bloque\/a1-5"
+                },
+                {
+                    "id": "a1-6",
+                    "titulo": "Art\u00edculo\u00a014",
+                    "fecha_actualizacion": "20230329",
+                    "url": "https:\/\/www.boe.es\/datosabiertos\/api\/legislacion-consolidada\/id\/BOE-A-2023-7936\/texto\/bloque\/a1-6"
+                },
+                {
+                    "id": "a1-7",
+                    "titulo": "Art\u00edculo\u00a015",
+                    "fecha_actualizacion": "20230329",
+                    "url": "https:\/\/www.boe.es\/datosabiertos\/api\/legislacion-consolidada\/id\/BOE-A-2023-7936\/texto\/bloque\/a1-7"
+                },
+                {
+                    "id": "ci-4",
+                    "titulo": "CAP\u00cdTULO IV",
+                    "fecha_actualizacion": "20230329",
+                    "url": "https:\/\/www.boe.es\/datosabiertos\/api\/legislacion-consolidada\/id\/BOE-A-2023-7936\/texto\/bloque\/ci-4"
+                },
+                {
+                    "id": "a1-8",
+                    "titulo": "Art\u00edculo\u00a016",
+                    "fecha_actualizacion": "20230329",
+                    "url": "https:\/\/www.boe.es\/datosabiertos\/api\/legislacion-consolidada\/id\/BOE-A-2023-7936\/texto\/bloque\/a1-8"
+                },
+                {
+                    "id": "a1-9",
+                    "titulo": "Art\u00edculo\u00a017",
+                    "fecha_actualizacion": "20230329",
+                    "url": "https:\/\/www.boe.es\/datosabiertos\/api\/legislacion-consolidada\/id\/BOE-A-2023-7936\/texto\/bloque\/a1-9"
+                },
+                {
+                    "id": "a1-10",
+                    "titulo": "Art\u00edculo\u00a018",
+                    "fecha_actualizacion": "20230329",
+                    "url": "https:\/\/www.boe.es\/datosabiertos\/api\/legislacion-consolidada\/id\/BOE-A-2023-7936\/texto\/bloque\/a1-10"
+                },
+                {
+                    "id": "cv",
+                    "titulo": "CAP\u00cdTULO V",
+                    "fecha_actualizacion": "20230329",
+                    "url": "https:\/\/www.boe.es\/datosabiertos\/api\/legislacion-consolidada\/id\/BOE-A-2023-7936\/texto\/bloque\/cv"
+                },
+                {
+                    "id": "a1-11",
+                    "titulo": "Art\u00edculo\u00a019",
+                    "fecha_actualizacion": "20230329",
+                    "url": "https:\/\/www.boe.es\/datosabiertos\/api\/legislacion-consolidada\/id\/BOE-A-2023-7936\/texto\/bloque\/a1-11"
+                },
+                {
+                    "id": "cv-2",
+                    "titulo": "CAP\u00cdTULO VI",
+                    "fecha_actualizacion": "20230329",
+                    "url": "https:\/\/www.boe.es\/datosabiertos\/api\/legislacion-consolidada\/id\/BOE-A-2023-7936\/texto\/bloque\/cv-2"
+                },
+                {
+                    "id": "a2-2",
+                    "titulo": "Art\u00edculo\u00a020",
+                    "fecha_actualizacion": "20230329",
+                    "url": "https:\/\/www.boe.es\/datosabiertos\/api\/legislacion-consolidada\/id\/BOE-A-2023-7936\/texto\/bloque\/a2-2"
+                },
+                {
+                    "id": "cv-3",
+                    "titulo": "CAP\u00cdTULO VII",
+                    "fecha_actualizacion": "20230329",
+                    "url": "https:\/\/www.boe.es\/datosabiertos\/api\/legislacion-consolidada\/id\/BOE-A-2023-7936\/texto\/bloque\/cv-3"
+                },
+                {
+                    "id": "a2-3",
+                    "titulo": "Art\u00edculo\u00a021",
+                    "fecha_actualizacion": "20230329",
+                    "url": "https:\/\/www.boe.es\/datosabiertos\/api\/legislacion-consolidada\/id\/BOE-A-2023-7936\/texto\/bloque\/a2-3"
+                },
+                {
+                    "id": "cv-4",
+                    "titulo": "CAP\u00cdTULO VIII",
+                    "fecha_actualizacion": "20230329",
+                    "url": "https:\/\/www.boe.es\/datosabiertos\/api\/legislacion-consolidada\/id\/BOE-A-2023-7936\/texto\/bloque\/cv-4"
+                },
+                {
+                    "id": "a2-4",
+                    "titulo": "Art\u00edculo\u00a022",
+                    "fecha_actualizacion": "20230329",
+                    "url": "https:\/\/www.boe.es\/datosabiertos\/api\/legislacion-consolidada\/id\/BOE-A-2023-7936\/texto\/bloque\/a2-4"
+                },
+                {
+                    "id": "a2-5",
+                    "titulo": "Art\u00edculo\u00a023",
+                    "fecha_actualizacion": "20230329",
+                    "url": "https:\/\/www.boe.es\/datosabiertos\/api\/legislacion-consolidada\/id\/BOE-A-2023-7936\/texto\/bloque\/a2-5"
+                },
+                {
+                    "id": "ti-2",
+                    "titulo": "T\u00cdTULO II",
+                    "fecha_actualizacion": "20230329",
+                    "url": "https:\/\/www.boe.es\/datosabiertos\/api\/legislacion-consolidada\/id\/BOE-A-2023-7936\/texto\/bloque\/ti-2"
+                },
+                {
+                    "id": "ci-5",
+                    "titulo": "CAP\u00cdTULO I",
+                    "fecha_actualizacion": "20230329",
+                    "url": "https:\/\/www.boe.es\/datosabiertos\/api\/legislacion-consolidada\/id\/BOE-A-2023-7936\/texto\/bloque\/ci-5"
+                },
+                {
+                    "id": "a2-6",
+                    "titulo": "Art\u00edculo\u00a024",
+                    "fecha_actualizacion": "20230329",
+                    "url": "https:\/\/www.boe.es\/datosabiertos\/api\/legislacion-consolidada\/id\/BOE-A-2023-7936\/texto\/bloque\/a2-6"
+                },
+                {
+                    "id": "a2-7",
+                    "titulo": "Art\u00edculo\u00a025",
+                    "fecha_actualizacion": "20230329",
+                    "url": "https:\/\/www.boe.es\/datosabiertos\/api\/legislacion-consolidada\/id\/BOE-A-2023-7936\/texto\/bloque\/a2-7"
+                },
+                {
+                    "id": "ci-6",
+                    "titulo": "CAP\u00cdTULO II",
+                    "fecha_actualizacion": "20230329",
+                    "url": "https:\/\/www.boe.es\/datosabiertos\/api\/legislacion-consolidada\/id\/BOE-A-2023-7936\/texto\/bloque\/ci-6"
+                },
+                {
+                    "id": "a2-8",
+                    "titulo": "Art\u00edculo\u00a026",
+                    "fecha_actualizacion": "20230329",
+                    "url": "https:\/\/www.boe.es\/datosabiertos\/api\/legislacion-consolidada\/id\/BOE-A-2023-7936\/texto\/bloque\/a2-8"
+                },
+                {
+                    "id": "a2-9",
+                    "titulo": "Art\u00edculo\u00a027",
+                    "fecha_actualizacion": "20230329",
+                    "url": "https:\/\/www.boe.es\/datosabiertos\/api\/legislacion-consolidada\/id\/BOE-A-2023-7936\/texto\/bloque\/a2-9"
+                },
+                {
+                    "id": "a2-10",
+                    "titulo": "Art\u00edculo\u00a028",
+                    "fecha_actualizacion": "20230329",
+                    "url": "https:\/\/www.boe.es\/datosabiertos\/api\/legislacion-consolidada\/id\/BOE-A-2023-7936\/texto\/bloque\/a2-10"
+                },
+                {
+                    "id": "a2-11",
+                    "titulo": "Art\u00edculo\u00a029",
+                    "fecha_actualizacion": "20230329",
+                    "url": "https:\/\/www.boe.es\/datosabiertos\/api\/legislacion-consolidada\/id\/BOE-A-2023-7936\/texto\/bloque\/a2-11"
+                },
+                {
+                    "id": "a3-2",
+                    "titulo": "Art\u00edculo\u00a030",
+                    "fecha_actualizacion": "20230329",
+                    "url": "https:\/\/www.boe.es\/datosabiertos\/api\/legislacion-consolidada\/id\/BOE-A-2023-7936\/texto\/bloque\/a3-2"
+                },
+                {
+                    "id": "ci-7",
+                    "titulo": "CAP\u00cdTULO III",
+                    "fecha_actualizacion": "20230329",
+                    "url": "https:\/\/www.boe.es\/datosabiertos\/api\/legislacion-consolidada\/id\/BOE-A-2023-7936\/texto\/bloque\/ci-7"
+                },
+                {
+                    "id": "a3-3",
+                    "titulo": "Art\u00edculo\u00a031",
+                    "fecha_actualizacion": "20230329",
+                    "url": "https:\/\/www.boe.es\/datosabiertos\/api\/legislacion-consolidada\/id\/BOE-A-2023-7936\/texto\/bloque\/a3-3"
+                },
+                {
+                    "id": "a3-4",
+                    "titulo": "Art\u00edculo\u00a032",
+                    "fecha_actualizacion": "20230329",
+                    "url": "https:\/\/www.boe.es\/datosabiertos\/api\/legislacion-consolidada\/id\/BOE-A-2023-7936\/texto\/bloque\/a3-4"
+                },
+                {
+                    "id": "ci-8",
+                    "titulo": "CAP\u00cdTULO IV",
+                    "fecha_actualizacion": "20230329",
+                    "url": "https:\/\/www.boe.es\/datosabiertos\/api\/legislacion-consolidada\/id\/BOE-A-2023-7936\/texto\/bloque\/ci-8"
+                },
+                {
+                    "id": "a3-5",
+                    "titulo": "Art\u00edculo\u00a033",
+                    "fecha_actualizacion": "20230329",
+                    "url": "https:\/\/www.boe.es\/datosabiertos\/api\/legislacion-consolidada\/id\/BOE-A-2023-7936\/texto\/bloque\/a3-5"
+                },
+                {
+                    "id": "cv-5",
+                    "titulo": "CAP\u00cdTULO V",
+                    "fecha_actualizacion": "20230329",
+                    "url": "https:\/\/www.boe.es\/datosabiertos\/api\/legislacion-consolidada\/id\/BOE-A-2023-7936\/texto\/bloque\/cv-5"
+                },
+                {
+                    "id": "a3-6",
+                    "titulo": "Art\u00edculo\u00a034",
+                    "fecha_actualizacion": "20230329",
+                    "url": "https:\/\/www.boe.es\/datosabiertos\/api\/legislacion-consolidada\/id\/BOE-A-2023-7936\/texto\/bloque\/a3-6"
+                },
+                {
+                    "id": "a3-7",
+                    "titulo": "Art\u00edculo\u00a035",
+                    "fecha_actualizacion": "20230329",
+                    "url": "https:\/\/www.boe.es\/datosabiertos\/api\/legislacion-consolidada\/id\/BOE-A-2023-7936\/texto\/bloque\/a3-7"
+                },
+                {
+                    "id": "a3-8",
+                    "titulo": "Art\u00edculo\u00a036",
+                    "fecha_actualizacion": "20230329",
+                    "url": "https:\/\/www.boe.es\/datosabiertos\/api\/legislacion-consolidada\/id\/BOE-A-2023-7936\/texto\/bloque\/a3-8"
+                },
+                {
+                    "id": "a3-9",
+                    "titulo": "Art\u00edculo\u00a037",
+                    "fecha_actualizacion": "20230329",
+                    "url": "https:\/\/www.boe.es\/datosabiertos\/api\/legislacion-consolidada\/id\/BOE-A-2023-7936\/texto\/bloque\/a3-9"
+                },
+                {
+                    "id": "cv-6",
+                    "titulo": "CAP\u00cdTULO VI",
+                    "fecha_actualizacion": "20230329",
+                    "url": "https:\/\/www.boe.es\/datosabiertos\/api\/legislacion-consolidada\/id\/BOE-A-2023-7936\/texto\/bloque\/cv-6"
+                },
+                {
+                    "id": "a3-10",
+                    "titulo": "Art\u00edculo\u00a038",
+                    "fecha_actualizacion": "20230329",
+                    "url": "https:\/\/www.boe.es\/datosabiertos\/api\/legislacion-consolidada\/id\/BOE-A-2023-7936\/texto\/bloque\/a3-10"
+                },
+                {
+                    "id": "a3-11",
+                    "titulo": "Art\u00edculo\u00a039",
+                    "fecha_actualizacion": "20230329",
+                    "url": "https:\/\/www.boe.es\/datosabiertos\/api\/legislacion-consolidada\/id\/BOE-A-2023-7936\/texto\/bloque\/a3-11"
+                },
+                {
+                    "id": "a4-2",
+                    "titulo": "Art\u00edculo\u00a040",
+                    "fecha_actualizacion": "20230329",
+                    "url": "https:\/\/www.boe.es\/datosabiertos\/api\/legislacion-consolidada\/id\/BOE-A-2023-7936\/texto\/bloque\/a4-2"
+                },
+                {
+                    "id": "a4-3",
+                    "titulo": "Art\u00edculo\u00a041",
+                    "fecha_actualizacion": "20230329",
+                    "url": "https:\/\/www.boe.es\/datosabiertos\/api\/legislacion-consolidada\/id\/BOE-A-2023-7936\/texto\/bloque\/a4-3"
+                },
+                {
+                    "id": "a4-4",
+                    "titulo": "Art\u00edculo\u00a042",
+                    "fecha_actualizacion": "20230329",
+                    "url": "https:\/\/www.boe.es\/datosabiertos\/api\/legislacion-consolidada\/id\/BOE-A-2023-7936\/texto\/bloque\/a4-4"
+                },
+                {
+                    "id": "cv-7",
+                    "titulo": "CAP\u00cdTULO VII",
+                    "fecha_actualizacion": "20230329",
+                    "url": "https:\/\/www.boe.es\/datosabiertos\/api\/legislacion-consolidada\/id\/BOE-A-2023-7936\/texto\/bloque\/cv-7"
+                },
+                {
+                    "id": "a4-5",
+                    "titulo": "Art\u00edculo\u00a043",
+                    "fecha_actualizacion": "20230329",
+                    "url": "https:\/\/www.boe.es\/datosabiertos\/api\/legislacion-consolidada\/id\/BOE-A-2023-7936\/texto\/bloque\/a4-5"
+                },
+                {
+                    "id": "a4-6",
+                    "titulo": "Art\u00edculo\u00a044",
+                    "fecha_actualizacion": "20230329",
+                    "url": "https:\/\/www.boe.es\/datosabiertos\/api\/legislacion-consolidada\/id\/BOE-A-2023-7936\/texto\/bloque\/a4-6"
+                },
+                {
+                    "id": "a4-7",
+                    "titulo": "Art\u00edculo\u00a045",
+                    "fecha_actualizacion": "20230329",
+                    "url": "https:\/\/www.boe.es\/datosabiertos\/api\/legislacion-consolidada\/id\/BOE-A-2023-7936\/texto\/bloque\/a4-7"
+                },
+                {
+                    "id": "a4-8",
+                    "titulo": "Art\u00edculo\u00a046",
+                    "fecha_actualizacion": "20230329",
+                    "url": "https:\/\/www.boe.es\/datosabiertos\/api\/legislacion-consolidada\/id\/BOE-A-2023-7936\/texto\/bloque\/a4-8"
+                },
+                {
+                    "id": "a4-9",
+                    "titulo": "Art\u00edculo\u00a047",
+                    "fecha_actualizacion": "20230329",
+                    "url": "https:\/\/www.boe.es\/datosabiertos\/api\/legislacion-consolidada\/id\/BOE-A-2023-7936\/texto\/bloque\/a4-9"
+                },
+                {
+                    "id": "a4-10",
+                    "titulo": "Art\u00edculo\u00a048",
+                    "fecha_actualizacion": "20230329",
+                    "url": "https:\/\/www.boe.es\/datosabiertos\/api\/legislacion-consolidada\/id\/BOE-A-2023-7936\/texto\/bloque\/a4-10"
+                },
+                {
+                    "id": "a4-11",
+                    "titulo": "Art\u00edculo\u00a049",
+                    "fecha_actualizacion": "20230329",
+                    "url": "https:\/\/www.boe.es\/datosabiertos\/api\/legislacion-consolidada\/id\/BOE-A-2023-7936\/texto\/bloque\/a4-11"
+                },
+                {
+                    "id": "a5-2",
+                    "titulo": "Art\u00edculo\u00a050",
+                    "fecha_actualizacion": "20230329",
+                    "url": "https:\/\/www.boe.es\/datosabiertos\/api\/legislacion-consolidada\/id\/BOE-A-2023-7936\/texto\/bloque\/a5-2"
+                },
+                {
+                    "id": "ti-3",
+                    "titulo": "T\u00cdTULO III",
+                    "fecha_actualizacion": "20230329",
+                    "url": "https:\/\/www.boe.es\/datosabiertos\/api\/legislacion-consolidada\/id\/BOE-A-2023-7936\/texto\/bloque\/ti-3"
+                },
+                {
+                    "id": "ci-9",
+                    "titulo": "CAP\u00cdTULO I",
+                    "fecha_actualizacion": "20230329",
+                    "url": "https:\/\/www.boe.es\/datosabiertos\/api\/legislacion-consolidada\/id\/BOE-A-2023-7936\/texto\/bloque\/ci-9"
+                },
+                {
+                    "id": "a5-3",
+                    "titulo": "Art\u00edculo\u00a051",
+                    "fecha_actualizacion": "20230329",
+                    "url": "https:\/\/www.boe.es\/datosabiertos\/api\/legislacion-consolidada\/id\/BOE-A-2023-7936\/texto\/bloque\/a5-3"
+                },
+                {
+                    "id": "a5-4",
+                    "titulo": "Art\u00edculo\u00a052",
+                    "fecha_actualizacion": "20230329",
+                    "url": "https:\/\/www.boe.es\/datosabiertos\/api\/legislacion-consolidada\/id\/BOE-A-2023-7936\/texto\/bloque\/a5-4"
+                },
+                {
+                    "id": "a5-5",
+                    "titulo": "Art\u00edculo\u00a053",
+                    "fecha_actualizacion": "20230329",
+                    "url": "https:\/\/www.boe.es\/datosabiertos\/api\/legislacion-consolidada\/id\/BOE-A-2023-7936\/texto\/bloque\/a5-5"
+                },
+                {
+                    "id": "a5-6",
+                    "titulo": "Art\u00edculo\u00a054",
+                    "fecha_actualizacion": "20230329",
+                    "url": "https:\/\/www.boe.es\/datosabiertos\/api\/legislacion-consolidada\/id\/BOE-A-2023-7936\/texto\/bloque\/a5-6"
+                },
+                {
+                    "id": "a5-7",
+                    "titulo": "Art\u00edculo\u00a055",
+                    "fecha_actualizacion": "20230329",
+                    "url": "https:\/\/www.boe.es\/datosabiertos\/api\/legislacion-consolidada\/id\/BOE-A-2023-7936\/texto\/bloque\/a5-7"
+                },
+                {
+                    "id": "a5-8",
+                    "titulo": "Art\u00edculo\u00a056",
+                    "fecha_actualizacion": "20230329",
+                    "url": "https:\/\/www.boe.es\/datosabiertos\/api\/legislacion-consolidada\/id\/BOE-A-2023-7936\/texto\/bloque\/a5-8"
+                },
+                {
+                    "id": "a5-9",
+                    "titulo": "Art\u00edculo\u00a057",
+                    "fecha_actualizacion": "20230329",
+                    "url": "https:\/\/www.boe.es\/datosabiertos\/api\/legislacion-consolidada\/id\/BOE-A-2023-7936\/texto\/bloque\/a5-9"
+                },
+                {
+                    "id": "a5-10",
+                    "titulo": "Art\u00edculo\u00a058",
+                    "fecha_actualizacion": "20230329",
+                    "url": "https:\/\/www.boe.es\/datosabiertos\/api\/legislacion-consolidada\/id\/BOE-A-2023-7936\/texto\/bloque\/a5-10"
+                },
+                {
+                    "id": "ci-10",
+                    "titulo": "CAP\u00cdTULO II",
+                    "fecha_actualizacion": "20230329",
+                    "url": "https:\/\/www.boe.es\/datosabiertos\/api\/legislacion-consolidada\/id\/BOE-A-2023-7936\/texto\/bloque\/ci-10"
+                },
+                {
+                    "id": "a5-11",
+                    "titulo": "Art\u00edculo\u00a059",
+                    "fecha_actualizacion": "20230329",
+                    "url": "https:\/\/www.boe.es\/datosabiertos\/api\/legislacion-consolidada\/id\/BOE-A-2023-7936\/texto\/bloque\/a5-11"
+                },
+                {
+                    "id": "a6-2",
+                    "titulo": "Art\u00edculo\u00a060",
+                    "fecha_actualizacion": "20230329",
+                    "url": "https:\/\/www.boe.es\/datosabiertos\/api\/legislacion-consolidada\/id\/BOE-A-2023-7936\/texto\/bloque\/a6-2"
+                },
+                {
+                    "id": "a6-3",
+                    "titulo": "Art\u00edculo\u00a061",
+                    "fecha_actualizacion": "20230329",
+                    "url": "https:\/\/www.boe.es\/datosabiertos\/api\/legislacion-consolidada\/id\/BOE-A-2023-7936\/texto\/bloque\/a6-3"
+                },
+                {
+                    "id": "ti-4",
+                    "titulo": "T\u00cdTULO IV",
+                    "fecha_actualizacion": "20230329",
+                    "url": "https:\/\/www.boe.es\/datosabiertos\/api\/legislacion-consolidada\/id\/BOE-A-2023-7936\/texto\/bloque\/ti-4"
+                },
+                {
+                    "id": "a6-4",
+                    "titulo": "Art\u00edculo\u00a062",
+                    "fecha_actualizacion": "20230329",
+                    "url": "https:\/\/www.boe.es\/datosabiertos\/api\/legislacion-consolidada\/id\/BOE-A-2023-7936\/texto\/bloque\/a6-4"
+                },
+                {
+                    "id": "a6-5",
+                    "titulo": "Art\u00edculo\u00a063",
+                    "fecha_actualizacion": "20230329",
+                    "url": "https:\/\/www.boe.es\/datosabiertos\/api\/legislacion-consolidada\/id\/BOE-A-2023-7936\/texto\/bloque\/a6-5"
+                },
+                {
+                    "id": "a6-6",
+                    "titulo": "Art\u00edculo\u00a064",
+                    "fecha_actualizacion": "20230329",
+                    "url": "https:\/\/www.boe.es\/datosabiertos\/api\/legislacion-consolidada\/id\/BOE-A-2023-7936\/texto\/bloque\/a6-6"
+                },
+                {
+                    "id": "a6-7",
+                    "titulo": "Art\u00edculo\u00a065",
+                    "fecha_actualizacion": "20230329",
+                    "url": "https:\/\/www.boe.es\/datosabiertos\/api\/legislacion-consolidada\/id\/BOE-A-2023-7936\/texto\/bloque\/a6-7"
+                },
+                {
+                    "id": "tv",
+                    "titulo": "T\u00cdTULO V",
+                    "fecha_actualizacion": "20230329",
+                    "url": "https:\/\/www.boe.es\/datosabiertos\/api\/legislacion-consolidada\/id\/BOE-A-2023-7936\/texto\/bloque\/tv"
+                },
+                {
+                    "id": "a6-8",
+                    "titulo": "Art\u00edculo\u00a066",
+                    "fecha_actualizacion": "20230329",
+                    "url": "https:\/\/www.boe.es\/datosabiertos\/api\/legislacion-consolidada\/id\/BOE-A-2023-7936\/texto\/bloque\/a6-8"
+                },
+                {
+                    "id": "a6-9",
+                    "titulo": "Art\u00edculo\u00a067",
+                    "fecha_actualizacion": "20230329",
+                    "url": "https:\/\/www.boe.es\/datosabiertos\/api\/legislacion-consolidada\/id\/BOE-A-2023-7936\/texto\/bloque\/a6-9"
+                },
+                {
+                    "id": "a6-10",
+                    "titulo": "Art\u00edculo\u00a068",
+                    "fecha_actualizacion": "20230329",
+                    "url": "https:\/\/www.boe.es\/datosabiertos\/api\/legislacion-consolidada\/id\/BOE-A-2023-7936\/texto\/bloque\/a6-10"
+                },
+                {
+                    "id": "tv-2",
+                    "titulo": "T\u00cdTULO VI",
+                    "fecha_actualizacion": "20230329",
+                    "url": "https:\/\/www.boe.es\/datosabiertos\/api\/legislacion-consolidada\/id\/BOE-A-2023-7936\/texto\/bloque\/tv-2"
+                },
+                {
+                    "id": "ci-11",
+                    "titulo": "CAP\u00cdTULO I",
+                    "fecha_actualizacion": "20230329",
+                    "url": "https:\/\/www.boe.es\/datosabiertos\/api\/legislacion-consolidada\/id\/BOE-A-2023-7936\/texto\/bloque\/ci-11"
+                },
+                {
+                    "id": "a6-11",
+                    "titulo": "Art\u00edculo\u00a069",
+                    "fecha_actualizacion": "20230329",
+                    "url": "https:\/\/www.boe.es\/datosabiertos\/api\/legislacion-consolidada\/id\/BOE-A-2023-7936\/texto\/bloque\/a6-11"
+                },
+                {
+                    "id": "a7-2",
+                    "titulo": "Art\u00edculo\u00a070",
+                    "fecha_actualizacion": "20230329",
+                    "url": "https:\/\/www.boe.es\/datosabiertos\/api\/legislacion-consolidada\/id\/BOE-A-2023-7936\/texto\/bloque\/a7-2"
+                },
+                {
+                    "id": "a7-3",
+                    "titulo": "Art\u00edculo\u00a071",
+                    "fecha_actualizacion": "20230329",
+                    "url": "https:\/\/www.boe.es\/datosabiertos\/api\/legislacion-consolidada\/id\/BOE-A-2023-7936\/texto\/bloque\/a7-3"
+                },
+                {
+                    "id": "ci-12",
+                    "titulo": "CAP\u00cdTULO II",
+                    "fecha_actualizacion": "20230329",
+                    "url": "https:\/\/www.boe.es\/datosabiertos\/api\/legislacion-consolidada\/id\/BOE-A-2023-7936\/texto\/bloque\/ci-12"
+                },
+                {
+                    "id": "s1",
+                    "titulo": "Secci\u00f3n\u00a01",
+                    "fecha_actualizacion": "20230329",
+                    "url": "https:\/\/www.boe.es\/datosabiertos\/api\/legislacion-consolidada\/id\/BOE-A-2023-7936\/texto\/bloque\/s1"
+                },
+                {
+                    "id": "a7-4",
+                    "titulo": "Art\u00edculo\u00a072",
+                    "fecha_actualizacion": "20230329",
+                    "url": "https:\/\/www.boe.es\/datosabiertos\/api\/legislacion-consolidada\/id\/BOE-A-2023-7936\/texto\/bloque\/a7-4"
+                },
+                {
+                    "id": "a7-5",
+                    "titulo": "Art\u00edculo\u00a073",
+                    "fecha_actualizacion": "20230329",
+                    "url": "https:\/\/www.boe.es\/datosabiertos\/api\/legislacion-consolidada\/id\/BOE-A-2023-7936\/texto\/bloque\/a7-5"
+                },
+                {
+                    "id": "a7-6",
+                    "titulo": "Art\u00edculo\u00a074",
+                    "fecha_actualizacion": "20230329",
+                    "url": "https:\/\/www.boe.es\/datosabiertos\/api\/legislacion-consolidada\/id\/BOE-A-2023-7936\/texto\/bloque\/a7-6"
+                },
+                {
+                    "id": "a7-7",
+                    "titulo": "Art\u00edculo\u00a075",
+                    "fecha_actualizacion": "20230329",
+                    "url": "https:\/\/www.boe.es\/datosabiertos\/api\/legislacion-consolidada\/id\/BOE-A-2023-7936\/texto\/bloque\/a7-7"
+                },
+                {
+                    "id": "s2",
+                    "titulo": "Secci\u00f3n\u00a02",
+                    "fecha_actualizacion": "20230329",
+                    "url": "https:\/\/www.boe.es\/datosabiertos\/api\/legislacion-consolidada\/id\/BOE-A-2023-7936\/texto\/bloque\/s2"
+                },
+                {
+                    "id": "a7-8",
+                    "titulo": "Art\u00edculo\u00a076",
+                    "fecha_actualizacion": "20230329",
+                    "url": "https:\/\/www.boe.es\/datosabiertos\/api\/legislacion-consolidada\/id\/BOE-A-2023-7936\/texto\/bloque\/a7-8"
+                },
+                {
+                    "id": "a7-9",
+                    "titulo": "Art\u00edculo\u00a077",
+                    "fecha_actualizacion": "20230329",
+                    "url": "https:\/\/www.boe.es\/datosabiertos\/api\/legislacion-consolidada\/id\/BOE-A-2023-7936\/texto\/bloque\/a7-9"
+                },
+                {
+                    "id": "a7-10",
+                    "titulo": "Art\u00edculo\u00a078",
+                    "fecha_actualizacion": "20230329",
+                    "url": "https:\/\/www.boe.es\/datosabiertos\/api\/legislacion-consolidada\/id\/BOE-A-2023-7936\/texto\/bloque\/a7-10"
+                },
+                {
+                    "id": "a7-11",
+                    "titulo": "Art\u00edculo\u00a079",
+                    "fecha_actualizacion": "20230329",
+                    "url": "https:\/\/www.boe.es\/datosabiertos\/api\/legislacion-consolidada\/id\/BOE-A-2023-7936\/texto\/bloque\/a7-11"
+                },
+                {
+                    "id": "s3",
+                    "titulo": "Secci\u00f3n\u00a03",
+                    "fecha_actualizacion": "20230329",
+                    "url": "https:\/\/www.boe.es\/datosabiertos\/api\/legislacion-consolidada\/id\/BOE-A-2023-7936\/texto\/bloque\/s3"
+                },
+                {
+                    "id": "a8-2",
+                    "titulo": "Art\u00edculo\u00a080",
+                    "fecha_actualizacion": "20230329",
+                    "url": "https:\/\/www.boe.es\/datosabiertos\/api\/legislacion-consolidada\/id\/BOE-A-2023-7936\/texto\/bloque\/a8-2"
+                },
+                {
+                    "id": "a8-3",
+                    "titulo": "Art\u00edculo\u00a081",
+                    "fecha_actualizacion": "20230329",
+                    "url": "https:\/\/www.boe.es\/datosabiertos\/api\/legislacion-consolidada\/id\/BOE-A-2023-7936\/texto\/bloque\/a8-3"
+                },
+                {
+                    "id": "da",
+                    "titulo": "Disposici\u00f3n adicional primera",
+                    "fecha_actualizacion": "20230329",
+                    "url": "https:\/\/www.boe.es\/datosabiertos\/api\/legislacion-consolidada\/id\/BOE-A-2023-7936\/texto\/bloque\/da"
+                },
+                {
+                    "id": "da-2",
+                    "titulo": "Disposici\u00f3n adicional segunda",
+                    "fecha_actualizacion": "20230329",
+                    "url": "https:\/\/www.boe.es\/datosabiertos\/api\/legislacion-consolidada\/id\/BOE-A-2023-7936\/texto\/bloque\/da-2"
+                },
+                {
+                    "id": "da-3",
+                    "titulo": "Disposici\u00f3n adicional tercera",
+                    "fecha_actualizacion": "20230329",
+                    "url": "https:\/\/www.boe.es\/datosabiertos\/api\/legislacion-consolidada\/id\/BOE-A-2023-7936\/texto\/bloque\/da-3"
+                },
+                {
+                    "id": "da-4",
+                    "titulo": "Disposici\u00f3n adicional cuarta",
+                    "fecha_actualizacion": "20230329",
+                    "url": "https:\/\/www.boe.es\/datosabiertos\/api\/legislacion-consolidada\/id\/BOE-A-2023-7936\/texto\/bloque\/da-4"
+                },
+                {
+                    "id": "da-5",
+                    "titulo": "Disposici\u00f3n adicional quinta",
+                    "fecha_actualizacion": "20230329",
+                    "url": "https:\/\/www.boe.es\/datosabiertos\/api\/legislacion-consolidada\/id\/BOE-A-2023-7936\/texto\/bloque\/da-5"
+                },
+                {
+                    "id": "dt",
+                    "titulo": "Disposici\u00f3n transitoria primera",
+                    "fecha_actualizacion": "20230329",
+                    "url": "https:\/\/www.boe.es\/datosabiertos\/api\/legislacion-consolidada\/id\/BOE-A-2023-7936\/texto\/bloque\/dt"
+                },
+                {
+                    "id": "dt-2",
+                    "titulo": "Disposici\u00f3n transitoria segunda",
+                    "fecha_actualizacion": "20230329",
+                    "url": "https:\/\/www.boe.es\/datosabiertos\/api\/legislacion-consolidada\/id\/BOE-A-2023-7936\/texto\/bloque\/dt-2"
+                },
+                {
+                    "id": "dt-3",
+                    "titulo": "Disposici\u00f3n transitoria tercera",
+                    "fecha_actualizacion": "20230329",
+                    "url": "https:\/\/www.boe.es\/datosabiertos\/api\/legislacion-consolidada\/id\/BOE-A-2023-7936\/texto\/bloque\/dt-3"
+                },
+                {
+                    "id": "dt-4",
+                    "titulo": "Disposici\u00f3n transitoria cuarta",
+                    "fecha_actualizacion": "20230329",
+                    "url": "https:\/\/www.boe.es\/datosabiertos\/api\/legislacion-consolidada\/id\/BOE-A-2023-7936\/texto\/bloque\/dt-4"
+                },
+                {
+                    "id": "dt-5",
+                    "titulo": "Disposici\u00f3n transitoria quinta",
+                    "fecha_actualizacion": "20230329",
+                    "url": "https:\/\/www.boe.es\/datosabiertos\/api\/legislacion-consolidada\/id\/BOE-A-2023-7936\/texto\/bloque\/dt-5"
+                },
+                {
+                    "id": "dt-6",
+                    "titulo": "Disposici\u00f3n transitoria sexta",
+                    "fecha_actualizacion": "20230329",
+                    "url": "https:\/\/www.boe.es\/datosabiertos\/api\/legislacion-consolidada\/id\/BOE-A-2023-7936\/texto\/bloque\/dt-6"
+                },
+                {
+                    "id": "dd",
+                    "titulo": "Disposici\u00f3n derogatoria \u00fanica",
+                    "fecha_actualizacion": "20230329",
+                    "url": "https:\/\/www.boe.es\/datosabiertos\/api\/legislacion-consolidada\/id\/BOE-A-2023-7936\/texto\/bloque\/dd"
+                },
+                {
+                    "id": "df",
+                    "titulo": "Disposici\u00f3n final primera",
+                    "fecha_actualizacion": "20230329",
+                    "url": "https:\/\/www.boe.es\/datosabiertos\/api\/legislacion-consolidada\/id\/BOE-A-2023-7936\/texto\/bloque\/df"
+                },
+                {
+                    "id": "df-2",
+                    "titulo": "Disposici\u00f3n final segunda",
+                    "fecha_actualizacion": "20230329",
+                    "url": "https:\/\/www.boe.es\/datosabiertos\/api\/legislacion-consolidada\/id\/BOE-A-2023-7936\/texto\/bloque\/df-2"
+                },
+                {
+                    "id": "df-3",
+                    "titulo": "Disposici\u00f3n final tercera",
+                    "fecha_actualizacion": "20230329",
+                    "url": "https:\/\/www.boe.es\/datosabiertos\/api\/legislacion-consolidada\/id\/BOE-A-2023-7936\/texto\/bloque\/df-3"
+                },
+                {
+                    "id": "df-4",
+                    "titulo": "Disposici\u00f3n final cuarta",
+                    "fecha_actualizacion": "20230329",
+                    "url": "https:\/\/www.boe.es\/datosabiertos\/api\/legislacion-consolidada\/id\/BOE-A-2023-7936\/texto\/bloque\/df-4"
+                },
+                {
+                    "id": "df-5",
+                    "titulo": "Disposici\u00f3n final quinta",
+                    "fecha_actualizacion": "20230329",
+                    "url": "https:\/\/www.boe.es\/datosabiertos\/api\/legislacion-consolidada\/id\/BOE-A-2023-7936\/texto\/bloque\/df-5"
+                },
+                {
+                    "id": "df-6",
+                    "titulo": "Disposici\u00f3n final sexta",
+                    "fecha_actualizacion": "20230329",
+                    "url": "https:\/\/www.boe.es\/datosabiertos\/api\/legislacion-consolidada\/id\/BOE-A-2023-7936\/texto\/bloque\/df-6"
+                },
+                {
+                    "id": "df-7",
+                    "titulo": "Disposici\u00f3n final s\u00e9ptima",
+                    "fecha_actualizacion": "20230329",
+                    "url": "https:\/\/www.boe.es\/datosabiertos\/api\/legislacion-consolidada\/id\/BOE-A-2023-7936\/texto\/bloque\/df-7"
+                },
+                {
+                    "id": "df-8",
+                    "titulo": "Disposici\u00f3n final octava",
+                    "fecha_actualizacion": "20230329",
+                    "url": "https:\/\/www.boe.es\/datosabiertos\/api\/legislacion-consolidada\/id\/BOE-A-2023-7936\/texto\/bloque\/df-8"
+                },
+                {
+                    "id": "df-9",
+                    "titulo": "Disposici\u00f3n final novena",
+                    "fecha_actualizacion": "20230329",
+                    "url": "https:\/\/www.boe.es\/datosabiertos\/api\/legislacion-consolidada\/id\/BOE-A-2023-7936\/texto\/bloque\/df-9"
+                },
+                {
+                    "id": "fi",
+                    "titulo": "[firma]",
+                    "fecha_actualizacion": "20230329",
+                    "url": "https:\/\/www.boe.es\/datosabiertos\/api\/legislacion-consolidada\/id\/BOE-A-2023-7936\/texto\/bloque\/fi"
+                }
+            ]
+        }
+    ]
+}

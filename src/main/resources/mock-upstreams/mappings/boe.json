@@ -1,0 +1,541 @@
+{
+ "mappings": [
+  {
+   "name": "boeLaws: {\"query\": \"titulo:(bienestar animales)\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/boe/legislacion-consolidada",
+    "queryParameters": {
+     "query": {
+      "equalTo": "{\"query\":{\"query_string\":{\"query\":\"titulo:(bienestar animales)\"}}}"
+     },
+     "offset": {
+      "equalTo": "0"
+     },
+     "limit": {
+      "equalTo": "10"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "boe/boeLaws.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://www.boe.es/datosabiertos/api/legislacion-consolidada?query=%7B%22query%22%3A%7B%22query_string%22%3A%7B%22query%22%3A%22titulo%3A%28bienestar%20animales%29%22%7D%7D%7D&offset=0&limit=10 on 2026-10-22."
+   }
+  },
+  {
+   "name": "boeLaws: {\"query\": \"titulo:(perros peligrosos)\", \"size\": 5}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/boe/legislacion-consolidada",
+    "queryParameters": {
+     "query": {
+      "equalTo": "{\"query\":{\"query_string\":{\"query\":\"titulo:(perros peligrosos)\"}}}"
+     },
+     "offset": {
+      "equalTo": "0"
+     },
+     "limit": {
+      "equalTo": "5"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "boe/boeLaws-1.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://www.boe.es/datosabiertos/api/legislacion-consolidada?query=%7B%22query%22%3A%7B%22query_string%22%3A%7B%22query%22%3A%22titulo%3A%28perros%20peligrosos%29%22%7D%7D%7D&offset=0&limit=5 on 2026-10-22."
+   }
+  },
+  {
+   "name": "boeLaws: {\"query\": \"titulo:(animales compañía)\", \"size\": 5}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/boe/legislacion-consolidada",
+    "queryParameters": {
+     "query": {
+      "equalTo": "{\"query\":{\"query_string\":{\"query\":\"titulo:(animales compañía)\"}}}"
+     },
+     "offset": {
+      "equalTo": "0"
+     },
+     "limit": {
+      "equalTo": "5"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "boe/boeLaws-2.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://www.boe.es/datosabiertos/api/legislacion-consolidada?query=%7B%22query%22%3A%7B%22query_string%22%3A%7B%22query%22%3A%22titulo%3A%28animales%20compa%C3%B1%C3%ADa%29%22%7D%7D%7D&offset=0&limit=5 on 2026-10-22."
+   }
+  },
+  {
+   "name": "boeLaws: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/boe/legislacion\\-consolidada"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "boe/boeLaws.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of boeLaws with the first recording, from https://www.boe.es/datosabiertos/api/legislacion-consolidada?query=%7B%22query%22%3A%7B%22query_string%22%3A%7B%22query%22%3A%22titulo%3A%28bienestar%20animales%29%22%7D%7D%7D&offset=0&limit=10 on 2026-10-22."
+   }
+  },
+  {
+   "name": "boeLawMetadata: {\"id\": \"BOE-A-2023-7936\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/boe/legislacion-consolidada/id/BOE-A-2023-7936/metadatos"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "boe/boeLawMetadata.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://www.boe.es/datosabiertos/api/legislacion-consolidada/id/BOE-A-2023-7936/metadatos on 2026-10-22."
+   }
+  },
+  {
+   "name": "boeLawMetadata: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/boe/legislacion\\-consolidada/id/[^/]+/metadatos"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "boe/boeLawMetadata.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of boeLawMetadata with the first recording, from https://www.boe.es/datosabiertos/api/legislacion-consolidada/id/BOE-A-2023-7936/metadatos on 2026-10-22."
+   }
+  },
+  {
+   "name": "boeLawAnalysis: {\"id\": \"BOE-A-2023-7936\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/boe/legislacion-consolidada/id/BOE-A-2023-7936/analisis"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "boe/boeLawAnalysis.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://www.boe.es/datosabiertos/api/legislacion-consolidada/id/BOE-A-2023-7936/analisis on 2026-10-22."
+   }
+  },
+  {
+   "name": "boeLawAnalysis: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/boe/legislacion\\-consolidada/id/[^/]+/analisis"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "boe/boeLawAnalysis.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of boeLawAnalysis with the first recording, from https://www.boe.es/datosabiertos/api/legislacion-consolidada/id/BOE-A-2023-7936/analisis on 2026-10-22."
+   }
+  },
+  {
+   "name": "boeLawTextIndex: {\"id\": \"BOE-A-2023-7936\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/boe/legislacion-consolidada/id/BOE-A-2023-7936/texto/indice"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "boe/boeLawTextIndex.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://www.boe.es/datosabiertos/api/legislacion-consolidada/id/BOE-A-2023-7936/texto/indice on 2026-10-22."
+   }
+  },
+  {
+   "name": "boeLawTextIndex: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/boe/legislacion\\-consolidada/id/[^/]+/texto/indice"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "boe/boeLawTextIndex.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of boeLawTextIndex with the first recording, from https://www.boe.es/datosabiertos/api/legislacion-consolidada/id/BOE-A-2023-7936/texto/indice on 2026-10-22."
+   }
+  },
+  {
+   "name": "boeDailySummary: {\"date\": \"2026-10-22\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/boe/boe/sumario/20261022"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "boe/boeDailySummary.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://www.boe.es/datosabiertos/api/boe/sumario/20261022 on 2026-10-22."
+   }
+  },
+  {
+   "name": "boeDailySummary: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/boe/boe/sumario/[^/]+"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "boe/boeDailySummary.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of boeDailySummary with the first recording, from https://www.boe.es/datosabiertos/api/boe/sumario/20261022 on 2026-10-22."
+   }
+  },
+  {
+   "name": "bormeDailySummary: {\"date\": \"2026-10-22\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/boe/borme/sumario/20261022"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "boe/bormeDailySummary.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://www.boe.es/datosabiertos/api/borme/sumario/20261022 on 2026-10-22."
+   }
+  },
+  {
+   "name": "bormeDailySummary: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/boe/borme/sumario/[^/]+"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "boe/bormeDailySummary.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of bormeDailySummary with the first recording, from https://www.boe.es/datosabiertos/api/borme/sumario/20261022 on 2026-10-22."
+   }
+  },
+  {
+   "name": "boeSubjects: {}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/boe/datos-auxiliares/materias"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "boe/boeSubjects.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://www.boe.es/datosabiertos/api/datos-auxiliares/materias on 2026-10-22."
+   }
+  },
+  {
+   "name": "boeSubjects: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/boe/datos\\-auxiliares/materias"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "boe/boeSubjects.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of boeSubjects with the first recording, from https://www.boe.es/datosabiertos/api/datos-auxiliares/materias on 2026-10-22."
+   }
+  },
+  {
+   "name": "boeScopes: {}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/boe/datos-auxiliares/ambitos"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "boe/boeScopes.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://www.boe.es/datosabiertos/api/datos-auxiliares/ambitos on 2026-10-22."
+   }
+  },
+  {
+   "name": "boeScopes: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/boe/datos\\-auxiliares/ambitos"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "boe/boeScopes.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of boeScopes with the first recording, from https://www.boe.es/datosabiertos/api/datos-auxiliares/ambitos on 2026-10-22."
+   }
+  },
+  {
+   "name": "boeConsolidationStatuses: {}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/boe/datos-auxiliares/estados-consolidacion"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "boe/boeConsolidationStatuses.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://www.boe.es/datosabiertos/api/datos-auxiliares/estados-consolidacion on 2026-10-22."
+   }
+  },
+  {
+   "name": "boeConsolidationStatuses: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/boe/datos\\-auxiliares/estados\\-consolidacion"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "boe/boeConsolidationStatuses.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of boeConsolidationStatuses with the first recording, from https://www.boe.es/datosabiertos/api/datos-auxiliares/estados-consolidacion on 2026-10-22."
+   }
+  },
+  {
+   "name": "boeDepartments: {}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/boe/datos-auxiliares/departamentos"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "boe/boeDepartments.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://www.boe.es/datosabiertos/api/datos-auxiliares/departamentos on 2026-10-22."
+   }
+  },
+  {
+   "name": "boeDepartments: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/boe/datos\\-auxiliares/departamentos"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "boe/boeDepartments.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of boeDepartments with the first recording, from https://www.boe.es/datosabiertos/api/datos-auxiliares/departamentos on 2026-10-22."
+   }
+  },
+  {
+   "name": "boeRanks: {}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/boe/datos-auxiliares/rangos"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "boe/boeRanks.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://www.boe.es/datosabiertos/api/datos-auxiliares/rangos on 2026-10-22."
+   }
+  },
+  {
+   "name": "boeRanks: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/boe/datos\\-auxiliares/rangos"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "boe/boeRanks.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of boeRanks with the first recording, from https://www.boe.es/datosabiertos/api/datos-auxiliares/rangos on 2026-10-22."
+   }
+  },
+  {
+   "name": "boePriorRelations: {}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/boe/datos-auxiliares/relaciones-anteriores"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "boe/boePriorRelations.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://www.boe.es/datosabiertos/api/datos-auxiliares/relaciones-anteriores on 2026-10-22."
+   }
+  },
+  {
+   "name": "boePriorRelations: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/boe/datos\\-auxiliares/relaciones\\-anteriores"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "boe/boePriorRelations.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of boePriorRelations with the first recording, from https://www.boe.es/datosabiertos/api/datos-auxiliares/relaciones-anteriores on 2026-10-22."
+   }
+  },
+  {
+   "name": "boeLaterRelations: {}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/boe/datos-auxiliares/relaciones-posteriores"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "boe/boeLaterRelations.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://www.boe.es/datosabiertos/api/datos-auxiliares/relaciones-posteriores on 2026-10-22."
+   }
+  },
+  {
+   "name": "boeLaterRelations: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/boe/datos\\-auxiliares/relaciones\\-posteriores"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "boe/boeLaterRelations.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of boeLaterRelations with the first recording, from https://www.boe.es/datosabiertos/api/datos-auxiliares/relaciones-posteriores on 2026-10-22."
+   }
+  }
+ ]
+}

@@ -1,0 +1,7643 @@
+{
+ "operations": [
+  {
+   "field": "ignAddresses",
+   "path": "/collections/address/items",
+   "arguments": [
+    {
+     "name": "bbox",
+     "parameter": "bbox",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "skipGeometry",
+     "parameter": "skipGeometry",
+     "in": "query",
+     "list": false,
+     "values": {
+      "true": "true",
+      "false": "false"
+     }
+    },
+    {
+     "name": "localId",
+     "parameter": "inspireId_localId",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "namespace",
+     "parameter": "inspireId_namespace",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "thoroughfareName",
+     "parameter": "component_ThoroughfareName",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "addressNumber",
+     "parameter": "locator_designator_addressNumber",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "addressNumberExtension",
+     "parameter": "locator_designator_addressNumberExtension",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "postalCode",
+     "parameter": "component_PostalDescriptor",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "addressArea",
+     "parameter": "component_AddressAreaName",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "municipality",
+     "parameter": "component_AdminUnitName_4",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "province",
+     "parameter": "component_AdminUnitName_3",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "region",
+     "parameter": "component_AdminUnitName_2",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "validSince",
+     "parameter": "beginLifespanVersion",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "dataProvider",
+     "parameter": "dataProvider",
+     "in": "query",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "f": "json"
+   },
+   "paging": {
+    "style": "offset",
+    "start": "offset",
+    "size": "limit"
+   }
+  },
+  {
+   "field": "ignAddress",
+   "path": "/collections/address/items/{featureId}",
+   "arguments": [
+    {
+     "name": "id",
+     "parameter": "featureId",
+     "in": "path",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "f": "json"
+   }
+  },
+  {
+   "field": "ignLandUseDatasets",
+   "path": "/collections/existinglandusedataset/items",
+   "arguments": [
+    {
+     "name": "bbox",
+     "parameter": "bbox",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "skipGeometry",
+     "parameter": "skipGeometry",
+     "in": "query",
+     "list": false,
+     "values": {
+      "true": "true",
+      "false": "false"
+     }
+    },
+    {
+     "name": "localId",
+     "parameter": "inspireid_localid",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "namespace",
+     "parameter": "inspireid_namespace",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "versionId",
+     "parameter": "inspireid_versionid",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "name",
+     "parameter": "name",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "validSince",
+     "parameter": "beginlifespanversion",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "validUntil",
+     "parameter": "endlifespanversion",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "validFrom",
+     "parameter": "validfrom",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "validTo",
+     "parameter": "validto",
+     "in": "query",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "f": "json"
+   },
+   "paging": {
+    "style": "offset",
+    "start": "offset",
+    "size": "limit"
+   }
+  },
+  {
+   "field": "ignLandUseAreas",
+   "path": "/collections/existinglanduseobject/items",
+   "arguments": [
+    {
+     "name": "bbox",
+     "parameter": "bbox",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "skipGeometry",
+     "parameter": "skipGeometry",
+     "in": "query",
+     "list": false,
+     "values": {
+      "true": "true",
+      "false": "false"
+     }
+    },
+    {
+     "name": "localId",
+     "parameter": "inspireid_localid",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "namespace",
+     "parameter": "inspireid_namespace",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "versionId",
+     "parameter": "inspireid_versionid",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "landUse",
+     "parameter": "hilucslanduse",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "observed",
+     "parameter": "observationdate",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "validSince",
+     "parameter": "beginlifespanversion",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "validUntil",
+     "parameter": "endlifespanversion",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "validFrom",
+     "parameter": "validfrom",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "validTo",
+     "parameter": "validto",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "href",
+     "parameter": "href",
+     "in": "query",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "f": "json"
+   },
+   "paging": {
+    "style": "offset",
+    "start": "offset",
+    "size": "limit"
+   }
+  },
+  {
+   "field": "ignLandUseArea",
+   "path": "/collections/existinglanduseobject/items/{featureId}",
+   "arguments": [
+    {
+     "name": "id",
+     "parameter": "featureId",
+     "in": "path",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "f": "json"
+   }
+  },
+  {
+   "field": "ignLandCoverUnits",
+   "path": "/collections/landcoverunit/items",
+   "arguments": [
+    {
+     "name": "bbox",
+     "parameter": "bbox",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "skipGeometry",
+     "parameter": "skipGeometry",
+     "in": "query",
+     "list": false,
+     "values": {
+      "true": "true",
+      "false": "false"
+     }
+    },
+    {
+     "name": "localId",
+     "parameter": "inspireid_localid",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "namespace",
+     "parameter": "inspireid_namespace",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "versionId",
+     "parameter": "inspireid_versionid",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "observed",
+     "parameter": "landcoverobservation_observationdate",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "landCoverClass",
+     "parameter": "landcoverobservation_class",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "validSince",
+     "parameter": "beginlifespanversion",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "validUntil",
+     "parameter": "endlifespanversion",
+     "in": "query",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "f": "json"
+   },
+   "paging": {
+    "style": "offset",
+    "start": "offset",
+    "size": "limit"
+   }
+  },
+  {
+   "field": "ignLandCoverUnit",
+   "path": "/collections/landcoverunit/items/{featureId}",
+   "arguments": [
+    {
+     "name": "id",
+     "parameter": "featureId",
+     "in": "path",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "f": "json"
+   }
+  },
+  {
+   "field": "ignHydroNodes",
+   "path": "/collections/hydronode/items",
+   "arguments": [
+    {
+     "name": "bbox",
+     "parameter": "bbox",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "skipGeometry",
+     "parameter": "skipGeometry",
+     "in": "query",
+     "list": false,
+     "values": {
+      "true": "true",
+      "false": "false"
+     }
+    },
+    {
+     "name": "localId",
+     "parameter": "inspireid_localid",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "hydroId",
+     "parameter": "hydroid_localid",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "dateAdded",
+     "parameter": "fecha_alta",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "riverBasinDistrict",
+     "parameter": "id_demarc",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "riverBasinDistrictText",
+     "parameter": "id_demarcd",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "networkId",
+     "parameter": "id_red",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "nodeId",
+     "parameter": "id_nodo",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "name",
+     "parameter": "nombre",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "nodeCategory",
+     "parameter": "cat_nodo",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "nodeCategoryText",
+     "parameter": "cat_nodod",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "elevation",
+     "parameter": "elevacion",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "source",
+     "parameter": "fuente",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "sourceText",
+     "parameter": "fuented",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "resolution",
+     "parameter": "resolucion",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "nodeCategoryNilReason",
+     "parameter": "nilreason_cat_nodo",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "nameNilReason",
+     "parameter": "nilreason_nombre",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "variosNilReason",
+     "parameter": "nilreason_varios",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "nameMissing",
+     "parameter": "nil_nombre",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "variosMissing",
+     "parameter": "nil_varios",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "nativeness",
+     "parameter": "nativeness",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "script",
+     "parameter": "script",
+     "in": "query",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "f": "json"
+   },
+   "paging": {
+    "style": "offset",
+    "start": "offset",
+    "size": "limit"
+   }
+  },
+  {
+   "field": "ignHydroNode",
+   "path": "/collections/hydronode/items/{featureId}",
+   "arguments": [
+    {
+     "name": "id",
+     "parameter": "featureId",
+     "in": "path",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "f": "json"
+   }
+  },
+  {
+   "field": "ignWatercourseLinks",
+   "path": "/collections/watercourselink/items",
+   "arguments": [
+    {
+     "name": "bbox",
+     "parameter": "bbox",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "skipGeometry",
+     "parameter": "skipGeometry",
+     "in": "query",
+     "list": false,
+     "values": {
+      "true": "true",
+      "false": "false"
+     }
+    },
+    {
+     "name": "localId",
+     "parameter": "inspireid_localid",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "hydroId",
+     "parameter": "hydroid_localid",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "dateAdded",
+     "parameter": "fecha_alta",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "riverBasinDistrict",
+     "parameter": "id_demarc",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "riverBasinDistrictText",
+     "parameter": "id_demarcd",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "networkId",
+     "parameter": "id_red",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "segmentId",
+     "parameter": "id_tramo",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "leftSegment",
+     "parameter": "tramo_izda",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "rightSegment",
+     "parameter": "tramo_dcha",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "startNode",
+     "parameter": "nodo_ini",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "endNode",
+     "parameter": "nodo_fin",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "flowDirection",
+     "parameter": "dir_flujo",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "flowDirectionText",
+     "parameter": "dir_flujod",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "fictitious",
+     "parameter": "ficticio",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "watercourseId",
+     "parameter": "id_curso",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "name",
+     "parameter": "nombre",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "source",
+     "parameter": "fuente",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "sourceText",
+     "parameter": "fuented",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "lengthMetres",
+     "parameter": "longitud",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "resolution",
+     "parameter": "resolucion",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "nameNilReason",
+     "parameter": "nilreason_nombre",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "variosNilReason",
+     "parameter": "nilreason_varios",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "nameMissing",
+     "parameter": "nil_nombre",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "variosMissing",
+     "parameter": "nil_varios",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "nativeness",
+     "parameter": "nativeness",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "script",
+     "parameter": "script",
+     "in": "query",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "f": "json"
+   },
+   "paging": {
+    "style": "offset",
+    "start": "offset",
+    "size": "limit"
+   }
+  },
+  {
+   "field": "ignWatercourseLink",
+   "path": "/collections/watercourselink/items/{featureId}",
+   "arguments": [
+    {
+     "name": "id",
+     "parameter": "featureId",
+     "in": "path",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "f": "json"
+   }
+  },
+  {
+   "field": "ignWatercourseLinkSequences",
+   "path": "/collections/watercourselinksequence/items",
+   "arguments": [
+    {
+     "name": "bbox",
+     "parameter": "bbox",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "skipGeometry",
+     "parameter": "skipGeometry",
+     "in": "query",
+     "list": false,
+     "values": {
+      "true": "true",
+      "false": "false"
+     }
+    },
+    {
+     "name": "localId",
+     "parameter": "inspireid_localid",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "hydroId",
+     "parameter": "hydroid_localid",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "dateAdded",
+     "parameter": "fecha_alta",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "riverBasinDistrict",
+     "parameter": "id_demarc",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "riverBasinDistrictText",
+     "parameter": "id_demarcd",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "watercourseId",
+     "parameter": "id_curso",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "networkId",
+     "parameter": "id_red",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "name",
+     "parameter": "nombre",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "source",
+     "parameter": "fuente",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "sourceText",
+     "parameter": "fuented",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "lengthMetres",
+     "parameter": "longitud",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "resolution",
+     "parameter": "resolucion",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "nameNilReason",
+     "parameter": "nilreason_nombre",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "variosNilReason",
+     "parameter": "nilreason_varios",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "nameMissing",
+     "parameter": "nil_nombre",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "variosMissing",
+     "parameter": "nil_varios",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "nativeness",
+     "parameter": "nativeness",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "script",
+     "parameter": "script",
+     "in": "query",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "f": "json"
+   },
+   "paging": {
+    "style": "offset",
+    "start": "offset",
+    "size": "limit"
+   }
+  },
+  {
+   "field": "ignWaterCrossings",
+   "path": "/collections/crossing/items",
+   "arguments": [
+    {
+     "name": "bbox",
+     "parameter": "bbox",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "skipGeometry",
+     "parameter": "skipGeometry",
+     "in": "query",
+     "list": false,
+     "values": {
+      "true": "true",
+      "false": "false"
+     }
+    },
+    {
+     "name": "localId",
+     "parameter": "inspireid_localid",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "hydroId",
+     "parameter": "hydroid_localid",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "name",
+     "parameter": "nombre",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "source",
+     "parameter": "fuente",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "sourceText",
+     "parameter": "fuented",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "riverBasinDistrict",
+     "parameter": "id_demarc",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "riverBasinDistrictText",
+     "parameter": "id_demarcd",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "dateAdded",
+     "parameter": "fecha_alta",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "crossingType",
+     "parameter": "tipo_cruce",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "crossingTypeText",
+     "parameter": "tipo_cruced",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "nodeId",
+     "parameter": "id_nodo",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "buildingId",
+     "parameter": "id_edif",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "condition",
+     "parameter": "condicion",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "conditionText",
+     "parameter": "condiciond",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "resolution",
+     "parameter": "resolucion",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "nameNilReason",
+     "parameter": "nilreason_nombre",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "variosNilReason",
+     "parameter": "nilreason_varios",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "nameMissing",
+     "parameter": "nil_nombre",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "variosMissing",
+     "parameter": "nil_varios",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "nativeness",
+     "parameter": "nativeness",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "script",
+     "parameter": "script",
+     "in": "query",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "f": "json"
+   },
+   "paging": {
+    "style": "offset",
+    "start": "offset",
+    "size": "limit"
+   }
+  },
+  {
+   "field": "ignWaterCrossing",
+   "path": "/collections/crossing/items/{featureId}",
+   "arguments": [
+    {
+     "name": "id",
+     "parameter": "featureId",
+     "in": "path",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "f": "json"
+   }
+  },
+  {
+   "field": "ignDams",
+   "path": "/collections/damorweir/items",
+   "arguments": [
+    {
+     "name": "bbox",
+     "parameter": "bbox",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "skipGeometry",
+     "parameter": "skipGeometry",
+     "in": "query",
+     "list": false,
+     "values": {
+      "true": "true",
+      "false": "false"
+     }
+    },
+    {
+     "name": "localId",
+     "parameter": "inspireid_localid",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "hydroId",
+     "parameter": "hydroid_localid",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "name",
+     "parameter": "nombre",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "source",
+     "parameter": "fuente",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "sourceText",
+     "parameter": "fuented",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "riverBasinDistrict",
+     "parameter": "id_demarc",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "riverBasinDistrictText",
+     "parameter": "id_demarcd",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "dateAdded",
+     "parameter": "fecha_alta",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "damType",
+     "parameter": "tipo_presa",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "damTypeText",
+     "parameter": "tipo_presad",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "nodeId",
+     "parameter": "id_nodo",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "buildingId",
+     "parameter": "id_edif",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "crestElevation",
+     "parameter": "z_coron",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "material",
+     "parameter": "material",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "materialText",
+     "parameter": "materiald",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "condition",
+     "parameter": "condicion",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "conditionText",
+     "parameter": "condiciond",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "resolution",
+     "parameter": "resolucion",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "crestLength",
+     "parameter": "long_coron",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "nameNilReason",
+     "parameter": "nilreason_nombre",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "variosNilReason",
+     "parameter": "nilreason_varios",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "nameMissing",
+     "parameter": "nil_nombre",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "variosMissing",
+     "parameter": "nil_varios",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "nativeness",
+     "parameter": "nativeness",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "script",
+     "parameter": "script",
+     "in": "query",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "f": "json"
+   },
+   "paging": {
+    "style": "offset",
+    "start": "offset",
+    "size": "limit"
+   }
+  },
+  {
+   "field": "ignDam",
+   "path": "/collections/damorweir/items/{featureId}",
+   "arguments": [
+    {
+     "name": "id",
+     "parameter": "featureId",
+     "in": "path",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "f": "json"
+   }
+  },
+  {
+   "field": "ignDrainageBasins",
+   "path": "/collections/drainagebasin/items",
+   "arguments": [
+    {
+     "name": "bbox",
+     "parameter": "bbox",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "skipGeometry",
+     "parameter": "skipGeometry",
+     "in": "query",
+     "list": false,
+     "values": {
+      "true": "true",
+      "false": "false"
+     }
+    },
+    {
+     "name": "localId",
+     "parameter": "inspireid_localid",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "hydroId",
+     "parameter": "hydroid_localid",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "name",
+     "parameter": "nombre",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "riverBasinDistrict",
+     "parameter": "id_demarc",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "riverBasinDistrictText",
+     "parameter": "id_demarcd",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "dateAdded",
+     "parameter": "fecha_alta",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "order",
+     "parameter": "orden",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "orderScheme",
+     "parameter": "orden_esq",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "orderSchemeText",
+     "parameter": "orden_esqd",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "orderScope",
+     "parameter": "orden_amb",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "orderScopeText",
+     "parameter": "orden_ambd",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "source",
+     "parameter": "fuente",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "sourceText",
+     "parameter": "fuented",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "origin",
+     "parameter": "origen",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "originText",
+     "parameter": "origend",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "areaSquareMetres",
+     "parameter": "area",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "resolution",
+     "parameter": "resolucion",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "nameNilReason",
+     "parameter": "nilreason_nombre",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "variosNilReason",
+     "parameter": "nilreason_varios",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "nameMissing",
+     "parameter": "nil_nombre",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "variosMissing",
+     "parameter": "nil_varios",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "nativeness",
+     "parameter": "nativeness",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "script",
+     "parameter": "script",
+     "in": "query",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "f": "json"
+   },
+   "paging": {
+    "style": "offset",
+    "start": "offset",
+    "size": "limit"
+   }
+  },
+  {
+   "field": "ignWaterfalls",
+   "path": "/collections/falls/items",
+   "arguments": [
+    {
+     "name": "bbox",
+     "parameter": "bbox",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "skipGeometry",
+     "parameter": "skipGeometry",
+     "in": "query",
+     "list": false,
+     "values": {
+      "true": "true",
+      "false": "false"
+     }
+    },
+    {
+     "name": "localId",
+     "parameter": "inspireid_localid",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "hydroId",
+     "parameter": "hydroid_localid",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "name",
+     "parameter": "nombre",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "riverBasinDistrict",
+     "parameter": "id_demarc",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "riverBasinDistrictText",
+     "parameter": "id_demarcd",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "dateAdded",
+     "parameter": "fecha_alta",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "source",
+     "parameter": "fuente",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "sourceText",
+     "parameter": "fuented",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "description",
+     "parameter": "descr",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "nodeId",
+     "parameter": "id_nodo",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "persistence",
+     "parameter": "persist",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "persistenceText",
+     "parameter": "persistd",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "resolution",
+     "parameter": "resolucion",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "script",
+     "parameter": "script",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "nameNilReason",
+     "parameter": "nilreason_nombre",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "variosNilReason",
+     "parameter": "nilreason_varios",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "nameMissing",
+     "parameter": "nil_nombre",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "variosMissing",
+     "parameter": "nil_varios",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "nativeness",
+     "parameter": "nativeness",
+     "in": "query",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "f": "json"
+   },
+   "paging": {
+    "style": "offset",
+    "start": "offset",
+    "size": "limit"
+   }
+  },
+  {
+   "field": "ignWaterfall",
+   "path": "/collections/falls/items/{featureId}",
+   "arguments": [
+    {
+     "name": "id",
+     "parameter": "featureId",
+     "in": "path",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "f": "json"
+   }
+  },
+  {
+   "field": "ignFords",
+   "path": "/collections/ford/items",
+   "arguments": [
+    {
+     "name": "bbox",
+     "parameter": "bbox",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "skipGeometry",
+     "parameter": "skipGeometry",
+     "in": "query",
+     "list": false,
+     "values": {
+      "true": "true",
+      "false": "false"
+     }
+    },
+    {
+     "name": "localId",
+     "parameter": "inspireid_localid",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "hydroId",
+     "parameter": "hydroid_localid",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "name",
+     "parameter": "nombre",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "riverBasinDistrict",
+     "parameter": "id_demarc",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "riverBasinDistrictText",
+     "parameter": "id_demarcd",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "dateAdded",
+     "parameter": "fecha_alta",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "condition",
+     "parameter": "condicion",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "conditionText",
+     "parameter": "condiciond",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "source",
+     "parameter": "fuente",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "sourceText",
+     "parameter": "fuented",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "lengthMetres",
+     "parameter": "longitud",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "resolution",
+     "parameter": "resolucion",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "nameNilReason",
+     "parameter": "nilreason_nombre",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "variosNilReason",
+     "parameter": "nilreason_varios",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "nameMissing",
+     "parameter": "nil_nombre",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "variosMissing",
+     "parameter": "nil_varios",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "nativeness",
+     "parameter": "nativeness",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "script",
+     "parameter": "script",
+     "in": "query",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "f": "json"
+   },
+   "paging": {
+    "style": "offset",
+    "start": "offset",
+    "size": "limit"
+   }
+  },
+  {
+   "field": "ignFord",
+   "path": "/collections/ford/items/{featureId}",
+   "arguments": [
+    {
+     "name": "id",
+     "parameter": "featureId",
+     "in": "path",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "f": "json"
+   }
+  },
+  {
+   "field": "ignShorelines",
+   "path": "/collections/landwaterboundary/items",
+   "arguments": [
+    {
+     "name": "bbox",
+     "parameter": "bbox",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "skipGeometry",
+     "parameter": "skipGeometry",
+     "in": "query",
+     "list": false,
+     "values": {
+      "true": "true",
+      "false": "false"
+     }
+    },
+    {
+     "name": "localId",
+     "parameter": "inspireid_localid",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "hydroId",
+     "parameter": "hydroid_localid",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "riverBasinDistrict",
+     "parameter": "id_demarc",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "dateAdded",
+     "parameter": "fecha_alta",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "origin",
+     "parameter": "origen",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "originText",
+     "parameter": "origend",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "waterLevel",
+     "parameter": "nivel_agua",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "waterLevelText",
+     "parameter": "nivel_aguad",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "source",
+     "parameter": "fuente",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "sourceText",
+     "parameter": "fuented",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "lengthMetres",
+     "parameter": "longitud",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "resolution",
+     "parameter": "resolucion",
+     "in": "query",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "f": "json"
+   },
+   "paging": {
+    "style": "offset",
+    "start": "offset",
+    "size": "limit"
+   }
+  },
+  {
+   "field": "ignShoreline",
+   "path": "/collections/landwaterboundary/items/{featureId}",
+   "arguments": [
+    {
+     "name": "id",
+     "parameter": "featureId",
+     "in": "path",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "f": "json"
+   }
+  },
+  {
+   "field": "ignLocks",
+   "path": "/collections/lock/items",
+   "arguments": [
+    {
+     "name": "bbox",
+     "parameter": "bbox",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "skipGeometry",
+     "parameter": "skipGeometry",
+     "in": "query",
+     "list": false,
+     "values": {
+      "true": "true",
+      "false": "false"
+     }
+    },
+    {
+     "name": "localId",
+     "parameter": "inspireid_localid",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "hydroId",
+     "parameter": "hydroid_localid",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "name",
+     "parameter": "nombre",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "riverBasinDistrict",
+     "parameter": "id_demarc",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "riverBasinDistrictText",
+     "parameter": "id_demarcd",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "dateAdded",
+     "parameter": "fecha_alta",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "condition",
+     "parameter": "condicion",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "conditionText",
+     "parameter": "condiciond",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "source",
+     "parameter": "fuente",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "sourceText",
+     "parameter": "fuented",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "resolution",
+     "parameter": "resolucion",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "nameNilReason",
+     "parameter": "nilreason_nombre",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "variosNilReason",
+     "parameter": "nilreason_varios",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "nameMissing",
+     "parameter": "nil_nombre",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "variosMissing",
+     "parameter": "nil_varios",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "nativeness",
+     "parameter": "nativeness",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "script",
+     "parameter": "script",
+     "in": "query",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "f": "json"
+   },
+   "paging": {
+    "style": "offset",
+    "start": "offset",
+    "size": "limit"
+   }
+  },
+  {
+   "field": "ignLock",
+   "path": "/collections/lock/items/{featureId}",
+   "arguments": [
+    {
+     "name": "id",
+     "parameter": "featureId",
+     "in": "path",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "f": "json"
+   }
+  },
+  {
+   "field": "ignRiverBasins",
+   "path": "/collections/riverbasin/items",
+   "arguments": [
+    {
+     "name": "bbox",
+     "parameter": "bbox",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "skipGeometry",
+     "parameter": "skipGeometry",
+     "in": "query",
+     "list": false,
+     "values": {
+      "true": "true",
+      "false": "false"
+     }
+    },
+    {
+     "name": "localId",
+     "parameter": "inspireid_localid",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "hydroId",
+     "parameter": "hydroid_localid",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "name",
+     "parameter": "nombre",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "riverBasinDistrict",
+     "parameter": "id_demarc",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "riverBasinDistrictText",
+     "parameter": "id_demarcd",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "dateAdded",
+     "parameter": "fecha_alta",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "order",
+     "parameter": "orden",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "orderScheme",
+     "parameter": "orden_esq",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "orderSchemeText",
+     "parameter": "orden_esqd",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "orderScope",
+     "parameter": "orden_amb",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "orderScopeText",
+     "parameter": "orden_ambd",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "source",
+     "parameter": "fuente",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "sourceText",
+     "parameter": "fuented",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "origin",
+     "parameter": "origen",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "originText",
+     "parameter": "origend",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "areaSquareMetres",
+     "parameter": "area",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "resolution",
+     "parameter": "resolucion",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "nameNilReason",
+     "parameter": "nilreason_nombre",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "variosNilReason",
+     "parameter": "nilreason_varios",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "nameMissing",
+     "parameter": "nil_nombre",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "variosMissing",
+     "parameter": "nil_varios",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "nativeness",
+     "parameter": "nativeness",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "script",
+     "parameter": "script",
+     "in": "query",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "f": "json"
+   },
+   "paging": {
+    "style": "offset",
+    "start": "offset",
+    "size": "limit"
+   }
+  },
+  {
+   "field": "ignShorelineConstructions",
+   "path": "/collections/shorelineconstruction/items",
+   "arguments": [
+    {
+     "name": "bbox",
+     "parameter": "bbox",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "skipGeometry",
+     "parameter": "skipGeometry",
+     "in": "query",
+     "list": false,
+     "values": {
+      "true": "true",
+      "false": "false"
+     }
+    },
+    {
+     "name": "localId",
+     "parameter": "inspireid_localid",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "hydroId",
+     "parameter": "hydroid_localid",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "name",
+     "parameter": "nombre",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "riverBasinDistrict",
+     "parameter": "id_demarc",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "riverBasinDistrictText",
+     "parameter": "id_demarcd",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "dateAdded",
+     "parameter": "fecha_alta",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "structureType",
+     "parameter": "tipo_estr",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "structureTypeText",
+     "parameter": "tipo_estrd",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "condition",
+     "parameter": "condicion",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "conditionText",
+     "parameter": "condiciond",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "source",
+     "parameter": "fuente",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "sourceText",
+     "parameter": "fuented",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "resolution",
+     "parameter": "resolucion",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "nameNilReason",
+     "parameter": "nilreason_nombre",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "variosNilReason",
+     "parameter": "nilreason_varios",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "nameMissing",
+     "parameter": "nil_nombre",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "variosMissing",
+     "parameter": "nil_varios",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "nativeness",
+     "parameter": "nativeness",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "script",
+     "parameter": "script",
+     "in": "query",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "f": "json"
+   },
+   "paging": {
+    "style": "offset",
+    "start": "offset",
+    "size": "limit"
+   }
+  },
+  {
+   "field": "ignShorelineConstruction",
+   "path": "/collections/shorelineconstruction/items/{featureId}",
+   "arguments": [
+    {
+     "name": "id",
+     "parameter": "featureId",
+     "in": "path",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "f": "json"
+   }
+  },
+  {
+   "field": "ignStandingWaters",
+   "path": "/collections/standingwater/items",
+   "arguments": [
+    {
+     "name": "bbox",
+     "parameter": "bbox",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "skipGeometry",
+     "parameter": "skipGeometry",
+     "in": "query",
+     "list": false,
+     "values": {
+      "true": "true",
+      "false": "false"
+     }
+    },
+    {
+     "name": "localId",
+     "parameter": "inspireid_localid",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "hydroId",
+     "parameter": "hydroid_localid",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "name",
+     "parameter": "nombre",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "riverBasinDistrict",
+     "parameter": "id_demarc",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "riverBasinDistrictText",
+     "parameter": "id_demarcd",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "dateAdded",
+     "parameter": "fecha_alta",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "standingWaterType",
+     "parameter": "tipo_aest",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "standingWaterTypeText",
+     "parameter": "tipo_aestd",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "drainsBasin",
+     "parameter": "drainsbasin",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "origin",
+     "parameter": "origen",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "originText",
+     "parameter": "origend",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "tidal",
+     "parameter": "marea",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "elevation",
+     "parameter": "elevacion",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "persistence",
+     "parameter": "persist",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "persistenceText",
+     "parameter": "persistd",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "waterLevel",
+     "parameter": "nivel_agua",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "waterLevelText",
+     "parameter": "nivel_aguad",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "areaSquareMetres",
+     "parameter": "area",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "source",
+     "parameter": "fuente",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "sourceText",
+     "parameter": "fuented",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "elevationSource",
+     "parameter": "origen_z",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "elevationSourceText",
+     "parameter": "origen_zd",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "resolution",
+     "parameter": "resolucion",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "nameNilReason",
+     "parameter": "nilreason_nombre",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "variosNilReason",
+     "parameter": "nilreason_varios",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "nameMissing",
+     "parameter": "nil_nombre",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "variosMissing",
+     "parameter": "nil_varios",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "nativeness",
+     "parameter": "nativeness",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "script",
+     "parameter": "script",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "elevationNilReason",
+     "parameter": "nilreason_elevacion",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "elevationMissing",
+     "parameter": "nil_elevacion",
+     "in": "query",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "f": "json"
+   },
+   "paging": {
+    "style": "offset",
+    "start": "offset",
+    "size": "limit"
+   }
+  },
+  {
+   "field": "ignStandingWater",
+   "path": "/collections/standingwater/items/{featureId}",
+   "arguments": [
+    {
+     "name": "id",
+     "parameter": "featureId",
+     "in": "path",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "f": "json"
+   }
+  },
+  {
+   "field": "ignWatercourses",
+   "path": "/collections/watercourse/items",
+   "arguments": [
+    {
+     "name": "bbox",
+     "parameter": "bbox",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "skipGeometry",
+     "parameter": "skipGeometry",
+     "in": "query",
+     "list": false,
+     "values": {
+      "true": "true",
+      "false": "false"
+     }
+    },
+    {
+     "name": "localId",
+     "parameter": "inspireid_localid",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "hydroId",
+     "parameter": "hydroid_localid",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "name",
+     "parameter": "nombre",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "linkId",
+     "parameter": "id_enlace",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "riverBasinDistrict",
+     "parameter": "id_demarc",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "riverBasinDistrictText",
+     "parameter": "id_demarcd",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "dateAdded",
+     "parameter": "fecha_alta",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "drainsBasin",
+     "parameter": "drainsbasin",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "watercourseType",
+     "parameter": "tipo_curso",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "watercourseTypeText",
+     "parameter": "tipo_cursod",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "origin",
+     "parameter": "origen",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "originText",
+     "parameter": "origend",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "persistence",
+     "parameter": "persist",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "persistenceText",
+     "parameter": "persistd",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "tidal",
+     "parameter": "marea",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "condition",
+     "parameter": "condicion",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "conditionText",
+     "parameter": "condiciond",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "source",
+     "parameter": "fuente",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "sourceText",
+     "parameter": "fuented",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "order",
+     "parameter": "orden",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "orderScheme",
+     "parameter": "orden_esq",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "orderSchemeText",
+     "parameter": "orden_esqd",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "orderScope",
+     "parameter": "orden_amb",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "orderScopeText",
+     "parameter": "orden_ambd",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "widthMax",
+     "parameter": "ancho_max",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "widthMaxText",
+     "parameter": "ancho_maxd",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "widthMin",
+     "parameter": "ancho_min",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "widthMinText",
+     "parameter": "ancho_mind",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "channelled",
+     "parameter": "canaliza",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "hierarchy",
+     "parameter": "jerarquia",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "hierarchyText",
+     "parameter": "jerarquiad",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "segmentType",
+     "parameter": "tipo_tramo",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "segmentTypeText",
+     "parameter": "tipo_tramod",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "networkType",
+     "parameter": "tipo_red",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "fictitious",
+     "parameter": "ficticio",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "situation",
+     "parameter": "situacion",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "situationText",
+     "parameter": "situaciond",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "resolution",
+     "parameter": "resolucion",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "delineationKnown",
+     "parameter": "delineation_known",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "lengthMetres",
+     "parameter": "longitud",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "areaSquareMetres",
+     "parameter": "area",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "elevationSource",
+     "parameter": "origen_z",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "elevationSourceText",
+     "parameter": "origen_zd",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "nameNilReason",
+     "parameter": "nilreason_nombre",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "variosNilReason",
+     "parameter": "nilreason_varios",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "nameMissing",
+     "parameter": "nil_nombre",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "variosMissing",
+     "parameter": "nil_varios",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "nativeness",
+     "parameter": "nativeness",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "script",
+     "parameter": "script",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "orderNilReason",
+     "parameter": "nilreason_orden",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "orderMissing",
+     "parameter": "nil_orden",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "delineationKnownNilReason",
+     "parameter": "nilreason_delineation_known",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "delineationKnownMissing",
+     "parameter": "nil_delineation_known",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "anchoNilReason",
+     "parameter": "nilreason_ancho",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "anchoMissing",
+     "parameter": "nil_ancho",
+     "in": "query",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "f": "json"
+   },
+   "paging": {
+    "style": "offset",
+    "start": "offset",
+    "size": "limit"
+   }
+  },
+  {
+   "field": "ignWatercourse",
+   "path": "/collections/watercourse/items/{featureId}",
+   "arguments": [
+    {
+     "name": "id",
+     "parameter": "featureId",
+     "in": "path",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "f": "json"
+   }
+  },
+  {
+   "field": "ignWetlands",
+   "path": "/collections/wetland/items",
+   "arguments": [
+    {
+     "name": "bbox",
+     "parameter": "bbox",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "skipGeometry",
+     "parameter": "skipGeometry",
+     "in": "query",
+     "list": false,
+     "values": {
+      "true": "true",
+      "false": "false"
+     }
+    },
+    {
+     "name": "localId",
+     "parameter": "inspireid_localid",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "hydroId",
+     "parameter": "hydroid_localid",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "name",
+     "parameter": "nombre",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "dateAdded",
+     "parameter": "fecha_alta",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "riverBasinDistrict",
+     "parameter": "id_demarc",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "riverBasinDistrictText",
+     "parameter": "id_demarcd",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "wetlandType",
+     "parameter": "tipo_zhum",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "kind",
+     "parameter": "tipo",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "source",
+     "parameter": "fuente",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "sourceText",
+     "parameter": "fuented",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "tidal",
+     "parameter": "marea",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "resolution",
+     "parameter": "resolucion",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "areaSquareMetres",
+     "parameter": "area",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "nameNilReason",
+     "parameter": "nilreason_nombre",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "variosNilReason",
+     "parameter": "nilreason_varios",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "nameMissing",
+     "parameter": "nil_nombre",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "variosMissing",
+     "parameter": "nil_varios",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "nativeness",
+     "parameter": "nativeness",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "script",
+     "parameter": "script",
+     "in": "query",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "f": "json"
+   },
+   "paging": {
+    "style": "offset",
+    "start": "offset",
+    "size": "limit"
+   }
+  },
+  {
+   "field": "ignAerodromeAreas",
+   "path": "/collections/aerodromearea/items",
+   "arguments": [
+    {
+     "name": "bbox",
+     "parameter": "bbox",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "skipGeometry",
+     "parameter": "skipGeometry",
+     "in": "query",
+     "list": false,
+     "values": {
+      "true": "true",
+      "false": "false"
+     }
+    },
+    {
+     "name": "localId",
+     "parameter": "localid",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "aerodromeType",
+     "parameter": "aerodrometype",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "aerodromeCategory",
+     "parameter": "aerodromecategory",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "aerodromeId",
+     "parameter": "id_aerodro",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "dateAdded",
+     "parameter": "fecha_alta",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "name",
+     "parameter": "nombre",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "href",
+     "parameter": "href",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "nameNilReason",
+     "parameter": "nilreason_nombre",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "variosNilReason",
+     "parameter": "nilreason_varios",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "nameMissing",
+     "parameter": "nil_nombre",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "variosMissing",
+     "parameter": "nil_varios",
+     "in": "query",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "f": "json"
+   },
+   "paging": {
+    "style": "offset",
+    "start": "offset",
+    "size": "limit"
+   }
+  },
+  {
+   "field": "ignAerodromeArea",
+   "path": "/collections/aerodromearea/items/{featureId}",
+   "arguments": [
+    {
+     "name": "id",
+     "parameter": "featureId",
+     "in": "path",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "f": "json"
+   }
+  },
+  {
+   "field": "ignAerodromes",
+   "path": "/collections/aerodromenode/items",
+   "arguments": [
+    {
+     "name": "bbox",
+     "parameter": "bbox",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "skipGeometry",
+     "parameter": "skipGeometry",
+     "in": "query",
+     "list": false,
+     "values": {
+      "true": "true",
+      "false": "false"
+     }
+    },
+    {
+     "name": "localId",
+     "parameter": "localid",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "currentStatus",
+     "parameter": "currentstatus",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "aerodromeType",
+     "parameter": "aerodrometype",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "aerodromeCategory",
+     "parameter": "aerodromecategory",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "altitude",
+     "parameter": "altitude",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "altitudeUnit",
+     "parameter": "altitude_uom",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "aerodromeId",
+     "parameter": "id_aerodro",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "name",
+     "parameter": "nombre",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "iataCode",
+     "parameter": "cod_iata",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "icaoCode",
+     "parameter": "cod_icao",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "dateAdded",
+     "parameter": "fecha_alta",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "iataCodeNilReason",
+     "parameter": "nilreason_cod_iata",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "icaoCodeNilReason",
+     "parameter": "nilreason_cod_icao",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "iataCodeMissing",
+     "parameter": "nil_cod_iata",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "icaoCodeMissing",
+     "parameter": "nil_cod_icao",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "nameNilReason",
+     "parameter": "nilreason_nombre",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "variosNilReason",
+     "parameter": "nilreason_varios",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "nameMissing",
+     "parameter": "nil_nombre",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "variosMissing",
+     "parameter": "nil_varios",
+     "in": "query",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "f": "json"
+   },
+   "paging": {
+    "style": "offset",
+    "start": "offset",
+    "size": "limit"
+   }
+  },
+  {
+   "field": "ignAerodrome",
+   "path": "/collections/aerodromenode/items/{featureId}",
+   "arguments": [
+    {
+     "name": "id",
+     "parameter": "featureId",
+     "in": "path",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "f": "json"
+   }
+  },
+  {
+   "field": "ignApronAreas",
+   "path": "/collections/apronarea/items",
+   "arguments": [
+    {
+     "name": "bbox",
+     "parameter": "bbox",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "skipGeometry",
+     "parameter": "skipGeometry",
+     "in": "query",
+     "list": false,
+     "values": {
+      "true": "true",
+      "false": "false"
+     }
+    },
+    {
+     "name": "localId",
+     "parameter": "localid",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "aerodromeId",
+     "parameter": "id_aerodro",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "dateAdded",
+     "parameter": "fecha_alta",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "name",
+     "parameter": "nombre",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "surface",
+     "parameter": "surfacecomposition",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "nameNilReason",
+     "parameter": "nilreason_nombre",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "variosNilReason",
+     "parameter": "nilreason_varios",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "nameMissing",
+     "parameter": "nil_nombre",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "variosMissing",
+     "parameter": "nil_varios",
+     "in": "query",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "f": "json"
+   },
+   "paging": {
+    "style": "offset",
+    "start": "offset",
+    "size": "limit"
+   }
+  },
+  {
+   "field": "ignApronArea",
+   "path": "/collections/apronarea/items/{featureId}",
+   "arguments": [
+    {
+     "name": "id",
+     "parameter": "featureId",
+     "in": "path",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "f": "json"
+   }
+  },
+  {
+   "field": "ignRunways",
+   "path": "/collections/runwayarea/items",
+   "arguments": [
+    {
+     "name": "bbox",
+     "parameter": "bbox",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "skipGeometry",
+     "parameter": "skipGeometry",
+     "in": "query",
+     "list": false,
+     "values": {
+      "true": "true",
+      "false": "false"
+     }
+    },
+    {
+     "name": "localId",
+     "parameter": "localid",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "aerodromeId",
+     "parameter": "id_aerodro",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "dateAdded",
+     "parameter": "fecha_alta",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "name",
+     "parameter": "nombre",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "designator",
+     "parameter": "designador",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "runwayType",
+     "parameter": "tip_pista",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "length",
+     "parameter": "length",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "width",
+     "parameter": "width",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "surface",
+     "parameter": "surfacecomposition",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "lengthUnit",
+     "parameter": "lenght_uom",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "widthUnit",
+     "parameter": "width_uom",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "nameNilReason",
+     "parameter": "nilreason_nombre",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "variosNilReason",
+     "parameter": "nilreason_varios",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "nameMissing",
+     "parameter": "nil_nombre",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "variosMissing",
+     "parameter": "nil_varios",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "designatorNilReason",
+     "parameter": "nilreason_designador",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "designatorMissing",
+     "parameter": "nil_designador",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "runwayTypeNilReason",
+     "parameter": "nilreason_tip_pista",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "runwayTypeMissing",
+     "parameter": "nil_tip_pista",
+     "in": "query",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "f": "json"
+   },
+   "paging": {
+    "style": "offset",
+    "start": "offset",
+    "size": "limit"
+   }
+  },
+  {
+   "field": "ignRunway",
+   "path": "/collections/runwayarea/items/{featureId}",
+   "arguments": [
+    {
+     "name": "id",
+     "parameter": "featureId",
+     "in": "path",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "f": "json"
+   }
+  },
+  {
+   "field": "ignTaxiways",
+   "path": "/collections/taxiwayarea/items",
+   "arguments": [
+    {
+     "name": "bbox",
+     "parameter": "bbox",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "skipGeometry",
+     "parameter": "skipGeometry",
+     "in": "query",
+     "list": false,
+     "values": {
+      "true": "true",
+      "false": "false"
+     }
+    },
+    {
+     "name": "localId",
+     "parameter": "localid",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "aerodromeId",
+     "parameter": "id_aerodro",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "dateAdded",
+     "parameter": "fecha_alta",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "name",
+     "parameter": "nombre",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "designator",
+     "parameter": "designador",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "surface",
+     "parameter": "surfacecomposition",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "length",
+     "parameter": "length",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "width",
+     "parameter": "width",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "lengthUnit",
+     "parameter": "lenght_uom",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "widthUnit",
+     "parameter": "width_uom",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "nameNilReason",
+     "parameter": "nilreason_nombre",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "variosNilReason",
+     "parameter": "nilreason_varios",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "nameMissing",
+     "parameter": "nil_nombre",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "variosMissing",
+     "parameter": "nil_varios",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "designatorNilReason",
+     "parameter": "nilreason_designador",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "designatorMissing",
+     "parameter": "nil_designador",
+     "in": "query",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "f": "json"
+   },
+   "paging": {
+    "style": "offset",
+    "start": "offset",
+    "size": "limit"
+   }
+  },
+  {
+   "field": "ignTaxiway",
+   "path": "/collections/taxiwayarea/items/{featureId}",
+   "arguments": [
+    {
+     "name": "id",
+     "parameter": "featureId",
+     "in": "path",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "f": "json"
+   }
+  },
+  {
+   "field": "ignCablewayLinks",
+   "path": "/collections/cablewaylink/items",
+   "arguments": [
+    {
+     "name": "bbox",
+     "parameter": "bbox",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "skipGeometry",
+     "parameter": "skipGeometry",
+     "in": "query",
+     "list": false,
+     "values": {
+      "true": "true",
+      "false": "false"
+     }
+    },
+    {
+     "name": "localId",
+     "parameter": "localid",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "cablewayId",
+     "parameter": "id_cable",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "name",
+     "parameter": "nombre",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "dateAdded",
+     "parameter": "fecha_alta",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "cablewayType",
+     "parameter": "tipo_cable",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "linkSetId",
+     "parameter": "id_linkset",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "nameNilReason",
+     "parameter": "nilreason_nombre",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "nameMissing",
+     "parameter": "nil_nombre",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "variosNilReason",
+     "parameter": "nilreason_varios",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "variosMissing",
+     "parameter": "nil_varios",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "href",
+     "parameter": "href",
+     "in": "query",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "f": "json"
+   },
+   "paging": {
+    "style": "offset",
+    "start": "offset",
+    "size": "limit"
+   }
+  },
+  {
+   "field": "ignCablewayLink",
+   "path": "/collections/cablewaylink/items/{featureId}",
+   "arguments": [
+    {
+     "name": "id",
+     "parameter": "featureId",
+     "in": "path",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "f": "json"
+   }
+  },
+  {
+   "field": "ignCablewayNodes",
+   "path": "/collections/cablewaynode/items",
+   "arguments": [
+    {
+     "name": "bbox",
+     "parameter": "bbox",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "skipGeometry",
+     "parameter": "skipGeometry",
+     "in": "query",
+     "list": false,
+     "values": {
+      "true": "true",
+      "false": "false"
+     }
+    },
+    {
+     "name": "localId",
+     "parameter": "localid",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "cablewayNodeId",
+     "parameter": "id_nodoc",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "source",
+     "parameter": "fuente",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "dateAdded",
+     "parameter": "fecha_alta",
+     "in": "query",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "f": "json"
+   },
+   "paging": {
+    "style": "offset",
+    "start": "offset",
+    "size": "limit"
+   }
+  },
+  {
+   "field": "ignCablewayNode",
+   "path": "/collections/cablewaynode/items/{featureId}",
+   "arguments": [
+    {
+     "name": "id",
+     "parameter": "featureId",
+     "in": "path",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "f": "json"
+   }
+  },
+  {
+   "field": "ignRailwayLinks",
+   "path": "/collections/railwaylink/items",
+   "arguments": [
+    {
+     "name": "bbox",
+     "parameter": "bbox",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "skipGeometry",
+     "parameter": "skipGeometry",
+     "in": "query",
+     "list": false,
+     "values": {
+      "true": "true",
+      "false": "false"
+     }
+    },
+    {
+     "name": "localId",
+     "parameter": "localid",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "segmentId",
+     "parameter": "id_tramo",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "fictitious",
+     "parameter": "fictitious",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "href",
+     "parameter": "href",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "gaugeCategory",
+     "parameter": "nominalgaugecategory",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "tracks",
+     "parameter": "numberoftracks",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "electrified",
+     "parameter": "electrified",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "dateAdded",
+     "parameter": "fecha_alta",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "gauge",
+     "parameter": "nominalgauge",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "gaugeUnit",
+     "parameter": "nominalgauge_uom",
+     "in": "query",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "f": "json"
+   },
+   "paging": {
+    "style": "offset",
+    "start": "offset",
+    "size": "limit"
+   }
+  },
+  {
+   "field": "ignRailwayLink",
+   "path": "/collections/railwaylink/items/{featureId}",
+   "arguments": [
+    {
+     "name": "id",
+     "parameter": "featureId",
+     "in": "path",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "f": "json"
+   }
+  },
+  {
+   "field": "ignRailwayNodes",
+   "path": "/collections/railwaynode/items",
+   "arguments": [
+    {
+     "name": "bbox",
+     "parameter": "bbox",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "skipGeometry",
+     "parameter": "skipGeometry",
+     "in": "query",
+     "list": false,
+     "values": {
+      "true": "true",
+      "false": "false"
+     }
+    },
+    {
+     "name": "localId",
+     "parameter": "localid",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "nodeId",
+     "parameter": "id",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "nodeType",
+     "parameter": "tip_nodo",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "dateModified",
+     "parameter": "fecha_modif",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "tipNodofcNilReason",
+     "parameter": "nilreason_tip_nodofc",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "tipNodofcMissing",
+     "parameter": "nil_tip_nodofc",
+     "in": "query",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "f": "json"
+   },
+   "paging": {
+    "style": "offset",
+    "start": "offset",
+    "size": "limit"
+   }
+  },
+  {
+   "field": "ignRailwayNode",
+   "path": "/collections/railwaynode/items/{featureId}",
+   "arguments": [
+    {
+     "name": "id",
+     "parameter": "featureId",
+     "in": "path",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "f": "json"
+   }
+  },
+  {
+   "field": "ignRailwayStationAreas",
+   "path": "/collections/railwaystationarea/items",
+   "arguments": [
+    {
+     "name": "bbox",
+     "parameter": "bbox",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "skipGeometry",
+     "parameter": "skipGeometry",
+     "in": "query",
+     "list": false,
+     "values": {
+      "true": "true",
+      "false": "false"
+     }
+    },
+    {
+     "name": "localId",
+     "parameter": "localid",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "stationAreaId",
+     "parameter": "id_areafc",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "stationId",
+     "parameter": "id_estfc",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "dateAdded",
+     "parameter": "fecha_alta",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "name",
+     "parameter": "nombre",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "nameNilReason",
+     "parameter": "nilreason_nombre",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "variosNilReason",
+     "parameter": "nilreason_varios",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "nameMissing",
+     "parameter": "nil_nombre",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "variosMissing",
+     "parameter": "nil_varios",
+     "in": "query",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "f": "json"
+   },
+   "paging": {
+    "style": "offset",
+    "start": "offset",
+    "size": "limit"
+   }
+  },
+  {
+   "field": "ignRailwayStationArea",
+   "path": "/collections/railwaystationarea/items/{featureId}",
+   "arguments": [
+    {
+     "name": "id",
+     "parameter": "featureId",
+     "in": "path",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "f": "json"
+   }
+  },
+  {
+   "field": "ignRailwayStations",
+   "path": "/collections/railwaystationnode/items",
+   "arguments": [
+    {
+     "name": "bbox",
+     "parameter": "bbox",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "skipGeometry",
+     "parameter": "skipGeometry",
+     "in": "query",
+     "list": false,
+     "values": {
+      "true": "true",
+      "false": "false"
+     }
+    },
+    {
+     "name": "localId",
+     "parameter": "localid",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "stationId",
+     "parameter": "id_estfc",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "stationCode",
+     "parameter": "stationcode",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "name",
+     "parameter": "nombre",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "platforms",
+     "parameter": "n_andenes",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "use",
+     "parameter": "use",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "dateAdded",
+     "parameter": "fecha_alta",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "formOfNode",
+     "parameter": "formofnode",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "nameNilReason",
+     "parameter": "nilreason_nombre",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "nameMissing",
+     "parameter": "nil_nombre",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "variosNilReason",
+     "parameter": "nilreason_varios",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "variosMissing",
+     "parameter": "nil_varios",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "platformsNilReason",
+     "parameter": "nilreason_n_andenes",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "platformsMissing",
+     "parameter": "nil_n_andenes",
+     "in": "query",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "f": "json"
+   },
+   "paging": {
+    "style": "offset",
+    "start": "offset",
+    "size": "limit"
+   }
+  },
+  {
+   "field": "ignRailwayStation",
+   "path": "/collections/railwaystationnode/items/{featureId}",
+   "arguments": [
+    {
+     "name": "id",
+     "parameter": "featureId",
+     "in": "path",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "f": "json"
+   }
+  },
+  {
+   "field": "ignRoadLinks",
+   "path": "/collections/roadlink/items",
+   "arguments": [
+    {
+     "name": "bbox",
+     "parameter": "bbox",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "skipGeometry",
+     "parameter": "skipGeometry",
+     "in": "query",
+     "list": false,
+     "values": {
+      "true": "true",
+      "false": "false"
+     }
+    },
+    {
+     "name": "localId",
+     "parameter": "localid",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "segmentId",
+     "parameter": "id_tramo",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "fictitious",
+     "parameter": "fictitious",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "functionalClass",
+     "parameter": "functionalclass",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "lanes",
+     "parameter": "numberoflanes",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "surfaceCategory",
+     "parameter": "surfacecategory",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "href",
+     "parameter": "href",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "dateAdded",
+     "parameter": "fecha_alta",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "formOfWay",
+     "parameter": "formofway_href",
+     "in": "query",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "f": "json"
+   },
+   "paging": {
+    "style": "offset",
+    "start": "offset",
+    "size": "limit"
+   }
+  },
+  {
+   "field": "ignRoadLink",
+   "path": "/collections/roadlink/items/{featureId}",
+   "arguments": [
+    {
+     "name": "id",
+     "parameter": "featureId",
+     "in": "path",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "f": "json"
+   }
+  },
+  {
+   "field": "ignRoadNodes",
+   "path": "/collections/roadnode/items",
+   "arguments": [
+    {
+     "name": "bbox",
+     "parameter": "bbox",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "skipGeometry",
+     "parameter": "skipGeometry",
+     "in": "query",
+     "list": false,
+     "values": {
+      "true": "true",
+      "false": "false"
+     }
+    },
+    {
+     "name": "localId",
+     "parameter": "localid",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "nodeId",
+     "parameter": "id",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "nodeType",
+     "parameter": "tip_nodo",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "dateModified",
+     "parameter": "fecha_modif",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "nodeTypeNilReason",
+     "parameter": "nilreason_tip_nodo",
+     "in": "query",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "f": "json"
+   },
+   "paging": {
+    "style": "offset",
+    "start": "offset",
+    "size": "limit"
+   }
+  },
+  {
+   "field": "ignRoadNode",
+   "path": "/collections/roadnode/items/{featureId}",
+   "arguments": [
+    {
+     "name": "id",
+     "parameter": "featureId",
+     "in": "path",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "f": "json"
+   }
+  },
+  {
+   "field": "ignRoadServiceAreas",
+   "path": "/collections/roadservicearea/items",
+   "arguments": [
+    {
+     "name": "bbox",
+     "parameter": "bbox",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "skipGeometry",
+     "parameter": "skipGeometry",
+     "in": "query",
+     "list": false,
+     "values": {
+      "true": "true",
+      "false": "false"
+     }
+    },
+    {
+     "name": "localId",
+     "parameter": "localid",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "serviceAreaId",
+     "parameter": "id_areactr",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "roadPointId",
+     "parameter": "id_ptoctra",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "dateAdded",
+     "parameter": "fecha_alta",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "name",
+     "parameter": "nombre",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "serviceType",
+     "parameter": "type",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "nameNilReason",
+     "parameter": "nilreason_nombre",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "variosNilReason",
+     "parameter": "nilreason_varios",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "nameMissing",
+     "parameter": "nil_nombre",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "variosMissing",
+     "parameter": "nil_varios",
+     "in": "query",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "f": "json"
+   },
+   "paging": {
+    "style": "offset",
+    "start": "offset",
+    "size": "limit"
+   }
+  },
+  {
+   "field": "ignRoadServiceArea",
+   "path": "/collections/roadservicearea/items/{featureId}",
+   "arguments": [
+    {
+     "name": "id",
+     "parameter": "featureId",
+     "in": "path",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "f": "json"
+   }
+  },
+  {
+   "field": "ignPortAreas",
+   "path": "/collections/portarea/items",
+   "arguments": [
+    {
+     "name": "bbox",
+     "parameter": "bbox",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "skipGeometry",
+     "parameter": "skipGeometry",
+     "in": "query",
+     "list": false,
+     "values": {
+      "true": "true",
+      "false": "false"
+     }
+    },
+    {
+     "name": "localId",
+     "parameter": "localid",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "portAreaId",
+     "parameter": "id_areamar",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "href",
+     "parameter": "href",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "dateAdded",
+     "parameter": "fecha_alta",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "name",
+     "parameter": "nombre",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "nameNilReason",
+     "parameter": "nilreason_nombre",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "variosNilReason",
+     "parameter": "nilreason_varios",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "nameMissing",
+     "parameter": "nil_nombre",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "variosMissing",
+     "parameter": "nil_varios",
+     "in": "query",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "f": "json"
+   },
+   "paging": {
+    "style": "offset",
+    "start": "offset",
+    "size": "limit"
+   }
+  },
+  {
+   "field": "ignPortArea",
+   "path": "/collections/portarea/items/{featureId}",
+   "arguments": [
+    {
+     "name": "id",
+     "parameter": "featureId",
+     "in": "path",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "f": "json"
+   }
+  },
+  {
+   "field": "ignPorts",
+   "path": "/collections/portnode/items",
+   "arguments": [
+    {
+     "name": "bbox",
+     "parameter": "bbox",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "skipGeometry",
+     "parameter": "skipGeometry",
+     "in": "query",
+     "list": false,
+     "values": {
+      "true": "true",
+      "false": "false"
+     }
+    },
+    {
+     "name": "localId",
+     "parameter": "localid",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "portId",
+     "parameter": "id_puerto",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "name",
+     "parameter": "nombre",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "dateAdded",
+     "parameter": "fecha_alta",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "href",
+     "parameter": "href",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "portStationId",
+     "parameter": "id_esta_ma",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "physicalCondition",
+     "parameter": "estadofis",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "currentStatus",
+     "parameter": "currentstatus",
+     "in": "query",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "f": "json"
+   },
+   "paging": {
+    "style": "offset",
+    "start": "offset",
+    "size": "limit"
+   }
+  },
+  {
+   "field": "ignPort",
+   "path": "/collections/portnode/items/{featureId}",
+   "arguments": [
+    {
+     "name": "id",
+     "parameter": "featureId",
+     "in": "path",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "f": "json"
+   }
+  },
+  {
+   "field": "ignWaterwayLinks",
+   "path": "/collections/waterwaylink/items",
+   "arguments": [
+    {
+     "name": "bbox",
+     "parameter": "bbox",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "skipGeometry",
+     "parameter": "skipGeometry",
+     "in": "query",
+     "list": false,
+     "values": {
+      "true": "true",
+      "false": "false"
+     }
+    },
+    {
+     "name": "localId",
+     "parameter": "localid",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "waterwayId",
+     "parameter": "id_linmar",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "href",
+     "parameter": "href",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "dateAdded",
+     "parameter": "fecha_alta",
+     "in": "query",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "f": "json"
+   },
+   "paging": {
+    "style": "offset",
+    "start": "offset",
+    "size": "limit"
+   }
+  },
+  {
+   "field": "ignWaterwayLink",
+   "path": "/collections/waterwaylink/items/{featureId}",
+   "arguments": [
+    {
+     "name": "id",
+     "parameter": "featureId",
+     "in": "path",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "f": "json"
+   }
+  },
+  {
+   "field": "ignWaterwayNodes",
+   "path": "/collections/waterwaynode/items",
+   "arguments": [
+    {
+     "name": "bbox",
+     "parameter": "bbox",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "skipGeometry",
+     "parameter": "skipGeometry",
+     "in": "query",
+     "list": false,
+     "values": {
+      "true": "true",
+      "false": "false"
+     }
+    },
+    {
+     "name": "localId",
+     "parameter": "localid",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "waterwayNodeId",
+     "parameter": "id_nodomar",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "dateAdded",
+     "parameter": "fecha_alta",
+     "in": "query",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "f": "json"
+   },
+   "paging": {
+    "style": "offset",
+    "start": "offset",
+    "size": "limit"
+   }
+  },
+  {
+   "field": "ignWaterwayNode",
+   "path": "/collections/waterwaynode/items/{featureId}",
+   "arguments": [
+    {
+     "name": "id",
+     "parameter": "featureId",
+     "in": "path",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "f": "json"
+   }
+  },
+  {
+   "field": "ignKilometrePosts",
+   "path": "/collections/markerpost/items",
+   "arguments": [
+    {
+     "name": "bbox",
+     "parameter": "bbox",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "skipGeometry",
+     "parameter": "skipGeometry",
+     "in": "query",
+     "list": false,
+     "values": {
+      "true": "true",
+      "false": "false"
+     }
+    },
+    {
+     "name": "localId",
+     "parameter": "localid",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "roadId",
+     "parameter": "localid_vial",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "segmentId",
+     "parameter": "localid_tramo",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "href",
+     "parameter": "href",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "postId",
+     "parameter": "id_pk",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "number",
+     "parameter": "numero",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "postType",
+     "parameter": "tipo_porpk",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "direction",
+     "parameter": "sentidopk",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "dateAdded",
+     "parameter": "fecha_alta",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "roadHref",
+     "parameter": "href_vial",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "directionNilReason",
+     "parameter": "nilreason_sentidopk",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "directionMissing",
+     "parameter": "nil_sentidopk",
+     "in": "query",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "f": "json"
+   },
+   "paging": {
+    "style": "offset",
+    "start": "offset",
+    "size": "limit"
+   }
+  },
+  {
+   "field": "ignKilometrePost",
+   "path": "/collections/markerpost/items/{featureId}",
+   "arguments": [
+    {
+     "name": "id",
+     "parameter": "featureId",
+     "in": "path",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "f": "json"
+   }
+  }
+ ],
+ "fields": {
+  "IgnAddress": {
+   "id": {
+    "key": "id",
+    "conversion": "identifier"
+   },
+   "previousId": {
+    "key": "prev",
+    "conversion": "text"
+   },
+   "nextId": {
+    "key": "next",
+    "conversion": "text"
+   },
+   "localId": {
+    "key": "properties/inspireId_localId"
+   },
+   "namespace": {
+    "key": "properties/inspireId_namespace"
+   },
+   "thoroughfareName": {
+    "key": "properties/component_ThoroughfareName"
+   },
+   "addressNumber": {
+    "key": "properties/locator_designator_addressNumber"
+   },
+   "addressNumberExtension": {
+    "key": "properties/locator_designator_addressNumberExtension"
+   },
+   "postalCode": {
+    "key": "properties/component_PostalDescriptor"
+   },
+   "addressArea": {
+    "key": "properties/component_AddressAreaName"
+   },
+   "municipality": {
+    "key": "properties/component_AdminUnitName_4"
+   },
+   "province": {
+    "key": "properties/component_AdminUnitName_3"
+   },
+   "region": {
+    "key": "properties/component_AdminUnitName_2"
+   },
+   "validSince": {
+    "key": "properties/beginLifespanVersion"
+   },
+   "dataProvider": {
+    "key": "properties/dataProvider"
+   }
+  },
+  "IgnAddressPage": {
+   "matched": {
+    "key": "numberMatched"
+   },
+   "returned": {
+    "key": "numberReturned"
+   }
+  },
+  "IgnLandUseDataset": {
+   "id": {
+    "key": "id",
+    "conversion": "identifier"
+   },
+   "previousId": {
+    "key": "prev",
+    "conversion": "text"
+   },
+   "nextId": {
+    "key": "next",
+    "conversion": "text"
+   },
+   "localId": {
+    "key": "properties/inspireid_localid"
+   },
+   "namespace": {
+    "key": "properties/inspireid_namespace"
+   },
+   "versionId": {
+    "key": "properties/inspireid_versionid"
+   },
+   "name": {
+    "key": "properties/name"
+   },
+   "validSince": {
+    "key": "properties/beginlifespanversion"
+   },
+   "validUntil": {
+    "key": "properties/endlifespanversion"
+   },
+   "validFrom": {
+    "key": "properties/validfrom"
+   },
+   "validTo": {
+    "key": "properties/validto"
+   }
+  },
+  "IgnLandUseDatasetPage": {
+   "matched": {
+    "key": "numberMatched"
+   },
+   "returned": {
+    "key": "numberReturned"
+   }
+  },
+  "IgnLandUseArea": {
+   "id": {
+    "key": "id",
+    "conversion": "identifier"
+   },
+   "previousId": {
+    "key": "prev",
+    "conversion": "text"
+   },
+   "nextId": {
+    "key": "next",
+    "conversion": "text"
+   },
+   "localId": {
+    "key": "properties/inspireid_localid"
+   },
+   "namespace": {
+    "key": "properties/inspireid_namespace"
+   },
+   "versionId": {
+    "key": "properties/inspireid_versionid"
+   },
+   "landUse": {
+    "key": "properties/hilucslanduse"
+   },
+   "observed": {
+    "key": "properties/observationdate"
+   },
+   "validSince": {
+    "key": "properties/beginlifespanversion"
+   },
+   "validUntil": {
+    "key": "properties/endlifespanversion"
+   },
+   "validFrom": {
+    "key": "properties/validfrom"
+   },
+   "validTo": {
+    "key": "properties/validto"
+   },
+   "href": {
+    "key": "properties/href"
+   }
+  },
+  "IgnLandUseAreaPage": {
+   "matched": {
+    "key": "numberMatched"
+   },
+   "returned": {
+    "key": "numberReturned"
+   }
+  },
+  "IgnLandCoverUnit": {
+   "id": {
+    "key": "id",
+    "conversion": "identifier"
+   },
+   "previousId": {
+    "key": "prev",
+    "conversion": "text"
+   },
+   "nextId": {
+    "key": "next",
+    "conversion": "text"
+   },
+   "localId": {
+    "key": "properties/inspireid_localid"
+   },
+   "namespace": {
+    "key": "properties/inspireid_namespace"
+   },
+   "versionId": {
+    "key": "properties/inspireid_versionid"
+   },
+   "observed": {
+    "key": "properties/landcoverobservation_observationdate"
+   },
+   "landCoverClass": {
+    "key": "properties/landcoverobservation_class"
+   },
+   "validSince": {
+    "key": "properties/beginlifespanversion"
+   },
+   "validUntil": {
+    "key": "properties/endlifespanversion"
+   }
+  },
+  "IgnLandCoverUnitPage": {
+   "matched": {
+    "key": "numberMatched"
+   },
+   "returned": {
+    "key": "numberReturned"
+   }
+  },
+  "IgnHydroNode": {
+   "id": {
+    "key": "id",
+    "conversion": "identifier"
+   },
+   "previousId": {
+    "key": "prev",
+    "conversion": "text"
+   },
+   "nextId": {
+    "key": "next",
+    "conversion": "text"
+   },
+   "localId": {
+    "key": "properties/inspireid_localid"
+   },
+   "hydroId": {
+    "key": "properties/hydroid_localid"
+   },
+   "dateAdded": {
+    "key": "properties/fecha_alta"
+   },
+   "riverBasinDistrict": {
+    "key": "properties/id_demarc"
+   },
+   "riverBasinDistrictText": {
+    "key": "properties/id_demarcd"
+   },
+   "networkId": {
+    "key": "properties/id_red"
+   },
+   "nodeId": {
+    "key": "properties/id_nodo"
+   },
+   "name": {
+    "key": "properties/nombre"
+   },
+   "nodeCategory": {
+    "key": "properties/cat_nodo"
+   },
+   "nodeCategoryText": {
+    "key": "properties/cat_nodod"
+   },
+   "elevation": {
+    "key": "properties/elevacion"
+   },
+   "source": {
+    "key": "properties/fuente"
+   },
+   "sourceText": {
+    "key": "properties/fuented"
+   },
+   "resolution": {
+    "key": "properties/resolucion"
+   },
+   "nodeCategoryNilReason": {
+    "key": "properties/nilreason_cat_nodo"
+   },
+   "nameNilReason": {
+    "key": "properties/nilreason_nombre"
+   },
+   "variosNilReason": {
+    "key": "properties/nilreason_varios"
+   },
+   "nameMissing": {
+    "key": "properties/nil_nombre"
+   },
+   "variosMissing": {
+    "key": "properties/nil_varios"
+   },
+   "nativeness": {
+    "key": "properties/nativeness"
+   },
+   "script": {
+    "key": "properties/script"
+   }
+  },
+  "IgnHydroNodePage": {
+   "matched": {
+    "key": "numberMatched"
+   },
+   "returned": {
+    "key": "numberReturned"
+   }
+  },
+  "IgnWatercourseLink": {
+   "id": {
+    "key": "id",
+    "conversion": "identifier"
+   },
+   "previousId": {
+    "key": "prev",
+    "conversion": "text"
+   },
+   "nextId": {
+    "key": "next",
+    "conversion": "text"
+   },
+   "localId": {
+    "key": "properties/inspireid_localid"
+   },
+   "hydroId": {
+    "key": "properties/hydroid_localid"
+   },
+   "dateAdded": {
+    "key": "properties/fecha_alta"
+   },
+   "riverBasinDistrict": {
+    "key": "properties/id_demarc"
+   },
+   "riverBasinDistrictText": {
+    "key": "properties/id_demarcd"
+   },
+   "networkId": {
+    "key": "properties/id_red"
+   },
+   "segmentId": {
+    "key": "properties/id_tramo"
+   },
+   "leftSegment": {
+    "key": "properties/tramo_izda"
+   },
+   "rightSegment": {
+    "key": "properties/tramo_dcha"
+   },
+   "startNode": {
+    "key": "properties/nodo_ini"
+   },
+   "endNode": {
+    "key": "properties/nodo_fin"
+   },
+   "flowDirection": {
+    "key": "properties/dir_flujo"
+   },
+   "flowDirectionText": {
+    "key": "properties/dir_flujod"
+   },
+   "fictitious": {
+    "key": "properties/ficticio"
+   },
+   "watercourseId": {
+    "key": "properties/id_curso"
+   },
+   "name": {
+    "key": "properties/nombre"
+   },
+   "source": {
+    "key": "properties/fuente"
+   },
+   "sourceText": {
+    "key": "properties/fuented"
+   },
+   "lengthMetres": {
+    "key": "properties/longitud"
+   },
+   "resolution": {
+    "key": "properties/resolucion"
+   },
+   "nameNilReason": {
+    "key": "properties/nilreason_nombre"
+   },
+   "variosNilReason": {
+    "key": "properties/nilreason_varios"
+   },
+   "nameMissing": {
+    "key": "properties/nil_nombre"
+   },
+   "variosMissing": {
+    "key": "properties/nil_varios"
+   },
+   "nativeness": {
+    "key": "properties/nativeness"
+   },
+   "script": {
+    "key": "properties/script"
+   }
+  },
+  "IgnWatercourseLinkPage": {
+   "matched": {
+    "key": "numberMatched"
+   },
+   "returned": {
+    "key": "numberReturned"
+   }
+  },
+  "IgnWatercourseLinkSequence": {
+   "id": {
+    "key": "id",
+    "conversion": "identifier"
+   },
+   "previousId": {
+    "key": "prev",
+    "conversion": "text"
+   },
+   "nextId": {
+    "key": "next",
+    "conversion": "text"
+   },
+   "localId": {
+    "key": "properties/inspireid_localid"
+   },
+   "hydroId": {
+    "key": "properties/hydroid_localid"
+   },
+   "dateAdded": {
+    "key": "properties/fecha_alta"
+   },
+   "riverBasinDistrict": {
+    "key": "properties/id_demarc"
+   },
+   "riverBasinDistrictText": {
+    "key": "properties/id_demarcd"
+   },
+   "watercourseId": {
+    "key": "properties/id_curso"
+   },
+   "networkId": {
+    "key": "properties/id_red"
+   },
+   "name": {
+    "key": "properties/nombre"
+   },
+   "source": {
+    "key": "properties/fuente"
+   },
+   "sourceText": {
+    "key": "properties/fuented"
+   },
+   "lengthMetres": {
+    "key": "properties/longitud"
+   },
+   "resolution": {
+    "key": "properties/resolucion"
+   },
+   "nameNilReason": {
+    "key": "properties/nilreason_nombre"
+   },
+   "variosNilReason": {
+    "key": "properties/nilreason_varios"
+   },
+   "nameMissing": {
+    "key": "properties/nil_nombre"
+   },
+   "variosMissing": {
+    "key": "properties/nil_varios"
+   },
+   "nativeness": {
+    "key": "properties/nativeness"
+   },
+   "script": {
+    "key": "properties/script"
+   }
+  },
+  "IgnWatercourseLinkSequencePage": {
+   "matched": {
+    "key": "numberMatched"
+   },
+   "returned": {
+    "key": "numberReturned"
+   }
+  },
+  "IgnWaterCrossing": {
+   "id": {
+    "key": "id",
+    "conversion": "identifier"
+   },
+   "previousId": {
+    "key": "prev",
+    "conversion": "text"
+   },
+   "nextId": {
+    "key": "next",
+    "conversion": "text"
+   },
+   "localId": {
+    "key": "properties/inspireid_localid"
+   },
+   "hydroId": {
+    "key": "properties/hydroid_localid"
+   },
+   "name": {
+    "key": "properties/nombre"
+   },
+   "source": {
+    "key": "properties/fuente"
+   },
+   "sourceText": {
+    "key": "properties/fuented"
+   },
+   "riverBasinDistrict": {
+    "key": "properties/id_demarc"
+   },
+   "riverBasinDistrictText": {
+    "key": "properties/id_demarcd"
+   },
+   "dateAdded": {
+    "key": "properties/fecha_alta"
+   },
+   "crossingType": {
+    "key": "properties/tipo_cruce"
+   },
+   "crossingTypeText": {
+    "key": "properties/tipo_cruced"
+   },
+   "nodeId": {
+    "key": "properties/id_nodo"
+   },
+   "buildingId": {
+    "key": "properties/id_edif"
+   },
+   "condition": {
+    "key": "properties/condicion"
+   },
+   "conditionText": {
+    "key": "properties/condiciond"
+   },
+   "resolution": {
+    "key": "properties/resolucion"
+   },
+   "nameNilReason": {
+    "key": "properties/nilreason_nombre"
+   },
+   "variosNilReason": {
+    "key": "properties/nilreason_varios"
+   },
+   "nameMissing": {
+    "key": "properties/nil_nombre"
+   },
+   "variosMissing": {
+    "key": "properties/nil_varios"
+   },
+   "nativeness": {
+    "key": "properties/nativeness"
+   },
+   "script": {
+    "key": "properties/script"
+   }
+  },
+  "IgnWaterCrossingPage": {
+   "matched": {
+    "key": "numberMatched"
+   },
+   "returned": {
+    "key": "numberReturned"
+   }
+  },
+  "IgnDam": {
+   "id": {
+    "key": "id",
+    "conversion": "identifier"
+   },
+   "previousId": {
+    "key": "prev",
+    "conversion": "text"
+   },
+   "nextId": {
+    "key": "next",
+    "conversion": "text"
+   },
+   "localId": {
+    "key": "properties/inspireid_localid"
+   },
+   "hydroId": {
+    "key": "properties/hydroid_localid"
+   },
+   "name": {
+    "key": "properties/nombre"
+   },
+   "source": {
+    "key": "properties/fuente"
+   },
+   "sourceText": {
+    "key": "properties/fuented"
+   },
+   "riverBasinDistrict": {
+    "key": "properties/id_demarc"
+   },
+   "riverBasinDistrictText": {
+    "key": "properties/id_demarcd"
+   },
+   "dateAdded": {
+    "key": "properties/fecha_alta"
+   },
+   "damType": {
+    "key": "properties/tipo_presa"
+   },
+   "damTypeText": {
+    "key": "properties/tipo_presad"
+   },
+   "nodeId": {
+    "key": "properties/id_nodo"
+   },
+   "buildingId": {
+    "key": "properties/id_edif"
+   },
+   "crestElevation": {
+    "key": "properties/z_coron"
+   },
+   "material": {
+    "key": "properties/material"
+   },
+   "materialText": {
+    "key": "properties/materiald"
+   },
+   "condition": {
+    "key": "properties/condicion"
+   },
+   "conditionText": {
+    "key": "properties/condiciond"
+   },
+   "resolution": {
+    "key": "properties/resolucion"
+   },
+   "crestLength": {
+    "key": "properties/long_coron"
+   },
+   "nameNilReason": {
+    "key": "properties/nilreason_nombre"
+   },
+   "variosNilReason": {
+    "key": "properties/nilreason_varios"
+   },
+   "nameMissing": {
+    "key": "properties/nil_nombre"
+   },
+   "variosMissing": {
+    "key": "properties/nil_varios"
+   },
+   "nativeness": {
+    "key": "properties/nativeness"
+   },
+   "script": {
+    "key": "properties/script"
+   }
+  },
+  "IgnDamPage": {
+   "matched": {
+    "key": "numberMatched"
+   },
+   "returned": {
+    "key": "numberReturned"
+   }
+  },
+  "IgnDrainageBasin": {
+   "id": {
+    "key": "id",
+    "conversion": "identifier"
+   },
+   "previousId": {
+    "key": "prev",
+    "conversion": "text"
+   },
+   "nextId": {
+    "key": "next",
+    "conversion": "text"
+   },
+   "localId": {
+    "key": "properties/inspireid_localid"
+   },
+   "hydroId": {
+    "key": "properties/hydroid_localid"
+   },
+   "name": {
+    "key": "properties/nombre"
+   },
+   "riverBasinDistrict": {
+    "key": "properties/id_demarc"
+   },
+   "riverBasinDistrictText": {
+    "key": "properties/id_demarcd"
+   },
+   "dateAdded": {
+    "key": "properties/fecha_alta"
+   },
+   "order": {
+    "key": "properties/orden"
+   },
+   "orderScheme": {
+    "key": "properties/orden_esq"
+   },
+   "orderSchemeText": {
+    "key": "properties/orden_esqd"
+   },
+   "orderScope": {
+    "key": "properties/orden_amb"
+   },
+   "orderScopeText": {
+    "key": "properties/orden_ambd"
+   },
+   "source": {
+    "key": "properties/fuente"
+   },
+   "sourceText": {
+    "key": "properties/fuented"
+   },
+   "origin": {
+    "key": "properties/origen"
+   },
+   "originText": {
+    "key": "properties/origend"
+   },
+   "areaSquareMetres": {
+    "key": "properties/area"
+   },
+   "resolution": {
+    "key": "properties/resolucion"
+   },
+   "nameNilReason": {
+    "key": "properties/nilreason_nombre"
+   },
+   "variosNilReason": {
+    "key": "properties/nilreason_varios"
+   },
+   "nameMissing": {
+    "key": "properties/nil_nombre"
+   },
+   "variosMissing": {
+    "key": "properties/nil_varios"
+   },
+   "nativeness": {
+    "key": "properties/nativeness"
+   },
+   "script": {
+    "key": "properties/script"
+   }
+  },
+  "IgnDrainageBasinPage": {
+   "matched": {
+    "key": "numberMatched"
+   },
+   "returned": {
+    "key": "numberReturned"
+   }
+  },
+  "IgnWaterfall": {
+   "id": {
+    "key": "id",
+    "conversion": "identifier"
+   },
+   "previousId": {
+    "key": "prev",
+    "conversion": "text"
+   },
+   "nextId": {
+    "key": "next",
+    "conversion": "text"
+   },
+   "localId": {
+    "key": "properties/inspireid_localid"
+   },
+   "hydroId": {
+    "key": "properties/hydroid_localid"
+   },
+   "name": {
+    "key": "properties/nombre"
+   },
+   "riverBasinDistrict": {
+    "key": "properties/id_demarc"
+   },
+   "riverBasinDistrictText": {
+    "key": "properties/id_demarcd"
+   },
+   "dateAdded": {
+    "key": "properties/fecha_alta"
+   },
+   "source": {
+    "key": "properties/fuente"
+   },
+   "sourceText": {
+    "key": "properties/fuented"
+   },
+   "description": {
+    "key": "properties/descr"
+   },
+   "nodeId": {
+    "key": "properties/id_nodo"
+   },
+   "persistence": {
+    "key": "properties/persist"
+   },
+   "persistenceText": {
+    "key": "properties/persistd"
+   },
+   "resolution": {
+    "key": "properties/resolucion"
+   },
+   "script": {
+    "key": "properties/script"
+   },
+   "nameNilReason": {
+    "key": "properties/nilreason_nombre"
+   },
+   "variosNilReason": {
+    "key": "properties/nilreason_varios"
+   },
+   "nameMissing": {
+    "key": "properties/nil_nombre"
+   },
+   "variosMissing": {
+    "key": "properties/nil_varios"
+   },
+   "nativeness": {
+    "key": "properties/nativeness"
+   }
+  },
+  "IgnWaterfallPage": {
+   "matched": {
+    "key": "numberMatched"
+   },
+   "returned": {
+    "key": "numberReturned"
+   }
+  },
+  "IgnFord": {
+   "id": {
+    "key": "id",
+    "conversion": "identifier"
+   },
+   "previousId": {
+    "key": "prev",
+    "conversion": "text"
+   },
+   "nextId": {
+    "key": "next",
+    "conversion": "text"
+   },
+   "localId": {
+    "key": "properties/inspireid_localid"
+   },
+   "hydroId": {
+    "key": "properties/hydroid_localid"
+   },
+   "name": {
+    "key": "properties/nombre"
+   },
+   "riverBasinDistrict": {
+    "key": "properties/id_demarc"
+   },
+   "riverBasinDistrictText": {
+    "key": "properties/id_demarcd"
+   },
+   "dateAdded": {
+    "key": "properties/fecha_alta"
+   },
+   "condition": {
+    "key": "properties/condicion"
+   },
+   "conditionText": {
+    "key": "properties/condiciond"
+   },
+   "source": {
+    "key": "properties/fuente"
+   },
+   "sourceText": {
+    "key": "properties/fuented"
+   },
+   "lengthMetres": {
+    "key": "properties/longitud"
+   },
+   "resolution": {
+    "key": "properties/resolucion"
+   },
+   "nameNilReason": {
+    "key": "properties/nilreason_nombre"
+   },
+   "variosNilReason": {
+    "key": "properties/nilreason_varios"
+   },
+   "nameMissing": {
+    "key": "properties/nil_nombre"
+   },
+   "variosMissing": {
+    "key": "properties/nil_varios"
+   },
+   "nativeness": {
+    "key": "properties/nativeness"
+   },
+   "script": {
+    "key": "properties/script"
+   }
+  },
+  "IgnFordPage": {
+   "matched": {
+    "key": "numberMatched"
+   },
+   "returned": {
+    "key": "numberReturned"
+   }
+  },
+  "IgnShoreline": {
+   "id": {
+    "key": "id",
+    "conversion": "identifier"
+   },
+   "previousId": {
+    "key": "prev",
+    "conversion": "text"
+   },
+   "nextId": {
+    "key": "next",
+    "conversion": "text"
+   },
+   "localId": {
+    "key": "properties/inspireid_localid"
+   },
+   "hydroId": {
+    "key": "properties/hydroid_localid"
+   },
+   "riverBasinDistrict": {
+    "key": "properties/id_demarc"
+   },
+   "dateAdded": {
+    "key": "properties/fecha_alta"
+   },
+   "origin": {
+    "key": "properties/origen"
+   },
+   "originText": {
+    "key": "properties/origend"
+   },
+   "waterLevel": {
+    "key": "properties/nivel_agua"
+   },
+   "waterLevelText": {
+    "key": "properties/nivel_aguad"
+   },
+   "source": {
+    "key": "properties/fuente"
+   },
+   "sourceText": {
+    "key": "properties/fuented"
+   },
+   "lengthMetres": {
+    "key": "properties/longitud"
+   },
+   "resolution": {
+    "key": "properties/resolucion"
+   }
+  },
+  "IgnShorelinePage": {
+   "matched": {
+    "key": "numberMatched"
+   },
+   "returned": {
+    "key": "numberReturned"
+   }
+  },
+  "IgnLock": {
+   "id": {
+    "key": "id",
+    "conversion": "identifier"
+   },
+   "previousId": {
+    "key": "prev",
+    "conversion": "text"
+   },
+   "nextId": {
+    "key": "next",
+    "conversion": "text"
+   },
+   "localId": {
+    "key": "properties/inspireid_localid"
+   },
+   "hydroId": {
+    "key": "properties/hydroid_localid"
+   },
+   "name": {
+    "key": "properties/nombre"
+   },
+   "riverBasinDistrict": {
+    "key": "properties/id_demarc"
+   },
+   "riverBasinDistrictText": {
+    "key": "properties/id_demarcd"
+   },
+   "dateAdded": {
+    "key": "properties/fecha_alta"
+   },
+   "condition": {
+    "key": "properties/condicion"
+   },
+   "conditionText": {
+    "key": "properties/condiciond"
+   },
+   "source": {
+    "key": "properties/fuente"
+   },
+   "sourceText": {
+    "key": "properties/fuented"
+   },
+   "resolution": {
+    "key": "properties/resolucion"
+   },
+   "nameNilReason": {
+    "key": "properties/nilreason_nombre"
+   },
+   "variosNilReason": {
+    "key": "properties/nilreason_varios"
+   },
+   "nameMissing": {
+    "key": "properties/nil_nombre"
+   },
+   "variosMissing": {
+    "key": "properties/nil_varios"
+   },
+   "nativeness": {
+    "key": "properties/nativeness"
+   },
+   "script": {
+    "key": "properties/script"
+   }
+  },
+  "IgnLockPage": {
+   "matched": {
+    "key": "numberMatched"
+   },
+   "returned": {
+    "key": "numberReturned"
+   }
+  },
+  "IgnRiverBasin": {
+   "id": {
+    "key": "id",
+    "conversion": "identifier"
+   },
+   "previousId": {
+    "key": "prev",
+    "conversion": "text"
+   },
+   "nextId": {
+    "key": "next",
+    "conversion": "text"
+   },
+   "localId": {
+    "key": "properties/inspireid_localid"
+   },
+   "hydroId": {
+    "key": "properties/hydroid_localid"
+   },
+   "name": {
+    "key": "properties/nombre"
+   },
+   "riverBasinDistrict": {
+    "key": "properties/id_demarc"
+   },
+   "riverBasinDistrictText": {
+    "key": "properties/id_demarcd"
+   },
+   "dateAdded": {
+    "key": "properties/fecha_alta"
+   },
+   "order": {
+    "key": "properties/orden"
+   },
+   "orderScheme": {
+    "key": "properties/orden_esq"
+   },
+   "orderSchemeText": {
+    "key": "properties/orden_esqd"
+   },
+   "orderScope": {
+    "key": "properties/orden_amb"
+   },
+   "orderScopeText": {
+    "key": "properties/orden_ambd"
+   },
+   "source": {
+    "key": "properties/fuente"
+   },
+   "sourceText": {
+    "key": "properties/fuented"
+   },
+   "origin": {
+    "key": "properties/origen"
+   },
+   "originText": {
+    "key": "properties/origend"
+   },
+   "areaSquareMetres": {
+    "key": "properties/area"
+   },
+   "resolution": {
+    "key": "properties/resolucion"
+   },
+   "nameNilReason": {
+    "key": "properties/nilreason_nombre"
+   },
+   "variosNilReason": {
+    "key": "properties/nilreason_varios"
+   },
+   "nameMissing": {
+    "key": "properties/nil_nombre"
+   },
+   "variosMissing": {
+    "key": "properties/nil_varios"
+   },
+   "nativeness": {
+    "key": "properties/nativeness"
+   },
+   "script": {
+    "key": "properties/script"
+   }
+  },
+  "IgnRiverBasinPage": {
+   "matched": {
+    "key": "numberMatched"
+   },
+   "returned": {
+    "key": "numberReturned"
+   }
+  },
+  "IgnShorelineConstruction": {
+   "id": {
+    "key": "id",
+    "conversion": "identifier"
+   },
+   "previousId": {
+    "key": "prev",
+    "conversion": "text"
+   },
+   "nextId": {
+    "key": "next",
+    "conversion": "text"
+   },
+   "localId": {
+    "key": "properties/inspireid_localid"
+   },
+   "hydroId": {
+    "key": "properties/hydroid_localid"
+   },
+   "name": {
+    "key": "properties/nombre"
+   },
+   "riverBasinDistrict": {
+    "key": "properties/id_demarc"
+   },
+   "riverBasinDistrictText": {
+    "key": "properties/id_demarcd"
+   },
+   "dateAdded": {
+    "key": "properties/fecha_alta"
+   },
+   "structureType": {
+    "key": "properties/tipo_estr"
+   },
+   "structureTypeText": {
+    "key": "properties/tipo_estrd"
+   },
+   "condition": {
+    "key": "properties/condicion"
+   },
+   "conditionText": {
+    "key": "properties/condiciond"
+   },
+   "source": {
+    "key": "properties/fuente"
+   },
+   "sourceText": {
+    "key": "properties/fuented"
+   },
+   "resolution": {
+    "key": "properties/resolucion"
+   },
+   "nameNilReason": {
+    "key": "properties/nilreason_nombre"
+   },
+   "variosNilReason": {
+    "key": "properties/nilreason_varios"
+   },
+   "nameMissing": {
+    "key": "properties/nil_nombre"
+   },
+   "variosMissing": {
+    "key": "properties/nil_varios"
+   },
+   "nativeness": {
+    "key": "properties/nativeness"
+   },
+   "script": {
+    "key": "properties/script"
+   }
+  },
+  "IgnShorelineConstructionPage": {
+   "matched": {
+    "key": "numberMatched"
+   },
+   "returned": {
+    "key": "numberReturned"
+   }
+  },
+  "IgnStandingWater": {
+   "id": {
+    "key": "id",
+    "conversion": "identifier"
+   },
+   "previousId": {
+    "key": "prev",
+    "conversion": "text"
+   },
+   "nextId": {
+    "key": "next",
+    "conversion": "text"
+   },
+   "localId": {
+    "key": "properties/inspireid_localid"
+   },
+   "hydroId": {
+    "key": "properties/hydroid_localid"
+   },
+   "name": {
+    "key": "properties/nombre"
+   },
+   "riverBasinDistrict": {
+    "key": "properties/id_demarc"
+   },
+   "riverBasinDistrictText": {
+    "key": "properties/id_demarcd"
+   },
+   "dateAdded": {
+    "key": "properties/fecha_alta"
+   },
+   "standingWaterType": {
+    "key": "properties/tipo_aest"
+   },
+   "standingWaterTypeText": {
+    "key": "properties/tipo_aestd"
+   },
+   "drainsBasin": {
+    "key": "properties/drainsbasin"
+   },
+   "origin": {
+    "key": "properties/origen"
+   },
+   "originText": {
+    "key": "properties/origend"
+   },
+   "tidal": {
+    "key": "properties/marea"
+   },
+   "elevation": {
+    "key": "properties/elevacion"
+   },
+   "persistence": {
+    "key": "properties/persist"
+   },
+   "persistenceText": {
+    "key": "properties/persistd"
+   },
+   "waterLevel": {
+    "key": "properties/nivel_agua"
+   },
+   "waterLevelText": {
+    "key": "properties/nivel_aguad"
+   },
+   "areaSquareMetres": {
+    "key": "properties/area"
+   },
+   "source": {
+    "key": "properties/fuente"
+   },
+   "sourceText": {
+    "key": "properties/fuented"
+   },
+   "elevationSource": {
+    "key": "properties/origen_z"
+   },
+   "elevationSourceText": {
+    "key": "properties/origen_zd"
+   },
+   "resolution": {
+    "key": "properties/resolucion"
+   },
+   "nameNilReason": {
+    "key": "properties/nilreason_nombre"
+   },
+   "variosNilReason": {
+    "key": "properties/nilreason_varios"
+   },
+   "nameMissing": {
+    "key": "properties/nil_nombre"
+   },
+   "variosMissing": {
+    "key": "properties/nil_varios"
+   },
+   "nativeness": {
+    "key": "properties/nativeness"
+   },
+   "script": {
+    "key": "properties/script"
+   },
+   "elevationNilReason": {
+    "key": "properties/nilreason_elevacion"
+   },
+   "elevationMissing": {
+    "key": "properties/nil_elevacion"
+   }
+  },
+  "IgnStandingWaterPage": {
+   "matched": {
+    "key": "numberMatched"
+   },
+   "returned": {
+    "key": "numberReturned"
+   }
+  },
+  "IgnWatercourse": {
+   "id": {
+    "key": "id",
+    "conversion": "identifier"
+   },
+   "previousId": {
+    "key": "prev",
+    "conversion": "text"
+   },
+   "nextId": {
+    "key": "next",
+    "conversion": "text"
+   },
+   "localId": {
+    "key": "properties/inspireid_localid"
+   },
+   "hydroId": {
+    "key": "properties/hydroid_localid"
+   },
+   "name": {
+    "key": "properties/nombre"
+   },
+   "linkId": {
+    "key": "properties/id_enlace"
+   },
+   "riverBasinDistrict": {
+    "key": "properties/id_demarc"
+   },
+   "riverBasinDistrictText": {
+    "key": "properties/id_demarcd"
+   },
+   "dateAdded": {
+    "key": "properties/fecha_alta"
+   },
+   "drainsBasin": {
+    "key": "properties/drainsbasin"
+   },
+   "watercourseType": {
+    "key": "properties/tipo_curso"
+   },
+   "watercourseTypeText": {
+    "key": "properties/tipo_cursod"
+   },
+   "origin": {
+    "key": "properties/origen"
+   },
+   "originText": {
+    "key": "properties/origend"
+   },
+   "persistence": {
+    "key": "properties/persist"
+   },
+   "persistenceText": {
+    "key": "properties/persistd"
+   },
+   "tidal": {
+    "key": "properties/marea"
+   },
+   "condition": {
+    "key": "properties/condicion"
+   },
+   "conditionText": {
+    "key": "properties/condiciond"
+   },
+   "source": {
+    "key": "properties/fuente"
+   },
+   "sourceText": {
+    "key": "properties/fuented"
+   },
+   "order": {
+    "key": "properties/orden"
+   },
+   "orderScheme": {
+    "key": "properties/orden_esq"
+   },
+   "orderSchemeText": {
+    "key": "properties/orden_esqd"
+   },
+   "orderScope": {
+    "key": "properties/orden_amb"
+   },
+   "orderScopeText": {
+    "key": "properties/orden_ambd"
+   },
+   "widthMax": {
+    "key": "properties/ancho_max"
+   },
+   "widthMaxText": {
+    "key": "properties/ancho_maxd"
+   },
+   "widthMin": {
+    "key": "properties/ancho_min"
+   },
+   "widthMinText": {
+    "key": "properties/ancho_mind"
+   },
+   "channelled": {
+    "key": "properties/canaliza"
+   },
+   "hierarchy": {
+    "key": "properties/jerarquia"
+   },
+   "hierarchyText": {
+    "key": "properties/jerarquiad"
+   },
+   "segmentType": {
+    "key": "properties/tipo_tramo"
+   },
+   "segmentTypeText": {
+    "key": "properties/tipo_tramod"
+   },
+   "networkType": {
+    "key": "properties/tipo_red"
+   },
+   "fictitious": {
+    "key": "properties/ficticio"
+   },
+   "situation": {
+    "key": "properties/situacion"
+   },
+   "situationText": {
+    "key": "properties/situaciond"
+   },
+   "resolution": {
+    "key": "properties/resolucion"
+   },
+   "delineationKnown": {
+    "key": "properties/delineation_known"
+   },
+   "lengthMetres": {
+    "key": "properties/longitud"
+   },
+   "areaSquareMetres": {
+    "key": "properties/area"
+   },
+   "elevationSource": {
+    "key": "properties/origen_z"
+   },
+   "elevationSourceText": {
+    "key": "properties/origen_zd"
+   },
+   "nameNilReason": {
+    "key": "properties/nilreason_nombre"
+   },
+   "variosNilReason": {
+    "key": "properties/nilreason_varios"
+   },
+   "nameMissing": {
+    "key": "properties/nil_nombre"
+   },
+   "variosMissing": {
+    "key": "properties/nil_varios"
+   },
+   "nativeness": {
+    "key": "properties/nativeness"
+   },
+   "script": {
+    "key": "properties/script"
+   },
+   "orderNilReason": {
+    "key": "properties/nilreason_orden"
+   },
+   "orderMissing": {
+    "key": "properties/nil_orden"
+   },
+   "delineationKnownNilReason": {
+    "key": "properties/nilreason_delineation_known"
+   },
+   "delineationKnownMissing": {
+    "key": "properties/nil_delineation_known"
+   },
+   "anchoNilReason": {
+    "key": "properties/nilreason_ancho"
+   },
+   "anchoMissing": {
+    "key": "properties/nil_ancho"
+   }
+  },
+  "IgnWatercoursePage": {
+   "matched": {
+    "key": "numberMatched"
+   },
+   "returned": {
+    "key": "numberReturned"
+   }
+  },
+  "IgnWetland": {
+   "id": {
+    "key": "id",
+    "conversion": "identifier"
+   },
+   "previousId": {
+    "key": "prev",
+    "conversion": "text"
+   },
+   "nextId": {
+    "key": "next",
+    "conversion": "text"
+   },
+   "localId": {
+    "key": "properties/inspireid_localid"
+   },
+   "hydroId": {
+    "key": "properties/hydroid_localid"
+   },
+   "name": {
+    "key": "properties/nombre"
+   },
+   "dateAdded": {
+    "key": "properties/fecha_alta"
+   },
+   "riverBasinDistrict": {
+    "key": "properties/id_demarc"
+   },
+   "riverBasinDistrictText": {
+    "key": "properties/id_demarcd"
+   },
+   "wetlandType": {
+    "key": "properties/tipo_zhum"
+   },
+   "kind": {
+    "key": "properties/tipo"
+   },
+   "source": {
+    "key": "properties/fuente"
+   },
+   "sourceText": {
+    "key": "properties/fuented"
+   },
+   "tidal": {
+    "key": "properties/marea"
+   },
+   "resolution": {
+    "key": "properties/resolucion"
+   },
+   "areaSquareMetres": {
+    "key": "properties/area"
+   },
+   "nameNilReason": {
+    "key": "properties/nilreason_nombre"
+   },
+   "variosNilReason": {
+    "key": "properties/nilreason_varios"
+   },
+   "nameMissing": {
+    "key": "properties/nil_nombre"
+   },
+   "variosMissing": {
+    "key": "properties/nil_varios"
+   },
+   "nativeness": {
+    "key": "properties/nativeness"
+   },
+   "script": {
+    "key": "properties/script"
+   }
+  },
+  "IgnWetlandPage": {
+   "matched": {
+    "key": "numberMatched"
+   },
+   "returned": {
+    "key": "numberReturned"
+   }
+  },
+  "IgnAerodromeArea": {
+   "id": {
+    "key": "id",
+    "conversion": "identifier"
+   },
+   "previousId": {
+    "key": "prev",
+    "conversion": "text"
+   },
+   "nextId": {
+    "key": "next",
+    "conversion": "text"
+   },
+   "localId": {
+    "key": "properties/localid"
+   },
+   "aerodromeType": {
+    "key": "properties/aerodrometype"
+   },
+   "aerodromeCategory": {
+    "key": "properties/aerodromecategory"
+   },
+   "aerodromeId": {
+    "key": "properties/id_aerodro",
+    "conversion": "text"
+   },
+   "dateAdded": {
+    "key": "properties/fecha_alta"
+   },
+   "name": {
+    "key": "properties/nombre"
+   },
+   "href": {
+    "key": "properties/href"
+   },
+   "nameNilReason": {
+    "key": "properties/nilreason_nombre"
+   },
+   "variosNilReason": {
+    "key": "properties/nilreason_varios"
+   },
+   "nameMissing": {
+    "key": "properties/nil_nombre"
+   },
+   "variosMissing": {
+    "key": "properties/nil_varios"
+   }
+  },
+  "IgnAerodromeAreaPage": {
+   "matched": {
+    "key": "numberMatched"
+   },
+   "returned": {
+    "key": "numberReturned"
+   }
+  },
+  "IgnAerodrome": {
+   "id": {
+    "key": "id",
+    "conversion": "identifier"
+   },
+   "previousId": {
+    "key": "prev",
+    "conversion": "text"
+   },
+   "nextId": {
+    "key": "next",
+    "conversion": "text"
+   },
+   "localId": {
+    "key": "properties/localid"
+   },
+   "currentStatus": {
+    "key": "properties/currentstatus"
+   },
+   "aerodromeType": {
+    "key": "properties/aerodrometype"
+   },
+   "aerodromeCategory": {
+    "key": "properties/aerodromecategory"
+   },
+   "altitude": {
+    "key": "properties/altitude"
+   },
+   "altitudeUnit": {
+    "key": "properties/altitude_uom"
+   },
+   "aerodromeId": {
+    "key": "properties/id_aerodro",
+    "conversion": "text"
+   },
+   "name": {
+    "key": "properties/nombre"
+   },
+   "iataCode": {
+    "key": "properties/cod_iata"
+   },
+   "icaoCode": {
+    "key": "properties/cod_icao"
+   },
+   "dateAdded": {
+    "key": "properties/fecha_alta"
+   },
+   "iataCodeNilReason": {
+    "key": "properties/nilreason_cod_iata"
+   },
+   "icaoCodeNilReason": {
+    "key": "properties/nilreason_cod_icao"
+   },
+   "iataCodeMissing": {
+    "key": "properties/nil_cod_iata"
+   },
+   "icaoCodeMissing": {
+    "key": "properties/nil_cod_icao"
+   },
+   "nameNilReason": {
+    "key": "properties/nilreason_nombre"
+   },
+   "variosNilReason": {
+    "key": "properties/nilreason_varios"
+   },
+   "nameMissing": {
+    "key": "properties/nil_nombre"
+   },
+   "variosMissing": {
+    "key": "properties/nil_varios"
+   }
+  },
+  "IgnAerodromePage": {
+   "matched": {
+    "key": "numberMatched"
+   },
+   "returned": {
+    "key": "numberReturned"
+   }
+  },
+  "IgnApronArea": {
+   "id": {
+    "key": "id",
+    "conversion": "identifier"
+   },
+   "previousId": {
+    "key": "prev",
+    "conversion": "text"
+   },
+   "nextId": {
+    "key": "next",
+    "conversion": "text"
+   },
+   "localId": {
+    "key": "properties/localid"
+   },
+   "aerodromeId": {
+    "key": "properties/id_aerodro",
+    "conversion": "text"
+   },
+   "dateAdded": {
+    "key": "properties/fecha_alta"
+   },
+   "name": {
+    "key": "properties/nombre"
+   },
+   "surface": {
+    "key": "properties/surfacecomposition"
+   },
+   "nameNilReason": {
+    "key": "properties/nilreason_nombre"
+   },
+   "variosNilReason": {
+    "key": "properties/nilreason_varios"
+   },
+   "nameMissing": {
+    "key": "properties/nil_nombre"
+   },
+   "variosMissing": {
+    "key": "properties/nil_varios"
+   }
+  },
+  "IgnApronAreaPage": {
+   "matched": {
+    "key": "numberMatched"
+   },
+   "returned": {
+    "key": "numberReturned"
+   }
+  },
+  "IgnRunway": {
+   "id": {
+    "key": "id",
+    "conversion": "identifier"
+   },
+   "previousId": {
+    "key": "prev",
+    "conversion": "text"
+   },
+   "nextId": {
+    "key": "next",
+    "conversion": "text"
+   },
+   "localId": {
+    "key": "properties/localid"
+   },
+   "aerodromeId": {
+    "key": "properties/id_aerodro",
+    "conversion": "text"
+   },
+   "dateAdded": {
+    "key": "properties/fecha_alta"
+   },
+   "name": {
+    "key": "properties/nombre"
+   },
+   "designator": {
+    "key": "properties/designador"
+   },
+   "runwayType": {
+    "key": "properties/tip_pista"
+   },
+   "length": {
+    "key": "properties/length"
+   },
+   "width": {
+    "key": "properties/width"
+   },
+   "surface": {
+    "key": "properties/surfacecomposition"
+   },
+   "lengthUnit": {
+    "key": "properties/lenght_uom"
+   },
+   "widthUnit": {
+    "key": "properties/width_uom"
+   },
+   "nameNilReason": {
+    "key": "properties/nilreason_nombre"
+   },
+   "variosNilReason": {
+    "key": "properties/nilreason_varios"
+   },
+   "nameMissing": {
+    "key": "properties/nil_nombre"
+   },
+   "variosMissing": {
+    "key": "properties/nil_varios"
+   },
+   "designatorNilReason": {
+    "key": "properties/nilreason_designador"
+   },
+   "designatorMissing": {
+    "key": "properties/nil_designador"
+   },
+   "runwayTypeNilReason": {
+    "key": "properties/nilreason_tip_pista"
+   },
+   "runwayTypeMissing": {
+    "key": "properties/nil_tip_pista"
+   }
+  },
+  "IgnRunwayPage": {
+   "matched": {
+    "key": "numberMatched"
+   },
+   "returned": {
+    "key": "numberReturned"
+   }
+  },
+  "IgnTaxiway": {
+   "id": {
+    "key": "id",
+    "conversion": "identifier"
+   },
+   "previousId": {
+    "key": "prev",
+    "conversion": "text"
+   },
+   "nextId": {
+    "key": "next",
+    "conversion": "text"
+   },
+   "localId": {
+    "key": "properties/localid"
+   },
+   "aerodromeId": {
+    "key": "properties/id_aerodro",
+    "conversion": "text"
+   },
+   "dateAdded": {
+    "key": "properties/fecha_alta"
+   },
+   "name": {
+    "key": "properties/nombre"
+   },
+   "designator": {
+    "key": "properties/designador"
+   },
+   "surface": {
+    "key": "properties/surfacecomposition"
+   },
+   "length": {
+    "key": "properties/length"
+   },
+   "width": {
+    "key": "properties/width"
+   },
+   "lengthUnit": {
+    "key": "properties/lenght_uom"
+   },
+   "widthUnit": {
+    "key": "properties/width_uom"
+   },
+   "nameNilReason": {
+    "key": "properties/nilreason_nombre"
+   },
+   "variosNilReason": {
+    "key": "properties/nilreason_varios"
+   },
+   "nameMissing": {
+    "key": "properties/nil_nombre"
+   },
+   "variosMissing": {
+    "key": "properties/nil_varios"
+   },
+   "designatorNilReason": {
+    "key": "properties/nilreason_designador"
+   },
+   "designatorMissing": {
+    "key": "properties/nil_designador"
+   }
+  },
+  "IgnTaxiwayPage": {
+   "matched": {
+    "key": "numberMatched"
+   },
+   "returned": {
+    "key": "numberReturned"
+   }
+  },
+  "IgnCablewayLink": {
+   "id": {
+    "key": "id",
+    "conversion": "identifier"
+   },
+   "previousId": {
+    "key": "prev",
+    "conversion": "text"
+   },
+   "nextId": {
+    "key": "next",
+    "conversion": "text"
+   },
+   "localId": {
+    "key": "properties/localid"
+   },
+   "cablewayId": {
+    "key": "properties/id_cable",
+    "conversion": "text"
+   },
+   "name": {
+    "key": "properties/nombre"
+   },
+   "dateAdded": {
+    "key": "properties/fecha_alta"
+   },
+   "cablewayType": {
+    "key": "properties/tipo_cable"
+   },
+   "linkSetId": {
+    "key": "properties/id_linkset"
+   },
+   "nameNilReason": {
+    "key": "properties/nilreason_nombre"
+   },
+   "nameMissing": {
+    "key": "properties/nil_nombre"
+   },
+   "variosNilReason": {
+    "key": "properties/nilreason_varios"
+   },
+   "variosMissing": {
+    "key": "properties/nil_varios"
+   },
+   "href": {
+    "key": "properties/href"
+   }
+  },
+  "IgnCablewayLinkPage": {
+   "matched": {
+    "key": "numberMatched"
+   },
+   "returned": {
+    "key": "numberReturned"
+   }
+  },
+  "IgnCablewayNode": {
+   "id": {
+    "key": "id",
+    "conversion": "identifier"
+   },
+   "previousId": {
+    "key": "prev",
+    "conversion": "text"
+   },
+   "nextId": {
+    "key": "next",
+    "conversion": "text"
+   },
+   "localId": {
+    "key": "properties/localid"
+   },
+   "cablewayNodeId": {
+    "key": "properties/id_nodoc",
+    "conversion": "text"
+   },
+   "source": {
+    "key": "properties/fuente"
+   },
+   "dateAdded": {
+    "key": "properties/fecha_alta"
+   }
+  },
+  "IgnCablewayNodePage": {
+   "matched": {
+    "key": "numberMatched"
+   },
+   "returned": {
+    "key": "numberReturned"
+   }
+  },
+  "IgnRailwayLink": {
+   "id": {
+    "key": "id",
+    "conversion": "identifier"
+   },
+   "previousId": {
+    "key": "prev",
+    "conversion": "text"
+   },
+   "nextId": {
+    "key": "next",
+    "conversion": "text"
+   },
+   "localId": {
+    "key": "properties/localid"
+   },
+   "segmentId": {
+    "key": "properties/id_tramo",
+    "conversion": "text"
+   },
+   "fictitious": {
+    "key": "properties/fictitious"
+   },
+   "href": {
+    "key": "properties/href"
+   },
+   "gaugeCategory": {
+    "key": "properties/nominalgaugecategory"
+   },
+   "tracks": {
+    "key": "properties/numberoftracks"
+   },
+   "electrified": {
+    "key": "properties/electrified"
+   },
+   "dateAdded": {
+    "key": "properties/fecha_alta"
+   },
+   "gauge": {
+    "key": "properties/nominalgauge"
+   },
+   "gaugeUnit": {
+    "key": "properties/nominalgauge_uom"
+   }
+  },
+  "IgnRailwayLinkPage": {
+   "matched": {
+    "key": "numberMatched"
+   },
+   "returned": {
+    "key": "numberReturned"
+   }
+  },
+  "IgnRailwayNode": {
+   "id": {
+    "key": "id",
+    "conversion": "identifier"
+   },
+   "previousId": {
+    "key": "prev",
+    "conversion": "text"
+   },
+   "nextId": {
+    "key": "next",
+    "conversion": "text"
+   },
+   "localId": {
+    "key": "properties/localid"
+   },
+   "nodeId": {
+    "key": "properties/id"
+   },
+   "nodeType": {
+    "key": "properties/tip_nodo"
+   },
+   "dateModified": {
+    "key": "properties/fecha_modif"
+   },
+   "tipNodofcNilReason": {
+    "key": "properties/nilreason_tip_nodofc"
+   },
+   "tipNodofcMissing": {
+    "key": "properties/nil_tip_nodofc"
+   }
+  },
+  "IgnRailwayNodePage": {
+   "matched": {
+    "key": "numberMatched"
+   },
+   "returned": {
+    "key": "numberReturned"
+   }
+  },
+  "IgnRailwayStationArea": {
+   "id": {
+    "key": "id",
+    "conversion": "identifier"
+   },
+   "previousId": {
+    "key": "prev",
+    "conversion": "text"
+   },
+   "nextId": {
+    "key": "next",
+    "conversion": "text"
+   },
+   "localId": {
+    "key": "properties/localid"
+   },
+   "stationAreaId": {
+    "key": "properties/id_areafc",
+    "conversion": "text"
+   },
+   "stationId": {
+    "key": "properties/id_estfc",
+    "conversion": "text"
+   },
+   "dateAdded": {
+    "key": "properties/fecha_alta"
+   },
+   "name": {
+    "key": "properties/nombre"
+   },
+   "nameNilReason": {
+    "key": "properties/nilreason_nombre"
+   },
+   "variosNilReason": {
+    "key": "properties/nilreason_varios"
+   },
+   "nameMissing": {
+    "key": "properties/nil_nombre"
+   },
+   "variosMissing": {
+    "key": "properties/nil_varios"
+   }
+  },
+  "IgnRailwayStationAreaPage": {
+   "matched": {
+    "key": "numberMatched"
+   },
+   "returned": {
+    "key": "numberReturned"
+   }
+  },
+  "IgnRailwayStation": {
+   "id": {
+    "key": "id",
+    "conversion": "identifier"
+   },
+   "previousId": {
+    "key": "prev",
+    "conversion": "text"
+   },
+   "nextId": {
+    "key": "next",
+    "conversion": "text"
+   },
+   "localId": {
+    "key": "properties/localid"
+   },
+   "stationId": {
+    "key": "properties/id_estfc",
+    "conversion": "text"
+   },
+   "stationCode": {
+    "key": "properties/stationcode"
+   },
+   "name": {
+    "key": "properties/nombre"
+   },
+   "platforms": {
+    "key": "properties/n_andenes"
+   },
+   "use": {
+    "key": "properties/use"
+   },
+   "dateAdded": {
+    "key": "properties/fecha_alta"
+   },
+   "formOfNode": {
+    "key": "properties/formofnode"
+   },
+   "nameNilReason": {
+    "key": "properties/nilreason_nombre"
+   },
+   "nameMissing": {
+    "key": "properties/nil_nombre"
+   },
+   "variosNilReason": {
+    "key": "properties/nilreason_varios"
+   },
+   "variosMissing": {
+    "key": "properties/nil_varios"
+   },
+   "platformsNilReason": {
+    "key": "properties/nilreason_n_andenes"
+   },
+   "platformsMissing": {
+    "key": "properties/nil_n_andenes"
+   }
+  },
+  "IgnRailwayStationPage": {
+   "matched": {
+    "key": "numberMatched"
+   },
+   "returned": {
+    "key": "numberReturned"
+   }
+  },
+  "IgnRoadLink": {
+   "id": {
+    "key": "id",
+    "conversion": "identifier"
+   },
+   "previousId": {
+    "key": "prev",
+    "conversion": "text"
+   },
+   "nextId": {
+    "key": "next",
+    "conversion": "text"
+   },
+   "localId": {
+    "key": "properties/localid"
+   },
+   "segmentId": {
+    "key": "properties/id_tramo",
+    "conversion": "text"
+   },
+   "fictitious": {
+    "key": "properties/fictitious"
+   },
+   "functionalClass": {
+    "key": "properties/functionalclass"
+   },
+   "lanes": {
+    "key": "properties/numberoflanes"
+   },
+   "surfaceCategory": {
+    "key": "properties/surfacecategory"
+   },
+   "href": {
+    "key": "properties/href"
+   },
+   "dateAdded": {
+    "key": "properties/fecha_alta"
+   },
+   "formOfWay": {
+    "key": "properties/formofway_href"
+   }
+  },
+  "IgnRoadLinkPage": {
+   "matched": {
+    "key": "numberMatched"
+   },
+   "returned": {
+    "key": "numberReturned"
+   }
+  },
+  "IgnRoadNode": {
+   "id": {
+    "key": "id",
+    "conversion": "identifier"
+   },
+   "previousId": {
+    "key": "prev",
+    "conversion": "text"
+   },
+   "nextId": {
+    "key": "next",
+    "conversion": "text"
+   },
+   "localId": {
+    "key": "properties/localid"
+   },
+   "nodeId": {
+    "key": "properties/id"
+   },
+   "nodeType": {
+    "key": "properties/tip_nodo"
+   },
+   "dateModified": {
+    "key": "properties/fecha_modif"
+   },
+   "nodeTypeNilReason": {
+    "key": "properties/nilreason_tip_nodo"
+   }
+  },
+  "IgnRoadNodePage": {
+   "matched": {
+    "key": "numberMatched"
+   },
+   "returned": {
+    "key": "numberReturned"
+   }
+  },
+  "IgnRoadServiceArea": {
+   "id": {
+    "key": "id",
+    "conversion": "identifier"
+   },
+   "previousId": {
+    "key": "prev",
+    "conversion": "text"
+   },
+   "nextId": {
+    "key": "next",
+    "conversion": "text"
+   },
+   "localId": {
+    "key": "properties/localid"
+   },
+   "serviceAreaId": {
+    "key": "properties/id_areactr",
+    "conversion": "text"
+   },
+   "roadPointId": {
+    "key": "properties/id_ptoctra",
+    "conversion": "text"
+   },
+   "dateAdded": {
+    "key": "properties/fecha_alta"
+   },
+   "name": {
+    "key": "properties/nombre"
+   },
+   "serviceType": {
+    "key": "properties/type"
+   },
+   "nameNilReason": {
+    "key": "properties/nilreason_nombre"
+   },
+   "variosNilReason": {
+    "key": "properties/nilreason_varios"
+   },
+   "nameMissing": {
+    "key": "properties/nil_nombre"
+   },
+   "variosMissing": {
+    "key": "properties/nil_varios"
+   }
+  },
+  "IgnRoadServiceAreaPage": {
+   "matched": {
+    "key": "numberMatched"
+   },
+   "returned": {
+    "key": "numberReturned"
+   }
+  },
+  "IgnPortArea": {
+   "id": {
+    "key": "id",
+    "conversion": "identifier"
+   },
+   "previousId": {
+    "key": "prev",
+    "conversion": "text"
+   },
+   "nextId": {
+    "key": "next",
+    "conversion": "text"
+   },
+   "localId": {
+    "key": "properties/localid"
+   },
+   "portAreaId": {
+    "key": "properties/id_areamar",
+    "conversion": "text"
+   },
+   "href": {
+    "key": "properties/href"
+   },
+   "dateAdded": {
+    "key": "properties/fecha_alta"
+   },
+   "name": {
+    "key": "properties/nombre"
+   },
+   "nameNilReason": {
+    "key": "properties/nilreason_nombre"
+   },
+   "variosNilReason": {
+    "key": "properties/nilreason_varios"
+   },
+   "nameMissing": {
+    "key": "properties/nil_nombre"
+   },
+   "variosMissing": {
+    "key": "properties/nil_varios"
+   }
+  },
+  "IgnPortAreaPage": {
+   "matched": {
+    "key": "numberMatched"
+   },
+   "returned": {
+    "key": "numberReturned"
+   }
+  },
+  "IgnPort": {
+   "id": {
+    "key": "id",
+    "conversion": "identifier"
+   },
+   "previousId": {
+    "key": "prev",
+    "conversion": "text"
+   },
+   "nextId": {
+    "key": "next",
+    "conversion": "text"
+   },
+   "localId": {
+    "key": "properties/localid"
+   },
+   "portId": {
+    "key": "properties/id_puerto",
+    "conversion": "text"
+   },
+   "name": {
+    "key": "properties/nombre"
+   },
+   "dateAdded": {
+    "key": "properties/fecha_alta"
+   },
+   "href": {
+    "key": "properties/href"
+   },
+   "portStationId": {
+    "key": "properties/id_esta_ma"
+   },
+   "physicalCondition": {
+    "key": "properties/estadofis"
+   },
+   "currentStatus": {
+    "key": "properties/currentstatus"
+   }
+  },
+  "IgnPortPage": {
+   "matched": {
+    "key": "numberMatched"
+   },
+   "returned": {
+    "key": "numberReturned"
+   }
+  },
+  "IgnWaterwayLink": {
+   "id": {
+    "key": "id",
+    "conversion": "identifier"
+   },
+   "previousId": {
+    "key": "prev",
+    "conversion": "text"
+   },
+   "nextId": {
+    "key": "next",
+    "conversion": "text"
+   },
+   "localId": {
+    "key": "properties/localid"
+   },
+   "waterwayId": {
+    "key": "properties/id_linmar"
+   },
+   "href": {
+    "key": "properties/href"
+   },
+   "dateAdded": {
+    "key": "properties/fecha_alta"
+   }
+  },
+  "IgnWaterwayLinkPage": {
+   "matched": {
+    "key": "numberMatched"
+   },
+   "returned": {
+    "key": "numberReturned"
+   }
+  },
+  "IgnWaterwayNode": {
+   "id": {
+    "key": "id",
+    "conversion": "identifier"
+   },
+   "previousId": {
+    "key": "prev",
+    "conversion": "text"
+   },
+   "nextId": {
+    "key": "next",
+    "conversion": "text"
+   },
+   "localId": {
+    "key": "properties/localid"
+   },
+   "waterwayNodeId": {
+    "key": "properties/id_nodomar",
+    "conversion": "text"
+   },
+   "dateAdded": {
+    "key": "properties/fecha_alta"
+   }
+  },
+  "IgnWaterwayNodePage": {
+   "matched": {
+    "key": "numberMatched"
+   },
+   "returned": {
+    "key": "numberReturned"
+   }
+  },
+  "IgnKilometrePost": {
+   "id": {
+    "key": "id",
+    "conversion": "identifier"
+   },
+   "previousId": {
+    "key": "prev",
+    "conversion": "text"
+   },
+   "nextId": {
+    "key": "next",
+    "conversion": "text"
+   },
+   "localId": {
+    "key": "properties/localid"
+   },
+   "roadId": {
+    "key": "properties/localid_vial"
+   },
+   "segmentId": {
+    "key": "properties/localid_tramo"
+   },
+   "href": {
+    "key": "properties/href"
+   },
+   "postId": {
+    "key": "properties/id_pk",
+    "conversion": "text"
+   },
+   "number": {
+    "key": "properties/numero"
+   },
+   "postType": {
+    "key": "properties/tipo_porpk"
+   },
+   "direction": {
+    "key": "properties/sentidopk"
+   },
+   "dateAdded": {
+    "key": "properties/fecha_alta"
+   },
+   "roadHref": {
+    "key": "properties/href_vial"
+   },
+   "directionNilReason": {
+    "key": "properties/nilreason_sentidopk"
+   },
+   "directionMissing": {
+    "key": "properties/nil_sentidopk"
+   }
+  },
+  "IgnKilometrePostPage": {
+   "matched": {
+    "key": "numberMatched"
+   },
+   "returned": {
+    "key": "numberReturned"
+   }
+  }
+ }
+}

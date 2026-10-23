@@ -1,0 +1,3794 @@
+# The fields of the open data API of the Junta de Andalucía, the regional government of Andalusia, at
+# datos.juntadeandalucia.es/api/v0. The Junta publishes each dataset as an API of its own with an OpenAPI document, and
+# all of them work alike: a search, a count, the values each filter takes, and one record by its id. A generator wrote
+# these fields and src/main/resources/junta/operations.json from those OpenAPI documents, and their types from answers
+# recorded from the service, because the documents leave the answers undescribed. The names and descriptions are written
+# by hand in English. Each field is fetched by a RestOperationFetcher, see JuntaConfiguration.
+
+extend type Query {
+    # The datasets of the Junta answer in Spanish. A search filter that takes a list of values, such as the themes of a
+    # regulation, takes the exact Spanish text that the matching options field lists, such as Sanidad animal. A search
+    # without results answers 400 Bad request, and the field returns it as an error saying the Junta rejected the
+    # arguments; the description of each search says so.
+
+    """
+    The public holidays of Andalusia, its provinces and its municipalities from 2023 on, searched by province, kind,
+    municipality and year. LOCAL holidays are the two days each town sets for itself, such as the Málaga fair; LABORAL
+    holidays are the national and regional ones. A clinic closes on both. juntaHolidayCalendar gives the whole calendar
+    of one town. A search without results answers with the error Bad request.
+    """
+    juntaHolidays(
+        "Only the records of this province of Andalusia. ANY, the default, takes all of them."
+        province: JuntaProvince = ANY
+        "LOCAL for the holidays of a town, LABORAL for the national and regional ones"
+        kind: JuntaHolidayKind = ANY
+        "Only the holidays of this municipality, such as Málaga"
+        municipality: String
+        "Only the holidays of this year, such as 2026"
+        year: String
+        "The number of results to return, from 1 to 100"
+        size: Int! = 10
+    ): JuntaHolidayPage
+
+    "One of the holidays by its id, as a page that holds one record"
+    juntaHoliday(
+        "The id of the record, which juntaHolidays gives"
+        id: ID!
+    ): JuntaHolidayPage
+
+    "The number of records of the dataset of holidays of the Junta de Andalucía"
+    juntaHolidaysCount: JuntaCount
+
+    "The municipalities with holidays in the dataset, in capitals"
+    juntaHolidayMunicipalities: JuntaOptionValues
+
+    "The provinces of the holidays in the dataset"
+    juntaHolidayProvinces: JuntaOptionValues
+
+    "The years the dataset covers, with the number of holidays in each"
+    juntaHolidayYears: JuntaOptionValues
+
+    """
+    The whole calendar of public holidays of one municipality in one year: the national and regional holidays and the
+    two local ones, in date order. For example, province MALAGA, municipality MÁLAGA and year 2026.
+    """
+    juntaHolidayCalendar(
+        "The province of the municipality"
+        province: JuntaProvince!
+        "The municipality, such as Málaga or Torremolinos"
+        municipality: String
+        "The year, such as 2026"
+        year: String
+    ): JuntaHolidayCalendar
+
+    "The municipalities of one province that have holidays in the dataset, in capitals, as the calendar takes them"
+    juntaHolidayMunicipalitiesOfProvince(
+        "The province"
+        province: JuntaProvince!
+    ): JuntaOptionValues
+
+    """
+    The municipalities of Andalusia with their INE codes and positions, searched by name and province. The INE code of
+    Málaga is 29067: 29 for the province, 067 for the town. A search without results answers with the error Bad request.
+    """
+    juntaMunicipalities(
+        "Only the municipalities whose name is this, such as Málaga"
+        name: String
+        "Only the municipalities of this province, by its INE code, such as 29 for Málaga"
+        provinceCode: String
+        "1 for the capitals of the provinces, 0 for the other municipalities"
+        provincialCapital: String
+        "The number of results to return, from 1 to 100"
+        size: Int! = 10
+    ): JuntaMunicipalityPage
+
+    "The number of records of the dataset of municipalities of the Junta de Andalucía"
+    juntaMunicipalitiesCount: JuntaCount
+
+    "The names of the municipalities of Andalusia"
+    juntaMunicipalityNames: JuntaOptionValues
+
+    """
+    The Tourism Register of Andalusia (RTA): hotels, campsites, rural houses, holiday homes, travel agencies and other
+    tourism businesses, searched by kind, category, group, modality, province and municipality. For example, the
+    campsites of the municipality of Málaga take objectType Campamento de turismo and municipality MÁLAGA. Names of
+    provinces and municipalities are in capitals. A search without results answers with the error Bad request.
+    """
+    juntaTourismEstablishments(
+        """
+        Only the establishments of this kind, such as Establecimiento Hotelero, Campamento de turismo, Casa rural or
+        Vivienda de uso turístico (holiday home). juntaTourismEstablishmentTypes lists the kinds. Leave it out for all
+        of them.
+        """
+        objectType: String = "-"
+        "Only the establishments of this category, such as 4 Estrellas (four stars). Leave it out for all of them."
+        category: String = "-"
+        "Only the establishments of this group, such as Hotel, Hostal or Camping. Leave it out for all of them."
+        group: String = "-"
+        """
+        Only the establishments of this setting: Playa (beach), Ciudad (city), Rural or Carretera (road). Leave it out
+        for all of them.
+        """
+        modality: String = "-"
+        "Only the establishments of this province, such as Málaga. Leave it out for all of them."
+        province: String = "-"
+        "Only the establishments of this municipality, such as Torremolinos. Leave it out for all of them."
+        municipality: String = "-"
+        "The number of results to return, from 1 to 100"
+        size: Int! = 10
+    ): JuntaTourismEstablishmentPage
+
+    "One of the tourism establishments by its id, as a page that holds one record"
+    juntaTourismEstablishment(
+        "The id of the record, which juntaTourismEstablishments gives"
+        id: ID!
+    ): JuntaTourismEstablishmentPage
+
+    "The number of records of the dataset of tourism establishments of the Junta de Andalucía"
+    juntaTourismEstablishmentsCount: JuntaCount
+
+    "The kinds of tourism establishment, such as Casa rural"
+    juntaTourismEstablishmentTypes: JuntaOptionValues
+
+    "The categories of tourism establishments, such as 3 Estrellas"
+    juntaTourismCategories: JuntaOptionValues
+
+    "The groups of tourism establishments, such as Hostal"
+    juntaTourismGroups: JuntaOptionValues
+
+    "The settings of tourism establishments, such as Playa"
+    juntaTourismModalities: JuntaOptionValues
+
+    "The provinces of the tourism establishments"
+    juntaTourismProvinces: JuntaOptionValues
+
+    "The municipalities of the tourism establishments"
+    juntaTourismMunicipalities: JuntaOptionValues
+
+    """
+    The laws, decrees and orders the Junta de Andalucía passed, newest first, searched by theme, subtopic, issuing body,
+    kind and title. For the rules about pets, pass subtopic Animales de compañía (companion animals); for animal health,
+    Sanidad animal. A search without results answers with the error Bad request.
+    """
+    juntaRegulations(
+        """
+        Only the regulations of this theme, such as Ganadería (livestock). juntaRegulationThemes lists them. Leave it
+        out for all of them.
+        """
+        theme: String = "-"
+        """
+        Only the regulations of this subtopic, such as Animales de compañía. juntaRegulationSubtopics lists them. Leave
+        it out for all of them.
+        """
+        subtopic: String = "-"
+        "Only the regulations of this issuing body, such as Servicio Andaluz de Salud. Leave it out for all of them."
+        organism: String = "-"
+        "Only the regulations of this kind, such as Decreto, Orden or Ley. Leave it out for all of them."
+        kind: String = "-"
+        "Only the regulations whose title contains these words"
+        title: String
+        "The number of results to return, from 1 to 100"
+        size: Int! = 10
+    ): JuntaRegulationPage
+
+    "One of the regulations by its id, as a page that holds one record"
+    juntaRegulation(
+        "The id of the record, which juntaRegulations gives"
+        id: ID!
+    ): JuntaRegulationPage
+
+    "The number of records of the dataset of regulations of the Junta de Andalucía"
+    juntaRegulationsCount: JuntaCount
+
+    "The themes of the regulations of the Junta, such as Ganadería"
+    juntaRegulationThemes: JuntaOptionValues
+
+    "The subtopics of the regulations, such as Animales de compañía"
+    juntaRegulationSubtopics: JuntaOptionValues
+
+    "The bodies of the Junta that issue regulations"
+    juntaRegulationOrganisms: JuntaOptionValues
+
+    "The bodies below them"
+    juntaRegulationSuborganisms: JuntaOptionValues
+
+    "The kinds of regulation, such as Decreto or Orden"
+    juntaRegulationKinds: JuntaOptionValues
+
+    """
+    The museums and museum collections of Andalusia, with their addresses, opening hours and positions, searched by
+    province, municipality and kind. A search without results answers with the error Bad request.
+    """
+    juntaMuseums(
+        "Only the records of this province of Andalusia. ANY, the default, takes all of them."
+        province: JuntaProvince = ANY
+        "Only the museums of this municipality, such as Málaga. Leave it out for all of them."
+        municipality: String = "-"
+        "Only the museums of this kind: Museo, Colección Museográfica or Conjunto. Leave it out for all of them."
+        kind: String = "-"
+        "The number of results to return, from 1 to 100"
+        size: Int! = 10
+    ): JuntaMuseumPage
+
+    "One of the museums by its id, as a page that holds one record"
+    juntaMuseum(
+        "The id of the record, which juntaMuseums gives"
+        id: ID!
+    ): JuntaMuseumPage
+
+    "The number of records of the dataset of museums of the Junta de Andalucía"
+    juntaMuseumsCount: JuntaCount
+
+    "The kinds of museum, such as Colección Museográfica"
+    juntaMuseumKinds: JuntaOptionValues
+
+    "The municipalities of Andalusia that have museums"
+    juntaMuseumMunicipalities: JuntaOptionValues
+
+    "The provinces of the museums"
+    juntaMuseumProvinces: JuntaOptionValues
+
+    """
+    The public libraries and documentation centres of Andalusia, with their addresses, contact details and positions,
+    searched by province, municipality and kind. A search without results answers with the error Bad request.
+    """
+    juntaLibraries(
+        "Only the records of this province of Andalusia. ANY, the default, takes all of them."
+        province: JuntaProvince = ANY
+        "Only the libraries of this municipality, such as Torremolinos. Leave it out for all of them."
+        municipality: String = "-"
+        """
+        Only the libraries of this kind: Biblioteca or Bib. Espec./Centro de Documentación. Leave it out for all of
+        them.
+        """
+        kind: String = "-"
+        "The number of results to return, from 1 to 100"
+        size: Int! = 10
+    ): JuntaLibraryPage
+
+    "The number of records of the dataset of libraries of the Junta de Andalucía"
+    juntaLibrariesCount: JuntaCount
+
+    "The kinds of library"
+    juntaLibraryKinds: JuntaOptionValues
+
+    "The municipalities of Andalusia that have libraries"
+    juntaLibraryMunicipalities: JuntaOptionValues
+
+    "The provinces of the libraries"
+    juntaLibraryProvinces: JuntaOptionValues
+
+    """
+    The public events the Junta de Andalucía organizes or takes part in, such as talks, visits and exhibitions, newest
+    first, searched by province, organizer, theme, title and dates. A search without results answers with the error Bad
+    request.
+    """
+    juntaEvents(
+        "Only the records of this province of Andalusia. ANY, the default, takes all of them."
+        province: JuntaProvince = ANY
+        """
+        Only the events of this body of the Junta, such as Delegación Territorial en Málaga. Leave it out for all of
+        them.
+        """
+        organism: String = "-"
+        "Only the events of this theme, such as Tu salud (your health). Leave it out for all of them."
+        theme: String = "-"
+        "Only the events whose title contains these words"
+        title: String
+        "Only the events whose description contains these words"
+        description: String
+        "Only the events that start on or after this day, such as 2026-10-01"
+        startsFrom: String
+        "Only the events that start on or before this day, such as 2026-12-31"
+        startsTo: String
+        "The number of results to return, from 1 to 100"
+        size: Int! = 10
+    ): JuntaEventPage
+
+    "One of the events by its id, as a page that holds one record"
+    juntaEvent(
+        "The id of the record, which juntaEvents gives"
+        id: ID!
+    ): JuntaEventPage
+
+    "The number of records of the dataset of events of the Junta de Andalucía"
+    juntaEventsCount: JuntaCount
+
+    "The themes of the events"
+    juntaEventThemes: JuntaOptionValues
+
+    "The provinces of the events"
+    juntaEventProvinces: JuntaOptionValues
+
+    "The towns where the events take place"
+    juntaEventLocations: JuntaOptionValues
+
+    "What the events cost, as the dataset writes it, such as Actividad gratuita"
+    juntaEventCosts: JuntaOptionValues
+
+    """
+    The offices of the Junta de Andalucía where people can hand in documents for any public administration, with their
+    addresses and opening hours, searched by body, municipality and province. A search without results answers with the
+    error Bad request.
+    """
+    juntaRegistrationOffices(
+        """
+        Only the offices of this body of the Junta, such as Consejería de Cultura y Deporte. Leave it out for all of
+        them.
+        """
+        body: String = "-"
+        "Only the offices of this city, such as Málaga. Leave it out for all of them."
+        municipality: String = "-"
+        "Only the records of this province of Andalusia. ANY, the default, takes all of them."
+        province: JuntaProvince = ANY
+        "The number of results to return, from 1 to 100"
+        size: Int! = 10
+    ): JuntaRegistrationOfficePage
+
+    "One of the registration offices by its id, as a page that holds one record"
+    juntaRegistrationOffice(
+        "The id of the record, which juntaRegistrationOffices gives"
+        id: ID!
+    ): JuntaRegistrationOfficePage
+
+    "The number of records of the dataset of registration offices of the Junta de Andalucía"
+    juntaRegistrationOfficesCount: JuntaCount
+
+    "The kinds of registration office"
+    juntaRegistrationOfficeKinds: JuntaOptionValues
+
+    "The cities with registration offices"
+    juntaRegistrationOfficeMunicipalities: JuntaOptionValues
+
+    "The provinces with registration offices"
+    juntaRegistrationOfficeProvinces: JuntaOptionValues
+
+    """
+    The dispositions of the Boletín Oficial de la Junta de Andalucía (BOJA), the official gazette of Andalusia, newest
+    first, searched by section, issuing body, kind, year and number of the bulletin. A search without results answers
+    with the error Bad request.
+    """
+    juntaGazetteDispositions(
+        "Only the dispositions of this section, such as 1. Disposiciones generales. Leave it out for all of them."
+        section: String = "-"
+        "Only the dispositions of this body, such as Consejería de Salud. Leave it out for all of them."
+        organisation: String = "-"
+        "Only the dispositions of this kind, such as Acuerdo or Resoluciones. Leave it out for all of them."
+        kind: String = "-"
+        "Only the dispositions of this year, such as 2026"
+        year: String
+        "Only the dispositions of the bulletin with this number in its year, such as 202"
+        number: String
+        "The number of results to return, from 1 to 100"
+        size: Int! = 10
+    ): JuntaGazetteDispositionPage
+
+    "One of the dispositions of the official gazette by its id, as a page that holds one record"
+    juntaGazetteDisposition(
+        "The id of the record, which juntaGazetteDispositions gives"
+        id: ID!
+    ): JuntaGazetteDispositionPage
+
+    "The number of records of the dataset of dispositions of the official gazette of the Junta de Andalucía"
+    juntaGazetteDispositionsCount: JuntaCount
+
+    "The sections of the gazette, such as 1. Disposiciones generales"
+    juntaGazetteSections: JuntaOptionValues
+
+    "The bodies that publish in the gazette"
+    juntaGazetteOrganisations: JuntaOptionValues
+
+    "The kinds of disposition"
+    juntaGazetteKinds: JuntaOptionValues
+
+    "The subsections of the gazette"
+    juntaGazetteSubsections: JuntaOptionValues
+
+    """
+    The consultations in which the Junta de Andalucía asks the public about a law, decree or order it is preparing,
+    newest first, searched by body, kind, theme and title. Pass theme Animales de compañía for the ones about pets. A
+    search without results answers with the error Bad request.
+    """
+    juntaPublicConsultations(
+        "Only the consultations of this body. Leave it out for all of them."
+        organism: String = "-"
+        "Only the consultations about this kind of rule: Ley, Decreto or Orden. Leave it out for all of them."
+        kind: String = "-"
+        "Only the consultations of this theme, such as Animales de compañía. Leave it out for all of them."
+        theme: String = "-"
+        "Only the consultations whose title contains these words"
+        title: String
+        "The number of results to return, from 1 to 100"
+        size: Int! = 10
+    ): JuntaPublicConsultationPage
+
+    "One of the public consultations by its id, as a page that holds one record"
+    juntaPublicConsultation(
+        "The id of the record, which juntaPublicConsultations gives"
+        id: ID!
+    ): JuntaPublicConsultationPage
+
+    "The number of records of the dataset of public consultations of the Junta de Andalucía"
+    juntaPublicConsultationsCount: JuntaCount
+
+    "The bodies that hold public consultations"
+    juntaPublicConsultationOrganisms: JuntaOptionValues
+
+    "The kinds of rule the consultations are about"
+    juntaPublicConsultationKinds: JuntaOptionValues
+
+    "The themes of the consultations, such as Animales de compañía"
+    juntaPublicConsultationThemes: JuntaOptionValues
+
+    """
+    The statistics, maps and reports the bodies of the Junta de Andalucía publish, newest first, searched by body. A
+    search without results answers with the error Bad request.
+    """
+    juntaStatisticalProducts(
+        """
+        Only the products of this body, such as Instituto de Estadística y Cartografía de Andalucía. Leave it out for
+        all of them.
+        """
+        organism: String = "-"
+        "The number of results to return, from 1 to 100"
+        size: Int! = 10
+    ): JuntaStatisticalProductPage
+
+    "One of the statistical products by its id, as a page that holds one record"
+    juntaStatisticalProduct(
+        "The id of the record, which juntaStatisticalProducts gives"
+        id: ID!
+    ): JuntaStatisticalProductPage
+
+    "The number of records of the dataset of statistical products of the Junta de Andalucía"
+    juntaStatisticalProductsCount: JuntaCount
+
+    "The bodies that publish statistical products"
+    juntaStatisticalProductOrganisms: JuntaOptionValues
+
+    "The kinds of statistical product"
+    juntaStatisticalProductKinds: JuntaOptionValues
+
+    """
+    The laws, decrees and orders the Junta de Andalucía is preparing, with their drafts and their status, newest first,
+    searched by kind, body, status and title. A search without results answers with the error Bad request.
+    """
+    juntaDraftRegulations(
+        """
+        Only the drafts of this kind, such as Proyecto de Decreto del Consejo de Gobierno. Leave it out for all of them.
+        """
+        kind: String = "-"
+        "Only the drafts of this body. Leave it out for all of them."
+        organism: String = "-"
+        "elaboracion for the drafts in preparation, finalizado for the finished ones. Leave it out for all of them."
+        status: String = "-"
+        "Only the drafts whose title contains these words"
+        title: String
+        "The number of results to return, from 1 to 100"
+        size: Int! = 10
+    ): JuntaDraftRegulationPage
+
+    "One of the regulations in preparation by its id, as a page that holds one record"
+    juntaDraftRegulation(
+        "The id of the record, which juntaDraftRegulations gives"
+        id: ID!
+    ): JuntaDraftRegulationPage
+
+    "The number of records of the dataset of regulations in preparation of the Junta de Andalucía"
+    juntaDraftRegulationsCount: JuntaCount
+
+    "The kinds of activity: legislative or regulatory"
+    juntaDraftRegulationTypes: JuntaOptionValues
+
+    "The kinds of draft, such as Proyecto de Orden"
+    juntaDraftRegulationKinds: JuntaOptionValues
+
+    "The bodies that prepare regulations"
+    juntaDraftRegulationOrganisms: JuntaOptionValues
+
+    "The statuses of the drafts"
+    juntaDraftRegulationStatuses: JuntaOptionValues
+
+    """
+    The books, guides, reports and other publications of the Junta de Andalucía, newest first, searched by year, format,
+    body, topic, title, author and subject. The subject Caballos (horses) finds the ones about horses. A search without
+    results answers with the error Bad request.
+    """
+    juntaPublications(
+        "Only the publications of this year, such as 2020. Leave it out for all of them."
+        year: String = "-"
+        "Only the publications in this format: Papel (paper), Electrónico, DVD, CD ROM. Leave it out for all of them."
+        format: String = "-"
+        "Only the publications of this body. Leave it out for all of them."
+        organism: String = "-"
+        "Only the publications of this topic, such as Ganadería (livestock). Leave it out for all of them."
+        topic: String = "-"
+        "Only the publications whose title contains these words"
+        title: String
+        "Only the publications of this author"
+        author: String
+        "Only the publications of this subject, in Spanish, such as Caballos or Perros"
+        subject: String
+        "The number of results to return, from 1 to 100"
+        size: Int! = 10
+    ): JuntaPublicationPage
+
+    "One of the publications by its id, as a page that holds one record"
+    juntaPublication(
+        "The id of the record, which juntaPublications gives"
+        id: ID!
+    ): JuntaPublicationPage
+
+    "The number of records of the dataset of publications of the Junta de Andalucía"
+    juntaPublicationsCount: JuntaCount
+
+    "The years of the publications"
+    juntaPublicationYears: JuntaOptionValues
+
+    "The formats of the publications"
+    juntaPublicationFormats: JuntaOptionValues
+
+    "The bodies that publish"
+    juntaPublicationOrganisms: JuntaOptionValues
+
+    "The topics of the publications"
+    juntaPublicationTopics: JuntaOptionValues
+
+    "The subjects of the publications, such as Caballos"
+    juntaPublicationSubjects: JuntaOptionValues
+
+    """
+    The news of the Junta de Andalucía, newest first, searched by topic, words in the title, subtitle or body, and
+    dates. Pass topic Animales de compañía, or Convivencia responsable con animales de compañía, for news about pets. A
+    search without results answers with the error Bad request.
+    """
+    juntaNewsItems(
+        """
+        Only the news of this topic, such as Animales de compañía. juntaNewsTopics lists them. Leave it out for all of
+        them.
+        """
+        topic: String = "-"
+        "Only the news whose title contains these words"
+        title: String
+        "Only the news whose subtitle contains these words"
+        subtitle: String
+        "Only the news whose text contains these words"
+        body: String
+        "Only the news published on or after this day, such as 2026-01-01"
+        publishedFrom: String
+        "Only the news published on or before this day"
+        publishedTo: String
+        "The number of results to return, from 1 to 100"
+        size: Int! = 10
+    ): JuntaNewsItemPage
+
+    "One of the news by its id, as a page that holds one record"
+    juntaNewsItem(
+        "The id of the record, which juntaNewsItems gives"
+        id: ID!
+    ): JuntaNewsItemPage
+
+    "The number of records of the dataset of news of the Junta de Andalucía"
+    juntaNewsItemsCount: JuntaCount
+
+    "The topics of the news, such as Animales de compañía"
+    juntaNewsTopics: JuntaOptionValues
+
+    """
+    The studies and reports of the department of agriculture, livestock, fisheries and rural development of the Junta,
+    newest first, by theme, such as Ganadería (livestock) or Agricultura. A search without results answers with the
+    error Bad request.
+    """
+    juntaStudyReports(
+        "Only the reports of this theme, such as Ganadería (livestock). Leave it out for all of them."
+        theme: String = "-"
+        "The number of results to return, from 1 to 100"
+        size: Int! = 10
+    ): JuntaStudyReportPage
+
+    "One of the studies and reports by its id, as a page that holds one record"
+    juntaStudyReport(
+        "The id of the record, which juntaStudyReports gives"
+        id: ID!
+    ): JuntaStudyReportPage
+
+    "The number of records of the dataset of studies and reports of the Junta de Andalucía"
+    juntaStudyReportsCount: JuntaCount
+
+    "The bodies that publish studies and reports"
+    juntaStudyReportOrganisms: JuntaOptionValues
+
+    "The themes of the studies and reports, such as Ganadería"
+    juntaStudyReportThemes: JuntaOptionValues
+
+    """
+    The statistical and cartographic activities of the Junta de Andalucía, such as surveys and maps, by kind, department
+    and body, with their periodicity. A search without results answers with the error Bad request.
+    """
+    juntaStatisticalActivities(
+        "Only the activities of this kind: Estadística or Cartográfica. Leave it out for all of them."
+        kind: String = "-"
+        "Only the activities of this department of the Junta. Leave it out for all of them."
+        department: String = "-"
+        "Only the activities of this body. Leave it out for all of them."
+        organism: String = "-"
+        "Only the activity with exactly this title, such as Actividades de I+D en Andalucía"
+        title: String
+        "The number of results to return, from 1 to 100"
+        size: Int! = 10
+    ): JuntaStatisticalActivityPage
+
+    "One of the statistical activities by its id, as a page that holds one record"
+    juntaStatisticalActivity(
+        "The id of the record, which juntaStatisticalActivities gives"
+        id: ID!
+    ): JuntaStatisticalActivityPage
+
+    "The number of records of the dataset of statistical activities of the Junta de Andalucía"
+    juntaStatisticalActivitiesCount: JuntaCount
+
+    "The kinds of activity"
+    juntaStatisticalActivityKinds: JuntaOptionValues
+
+    "The departments with statistical activities"
+    juntaStatisticalActivityDepartments: JuntaOptionValues
+
+    "The bodies with statistical activities"
+    juntaStatisticalActivityOrganisms: JuntaOptionValues
+
+    """
+    The conservation and restoration works of the Andalusian Institute of Historical Heritage on monuments, paintings
+    and sculptures, by typology. A search without results answers with the error Bad request.
+    """
+    juntaConservationWorks(
+        "Only the works on this typology of heritage, such as Arquitectura Civil. Leave it out for all of them."
+        typology: String = "-"
+        "The number of results to return, from 1 to 100"
+        size: Int! = 10
+    ): JuntaConservationWorkPage
+
+    "One of the conservation works on historical heritage by its id, as a page that holds one record"
+    juntaConservationWork(
+        "The id of the record, which juntaConservationWorks gives"
+        id: ID!
+    ): JuntaConservationWorkPage
+
+    "The number of records of the dataset of conservation works on historical heritage of the Junta de Andalucía"
+    juntaConservationWorksCount: JuntaCount
+
+    "The typologies of heritage"
+    juntaConservationWorkTypologies: JuntaOptionValues
+
+    "The provinces of the works"
+    juntaConservationWorkProvinces: JuntaOptionValues
+
+    "The municipalities of the works"
+    juntaConservationWorkMunicipalities: JuntaOptionValues
+
+    """
+    The archives, libraries, museums and other cultural centres of the Junta de Andalucía, with their addresses and
+    positions, by province, municipality and kind. A search without results answers with the error Bad request.
+    """
+    juntaCulturalCentres(
+        "Only the centres of this province, such as Málaga. Leave it out for all of them."
+        province: String = "-"
+        "Only the centres of this municipality, such as Málaga. Leave it out for all of them."
+        municipality: String = "-"
+        "Only the centres of this kind, such as Archivo or Biblioteca. Leave it out for all of them."
+        kind: String = "-"
+        "The number of results to return, from 1 to 100"
+        size: Int! = 10
+    ): JuntaCulturalCentrePage
+
+    "The number of records of the dataset of cultural centres of the Junta de Andalucía"
+    juntaCulturalCentresCount: JuntaCount
+
+    "The towns of the cultural centres"
+    juntaCulturalCentreLocalities: JuntaOptionValues
+
+    "The municipalities of the cultural centres"
+    juntaCulturalCentreMunicipalities: JuntaOptionValues
+
+    "The provinces of the cultural centres"
+    juntaCulturalCentreProvinces: JuntaOptionValues
+
+    "The kinds of cultural centre, such as Archivo"
+    juntaCulturalCentreKinds: JuntaOptionValues
+
+    """
+    The directives, instructions, circulars, agreements and answers to consultations of the bodies of the Junta, newest
+    first, by body and topic. A search without results answers with the error Bad request.
+    """
+    juntaOtherDispositions(
+        "Only the dispositions of this body. Leave it out for all of them."
+        organism: String = "-"
+        "Only the dispositions of this topic, such as Admisión y matriculación. Leave it out for all of them."
+        topic: String = "-"
+        "The number of results to return, from 1 to 100"
+        size: Int! = 10
+    ): JuntaOtherDispositionPage
+
+    "One of the directives, instructions and circulars by its id, as a page that holds one record"
+    juntaOtherDisposition(
+        "The id of the record, which juntaOtherDispositions gives"
+        id: ID!
+    ): JuntaOtherDispositionPage
+
+    "The number of records of the dataset of directives, instructions and circulars of the Junta de Andalucía"
+    juntaOtherDispositionsCount: JuntaCount
+
+    "The titles of the dispositions"
+    juntaOtherDispositionTitles: JuntaOptionValues
+
+    "The bodies that issue them"
+    juntaOtherDispositionOrganisms: JuntaOptionValues
+
+    "The topics of the dispositions"
+    juntaOtherDispositionTopics: JuntaOptionValues
+
+    """
+    The collaboration agreements the Junta de Andalucía signed with other administrations, universities, companies and
+    associations, newest first, by body, title and date of signature. A search without results answers with the error
+    Bad request.
+    """
+    juntaAgreements(
+        "Only the agreements of this body of the Junta. Leave it out for all of them."
+        organism: String = "-"
+        "Only the agreements whose title contains these words, such as animales"
+        title: String
+        "Only the agreements signed on or after this day, such as 2026-01-01"
+        signedFrom: String
+        "Only the agreements signed on or before this day"
+        signedTo: String
+        "The number of results to return, from 1 to 100"
+        size: Int! = 10
+    ): JuntaAgreementPage
+
+    "One of the collaboration agreements by its id, as a page that holds one record"
+    juntaAgreement(
+        "The id of the record, which juntaAgreements gives"
+        id: ID!
+    ): JuntaAgreementPage
+
+    "The number of records of the dataset of collaboration agreements of the Junta de Andalucía"
+    juntaAgreementsCount: JuntaCount
+
+    "The bodies that sign agreements"
+    juntaAgreementOrganisms: JuntaOptionValues
+
+    """
+    The plans and programmes of the Junta de Andalucía, such as health or environmental plans, by department and topic,
+    with their dates. A search without results answers with the error Bad request.
+    """
+    juntaPlans(
+        """
+        Only the plans of this department, such as Agricultura, Ganadería, Pesca y Desarrollo Sostenible. Leave it out
+        for all of them.
+        """
+        department: String = "-"
+        "Only the plans of this topic, such as Planificación en salud. Leave it out for all of them."
+        topic: String = "-"
+        "The number of results to return, from 1 to 100"
+        size: Int! = 10
+    ): JuntaPlanPage
+
+    "One of the plans and programmes by its id, as a page that holds one record"
+    juntaPlan(
+        "The id of the record, which juntaPlans gives"
+        id: ID!
+    ): JuntaPlanPage
+
+    "The number of records of the dataset of plans and programmes of the Junta de Andalucía"
+    juntaPlansCount: JuntaCount
+
+    "The titles of the plans"
+    juntaPlanTitles: JuntaOptionValues
+
+    "The bodies of the plans"
+    juntaPlanOrganisms: JuntaOptionValues
+
+    "The days plans were approved"
+    juntaPlanApprovalDates: JuntaOptionValues
+
+    "The departments of the plans"
+    juntaPlanDepartments: JuntaOptionValues
+
+    "The topics of the plans"
+    juntaPlanTopics: JuntaOptionValues
+
+    """
+    The meetings of the Consejo de Gobierno, the Governing Council of Andalusia, newest first, with their agendas,
+    agreements and the matters they dealt with. A search without results answers with the error Bad request.
+    """
+    juntaCouncilMeetings(
+        "Only the meeting with this title, such as Sesion del 10/11/2015. Leave it out for all of them."
+        title: String = "-"
+        "The number of results to return, from 1 to 100"
+        size: Int! = 10
+    ): JuntaCouncilMeetingPage
+
+    "One of the meetings of the Governing Council by its id, as a page that holds one record"
+    juntaCouncilMeeting(
+        "The id of the record, which juntaCouncilMeetings gives"
+        id: ID!
+    ): JuntaCouncilMeetingPage
+
+    "The number of records of the dataset of meetings of the Governing Council of the Junta de Andalucía"
+    juntaCouncilMeetingsCount: JuntaCount
+
+    "The titles of the meetings"
+    juntaCouncilMeetingTitles: JuntaOptionValues
+
+    """
+    The documents of the Junta de Andalucía open to the comments of the public, such as a draft decree, newest first, by
+    body, theme and department, with the dates for comments. A search without results answers with the error Bad
+    request.
+    """
+    juntaPublicDocuments(
+        "Only the documents of this body. Leave it out for all of them."
+        organism: String = "-"
+        "Only the documents of this theme. Leave it out for all of them."
+        theme: String = "-"
+        "Only the documents of this department. Leave it out for all of them."
+        department: String = "-"
+        "Only the documents whose title contains these words"
+        title: String
+        "The number of results to return, from 1 to 100"
+        size: Int! = 10
+    ): JuntaPublicDocumentPage
+
+    "One of the documents under public consultation by its id, as a page that holds one record"
+    juntaPublicDocument(
+        "The id of the record, which juntaPublicDocuments gives"
+        id: ID!
+    ): JuntaPublicDocumentPage
+
+    "The number of records of the dataset of documents under public consultation of the Junta de Andalucía"
+    juntaPublicDocumentsCount: JuntaCount
+
+    "The bodies with documents under consultation"
+    juntaPublicDocumentOrganisms: JuntaOptionValues
+
+    "The themes of the documents"
+    juntaPublicDocumentThemes: JuntaOptionValues
+
+    "The departments of the documents"
+    juntaPublicDocumentDepartments: JuntaOptionValues
+
+    """
+    The state training courses for employment held in Andalusia, by modality and title, with their dates, length and
+    place. A search without results answers with the error Bad request.
+    """
+    juntaTrainingCourses(
+        "Only the courses of this modality: Teleformación (online), Mixta or Presencial. Leave it out for all of them."
+        modality: String = "-"
+        "Only the course with this title. Leave it out for all of them."
+        title: String = "-"
+        "Only the courses that start on this day"
+        startDate: String
+        "The number of results to return, from 1 to 100"
+        size: Int! = 10
+    ): JuntaTrainingCoursePage
+
+    "One of the training courses for employment by its id, as a page that holds one record"
+    juntaTrainingCourse(
+        "The id of the record, which juntaTrainingCourses gives"
+        id: ID!
+    ): JuntaTrainingCoursePage
+
+    "The number of records of the dataset of training courses for employment of the Junta de Andalucía"
+    juntaTrainingCoursesCount: JuntaCount
+
+    "The modalities of the courses"
+    juntaTrainingCourseModalities: JuntaOptionValues
+
+    "The titles of the courses"
+    juntaTrainingCourseTitles: JuntaOptionValues
+
+    """
+    The job offers of the public companies and agencies of the Junta de Andalucía, by status, degree, kind, province and
+    contract, such as the offers in progress in Málaga. A search without results answers with the error Bad request.
+    """
+    juntaJobOffers(
+        "Only the offers in this status: En curso (open) or Concluido (closed). Leave it out for all of them."
+        status: String = "-"
+        "Only the offers in this province, such as Málaga. Leave it out for all of them."
+        province: String = "-"
+        "Only the offers of this kind, such as Oferta de empleo or Bolsa de trabajo. Leave it out for all of them."
+        kind: String = "-"
+        "Only the offers that ask for this degree. Leave it out for all of them."
+        degree: String = "-"
+        "Only the offers whose job name has this word, such as Técnico"
+        jobName: String
+        "Only the offers of this body"
+        organism: String
+        "Only the offers in this town"
+        locality: String
+        "The number of results to return, from 1 to 100"
+        size: Int! = 10
+    ): JuntaJobOfferPage
+
+    "One of the job offers of the public sector by its id, as a page that holds one record"
+    juntaJobOffer(
+        "The id of the record, which juntaJobOffers gives"
+        id: ID!
+    ): JuntaJobOfferPage
+
+    "The number of records of the dataset of job offers of the public sector of the Junta de Andalucía"
+    juntaJobOffersCount: JuntaCount
+
+    "The degrees the offers ask for"
+    juntaJobOfferDegrees: JuntaOptionValues
+
+    "The kinds of offer"
+    juntaJobOfferKinds: JuntaOptionValues
+
+    "The kinds of contract"
+    juntaJobOfferContracts: JuntaOptionValues
+
+    "The bodies with offers"
+    juntaJobOfferOrganisms: JuntaOptionValues
+
+    "The provinces of the offers"
+    juntaJobOfferProvinces: JuntaOptionValues
+
+    "The towns of the offers"
+    juntaJobOfferLocalities: JuntaOptionValues
+
+    """
+    The organic units of the Junta de Andalucía in DIR3, the common directory of the Spanish administrations, with their
+    codes, levels and the units above them. A search without results answers with the error Bad request.
+    """
+    juntaOrganicUnits(
+        "Only the units of this kind of public entity, such as ORGANISMO AUTONOMO. Leave it out for all of them."
+        entityType: String = "-"
+        "The number of results to return, from 1 to 100"
+        size: Int! = 10
+    ): JuntaOrganicUnitPage
+
+    "One of the organic units by its id, as a page that holds one record"
+    juntaOrganicUnit(
+        "The id of the record, which juntaOrganicUnits gives"
+        id: ID!
+    ): JuntaOrganicUnitPage
+
+    "The number of records of the dataset of organic units of the Junta de Andalucía"
+    juntaOrganicUnitsCount: JuntaCount
+
+    "The levels of administration"
+    juntaOrganicUnitLevels: JuntaOptionValues
+
+    "The kinds of public entity"
+    juntaOrganicUnitEntityTypes: JuntaOptionValues
+
+    "The states of the units"
+    juntaOrganicUnitStates: JuntaOptionValues
+
+    """
+    The buildings and plots of land the Junta de Andalucía owns, with their address, use and the department that holds
+    them, by department, kind of ownership, province, municipality and use. A search without results answers with the
+    error Bad request.
+    """
+    juntaProperties(
+        """
+        Only the properties of this department or agency, such as Agencia Andaluza de la Energía. Leave it out for all
+        of them.
+        """
+        department: String = "-"
+        """
+        Only the properties of this kind of ownership: Demanial (public domain), Patrimonial, Especial or Rústica. Leave
+        it out for all of them.
+        """
+        nature: String = "-"
+        "Only the properties in this province, such as Málaga. Leave it out for all of them."
+        province: String = "-"
+        """
+        Only the properties in this municipality, in capitals and without accents, such as MALAGA. Leave it out for all
+        of them.
+        """
+        municipality: String = "-"
+        "Only the properties with this use, such as Administrativo. Leave it out for all of them."
+        usage: String = "-"
+        "Only the properties on this street"
+        street: String
+        "The number of results to return, from 1 to 100"
+        size: Int! = 10
+    ): JuntaPropertyPage
+
+    "One of the buildings and land owned by the Junta by its id, as a page that holds one record"
+    juntaProperty(
+        "The id of the record, which juntaProperties gives"
+        id: ID!
+    ): JuntaPropertyPage
+
+    "The number of records of the dataset of buildings and land owned by the Junta of the Junta de Andalucía"
+    juntaPropertiesCount: JuntaCount
+
+    "The departments and agencies that hold properties"
+    juntaPropertyDepartments: JuntaOptionValues
+
+    "The kinds of ownership"
+    juntaPropertyNatures: JuntaOptionValues
+
+    "The provinces of the properties"
+    juntaPropertyProvinces: JuntaOptionValues
+
+    "The municipalities of the properties, in capitals"
+    juntaPropertyMunicipalities: JuntaOptionValues
+
+    "The uses of the properties, such as ADMINISTRATIVO"
+    juntaPropertyUsages: JuntaOptionValues
+
+    """
+    The courses on conservation, archaeology and heritage management of the Andalusian Institute of Historical Heritage
+    (IAPH), newest first, by discipline, modality and place. A search without results answers with the error Bad
+    request.
+    """
+    juntaHeritageCourses(
+        "Only the courses of this discipline"
+        discipline: String
+        "Only the courses of this modality, such as Teleformación (online) or Presencial"
+        modality: String
+        "Only the courses held in this place, such as Sevilla"
+        location: String
+        "Only the courses whose title has these words"
+        title: String
+        "The number of results to return, from 1 to 100"
+        size: Int! = 10
+    ): JuntaHeritageCoursePage
+
+    "One of the courses of the Andalusian Institute of Historical Heritage by its id, as a page that holds one record"
+    juntaHeritageCourse(
+        "The id of the record, which juntaHeritageCourses gives"
+        id: ID!
+    ): JuntaHeritageCoursePage
+
+    """
+    The number of records of the dataset of courses of the Andalusian Institute of Historical Heritage of the Junta de
+    Andalucía
+    """
+    juntaHeritageCoursesCount: JuntaCount
+
+    """
+    The valuation tables of the archives of Andalusia, which say how long each series of public documents is kept and
+    whether it is destroyed, by the administration that produces the documents. A search without results answers with
+    the error Bad request.
+    """
+    juntaRatingTables(
+        """
+        Only the tables of this administration: A (autonomous), E (state), J (justice) or L (local). Leave it out for
+        all of them.
+        """
+        administration: String = "-"
+        "The number of results to return, from 1 to 100"
+        size: Int! = 10
+    ): JuntaRatingTablePage
+
+    "The number of records of the dataset of document valuation tables of the Junta de Andalucía"
+    juntaRatingTablesCount: JuntaCount
+
+    "The administrations with valuation tables"
+    juntaRatingTableAdministrations: JuntaOptionValues
+
+    """
+    The local entities in the Andalusian Register of Local Entities: municipalities, provinces, associations of
+    municipalities (mancomunidades), consortia and decentralized entities, with their addresses. A search without
+    results answers with the error Bad request.
+    """
+    juntaLocalEntities(
+        """
+        Only the entities of this kind: MUNICIPIO, PROVINCIA, MANCOMUNIDAD, CONSORCIO or ENTIDAD LOCAL DESCENTRALIZADA.
+        Leave it out for all of them.
+        """
+        kind: String = "-"
+        "Only the entities of this province, written as PROVINCIA MÁLAGA. Leave it out for all of them."
+        province: String = "-"
+        "Only the entities of this typology, such as ENTIDAD LOCAL AUTÓNOMA. Leave it out for all of them."
+        typology: String = "-"
+        "The number of results to return, from 1 to 100"
+        size: Int! = 10
+    ): JuntaLocalEntityPage
+
+    "One of the local entities by its id, as a page that holds one record"
+    juntaLocalEntity(
+        "The id of the record, which juntaLocalEntities gives"
+        id: ID!
+    ): JuntaLocalEntityPage
+
+    "The number of records of the dataset of local entities of the Junta de Andalucía"
+    juntaLocalEntitiesCount: JuntaCount
+
+    "The kinds of local entity"
+    juntaLocalEntityKinds: JuntaOptionValues
+
+    "The typologies of local entity"
+    juntaLocalEntityTypologies: JuntaOptionValues
+
+    "The provinces, written as PROVINCIA MÁLAGA"
+    juntaLocalEntityProvinces: JuntaOptionValues
+
+    """
+    The reports of the Advisory Commission on Administrative Contracting of the Junta de Andalucía, which answers
+    questions on how public bodies must buy works, goods and services, newest first. A search without results answers
+    with the error Bad request.
+    """
+    juntaCommissionReports(
+        "The number of results to return, from 1 to 100"
+        size: Int! = 10
+    ): JuntaCommissionReportPage
+
+    """
+    One of the reports of the Advisory Commission on Administrative Contracting by its id, as a page that holds one
+    record
+    """
+    juntaCommissionReport(
+        "The id of the record, which juntaCommissionReports gives"
+        id: ID!
+    ): JuntaCommissionReportPage
+
+    """
+    The number of records of the dataset of reports of the Advisory Commission on Administrative Contracting of the
+    Junta de Andalucía
+    """
+    juntaCommissionReportsCount: JuntaCount
+
+    "The publication states of the reports"
+    juntaCommissionReportStates: JuntaOptionValues
+
+    """
+    What the bodies of the Junta de Andalucía spent on institutional advertising campaigns, by body, year and four-month
+    period, with the media and the amounts. A search without results answers with the error Bad request.
+    """
+    juntaAdvertisingExpenses(
+        "Only the spending of this body, such as Agencia Andaluza de la Energía. Leave it out for all of them."
+        organism: String = "-"
+        "Only the spending of this year, such as 2024. Leave it out for all of them."
+        year: String = "-"
+        """
+        Only the spending of this four-month period: Primer cuatrimestre, Segundo cuatrimestre or Tercer cuatrimestre.
+        Leave it out for all of them.
+        """
+        period: String = "-"
+        "The number of results to return, from 1 to 100"
+        size: Int! = 10
+    ): JuntaAdvertisingExpensePage
+
+    "One of the spending on institutional advertising by its id, as a page that holds one record"
+    juntaAdvertisingExpense(
+        "The id of the record, which juntaAdvertisingExpenses gives"
+        id: ID!
+    ): JuntaAdvertisingExpensePage
+
+    "The number of records of the dataset of spending on institutional advertising of the Junta de Andalucía"
+    juntaAdvertisingExpensesCount: JuntaCount
+
+    "The titles of the records of spending"
+    juntaAdvertisingExpenseTitles: JuntaOptionValues
+
+    "The bodies with spending on advertising"
+    juntaAdvertisingExpenseOrganisms: JuntaOptionValues
+
+    "The years with spending on advertising"
+    juntaAdvertisingExpenseYears: JuntaOptionValues
+
+    """
+    The syllabuses in force for the exams to join the civil service of the Junta de Andalucía, by body or group of civil
+    servants, such as the veterinary specialty of the Cuerpo Superior Facultativo. A search without results answers with
+    the error Bad request.
+    """
+    juntaSyllabuses(
+        """
+        Only the syllabuses of this body or group, such as A1.2 Cuerpo Superior Facultativo. Leave it out for all of
+        them.
+        """
+        bodyGroup: String = "-"
+        "The number of results to return, from 1 to 100"
+        size: Int! = 10
+    ): JuntaSyllabusPage
+
+    "One of the syllabuses of the civil service exams by its id, as a page that holds one record"
+    juntaSyllabus(
+        "The id of the record, which juntaSyllabuses gives"
+        id: ID!
+    ): JuntaSyllabusPage
+
+    "The number of records of the dataset of syllabuses of the civil service exams of the Junta de Andalucía"
+    juntaSyllabusesCount: JuntaCount
+
+    """
+    The selection processes to join the civil service of the Junta de Andalucía, by kind of access, staff, subject, year
+    of the public employment offer and status. A search without results answers with the error Bad request.
+    """
+    juntaSelectionProcesses(
+        "Only the processes of this kind of access, such as Libre or Estabilización. Leave it out for all of them."
+        access: String = "-"
+        "Only the processes for this staff, such as Personal laboral. Leave it out for all of them."
+        staff: String = "-"
+        "Only the processes of this subject, such as Agricultura or Veterinaria. Leave it out for all of them."
+        subject: String = "-"
+        "Only the processes of the public employment offer of this year, such as 2024. Leave it out for all of them."
+        offerYear: String = "-"
+        "Only the processes in this status, such as Fase de oposición. Leave it out for all of them."
+        status: String = "-"
+        "The number of results to return, from 1 to 100"
+        size: Int! = 10
+    ): JuntaSelectionProcessPage
+
+    "One of the selection processes for the civil service by its id, as a page that holds one record"
+    juntaSelectionProcess(
+        "The id of the record, which juntaSelectionProcesses gives"
+        id: ID!
+    ): JuntaSelectionProcessPage
+
+    "The number of records of the dataset of selection processes for the civil service of the Junta de Andalucía"
+    juntaSelectionProcessesCount: JuntaCount
+
+    """
+    The tasks that the bodies of the Junta de Andalucía assign to their own public companies and agencies instead of
+    contracting them out, newest first, by body and title. A search without results answers with the error Bad request.
+    """
+    juntaAssignments(
+        """
+        Only the assignments of this body, such as Agencia de Medio Ambiente y Agua de Andalucía, M.P. Leave it out for
+        all of them.
+        """
+        organism: String = "-"
+        "Only the assignments whose title has these words"
+        title: String
+        "The number of results to return, from 1 to 100"
+        size: Int! = 10
+    ): JuntaAssignmentPage
+
+    "One of the management assignments to public companies by its id, as a page that holds one record"
+    juntaAssignment(
+        "The id of the record, which juntaAssignments gives"
+        id: ID!
+    ): JuntaAssignmentPage
+
+    "The number of records of the dataset of management assignments to public companies of the Junta de Andalucía"
+    juntaAssignmentsCount: JuntaCount
+
+    "The bodies with assignments"
+    juntaAssignmentOrganisms: JuntaOptionValues
+
+    """
+    The resolutions by which a body of the Junta de Andalucía delegates some of its powers to another, newest first, by
+    body, title and day of the delegation. A search without results answers with the error Bad request.
+    """
+    juntaDelegations(
+        "Only the delegations of this body. Leave it out for all of them."
+        organism: String = "-"
+        "Only the delegations whose title has these words"
+        title: String
+        "Only the delegations on or after this day, such as 2025-01-01"
+        from: String
+        "Only the delegations on or before this day"
+        to: String
+        "The number of results to return, from 1 to 100"
+        size: Int! = 10
+    ): JuntaDelegationPage
+
+    "One of the delegations of powers by its id, as a page that holds one record"
+    juntaDelegation(
+        "The id of the record, which juntaDelegations gives"
+        id: ID!
+    ): JuntaDelegationPage
+
+    "The number of records of the dataset of delegations of powers of the Junta de Andalucía"
+    juntaDelegationsCount: JuntaCount
+
+    "The bodies with delegations"
+    juntaDelegationOrganisms: JuntaOptionValues
+
+    """
+    The decisions of the Administrative Court of Contract Appeals of Andalusia on appeals against public tenders, newest
+    first, by kind of contract, contested act and outcome. A search without results answers with the error Bad request.
+    """
+    juntaTenderCourtDecisions(
+        "Only the decisions on this kind of contract, such as Acuerdo Marco. Leave it out for all of them."
+        contractKind: String = "-"
+        "Only the decisions on this contested act, such as Adjudicación (award). Leave it out for all of them."
+        contestedAct: String = "-"
+        """
+        Only the decisions with this outcome, such as Estimación (upheld) or Desestimación (dismissed). Leave it out for
+        all of them.
+        """
+        outcome: String = "-"
+        "Only the decisions on or after this day, such as 2025-01-01"
+        from: String
+        "Only the decisions on or before this day"
+        to: String
+        "The number of results to return, from 1 to 100"
+        size: Int! = 10
+    ): JuntaTenderCourtDecisionPage
+
+    "One of the decisions of the Administrative Court of Contract Appeals by its id, as a page that holds one record"
+    juntaTenderCourtDecision(
+        "The id of the record, which juntaTenderCourtDecisions gives"
+        id: ID!
+    ): JuntaTenderCourtDecisionPage
+
+    """
+    The number of records of the dataset of decisions of the Administrative Court of Contract Appeals of the Junta de
+    Andalucía
+    """
+    juntaTenderCourtDecisionsCount: JuntaCount
+
+    "The kinds of contract"
+    juntaTenderCourtContractKinds: JuntaOptionValues
+
+    "The contested acts"
+    juntaTenderCourtContestedActs: JuntaOptionValues
+
+    "The outcomes of the decisions"
+    juntaTenderCourtOutcomes: JuntaOptionValues
+
+    """
+    The list of job positions (relación de puestos de trabajo) of the Junta de Andalucía, with their group, level, pay
+    supplement and requirements, by organization, department and group. A search without results answers with the error
+    Bad request.
+    """
+    juntaJobPositions(
+        """
+        Only the positions of this organization, such as AGENCIA DE GESTIÓN AGRARIA Y PESQUERA. Leave it out for all of
+        them.
+        """
+        organization: String = "-"
+        "Only the positions of this department. Leave it out for all of them."
+        department: String = "-"
+        "Only the positions of this group, such as A1 or C1. Leave it out for all of them."
+        group: String = "-"
+        "Only the positions whose name has these words, such as VETERINARIO"
+        description: String
+        "The number of results to return, from 1 to 100"
+        size: Int! = 10
+    ): JuntaJobPositionPage
+
+    "The number of records of the dataset of job positions of the Junta de Andalucía"
+    juntaJobPositionsCount: JuntaCount
+
+    "The organizations with positions"
+    juntaJobPositionOrganizations: JuntaOptionValues
+
+    "The departments with positions"
+    juntaJobPositionDepartments: JuntaOptionValues
+
+    "The groups of the positions"
+    juntaJobPositionGroups: JuntaOptionValues
+
+    """
+    The units of the organic structure of the Junta de Andalucía, such as the directorates general of each department,
+    with their functions and the address of their seat, by department. A search without results answers with the error
+    Bad request.
+    """
+    juntaOrganicStructureUnits(
+        """
+        Only the units of this department, such as Consejería de Agricultura, Ganadería, Pesca y Desarrollo Sostenible.
+        Leave it out for all of them.
+        """
+        department: String = "-"
+        "The number of results to return, from 1 to 100"
+        size: Int! = 10
+    ): JuntaOrganicStructureUnitPage
+
+    "One of the units of the organic structure by its id, as a page that holds one record"
+    juntaOrganicStructureUnit(
+        "The id of the record, which juntaOrganicStructureUnits gives"
+        id: ID!
+    ): JuntaOrganicStructureUnitPage
+
+    "The number of records of the dataset of units of the organic structure of the Junta de Andalucía"
+    juntaOrganicStructureUnitsCount: JuntaCount
+
+    "The names of the units"
+    juntaOrganicStructureUnitNames: JuntaOptionValues
+
+    """
+    The transparency units of the departments and agencies of the Junta de Andalucía, which answer requests for public
+    information, by the body they serve. A search without results answers with the error Bad request.
+    """
+    juntaTransparencyUnits(
+        "Only the unit that serves this body, such as Agencia Andaluza de la Energía. Leave it out for all of them."
+        scope: String = "-"
+        "The number of results to return, from 1 to 100"
+        size: Int! = 10
+    ): JuntaTransparencyUnitPage
+
+    "One of the transparency units by its id, as a page that holds one record"
+    juntaTransparencyUnit(
+        "The id of the record, which juntaTransparencyUnits gives"
+        id: ID!
+    ): JuntaTransparencyUnitPage
+
+    "The number of records of the dataset of transparency units of the Junta de Andalucía"
+    juntaTransparencyUnitsCount: JuntaCount
+
+    "The bodies the units serve"
+    juntaTransparencyUnitScopes: JuntaOptionValues
+
+    "The names of the units"
+    juntaTransparencyUnitTitles: JuntaOptionValues
+
+    """
+    The inventory of the activities in which the bodies of the Junta de Andalucía process personal data, with their
+    purpose, legal basis, the kinds of data and people concerned, and how long the data is kept, by body. A search
+    without results answers with the error Bad request.
+    """
+    juntaDataProcessingActivities(
+        "Only the activities of this body, such as Agencia Andaluza de la Energía. Leave it out for all of them."
+        organism: String = "-"
+        "The number of results to return, from 1 to 100"
+        size: Int! = 10
+    ): JuntaDataProcessingActivityPage
+
+    "One of the activities that process personal data by its id, as a page that holds one record"
+    juntaDataProcessingActivity(
+        "The id of the record, which juntaDataProcessingActivities gives"
+        id: ID!
+    ): JuntaDataProcessingActivityPage
+
+    "The number of records of the dataset of activities that process personal data of the Junta de Andalucía"
+    juntaDataProcessingActivitiesCount: JuntaCount
+
+    "The bodies with activities that process personal data"
+    juntaDataProcessingActivityOrganisms: JuntaOptionValues
+
+    """
+    The resolutions by which a body of the Junta de Andalucía refused a request for public information in full or in
+    part, newest first, by body and outcome, with the reason. The resolutions are published anonymized. A search without
+    results answers with the error Bad request.
+    """
+    juntaAccessDenials(
+        """
+        Only the resolutions of this body, such as Agricultura, Ganadería, Pesca y Desarrollo Sostenible. Leave it out
+        for all of them.
+        """
+        organism: String = "-"
+        """
+        Only the resolutions with this outcome: Denegatoria (refused) or Estimatoria parcial (granted in part). Leave it
+        out for all of them.
+        """
+        outcome: String = "-"
+        "Only the resolutions of this day, such as 2026-10-13"
+        date: String
+        "The number of results to return, from 1 to 100"
+        size: Int! = 10
+    ): JuntaAccessDenialPage
+
+    "One of the refusals of requests for public information by its id, as a page that holds one record"
+    juntaAccessDenial(
+        "The id of the record, which juntaAccessDenials gives"
+        id: ID!
+    ): JuntaAccessDenialPage
+
+    "The number of records of the dataset of refusals of requests for public information of the Junta de Andalucía"
+    juntaAccessDenialsCount: JuntaCount
+
+    "The bodies with resolutions"
+    juntaAccessDenialOrganisms: JuntaOptionValues
+
+    "The outcomes of the resolutions"
+    juntaAccessDenialOutcomes: JuntaOptionValues
+}
+
+"The number of records of a dataset"
+type JuntaCount {
+    "The number of records"
+    total: Int
+}
+
+"The values a filter of a dataset takes"
+type JuntaOptionValues {
+    "The values, in Spanish, as the filter takes them"
+    values: [String]
+    "How many records have each value, when the dataset counts them"
+    counts: [JuntaValueCount]
+}
+
+"How many records of a dataset have one value"
+type JuntaValueCount {
+    "The value"
+    value: String
+    "The number of records with the value"
+    count: Int
+}
+
+"A point on the map in the coordinates of Spanish maps"
+type JuntaUtmPoint {
+    """
+    The easting in metres, in UTM zone 30N (ETRS89, EPSG:25830), the grid of Spanish maps. Divide by 1000 for
+    kilometres; it is not a latitude or longitude.
+    """
+    x: Float
+    """
+    The northing in metres, in UTM zone 30N (ETRS89, EPSG:25830), the grid of Spanish maps. Divide by 1000 for
+    kilometres; it is not a latitude or longitude.
+    """
+    y: Float
+}
+
+"The first and last day of something, as the dataset writes them"
+type JuntaDateRange {
+    "The first day, written as 2026-11-04 or as 01/09/2017"
+    start: String
+    "The last day, written the same way"
+    end: String
+}
+
+"The public holidays of one municipality in one year"
+type JuntaHolidayCalendar {
+    "The holidays, in date order"
+    holidays: [JuntaHoliday]
+}
+
+"A public holiday in Andalusia"
+type JuntaHoliday {
+    "The id of the holiday"
+    id: ID
+    "The day of the holiday, at midnight UTC"
+    date: DateTime
+    "The day of the holiday as a number, such as 20260101 for 1 January 2026"
+    dayNumber: Int
+    "The holiday, in Spanish, such as AÑO NUEVO or FIESTA LOCAL EN MÁLAGA (MÁLAGA)"
+    description: String
+    "LOCAL for a holiday of one town, LABORAL for a national or regional one"
+    kind: String
+    "The municipality of a local holiday, in capitals, or an empty text"
+    municipality: String
+    "The province of a local holiday, in capitals, or an empty text"
+    province: String
+    "The year, such as 2026"
+    year: String
+}
+
+"A municipality of Andalusia"
+type JuntaMunicipality {
+    "The name of the municipality, such as Málaga"
+    name: String
+    "The code of the municipality at the National Statistics Institute (INE), such as 29067 for Málaga"
+    ineCode: Int
+    "The INE code of the province, such as 29 for Málaga"
+    provinceCode: Int
+    "Whether the municipality is the capital of its province"
+    provincialCapital: Boolean
+    "The latitude of the town centre"
+    latitude: Float
+    "The longitude of the town centre"
+    longitude: Float
+    "The id of the municipality in the catalogue of the Junta"
+    identifier: Int
+    "The address of the record in the catalogue of the Junta"
+    resource: String
+    "The id of the record in the content system of the Junta"
+    catalogueId: String
+    "The collection of the record, orbe_municipios"
+    collection: String
+    "Whether the record is published"
+    available: Boolean
+    "When the record last changed"
+    modified: DateTime
+}
+
+"""
+A business in the Tourism Register of Andalusia, such as a hotel, a campsite, a rural house or a holiday home. The
+register keeps the contact details of the tourist guides and the holders of the businesses, which this schema leaves
+out.
+"""
+type JuntaTourismEstablishment {
+    "The id of the record"
+    id: ID
+    "The name of the business, such as ALMANAT"
+    name: String
+    "The kind of business, such as Campamento de turismo or Establecimiento Hotelero"
+    kind: String
+    "The group within its kind, such as Hotel, Hostal or Camping"
+    group: String
+    "The category, such as 3 Estrellas (three stars)"
+    category: String
+    "The setting of the business: Playa, Ciudad, Rural or Carretera"
+    modality: String
+    "What the business specializes in, such as Camping Temático, or No disponible"
+    specialties: String
+    "The code of the business in the register, such as CM/MA/00055"
+    registrationCode: String
+    "The address of the business"
+    address: String
+    "The street or road of the address"
+    roadName: String
+    "The postal code, such as 29749"
+    postalCode: String
+    "The town of the business, in capitals"
+    locality: String
+    "The municipality of the business, in capitals, such as VELEZ-MALAGA"
+    municipality: String
+    "The province, in capitals, such as MÁLAGA"
+    province: String
+    """
+    The easting of the business in metres, in UTM zone 30N (ETRS89, EPSG:25830), the grid of Spanish maps. Divide by
+    1000 for kilometres; it is not a latitude or longitude.
+    """
+    x: Float
+    """
+    The northing of the business in metres, in UTM zone 30N (ETRS89, EPSG:25830), the grid of Spanish maps. Divide by
+    1000 for kilometres; it is not a latitude or longitude.
+    """
+    y: Float
+    "The reference of the building in the land registry (Catastro)"
+    cadastralReference: String
+    "The email address of the business, or - when the register lacks one"
+    email: String
+    "The telephone of the business, or -"
+    phone: String
+    "The mobile telephone of the business, or -"
+    mobile: String
+    "The website of the business"
+    url: String
+    "A description of the business"
+    description: String
+    "The languages the business works in"
+    languages: String
+    "The activities of an active tourism business"
+    activities: String
+    "The day the business started, written as 19990618"
+    activityStarted: String
+    "The day the business entered the register, written as 19990618"
+    registered: String
+    "The number of places, such as beds or pitches"
+    places: Int
+    "The number of units, such as rooms or apartments"
+    units: Int
+    "The largest number of people a campsite takes"
+    campCapacity: Int
+    "The number of pitches of a campsite"
+    campPitches: Int
+    "The number of sites of a campsite"
+    campSites: Int
+    "The number of fixed installations of a campsite, such as bungalows"
+    fixedInstallations: Int
+    "The surface of the fixed installations, in square metres"
+    fixedInstallationsSurface: Int
+    "Whether the business works on line only"
+    onlineOnly: Boolean
+    "Whether a tourism office belongs to the network of Andalusian tourism offices"
+    tourismOfficeNetwork: Boolean
+}
+
+"A law, decree, order or other rule of the Junta de Andalucía"
+type JuntaRegulation {
+    "The id of the regulation"
+    id: ID
+    """
+    The full title, in Spanish, such as Ley 11/2021, de 28 de diciembre, por la que se regulan los perros de asistencia
+    """
+    title: String
+    "Where the regulation applies, such as Autonómico (all of Andalusia)"
+    scope: String
+    "The day it was published, written as 03/01/2022"
+    published: String
+    "When its record last changed"
+    updated: DateTime
+    "The bodies that issued it"
+    organisms: [String]
+    "The bodies below them that prepared it"
+    suborganisms: [String]
+    "The kind of regulation, such as Ley, Decreto or Orden"
+    kinds: [String]
+    "The addresses of the regulation in the official gazette (BOJA)"
+    documents: [String]
+    "The themes and subtopics the regulation is filed under"
+    themes: [JuntaRegulationTheme]
+}
+
+"A theme and subtopic a regulation is filed under"
+type JuntaRegulationTheme {
+    "The themes, such as Personas con discapacidad"
+    themes: [String]
+    "The subtopic, such as Animales de compañía"
+    subtopic: String
+}
+
+"A museum or museum collection of Andalusia"
+type JuntaMuseum {
+    "The id of the museum"
+    id: ID
+    "The name, such as Centro de Arte Contemporáneo de Málaga"
+    name: String
+    "The kind: Museo, Colección Museográfica or Conjunto"
+    kind: String
+    "The address"
+    address: String
+    "The postal code, such as 29001"
+    postcode: Int
+    "The town"
+    location: String
+    "The municipality, such as Málaga"
+    municipality: String
+    "The province"
+    province: String
+    "The latitude"
+    latitude: Float
+    "The longitude"
+    longitude: Float
+    "The opening hours, in Spanish"
+    openingHours: String
+    "The telephone"
+    phone: String
+    "The fax"
+    fax: String
+    "The email address"
+    email: String
+    "The website"
+    web: String
+    "A description of the museum and its collection, in Spanish"
+    description: String
+    "The state of the museum, such as ABI (open)"
+    state: String
+}
+
+"A public library or documentation centre of Andalusia"
+type JuntaLibrary {
+    "The id of the library"
+    id: ID
+    """
+    The name, such as Biblioteca Pública Municipal "Pablo Ruiz Picasso" de Torremolinos
+    """
+    name: String
+    "The shorter name the map shows"
+    mapName: String
+    "The kind: Biblioteca or Bib. Espec./Centro de Documentación"
+    kind: String
+    "The code of the kind, such as BIBL"
+    kindCode: String
+    "The full address"
+    address: String
+    "The postal code"
+    postcode: Int
+    "The town"
+    locality: String
+    "The municipality, such as Torremolinos"
+    municipality: String
+    "The INE code of the municipality, such as 29901"
+    municipalityIneCode: Int
+    "The province"
+    province: String
+    "The latitude"
+    latitude: Float
+    "The longitude"
+    longitude: Float
+    "The opening hours, in Spanish"
+    openingHours: String
+    "The telephone"
+    phone: String
+    "The fax"
+    fax: String
+    "The email address"
+    email: String
+    "The website"
+    web: String
+    "The address of the catalogue of the library"
+    catalogue: String
+    "The Facebook page"
+    facebook: String
+    "The Instagram account"
+    instagram: String
+    "The YouTube channel"
+    youtube: String
+    "The Pinterest account"
+    pinterest: String
+    "The state of the library, such as ABI (open)"
+    state: String
+    "Whether the record is published"
+    available: Boolean
+    "When the record last changed"
+    modified: DateTime
+    "The address of the record in the catalogue of the Junta"
+    resource: String
+    "The id of the record in the content system of the Junta"
+    catalogueId: String
+    "The collection of the record, orbe_bibliotecas"
+    collection: String
+    "The id of the kind"
+    kindId: Int
+    "The id of the town in the catalogue of the Junta"
+    localityId: Int
+    "The INE code of the town"
+    localityIneCode: Int
+    "The id of the municipality in the catalogue of the Junta"
+    municipalityId: Int
+    "The INE code of the province, such as 29 for Málaga"
+    provinceId: Int
+    "The INE code of the province again, as a second field of the record"
+    provinceIdCopy: Int
+    "The id of the address in the catalogue of the Junta"
+    addressId: Int
+}
+
+"A public event the Junta de Andalucía organizes or takes part in"
+type JuntaEvent {
+    "The id of the event"
+    id: ID
+    "The title, in Spanish"
+    title: String
+    "The description, in Spanish, as HTML"
+    description: String
+    "The first and last day of the event, written as 2026-11-04"
+    dates: [JuntaDateRange]
+    "The times of the event, such as De 9:00 a 20:00 horas"
+    schedule: String
+    "Where the event takes place, as HTML"
+    address: String
+    "The town of the event"
+    location: String
+    "The provinces of the event"
+    provinces: [String]
+    "What the event costs, such as Gratuito (free)"
+    cost: String
+    "Who organizes the event"
+    organizers: String
+    "Who collaborates in it"
+    collaborators: String
+    "How to get in touch, as HTML"
+    contact: String
+    "The theme of the event, such as Exposiciones (exhibitions)"
+    theme: String
+    "The themes the event is filed under"
+    themes: [String]
+    "The bodies of the Junta behind the event"
+    organisms: [String]
+    "The posters and photos of the event"
+    images: [JuntaImage]
+    "Links with more information"
+    moreInfo: [JuntaLinkList]
+    "Where the event takes place, in the coordinates of Spanish maps"
+    coordinates: [JuntaUtmPoint]
+}
+
+"An image of an event"
+type JuntaImage {
+    "The file name of the image"
+    name: String
+    "The image in sizes for the web"
+    thumbnails: [JuntaThumbnail]
+}
+
+"An image file on the website of the Junta"
+type JuntaThumbnail {
+    "The path of the file on www.juntadeandalucia.es"
+    url: String
+    "The size of the file, in bytes"
+    size: Int
+}
+
+"A group of links"
+type JuntaLinkList {
+    "The links"
+    links: [JuntaLink]
+}
+
+"A link to more information"
+type JuntaLink {
+    "The text of the link"
+    title: String
+    "The address of the link"
+    url: String
+}
+
+"An office where people hand in documents for a public administration"
+type JuntaRegistrationOffice {
+    "The id of the office"
+    id: ID
+    "The name of the office"
+    name: String
+    "The kind of office, such as Oficinas de registro de documentos"
+    kinds: [String]
+    "The address"
+    address: String
+    "The opening hours, such as Lunes a viernes de 9 a 14 horas (Monday to Friday, 9 to 14)"
+    schedule: String
+    "The city of the office"
+    municipality: String
+    "The province"
+    province: String
+    "The path of the page of the office on www.juntadeandalucia.es"
+    detailPath: String
+    "The status of the record, such as published"
+    status: String
+    "Where the office is, in the coordinates of Spanish maps"
+    coordinates: [JuntaUtmPoint]
+}
+
+"A disposition of the official gazette of Andalusia (BOJA)"
+type JuntaGazetteDisposition {
+    "The id of the disposition, such as disposition.2026.206.38: the year, the bulletin and the number"
+    id: ID
+    "The title of the record, which repeats the id"
+    title: String
+    "The year of the bulletin"
+    year: Int
+    "The number of the bulletin in its year, such as 206"
+    bulletin: Int
+    "The number of the disposition in its bulletin"
+    number: Int
+    "The day the bulletin was published, written as 23/10/2026"
+    published: String
+    "The day the bulletin was published"
+    publishedAt: DateTime
+    "The day the disposition was signed"
+    signedAt: DateTime
+    "The first page of the disposition in its PDF"
+    firstPage: Int
+    "The last page"
+    lastPage: Int
+    "The section, such as 5. Anuncios (announcements)"
+    section: String
+    "The subsection, such as 5.2. Otros anuncios oficiales"
+    subsection: String
+    "The section as the search filters by it"
+    sectionTitle: String
+    "The subsection as the search filters by it"
+    subtitle: String
+    "The section, as HTML"
+    sectionHtml: String
+    "The subsection, as HTML"
+    subsectionHtml: String
+    "The body that issued it"
+    organisation: String
+    "The body that issued it, as HTML"
+    organismHtml: String
+    "The kind, such as Anuncios or Resoluciones"
+    kind: String
+    "A summary, in Spanish"
+    summary: String
+    "The summary, as HTML"
+    summaryHtml: String
+    "The full text, in Spanish"
+    body: String
+    "The full text, as HTML"
+    bodyHtml: String
+    "Whether the disposition has a PDF"
+    hasPdf: Boolean
+    "The PDF files of the disposition"
+    pdfs: [JuntaGazettePdf]
+    "Whether the disposition is a law: 1 for yes, 0 for no"
+    law: Int
+    "Whether the disposition is highlighted"
+    headsUp: Boolean
+    "The version of the format of the record"
+    version: Int
+    "The internal number of the disposition"
+    internalId: Int
+}
+
+"A PDF file of the official gazette"
+type JuntaGazettePdf {
+    "The address of the PDF"
+    url: String
+    "The name of the file"
+    path: String
+    "The number of the file within the disposition"
+    fileId: Int
+    "The name of the file with the electronic signature"
+    signatureFile: String
+    "The SHA-1 hash of the PDF, in Base64"
+    hash: String
+}
+
+"A consultation in which the Junta asks the public about a rule it is preparing"
+type JuntaPublicConsultation {
+    "The id of the consultation"
+    id: ID
+    "The title, in Spanish"
+    title: String
+    "When the record last changed"
+    updated: DateTime
+    "The bodies that hold it"
+    organisms: [String]
+    "When the public can take part, written as 16/02/2017"
+    dates: [JuntaDateRange]
+    "The kind of rule, such as Orden"
+    kinds: [String]
+    "The themes, such as Animales de compañía"
+    themes: [String]
+    "The background of the rule, as HTML"
+    background: String
+    "The problems the rule should solve, as HTML"
+    problems: String
+    "The objectives of the rule, as HTML"
+    objectives: String
+    "The alternatives the Junta considered, as HTML"
+    alternatives: String
+    "How to send an opinion, as HTML"
+    contact: String
+    "Documents about the consultation"
+    documents: [JuntaConsultationDocument]
+}
+
+"A document about a public consultation"
+type JuntaConsultationDocument {
+    "The title of the document"
+    title: String
+    "The address of the document"
+    url: String
+}
+
+"A statistic, map or report a body of the Junta publishes"
+type JuntaStatisticalProduct {
+    "The id of the product"
+    id: ID
+    "The title, such as Visor EducaSIG"
+    title: String
+    "The description, as HTML"
+    description: String
+    "The bodies that publish it"
+    organisms: [String]
+    "The kind of product"
+    kinds: [String]
+    "How often it is updated, such as Anual (yearly)"
+    periodicity: [String]
+    "When it was last updated"
+    updated: String
+    "The path of its page on www.juntadeandalucia.es"
+    path: String
+}
+
+"A law, decree or order the Junta de Andalucía is preparing"
+type JuntaDraftRegulation {
+    "The id of the draft"
+    id: ID
+    "The title, in Spanish"
+    title: String
+    "elaboracion while it is prepared, finalizado when it is finished"
+    status: String
+    "The day the work started, written as 09/09/2026"
+    started: String
+    "When the record last changed"
+    updated: DateTime
+    "The bodies that prepare it"
+    organisms: [String]
+    "The kind of draft"
+    kinds: [JuntaDraftKind]
+    "The drafts and reports published so far"
+    documents: [JuntaDraftDocument]
+}
+
+"The kind of a draft regulation"
+type JuntaDraftKind {
+    "The kind, such as Proyecto de Orden"
+    kind: String
+    "The kind of activity: Actividad legislativa or Actividad reglamentaria"
+    activities: [String]
+}
+
+"A document of a draft regulation"
+type JuntaDraftDocument {
+    "The title of the document, such as Texto del proyecto de Orden"
+    title: String
+    "The files of the document"
+    parts: [JuntaFileList]
+}
+
+"Files of a document"
+type JuntaFileList {
+    "The name of the file, when the dataset gives one"
+    name: String
+    "The paths of the files on www.juntadeandalucia.es"
+    paths: [String]
+}
+
+"A book, guide, report or other publication of the Junta de Andalucía"
+type JuntaPublication {
+    "The id of the publication"
+    id: ID
+    "The title"
+    title: String
+    "The authors"
+    authors: [String]
+    "The year of publication"
+    year: String
+    "The format, such as Papel (paper) or Electrónico"
+    format: String
+    "The kind, such as Libros (books) or Folletos (leaflets)"
+    kind: String
+    "The bodies that published it"
+    organisms: [String]
+    "The bodies responsible for the content"
+    responsible: [String]
+    "The editor"
+    editor: String
+    "The place of publication, such as Sevilla"
+    place: String
+    "The topics, such as Ganadería"
+    topics: [String]
+    "The subjects, such as Caballos (horses) or Sanidad animal"
+    subjects: [String]
+    "The languages, such as Español"
+    languages: [String]
+    "The legal deposit or other reference"
+    reference: String
+    "The ISBN or ISSN"
+    isbn: [String]
+    "A description, as HTML"
+    description: String
+    "When the record last changed"
+    updated: DateTime
+    "The path of its page on www.juntadeandalucia.es"
+    path: String
+    "The files of the publication"
+    documents: [JuntaPublicationDocuments]
+}
+
+"The files of a publication"
+type JuntaPublicationDocuments {
+    "The files"
+    files: [JuntaFileList]
+}
+
+"A news item of the Junta de Andalucía"
+type JuntaNewsItem {
+    "The id of the news item, such as GeNews-214092"
+    id: ID
+    "The title, in Spanish"
+    title: String
+    "The subtitle"
+    subtitle: String
+    "The text, as HTML"
+    body: String
+    "The main topic, such as Social"
+    topic: String
+    "When it was published"
+    published: DateTime
+    "When it last changed"
+    updated: DateTime
+    "The address of the news item"
+    url: String
+    "The address of its photo"
+    photoUrl: String
+    "The caption of its photo"
+    photoCaption: String
+}
+
+"A study or report of the department of agriculture, livestock, fisheries and rural development"
+type JuntaStudyReport {
+    "The id of the report"
+    id: ID
+    "The title, in Spanish"
+    title: String
+    "The text of the report page, as HTML"
+    content: String
+    "The themes, such as Ganadería (livestock)"
+    themes: [String]
+    "The bodies that publish it"
+    organisms: [String]
+    "The day it last changed, such as 2026-04-13"
+    changed: String
+    "The path of its page on www.juntadeandalucia.es"
+    path: String
+}
+
+"A statistical or cartographic activity of the Junta de Andalucía, such as a survey or a map series"
+type JuntaStatisticalActivity {
+    "The id of the activity"
+    id: ID
+    "The title, in Spanish"
+    title: String
+    "What the activity measures, as HTML"
+    description: String
+    "The code of the activity in the statistical plan, such as 14.00.06"
+    code: String
+    "How often it is produced, such as Anual or Continua"
+    periodicity: String
+    "Estadística for a statistic, Cartográfica for a map"
+    kinds: [String]
+    "The themes"
+    themes: [String]
+    "Whether the activity is in the Statistical and Cartographic Plan of Andalusia"
+    categories: [String]
+    "The bodies that produce it"
+    organisms: [String]
+    "The departments of the Junta that produce it"
+    departments: [String]
+    "The calendars of release, as files"
+    calendars: [JuntaPublicationDocuments]
+    "The statistics, maps and reports the activity publishes"
+    products: [JuntaStatisticalActivityProduct]
+    "The path of its page on www.juntadeandalucia.es"
+    path: String
+}
+
+"A statistic, map or report that a statistical activity publishes"
+type JuntaStatisticalActivityProduct {
+    "The id of the product, which juntaStatisticalProduct reads"
+    id: ID
+    "The title"
+    title: String
+    "The latest period with data, such as 2024"
+    latestData: String
+    "When it was last updated, such as 2025-11-20T15:22:59, in Spanish time"
+    updated: String
+    "The paths of its pages on www.juntadeandalucia.es"
+    paths: [String]
+}
+
+"A conservation or restoration work of the Andalusian Institute of Historical Heritage"
+type JuntaConservationWork {
+    "The id of the work"
+    id: ID
+    "The title, which names the monument, its town and the work, in Spanish"
+    title: String
+    "What was restored and how"
+    data: [JuntaConservationData]
+}
+
+"What a conservation work restored and how"
+type JuntaConservationData {
+    "The typology of heritage, such as Arquitectura monacal, industrial, carcelaria"
+    typology: String
+    "When the heritage was made, such as Siglo XIII-XXI"
+    chronology: String
+    "The size of the work, in words"
+    dimensions: String
+    "The materials used, in words"
+    material: String
+    "Who made the heritage, as HTML"
+    authorship: String
+    "Notes, as HTML"
+    observations: String
+}
+
+"An archive, library, museum or other cultural centre of the Junta de Andalucía"
+type JuntaCulturalCentre {
+    "The id of the centre"
+    id: ID
+    "The name, such as Archivo Histórico Provincial de Málaga"
+    name: String
+    "The kind of centre, such as Archivo or Biblioteca"
+    kind: String
+    "The short code of the kind, such as ARCH or BIBL"
+    kindCode: String
+    "The number of the kind"
+    kindId: Int
+    "The address, such as Calle Martínez de la Rosa 8, 29009 Málaga"
+    address: String
+    "The postcode, such as 29009 or 04001"
+    postcode: String
+    "The town"
+    locality: String
+    "The municipality"
+    municipality: String
+    "The INE code of the municipality, such as 29067 for Málaga or 04013 for Almería"
+    municipalityIneCode: String
+    "The INE code of the town, such as 290670005"
+    localityIneCode: String
+    "The province"
+    province: String
+    "The INE code of the province, such as 29 for Málaga"
+    provinceCode: Int
+    "The latitude"
+    latitude: Float
+    "The longitude"
+    longitude: Float
+    "The e-mail address of the centre"
+    email: String
+    "The web page of the centre"
+    web: String
+    "The opening hours, in Spanish"
+    schedule: String
+    "ABI when the centre is open"
+    state: String
+    "The position of the centre in the directory"
+    directoryOrder: Int
+    "The address of the record in the catalogue of the Junta"
+    resource: String
+    "The id of the record in the content system of the Junta"
+    catalogueId: String
+    "The collection of the record, orbe_localizacion_centros"
+    collection: String
+    "Whether the record is published"
+    available: Boolean
+    "When the record last changed"
+    modified: DateTime
+}
+
+"A directive, instruction, circular or other disposition of a body of the Junta"
+type JuntaOtherDisposition {
+    "The id of the disposition"
+    id: ID
+    "The title, in Spanish"
+    title: String
+    "The topics, such as Programas, proyectos y actividades educativas"
+    topics: [String]
+    "The bodies that issued it"
+    organisms: [JuntaOrganism]
+    "The day it was published, such as 2022-06-29"
+    published: String
+    "published or unpublished"
+    state: String
+    "The documents of the disposition"
+    documents: [JuntaDispositionDocument]
+}
+
+"A body of the Junta de Andalucía"
+type JuntaOrganism {
+    "The name, such as Educación y Deporte"
+    name: String
+    "The kind of body, such as Consejería (department)"
+    kinds: [String]
+}
+
+"A document of a disposition"
+type JuntaDispositionDocument {
+    "The files"
+    files: [JuntaFileList]
+    "The address of the disposition in the official gazette (BOJA), when it was published there"
+    url: String
+}
+
+"A document with a title and its files"
+type JuntaTitledDocument {
+    "The title"
+    title: String
+    "The files"
+    files: [JuntaFileList]
+}
+
+"""
+A collaboration agreement of the Junta de Andalucía with another administration, a university, a company or an
+association. The dataset also names the people who signed, which this schema leaves out.
+"""
+type JuntaAgreement {
+    "The id of the agreement"
+    id: ID
+    "The title, in Spanish"
+    title: String
+    "The bodies of the Junta that signed it"
+    organisms: [String]
+    "The day it was signed, such as 07/05/2024"
+    signed: String
+    "How long it lasts, in words"
+    duration: String
+    "What the agreement is for, as HTML"
+    objective: String
+    "What it costs each party, as HTML"
+    economicObligation: String
+    "The documents of the agreement"
+    documents: [JuntaTitledDocument]
+    "When the record last changed"
+    updated: DateTime
+}
+
+"A plan or programme of the Junta de Andalucía"
+type JuntaPlan {
+    "The id of the plan"
+    id: ID
+    "The title, in Spanish"
+    title: String
+    "What the plan is for, as HTML"
+    description: String
+    "The day it was approved, when the dataset gives it"
+    approved: String
+    "The first and last day of the plan, such as 2016-01-01T00:00:00"
+    periods: [JuntaDateRange]
+    "The departments and bodies in charge of it"
+    departments: [JuntaPlanDepartment]
+    "The bodies it concerns"
+    organisms: [String]
+    "The topics, such as Planificación en salud"
+    topics: [String]
+    "The documents of the plan"
+    documents: [JuntaPlanDocument]
+    "Links with more information"
+    moreInfo: [JuntaLinkList]
+}
+
+"A department of the Junta and the body within it that is in charge of a plan"
+type JuntaPlanDepartment {
+    "The department, such as Servicio Andaluz de Salud"
+    department: String
+    "The body"
+    organism: String
+}
+
+"A document of a plan"
+type JuntaPlanDocument {
+    "The files"
+    files: [JuntaMediaList]
+}
+
+"The files of a document"
+type JuntaMediaList {
+    "The files"
+    files: [JuntaMediaFile]
+}
+
+"A file on www.juntadeandalucia.es"
+type JuntaMediaFile {
+    "The name of the file"
+    name: String
+    "The path of the file on www.juntadeandalucia.es"
+    path: String
+}
+
+"A meeting of the Consejo de Gobierno, the Governing Council of Andalusia"
+type JuntaCouncilMeeting {
+    "The id of the meeting"
+    id: ID
+    "The title, such as Sesión del 21/10/2026"
+    title: String
+    "The agendas of the meeting, as files"
+    agendas: [JuntaCouncilAgenda]
+    "The matters the council dealt with"
+    matters: [JuntaCouncilMatter]
+}
+
+"The agenda of a meeting of the Governing Council"
+type JuntaCouncilAgenda {
+    "The name of the file, such as Orden CG 21-10-26.pdf"
+    name: String
+    "The paths of the files on www.juntadeandalucia.es"
+    paths: [String]
+}
+
+"A matter the Governing Council dealt with in a meeting"
+type JuntaCouncilMatter {
+    "The title, in Spanish"
+    title: String
+    "The subtitle"
+    subtitle: String
+    "The summary, as HTML"
+    summary: String
+    "The day of the meeting, such as 2026-10-21"
+    date: String
+}
+
+"A document of the Junta de Andalucía open to the comments of the public"
+type JuntaPublicDocument {
+    "The id of the document"
+    id: ID
+    "The title, in Spanish"
+    title: String
+    "The kind of document and what it starts, in Spanish"
+    kind: String
+    "The bodies that publish it"
+    organisms: [String]
+    "The themes, such as Minas"
+    themes: [String]
+    "The day it was published, such as 22/10/2026"
+    published: String
+    "When the public can send comments"
+    commentPeriods: [JuntaCommentPeriod]
+    "The documents"
+    documents: [JuntaTitledDocument]
+    "When the record last changed"
+    updated: DateTime
+}
+
+"When the public can send comments on a document"
+type JuntaCommentPeriod {
+    "The first day, such as 22/10/2026"
+    start: String
+    "The last day"
+    end: String
+    "The term, in words"
+    term: String
+}
+
+"""
+A state training course for employment in Andalusia. The dataset also lists the e-mail address, phone number and contact
+person of each course, which this schema leaves out.
+"""
+type JuntaTrainingCourse {
+    "The id of the course"
+    id: ID
+    "The code and title, such as AFDP02 Protocolo de evaluación y primeros auxilios en autobuses"
+    title: String
+    "The editions of the course, with their dates"
+    sessions: [JuntaCourseSession]
+}
+
+"An edition of a training course"
+type JuntaCourseSession {
+    "Teleformación (online), Mixta or Presencial (in a classroom)"
+    modality: String
+    "The first day, such as 2026-10-22"
+    start: String
+    "The last day"
+    end: String
+    "The last day to register"
+    registrationDeadline: String
+    "The length of the course, in hours"
+    hours: Int
+    "The place of a course in a classroom, such as HUELVA"
+    location: String
+    "Where to register, when the dataset gives it"
+    registrationAddress: String
+}
+
+"A job offer of a public company or agency of the Junta de Andalucía"
+type JuntaJobOffer {
+    "The id of the offer"
+    id: ID
+    "The job, such as INSPECTOR/A DE ITV"
+    jobName: String
+    "The code of the offer, such as P0053_0027"
+    code: String
+    "The kind of offer, such as Oferta de empleo"
+    kind: String
+    "En curso while it is open, Concluido when it closed"
+    status: String
+    "The kind of contract, such as Duración determinada- prácticas"
+    contract: String
+    "The number of places"
+    places: Int
+    "The level of degree it asks for"
+    officialDegree: String
+    "The degree it asks for"
+    specificDegree: String
+    "What the job does, as HTML"
+    functions: String
+    "The other requirements, as HTML"
+    otherRequirements: String
+    "The day it was published, such as 2026-10-20"
+    published: String
+    "The last day to apply"
+    deadline: String
+    "The internal names of the bodies that offer it, such as haciendaindustriayenergia_adscritos_veiasa"
+    organisms: [String]
+    "Where the jobs are"
+    locations: [JuntaJobLocation]
+}
+
+"Where the jobs of an offer are"
+type JuntaJobLocation {
+    "The town, sometimes with the number of places, such as Vícar (1)"
+    locality: String
+    "The provinces, such as Almería"
+    provinces: [String]
+}
+
+"An organic unit of a Spanish administration in DIR3, the common directory of the administrations"
+type JuntaOrganicUnit {
+    "The DIR3 code of the unit, such as A15034172"
+    id: ID
+    "The name of the unit"
+    name: String
+    "The tax id (NIF) of the unit"
+    taxId: String
+    "The level of administration, such as Administración Autonómica"
+    level: String
+    "The number of the level of administration"
+    levelId: Int
+    "How deep the unit sits below the top unit"
+    hierarchicalLevel: Int
+    "The kind of public entity, such as ORGANISMO AUTONOMO"
+    entityType: String
+    "The code of the kind of public entity, such as OA"
+    entityTypeCode: String
+    "The DIR3 code of the unit right above it"
+    topUnitId: String
+    "The name of the unit right above it"
+    topUnitName: String
+    "The DIR3 code of the administration it belongs to"
+    mainUnitId: String
+    "The name of the administration it belongs to, such as Comunidad Foral de Navarra"
+    mainUnitName: String
+    "Whether it is an entity of public law"
+    publicLawEntity: Boolean
+    "The DIR3 code of its entity of public law"
+    publicLawEntityId: String
+    "The name of its entity of public law"
+    publicLawEntityName: String
+    "Vigente while the unit exists"
+    state: String
+    "V while the unit exists"
+    stateCode: String
+    "When the unit was created, such as 2015-10-23T00:00:00"
+    released: String
+    "The day the record was approved, followed by the code of the unit, such as 20230124A15034172"
+    approval: String
+}
+
+"A building or plot of land the Junta de Andalucía owns"
+type JuntaProperty {
+    "The id of the property, such as 00024"
+    id: ID
+    "The name of the property, such as I.E.S. TORRES ATALAYA (a secondary school)"
+    name: String
+    "The department or agency that holds it"
+    department: String
+    "The kind of ownership, such as Urbana, Demanial or Patrimonial"
+    nature: String
+    "What it is used for, such as DOCENTE (teaching) or AGROPECUARIO (farming)"
+    usage: String
+    "The street or place"
+    street: String
+    "The municipality, in capitals and without accents"
+    municipality: String
+    "The province"
+    province: String
+    "The number of the property in the inventory of the Junta"
+    inventoryNumber: Float
+    "The address of the record in the catalogue of the Junta"
+    resource: String
+    "The id of the record in the content system of the Junta"
+    catalogueId: String
+    "The collection of the record, jda_buscador_bienes_inmuebles"
+    collection: String
+    "Whether the record is published"
+    available: Boolean
+    "When the record last changed"
+    modified: DateTime
+}
+
+"A course of the Andalusian Institute of Historical Heritage (IAPH)"
+type JuntaHeritageCourse {
+    "The id of the course"
+    id: ID
+    "The title, in Spanish"
+    title: String
+    "The discipline, such as Museos"
+    discipline: String
+    "Teleformación (online), Presencial (in a classroom) or Mixta"
+    modality: String
+    "The first day, such as 2026-11-16"
+    start: String
+    "The last day"
+    end: String
+    "The first day to register"
+    registrationStart: String
+    "The last day to register"
+    registrationEnd: String
+    "The place of a course in a classroom, such as SEVILLA"
+    location: String
+    "The province of the place"
+    province: String
+    "The length of the course, in hours"
+    hours: Int
+    "The number of places"
+    capacity: Int
+    "The name of the file with the programme"
+    program: String
+    "The name of the image of the course, when it has one"
+    image: String
+    "Whether the record is published"
+    available: Boolean
+}
+
+"A valuation table: how long the archives keep one series of public documents"
+type JuntaRatingTable {
+    "The code of the table"
+    code: String
+    "The administration that produces the documents: A (autonomous), E (state), J (justice) or L (local)"
+    administration: String
+    "The series of documents, such as Expedientes del Impuesto de Transmisiones Patrimoniales"
+    series: String
+    "What happens to the documents, such as ET a los 5 años (destroyed in full after five years)"
+    resolution: String
+    "The first day of the period the table studied, such as 1987-01-01"
+    periodStart: String
+    "The last day of the period the table studied"
+    periodEnd: String
+    "The last day of documents the table applies to, when it has one"
+    limit: String
+    "The days the orders that approved the table were signed"
+    approvals: [String]
+    "The files of the table"
+    files: [JuntaRatingFile]
+    "Where the official gazette (BOJA) published the table"
+    gazette: [JuntaGazetteExcerptList]
+}
+
+"The files of a valuation table"
+type JuntaRatingFile {
+    "The files"
+    files: [JuntaFileList]
+}
+
+"Where the official gazette published something"
+type JuntaGazetteExcerptList {
+    "The issues of the gazette"
+    excerpts: [JuntaGazetteExcerpt]
+}
+
+"An issue of the official gazette of Andalusia (BOJA)"
+type JuntaGazetteExcerpt {
+    "The number and day of the issue, such as Nº 128, 07/07/03"
+    issue: String
+    "The address of the page in the gazette"
+    url: String
+}
+
+"""
+A local entity of Andalusia in the Andalusian Register of Local Entities (RAEL): a municipality, a province, an
+association of municipalities, a consortium or a decentralized entity. The register also names the president of each
+entity and gives an e-mail address, which this schema leaves out.
+"""
+type JuntaLocalEntity {
+    "The id of the entity"
+    id: ID
+    "The name, such as MANCOMUNIDAD DE MUNICIPIOS DE LA COSTA DEL SOL OCCIDENTAL"
+    name: String
+    "The kind of entity, such as MUNICIPIO or MANCOMUNIDAD"
+    kind: String
+    "The typology, such as ENTIDAD LOCAL AUTÓNOMA, when it has one"
+    typology: String
+    "The population, written as 1.255"
+    population: String
+    "The length of its boundary, in kilometres"
+    boundaryKm: Float
+    "The class of its secretariat, such as PRIMERA"
+    secretariat: String
+    "Its legal regime, such as REGIMEN COMÚN"
+    regime: String
+    "The issue of the official gazette (BOJA) that published it"
+    gazetteIssue: String
+    "The day of that issue, such as 31/05/2023"
+    gazetteDate: String
+    "Where its seat is"
+    capital: JuntaLocalCapital
+    "What the entity is for"
+    powers: JuntaLocalPowers
+    "Its latest budget"
+    budget: JuntaLocalBudget
+    "The municipalities in an association of municipalities"
+    municipalities: [JuntaLocalEntityRef]
+    "The consortia it belongs to"
+    consortia: [JuntaLocalEntityRef]
+    "The associations of municipalities it belongs to"
+    associations: [JuntaLocalEntityRef]
+    "The other bodies it belongs to, such as FEDERACIÓN ESPAÑOLA DE MUNICIPIOS Y PROVINCIAS"
+    otherMemberships: [JuntaLocalMembership]
+    "The companies and bodies that depend on it"
+    linkedBodies: [JuntaLocalLinkedBody]
+    "The towns and villages of a municipality"
+    settlements: [String]
+    "The decentralized entities of a municipality"
+    decentralized: [JuntaLocalEntityRef]
+    "The municipalities that border a municipality"
+    neighbours: [JuntaNeighbourMunicipality]
+    "The flag and coat of arms"
+    symbols: [JuntaLocalSymbol]
+    "The political groups that govern it"
+    governingGroups: [JuntaGoverningGroup]
+    "The political groups in its council, with their seats"
+    councilGroups: [JuntaCouncilGroup]
+    "The office of its president"
+    president: JuntaLocalPresident
+    "The address of its seat"
+    address: JuntaLocalAddress
+    "The phone number of its seat"
+    phone: String
+    "The fax number of its seat"
+    fax: String
+    "Its web site"
+    web: String
+}
+
+"Where the seat of a local entity is"
+type JuntaLocalCapital {
+    "The municipality, such as MARBELLA"
+    municipality: String
+    "The town or village within it"
+    settlement: String
+    "The province, written as PROVINCIA MÁLAGA"
+    province: String
+    "The issue of the official gazette (BOJA) that set it"
+    gazetteIssue: String
+    "The day of that issue"
+    gazetteDate: String
+}
+
+"What a local entity is for"
+type JuntaLocalPowers {
+    "Its purposes and powers, in capitals, in Spanish"
+    text: String
+    "The issue of the official gazette (BOJA) that published them"
+    gazetteIssue: String
+    "The day of that issue"
+    gazetteDate: String
+}
+
+"The budget of a local entity for one year"
+type JuntaLocalBudget {
+    "The year, such as 2022"
+    year: String
+    "The income, in euros, written as 14.925.217,81"
+    income: String
+    "The spending, in euros, written the same way"
+    spending: String
+}
+
+"A local entity named by another"
+type JuntaLocalEntityRef {
+    "The code of the entity in the register, such as JA0504006"
+    code: String
+    "The name"
+    name: String
+}
+
+"A body a local entity belongs to"
+type JuntaLocalMembership {
+    "The tax id of the body, such as G28783991"
+    code: String
+    "PÚBLICA or PRIVADA"
+    kind: String
+    "The name"
+    name: String
+}
+
+"A company or body that depends on a local entity"
+type JuntaLocalLinkedBody {
+    "The name and tax id, such as ACOSOL, S.A.(A29658416)"
+    name: String
+    "The address"
+    address: String
+    "The kind, such as SOCIEDAD MERCANTIL LOCAL"
+    kind: String
+    "The public service it provides, such as Ciclo integral del agua de uso urbano"
+    service: String
+}
+
+"A municipality that borders another"
+type JuntaNeighbourMunicipality {
+    "The name, in capitals"
+    name: String
+    "The province, in capitals"
+    province: String
+}
+
+"The flag or coat of arms of a local entity"
+type JuntaLocalSymbol {
+    "BANDERA (flag) or ESCUDO (coat of arms)"
+    kind: String
+    "The heraldic description, in Spanish"
+    description: String
+    "The address of the image"
+    imageUrl: String
+}
+
+"A political group that governs a local entity"
+type JuntaGoverningGroup {
+    "The name of the party"
+    name: String
+    "The day it was elected, such as 17/06/2023"
+    elected: String
+}
+
+"A political group in the council of a local entity"
+type JuntaCouncilGroup {
+    "The name of the party"
+    name: String
+    "The number of its members"
+    members: Int
+    "The number of members who left the group"
+    nonAttached: Int
+}
+
+"The office of the president of a local entity"
+type JuntaLocalPresident {
+    "The office, such as PRESIDENTE/A or ALCALDE/SA (mayor)"
+    office: String
+    "The party of the president"
+    party: String
+    "The day the president was appointed, such as 26/07/2019"
+    appointed: String
+}
+
+"The address of the seat of a local entity"
+type JuntaLocalAddress {
+    "The kind of street, such as AVENIDA"
+    streetType: String
+    "The street"
+    street: String
+    "The number"
+    number: String
+    "The postcode"
+    postcode: String
+    "The municipality"
+    municipality: String
+}
+
+"A report of the Advisory Commission on Administrative Contracting"
+type JuntaCommissionReport {
+    "The id of the report"
+    id: ID
+    "The title, which gives its number, day and question"
+    title: String
+    "The title of its file, when it has one"
+    fileTitle: String
+    "The day it was published, such as 2026-07-23"
+    published: String
+    "published once it is public"
+    state: String
+}
+
+"What a body of the Junta spent on institutional advertising in one period"
+type JuntaAdvertisingExpense {
+    "The id of the record"
+    id: ID
+    "The body and period, such as Instituto Andaluz de Prevención de Riesgos Laborales. Segundo trimestre 2026"
+    title: String
+    "The periods of the spending"
+    periods: [JuntaAdvertisingPeriod]
+    "The contracts with media and agencies"
+    contracts: [JuntaAdvertisingContract]
+    "The grants for advertising"
+    grants: [JuntaAdvertisingGrant]
+    "Where the official gazette published it"
+    publication: JuntaDocumentLink
+}
+
+"A four-month period of spending"
+type JuntaAdvertisingPeriod {
+    "Primer cuatrimestre, Segundo cuatrimestre or Tercer cuatrimestre"
+    period: String
+    "The year"
+    year: String
+}
+
+"A contract for institutional advertising"
+type JuntaAdvertisingContract {
+    "The contract, such as an extension of a lot of conventional media"
+    name: String
+    "The company that holds it"
+    contractor: String
+    "The amount, in euros"
+    amount: Float
+}
+
+"A grant for institutional advertising. The dataset also names the beneficiary, which this schema leaves out."
+type JuntaAdvertisingGrant {
+    "The grant"
+    name: String
+    "The amount, in euros"
+    amount: Float
+}
+
+"A document with its title and address"
+type JuntaDocumentLink {
+    "The title"
+    title: String
+    "The address"
+    url: String
+}
+
+"The syllabus in force for the exam of one specialty of the civil service"
+type JuntaSyllabus {
+    "The id of the syllabus"
+    id: ID
+    "The title, such as A1.2021 Arqueología - Temario"
+    title: String
+    "Which parts it has, such as Común y específico (common and specific)"
+    kind: String
+    "The specialties and bodies of civil servants it is for"
+    specialties: [JuntaStaffSpecialty]
+    "The files of the syllabus"
+    files: [JuntaMediaFile]
+    "When it was published, in seconds since 1970"
+    created: String
+    "When it last changed, in seconds since 1970"
+    changed: String
+}
+
+"A specialty of the civil service of the Junta and the body it belongs to"
+type JuntaStaffSpecialty {
+    "The specialty, such as A1.2012 Especialidad Veterinaria"
+    specialty: String
+    "The body or group of civil servants"
+    groups: [JuntaStaffGroup]
+}
+
+"A body or group of civil servants of the Junta"
+type JuntaStaffGroup {
+    "The body or group, such as A1.2 Cuerpo Superior Facultativo"
+    name: String
+    "The kind of staff"
+    staff: [JuntaStaffKind]
+}
+
+"A kind of staff of the Junta"
+type JuntaStaffKind {
+    "The kind of staff, such as Personal Funcionario (Junta de Andalucía)"
+    name: String
+    "The scope, such as Función Pública de la Junta de Andalucía"
+    scopes: [String]
+}
+
+"A selection process to join the civil service of the Junta de Andalucía"
+type JuntaSelectionProcess {
+    "The id of the process"
+    id: ID
+    "The years of the public employment offers it belongs to"
+    offerYears: [String]
+    "How candidates enter"
+    access: [JuntaProcessAccess]
+    "The specialties and bodies it fills"
+    specialties: [JuntaStaffSpecialty]
+    "Where the process stands"
+    statuses: [JuntaProcessStatus]
+    "The number of places"
+    vacancies: Int
+    "The places for any candidate"
+    generalVacancies: Int
+    "The places for people with a disability"
+    disabilityVacancies: Int
+    "The places for people with an intellectual disability"
+    intellectualDisabilityVacancies: Int
+    "The places for people with a mental illness"
+    illnessVacancies: Int
+    "The resolution that called the process"
+    call: JuntaDocumentLink
+    "The steps of the process and the questions about them"
+    steps: [JuntaProcessStep]
+    "The path of its page on www.juntadeandalucia.es"
+    path: String
+    "When it was published, in seconds since 1970"
+    created: String
+    "When it last changed, in seconds since 1970"
+    changed: String
+}
+
+"How candidates enter a selection process"
+type JuntaProcessAccess {
+    "The kind of access, such as Ordinaria"
+    access: String
+    "The wider kind, such as Promoción interna (internal promotion)"
+    parents: [String]
+}
+
+"Where a selection process stands"
+type JuntaProcessStatus {
+    "The status, such as En proceso publicación de personas admitidas y excluidas"
+    status: String
+    "The phase, such as Fase de solicitud de participación"
+    phases: [String]
+}
+
+"A step of a selection process, or a question about it"
+type JuntaProcessStep {
+    "The title, such as Presentación de solicitudes."
+    title: String
+    "The address of the document or page"
+    url: String
+    "1 when the step is a questionnaire, otherwise 0"
+    questionnaire: String
+}
+
+"A task a body of the Junta assigns to one of its own public companies or agencies"
+type JuntaAssignment {
+    "The id of the assignment"
+    id: ID
+    "The title, in Spanish"
+    title: String
+    "The bodies involved"
+    organisms: [String]
+    "The day it was published, such as 07/08/2020"
+    published: String
+    "The budget, in euros, as the dataset writes it"
+    budget: String
+    "How long it lasts, in words"
+    duration: String
+    "What is assigned, as HTML"
+    objective: String
+    "What it costs each year, as HTML"
+    economicObligation: String
+    "The documents of the assignment"
+    documents: [JuntaAssignmentDocument]
+    "When the record last changed"
+    updated: DateTime
+}
+
+"A document of an assignment"
+type JuntaAssignmentDocument {
+    "The title"
+    title: String
+    "The files"
+    files: [JuntaFileList]
+}
+
+"A resolution by which a body of the Junta delegates some of its powers"
+type JuntaDelegation {
+    "The id of the delegation"
+    id: ID
+    "The title, in Spanish"
+    title: String
+    "The bodies involved"
+    organisms: [String]
+    "The day of the delegation, such as 31/07/2026"
+    delegated: String
+    "The addresses of the resolution in the official gazette (BOJA)"
+    documents: [String]
+    "published once it is public"
+    state: String
+    "The path of its page on www.juntadeandalucia.es"
+    path: String
+    "When the record last changed"
+    updated: DateTime
+}
+
+"A decision of the Administrative Court of Contract Appeals of Andalusia"
+type JuntaTenderCourtDecision {
+    "The id of the decision"
+    id: ID
+    "The title, such as Resolución 255/2016"
+    title: String
+    "What the decision is about, in Spanish"
+    description: String
+    "The number of the appeal, such as 214/2016"
+    appealNumber: String
+    "The number and day of the decision"
+    resolutions: [JuntaTenderCourtResolution]
+    "The kinds of contract, such as Servicio"
+    contractKinds: [String]
+    "The acts appealed, such as Adjudicación (award)"
+    contestedActs: [String]
+    "The outcome, such as Desestimación (dismissed)"
+    outcomes: [String]
+    "The files of the decision"
+    files: [JuntaTenderCourtFile]
+}
+
+"The number and day of a decision of the court"
+type JuntaTenderCourtResolution {
+    "The number, such as 255/2016"
+    number: String
+    "The day, such as 2026-09-30"
+    date: String
+}
+
+"The files of a decision of the court"
+type JuntaTenderCourtFile {
+    "The files"
+    files: [JuntaMediaList]
+}
+
+"A job position in the list of job positions of the Junta de Andalucía"
+type JuntaJobPosition {
+    "The code of the position"
+    id: ID
+    "The position, in capitals, such as A.T.-MEDICAMENTOS VETERINARIOS"
+    description: String
+    "The organization, such as AGRICULTURA, PESCA, AGUA Y DESARR. RURAL"
+    organization: String
+    "The department, such as D.G. PRODUC.AGRICOLA Y GANADERA"
+    department: String
+    "The department the position works for"
+    targetDepartment: String
+    "The town, such as SEVILLA"
+    town: String
+    "The groups of civil servants that can hold it, such as A1-A2"
+    group: String
+    "The level code, such as P-A12"
+    subgroup: String
+    "F for civil servants, L for staff with an employment contract"
+    adscription: String
+    "How it is filled, such as PC (competition of merits)"
+    accessType: String
+    "The functional area, such as ADM. AGRARIA"
+    functionalArea: String
+    "The professional category, for staff with an employment contract"
+    professionalCategory: String
+    "The degree it asks for, such as LDO/A. VETERINARIA"
+    degree: String
+    "The training it asks for"
+    training: String
+    "The number of positions with this description"
+    positions: Int
+    "The specific pay supplement, in euros a year"
+    specificComplement: Float
+    "The lowest cost of the position, in euros a year"
+    lowerCost: Float
+    "The highest cost of the position, in euros a year"
+    upperCost: Float
+    "The code of the department, such as 23"
+    cdce: String
+    "The kind of administration, when the dataset gives it"
+    administrationType: String
+}
+
+"""
+A unit of the organic structure of the Junta de Andalucía, such as a directorate general or a public foundation. The
+dataset also names the head of each unit with a biography, and gives phone numbers and e-mail addresses, which this
+schema leaves out.
+"""
+type JuntaOrganicStructureUnit {
+    "The id of the unit"
+    id: ID
+    "The name of the unit"
+    title: String
+    "The department it belongs to"
+    department: String
+    "What the unit does, as HTML"
+    functions: String
+    "Its code in DIR3, the common directory of the administrations, which juntaOrganicUnit reads"
+    dir3Code: String
+    "The address of its record in DIR3"
+    dir3Reference: String
+    "The addresses of its seat"
+    seats: [JuntaUnitSeat]
+    "The regulations that created it or set its functions"
+    regulations: [JuntaReferenceRegulation]
+    "The units within it"
+    subunits: [JuntaSubunit]
+    "published once it is public"
+    state: String
+}
+
+"A unit within a unit of the organic structure. The dataset also names its head, which this schema leaves out."
+type JuntaSubunit {
+    "The name, such as Unidad de Control Interno"
+    name: String
+}
+
+"The address of the seat of a unit"
+type JuntaUnitSeat {
+    "The name of the building or body, when it differs from the unit"
+    name: String
+    "The address, such as C/ Altozano, 9"
+    address: String
+    "The town and province, such as Almonte (Huelva)"
+    location: String
+    "The postcode"
+    postcode: String
+}
+
+"A regulation that concerns a unit"
+type JuntaReferenceRegulation {
+    "The title"
+    title: String
+    "The address of the regulation in the official gazette"
+    url: String
+}
+
+"""
+A transparency unit of the Junta de Andalucía, which answers requests for public information about the bodies it serves.
+The dataset also names the person in charge with a phone number, which this schema leaves out.
+"""
+type JuntaTransparencyUnit {
+    "The id of the unit"
+    id: ID
+    "The name of the unit"
+    title: String
+    "The bodies it serves"
+    scopes: [String]
+    "The e-mail addresses of the unit"
+    contacts: [JuntaTransparencyContact]
+}
+
+"The e-mail address of a transparency unit"
+type JuntaTransparencyContact {
+    "The e-mail address, such as unidadtransparencia@andaluciatrade.es"
+    email: String
+}
+
+"An activity in which a body of the Junta de Andalucía processes personal data"
+type JuntaDataProcessingActivity {
+    "The id of the activity"
+    id: ID
+    "The activity, in Spanish"
+    title: String
+    "The bodies that process the data"
+    organisms: [String]
+    "The body responsible for the processing, with its address"
+    controller: String
+    "The e-mail address of the data protection officer"
+    dataProtectionOfficer: String
+    "What the data is processed for"
+    purpose: String
+    "The legal basis, such as an article of the GDPR (RGPD)"
+    legalBasis: String
+    "The people whose data is processed"
+    dataSubjects: String
+    "The kinds of personal data processed"
+    personalData: String
+    "Who receives the data"
+    recipients: String
+    "Whether the data leaves the European Union"
+    internationalTransfers: String
+    "How long the data is kept"
+    storagePeriod: String
+    "How the data is protected"
+    securityMeasures: String
+    "The ids of the administrative procedures it serves, such as 25947"
+    procedures: String
+    "The day the record last changed, such as 2026-10-22"
+    updated: String
+}
+
+"A resolution that refused a request for public information in full or in part"
+type JuntaAccessDenial {
+    "The id of the resolution"
+    id: ID
+    "The title, with the number of the request, such as Resolución denegatoria EXP-2026/00002486-PID@"
+    title: String
+    "What was asked and refused, as HTML"
+    description: String
+    "The day of the resolution, such as 2026-09-04"
+    date: String
+    "The reasons for the refusal"
+    reasons: [JuntaDenialReason]
+    "The resolution, as an anonymized file"
+    documents: [JuntaAssignmentDocument]
+}
+
+"A reason to refuse a request for public information"
+type JuntaDenialReason {
+    "The reason, as the transparency law words it, such as Los intereses económicos y comerciales"
+    reason: String
+    "The outcome: Denegatoria (refused) or Estimatoria parcial (granted in part)"
+    outcomes: [String]
+}
+
+"A page of holidays of the Junta de Andalucía"
+type JuntaHolidayPage {
+    "The number of records on this page"
+    returned: Int
+    "The number of holidays that match, across all pages. The dataset counts up to 10,000."
+    total: Int
+    "The holidays"
+    results: [JuntaHoliday]
+}
+
+"A page of municipalities of the Junta de Andalucía"
+type JuntaMunicipalityPage {
+    "The number of records on this page"
+    returned: Int
+    "The number of municipalities that match, across all pages. The dataset counts up to 10,000."
+    total: Int
+    "The municipalities"
+    results: [JuntaMunicipality]
+}
+
+"A page of tourism establishments of the Junta de Andalucía"
+type JuntaTourismEstablishmentPage {
+    "The number of records on this page"
+    returned: Int
+    "The number of tourism establishments that match, across all pages. The dataset counts up to 10,000."
+    total: Int
+    "The tourism establishments"
+    results: [JuntaTourismEstablishment]
+}
+
+"A page of regulations of the Junta de Andalucía"
+type JuntaRegulationPage {
+    "The number of records on this page"
+    returned: Int
+    "The number of regulations that match, across all pages. The dataset counts up to 10,000."
+    total: Int
+    "The regulations"
+    results: [JuntaRegulation]
+}
+
+"A page of museums of the Junta de Andalucía"
+type JuntaMuseumPage {
+    "The number of records on this page"
+    returned: Int
+    "The number of museums that match, across all pages. The dataset counts up to 10,000."
+    total: Int
+    "The museums"
+    results: [JuntaMuseum]
+}
+
+"A page of libraries of the Junta de Andalucía"
+type JuntaLibraryPage {
+    "The number of records on this page"
+    returned: Int
+    "The number of libraries that match, across all pages. The dataset counts up to 10,000."
+    total: Int
+    "The libraries"
+    results: [JuntaLibrary]
+}
+
+"A page of events of the Junta de Andalucía"
+type JuntaEventPage {
+    "The number of records on this page"
+    returned: Int
+    "The number of events that match, across all pages. The dataset counts up to 10,000."
+    total: Int
+    "The events"
+    results: [JuntaEvent]
+}
+
+"A page of registration offices of the Junta de Andalucía"
+type JuntaRegistrationOfficePage {
+    "The number of records on this page"
+    returned: Int
+    "The number of registration offices that match, across all pages. The dataset counts up to 10,000."
+    total: Int
+    "The registration offices"
+    results: [JuntaRegistrationOffice]
+}
+
+"A page of dispositions of the official gazette of the Junta de Andalucía"
+type JuntaGazetteDispositionPage {
+    "The number of records on this page"
+    returned: Int
+    "The number of dispositions of the official gazette that match, across all pages. The dataset counts up to 10,000."
+    total: Int
+    "The dispositions of the official gazette"
+    results: [JuntaGazetteDisposition]
+}
+
+"A page of public consultations of the Junta de Andalucía"
+type JuntaPublicConsultationPage {
+    "The number of records on this page"
+    returned: Int
+    "The number of public consultations that match, across all pages. The dataset counts up to 10,000."
+    total: Int
+    "The public consultations"
+    results: [JuntaPublicConsultation]
+}
+
+"A page of statistical products of the Junta de Andalucía"
+type JuntaStatisticalProductPage {
+    "The number of records on this page"
+    returned: Int
+    "The number of statistical products that match, across all pages. The dataset counts up to 10,000."
+    total: Int
+    "The statistical products"
+    results: [JuntaStatisticalProduct]
+}
+
+"A page of regulations in preparation of the Junta de Andalucía"
+type JuntaDraftRegulationPage {
+    "The number of records on this page"
+    returned: Int
+    "The number of regulations in preparation that match, across all pages. The dataset counts up to 10,000."
+    total: Int
+    "The regulations in preparation"
+    results: [JuntaDraftRegulation]
+}
+
+"A page of publications of the Junta de Andalucía"
+type JuntaPublicationPage {
+    "The number of records on this page"
+    returned: Int
+    "The number of publications that match, across all pages. The dataset counts up to 10,000."
+    total: Int
+    "The publications"
+    results: [JuntaPublication]
+}
+
+"A page of news of the Junta de Andalucía"
+type JuntaNewsItemPage {
+    "The number of records on this page"
+    returned: Int
+    "The number of news that match, across all pages. The dataset counts up to 10,000."
+    total: Int
+    "The news"
+    results: [JuntaNewsItem]
+}
+
+"A page of studies and reports of the Junta de Andalucía"
+type JuntaStudyReportPage {
+    "The number of records on this page"
+    returned: Int
+    "The number of studies and reports that match, across all pages. The dataset counts up to 10,000."
+    total: Int
+    "The studies and reports"
+    results: [JuntaStudyReport]
+}
+
+"A page of statistical activities of the Junta de Andalucía"
+type JuntaStatisticalActivityPage {
+    "The number of records on this page"
+    returned: Int
+    "The number of statistical activities that match, across all pages. The dataset counts up to 10,000."
+    total: Int
+    "The statistical activities"
+    results: [JuntaStatisticalActivity]
+}
+
+"A page of conservation works on historical heritage of the Junta de Andalucía"
+type JuntaConservationWorkPage {
+    "The number of records on this page"
+    returned: Int
+    """
+    The number of conservation works on historical heritage that match, across all pages. The dataset counts up to
+    10,000.
+    """
+    total: Int
+    "The conservation works on historical heritage"
+    results: [JuntaConservationWork]
+}
+
+"A page of cultural centres of the Junta de Andalucía"
+type JuntaCulturalCentrePage {
+    "The number of records on this page"
+    returned: Int
+    "The number of cultural centres that match, across all pages. The dataset counts up to 10,000."
+    total: Int
+    "The cultural centres"
+    results: [JuntaCulturalCentre]
+}
+
+"A page of directives, instructions and circulars of the Junta de Andalucía"
+type JuntaOtherDispositionPage {
+    "The number of records on this page"
+    returned: Int
+    """
+    The number of directives, instructions and circulars that match, across all pages. The dataset counts up to 10,000.
+    """
+    total: Int
+    "The directives, instructions and circulars"
+    results: [JuntaOtherDisposition]
+}
+
+"A page of collaboration agreements of the Junta de Andalucía"
+type JuntaAgreementPage {
+    "The number of records on this page"
+    returned: Int
+    "The number of collaboration agreements that match, across all pages. The dataset counts up to 10,000."
+    total: Int
+    "The collaboration agreements"
+    results: [JuntaAgreement]
+}
+
+"A page of plans and programmes of the Junta de Andalucía"
+type JuntaPlanPage {
+    "The number of records on this page"
+    returned: Int
+    "The number of plans and programmes that match, across all pages. The dataset counts up to 10,000."
+    total: Int
+    "The plans and programmes"
+    results: [JuntaPlan]
+}
+
+"A page of meetings of the Governing Council of the Junta de Andalucía"
+type JuntaCouncilMeetingPage {
+    "The number of records on this page"
+    returned: Int
+    "The number of meetings of the Governing Council that match, across all pages. The dataset counts up to 10,000."
+    total: Int
+    "The meetings of the Governing Council"
+    results: [JuntaCouncilMeeting]
+}
+
+"A page of documents under public consultation of the Junta de Andalucía"
+type JuntaPublicDocumentPage {
+    "The number of records on this page"
+    returned: Int
+    "The number of documents under public consultation that match, across all pages. The dataset counts up to 10,000."
+    total: Int
+    "The documents under public consultation"
+    results: [JuntaPublicDocument]
+}
+
+"A page of training courses for employment of the Junta de Andalucía"
+type JuntaTrainingCoursePage {
+    "The number of records on this page"
+    returned: Int
+    "The number of training courses for employment that match, across all pages. The dataset counts up to 10,000."
+    total: Int
+    "The training courses for employment"
+    results: [JuntaTrainingCourse]
+}
+
+"A page of job offers of the public sector of the Junta de Andalucía"
+type JuntaJobOfferPage {
+    "The number of records on this page"
+    returned: Int
+    "The number of job offers of the public sector that match, across all pages. The dataset counts up to 10,000."
+    total: Int
+    "The job offers of the public sector"
+    results: [JuntaJobOffer]
+}
+
+"A page of organic units of the Junta de Andalucía"
+type JuntaOrganicUnitPage {
+    "The number of records on this page"
+    returned: Int
+    "The number of organic units that match, across all pages. The dataset counts up to 10,000."
+    total: Int
+    "The organic units"
+    results: [JuntaOrganicUnit]
+}
+
+"A page of buildings and land owned by the Junta of the Junta de Andalucía"
+type JuntaPropertyPage {
+    "The number of records on this page"
+    returned: Int
+    "The number of buildings and land owned by the Junta that match, across all pages. The dataset counts up to 10,000."
+    total: Int
+    "The buildings and land owned by the Junta"
+    results: [JuntaProperty]
+}
+
+"A page of courses of the Andalusian Institute of Historical Heritage of the Junta de Andalucía"
+type JuntaHeritageCoursePage {
+    "The number of records on this page"
+    returned: Int
+    """
+    The number of courses of the Andalusian Institute of Historical Heritage that match, across all pages. The dataset
+    counts up to 10,000.
+    """
+    total: Int
+    "The courses of the Andalusian Institute of Historical Heritage"
+    results: [JuntaHeritageCourse]
+}
+
+"A page of document valuation tables of the Junta de Andalucía"
+type JuntaRatingTablePage {
+    "The number of records on this page"
+    returned: Int
+    "The number of document valuation tables that match, across all pages. The dataset counts up to 10,000."
+    total: Int
+    "The document valuation tables"
+    results: [JuntaRatingTable]
+}
+
+"A page of local entities of the Junta de Andalucía"
+type JuntaLocalEntityPage {
+    "The number of records on this page"
+    returned: Int
+    "The number of local entities that match, across all pages. The dataset counts up to 10,000."
+    total: Int
+    "The local entities"
+    results: [JuntaLocalEntity]
+}
+
+"A page of reports of the Advisory Commission on Administrative Contracting of the Junta de Andalucía"
+type JuntaCommissionReportPage {
+    "The number of records on this page"
+    returned: Int
+    """
+    The number of reports of the Advisory Commission on Administrative Contracting that match, across all pages. The
+    dataset counts up to 10,000.
+    """
+    total: Int
+    "The reports of the Advisory Commission on Administrative Contracting"
+    results: [JuntaCommissionReport]
+}
+
+"A page of spending on institutional advertising of the Junta de Andalucía"
+type JuntaAdvertisingExpensePage {
+    "The number of records on this page"
+    returned: Int
+    "The number of spending on institutional advertising that match, across all pages. The dataset counts up to 10,000."
+    total: Int
+    "The spending on institutional advertising"
+    results: [JuntaAdvertisingExpense]
+}
+
+"A page of syllabuses of the civil service exams of the Junta de Andalucía"
+type JuntaSyllabusPage {
+    "The number of records on this page"
+    returned: Int
+    "The number of syllabuses of the civil service exams that match, across all pages. The dataset counts up to 10,000."
+    total: Int
+    "The syllabuses of the civil service exams"
+    results: [JuntaSyllabus]
+}
+
+"A page of selection processes for the civil service of the Junta de Andalucía"
+type JuntaSelectionProcessPage {
+    "The number of records on this page"
+    returned: Int
+    """
+    The number of selection processes for the civil service that match, across all pages. The dataset counts up to
+    10,000.
+    """
+    total: Int
+    "The selection processes for the civil service"
+    results: [JuntaSelectionProcess]
+}
+
+"A page of management assignments to public companies of the Junta de Andalucía"
+type JuntaAssignmentPage {
+    "The number of records on this page"
+    returned: Int
+    """
+    The number of management assignments to public companies that match, across all pages. The dataset counts up to
+    10,000.
+    """
+    total: Int
+    "The management assignments to public companies"
+    results: [JuntaAssignment]
+}
+
+"A page of delegations of powers of the Junta de Andalucía"
+type JuntaDelegationPage {
+    "The number of records on this page"
+    returned: Int
+    "The number of delegations of powers that match, across all pages. The dataset counts up to 10,000."
+    total: Int
+    "The delegations of powers"
+    results: [JuntaDelegation]
+}
+
+"A page of decisions of the Administrative Court of Contract Appeals of the Junta de Andalucía"
+type JuntaTenderCourtDecisionPage {
+    "The number of records on this page"
+    returned: Int
+    """
+    The number of decisions of the Administrative Court of Contract Appeals that match, across all pages. The dataset
+    counts up to 10,000.
+    """
+    total: Int
+    "The decisions of the Administrative Court of Contract Appeals"
+    results: [JuntaTenderCourtDecision]
+}
+
+"A page of job positions of the Junta de Andalucía"
+type JuntaJobPositionPage {
+    "The number of records on this page"
+    returned: Int
+    "The number of job positions that match, across all pages. The dataset counts up to 10,000."
+    total: Int
+    "The job positions"
+    results: [JuntaJobPosition]
+}
+
+"A page of units of the organic structure of the Junta de Andalucía"
+type JuntaOrganicStructureUnitPage {
+    "The number of records on this page"
+    returned: Int
+    "The number of units of the organic structure that match, across all pages. The dataset counts up to 10,000."
+    total: Int
+    "The units of the organic structure"
+    results: [JuntaOrganicStructureUnit]
+}
+
+"A page of transparency units of the Junta de Andalucía"
+type JuntaTransparencyUnitPage {
+    "The number of records on this page"
+    returned: Int
+    "The number of transparency units that match, across all pages. The dataset counts up to 10,000."
+    total: Int
+    "The transparency units"
+    results: [JuntaTransparencyUnit]
+}
+
+"A page of activities that process personal data of the Junta de Andalucía"
+type JuntaDataProcessingActivityPage {
+    "The number of records on this page"
+    returned: Int
+    "The number of activities that process personal data that match, across all pages. The dataset counts up to 10,000."
+    total: Int
+    "The activities that process personal data"
+    results: [JuntaDataProcessingActivity]
+}
+
+"A page of refusals of requests for public information of the Junta de Andalucía"
+type JuntaAccessDenialPage {
+    "The number of records on this page"
+    returned: Int
+    """
+    The number of refusals of requests for public information that match, across all pages. The dataset counts up to
+    10,000.
+    """
+    total: Int
+    "The refusals of requests for public information"
+    results: [JuntaAccessDenial]
+}
+
+"A province of Andalusia, or ANY for all of them"
+enum JuntaProvince {
+    "Every province"
+    ANY
+    "Almería"
+    ALMERIA
+    "Cádiz"
+    CADIZ
+    "Córdoba"
+    CORDOBA
+    "Granada"
+    GRANADA
+    "Huelva"
+    HUELVA
+    "Jaén"
+    JAEN
+    "Málaga"
+    MALAGA
+    "Sevilla"
+    SEVILLA
+}
+
+"The kind of a public holiday"
+enum JuntaHolidayKind {
+    "Every kind"
+    ANY
+    "A holiday of one town"
+    LOCAL
+    "A national or regional holiday, a non-working day everywhere"
+    LABORAL
+}

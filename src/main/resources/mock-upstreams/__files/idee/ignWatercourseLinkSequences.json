@@ -1,0 +1,112 @@
+{
+    "type":"FeatureCollection",
+    "features":[
+        {
+            "type":"Feature",
+            "properties":{
+                "id_demarc":"ES060",
+                "resolucion":5,
+                "id_demarcd":"Cuencas Mediterr\u00e1neas Andaluzas",
+                "id_curso":"20012",
+                "nilreason_nombre":null,
+                "id_red":"2",
+                "nilreason_varios":"other:unpopulated",
+                "nombre":"R\u00edo Guadalhorce",
+                "nil_nombre":null,
+                "fuente":"5001",
+                "nil_varios":true,
+                "fecha_alta":"2019-05-22",
+                "fuented":"Instituto Geogr\u00e1fico Nacional",
+                "nativeness":null,
+                "hydroid_localid":"ES060HYWLSL00000000000000020012",
+                "longitud":162423.905,
+                "script":"Latn"
+            },
+            "id":"ES060HYWLSL0000009023610",
+            "geometry":null
+        },
+        {
+            "type":"Feature",
+            "properties":{
+                "id_demarc":"ES060",
+                "resolucion":5,
+                "id_demarcd":"Cuencas Mediterr\u00e1neas Andaluzas",
+                "id_curso":"200122",
+                "nilreason_nombre":null,
+                "id_red":"2",
+                "nilreason_varios":"other:unpopulated",
+                "nombre":"R\u00edo Campanillas",
+                "nil_nombre":null,
+                "fuente":"5001",
+                "nil_varios":true,
+                "fecha_alta":"2019-05-22",
+                "fuented":"Instituto Geogr\u00e1fico Nacional",
+                "nativeness":null,
+                "hydroid_localid":"ES060HYWLSL00000000000000200122",
+                "longitud":34425.027,
+                "script":"Latn"
+            },
+            "id":"ES060HYWLSL0000009023611",
+            "geometry":null
+        },
+        {
+            "type":"Feature",
+            "properties":{
+                "id_demarc":"ES060",
+                "resolucion":5,
+                "id_demarcd":"Cuencas Mediterr\u00e1neas Andaluzas",
+                "id_curso":"2001212",
+                "nilreason_nombre":null,
+                "id_red":"2",
+                "nilreason_varios":"other:unpopulated",
+                "nombre":"Arroyo de las Ca\u00f1as",
+                "nil_nombre":null,
+                "fuente":"5001",
+                "nil_varios":true,
+                "fecha_alta":"2019-05-22",
+                "fuented":"Instituto Geogr\u00e1fico Nacional",
+                "nativeness":null,
+                "hydroid_localid":"ES060HYWLSL00000000000002001212",
+                "longitud":18054.518,
+                "script":"Latn"
+            },
+            "id":"ES060HYWLSL0000009023615",
+            "geometry":null
+        }
+    ],
+    "numberMatched":61,
+    "numberReturned":3,
+    "links":[
+        {
+            "type":"application/geo+json",
+            "rel":"self",
+            "title":"This document as GeoJSON",
+            "href":"https://api-features.idee.es/collections/watercourselinksequence/items?f=json&bbox=-4.50,36.65,-4.35,36.75&skipGeometry=true&limit=3"
+        },
+        {
+            "rel":"alternate",
+            "type":"application/ld+json",
+            "title":"This document as RDF (JSON-LD)",
+            "href":"https://api-features.idee.es/collections/watercourselinksequence/items?f=jsonld&bbox=-4.50,36.65,-4.35,36.75&skipGeometry=true&limit=3"
+        },
+        {
+            "type":"text/html",
+            "rel":"alternate",
+            "title":"This document as HTML",
+            "href":"https://api-features.idee.es/collections/watercourselinksequence/items?f=html&bbox=-4.50,36.65,-4.35,36.75&skipGeometry=true&limit=3"
+        },
+        {
+            "type":"application/geo+json",
+            "rel":"next",
+            "title":"Items (next)",
+            "href":"https://api-features.idee.es/collections/watercourselinksequence/items?offset=3&bbox=-4.50,36.65,-4.35,36.75&skipGeometry=true&limit=3"
+        },
+        {
+            "type":"application/json",
+            "title":"HY-N Secuencia de enlaces de curso de agua",
+            "rel":"collection",
+            "href":"https://api-features.idee.es/collections/watercourselinksequence"
+        }
+    ],
+    "timeStamp":"2026-10-22T23:42:21.651579Z"
+}

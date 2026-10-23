@@ -1,0 +1,738 @@
+{
+ "mappings": [
+  {
+   "name": "mosquitoAlertObservations: {\"near\": \"-4.4214,36.7213\", \"distanceInMetres\": 30000, \"taxonIds\": [112], \"createdAfter\": \"2026-01-01\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/mosquitoalert/observations/",
+    "queryParameters": {
+     "point": {
+      "equalTo": "-4.4214,36.7213"
+     },
+     "dist": {
+      "equalTo": "30000"
+     },
+     "created_at_after": {
+      "equalTo": "2026-01-01"
+     },
+     "identification_taxon_ids": {
+      "equalTo": "112"
+     },
+     "page": {
+      "equalTo": "1"
+     },
+     "page_size": {
+      "equalTo": "10"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "mosquitoalert/mosquitoAlertObservations.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://api.mosquitoalert.com/v1/observations/?point=-4.4214%2C36.7213&dist=30000&created_at_after=2026-01-01&identification_taxon_ids=112&page=1&page_size=10 on 2026-10-23."
+   }
+  },
+  {
+   "name": "mosquitoAlertObservations: {\"near\": \"-4.4214,36.7213\", \"distanceInMetres\": 20000}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/mosquitoalert/observations/",
+    "queryParameters": {
+     "point": {
+      "equalTo": "-4.4214,36.7213"
+     },
+     "dist": {
+      "equalTo": "20000"
+     },
+     "page": {
+      "equalTo": "1"
+     },
+     "page_size": {
+      "equalTo": "10"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "mosquitoalert/mosquitoAlertObservations-1.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://api.mosquitoalert.com/v1/observations/?point=-4.4214%2C36.7213&dist=20000&page=1&page_size=10 on 2026-10-23."
+   }
+  },
+  {
+   "name": "mosquitoAlertObservations: {\"countryId\": 17, \"size\": 5}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/mosquitoalert/observations/",
+    "queryParameters": {
+     "country_id": {
+      "equalTo": "17"
+     },
+     "page": {
+      "equalTo": "1"
+     },
+     "page_size": {
+      "equalTo": "5"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "mosquitoalert/mosquitoAlertObservations-2.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://api.mosquitoalert.com/v1/observations/?country_id=17&page=1&page_size=5 on 2026-10-23."
+   }
+  },
+  {
+   "name": "mosquitoAlertObservations: {\"near\": \"-4.8914,36.5106\", \"distanceInMetres\": 10000, \"taxonIds\": [112]}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/mosquitoalert/observations/",
+    "queryParameters": {
+     "point": {
+      "equalTo": "-4.8914,36.5106"
+     },
+     "dist": {
+      "equalTo": "10000"
+     },
+     "identification_taxon_ids": {
+      "equalTo": "112"
+     },
+     "page": {
+      "equalTo": "1"
+     },
+     "page_size": {
+      "equalTo": "10"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "mosquitoalert/mosquitoAlertObservations-3.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://api.mosquitoalert.com/v1/observations/?point=-4.8914%2C36.5106&dist=10000&identification_taxon_ids=112&page=1&page_size=10 on 2026-10-23."
+   }
+  },
+  {
+   "name": "mosquitoAlertObservations: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/mosquitoalert/observations/"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "mosquitoalert/mosquitoAlertObservations.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of mosquitoAlertObservations with the first recording, from https://api.mosquitoalert.com/v1/observations/?point=-4.4214%2C36.7213&dist=30000&created_at_after=2026-01-01&identification_taxon_ids=112&page=1&page_size=10 on 2026-10-23."
+   }
+  },
+  {
+   "name": "mosquitoAlertObservation: {\"id\": \"b528f3f6-c5a0-4fe9-aaca-358d583f7e80\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/mosquitoalert/observations/b528f3f6-c5a0-4fe9-aaca-358d583f7e80/"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "mosquitoalert/mosquitoAlertObservation.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://api.mosquitoalert.com/v1/observations/b528f3f6-c5a0-4fe9-aaca-358d583f7e80/ on 2026-10-23."
+   }
+  },
+  {
+   "name": "mosquitoAlertObservation: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/mosquitoalert/observations/[^/]+/"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "mosquitoalert/mosquitoAlertObservation.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of mosquitoAlertObservation with the first recording, from https://api.mosquitoalert.com/v1/observations/b528f3f6-c5a0-4fe9-aaca-358d583f7e80/ on 2026-10-23."
+   }
+  },
+  {
+   "name": "mosquitoAlertBites: {\"near\": \"-4.4214,36.7213\", \"distanceInMetres\": 30000}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/mosquitoalert/bites/",
+    "queryParameters": {
+     "point": {
+      "equalTo": "-4.4214,36.7213"
+     },
+     "dist": {
+      "equalTo": "30000"
+     },
+     "page": {
+      "equalTo": "1"
+     },
+     "page_size": {
+      "equalTo": "10"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "mosquitoalert/mosquitoAlertBites.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://api.mosquitoalert.com/v1/bites/?point=-4.4214%2C36.7213&dist=30000&page=1&page_size=10 on 2026-10-23."
+   }
+  },
+  {
+   "name": "mosquitoAlertBites: {\"countryId\": 17, \"size\": 5}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/mosquitoalert/bites/",
+    "queryParameters": {
+     "country_id": {
+      "equalTo": "17"
+     },
+     "page": {
+      "equalTo": "1"
+     },
+     "page_size": {
+      "equalTo": "5"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "mosquitoalert/mosquitoAlertBites-1.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://api.mosquitoalert.com/v1/bites/?country_id=17&page=1&page_size=5 on 2026-10-23."
+   }
+  },
+  {
+   "name": "mosquitoAlertBites: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/mosquitoalert/bites/"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "mosquitoalert/mosquitoAlertBites.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of mosquitoAlertBites with the first recording, from https://api.mosquitoalert.com/v1/bites/?point=-4.4214%2C36.7213&dist=30000&page=1&page_size=10 on 2026-10-23."
+   }
+  },
+  {
+   "name": "mosquitoAlertBite: {\"id\": \"8108f324-a6c2-4cf9-83b7-0896dce2629e\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/mosquitoalert/bites/8108f324-a6c2-4cf9-83b7-0896dce2629e/"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "mosquitoalert/mosquitoAlertBite.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://api.mosquitoalert.com/v1/bites/8108f324-a6c2-4cf9-83b7-0896dce2629e/ on 2026-10-23."
+   }
+  },
+  {
+   "name": "mosquitoAlertBite: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/mosquitoalert/bites/[^/]+/"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "mosquitoalert/mosquitoAlertBite.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of mosquitoAlertBite with the first recording, from https://api.mosquitoalert.com/v1/bites/8108f324-a6c2-4cf9-83b7-0896dce2629e/ on 2026-10-23."
+   }
+  },
+  {
+   "name": "mosquitoAlertBreedingSites: {\"near\": \"-4.4214,36.7213\", \"distanceInMetres\": 30000}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/mosquitoalert/breeding-sites/",
+    "queryParameters": {
+     "point": {
+      "equalTo": "-4.4214,36.7213"
+     },
+     "dist": {
+      "equalTo": "30000"
+     },
+     "page": {
+      "equalTo": "1"
+     },
+     "page_size": {
+      "equalTo": "10"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "mosquitoalert/mosquitoAlertBreedingSites.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://api.mosquitoalert.com/v1/breeding-sites/?point=-4.4214%2C36.7213&dist=30000&page=1&page_size=10 on 2026-10-23."
+   }
+  },
+  {
+   "name": "mosquitoAlertBreedingSites: {\"countryId\": 17, \"size\": 5}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/mosquitoalert/breeding-sites/",
+    "queryParameters": {
+     "country_id": {
+      "equalTo": "17"
+     },
+     "page": {
+      "equalTo": "1"
+     },
+     "page_size": {
+      "equalTo": "5"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "mosquitoalert/mosquitoAlertBreedingSites-1.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://api.mosquitoalert.com/v1/breeding-sites/?country_id=17&page=1&page_size=5 on 2026-10-23."
+   }
+  },
+  {
+   "name": "mosquitoAlertBreedingSites: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/mosquitoalert/breeding\\-sites/"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "mosquitoalert/mosquitoAlertBreedingSites.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of mosquitoAlertBreedingSites with the first recording, from https://api.mosquitoalert.com/v1/breeding-sites/?point=-4.4214%2C36.7213&dist=30000&page=1&page_size=10 on 2026-10-23."
+   }
+  },
+  {
+   "name": "mosquitoAlertBreedingSite: {\"id\": \"2ed2ed11-3240-49c2-bf49-10b705c47350\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/mosquitoalert/breeding-sites/2ed2ed11-3240-49c2-bf49-10b705c47350/"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "mosquitoalert/mosquitoAlertBreedingSite.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://api.mosquitoalert.com/v1/breeding-sites/2ed2ed11-3240-49c2-bf49-10b705c47350/ on 2026-10-23."
+   }
+  },
+  {
+   "name": "mosquitoAlertBreedingSite: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/mosquitoalert/breeding\\-sites/[^/]+/"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "mosquitoalert/mosquitoAlertBreedingSite.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of mosquitoAlertBreedingSite with the first recording, from https://api.mosquitoalert.com/v1/breeding-sites/2ed2ed11-3240-49c2-bf49-10b705c47350/ on 2026-10-23."
+   }
+  },
+  {
+   "name": "mosquitoAlertObservationPoints: {\"near\": \"-4.4214,36.7213\", \"distanceInMetres\": 10000, \"createdAfter\": \"2025-01-01\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/mosquitoalert/observations/geo/",
+    "queryParameters": {
+     "point": {
+      "equalTo": "-4.4214,36.7213"
+     },
+     "dist": {
+      "equalTo": "10000"
+     },
+     "created_at_after": {
+      "equalTo": "2025-01-01"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "mosquitoalert/mosquitoAlertObservationPoints.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://api.mosquitoalert.com/v1/observations/geo/?point=-4.4214%2C36.7213&dist=10000&created_at_after=2025-01-01 on 2026-10-23."
+   }
+  },
+  {
+   "name": "mosquitoAlertObservationPoints: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/mosquitoalert/observations/geo/"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "mosquitoalert/mosquitoAlertObservationPoints.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of mosquitoAlertObservationPoints with the first recording, from https://api.mosquitoalert.com/v1/observations/geo/?point=-4.4214%2C36.7213&dist=10000&created_at_after=2025-01-01 on 2026-10-23."
+   }
+  },
+  {
+   "name": "mosquitoAlertBitePoints: {\"near\": \"-4.4214,36.7213\", \"distanceInMetres\": 10000}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/mosquitoalert/bites/geo/",
+    "queryParameters": {
+     "point": {
+      "equalTo": "-4.4214,36.7213"
+     },
+     "dist": {
+      "equalTo": "10000"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "mosquitoalert/mosquitoAlertBitePoints.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://api.mosquitoalert.com/v1/bites/geo/?point=-4.4214%2C36.7213&dist=10000 on 2026-10-23."
+   }
+  },
+  {
+   "name": "mosquitoAlertBitePoints: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/mosquitoalert/bites/geo/"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "mosquitoalert/mosquitoAlertBitePoints.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of mosquitoAlertBitePoints with the first recording, from https://api.mosquitoalert.com/v1/bites/geo/?point=-4.4214%2C36.7213&dist=10000 on 2026-10-23."
+   }
+  },
+  {
+   "name": "mosquitoAlertBreedingSitePoints: {\"near\": \"-4.4214,36.7213\", \"distanceInMetres\": 10000}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/mosquitoalert/breeding-sites/geo/",
+    "queryParameters": {
+     "point": {
+      "equalTo": "-4.4214,36.7213"
+     },
+     "dist": {
+      "equalTo": "10000"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "mosquitoalert/mosquitoAlertBreedingSitePoints.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://api.mosquitoalert.com/v1/breeding-sites/geo/?point=-4.4214%2C36.7213&dist=10000 on 2026-10-23."
+   }
+  },
+  {
+   "name": "mosquitoAlertBreedingSitePoints: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/mosquitoalert/breeding\\-sites/geo/"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "mosquitoalert/mosquitoAlertBreedingSitePoints.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of mosquitoAlertBreedingSitePoints with the first recording, from https://api.mosquitoalert.com/v1/breeding-sites/geo/?point=-4.4214%2C36.7213&dist=10000 on 2026-10-23."
+   }
+  },
+  {
+   "name": "mosquitoAlertTaxa: {\"relevant\": true, \"size\": 20}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/mosquitoalert/taxa/",
+    "queryParameters": {
+     "is_relevant": {
+      "equalTo": "true"
+     },
+     "page": {
+      "equalTo": "1"
+     },
+     "page_size": {
+      "equalTo": "20"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "mosquitoalert/mosquitoAlertTaxa.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://api.mosquitoalert.com/v1/taxa/?is_relevant=true&page=1&page_size=20 on 2026-10-23."
+   }
+  },
+  {
+   "name": "mosquitoAlertTaxa: {\"size\": 20}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/mosquitoalert/taxa/",
+    "queryParameters": {
+     "page": {
+      "equalTo": "1"
+     },
+     "page_size": {
+      "equalTo": "20"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "mosquitoalert/mosquitoAlertTaxa-1.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://api.mosquitoalert.com/v1/taxa/?page=1&page_size=20 on 2026-10-23."
+   }
+  },
+  {
+   "name": "mosquitoAlertTaxa: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/mosquitoalert/taxa/"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "mosquitoalert/mosquitoAlertTaxa.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of mosquitoAlertTaxa with the first recording, from https://api.mosquitoalert.com/v1/taxa/?is_relevant=true&page=1&page_size=20 on 2026-10-23."
+   }
+  },
+  {
+   "name": "mosquitoAlertTaxon: {\"id\": 112}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/mosquitoalert/taxa/112/"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "mosquitoalert/mosquitoAlertTaxon.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://api.mosquitoalert.com/v1/taxa/112/ on 2026-10-23."
+   }
+  },
+  {
+   "name": "mosquitoAlertTaxon: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/mosquitoalert/taxa/[^/]+/"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "mosquitoalert/mosquitoAlertTaxon.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of mosquitoAlertTaxon with the first recording, from https://api.mosquitoalert.com/v1/taxa/112/ on 2026-10-23."
+   }
+  },
+  {
+   "name": "mosquitoAlertTaxonTree: {\"id\": 10}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/mosquitoalert/taxa/10/tree/"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "mosquitoalert/mosquitoAlertTaxonTree.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://api.mosquitoalert.com/v1/taxa/10/tree/ on 2026-10-23."
+   }
+  },
+  {
+   "name": "mosquitoAlertTaxonTree: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/mosquitoalert/taxa/[^/]+/tree/"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "mosquitoalert/mosquitoAlertTaxonTree.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of mosquitoAlertTaxonTree with the first recording, from https://api.mosquitoalert.com/v1/taxa/10/tree/ on 2026-10-23."
+   }
+  },
+  {
+   "name": "mosquitoAlertTaxonRoot: {}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/mosquitoalert/taxa/tree/"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "mosquitoalert/mosquitoAlertTaxonRoot.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://api.mosquitoalert.com/v1/taxa/tree/ on 2026-10-23."
+   }
+  },
+  {
+   "name": "mosquitoAlertTaxonRoot: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/mosquitoalert/taxa/tree/"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "mosquitoalert/mosquitoAlertTaxonRoot.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of mosquitoAlertTaxonRoot with the first recording, from https://api.mosquitoalert.com/v1/taxa/tree/ on 2026-10-23."
+   }
+  }
+ ]
+}

@@ -1,0 +1,7 @@
+{"COD":"DPOP13762", "Nombre":"Torremolinos. Total. Total inhabitants. Persons. ", "T3_Unidad":"Persons", "T3_Escala":" ", "Data":[{"Fecha":"2021-01-01T00:00:00.000+01:00", "T3_TipoDato":"Final value", "T3_Periodo":"Y", "Anyo":2021, "Valor":68056.0}
+,{"Fecha":"2022-01-01T00:00:00.000+01:00", "T3_TipoDato":"Final value", "T3_Periodo":"Y", "Anyo":2022, "Valor":68819.0}
+,{"Fecha":"2023-01-01T00:00:00.000+01:00", "T3_TipoDato":"Final value", "T3_Periodo":"Y", "Anyo":2023, "Valor":70434.0}
+,{"Fecha":"2024-01-01T00:00:00.000+01:00", "T3_TipoDato":"Final value", "T3_Periodo":"Y", "Anyo":2024, "Valor":70933.0}
+,{"Fecha":"2025-01-01T00:00:00.000+01:00", "T3_TipoDato":"Final value", "T3_Periodo":"Y", "Anyo":2025, "Valor":71329.0}
+]
+}

@@ -1,0 +1,121 @@
+{
+    "type":"FeatureCollection",
+    "features":[
+        {
+            "type":"Feature",
+            "properties":{
+                "cat_nodo":"http://inspire.ec.europa.eu/codelist/HydroNodeCategoryValue/junction",
+                "nilreason_nombre":"other:unpopulated",
+                "cat_nodod":"Intersecci\u00f3n",
+                "nilreason_varios":null,
+                "fecha_alta":"2019-05-20",
+                "elevacion":0.0,
+                "nil_nombre":true,
+                "id_demarc":"ES060",
+                "fuente":"5001",
+                "nil_varios":null,
+                "id_demarcd":"Cuencas Mediterr\u00e1neas Andaluzas",
+                "fuented":"Instituto Geogr\u00e1fico Nacional",
+                "nativeness":null,
+                "id_red":"2",
+                "resolucion":5,
+                "script":null,
+                "id_nodo":"2",
+                "hydroid_localid":"ES060HYHYNP0000000000002",
+                "nombre":null,
+                "nilreason_cat_nodo":null
+            },
+            "id":"ES060HYHYNP0000008048155",
+            "geometry":null
+        },
+        {
+            "type":"Feature",
+            "properties":{
+                "cat_nodo":null,
+                "nilreason_nombre":"other:unpopulated",
+                "cat_nodod":null,
+                "nilreason_varios":null,
+                "fecha_alta":"2019-05-20",
+                "elevacion":1.0,
+                "nil_nombre":true,
+                "id_demarc":"ES060",
+                "fuente":"5001",
+                "nil_varios":null,
+                "id_demarcd":"Cuencas Mediterr\u00e1neas Andaluzas",
+                "fuented":"Instituto Geogr\u00e1fico Nacional",
+                "nativeness":null,
+                "id_red":"2",
+                "resolucion":5,
+                "script":null,
+                "id_nodo":"3",
+                "hydroid_localid":"ES060HYHYNP0000000000003",
+                "nombre":null,
+                "nilreason_cat_nodo":"unknown"
+            },
+            "id":"ES060HYHYNP0000008048156",
+            "geometry":null
+        },
+        {
+            "type":"Feature",
+            "properties":{
+                "cat_nodo":"http://inspire.ec.europa.eu/codelist/HydroNodeCategoryValue/junction",
+                "nilreason_nombre":"other:unpopulated",
+                "cat_nodod":"Intersecci\u00f3n",
+                "nilreason_varios":null,
+                "fecha_alta":"2019-05-20",
+                "elevacion":15.0,
+                "nil_nombre":true,
+                "id_demarc":"ES060",
+                "fuente":"5001",
+                "nil_varios":null,
+                "id_demarcd":"Cuencas Mediterr\u00e1neas Andaluzas",
+                "fuented":"Instituto Geogr\u00e1fico Nacional",
+                "nativeness":null,
+                "id_red":"2",
+                "resolucion":5,
+                "script":null,
+                "id_nodo":"5",
+                "hydroid_localid":"ES060HYHYNP0000000000005",
+                "nombre":null,
+                "nilreason_cat_nodo":null
+            },
+            "id":"ES060HYHYNP0000008048157",
+            "geometry":null
+        }
+    ],
+    "numberMatched":111,
+    "numberReturned":3,
+    "links":[
+        {
+            "type":"application/geo+json",
+            "rel":"self",
+            "title":"This document as GeoJSON",
+            "href":"https://api-features.idee.es/collections/hydronode/items?f=json&bbox=-4.50,36.65,-4.35,36.75&skipGeometry=true&limit=3"
+        },
+        {
+            "rel":"alternate",
+            "type":"application/ld+json",
+            "title":"This document as RDF (JSON-LD)",
+            "href":"https://api-features.idee.es/collections/hydronode/items?f=jsonld&bbox=-4.50,36.65,-4.35,36.75&skipGeometry=true&limit=3"
+        },
+        {
+            "type":"text/html",
+            "rel":"alternate",
+            "title":"This document as HTML",
+            "href":"https://api-features.idee.es/collections/hydronode/items?f=html&bbox=-4.50,36.65,-4.35,36.75&skipGeometry=true&limit=3"
+        },
+        {
+            "type":"application/geo+json",
+            "rel":"next",
+            "title":"Items (next)",
+            "href":"https://api-features.idee.es/collections/hydronode/items?offset=3&bbox=-4.50,36.65,-4.35,36.75&skipGeometry=true&limit=3"
+        },
+        {
+            "type":"application/json",
+            "title":"HY-N Nodo hidrogr\u00e1fico",
+            "rel":"collection",
+            "href":"https://api-features.idee.es/collections/hydronode"
+        }
+    ],
+    "timeStamp":"2026-10-22T23:42:15.835421Z"
+}

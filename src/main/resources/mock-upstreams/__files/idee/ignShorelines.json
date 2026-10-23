@@ -1,0 +1,94 @@
+{
+    "type":"FeatureCollection",
+    "features":[
+        {
+            "type":"Feature",
+            "properties":{
+                "hydroid_localid":"ES000HYLWBL0000000001652",
+                "fecha_alta":"2019-05-22",
+                "origend":"Natural",
+                "nivel_agua":"http://inspire.ec.europa.eu/codelist/WaterLevelValue/meanSeaLevel",
+                "fuente":"5001",
+                "longitud":5939.483,
+                "id_demarc":"ES000",
+                "origen":"8001",
+                "nivel_aguad":"Nivel medio del mar",
+                "fuented":"Instituto Geogr\u00e1fico Nacional",
+                "resolucion":5
+            },
+            "id":"ES000HYLWBL0000009176036",
+            "geometry":null
+        },
+        {
+            "type":"Feature",
+            "properties":{
+                "hydroid_localid":"ES000HYLWBL0000000001653",
+                "fecha_alta":"2019-05-22",
+                "origend":"Natural",
+                "nivel_agua":"http://inspire.ec.europa.eu/codelist/WaterLevelValue/meanSeaLevel",
+                "fuente":"5001",
+                "longitud":1115.166,
+                "id_demarc":"ES000",
+                "origen":"8001",
+                "nivel_aguad":"Nivel medio del mar",
+                "fuented":"Instituto Geogr\u00e1fico Nacional",
+                "resolucion":5
+            },
+            "id":"ES000HYLWBL0000009176037",
+            "geometry":null
+        },
+        {
+            "type":"Feature",
+            "properties":{
+                "hydroid_localid":"ES000HYLWBL0000000001654",
+                "fecha_alta":"2019-05-22",
+                "origend":"Natural",
+                "nivel_agua":"http://inspire.ec.europa.eu/codelist/WaterLevelValue/meanSeaLevel",
+                "fuente":"5001",
+                "longitud":1413.551,
+                "id_demarc":"ES000",
+                "origen":"8001",
+                "nivel_aguad":"Nivel medio del mar",
+                "fuented":"Instituto Geogr\u00e1fico Nacional",
+                "resolucion":5
+            },
+            "id":"ES000HYLWBL0000009176038",
+            "geometry":null
+        }
+    ],
+    "numberMatched":19,
+    "numberReturned":3,
+    "links":[
+        {
+            "type":"application/geo+json",
+            "rel":"self",
+            "title":"This document as GeoJSON",
+            "href":"https://api-features.idee.es/collections/landwaterboundary/items?f=json&bbox=-4.50,36.65,-4.35,36.75&skipGeometry=true&limit=3"
+        },
+        {
+            "rel":"alternate",
+            "type":"application/ld+json",
+            "title":"This document as RDF (JSON-LD)",
+            "href":"https://api-features.idee.es/collections/landwaterboundary/items?f=jsonld&bbox=-4.50,36.65,-4.35,36.75&skipGeometry=true&limit=3"
+        },
+        {
+            "type":"text/html",
+            "rel":"alternate",
+            "title":"This document as HTML",
+            "href":"https://api-features.idee.es/collections/landwaterboundary/items?f=html&bbox=-4.50,36.65,-4.35,36.75&skipGeometry=true&limit=3"
+        },
+        {
+            "type":"application/geo+json",
+            "rel":"next",
+            "title":"Items (next)",
+            "href":"https://api-features.idee.es/collections/landwaterboundary/items?offset=3&bbox=-4.50,36.65,-4.35,36.75&skipGeometry=true&limit=3"
+        },
+        {
+            "type":"application/json",
+            "title":"HY-P L\u00ednea de costa",
+            "rel":"collection",
+            "href":"https://api-features.idee.es/collections/landwaterboundary"
+        }
+    ],
+    "timeStamp":"2026-10-22T23:42:37.993195Z"
+}

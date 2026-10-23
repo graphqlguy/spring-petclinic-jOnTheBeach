@@ -1,0 +1,100 @@
+{
+    "type":"FeatureCollection",
+    "features":[
+        {
+            "type":"Feature",
+            "properties":{
+                "type_boundary":"L\u00edmite terrestre",
+                "country":"ES",
+                "name_boundary":"M\u00e1laga#Torremolinos",
+                "date_boundary":"2019-12-17",
+                "nationallevelname":"Municipio",
+                "legalstatus":"agreed",
+                "endlifespanversion":null,
+                "nilreason_legalstatus":null,
+                "nationalcode":"M34012929067M34012929901T0238384",
+                "url_resource":"https://centrodedescargas.cnig.es/CentroDescargas/busquedaIdProductor.do?idProductor=M012521M012611&Serie=HRLLJ",
+                "nationallevel":"https://inspire.ec.europa.eu/codelist/AdministrativeHierarchyLevel/4thOrder",
+                "accuracy":"M\u00e9todo 1 descrito en la hoja registral",
+                "nil_legalstatus":null
+            },
+            "id":5659746,
+            "geometry":null
+        },
+        {
+            "type":"Feature",
+            "properties":{
+                "type_boundary":"Litoral",
+                "country":"ES",
+                "name_boundary":"M\u00e1laga#Mar Mediterr\u00e1neo",
+                "date_boundary":"2025-02-04",
+                "nationallevelname":"Municipio",
+                "legalstatus":"notAgreed",
+                "endlifespanversion":null,
+                "nilreason_legalstatus":null,
+                "nationalcode":"M34012929067M98999999005T0246367",
+                "url_resource":"https://centrodedescargas.cnig.es/CentroDescargas/busquedaIdProductor.do?idProductor=M012521M014010&Serie=HRLLJ",
+                "nationallevel":"https://inspire.ec.europa.eu/codelist/AdministrativeHierarchyLevel/4thOrder",
+                "accuracy":"M\u00e9todo 1 descrito en la hoja registral",
+                "nil_legalstatus":null
+            },
+            "id":5666694,
+            "geometry":null
+        },
+        {
+            "type":"Feature",
+            "properties":{
+                "type_boundary":"Litoral",
+                "country":"ES",
+                "name_boundary":"M\u00e1laga#Mar Mediterr\u00e1neo",
+                "date_boundary":"2025-02-04",
+                "nationallevelname":"Provincia",
+                "legalstatus":null,
+                "endlifespanversion":null,
+                "nilreason_legalstatus":"other:unpopulated",
+                "nationalcode":"M34012900000M98999900000T0246368",
+                "url_resource":"https://www.idee.es/csw-inspire-idee/srv/spa/catalog.search#/home",
+                "nationallevel":"https://inspire.ec.europa.eu/codelist/AdministrativeHierarchyLevel/3rdOrder",
+                "accuracy":null,
+                "nil_legalstatus":true
+            },
+            "id":5691871,
+            "geometry":null
+        }
+    ],
+    "numberMatched":5,
+    "numberReturned":3,
+    "links":[
+        {
+            "type":"application/geo+json",
+            "rel":"self",
+            "title":"This document as GeoJSON",
+            "href":"https://api-features.ign.es/collections/administrativeboundary/items?f=json&bbox=-4.50,36.65,-4.35,36.75&skipGeometry=true&limit=3"
+        },
+        {
+            "rel":"alternate",
+            "type":"application/ld+json",
+            "title":"This document as RDF (JSON-LD)",
+            "href":"https://api-features.ign.es/collections/administrativeboundary/items?f=jsonld&bbox=-4.50,36.65,-4.35,36.75&skipGeometry=true&limit=3"
+        },
+        {
+            "type":"text/html",
+            "rel":"alternate",
+            "title":"This document as HTML",
+            "href":"https://api-features.ign.es/collections/administrativeboundary/items?f=html&bbox=-4.50,36.65,-4.35,36.75&skipGeometry=true&limit=3"
+        },
+        {
+            "type":"application/geo+json",
+            "rel":"next",
+            "title":"Items (next)",
+            "href":"https://api-features.ign.es/collections/administrativeboundary/items?offset=3&bbox=-4.50,36.65,-4.35,36.75&skipGeometry=true&limit=3"
+        },
+        {
+            "type":"application/json",
+            "title":"AU L\u00edmites administrativos",
+            "rel":"collection",
+            "href":"https://api-features.ign.es/collections/administrativeboundary"
+        }
+    ],
+    "timeStamp":"2026-10-22T23:44:44.359502Z"
+}

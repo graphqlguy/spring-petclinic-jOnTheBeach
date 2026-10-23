@@ -1,0 +1,79 @@
+{
+    "type":"Feature",
+    "properties":{
+        "hydroid_localid":"ES020HYLCKP0000000000001",
+        "id_demarcd":"Duero",
+        "nombre":null,
+        "condicion":"http://inspire.ec.europa.eu/codelist/ConditionOfFacilityValue/functional",
+        "fuente":"5053",
+        "resolucion":5,
+        "nilreason_nombre":"other:unpopulated",
+        "nil_nombre":true,
+        "nativeness":null,
+        "id_demarc":"ES020",
+        "fecha_alta":"2019-02-26",
+        "condiciond":"En uso",
+        "fuented":"Direcci\u00f3n General del Agua",
+        "nilreason_varios":null,
+        "nil_varios":null,
+        "script":null
+    },
+    "id":"ES020HYLCKP0000001304687",
+    "geometry":{
+        "type":"Point",
+        "coordinates":[
+            -4.524692009999684,
+            41.92159738999999
+        ]
+    },
+    "prev":"ES020HYLCKP0000001304687",
+    "next":"ES020HYLCKP0000001304688",
+    "links":[
+        {
+            "type":"application/json",
+            "rel":"root",
+            "title":"The landing page of this server as JSON",
+            "href":"https://api-features.idee.es?f=json"
+        },
+        {
+            "type":"text/html",
+            "rel":"root",
+            "title":"The landing page of this server as HTML",
+            "href":"https://api-features.idee.es?f=html"
+        },
+        {
+            "rel":"self",
+            "type":"application/geo+json",
+            "title":"This document as JSON",
+            "href":"https://api-features.idee.es/collections/lock/items/ES020HYLCKP0000001304687?f=json"
+        },
+        {
+            "rel":"alternate",
+            "type":"application/ld+json",
+            "title":"This document as RDF (JSON-LD)",
+            "href":"https://api-features.idee.es/collections/lock/items/ES020HYLCKP0000001304687?f=jsonld"
+        },
+        {
+            "rel":"alternate",
+            "type":"text/html",
+            "title":"This document as HTML",
+            "href":"https://api-features.idee.es/collections/lock/items/ES020HYLCKP0000001304687?f=html"
+        },
+        {
+            "rel":"collection",
+            "type":"application/json",
+            "title":"HY-P Esclusa",
+            "href":"https://api-features.idee.es/collections/lock"
+        },
+        {
+            "rel":"prev",
+            "type":"application/json",
+            "href":"https://api-features.idee.es/collections/lock/items/ES020HYLCKP0000001304687?f=json"
+        },
+        {
+            "rel":"next",
+            "type":"application/json",
+            "href":"https://api-features.idee.es/collections/lock/items/ES020HYLCKP0000001304688?f=json"
+        }
+    ]
+}

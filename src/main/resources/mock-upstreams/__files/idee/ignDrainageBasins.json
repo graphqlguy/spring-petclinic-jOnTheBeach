@@ -1,0 +1,127 @@
+{
+    "type":"FeatureCollection",
+    "features":[
+        {
+            "type":"Feature",
+            "properties":{
+                "hydroid_localid":"ES050HYDBSS0000000051045",
+                "orden":"2",
+                "origend":"Natural",
+                "nativeness":null,
+                "orden_esq":"16001",
+                "area":57077930672.1,
+                "script":"Latn",
+                "orden_esqd":"Pfaffstetter",
+                "resolucion":5,
+                "nombre":"Rio Guadalquivir",
+                "orden_amb":"17003",
+                "id_demarc":"ES050",
+                "orden_ambd":"Nacional",
+                "nilreason_nombre":null,
+                "id_demarcd":"Guadalquivir",
+                "fuente":"5053",
+                "nilreason_varios":"other:unpopulated",
+                "fecha_alta":"2019-07-11",
+                "fuented":"Direcci\u00f3n General del Agua",
+                "nil_nombre":null,
+                "origen":"8001",
+                "nil_varios":true
+            },
+            "id":"ES050HYDBSS0000009246127",
+            "geometry":null
+        },
+        {
+            "type":"Feature",
+            "properties":{
+                "hydroid_localid":"ES060HYDBSS0000000061098",
+                "orden":"5",
+                "origend":"Natural",
+                "nativeness":null,
+                "orden_esq":"16001",
+                "area":7453568.831,
+                "script":"Latn",
+                "orden_esqd":"Pfaffstetter",
+                "resolucion":5,
+                "nombre":"Ca\u00f1ada De Ceuta",
+                "orden_amb":"17003",
+                "id_demarc":"ES060",
+                "orden_ambd":"Nacional",
+                "nilreason_nombre":null,
+                "id_demarcd":"Cuencas Mediterr\u00e1neas Andaluzas",
+                "fuente":"5053",
+                "nilreason_varios":"other:unpopulated",
+                "fecha_alta":"2019-07-11",
+                "fuented":"Direcci\u00f3n General del Agua",
+                "nil_nombre":null,
+                "origen":"8001",
+                "nil_varios":true
+            },
+            "id":"ES060HYDBSS0000009311536",
+            "geometry":null
+        },
+        {
+            "type":"Feature",
+            "properties":{
+                "hydroid_localid":"ES060HYDBSS0000000061098",
+                "orden":"6",
+                "origend":"Natural",
+                "nativeness":null,
+                "orden_esq":"16001",
+                "area":550814.791,
+                "script":"Latn",
+                "orden_esqd":"Pfaffstetter",
+                "resolucion":5,
+                "nombre":"Sin Nombre",
+                "orden_amb":"17003",
+                "id_demarc":"ES060",
+                "orden_ambd":"Nacional",
+                "nilreason_nombre":null,
+                "id_demarcd":"Cuencas Mediterr\u00e1neas Andaluzas",
+                "fuente":"5053",
+                "nilreason_varios":"other:unpopulated",
+                "fecha_alta":"2019-07-11",
+                "fuented":"Direcci\u00f3n General del Agua",
+                "nil_nombre":null,
+                "origen":"8001",
+                "nil_varios":true
+            },
+            "id":"ES060HYDBSS0000009311537",
+            "geometry":null
+        }
+    ],
+    "numberMatched":56,
+    "numberReturned":3,
+    "links":[
+        {
+            "type":"application/geo+json",
+            "rel":"self",
+            "title":"This document as GeoJSON",
+            "href":"https://api-features.idee.es/collections/drainagebasin/items?f=json&bbox=-4.50,36.65,-4.35,36.75&skipGeometry=true&limit=3"
+        },
+        {
+            "rel":"alternate",
+            "type":"application/ld+json",
+            "title":"This document as RDF (JSON-LD)",
+            "href":"https://api-features.idee.es/collections/drainagebasin/items?f=jsonld&bbox=-4.50,36.65,-4.35,36.75&skipGeometry=true&limit=3"
+        },
+        {
+            "type":"text/html",
+            "rel":"alternate",
+            "title":"This document as HTML",
+            "href":"https://api-features.idee.es/collections/drainagebasin/items?f=html&bbox=-4.50,36.65,-4.35,36.75&skipGeometry=true&limit=3"
+        },
+        {
+            "type":"application/geo+json",
+            "rel":"next",
+            "title":"Items (next)",
+            "href":"https://api-features.idee.es/collections/drainagebasin/items?offset=3&bbox=-4.50,36.65,-4.35,36.75&skipGeometry=true&limit=3"
+        },
+        {
+            "type":"application/json",
+            "title":"HY-P Cuenca de captaci\u00f3n",
+            "rel":"collection",
+            "href":"https://api-features.idee.es/collections/drainagebasin"
+        }
+    ],
+    "timeStamp":"2026-10-22T23:42:30.071180Z"
+}

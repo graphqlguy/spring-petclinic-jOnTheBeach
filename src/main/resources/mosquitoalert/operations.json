@@ -1,0 +1,665 @@
+{
+ "operations": [
+  {
+   "field": "mosquitoAlertObservations",
+   "path": "/observations/",
+   "arguments": [
+    {
+     "name": "near",
+     "parameter": "point",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "distanceInMetres",
+     "parameter": "dist",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "countryId",
+     "parameter": "country_id",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "createdAfter",
+     "parameter": "created_at_after",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "createdBefore",
+     "parameter": "created_at_before",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "hasPhotos",
+     "parameter": "has_photos",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "taxonIds",
+     "parameter": "identification_taxon_ids",
+     "in": "query",
+     "list": true
+    },
+    {
+     "name": "orderBy",
+     "parameter": "order_by",
+     "in": "query",
+     "list": false,
+     "values": {
+      "NEWEST_FIRST": "-created_at",
+      "OLDEST_FIRST": "created_at",
+      "NEAREST_FIRST": "distance",
+      "FARTHEST_FIRST": "-distance",
+      "LAST_RECEIVED_FIRST": "-received_at",
+      "FIRST_RECEIVED_FIRST": "received_at"
+     }
+    }
+   ],
+   "paging": {
+    "style": "page",
+    "start": "page",
+    "size": "page_size"
+   }
+  },
+  {
+   "field": "mosquitoAlertObservation",
+   "path": "/observations/{uuid}/",
+   "arguments": [
+    {
+     "name": "id",
+     "parameter": "uuid",
+     "in": "path",
+     "list": false
+    }
+   ]
+  },
+  {
+   "field": "mosquitoAlertBites",
+   "path": "/bites/",
+   "arguments": [
+    {
+     "name": "near",
+     "parameter": "point",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "distanceInMetres",
+     "parameter": "dist",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "countryId",
+     "parameter": "country_id",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "createdAfter",
+     "parameter": "created_at_after",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "createdBefore",
+     "parameter": "created_at_before",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "orderBy",
+     "parameter": "order_by",
+     "in": "query",
+     "list": false,
+     "values": {
+      "NEWEST_FIRST": "-created_at",
+      "OLDEST_FIRST": "created_at",
+      "NEAREST_FIRST": "distance",
+      "FARTHEST_FIRST": "-distance",
+      "LAST_RECEIVED_FIRST": "-received_at",
+      "FIRST_RECEIVED_FIRST": "received_at"
+     }
+    }
+   ],
+   "paging": {
+    "style": "page",
+    "start": "page",
+    "size": "page_size"
+   }
+  },
+  {
+   "field": "mosquitoAlertBite",
+   "path": "/bites/{uuid}/",
+   "arguments": [
+    {
+     "name": "id",
+     "parameter": "uuid",
+     "in": "path",
+     "list": false
+    }
+   ]
+  },
+  {
+   "field": "mosquitoAlertBreedingSites",
+   "path": "/breeding-sites/",
+   "arguments": [
+    {
+     "name": "near",
+     "parameter": "point",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "distanceInMetres",
+     "parameter": "dist",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "countryId",
+     "parameter": "country_id",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "createdAfter",
+     "parameter": "created_at_after",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "createdBefore",
+     "parameter": "created_at_before",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "hasPhotos",
+     "parameter": "has_photos",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "siteTypes",
+     "parameter": "site_type",
+     "in": "query",
+     "list": true,
+     "values": {
+      "BASIN": "basin",
+      "BUCKET": "bucket",
+      "FOUNTAIN": "fountain",
+      "SMALL_CONTAINER": "small_container",
+      "STORM_DRAIN": "storm_drain",
+      "WELL": "well",
+      "OTHER": "other"
+     }
+    },
+    {
+     "name": "hasWater",
+     "parameter": "has_water",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "hasLarvae",
+     "parameter": "has_larvae",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "hasMosquitoesNear",
+     "parameter": "has_near_mosquitoes",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "orderBy",
+     "parameter": "order_by",
+     "in": "query",
+     "list": false,
+     "values": {
+      "NEWEST_FIRST": "-created_at",
+      "OLDEST_FIRST": "created_at",
+      "NEAREST_FIRST": "distance",
+      "FARTHEST_FIRST": "-distance",
+      "LAST_RECEIVED_FIRST": "-received_at",
+      "FIRST_RECEIVED_FIRST": "received_at"
+     }
+    }
+   ],
+   "paging": {
+    "style": "page",
+    "start": "page",
+    "size": "page_size"
+   }
+  },
+  {
+   "field": "mosquitoAlertBreedingSite",
+   "path": "/breeding-sites/{uuid}/",
+   "arguments": [
+    {
+     "name": "id",
+     "parameter": "uuid",
+     "in": "path",
+     "list": false
+    }
+   ]
+  },
+  {
+   "field": "mosquitoAlertObservationPoints",
+   "path": "/observations/geo/",
+   "arguments": [
+    {
+     "name": "near",
+     "parameter": "point",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "distanceInMetres",
+     "parameter": "dist",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "createdAfter",
+     "parameter": "created_at_after",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "createdBefore",
+     "parameter": "created_at_before",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "taxonIds",
+     "parameter": "identification_taxon_ids",
+     "in": "query",
+     "list": true
+    }
+   ]
+  },
+  {
+   "field": "mosquitoAlertBitePoints",
+   "path": "/bites/geo/",
+   "arguments": [
+    {
+     "name": "near",
+     "parameter": "point",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "distanceInMetres",
+     "parameter": "dist",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "createdAfter",
+     "parameter": "created_at_after",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "createdBefore",
+     "parameter": "created_at_before",
+     "in": "query",
+     "list": false
+    }
+   ]
+  },
+  {
+   "field": "mosquitoAlertBreedingSitePoints",
+   "path": "/breeding-sites/geo/",
+   "arguments": [
+    {
+     "name": "near",
+     "parameter": "point",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "distanceInMetres",
+     "parameter": "dist",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "createdAfter",
+     "parameter": "created_at_after",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "createdBefore",
+     "parameter": "created_at_before",
+     "in": "query",
+     "list": false
+    }
+   ]
+  },
+  {
+   "field": "mosquitoAlertTaxa",
+   "path": "/taxa/",
+   "arguments": [
+    {
+     "name": "ranks",
+     "parameter": "rank",
+     "in": "query",
+     "list": true,
+     "values": {
+      "CLASS": "class",
+      "ORDER": "order",
+      "FAMILY": "family",
+      "GENUS": "genus",
+      "SUBGENUS": "subgenus",
+      "SPECIES_COMPLEX": "species_complex",
+      "SPECIES": "species"
+     }
+    },
+    {
+     "name": "relevant",
+     "parameter": "is_relevant",
+     "in": "query",
+     "list": false
+    }
+   ],
+   "paging": {
+    "style": "page",
+    "start": "page",
+    "size": "page_size"
+   }
+  },
+  {
+   "field": "mosquitoAlertTaxon",
+   "path": "/taxa/{id}/",
+   "arguments": [
+    {
+     "name": "id",
+     "parameter": "id",
+     "in": "path",
+     "list": false
+    }
+   ]
+  },
+  {
+   "field": "mosquitoAlertTaxonTree",
+   "path": "/taxa/{id}/tree/",
+   "arguments": [
+    {
+     "name": "id",
+     "parameter": "id",
+     "in": "path",
+     "list": false
+    }
+   ]
+  },
+  {
+   "field": "mosquitoAlertTaxonRoot",
+   "path": "/taxa/tree/",
+   "arguments": []
+  }
+ ],
+ "fields": {
+  "MosquitoAlertObservationPoint": {
+   "id": {
+    "key": "uuid"
+   },
+   "latitude": {
+    "key": "point/latitude"
+   },
+   "longitude": {
+    "key": "point/longitude"
+   },
+   "received": {
+    "key": "received_at"
+   },
+   "taxonId": {
+    "key": "identification_taxon_id"
+   }
+  },
+  "MosquitoAlertBreedingSitePoint": {
+   "id": {
+    "key": "uuid"
+   },
+   "latitude": {
+    "key": "point/latitude"
+   },
+   "longitude": {
+    "key": "point/longitude"
+   },
+   "received": {
+    "key": "received_at"
+   },
+   "siteType": {
+    "key": "site_type"
+   },
+   "hasWater": {
+    "key": "has_water"
+   }
+  },
+  "MosquitoAlertReportPoint": {
+   "id": {
+    "key": "uuid"
+   },
+   "latitude": {
+    "key": "point/latitude"
+   },
+   "longitude": {
+    "key": "point/longitude"
+   },
+   "received": {
+    "key": "received_at"
+   }
+  },
+  "MosquitoAlertObservationPage": {
+   "totalCount": {
+    "key": "count"
+   }
+  },
+  "MosquitoAlertObservation": {
+   "id": {
+    "key": "uuid"
+   },
+   "shortId": {
+    "key": "short_id"
+   },
+   "createdAt": {
+    "key": "created_at"
+   },
+   "createdAtLocal": {
+    "key": "created_at_local"
+   },
+   "sentAt": {
+    "key": "sent_at"
+   },
+   "receivedAt": {
+    "key": "received_at"
+   },
+   "updatedAt": {
+    "key": "updated_at"
+   },
+   "environment": {
+    "key": "event_environment"
+   },
+   "moment": {
+    "key": "event_moment"
+   },
+   "appearance": {
+    "key": "mosquito_appearance"
+   }
+  },
+  "MosquitoAlertBitePage": {
+   "totalCount": {
+    "key": "count"
+   }
+  },
+  "MosquitoAlertBite": {
+   "id": {
+    "key": "uuid"
+   },
+   "shortId": {
+    "key": "short_id"
+   },
+   "createdAt": {
+    "key": "created_at"
+   },
+   "createdAtLocal": {
+    "key": "created_at_local"
+   },
+   "sentAt": {
+    "key": "sent_at"
+   },
+   "receivedAt": {
+    "key": "received_at"
+   },
+   "updatedAt": {
+    "key": "updated_at"
+   },
+   "environment": {
+    "key": "event_environment"
+   },
+   "moment": {
+    "key": "event_moment"
+   }
+  },
+  "MosquitoAlertBiteCounts": {
+   "leftArm": {
+    "key": "left_arm"
+   },
+   "rightArm": {
+    "key": "right_arm"
+   },
+   "leftLeg": {
+    "key": "left_leg"
+   },
+   "rightLeg": {
+    "key": "right_leg"
+   }
+  },
+  "MosquitoAlertBreedingSitePage": {
+   "totalCount": {
+    "key": "count"
+   }
+  },
+  "MosquitoAlertBreedingSite": {
+   "id": {
+    "key": "uuid"
+   },
+   "shortId": {
+    "key": "short_id"
+   },
+   "createdAt": {
+    "key": "created_at"
+   },
+   "createdAtLocal": {
+    "key": "created_at_local"
+   },
+   "sentAt": {
+    "key": "sent_at"
+   },
+   "receivedAt": {
+    "key": "received_at"
+   },
+   "updatedAt": {
+    "key": "updated_at"
+   },
+   "siteType": {
+    "key": "site_type"
+   },
+   "hasWater": {
+    "key": "has_water"
+   },
+   "inPublicArea": {
+    "key": "in_public_area"
+   },
+   "hasMosquitoesNear": {
+    "key": "has_near_mosquitoes"
+   },
+   "hasLarvae": {
+    "key": "has_larvae"
+   }
+  },
+  "MosquitoAlertLocation": {
+   "displayName": {
+    "key": "display_name"
+   },
+   "administrativeAreas": {
+    "key": "adm_boundaries"
+   }
+  },
+  "MosquitoAlertCountry": {
+   "name": {
+    "key": "name_en"
+   },
+   "iso3Code": {
+    "key": "iso3_code"
+   }
+  },
+  "MosquitoAlertPhoto": {
+   "id": {
+    "key": "uuid"
+   }
+  },
+  "MosquitoAlertIdentification": {
+   "annotations": {
+    "key": "num_annotations"
+   },
+   "publicNote": {
+    "key": "public_note"
+   }
+  },
+  "MosquitoAlertIdentificationResult": {
+   "highConfidence": {
+    "key": "is_high_confidence"
+   },
+   "confidenceLabel": {
+    "key": "confidence_label"
+   }
+  },
+  "MosquitoAlertCharacteristics": {
+   "bloodFed": {
+    "key": "is_blood_fed"
+   },
+   "gravid": {
+    "key": "is_gravid"
+   }
+  },
+  "MosquitoAlertAppearance": {
+   "species": {
+    "key": "specie"
+   }
+  },
+  "MosquitoAlertTaxonPage": {
+   "totalCount": {
+    "key": "count"
+   }
+  },
+  "MosquitoAlertTaxon": {
+   "commonName": {
+    "key": "common_name"
+   },
+   "relevant": {
+    "key": "is_relevant"
+   }
+  },
+  "MosquitoAlertTaxonTreeNode": {
+   "commonName": {
+    "key": "common_name"
+   },
+   "relevant": {
+    "key": "is_relevant"
+   }
+  }
+ }
+}

@@ -1,0 +1,640 @@
+[
+    {
+        "geometry_name": "wkb_geometry", 
+        "geometry": {
+            "type": "Point", 
+            "coordinates": [
+                "-4.422057", 
+                "36.737747"
+            ]
+        }, 
+        "codBus": "818", 
+        "codLinea": "1.0", 
+        "sentido": "1", 
+        "type": "Feature", 
+        "properties": {
+            "codLinea": "1.0", 
+            "codBus": "818", 
+            "sentido": "1", 
+            "codParIni": "152", 
+            "last_update": "2026-10-23 06:20:05"
+        }, 
+        "codParIni": "152"
+    }, 
+    {
+        "geometry_name": "wkb_geometry", 
+        "geometry": {
+            "type": "Point", 
+            "coordinates": [
+                "-4.4176087", 
+                "36.74798"
+            ]
+        }, 
+        "codBus": "650", 
+        "codLinea": "2.0", 
+        "sentido": "1", 
+        "type": "Feature", 
+        "properties": {
+            "codLinea": "2.0", 
+            "codBus": "650", 
+            "sentido": "1", 
+            "codParIni": "2626", 
+            "last_update": "2026-10-23 06:20:05"
+        }, 
+        "codParIni": "2626"
+    }, 
+    {
+        "geometry_name": "wkb_geometry", 
+        "geometry": {
+            "type": "Point", 
+            "coordinates": [
+                "-4.4249587", 
+                "36.717808"
+            ]
+        }, 
+        "codBus": "660", 
+        "codLinea": "2.0", 
+        "sentido": "2", 
+        "type": "Feature", 
+        "properties": {
+            "codLinea": "2.0", 
+            "codBus": "660", 
+            "sentido": "2", 
+            "codParIni": "261", 
+            "last_update": "2026-10-23 06:20:05"
+        }, 
+        "codParIni": "261"
+    }, 
+    {
+        "geometry_name": "wkb_geometry", 
+        "geometry": {
+            "type": "Point", 
+            "coordinates": [
+                "-4.4234614", 
+                "36.750114"
+            ]
+        }, 
+        "codBus": "758", 
+        "codLinea": "2.0", 
+        "sentido": "2", 
+        "type": "Feature", 
+        "properties": {
+            "codLinea": "2.0", 
+            "codBus": "758", 
+            "sentido": "2", 
+            "codParIni": "120", 
+            "last_update": "2026-10-23 06:20:05"
+        }, 
+        "codParIni": "120"
+    }, 
+    {
+        "geometry_name": "wkb_geometry", 
+        "geometry": {
+            "type": "Point", 
+            "coordinates": [
+                "-4.424702", 
+                "36.71785"
+            ]
+        }, 
+        "codBus": "823", 
+        "codLinea": "2.0", 
+        "sentido": "1", 
+        "type": "Feature", 
+        "properties": {
+            "codLinea": "2.0", 
+            "codBus": "823", 
+            "sentido": "1", 
+            "codParIni": "229", 
+            "last_update": "2026-10-23 06:20:05"
+        }, 
+        "codParIni": "229"
+    }, 
+    {
+        "geometry_name": "wkb_geometry", 
+        "geometry": {
+            "type": "Point", 
+            "coordinates": [
+                "-4.3583264", 
+                "36.720966"
+            ]
+        }, 
+        "codBus": "829", 
+        "codLinea": "3.0", 
+        "sentido": "2", 
+        "type": "Feature", 
+        "properties": {
+            "codLinea": "3.0", 
+            "codBus": "829", 
+            "sentido": "2", 
+            "codParIni": "1154", 
+            "last_update": "2026-10-23 06:20:05"
+        }, 
+        "codParIni": "1154"
+    }, 
+    {
+        "geometry_name": "wkb_geometry", 
+        "geometry": {
+            "type": "Point", 
+            "coordinates": [
+                "-4.448583", 
+                "36.697502"
+            ]
+        }, 
+        "codBus": "830", 
+        "codLinea": "3.0", 
+        "sentido": "1", 
+        "type": "Feature", 
+        "properties": {
+            "codLinea": "3.0", 
+            "codBus": "830", 
+            "sentido": "1", 
+            "codParIni": "354", 
+            "last_update": "2026-10-23 06:20:05"
+        }, 
+        "codParIni": "354"
+    }, 
+    {
+        "geometry_name": "wkb_geometry", 
+        "geometry": {
+            "type": "Point", 
+            "coordinates": [
+                "-4.4620333", 
+                "36.708473"
+            ]
+        }, 
+        "codBus": "716", 
+        "codLinea": "4.0", 
+        "sentido": "2", 
+        "type": "Feature", 
+        "properties": {
+            "codLinea": "4.0", 
+            "codBus": "716", 
+            "sentido": "2", 
+            "codParIni": "474", 
+            "last_update": "2026-10-23 06:20:05"
+        }, 
+        "codParIni": "474"
+    }, 
+    {
+        "geometry_name": "wkb_geometry", 
+        "geometry": {
+            "type": "Point", 
+            "coordinates": [
+                "-4.4482017", 
+                "36.730255"
+            ]
+        }, 
+        "codBus": "647", 
+        "codLinea": "7.0", 
+        "sentido": "2", 
+        "type": "Feature", 
+        "properties": {
+            "codLinea": "7.0", 
+            "codBus": "647", 
+            "sentido": "2", 
+            "codParIni": "755", 
+            "last_update": "2026-10-23 06:20:05"
+        }, 
+        "codParIni": "755"
+    }, 
+    {
+        "geometry_name": "wkb_geometry", 
+        "geometry": {
+            "type": "Point", 
+            "coordinates": [
+                "-4.439571", 
+                "36.72982"
+            ]
+        }, 
+        "codBus": "672", 
+        "codLinea": "7.0", 
+        "sentido": "2", 
+        "type": "Feature", 
+        "properties": {
+            "codLinea": "7.0", 
+            "codBus": "672", 
+            "sentido": "2", 
+            "codParIni": "758", 
+            "last_update": "2026-10-23 06:20:05"
+        }, 
+        "codParIni": "758"
+    }, 
+    {
+        "geometry_name": "wkb_geometry", 
+        "geometry": {
+            "type": "Point", 
+            "coordinates": [
+                "-4.4578385", 
+                "36.68376"
+            ]
+        }, 
+        "codBus": "675", 
+        "codLinea": "7.0", 
+        "sentido": "1", 
+        "type": "Feature", 
+        "properties": {
+            "codLinea": "7.0", 
+            "codBus": "675", 
+            "sentido": "1", 
+            "codParIni": "1659", 
+            "last_update": "2026-10-23 06:20:05"
+        }, 
+        "codParIni": "1659"
+    }, 
+    {
+        "geometry_name": "wkb_geometry", 
+        "geometry": {
+            "type": "Point", 
+            "coordinates": [
+                "-4.465732", 
+                "36.725212"
+            ]
+        }, 
+        "codBus": "717", 
+        "codLinea": "8.0", 
+        "sentido": "2", 
+        "type": "Feature", 
+        "properties": {
+            "codLinea": "8.0", 
+            "codBus": "717", 
+            "sentido": "2", 
+            "codParIni": "837", 
+            "last_update": "2026-10-23 06:20:05"
+        }, 
+        "codParIni": "837"
+    }, 
+    {
+        "geometry_name": "wkb_geometry", 
+        "geometry": {
+            "type": "Point", 
+            "coordinates": [
+                "-4.4724574", 
+                "36.72438"
+            ]
+        }, 
+        "codBus": "725", 
+        "codLinea": "8.0", 
+        "sentido": "1", 
+        "type": "Feature", 
+        "properties": {
+            "codLinea": "8.0", 
+            "codBus": "725", 
+            "sentido": "1", 
+            "codParIni": "2304", 
+            "last_update": "2026-10-23 06:20:05"
+        }, 
+        "codParIni": "2304"
+    }, 
+    {
+        "geometry_name": "wkb_geometry", 
+        "geometry": {
+            "type": "Point", 
+            "coordinates": [
+                "-4.351814", 
+                "36.71929"
+            ]
+        }, 
+        "codBus": "731", 
+        "codLinea": "8.0", 
+        "sentido": "1", 
+        "type": "Feature", 
+        "properties": {
+            "codLinea": "8.0", 
+            "codBus": "731", 
+            "sentido": "1", 
+            "codParIni": "1136", 
+            "last_update": "2026-10-23 06:20:05"
+        }, 
+        "codParIni": "1136"
+    }, 
+    {
+        "geometry_name": "wkb_geometry", 
+        "geometry": {
+            "type": "Point", 
+            "coordinates": [
+                "-4.5137515", 
+                "36.66831"
+            ]
+        }, 
+        "codBus": "998", 
+        "codLinea": "9.0", 
+        "sentido": "1", 
+        "type": "Feature", 
+        "properties": {
+            "codLinea": "9.0", 
+            "codBus": "998", 
+            "sentido": "1", 
+            "codParIni": "1031", 
+            "last_update": "2026-10-23 06:20:05"
+        }, 
+        "codParIni": "1031"
+    }, 
+    {
+        "geometry_name": "wkb_geometry", 
+        "geometry": {
+            "type": "Point", 
+            "coordinates": [
+                "-4.3522687", 
+                "36.718414"
+            ]
+        }, 
+        "codBus": "844", 
+        "codLinea": "11.0", 
+        "sentido": "2", 
+        "type": "Feature", 
+        "properties": {
+            "codLinea": "11.0", 
+            "codBus": "844", 
+            "sentido": "2", 
+            "codParIni": "1119", 
+            "last_update": "2026-10-23 06:20:05"
+        }, 
+        "codParIni": "1119"
+    }, 
+    {
+        "geometry_name": "wkb_geometry", 
+        "geometry": {
+            "type": "Point", 
+            "coordinates": [
+                "-4.4479294", 
+                "36.68831"
+            ]
+        }, 
+        "codBus": "676", 
+        "codLinea": "15.0", 
+        "sentido": "2", 
+        "type": "Feature", 
+        "properties": {
+            "codLinea": "15.0", 
+            "codBus": "676", 
+            "sentido": "2", 
+            "codParIni": "1551", 
+            "last_update": "2026-10-23 06:20:05"
+        }, 
+        "codParIni": "1551"
+    }, 
+    {
+        "geometry_name": "wkb_geometry", 
+        "geometry": {
+            "type": "Point", 
+            "coordinates": [
+                "-4.426391", 
+                "36.748024"
+            ]
+        }, 
+        "codBus": "677", 
+        "codLinea": "15.0", 
+        "sentido": "1", 
+        "type": "Feature", 
+        "properties": {
+            "codLinea": "15.0", 
+            "codBus": "677", 
+            "sentido": "1", 
+            "codParIni": "1761", 
+            "last_update": "2026-10-23 06:20:05"
+        }, 
+        "codParIni": "1761"
+    }, 
+    {
+        "geometry_name": "wkb_geometry", 
+        "geometry": {
+            "type": "Point", 
+            "coordinates": [
+                "-4.4297028", 
+                "36.737564"
+            ]
+        }, 
+        "codBus": "632", 
+        "codLinea": "17.0", 
+        "sentido": "2", 
+        "type": "Feature", 
+        "properties": {
+            "codLinea": "17.0", 
+            "codBus": "632", 
+            "sentido": "2", 
+            "codParIni": "1752", 
+            "last_update": "2026-10-23 06:20:05"
+        }, 
+        "codParIni": "1752"
+    }, 
+    {
+        "geometry_name": "wkb_geometry", 
+        "geometry": {
+            "type": "Point", 
+            "coordinates": [
+                "-4.5472097", 
+                "36.729263"
+            ]
+        }, 
+        "codBus": "693", 
+        "codLinea": "19.0", 
+        "sentido": "2", 
+        "type": "Feature", 
+        "properties": {
+            "codLinea": "19.0", 
+            "codBus": "693", 
+            "sentido": "2", 
+            "codParIni": "2575", 
+            "last_update": "2026-10-23 06:20:05"
+        }, 
+        "codParIni": "2575"
+    }, 
+    {
+        "geometry_name": "wkb_geometry", 
+        "geometry": {
+            "type": "Point", 
+            "coordinates": [
+                "-4.422881", 
+                "36.717472"
+            ]
+        }, 
+        "codBus": "816", 
+        "codLinea": "20.0", 
+        "sentido": "1", 
+        "type": "Feature", 
+        "properties": {
+            "codLinea": "20.0", 
+            "codBus": "816", 
+            "sentido": "1", 
+            "codParIni": "791", 
+            "last_update": "2026-10-23 06:20:05"
+        }, 
+        "codParIni": "791"
+    }, 
+    {
+        "geometry_name": "wkb_geometry", 
+        "geometry": {
+            "type": "Point", 
+            "coordinates": [
+                "-4.4888196", 
+                "36.742493"
+            ]
+        }, 
+        "codBus": "651", 
+        "codLinea": "21.0", 
+        "sentido": "2", 
+        "type": "Feature", 
+        "properties": {
+            "codLinea": "21.0", 
+            "codBus": "651", 
+            "sentido": "2", 
+            "codParIni": "2156", 
+            "last_update": "2026-10-23 06:20:05"
+        }, 
+        "codParIni": "2156"
+    }, 
+    {
+        "geometry_name": "wkb_geometry", 
+        "geometry": {
+            "type": "Point", 
+            "coordinates": [
+                "-4.525492", 
+                "36.71888"
+            ]
+        }, 
+        "codBus": "750", 
+        "codLinea": "25.0", 
+        "sentido": "2", 
+        "type": "Feature", 
+        "properties": {
+            "codLinea": "25.0", 
+            "codBus": "750", 
+            "sentido": "2", 
+            "codParIni": "2562", 
+            "last_update": "2026-10-23 06:20:05"
+        }, 
+        "codParIni": "2562"
+    }, 
+    {
+        "geometry_name": "wkb_geometry", 
+        "geometry": {
+            "type": "Point", 
+            "coordinates": [
+                "-4.57556", 
+                "36.73402"
+            ]
+        }, 
+        "codBus": "753", 
+        "codLinea": "25.0", 
+        "sentido": "2", 
+        "type": "Feature", 
+        "properties": {
+            "codLinea": "25.0", 
+            "codBus": "753", 
+            "sentido": "2", 
+            "codParIni": "2551", 
+            "last_update": "2026-10-23 06:20:05"
+        }, 
+        "codParIni": "2551"
+    }, 
+    {
+        "geometry_name": "wkb_geometry", 
+        "geometry": {
+            "type": "Point", 
+            "coordinates": [
+                "-4.5480437", 
+                "36.7234"
+            ]
+        }, 
+        "codBus": "800", 
+        "codLinea": "28.0", 
+        "sentido": "1", 
+        "type": "Feature", 
+        "properties": {
+            "codLinea": "28.0", 
+            "codBus": "800", 
+            "sentido": "1", 
+            "codParIni": "2829", 
+            "last_update": "2026-10-23 06:20:05"
+        }, 
+        "codParIni": "2829"
+    }, 
+    {
+        "geometry_name": "wkb_geometry", 
+        "geometry": {
+            "type": "Point", 
+            "coordinates": [
+                "-4.4130774", 
+                "36.72015"
+            ]
+        }, 
+        "codBus": "781", 
+        "codLinea": "75.0", 
+        "sentido": "1", 
+        "type": "Feature", 
+        "properties": {
+            "codLinea": "75.0", 
+            "codBus": "781", 
+            "sentido": "1", 
+            "codParIni": "1901", 
+            "last_update": "2026-10-23 06:20:05"
+        }, 
+        "codParIni": "1901"
+    }, 
+    {
+        "geometry_name": "wkb_geometry", 
+        "geometry": {
+            "type": "Point", 
+            "coordinates": [
+                "-4.415554", 
+                "36.71966"
+            ]
+        }, 
+        "codBus": "740", 
+        "codLinea": "41.0", 
+        "sentido": "2", 
+        "type": "Feature", 
+        "properties": {
+            "codLinea": "41.0", 
+            "codBus": "740", 
+            "sentido": "2", 
+            "codParIni": "301", 
+            "last_update": "2026-10-23 06:20:05"
+        }, 
+        "codParIni": "301"
+    }, 
+    {
+        "geometry_name": "wkb_geometry", 
+        "geometry": {
+            "type": "Point", 
+            "coordinates": [
+                "-4.42898", 
+                "36.71667"
+            ]
+        }, 
+        "codBus": "813", 
+        "codLinea": "42.0", 
+        "sentido": "1", 
+        "type": "Feature", 
+        "properties": {
+            "codLinea": "42.0", 
+            "codBus": "813", 
+            "sentido": "1", 
+            "codParIni": "1860", 
+            "last_update": "2026-10-23 06:20:05"
+        }, 
+        "codParIni": "1860"
+    }, 
+    {
+        "geometry_name": "wkb_geometry", 
+        "geometry": {
+            "type": "Point", 
+            "coordinates": [
+                "-4.467381", 
+                "36.730057"
+            ]
+        }, 
+        "codBus": "741", 
+        "codLinea": "44.0", 
+        "sentido": "1", 
+        "type": "Feature", 
+        "properties": {
+            "codLinea": "44.0", 
+            "codBus": "741", 
+            "sentido": "1", 
+            "codParIni": "2361", 
+            "last_update": "2026-10-23 06:20:05"
+        }, 
+        "codParIni": "2361"
+    }
+]

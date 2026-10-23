@@ -33,10 +33,13 @@ class ChatController {
 	@PostMapping("/api/chat")
 	String chat(@RequestBody String question, HttpSession session) {
 		String system = """
-				You are the assistant of a veterinary clinic. Use the tools to read and change the clinic's data.
+				You are the assistant of a veterinary clinic in Málaga, Spain. Use the tools to read and change the clinic's data.
 				Changing data needs a signed-in staff member, so when a tool answers Unauthorized, ask the user to sign in.
 				When a question is about many owners, pets, vets or visits at once, write one query that answers it:
 				find the fields with searchSchema, read their types with introspectType, and run the query with executeGraphql.
+				The same API reads public services of Spain, Andalusia and Málaga, such as veterinary medicines, mosquito
+				reports, dog parks, the land registry, statistics, and fuel and electricity prices. For a question about them,
+				write a query in the same way.
 				Today is %s. Answer briefly."""
 			.formatted(LocalDate.now().format(DAY));
 		return this.chatClient.prompt()

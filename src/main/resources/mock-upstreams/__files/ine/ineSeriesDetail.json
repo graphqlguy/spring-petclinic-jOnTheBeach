@@ -1,0 +1,10 @@
+{"Id":13663, "COD":"DPOP13663", "Operacion":{"Id":22, "Cod_IOE":"30245", "Nombre":"Official population figures of the Spanish Municipalities: Revision of the Municipal Register", "Codigo":"DPOP", "Url":"/dyngs/INEbase/en/operacion.htm?c=Estadistica_C&cid=1254736177011&idp=1254734710990"}
+, "Nombre":"Málaga. Total. Total inhabitants. Persons. ", "Decimales":0, "Periodicidad":{"Id":12, "Nombre":"Annual", "Codigo":"A"}
+, "Publicacion":{"Id":29, "Nombre":"Official population figures from the Municipal Register at 1 January (RD figures)  ", "Periodicidad":{"Id":12, "Nombre":"Annual", "Codigo":"A"}
+, "Operacion":[{"Id":22, "Cod_IOE":"30245", "Nombre":"Official population figures of the Spanish Municipalities: Revision of the Municipal Register", "Codigo":"DPOP", "Url":"/dyngs/INEbase/en/operacion.htm?c=Estadistica_C&cid=1254736177011&idp=1254734710990"}
+]
+, "PubFechaAct":{"Id":11746, "Nombre":"Official population figures from the Municipal Register at 1 January (RD figures) 2025-01-01", "Fecha":1765447200000, "FK_Periodo":28, "Anyo":2025}
+}
+, "FK_Clasificacion":null, "Escala":{"Id":1, "Nombre":" ", "Factor":"1E0", "Codigo":null, "Abrev":null}
+, "Unidad":{"Id":3, "Nombre":"Persons", "Codigo":null, "Abrev":null}
+}

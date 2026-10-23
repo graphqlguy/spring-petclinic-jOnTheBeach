@@ -1,0 +1,1333 @@
+{
+ "mappings": [
+  {
+   "name": "ineOperations: {\"page\": 1}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ine/OPERACIONES_DISPONIBLES",
+    "queryParameters": {
+     "page": {
+      "equalTo": "1"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json;charset=UTF-8"
+    },
+    "bodyFileName": "ine/ineOperations.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://servicios.ine.es/wstempus/js/EN/OPERACIONES_DISPONIBLES?page=1 on 2026-10-23."
+   }
+  },
+  {
+   "name": "ineOperations: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ine/OPERACIONES_DISPONIBLES"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json;charset=UTF-8"
+    },
+    "bodyFileName": "ine/ineOperations.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of ineOperations with the first recording, from https://servicios.ine.es/wstempus/js/EN/OPERACIONES_DISPONIBLES?page=1 on 2026-10-23."
+   }
+  },
+  {
+   "name": "ineOperation: {\"operation\": \"22\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ine/OPERACION/22"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json;charset=UTF-8"
+    },
+    "bodyFileName": "ine/ineOperation.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://servicios.ine.es/wstempus/js/EN/OPERACION/22 on 2026-10-23."
+   }
+  },
+  {
+   "name": "ineOperation: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ine/OPERACION/[^/]+"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json;charset=UTF-8"
+    },
+    "bodyFileName": "ine/ineOperation.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of ineOperation with the first recording, from https://servicios.ine.es/wstempus/js/EN/OPERACION/22 on 2026-10-23."
+   }
+  },
+  {
+   "name": "ineVariables: {\"page\": 1}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ine/VARIABLES",
+    "queryParameters": {
+     "page": {
+      "equalTo": "1"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json;charset=UTF-8"
+    },
+    "bodyFileName": "ine/ineVariables.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://servicios.ine.es/wstempus/js/EN/VARIABLES?page=1 on 2026-10-23."
+   }
+  },
+  {
+   "name": "ineVariables: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ine/VARIABLES"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json;charset=UTF-8"
+    },
+    "bodyFileName": "ine/ineVariables.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of ineVariables with the first recording, from https://servicios.ine.es/wstempus/js/EN/VARIABLES?page=1 on 2026-10-23."
+   }
+  },
+  {
+   "name": "ineOperationVariables: {\"operation\": \"22\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ine/VARIABLES_OPERACION/22"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json;charset=UTF-8"
+    },
+    "bodyFileName": "ine/ineOperationVariables.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://servicios.ine.es/wstempus/js/EN/VARIABLES_OPERACION/22 on 2026-10-23."
+   }
+  },
+  {
+   "name": "ineOperationVariables: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ine/VARIABLES_OPERACION/[^/]+"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json;charset=UTF-8"
+    },
+    "bodyFileName": "ine/ineOperationVariables.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of ineOperationVariables with the first recording, from https://servicios.ine.es/wstempus/js/EN/VARIABLES_OPERACION/22 on 2026-10-23."
+   }
+  },
+  {
+   "name": "ineVariableValues: {\"variableId\": \"18\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ine/VALORES_VARIABLE/18"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json;charset=UTF-8"
+    },
+    "bodyFileName": "ine/ineVariableValues.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://servicios.ine.es/wstempus/js/EN/VALORES_VARIABLE/18 on 2026-10-23."
+   }
+  },
+  {
+   "name": "ineVariableValues: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ine/VALORES_VARIABLE/[^/]+"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json;charset=UTF-8"
+    },
+    "bodyFileName": "ine/ineVariableValues.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of ineVariableValues with the first recording, from https://servicios.ine.es/wstempus/js/EN/VALORES_VARIABLE/18 on 2026-10-23."
+   }
+  },
+  {
+   "name": "ineOperationVariableValues: {\"variableId\": \"18\", \"operation\": \"22\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ine/VALORES_VARIABLEOPERACION/18/22"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json;charset=UTF-8"
+    },
+    "bodyFileName": "ine/ineOperationVariableValues.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://servicios.ine.es/wstempus/js/EN/VALORES_VARIABLEOPERACION/18/22 on 2026-10-23."
+   }
+  },
+  {
+   "name": "ineOperationVariableValues: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ine/VALORES_VARIABLEOPERACION/[^/]+/[^/]+"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json;charset=UTF-8"
+    },
+    "bodyFileName": "ine/ineOperationVariableValues.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of ineOperationVariableValues with the first recording, from https://servicios.ine.es/wstempus/js/EN/VALORES_VARIABLEOPERACION/18/22 on 2026-10-23."
+   }
+  },
+  {
+   "name": "ineChildValues: {\"variableId\": \"115\", \"valueId\": \"30\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ine/VALORES_HIJOS/115/30"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json;charset=UTF-8"
+    },
+    "bodyFileName": "ine/ineChildValues.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://servicios.ine.es/wstempus/js/EN/VALORES_HIJOS/115/30 on 2026-10-23."
+   }
+  },
+  {
+   "name": "ineChildValues: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ine/VALORES_HIJOS/[^/]+/[^/]+"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json;charset=UTF-8"
+    },
+    "bodyFileName": "ine/ineChildValues.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of ineChildValues with the first recording, from https://servicios.ine.es/wstempus/js/EN/VALORES_HIJOS/115/30 on 2026-10-23."
+   }
+  },
+  {
+   "name": "ineOperationTables: {\"operation\": \"22\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ine/TABLAS_OPERACION/22"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json;charset=UTF-8"
+    },
+    "bodyFileName": "ine/ineOperationTables.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://servicios.ine.es/wstempus/js/EN/TABLAS_OPERACION/22 on 2026-10-23."
+   }
+  },
+  {
+   "name": "ineOperationTables: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ine/TABLAS_OPERACION/[^/]+"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json;charset=UTF-8"
+    },
+    "bodyFileName": "ine/ineOperationTables.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of ineOperationTables with the first recording, from https://servicios.ine.es/wstempus/js/EN/TABLAS_OPERACION/22 on 2026-10-23."
+   }
+  },
+  {
+   "name": "ineTableGroups: {\"tableId\": \"2882\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ine/GRUPOS_TABLA/2882"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json;charset=UTF-8"
+    },
+    "bodyFileName": "ine/ineTableGroups.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://servicios.ine.es/wstempus/js/EN/GRUPOS_TABLA/2882 on 2026-10-23."
+   }
+  },
+  {
+   "name": "ineTableGroups: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ine/GRUPOS_TABLA/[^/]+"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json;charset=UTF-8"
+    },
+    "bodyFileName": "ine/ineTableGroups.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of ineTableGroups with the first recording, from https://servicios.ine.es/wstempus/js/EN/GRUPOS_TABLA/2882 on 2026-10-23."
+   }
+  },
+  {
+   "name": "ineTableGroupValues: {\"tableId\": \"2882\", \"groupId\": \"28489\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ine/VALORES_GRUPOSTABLA/2882/28489"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json;charset=UTF-8"
+    },
+    "bodyFileName": "ine/ineTableGroupValues.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://servicios.ine.es/wstempus/js/EN/VALORES_GRUPOSTABLA/2882/28489 on 2026-10-23."
+   }
+  },
+  {
+   "name": "ineTableGroupValues: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ine/VALORES_GRUPOSTABLA/[^/]+/[^/]+"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json;charset=UTF-8"
+    },
+    "bodyFileName": "ine/ineTableGroupValues.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of ineTableGroupValues with the first recording, from https://servicios.ine.es/wstempus/js/EN/VALORES_GRUPOSTABLA/2882/28489 on 2026-10-23."
+   }
+  },
+  {
+   "name": "ineTableSeries: {\"tableId\": \"2882\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ine/SERIES_TABLA/2882"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json;charset=UTF-8"
+    },
+    "bodyFileName": "ine/ineTableSeries.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://servicios.ine.es/wstempus/js/EN/SERIES_TABLA/2882 on 2026-10-23."
+   }
+  },
+  {
+   "name": "ineTableSeries: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ine/SERIES_TABLA/[^/]+"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json;charset=UTF-8"
+    },
+    "bodyFileName": "ine/ineTableSeries.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of ineTableSeries with the first recording, from https://servicios.ine.es/wstempus/js/EN/SERIES_TABLA/2882 on 2026-10-23."
+   }
+  },
+  {
+   "name": "ineTableData: {\"tableId\": \"2882\", \"last\": 1}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ine/DATOS_TABLA/2882",
+    "queryParameters": {
+     "nult": {
+      "equalTo": "1"
+     },
+     "tip": {
+      "equalTo": "A"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json;charset=UTF-8"
+    },
+    "bodyFileName": "ine/ineTableData.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://servicios.ine.es/wstempus/js/EN/DATOS_TABLA/2882?nult=1&tip=A on 2026-10-23."
+   }
+  },
+  {
+   "name": "ineTableData: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ine/DATOS_TABLA/[^/]+"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json;charset=UTF-8"
+    },
+    "bodyFileName": "ine/ineTableData.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of ineTableData with the first recording, from https://servicios.ine.es/wstempus/js/EN/DATOS_TABLA/2882?nult=1&tip=A on 2026-10-23."
+   }
+  },
+  {
+   "name": "ineSeries: {\"code\": \"DPOP13663\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ine/SERIE/DPOP13663"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json;charset=UTF-8"
+    },
+    "bodyFileName": "ine/ineSeries.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://servicios.ine.es/wstempus/js/EN/SERIE/DPOP13663 on 2026-10-23."
+   }
+  },
+  {
+   "name": "ineSeries: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ine/SERIE/[^/]+"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json;charset=UTF-8"
+    },
+    "bodyFileName": "ine/ineSeries.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of ineSeries with the first recording, from https://servicios.ine.es/wstempus/js/EN/SERIE/DPOP13663 on 2026-10-23."
+   }
+  },
+  {
+   "name": "ineSeriesData: {\"code\": \"DPOP13663\", \"last\": 5}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ine/DATOS_SERIE/DPOP13663",
+    "queryParameters": {
+     "nult": {
+      "equalTo": "5"
+     },
+     "tip": {
+      "equalTo": "A"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json;charset=UTF-8"
+    },
+    "bodyFileName": "ine/ineSeriesData.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://servicios.ine.es/wstempus/js/EN/DATOS_SERIE/DPOP13663?nult=5&tip=A on 2026-10-23."
+   }
+  },
+  {
+   "name": "ineSeriesData: {\"code\": \"DPOP13762\", \"last\": 5}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ine/DATOS_SERIE/DPOP13762",
+    "queryParameters": {
+     "nult": {
+      "equalTo": "5"
+     },
+     "tip": {
+      "equalTo": "A"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json;charset=UTF-8"
+    },
+    "bodyFileName": "ine/ineSeriesData-1.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://servicios.ine.es/wstempus/js/EN/DATOS_SERIE/DPOP13762?nult=5&tip=A on 2026-10-23."
+   }
+  },
+  {
+   "name": "ineSeriesData: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ine/DATOS_SERIE/[^/]+"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json;charset=UTF-8"
+    },
+    "bodyFileName": "ine/ineSeriesData.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of ineSeriesData with the first recording, from https://servicios.ine.es/wstempus/js/EN/DATOS_SERIE/DPOP13663?nult=5&tip=A on 2026-10-23."
+   }
+  },
+  {
+   "name": "ineSeriesValues: {\"code\": \"DPOP13663\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ine/VALORES_SERIE/DPOP13663"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json;charset=UTF-8"
+    },
+    "bodyFileName": "ine/ineSeriesValues.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://servicios.ine.es/wstempus/js/EN/VALORES_SERIE/DPOP13663 on 2026-10-23."
+   }
+  },
+  {
+   "name": "ineSeriesValues: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ine/VALORES_SERIE/[^/]+"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json;charset=UTF-8"
+    },
+    "bodyFileName": "ine/ineSeriesValues.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of ineSeriesValues with the first recording, from https://servicios.ine.es/wstempus/js/EN/VALORES_SERIE/DPOP13663 on 2026-10-23."
+   }
+  },
+  {
+   "name": "inePeriodicities: {}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ine/PERIODICIDADES"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json;charset=UTF-8"
+    },
+    "bodyFileName": "ine/inePeriodicities.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://servicios.ine.es/wstempus/js/EN/PERIODICIDADES on 2026-10-23."
+   }
+  },
+  {
+   "name": "inePeriodicities: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ine/PERIODICIDADES"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json;charset=UTF-8"
+    },
+    "bodyFileName": "ine/inePeriodicities.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of inePeriodicities with the first recording, from https://servicios.ine.es/wstempus/js/EN/PERIODICIDADES on 2026-10-23."
+   }
+  },
+  {
+   "name": "inePublications: {}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ine/PUBLICACIONES"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json;charset=UTF-8"
+    },
+    "bodyFileName": "ine/inePublications.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://servicios.ine.es/wstempus/js/EN/PUBLICACIONES on 2026-10-23."
+   }
+  },
+  {
+   "name": "inePublications: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ine/PUBLICACIONES"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json;charset=UTF-8"
+    },
+    "bodyFileName": "ine/inePublications.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of inePublications with the first recording, from https://servicios.ine.es/wstempus/js/EN/PUBLICACIONES on 2026-10-23."
+   }
+  },
+  {
+   "name": "ineOperationPublications: {\"operation\": \"22\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ine/PUBLICACIONES_OPERACION/22"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json;charset=UTF-8"
+    },
+    "bodyFileName": "ine/ineOperationPublications.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://servicios.ine.es/wstempus/js/EN/PUBLICACIONES_OPERACION/22 on 2026-10-23."
+   }
+  },
+  {
+   "name": "ineOperationPublications: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ine/PUBLICACIONES_OPERACION/[^/]+"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json;charset=UTF-8"
+    },
+    "bodyFileName": "ine/ineOperationPublications.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of ineOperationPublications with the first recording, from https://servicios.ine.es/wstempus/js/EN/PUBLICACIONES_OPERACION/22 on 2026-10-23."
+   }
+  },
+  {
+   "name": "inePublicationDates: {\"publicationId\": \"29\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ine/PUBLICACIONFECHA_PUBLICACION/29"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json;charset=UTF-8"
+    },
+    "bodyFileName": "ine/inePublicationDates.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://servicios.ine.es/wstempus/js/EN/PUBLICACIONFECHA_PUBLICACION/29 on 2026-10-23."
+   }
+  },
+  {
+   "name": "inePublicationDates: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ine/PUBLICACIONFECHA_PUBLICACION/[^/]+"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json;charset=UTF-8"
+    },
+    "bodyFileName": "ine/inePublicationDates.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of inePublicationDates with the first recording, from https://servicios.ine.es/wstempus/js/EN/PUBLICACIONFECHA_PUBLICACION/29 on 2026-10-23."
+   }
+  },
+  {
+   "name": "ineClassifications: {}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ine/CLASIFICACIONES"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json;charset=UTF-8"
+    },
+    "bodyFileName": "ine/ineClassifications.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://servicios.ine.es/wstempus/js/EN/CLASIFICACIONES on 2026-10-23."
+   }
+  },
+  {
+   "name": "ineClassifications: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ine/CLASIFICACIONES"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json;charset=UTF-8"
+    },
+    "bodyFileName": "ine/ineClassifications.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of ineClassifications with the first recording, from https://servicios.ine.es/wstempus/js/EN/CLASIFICACIONES on 2026-10-23."
+   }
+  },
+  {
+   "name": "ineOperationClassifications: {\"operation\": \"25\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ine/CLASIFICACIONES_OPERACION/25"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json;charset=UTF-8"
+    },
+    "bodyFileName": "ine/ineOperationClassifications.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://servicios.ine.es/wstempus/js/EN/CLASIFICACIONES_OPERACION/25 on 2026-10-23."
+   }
+  },
+  {
+   "name": "ineOperationClassifications: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ine/CLASIFICACIONES_OPERACION/[^/]+"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json;charset=UTF-8"
+    },
+    "bodyFileName": "ine/ineOperationClassifications.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of ineOperationClassifications with the first recording, from https://servicios.ine.es/wstempus/js/EN/CLASIFICACIONES_OPERACION/25 on 2026-10-23."
+   }
+  },
+  {
+   "name": "ineUnits: {}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ine/UNIDADES"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json;charset=UTF-8"
+    },
+    "bodyFileName": "ine/ineUnits.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://servicios.ine.es/wstempus/js/EN/UNIDADES on 2026-10-23."
+   }
+  },
+  {
+   "name": "ineUnits: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ine/UNIDADES"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json;charset=UTF-8"
+    },
+    "bodyFileName": "ine/ineUnits.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of ineUnits with the first recording, from https://servicios.ine.es/wstempus/js/EN/UNIDADES on 2026-10-23."
+   }
+  },
+  {
+   "name": "ineScales: {}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ine/ESCALAS"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json;charset=UTF-8"
+    },
+    "bodyFileName": "ine/ineScales.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://servicios.ine.es/wstempus/js/EN/ESCALAS on 2026-10-23."
+   }
+  },
+  {
+   "name": "ineScales: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ine/ESCALAS"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json;charset=UTF-8"
+    },
+    "bodyFileName": "ine/ineScales.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of ineScales with the first recording, from https://servicios.ine.es/wstempus/js/EN/ESCALAS on 2026-10-23."
+   }
+  },
+  {
+   "name": "ineUnit: {\"unitId\": \"3\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ine/UNIDAD/3"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json;charset=UTF-8"
+    },
+    "bodyFileName": "ine/ineUnit.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://servicios.ine.es/wstempus/js/EN/UNIDAD/3 on 2026-10-23."
+   }
+  },
+  {
+   "name": "ineUnit: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ine/UNIDAD/[^/]+"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json;charset=UTF-8"
+    },
+    "bodyFileName": "ine/ineUnit.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of ineUnit with the first recording, from https://servicios.ine.es/wstempus/js/EN/UNIDAD/3 on 2026-10-23."
+   }
+  },
+  {
+   "name": "ineScale: {\"scaleId\": \"3\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ine/ESCALA/3"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json;charset=UTF-8"
+    },
+    "bodyFileName": "ine/ineScale.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://servicios.ine.es/wstempus/js/EN/ESCALA/3 on 2026-10-23."
+   }
+  },
+  {
+   "name": "ineScale: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ine/ESCALA/[^/]+"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json;charset=UTF-8"
+    },
+    "bodyFileName": "ine/ineScale.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of ineScale with the first recording, from https://servicios.ine.es/wstempus/js/EN/ESCALA/3 on 2026-10-23."
+   }
+  },
+  {
+   "name": "inePeriodicity: {\"periodicityId\": \"12\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ine/PERIODICIDAD/12"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json;charset=UTF-8"
+    },
+    "bodyFileName": "ine/inePeriodicity.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://servicios.ine.es/wstempus/js/EN/PERIODICIDAD/12 on 2026-10-23."
+   }
+  },
+  {
+   "name": "inePeriodicity: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ine/PERIODICIDAD/[^/]+"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json;charset=UTF-8"
+    },
+    "bodyFileName": "ine/inePeriodicity.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of inePeriodicity with the first recording, from https://servicios.ine.es/wstempus/js/EN/PERIODICIDAD/12 on 2026-10-23."
+   }
+  },
+  {
+   "name": "ineVariable: {\"variableId\": \"19\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ine/VARIABLE/19"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json;charset=UTF-8"
+    },
+    "bodyFileName": "ine/ineVariable.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://servicios.ine.es/wstempus/js/EN/VARIABLE/19 on 2026-10-23."
+   }
+  },
+  {
+   "name": "ineVariable: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ine/VARIABLE/[^/]+"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json;charset=UTF-8"
+    },
+    "bodyFileName": "ine/ineVariable.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of ineVariable with the first recording, from https://servicios.ine.es/wstempus/js/EN/VARIABLE/19 on 2026-10-23."
+   }
+  },
+  {
+   "name": "ineOperationSeries: {\"operation\": \"15\", \"page\": 1}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ine/SERIES_OPERACION/15",
+    "queryParameters": {
+     "page": {
+      "equalTo": "1"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json;charset=UTF-8"
+    },
+    "bodyFileName": "ine/ineOperationSeries.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://servicios.ine.es/wstempus/js/EN/SERIES_OPERACION/15?page=1 on 2026-10-23."
+   }
+  },
+  {
+   "name": "ineOperationSeries: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ine/SERIES_OPERACION/[^/]+"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json;charset=UTF-8"
+    },
+    "bodyFileName": "ine/ineOperationSeries.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of ineOperationSeries with the first recording, from https://servicios.ine.es/wstempus/js/EN/SERIES_OPERACION/15?page=1 on 2026-10-23."
+   }
+  },
+  {
+   "name": "ineSeriesDetail: {\"code\": \"DPOP13663\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ine/SERIE/DPOP13663",
+    "queryParameters": {
+     "det": {
+      "equalTo": "2"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json;charset=UTF-8"
+    },
+    "bodyFileName": "ine/ineSeriesDetail.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://servicios.ine.es/wstempus/js/EN/SERIE/DPOP13663?det=2 on 2026-10-23."
+   }
+  },
+  {
+   "name": "ineSeriesDetail: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ine/SERIE/[^/]+"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json;charset=UTF-8"
+    },
+    "bodyFileName": "ine/ineSeriesDetail.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of ineSeriesDetail with the first recording, from https://servicios.ine.es/wstempus/js/EN/SERIE/DPOP13663?det=2 on 2026-10-23."
+   }
+  },
+  {
+   "name": "ineOperationTablesDetail: {\"operation\": \"22\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ine/TABLAS_OPERACION/22",
+    "queryParameters": {
+     "det": {
+      "equalTo": "2"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json;charset=UTF-8"
+    },
+    "bodyFileName": "ine/ineOperationTablesDetail.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://servicios.ine.es/wstempus/js/EN/TABLAS_OPERACION/22?det=2 on 2026-10-23."
+   }
+  },
+  {
+   "name": "ineOperationTablesDetail: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ine/TABLAS_OPERACION/[^/]+"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json;charset=UTF-8"
+    },
+    "bodyFileName": "ine/ineOperationTablesDetail.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of ineOperationTablesDetail with the first recording, from https://servicios.ine.es/wstempus/js/EN/TABLAS_OPERACION/22?det=2 on 2026-10-23."
+   }
+  },
+  {
+   "name": "ineTableDataWithMetadata: {\"tableId\": \"2882\", \"last\": 1}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ine/DATOS_TABLA/2882",
+    "queryParameters": {
+     "nult": {
+      "equalTo": "1"
+     },
+     "tip": {
+      "equalTo": "AM"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json;charset=UTF-8"
+    },
+    "bodyFileName": "ine/ineTableDataWithMetadata.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://servicios.ine.es/wstempus/js/EN/DATOS_TABLA/2882?nult=1&tip=AM on 2026-10-23."
+   }
+  },
+  {
+   "name": "ineTableDataWithMetadata: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ine/DATOS_TABLA/[^/]+"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json;charset=UTF-8"
+    },
+    "bodyFileName": "ine/ineTableDataWithMetadata.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of ineTableDataWithMetadata with the first recording, from https://servicios.ine.es/wstempus/js/EN/DATOS_TABLA/2882?nult=1&tip=AM on 2026-10-23."
+   }
+  },
+  {
+   "name": "ineSeriesValuesDetail: {\"code\": \"DPOP13663\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ine/VALORES_SERIE/DPOP13663",
+    "queryParameters": {
+     "det": {
+      "equalTo": "1"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json;charset=UTF-8"
+    },
+    "bodyFileName": "ine/ineSeriesValuesDetail.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://servicios.ine.es/wstempus/js/EN/VALORES_SERIE/DPOP13663?det=1 on 2026-10-23."
+   }
+  },
+  {
+   "name": "ineSeriesValuesDetail: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ine/VALORES_SERIE/[^/]+"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json;charset=UTF-8"
+    },
+    "bodyFileName": "ine/ineSeriesValuesDetail.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of ineSeriesValuesDetail with the first recording, from https://servicios.ine.es/wstempus/js/EN/VALORES_SERIE/DPOP13663?det=1 on 2026-10-23."
+   }
+  },
+  {
+   "name": "ineSeriesByValues: {\"operation\": \"22\", \"periodicityId\": 12, \"filter1\": \"115:30\", \"filter2\": \"18:451\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ine/SERIE_METADATAOPERACION/22",
+    "queryParameters": {
+     "p": {
+      "equalTo": "12"
+     },
+     "g1": {
+      "equalTo": "115:30"
+     },
+     "g2": {
+      "equalTo": "18:451"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json;charset=UTF-8"
+    },
+    "bodyFileName": "ine/ineSeriesByValues.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://servicios.ine.es/wstempus/js/EN/SERIE_METADATAOPERACION/22?p=12&g1=115%3A30&g2=18%3A451 on 2026-10-23."
+   }
+  },
+  {
+   "name": "ineSeriesByValues: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ine/SERIE_METADATAOPERACION/[^/]+"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json;charset=UTF-8"
+    },
+    "bodyFileName": "ine/ineSeriesByValues.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of ineSeriesByValues with the first recording, from https://servicios.ine.es/wstempus/js/EN/SERIE_METADATAOPERACION/22?p=12&g1=115%3A30&g2=18%3A451 on 2026-10-23."
+   }
+  },
+  {
+   "name": "ineDataByValues: {\"operation\": \"22\", \"periodicityId\": 12, \"last\": 1, \"filter1\": \"115:30\", \"filter2\": \"18:451\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ine/DATOS_METADATAOPERACION/22",
+    "queryParameters": {
+     "p": {
+      "equalTo": "12"
+     },
+     "nult": {
+      "equalTo": "1"
+     },
+     "g1": {
+      "equalTo": "115:30"
+     },
+     "g2": {
+      "equalTo": "18:451"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json;charset=UTF-8"
+    },
+    "bodyFileName": "ine/ineDataByValues.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://servicios.ine.es/wstempus/js/EN/DATOS_METADATAOPERACION/22?p=12&nult=1&g1=115%3A30&g2=18%3A451 on 2026-10-23."
+   }
+  },
+  {
+   "name": "ineDataByValues: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ine/DATOS_METADATAOPERACION/[^/]+"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json;charset=UTF-8"
+    },
+    "bodyFileName": "ine/ineDataByValues.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of ineDataByValues with the first recording, from https://servicios.ine.es/wstempus/js/EN/DATOS_METADATAOPERACION/22?p=12&nult=1&g1=115%3A30&g2=18%3A451 on 2026-10-23."
+   }
+  }
+ ]
+}

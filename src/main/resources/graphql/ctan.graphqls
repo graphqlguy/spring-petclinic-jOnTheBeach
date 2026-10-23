@@ -1,0 +1,1060 @@
+# The fields of the Network of Transport Consortia of Andalusia (CTAN), at api.ctan.es. Each consortium runs the buses,
+# trains and metro lines between the towns of one area, and the Málaga area is consortium 4. A generator wrote these
+# fields, their types and src/main/resources/ctan/operations.json from the apiDoc documentation of the service and from
+# answers recorded from it. The names and descriptions are written by hand in English. The documentation lists more
+# operations; the ones that answered 404 or an error on 22 October 2026 are left out. Each field is fetched by a
+# RestOperationFetcher, see CtanConfiguration.
+
+extend type Query {
+    # The consortia publish the lines, stops, timetables, fares and zones of the public transport between towns. A town
+    # (núcleo) is a place with stops, and a municipality can hold several towns: the municipality of Málaga holds the
+    # city, the airport and Teatinos, among others. Every id is written as text.
+
+    """
+    The transport consortia of Andalusia, such as Área de Málaga (4) or Área de Sevilla (1), with their ids for the
+    consortiumId argument of the other fields
+    """
+    ctanConsortia: CtanConsortiumList
+
+    "The municipalities a consortium serves, such as Málaga, Torremolinos or Fuengirola"
+    ctanMunicipalities(
+        """
+        The consortium: 4 for the Málaga area, the default. ctanConsortia lists the others, such as 1 for Seville or 2
+        for the Bay of Cádiz.
+        """
+        consortiumId: Int! = 4
+    ): CtanMunicipalityList
+
+    "One municipality of a consortium, by its id"
+    ctanMunicipality(
+        """
+        The consortium: 4 for the Málaga area, the default. ctanConsortia lists the others, such as 1 for Seville or 2
+        for the Bay of Cádiz.
+        """
+        consortiumId: Int! = 4
+        "The id of the municipality, such as 1 for Málaga. ctanMunicipalities lists them."
+        municipalityId: ID!
+    ): CtanMunicipality
+
+    "The towns (núcleos) of one municipality, such as the airport and Teatinos in Málaga"
+    ctanTownsInMunicipality(
+        """
+        The consortium: 4 for the Málaga area, the default. ctanConsortia lists the others, such as 1 for Seville or 2
+        for the Bay of Cádiz.
+        """
+        consortiumId: Int! = 4
+        "The id of the municipality, such as 1 for Málaga. ctanMunicipalities lists them."
+        municipalityId: ID!
+    ): CtanTownList
+
+    """
+    Every town (núcleo) a consortium serves, with its municipality and fare zone. A question about buses from one place
+    to another starts here, to find the ids of the towns.
+    """
+    ctanTowns(
+        """
+        The consortium: 4 for the Málaga area, the default. ctanConsortia lists the others, such as 1 for Seville or 2
+        for the Bay of Cádiz.
+        """
+        consortiumId: Int! = 4
+    ): CtanTownList
+
+    "One town (núcleo) by its id"
+    ctanTown(
+        """
+        The consortium: 4 for the Málaga area, the default. ctanConsortia lists the others, such as 1 for Seville or 2
+        for the Bay of Cádiz.
+        """
+        consortiumId: Int! = 4
+        "The id of the town (núcleo), such as 1 for Málaga or 107 for Torremolinos. ctanTowns lists them."
+        townId: ID!
+    ): CtanTown
+
+    "The lines that stop in a town (núcleo)"
+    ctanLinesInTown(
+        """
+        The consortium: 4 for the Málaga area, the default. ctanConsortia lists the others, such as 1 for Seville or 2
+        for the Bay of Cádiz.
+        """
+        consortiumId: Int! = 4
+        "The id of the town (núcleo), such as 1 for Málaga or 107 for Torremolinos. ctanTowns lists them."
+        townId: ID!
+    ): CtanLineList
+
+    "The stops of a town (núcleo), with their names and fare zones"
+    ctanStopsInTown(
+        """
+        The consortium: 4 for the Málaga area, the default. ctanConsortia lists the others, such as 1 for Seville or 2
+        for the Bay of Cádiz.
+        """
+        consortiumId: Int! = 4
+        "The id of the town (núcleo), such as 1 for Málaga or 107 for Torremolinos. ctanTowns lists them."
+        townId: ID!
+    ): CtanStopList
+
+    "The lines that stop in one town of one municipality, with their transport mode"
+    ctanLinesInMunicipalityTown(
+        """
+        The consortium: 4 for the Málaga area, the default. ctanConsortia lists the others, such as 1 for Seville or 2
+        for the Bay of Cádiz.
+        """
+        consortiumId: Int! = 4
+        "The id of the municipality, such as 1 for Málaga. ctanMunicipalities lists them."
+        municipalityId: ID!
+        "The id of the town (núcleo), such as 1 for Málaga or 107 for Torremolinos. ctanTowns lists them."
+        townId: ID!
+    ): CtanMunicipalityLineList
+
+    "The stops of one town of one municipality"
+    ctanStopsInMunicipalityTown(
+        """
+        The consortium: 4 for the Málaga area, the default. ctanConsortia lists the others, such as 1 for Seville or 2
+        for the Bay of Cádiz.
+        """
+        consortiumId: Int! = 4
+        "The id of the municipality, such as 1 for Málaga. ctanMunicipalities lists them."
+        municipalityId: ID!
+        "The id of the town (núcleo), such as 1 for Málaga or 107 for Torremolinos. ctanTowns lists them."
+        townId: ID!
+    ): CtanStopList
+
+    """
+    The lines of a consortium: buses, trains and metro. With latitude and longitude, only the lines that stop near that
+    point, so the lines near an owner's home take the point of the address.
+    """
+    ctanLines(
+        """
+        The consortium: 4 for the Málaga area, the default. ctanConsortia lists the others, such as 1 for Seville or 2
+        for the Bay of Cádiz.
+        """
+        consortiumId: Int! = 4
+        "The latitude of a point, such as 36.7213 in the centre of Málaga. Give longitude with it."
+        latitude: Float
+        "The longitude of the point, such as -4.4214. Give latitude with it."
+        longitude: Float
+    ): CtanLineList
+
+    "The stops of a line in order, in both directions, with their positions"
+    ctanLineStops(
+        """
+        The consortium: 4 for the Málaga area, the default. ctanConsortia lists the others, such as 1 for Seville or 2
+        for the Bay of Cádiz.
+        """
+        consortiumId: Int! = 4
+        "The id of the line, such as 1 for the bus M-110. ctanLines lists them."
+        lineId: ID!
+    ): CtanLineStopList
+
+    """
+    The timetable of a line: the towns it passes, and the time of each departure at each block of stops, in both
+    directions. Give a day and month for the timetable of one day, or leave them out for the whole timetable.
+    """
+    ctanLineTimetable(
+        """
+        The consortium: 4 for the Málaga area, the default. ctanConsortia lists the others, such as 1 for Seville or 2
+        for the Bay of Cádiz.
+        """
+        consortiumId: Int! = 4
+        "The id of the line, such as 1 for the bus M-110"
+        lineId: ID!
+        "Only the departures of these days, by the id ctanFrequencies gives, such as 1 for Monday to Friday"
+        frequencyId: ID
+        "The day of the month of the timetable, such as 23"
+        day: Int
+        "The month of the timetable, such as 10 for October"
+        month: Int
+    ): CtanLineTimetable
+
+    """
+    The departures of every line from one town (núcleo) to another, such as from Málaga to Torremolinos. The two towns
+    must differ.
+    """
+    ctanTimetableBetweenTowns(
+        """
+        The consortium: 4 for the Málaga area, the default. ctanConsortia lists the others, such as 1 for Seville or 2
+        for the Bay of Cádiz.
+        """
+        consortiumId: Int! = 4
+        "The town the trip starts from, such as 1 for Málaga"
+        fromTownId: ID!
+        "The town the trip ends in, such as 107 for Torremolinos"
+        toTownId: ID!
+    ): CtanTripTimetable
+
+    "The stops of a consortium near a point, nearest first, with their towns and positions"
+    ctanStopsNear(
+        """
+        The consortium: 4 for the Málaga area, the default. ctanConsortia lists the others, such as 1 for Seville or 2
+        for the Bay of Cádiz.
+        """
+        consortiumId: Int! = 4
+        "The latitude of the point, such as 36.7213 in the centre of Málaga"
+        latitude: Float!
+        "The longitude of the point, such as -4.4214"
+        longitude: Float!
+    ): CtanStopList
+
+    "One stop by its id, with its town and the lines that call there"
+    ctanStop(
+        """
+        The consortium: 4 for the Málaga area, the default. ctanConsortia lists the others, such as 1 for Seville or 2
+        for the Bay of Cádiz.
+        """
+        consortiumId: Int! = 4
+        "The id of the stop, such as 149 for Terminal Muelle Heredia in Málaga"
+        stopId: ID!
+    ): CtanStop
+
+    """
+    The departures from a stop in the quarter of an hour after a time, with the line and its destination. Leave from out
+    for the departures from now.
+    """
+    ctanDepartures(
+        """
+        The consortium: 4 for the Málaga area, the default. ctanConsortia lists the others, such as 1 for Seville or 2
+        for the Bay of Cádiz.
+        """
+        consortiumId: Int! = 4
+        "The id of the stop, such as 149 for Terminal Muelle Heredia in Málaga"
+        stopId: ID!
+        "The day and time to start from, written as 23-10-2026 10:00"
+        from: String
+    ): CtanDepartureList
+
+    """
+    The fare zones of a consortium, such as A for the city of Málaga. The fare of a trip depends on how many zone
+    boundaries it crosses, the jumps.
+    """
+    ctanZones(
+        """
+        The consortium: 4 for the Málaga area, the default. ctanConsortia lists the others, such as 1 for Seville or 2
+        for the Bay of Cádiz.
+        """
+        consortiumId: Int! = 4
+    ): CtanZoneList
+
+    "The stops of one fare zone"
+    ctanStopsInZone(
+        """
+        The consortium: 4 for the Málaga area, the default. ctanConsortia lists the others, such as 1 for Seville or 2
+        for the Bay of Cádiz.
+        """
+        consortiumId: Int! = 4
+        "The id of the zone, such as A"
+        zoneId: ID!
+    ): CtanStopList
+
+    "How many zone boundaries a trip crosses from each fare zone to each other one, the jumps that set the fare"
+    ctanZoneJumps(
+        """
+        The consortium: 4 for the Málaga area, the default. ctanConsortia lists the others, such as 1 for Seville or 2
+        for the Bay of Cádiz.
+        """
+        consortiumId: Int! = 4
+    ): CtanZoneJumpList
+
+    "How many zone boundaries a trip from one town to another crosses, which sets its fare in ctanInterurbanFares"
+    ctanJumpsBetweenTowns(
+        """
+        The consortium: 4 for the Málaga area, the default. ctanConsortia lists the others, such as 1 for Seville or 2
+        for the Bay of Cádiz.
+        """
+        consortiumId: Int! = 4
+        "The town the trip starts from, such as 1 for Málaga"
+        fromTownId: ID!
+        "The town the trip ends in, such as 111 for Fuengirola"
+        toTownId: ID!
+    ): CtanJumpCalculation
+
+    "The fares between towns, by the number of jumps: a single ticket, and the fare with the consortium's card"
+    ctanInterurbanFares(
+        """
+        The consortium: 4 for the Málaga area, the default. ctanConsortia lists the others, such as 1 for Seville or 2
+        for the Bay of Cádiz.
+        """
+        consortiumId: Int! = 4
+    ): CtanInterurbanFareList
+
+    "The fares of the city buses of each town, with and without a change from an interurban line"
+    ctanUrbanFares(
+        """
+        The consortium: 4 for the Málaga area, the default. ctanConsortia lists the others, such as 1 for Seville or 2
+        for the Bay of Cádiz.
+        """
+        consortiumId: Int! = 4
+    ): CtanUrbanFareList
+
+    "The modes of transport of a consortium, such as Bus, Train, Subway and Bicycle"
+    ctanTransportModes(
+        """
+        The consortium: 4 for the Málaga area, the default. ctanConsortia lists the others, such as 1 for Seville or 2
+        for the Bay of Cádiz.
+        """
+        consortiumId: Int! = 4
+    ): CtanTransportModeList
+
+    "One mode of transport by its id"
+    ctanTransportMode(
+        """
+        The consortium: 4 for the Málaga area, the default. ctanConsortia lists the others, such as 1 for Seville or 2
+        for the Bay of Cádiz.
+        """
+        consortiumId: Int! = 4
+        "The id of the mode: 1 for Bus, 2 for Train, 3 for Bicycle, 4 for Subway in Málaga"
+        modeId: ID!
+    ): CtanTransportMode
+
+    "The lines of one mode of transport, such as the trains"
+    ctanLinesByMode(
+        """
+        The consortium: 4 for the Málaga area, the default. ctanConsortia lists the others, such as 1 for Seville or 2
+        for the Bay of Cádiz.
+        """
+        consortiumId: Int! = 4
+        "The id of the mode: 1 for Bus, 2 for Train, 4 for Subway in Málaga"
+        modeId: ID!
+    ): CtanLineList
+
+    "The kinds of day a timetable distinguishes, such as L-V for Monday to Friday or Sab for Saturday, with their ids"
+    ctanFrequencies(
+        """
+        The consortium: 4 for the Málaga area, the default. ctanConsortia lists the others, such as 1 for Seville or 2
+        for the Bay of Cádiz.
+        """
+        consortiumId: Int! = 4
+    ): CtanFrequencyList
+
+    "The abbreviations the timetables use for the days, such as L-V for Monday to Friday"
+    ctanAbbreviations(
+        """
+        The consortium: 4 for the Málaga area, the default. ctanConsortia lists the others, such as 1 for Seville or 2
+        for the Bay of Cádiz.
+        """
+        consortiumId: Int! = 4
+    ): CtanAbbreviationList
+
+    "The kinds of point of interest the consortium lists, such as Bicycle Parking"
+    ctanPointOfInterestCategories(
+        """
+        The consortium: 4 for the Málaga area, the default. ctanConsortia lists the others, such as 1 for Seville or 2
+        for the Bay of Cádiz.
+        """
+        consortiumId: Int! = 4
+    ): CtanPointOfInterestCategoryList
+
+    "The points of interest of a consortium, with their positions"
+    ctanPointsOfInterest(
+        """
+        The consortium: 4 for the Málaga area, the default. ctanConsortia lists the others, such as 1 for Seville or 2
+        for the Bay of Cádiz.
+        """
+        consortiumId: Int! = 4
+    ): CtanPointOfInterestList
+
+    "The points of interest of one municipality, of one kind"
+    ctanPointsOfInterestInMunicipality(
+        """
+        The consortium: 4 for the Málaga area, the default. ctanConsortia lists the others, such as 1 for Seville or 2
+        for the Bay of Cádiz.
+        """
+        consortiumId: Int! = 4
+        "The id of the municipality, such as 1 for Málaga. ctanMunicipalities lists them."
+        municipalityId: ID!
+        "The kind of point of interest, by the id ctanPointOfInterestCategories gives"
+        categoryId: ID
+    ): CtanPointOfInterestList
+
+    """
+    Every place that sells and tops up the consortium's card, such as tobacconists, kiosks and ticket offices, with
+    their towns, addresses and positions. The list of the Málaga area holds several hundred places, so select few
+    fields.
+    """
+    ctanSalesPoints(
+        """
+        The consortium: 4 for the Málaga area, the default. ctanConsortia lists the others, such as 1 for Seville or 2
+        for the Bay of Cádiz.
+        """
+        consortiumId: Int! = 4
+    ): CtanSalesPointList
+
+    "The categories of the consortium's news, such as CAMBIOS Y CORTES TEMPORALES (changes and temporary closures)"
+    ctanNewsCategories(
+        """
+        The consortium: 4 for the Málaga area, the default. ctanConsortia lists the others, such as 1 for Seville or 2
+        for the Bay of Cádiz.
+        """
+        consortiumId: Int! = 4
+    ): CtanNewsCategoryList
+
+    """
+    The news of a consortium, such as new timetables or a closed road, with the lines they affect. The Málaga area had
+    none on 22 October 2026, the Bay of Cádiz (2) had several.
+    """
+    ctanNews(
+        """
+        The consortium: 4 for the Málaga area, the default. ctanConsortia lists the others, such as 1 for Seville or 2
+        for the Bay of Cádiz.
+        """
+        consortiumId: Int! = 4
+    ): CtanNewsList
+
+    "One news item with its full text"
+    ctanNewsItem(
+        """
+        The consortium: 4 for the Málaga area, the default. ctanConsortia lists the others, such as 1 for Seville or 2
+        for the Bay of Cádiz.
+        """
+        consortiumId: Int! = 4
+        "The id of the news item, which ctanNews gives"
+        newsId: ID!
+    ): CtanNewsItem
+
+    "The news about one line"
+    ctanLineNews(
+        """
+        The consortium: 4 for the Málaga area, the default. ctanConsortia lists the others, such as 1 for Seville or 2
+        for the Bay of Cádiz.
+        """
+        consortiumId: Int! = 4
+        "The id of the line, such as 1 for the bus M-110. ctanLines lists them."
+        lineId: ID!
+    ): CtanNewsList
+
+    """
+    The corridors of a consortium: groups of lines that share a timetable along one route, such as the connection with
+    the airport of Jerez in the Bay of Cádiz. The Málaga area lacks such a service.
+    """
+    ctanCorridors(
+        """
+        The consortium: 4 for the Málaga area, the default. ctanConsortia lists the others, such as 1 for Seville or 2
+        for the Bay of Cádiz.
+        """
+        consortiumId: Int! = 4
+    ): CtanCorridorList
+
+    "One corridor by its id"
+    ctanCorridor(
+        """
+        The consortium: 4 for the Málaga area, the default. ctanConsortia lists the others, such as 1 for Seville or 2
+        for the Bay of Cádiz.
+        """
+        consortiumId: Int! = 4
+        "The id of the corridor, such as 40 in the Bay of Cádiz"
+        corridorId: ID!
+    ): CtanCorridor
+
+    "The blocks of stops of a corridor, the columns of its timetable"
+    ctanCorridorBlocks(
+        """
+        The consortium: 4 for the Málaga area, the default. ctanConsortia lists the others, such as 1 for Seville or 2
+        for the Bay of Cádiz.
+        """
+        consortiumId: Int! = 4
+        "The id of the corridor, such as 40"
+        corridorId: ID!
+    ): CtanCorridorBlockList
+
+    "The timetable of every line of a corridor, block by block"
+    ctanCorridorTimetable(
+        """
+        The consortium: 4 for the Málaga area, the default. ctanConsortia lists the others, such as 1 for Seville or 2
+        for the Bay of Cádiz.
+        """
+        consortiumId: Int! = 4
+        "The id of the corridor, such as 40"
+        corridorId: ID!
+    ): CtanCorridorTimetable
+}
+
+"The transport consortia of Andalusia"
+type CtanConsortiumList {
+    "The consortia"
+    consortia: [CtanConsortium]
+}
+
+"A transport consortium, which runs the public transport between the towns of one area"
+type CtanConsortium {
+    "The id of the consortium, for the consortiumId arguments: 4 for the Málaga area"
+    id: ID
+    "The name of the area, such as Área de Málaga"
+    name: String
+    "The initials of the consortium, such as CTMAM for the Málaga area"
+    shortName: String
+}
+
+"The municipalities a consortium serves"
+type CtanMunicipalityList {
+    "The municipalities"
+    municipalities: [CtanMunicipality]
+}
+
+"A municipality a consortium serves"
+type CtanMunicipality {
+    "The id of the municipality in the consortium, for the municipalityId arguments, such as 1 for Málaga"
+    id: ID
+    "The name of the municipality, such as Torremolinos"
+    name: String
+}
+
+"Towns (núcleos) of a consortium"
+type CtanTownList {
+    "The towns"
+    towns: [CtanTown]
+}
+
+"A town (núcleo): a place with stops, such as a city, a village or an airport"
+type CtanTown {
+    "The id of the town, for the townId arguments, such as 1 for Málaga"
+    id: ID
+    "The name of the town, such as Torremolinos or Aeropuerto de Málaga"
+    name: String
+    "The id of the municipality the town belongs to"
+    municipalityId: ID
+    "The fare zone of the town, such as A for the city of Málaga"
+    zoneId: ID
+}
+
+"Lines of a consortium"
+type CtanLineList {
+    "The lines"
+    lines: [CtanLine]
+}
+
+"The lines of one town of one municipality"
+type CtanMunicipalityLineList {
+    "The lines, under a key the service names lugaresInteres"
+    lines: [CtanLine]
+}
+
+"A line of buses, trains or metro"
+type CtanLine {
+    "The id of the line, for the lineId arguments"
+    id: ID
+    "The code of the line, such as M-110 for a bus or C-1 for a commuter train"
+    code: String
+    "The name of the line, which says where it runs, such as Málaga-Torremolinos-Benalmádena Costa"
+    name: String
+    "The mode of transport, in Spanish, such as Autobús, Tren or Metro"
+    mode: String
+    "The id of the mode of transport, such as 1 for buses and 2 for trains in Málaga"
+    modeId: ID
+    "The companies that run the line, separated by commas, such as Renfe Cercanías"
+    operators: String
+    "Whether the consortium has published news about the line"
+    hasNews: Boolean
+    "Notes about the mode of transport of the line, or null"
+    modeNotes: String
+    "The town (núcleo) the line was listed for, in the fields that filter by town"
+    townId: ID
+    "The municipality the line was listed for, in the fields that filter by municipality"
+    municipalityId: ID
+}
+
+"Stops of a consortium"
+type CtanStopList {
+    "The stops"
+    stops: [CtanStop]
+}
+
+"A stop of buses, trains or metro"
+type CtanStop {
+    "The id of the stop, for the stopId arguments, such as 149"
+    id: ID
+    "The name of the stop, such as Terminal Muelle Heredia"
+    name: String
+    "The id of the town (núcleo) of the stop"
+    townId: ID
+    "The name of the town of the stop"
+    town: String
+    "The id of the municipality of the stop"
+    municipalityId: ID
+    "The name of the municipality of the stop"
+    municipality: String
+    "The fare zone of the stop, such as A for the city of Málaga"
+    zoneId: ID
+    "The latitude of the stop"
+    latitude: Float
+    "The longitude of the stop"
+    longitude: Float
+    "What kind of stop it is, such as Autobús or Metro"
+    description: String
+    "Notes about the stop that the timetables show"
+    notes: String
+    "Whether the stop is the main one of a group of stops with the same name, which route searches offer"
+    main: Boolean
+    "Whether the stop is out of use"
+    inactive: Boolean
+    "The lines that call at the stop, in Spanish, such as Correspondencia con: M-110,M-113"
+    connections: String
+}
+
+"The stops of a line, in order"
+type CtanLineStopList {
+    "The stops, in both directions"
+    stops: [CtanLineStop]
+}
+
+"A stop of a line, with its place in the order of the line"
+type CtanLineStop {
+    "The id of the stop, for the stopId arguments, such as 149"
+    id: ID
+    "The name of the stop, such as Terminal Muelle Heredia"
+    name: String
+    "The id of the town (núcleo) of the stop"
+    townId: ID
+    "The fare zone of the stop, such as A for the city of Málaga"
+    zoneId: ID
+    "The latitude of the stop"
+    latitude: Float
+    "The longitude of the stop"
+    longitude: Float
+    "The id of the line"
+    lineId: ID
+    "The direction: 1 outbound, 2 for the return"
+    direction: Int
+    "The place of the stop in the line, from 1 at the start"
+    order: Int
+    "The modes of transport that call at the stop, in Spanish, such as Autobús"
+    modes: String
+}
+
+"The timetable of a line"
+type CtanLineTimetable {
+    "The timetables of the line, each for a period of days"
+    plans: [CtanTimetablePlan]
+    "The abbreviations of days that the timetable uses"
+    frequencies: [CtanFrequencyCode]
+    "The time the service day starts, such as 05:00, written after the date 1900-01-01"
+    cutOffTime: String
+    "Notes about the mode of transport, or an empty text"
+    modeNotes: String
+}
+
+"The timetable of a line for one period of days"
+type CtanTimetablePlan {
+    "The id of the timetable"
+    id: ID
+    "The first day of the timetable"
+    from: Date
+    "The last day of the timetable"
+    to: Date
+    "Whether the website shows the last day"
+    showEndDate: Boolean
+    "Whether it is a special timetable"
+    special: Boolean
+    "The towns of the outbound timetable, above its blocks"
+    outboundTowns: [CtanTimetableTown]
+    "The blocks of stops of the outbound timetable, its columns"
+    outboundBlocks: [CtanTimetableBlock]
+    "The outbound departures, one row each"
+    outboundTrips: [CtanTimetableRow]
+    "The towns of the return timetable"
+    returnTowns: [CtanTimetableTown]
+    "The blocks of stops of the return timetable"
+    returnBlocks: [CtanTimetableBlock]
+    "The return departures, one row each"
+    returnTrips: [CtanTimetableRow]
+}
+
+"A town (núcleo) at the head of the columns of a timetable"
+type CtanTimetableTown {
+    "The name of the town, or an empty text above the column of line codes"
+    name: String
+    "How many columns of blocks the town spans"
+    columns: Int
+    "The background colour of the town in the timetable, as #RRGGBB"
+    color: String
+}
+
+"A block of stops, one column of a timetable"
+type CtanTimetableBlock {
+    "The name of the block of stops, such as Estación de Muelle Heredia"
+    name: String
+    "The colour of the fare zone of the block, as #RRGGBB"
+    color: String
+    "The kind of column: 1 for the column of line codes, 0 for a block of stops"
+    type: String
+}
+
+"One departure of a timetable, with its time at each block of stops"
+type CtanTimetableRow {
+    """
+    The time of the departure at each block of stops, in the order of the blocks, such as 06:20. -- means the departure
+    does not stop at that block.
+    """
+    times: [String]
+    "The days the departure runs, as an abbreviation of frequencies, such as L-V for Monday to Friday"
+    days: String
+    "Notes about the departure, in Spanish, or an empty text"
+    notes: String
+    "A code some departures carry, such as 1,76434_3, or an empty text. The documentation of the service leaves it out."
+    onDemand: String
+    "The id of the line of the departure, in the timetables of several lines"
+    lineId: ID
+    "The code of the line of the departure, such as M-110"
+    lineCode: String
+}
+
+"An abbreviation of the days a departure runs"
+type CtanFrequencyCode {
+    "The id of the frequency"
+    id: ID
+    "The abbreviation, such as L-V"
+    abbreviation: String
+    "What the abbreviation means, such as Monday to friday working days"
+    name: String
+}
+
+"The departures of every line between two towns"
+type CtanTripTimetable {
+    "The columns of the timetable"
+    blocks: [CtanTimetableBlock]
+    "The departures, one row each, with the line of each"
+    trips: [CtanTimetableRow]
+    "The abbreviations of days that the timetable uses"
+    frequencies: [CtanFrequencyCode]
+    "The towns above the columns"
+    towns: [CtanTimetableTown]
+    "Notes about each mode of transport"
+    modeNotes: [CtanModeNote]
+}
+
+"A note about one mode of transport in a timetable"
+type CtanModeNote {
+    "The mode of transport, such as BUS"
+    mode: String
+    "The note, such as how exact the times of passing are"
+    notes: String
+}
+
+"The timetable of the lines of a corridor"
+type CtanCorridorTimetable {
+    "The towns of the outbound timetable"
+    outboundTowns: [CtanTimetableTown]
+    "The columns of the outbound timetable"
+    outboundBlocks: [CtanTimetableBlock]
+    "The outbound departures, with the line of each"
+    outboundTrips: [CtanTimetableRow]
+    "The towns of the return timetable"
+    returnTowns: [CtanTimetableTown]
+    "The columns of the return timetable"
+    returnBlocks: [CtanTimetableBlock]
+    "The return departures, with the line of each"
+    returnTrips: [CtanTimetableRow]
+    "The abbreviations of days that the timetable uses"
+    frequencies: [CtanFrequencyCode]
+    "Notes about each mode of transport"
+    modeNotes: [CtanModeNote]
+}
+
+"The departures from a stop in a quarter of an hour"
+type CtanDepartureList {
+    "The departures, in time order"
+    departures: [CtanDeparture]
+    "The start of the quarter of an hour, such as 2026-10-23 10:00"
+    from: String
+    "The end of the quarter of an hour, such as 2026-10-23 10:15"
+    to: String
+}
+
+"A departure of a line from a stop"
+type CtanDeparture {
+    "The id of the stop"
+    stopId: ID
+    "The id of the line"
+    lineId: ID
+    "The time the line passes the stop, such as 10:00"
+    time: String
+    "The code of the line, such as M-110"
+    lineCode: String
+    "The name of the line"
+    lineName: String
+    "The direction: 1 outbound, 2 for the return"
+    direction: Int
+    "Where the line goes, such as Flatotel"
+    destination: String
+    "Who may use the stop: 0 to get on and off, 1 to get on only, 2 to get off only"
+    stopType: Int
+}
+
+"The fare zones of a consortium"
+type CtanZoneList {
+    "The zones"
+    zones: [CtanZone]
+}
+
+"A fare zone"
+type CtanZone {
+    "The id of the zone, such as A"
+    id: ID
+    "The name of the zone, such as Zone A"
+    name: String
+    "The colour of the zone on maps and timetables, as #RRGGBB"
+    color: String
+}
+
+"The jumps between the fare zones"
+type CtanZoneJumpList {
+    "One entry for each pair of zones"
+    jumps: [CtanZoneJump]
+}
+
+"How many zone boundaries a trip from one zone to another crosses"
+type CtanZoneJump {
+    "The zone the trip starts in, or -- for the header of the table"
+    fromZone: String
+    "The zone the trip ends in, or -- for the header of the table"
+    toZone: String
+    "The number of jumps, or -1 for the header of the table"
+    jumps: Int
+}
+
+"The jumps of a trip between two towns"
+type CtanJumpCalculation {
+    "The number of jumps, or an error"
+    result: CtanJumps
+}
+
+"The number of zone boundaries a trip crosses"
+type CtanJumps {
+    "The number of jumps, or -1 when the service could not tell"
+    jumps: Int
+    "Why the service could not tell, or an empty text"
+    error: String
+}
+
+"The fares between towns"
+type CtanInterurbanFareList {
+    "One fare for each number of jumps"
+    fares: [CtanInterurbanFare]
+}
+
+"The fare of a trip between towns, by the number of zone boundaries it crosses"
+type CtanInterurbanFare {
+    "The number of jumps, from 0 for a trip within one zone"
+    jumps: Int
+    "The price of a single ticket, in euros"
+    singleTicket: Float
+    "The price with the consortium's card, in euros"
+    card: Float
+}
+
+"The fares of the city buses"
+type CtanUrbanFareList {
+    "One fare for each town"
+    fares: [CtanUrbanFare]
+}
+
+"The fare of the city buses of a town"
+type CtanUrbanFare {
+    "The town, such as Alhaurín de la Torre"
+    town: String
+    "The price with a change from an interurban line, in euros"
+    withChange: Float
+    "The price without a change, in euros"
+    withoutChange: Float
+}
+
+"The modes of transport of a consortium"
+type CtanTransportModeList {
+    "The modes"
+    modes: [CtanTransportMode]
+}
+
+"A mode of transport, such as Bus or Train"
+type CtanTransportMode {
+    "The id of the mode, for the modeId arguments"
+    id: ID
+    "The name of the mode, such as Bus, Train, Subway or Bicycle"
+    name: String
+    "Notes about the mode, or an empty text"
+    notes: String
+    "Whether the mode is a bus"
+    bus: Boolean
+    "Whether the mode is a boat"
+    boat: Boolean
+    "Whether the mode is a train"
+    train: Boolean
+    "Whether the mode is a tram"
+    tram: Boolean
+    "Whether the mode is a metro"
+    metro: Boolean
+    "Whether the mode is a bicycle"
+    bicycle: Boolean
+}
+
+"The kinds of day of the timetables"
+type CtanFrequencyList {
+    "The kinds of day"
+    frequencies: [CtanFrequency]
+}
+
+"A kind of day a timetable distinguishes"
+type CtanFrequency {
+    "The id of the kind of day, for the frequencyId argument of ctanLineTimetable"
+    id: ID
+    "The abbreviation, such as L-V for lunes a viernes, Monday to Friday"
+    code: String
+    "The kind of day, in Spanish, such as Lunes a viernes"
+    name: String
+}
+
+"The abbreviations of days of the timetables"
+type CtanAbbreviationList {
+    "The abbreviations"
+    abbreviations: [CtanFrequencyCode]
+}
+
+"The kinds of point of interest"
+type CtanPointOfInterestCategoryList {
+    "The kinds"
+    categories: [CtanPointOfInterestCategory]
+}
+
+"A kind of point of interest"
+type CtanPointOfInterestCategory {
+    "The id of the kind, for the categoryId argument"
+    id: ID
+    "The name of the kind, such as Bicycle Parking, or null when the service names it in Spanish alone"
+    name: String
+}
+
+"Points of interest of a consortium"
+type CtanPointOfInterestList {
+    "The places"
+    places: [CtanPointOfInterest]
+}
+
+"A point of interest near the public transport, such as a bicycle parking"
+type CtanPointOfInterest {
+    "The id of the place"
+    id: ID
+    "The name of the place, or null"
+    name: String
+    "The id of the kind of place"
+    categoryId: ID
+    "The kind of place, or null"
+    category: String
+    "The id of the municipality of the place"
+    municipalityId: ID
+    "The name of the municipality, such as Málaga"
+    municipality: String
+    "The latitude of the place, or null"
+    latitude: Float
+    "The longitude of the place, or null"
+    longitude: Float
+}
+
+"The places that sell the consortium's card"
+type CtanSalesPointList {
+    "The places"
+    places: [CtanSalesPoint]
+}
+
+"A place that sells and tops up the consortium's card"
+type CtanSalesPoint {
+    "The id of the place"
+    id: ID
+    "The id of the kind of place"
+    typeId: ID
+    "The kind of place, such as Tobacconist"
+    type: String
+    "The address, in Spanish"
+    address: String
+    "The id of the town (núcleo)"
+    townId: ID
+    "The name of the town, such as Algarrobo Costa"
+    town: String
+    "The id of the municipality"
+    municipalityId: ID
+    "The name of the municipality"
+    municipality: String
+    "The latitude of the place"
+    latitude: Float
+    "The longitude of the place"
+    longitude: Float
+}
+
+"The categories of the news"
+type CtanNewsCategoryList {
+    "The categories"
+    categories: [CtanNewsCategory]
+}
+
+"A category of news"
+type CtanNewsCategory {
+    "The id of the category"
+    id: ID
+    "The name, in Spanish, such as NUEVOS HORARIOS O TRAYECTOS (new timetables or routes)"
+    name: String
+}
+
+"News of a consortium"
+type CtanNewsList {
+    "The news items"
+    news: [CtanNewsItem]
+}
+
+"A news item of a consortium, such as a new timetable or a closed road"
+type CtanNewsItem {
+    "The id of the news item, for ctanNewsItem"
+    id: ID
+    "The id of the category of the news item"
+    categoryId: ID
+    "The category of the news item, in Spanish, such as GENERAL CONSORCIO"
+    category: String
+    "The title, in Spanish"
+    title: String
+    "The subtitle, in Spanish"
+    subtitle: String
+    "A summary, in Spanish"
+    summary: String
+    "The first day the news applies, such as 2026-10-06, sometimes followed by a time"
+    starts: String
+    "The last day the news applies, such as 2026-12-31, sometimes followed by a time"
+    ends: String
+    "The last day the news is shown, such as 2026-12-31"
+    fixedEnd: String
+    "Whether the news item is marked as new"
+    isNew: Boolean
+    "The line the news item is about, in the fields for one line"
+    lineId: ID
+    "The ids of the lines the news item is about, separated by commas"
+    lineIds: String
+    "The full text, in Spanish, as HTML. ctanNewsItem fills it in."
+    text: String
+    "The place of the news item in the list"
+    order: Int
+}
+
+"The corridors of a consortium"
+type CtanCorridorList {
+    "The corridors"
+    corridors: [CtanCorridor]
+}
+
+"A corridor: lines that share a timetable along one route"
+type CtanCorridor {
+    "The id of the corridor, for the corridorId arguments"
+    id: ID
+    "The name of the corridor, such as Conexión con Aeropuerto de Jerez"
+    name: String
+}
+
+"The blocks of stops of a corridor"
+type CtanCorridorBlockList {
+    "The blocks"
+    blocks: [CtanCorridorBlock]
+}
+
+"A block of stops of a corridor, one column of its timetable"
+type CtanCorridorBlock {
+    "The id of the block"
+    id: ID
+    "The id of the corridor"
+    corridorId: ID
+    "The name of the block, such as Plaza de Sevilla-Estación de Cádiz"
+    name: String
+    "The colour of the column, as #RRGGBB"
+    color: String
+}

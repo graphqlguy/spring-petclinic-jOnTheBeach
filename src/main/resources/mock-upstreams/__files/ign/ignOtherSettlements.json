@@ -1,0 +1,103 @@
+{
+    "type":"FeatureCollection",
+    "features":[
+        {
+            "type":"Feature",
+            "properties":{
+                "cpro":29,
+                "ine":0,
+                "codine":"29067000202",
+                "habitantes":null,
+                "enidpob":100019758,
+                "nucrural":0,
+                "aislada":0,
+                "longitud":-4.4735508714220025,
+                "altitud":3.592,
+                "tipo":"BARR",
+                "nombre":"Vega del Oro",
+                "capital":"000000",
+                "latitud":36.657766555220675,
+                "fecha":"2025-10-20T10:57:46.103879"
+            },
+            "id":100004795,
+            "geometry":null
+        },
+        {
+            "type":"Feature",
+            "properties":{
+                "cpro":29,
+                "ine":0,
+                "codine":"29067000201",
+                "habitantes":null,
+                "enidpob":100020330,
+                "nucrural":0,
+                "aislada":0,
+                "longitud":-4.488025172323244,
+                "altitud":17.568,
+                "tipo":"BARR",
+                "nombre":"Los Paseros",
+                "capital":"000000",
+                "latitud":36.65865592536497,
+                "fecha":"2025-10-20T10:58:22.717201"
+            },
+            "id":100004856,
+            "geometry":null
+        },
+        {
+            "type":"Feature",
+            "properties":{
+                "cpro":29,
+                "ine":0,
+                "codine":"29067000502",
+                "habitantes":null,
+                "enidpob":100020317,
+                "nucrural":0,
+                "aislada":0,
+                "longitud":-4.468971075551336,
+                "altitud":29.612,
+                "tipo":"PIND",
+                "nombre":"Pol. Ind. Alameda",
+                "capital":"000000",
+                "latitud":36.708618342578575,
+                "fecha":"2025-10-20T10:58:07.761022"
+            },
+            "id":100005235,
+            "geometry":null
+        }
+    ],
+    "numberMatched":346,
+    "numberReturned":3,
+    "links":[
+        {
+            "type":"application/geo+json",
+            "rel":"self",
+            "title":"This document as GeoJSON",
+            "href":"https://api-features.ign.es/collections/opob/items?f=json&bbox=-4.50,36.65,-4.35,36.75&skipGeometry=true&limit=3"
+        },
+        {
+            "rel":"alternate",
+            "type":"application/ld+json",
+            "title":"This document as RDF (JSON-LD)",
+            "href":"https://api-features.ign.es/collections/opob/items?f=jsonld&bbox=-4.50,36.65,-4.35,36.75&skipGeometry=true&limit=3"
+        },
+        {
+            "type":"text/html",
+            "rel":"alternate",
+            "title":"This document as HTML",
+            "href":"https://api-features.ign.es/collections/opob/items?f=html&bbox=-4.50,36.65,-4.35,36.75&skipGeometry=true&limit=3"
+        },
+        {
+            "type":"application/geo+json",
+            "rel":"next",
+            "title":"Items (next)",
+            "href":"https://api-features.ign.es/collections/opob/items?offset=3&bbox=-4.50,36.65,-4.35,36.75&skipGeometry=true&limit=3"
+        },
+        {
+            "type":"application/json",
+            "title":"Otras poblaciones",
+            "rel":"collection",
+            "href":"https://api-features.ign.es/collections/opob"
+        }
+    ],
+    "timeStamp":"2026-10-22T23:44:55.368589Z"
+}

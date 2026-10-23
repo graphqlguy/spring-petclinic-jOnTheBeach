@@ -1,0 +1,51 @@
+# The fields of Nominatim, the geocoder of OpenStreetMap, at nominatim.openstreetmap.org. Its usage policy allows one
+# request a second, so the application spaces its calls and keeps each address it has found. These fields are written
+# by hand, see NominatimGraphQlController.
+
+extend type Query {
+    """
+    Finds places in Spain by a text, such as an address (Calle Larios 12, Málaga) or a place (Playa de la
+    Malagueta), best match first, with their positions
+    """
+    nominatimSearch(
+        "The text to find, such as Calle Larios 12, Málaga"
+        query: String!
+        "How many places to return, from 1 to 10"
+        first: Int! = 5
+    ): [GeoPlace!]
+
+    "The address of a point on the map, or null for a point without an address in OpenStreetMap"
+    nominatimReverse(
+        "The latitude, such as 36.7188"
+        latitude: Float!
+        "The longitude, such as -4.4217"
+        longitude: Float!
+    ): GeoPlace
+}
+
+extend type Owner {
+    """
+    Where the owner lives on the map, as Nominatim finds the address and the city, or null when it cannot. The
+    latitude and longitude of the home are what the services that take a point need, such as the weather or the
+    mosquito reports near the owner.
+    """
+    location: GeoPlace
+}
+
+"A place on the map that Nominatim found, such as the building of an address"
+type GeoPlace {
+    "The full name of the place, from the building to the country, such as 12, Calle Marqués de Larios, Centro, Málaga"
+    displayName: String!
+    "The latitude"
+    latitude: Float!
+    "The longitude"
+    longitude: Float!
+    "The kind of map feature, such as amenity, building or highway"
+    category: String
+    "The kind within the category, such as bank or residential"
+    type: String
+    "The part of an address the place is, such as road, building or city"
+    addressType: String
+    "The name of the place, such as Banco Santander, or an empty text"
+    name: String
+}

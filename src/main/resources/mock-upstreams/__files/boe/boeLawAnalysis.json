@@ -1,0 +1,72 @@
+{
+    "status": {
+        "code": "200",
+        "text": "ok"
+    },
+    "data": [
+        {
+            "materias": [
+                {
+                    "materia": {
+                        "codigo": "6938",
+                        "texto": "Transportes terrestres"
+                    }
+                }
+            ],
+            "referencias": {
+                "anteriores": [
+                    {
+                        "anterior": [
+                            {
+                                "id_norma": "BOE-A-2007-19321",
+                                "relacion": {
+                                    "codigo": "270",
+                                    "texto": "MODIFICA"
+                                },
+                                "texto": ", con efectos desde el 29 de septiembre de 2023, los arts. 1 a 3 y 14; y con los mismos efectos, A\u00d1ADE el art. 7 bis. y SUPRIME la disposici\u00f3n adicional 1 de la Ley 32\/2007, de 7 de noviembre"
+                            },
+                            {
+                                "id_norma": "BOE-A-2003-8510",
+                                "relacion": {
+                                    "codigo": "270",
+                                    "texto": "MODIFICA"
+                                },
+                                "texto": ", con efectos desde el 29 de septiembre de 2023, el art. 3 de la Ley 8\/2003, de 24 de abril"
+                            },
+                            {
+                                "id_norma": "BOE-A-1987-17803",
+                                "relacion": {
+                                    "codigo": "270",
+                                    "texto": "MODIFICA"
+                                },
+                                "texto": ", con efectos desde el 29 de septiembre de 2023, el art. 63.1 a) de la Ley 16\/1987, de 30 de julio"
+                            }
+                        ]
+                    }
+                ],
+                "posteriores": [
+                    {
+                        "posterior": [
+                            {
+                                "id_norma": "BOE-A-2023-9633",
+                                "relacion": {
+                                    "codigo": "201",
+                                    "texto": "CORRECCI\u00d3N de errores"
+                                },
+                                "texto": ", con variaci\u00f3n de preceptos modificadores, en BOE n\u00fam. 94 de 20 de abril de 2023"
+                            },
+                            {
+                                "id_norma": "BOE-A-2025-10775",
+                                "relacion": {
+                                    "codigo": "440",
+                                    "texto": "SE DICTA DE CONFORMIDAD"
+                                },
+                                "texto": "con los arts. 5 y 6, sobre regulaci\u00f3n del Consejo Estatal de Protecci\u00f3n Animal y del Comit\u00e9 Cient\u00edfico y T\u00e9cnico para la protecci\u00f3n y derechos de los animales: Orden PJC\/549\/2025, de 29 de mayo de 2025"
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    ]
+}

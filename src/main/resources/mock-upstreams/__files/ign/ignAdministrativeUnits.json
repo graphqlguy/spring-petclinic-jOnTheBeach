@@ -1,0 +1,85 @@
+{
+    "type":"FeatureCollection",
+    "features":[
+        {
+            "type":"Feature",
+            "properties":{
+                "nameunit":"M\u00e1laga",
+                "codnut2":"ES61",
+                "nationallevel":"https://inspire.ec.europa.eu/codelist/AdministrativeHierarchyLevel/4thOrder",
+                "country":"ES",
+                "nationalcode":"34012929067",
+                "codnut1":"ES6",
+                "codnut3":"ES617",
+                "nationallevelname":"Municipio"
+            },
+            "id":1166881,
+            "geometry":null
+        },
+        {
+            "type":"Feature",
+            "properties":{
+                "nameunit":"Torremolinos",
+                "codnut2":"ES61",
+                "nationallevel":"https://inspire.ec.europa.eu/codelist/AdministrativeHierarchyLevel/4thOrder",
+                "country":"ES",
+                "nationalcode":"34012929901",
+                "codnut1":"ES6",
+                "codnut3":"ES617",
+                "nationallevelname":"Municipio"
+            },
+            "id":1166914,
+            "geometry":null
+        },
+        {
+            "type":"Feature",
+            "properties":{
+                "nameunit":"M\u00e1laga",
+                "codnut2":"ES61",
+                "nationallevel":"https://inspire.ec.europa.eu/codelist/AdministrativeHierarchyLevel/3rdOrder",
+                "country":"ES",
+                "nationalcode":"34012900000",
+                "codnut1":"ES6",
+                "codnut3":null,
+                "nationallevelname":"Provincia"
+            },
+            "id":1174486,
+            "geometry":null
+        }
+    ],
+    "numberMatched":7,
+    "numberReturned":3,
+    "links":[
+        {
+            "type":"application/geo+json",
+            "rel":"self",
+            "title":"This document as GeoJSON",
+            "href":"https://api-features.ign.es/collections/administrativeunit/items?f=json&bbox=-4.50,36.65,-4.35,36.75&skipGeometry=true&limit=3"
+        },
+        {
+            "rel":"alternate",
+            "type":"application/ld+json",
+            "title":"This document as RDF (JSON-LD)",
+            "href":"https://api-features.ign.es/collections/administrativeunit/items?f=jsonld&bbox=-4.50,36.65,-4.35,36.75&skipGeometry=true&limit=3"
+        },
+        {
+            "type":"text/html",
+            "rel":"alternate",
+            "title":"This document as HTML",
+            "href":"https://api-features.ign.es/collections/administrativeunit/items?f=html&bbox=-4.50,36.65,-4.35,36.75&skipGeometry=true&limit=3"
+        },
+        {
+            "type":"application/geo+json",
+            "rel":"next",
+            "title":"Items (next)",
+            "href":"https://api-features.ign.es/collections/administrativeunit/items?offset=3&bbox=-4.50,36.65,-4.35,36.75&skipGeometry=true&limit=3"
+        },
+        {
+            "type":"application/json",
+            "title":"AU Unidades administrativas",
+            "rel":"collection",
+            "href":"https://api-features.ign.es/collections/administrativeunit"
+        }
+    ],
+    "timeStamp":"2026-10-22T23:44:46.978407Z"
+}

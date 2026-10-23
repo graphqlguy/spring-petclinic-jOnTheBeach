@@ -1,0 +1,481 @@
+{
+ "mappings": [
+  {
+   "name": "malagaDatasets: {\"query\": \"caninos\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/malagacatalog/package_search",
+    "queryParameters": {
+     "q": {
+      "equalTo": "caninos"
+     },
+     "start": {
+      "equalTo": "0"
+     },
+     "rows": {
+      "equalTo": "10"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json;charset=utf-8"
+    },
+    "bodyFileName": "malagacatalog/malagaDatasets.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://datosabiertos.malaga.eu/api/3/action/package_search?q=caninos&start=0&rows=10 on 2026-10-23."
+   }
+  },
+  {
+   "name": "malagaDatasets: {\"query\": \"plagas\", \"size\": 5}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/malagacatalog/package_search",
+    "queryParameters": {
+     "q": {
+      "equalTo": "plagas"
+     },
+     "start": {
+      "equalTo": "0"
+     },
+     "rows": {
+      "equalTo": "5"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json;charset=utf-8"
+    },
+    "bodyFileName": "malagacatalog/malagaDatasets-1.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://datosabiertos.malaga.eu/api/3/action/package_search?q=plagas&start=0&rows=5 on 2026-10-23."
+   }
+  },
+  {
+   "name": "malagaDatasets: {\"query\": \"polen\", \"size\": 3}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/malagacatalog/package_search",
+    "queryParameters": {
+     "q": {
+      "equalTo": "polen"
+     },
+     "start": {
+      "equalTo": "0"
+     },
+     "rows": {
+      "equalTo": "3"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json;charset=utf-8"
+    },
+    "bodyFileName": "malagacatalog/malagaDatasets-2.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://datosabiertos.malaga.eu/api/3/action/package_search?q=polen&start=0&rows=3 on 2026-10-23."
+   }
+  },
+  {
+   "name": "malagaDatasets: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/malagacatalog/package_search"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json;charset=utf-8"
+    },
+    "bodyFileName": "malagacatalog/malagaDatasets.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of malagaDatasets with the first recording, from https://datosabiertos.malaga.eu/api/3/action/package_search?q=caninos&start=0&rows=10 on 2026-10-23."
+   }
+  },
+  {
+   "name": "malagaDataset: {\"id\": \"parques-caninos\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/malagacatalog/package_show",
+    "queryParameters": {
+     "id": {
+      "equalTo": "parques-caninos"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json;charset=utf-8"
+    },
+    "bodyFileName": "malagacatalog/malagaDataset.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://datosabiertos.malaga.eu/api/3/action/package_show?id=parques-caninos on 2026-10-23."
+   }
+  },
+  {
+   "name": "malagaDataset: {\"id\": \"control-de-plagas-para-el-ao-2026\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/malagacatalog/package_show",
+    "queryParameters": {
+     "id": {
+      "equalTo": "control-de-plagas-para-el-ao-2026"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json;charset=utf-8"
+    },
+    "bodyFileName": "malagacatalog/malagaDataset-1.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://datosabiertos.malaga.eu/api/3/action/package_show?id=control-de-plagas-para-el-ao-2026 on 2026-10-23."
+   }
+  },
+  {
+   "name": "malagaDataset: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/malagacatalog/package_show"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json;charset=utf-8"
+    },
+    "bodyFileName": "malagacatalog/malagaDataset.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of malagaDataset with the first recording, from https://datosabiertos.malaga.eu/api/3/action/package_show?id=parques-caninos on 2026-10-23."
+   }
+  },
+  {
+   "name": "malagaDatasetNames: {\"limit\": 50}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/malagacatalog/package_list",
+    "queryParameters": {
+     "limit": {
+      "equalTo": "50"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json;charset=utf-8"
+    },
+    "bodyFileName": "malagacatalog/malagaDatasetNames.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://datosabiertos.malaga.eu/api/3/action/package_list?limit=50 on 2026-10-23."
+   }
+  },
+  {
+   "name": "malagaDatasetNames: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/malagacatalog/package_list"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json;charset=utf-8"
+    },
+    "bodyFileName": "malagacatalog/malagaDatasetNames.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of malagaDatasetNames with the first recording, from https://datosabiertos.malaga.eu/api/3/action/package_list?limit=50 on 2026-10-23."
+   }
+  },
+  {
+   "name": "malagaOrganizations: {}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/malagacatalog/organization_list",
+    "queryParameters": {
+     "all_fields": {
+      "equalTo": "true"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json;charset=utf-8"
+    },
+    "bodyFileName": "malagacatalog/malagaOrganizations.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://datosabiertos.malaga.eu/api/3/action/organization_list?all_fields=true on 2026-10-23."
+   }
+  },
+  {
+   "name": "malagaOrganizations: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/malagacatalog/organization_list"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json;charset=utf-8"
+    },
+    "bodyFileName": "malagacatalog/malagaOrganizations.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of malagaOrganizations with the first recording, from https://datosabiertos.malaga.eu/api/3/action/organization_list?all_fields=true on 2026-10-23."
+   }
+  },
+  {
+   "name": "malagaGroups: {}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/malagacatalog/group_list",
+    "queryParameters": {
+     "all_fields": {
+      "equalTo": "true"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json;charset=utf-8"
+    },
+    "bodyFileName": "malagacatalog/malagaGroups.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://datosabiertos.malaga.eu/api/3/action/group_list?all_fields=true on 2026-10-23."
+   }
+  },
+  {
+   "name": "malagaGroups: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/malagacatalog/group_list"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json;charset=utf-8"
+    },
+    "bodyFileName": "malagacatalog/malagaGroups.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of malagaGroups with the first recording, from https://datosabiertos.malaga.eu/api/3/action/group_list?all_fields=true on 2026-10-23."
+   }
+  },
+  {
+   "name": "malagaTags: {}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/malagacatalog/tag_list"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json;charset=utf-8"
+    },
+    "bodyFileName": "malagacatalog/malagaTags.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://datosabiertos.malaga.eu/api/3/action/tag_list on 2026-10-23."
+   }
+  },
+  {
+   "name": "malagaTags: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/malagacatalog/tag_list"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json;charset=utf-8"
+    },
+    "bodyFileName": "malagacatalog/malagaTags.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of malagaTags with the first recording, from https://datosabiertos.malaga.eu/api/3/action/tag_list on 2026-10-23."
+   }
+  },
+  {
+   "name": "malagaResource: {\"id\": \"01864ff6-106b-45d4-b28b-da6a28e1dd87\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/malagacatalog/resource_show",
+    "queryParameters": {
+     "id": {
+      "equalTo": "01864ff6-106b-45d4-b28b-da6a28e1dd87"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json;charset=utf-8"
+    },
+    "bodyFileName": "malagacatalog/malagaResource.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://datosabiertos.malaga.eu/api/3/action/resource_show?id=01864ff6-106b-45d4-b28b-da6a28e1dd87 on 2026-10-23."
+   }
+  },
+  {
+   "name": "malagaResource: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/malagacatalog/resource_show"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json;charset=utf-8"
+    },
+    "bodyFileName": "malagacatalog/malagaResource.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of malagaResource with the first recording, from https://datosabiertos.malaga.eu/api/3/action/resource_show?id=01864ff6-106b-45d4-b28b-da6a28e1dd87 on 2026-10-23."
+   }
+  },
+  {
+   "name": "malagaDatastoreRecords: {\"resourceId\": \"2513b555-cd58-4a19-a9df-6bcec9bf58fc\", \"size\": 5}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/malagacatalog/datastore_search",
+    "queryParameters": {
+     "resource_id": {
+      "equalTo": "2513b555-cd58-4a19-a9df-6bcec9bf58fc"
+     },
+     "offset": {
+      "equalTo": "0"
+     },
+     "limit": {
+      "equalTo": "5"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json;charset=utf-8"
+    },
+    "bodyFileName": "malagacatalog/malagaDatastoreRecords.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://datosabiertos.malaga.eu/api/3/action/datastore_search?resource_id=2513b555-cd58-4a19-a9df-6bcec9bf58fc&offset=0&limit=5 on 2026-10-23."
+   }
+  },
+  {
+   "name": "malagaDatastoreRecords: {\"resourceId\": \"2513b555-cd58-4a19-a9df-6bcec9bf58fc\", \"query\": \"Merced\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/malagacatalog/datastore_search",
+    "queryParameters": {
+     "resource_id": {
+      "equalTo": "2513b555-cd58-4a19-a9df-6bcec9bf58fc"
+     },
+     "q": {
+      "equalTo": "Merced"
+     },
+     "offset": {
+      "equalTo": "0"
+     },
+     "limit": {
+      "equalTo": "10"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json;charset=utf-8"
+    },
+    "bodyFileName": "malagacatalog/malagaDatastoreRecords-1.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://datosabiertos.malaga.eu/api/3/action/datastore_search?resource_id=2513b555-cd58-4a19-a9df-6bcec9bf58fc&q=Merced&offset=0&limit=10 on 2026-10-23."
+   }
+  },
+  {
+   "name": "malagaDatastoreRecords: {\"resourceId\": \"01864ff6-106b-45d4-b28b-da6a28e1dd87\", \"size\": 3}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/malagacatalog/datastore_search",
+    "queryParameters": {
+     "resource_id": {
+      "equalTo": "01864ff6-106b-45d4-b28b-da6a28e1dd87"
+     },
+     "offset": {
+      "equalTo": "0"
+     },
+     "limit": {
+      "equalTo": "3"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json;charset=utf-8"
+    },
+    "bodyFileName": "malagacatalog/malagaDatastoreRecords-2.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://datosabiertos.malaga.eu/api/3/action/datastore_search?resource_id=01864ff6-106b-45d4-b28b-da6a28e1dd87&offset=0&limit=3 on 2026-10-23."
+   }
+  },
+  {
+   "name": "malagaDatastoreRecords: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/malagacatalog/datastore_search"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json;charset=utf-8"
+    },
+    "bodyFileName": "malagacatalog/malagaDatastoreRecords.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of malagaDatastoreRecords with the first recording, from https://datosabiertos.malaga.eu/api/3/action/datastore_search?resource_id=2513b555-cd58-4a19-a9df-6bcec9bf58fc&offset=0&limit=5 on 2026-10-23."
+   }
+  }
+ ]
+}

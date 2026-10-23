@@ -1,0 +1,4935 @@
+{
+ "operations": [
+  {
+   "field": "juntaHolidays",
+   "path": "/work-calendar/search",
+   "arguments": [
+    {
+     "name": "province",
+     "parameter": "province",
+     "in": "query",
+     "list": false,
+     "values": {
+      "ANY": "-",
+      "ALMERIA": "ALMERÍA",
+      "CADIZ": "CÁDIZ",
+      "CORDOBA": "CÓRDOBA",
+      "GRANADA": "GRANADA",
+      "HUELVA": "HUELVA",
+      "JAEN": "JAÉN",
+      "MALAGA": "MÁLAGA",
+      "SEVILLA": "SEVILLA"
+     }
+    },
+    {
+     "name": "kind",
+     "parameter": "type",
+     "in": "query",
+     "list": false,
+     "values": {
+      "ANY": "-",
+      "LOCAL": "LOCAL",
+      "LABORAL": "LABORAL"
+     }
+    },
+    {
+     "name": "municipality",
+     "parameter": "municipality",
+     "in": "query",
+     "list": false,
+     "upperCase": true
+    },
+    {
+     "name": "year",
+     "parameter": "year",
+     "in": "query",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "order_by": "date",
+    "mode": "ASC",
+    "format": "json"
+   },
+   "paging": {
+    "style": "limit",
+    "start": null,
+    "size": "size"
+   }
+  },
+  {
+   "field": "juntaHoliday",
+   "path": "/work-calendar/{bid}",
+   "arguments": [
+    {
+     "name": "id",
+     "parameter": "bid",
+     "in": "path",
+     "list": false
+    }
+   ]
+  },
+  {
+   "field": "juntaHolidaysCount",
+   "path": "/work-calendar/count",
+   "arguments": []
+  },
+  {
+   "field": "juntaHolidayMunicipalities",
+   "path": "/work-calendar/option-values/municipalities",
+   "arguments": []
+  },
+  {
+   "field": "juntaHolidayProvinces",
+   "path": "/work-calendar/option-values/provinces",
+   "arguments": []
+  },
+  {
+   "field": "juntaHolidayYears",
+   "path": "/work-calendar/option-values/years",
+   "arguments": []
+  },
+  {
+   "field": "juntaHolidayCalendar",
+   "path": "/work-calendar/get/search_calendar",
+   "arguments": [
+    {
+     "name": "province",
+     "parameter": "province",
+     "in": "query",
+     "list": false,
+     "values": {
+      "ANY": "-",
+      "ALMERIA": "ALMERÍA",
+      "CADIZ": "CÁDIZ",
+      "CORDOBA": "CÓRDOBA",
+      "GRANADA": "GRANADA",
+      "HUELVA": "HUELVA",
+      "JAEN": "JAÉN",
+      "MALAGA": "MÁLAGA",
+      "SEVILLA": "SEVILLA"
+     }
+    },
+    {
+     "name": "municipality",
+     "parameter": "municipality",
+     "in": "query",
+     "list": false,
+     "upperCase": true
+    },
+    {
+     "name": "year",
+     "parameter": "year",
+     "in": "query",
+     "list": false
+    }
+   ]
+  },
+  {
+   "field": "juntaHolidayMunicipalitiesOfProvince",
+   "path": "/work-calendar/get/search_municipality",
+   "arguments": [
+    {
+     "name": "province",
+     "parameter": "province",
+     "in": "query",
+     "list": false,
+     "values": {
+      "ANY": "-",
+      "ALMERIA": "ALMERÍA",
+      "CADIZ": "CÁDIZ",
+      "CORDOBA": "CÓRDOBA",
+      "GRANADA": "GRANADA",
+      "HUELVA": "HUELVA",
+      "JAEN": "JAÉN",
+      "MALAGA": "MÁLAGA",
+      "SEVILLA": "SEVILLA"
+     }
+    }
+   ]
+  },
+  {
+   "field": "juntaMunicipalities",
+   "path": "/municipalities/search",
+   "arguments": [
+    {
+     "name": "name",
+     "parameter": "municipality_name",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "provinceCode",
+     "parameter": "province_identifier",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "provincialCapital",
+     "parameter": "capital_city",
+     "in": "query",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "order_by": "municipality_name",
+    "mode": "ASC",
+    "format": "json"
+   },
+   "paging": {
+    "style": "limit",
+    "start": null,
+    "size": "size"
+   }
+  },
+  {
+   "field": "juntaMunicipalitiesCount",
+   "path": "/municipalities/count",
+   "arguments": []
+  },
+  {
+   "field": "juntaMunicipalityNames",
+   "path": "/municipalities/option-values/municipality_names",
+   "arguments": []
+  },
+  {
+   "field": "juntaTourismEstablishments",
+   "path": "/openrta/search",
+   "arguments": [
+    {
+     "name": "objectType",
+     "parameter": "object_type",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "category",
+     "parameter": "category",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "group",
+     "parameter": "group",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "modality",
+     "parameter": "modality",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "province",
+     "parameter": "province",
+     "in": "query",
+     "list": false,
+     "upperCase": true
+    },
+    {
+     "name": "municipality",
+     "parameter": "municipality",
+     "in": "query",
+     "list": false,
+     "upperCase": true
+    }
+   ],
+   "fixed": {
+    "id": "-",
+    "order_by": "name",
+    "mode": "ASC",
+    "format": "json"
+   },
+   "paging": {
+    "style": "limit",
+    "start": null,
+    "size": "size"
+   }
+  },
+  {
+   "field": "juntaTourismEstablishment",
+   "path": "/openrta/{bid}",
+   "arguments": [
+    {
+     "name": "id",
+     "parameter": "bid",
+     "in": "path",
+     "list": false
+    }
+   ]
+  },
+  {
+   "field": "juntaTourismEstablishmentsCount",
+   "path": "/openrta/count",
+   "arguments": []
+  },
+  {
+   "field": "juntaTourismEstablishmentTypes",
+   "path": "/openrta/option-values/objects_type",
+   "arguments": []
+  },
+  {
+   "field": "juntaTourismCategories",
+   "path": "/openrta/option-values/categories",
+   "arguments": []
+  },
+  {
+   "field": "juntaTourismGroups",
+   "path": "/openrta/option-values/groups",
+   "arguments": []
+  },
+  {
+   "field": "juntaTourismModalities",
+   "path": "/openrta/option-values/modalities",
+   "arguments": []
+  },
+  {
+   "field": "juntaTourismProvinces",
+   "path": "/openrta/option-values/provinces",
+   "arguments": []
+  },
+  {
+   "field": "juntaTourismMunicipalities",
+   "path": "/openrta/option-values/municipalities",
+   "arguments": []
+  },
+  {
+   "field": "juntaRegulations",
+   "path": "/regulations/search",
+   "arguments": [
+    {
+     "name": "theme",
+     "parameter": "themes",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "subtopic",
+     "parameter": "subtopic",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "organism",
+     "parameter": "organism",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "kind",
+     "parameter": "class_regulations",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "title",
+     "parameter": "title",
+     "in": "query",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "suborganism": "-",
+    "order_by": "update_date",
+    "mode": "DESC",
+    "format": "json"
+   },
+   "paging": {
+    "style": "limit",
+    "start": null,
+    "size": "size"
+   }
+  },
+  {
+   "field": "juntaRegulation",
+   "path": "/regulations/{bid}",
+   "arguments": [
+    {
+     "name": "id",
+     "parameter": "bid",
+     "in": "path",
+     "list": false
+    }
+   ]
+  },
+  {
+   "field": "juntaRegulationsCount",
+   "path": "/regulations/count",
+   "arguments": []
+  },
+  {
+   "field": "juntaRegulationThemes",
+   "path": "/regulations/option-values/themes_names",
+   "arguments": []
+  },
+  {
+   "field": "juntaRegulationSubtopics",
+   "path": "/regulations/option-values/subtopics_names",
+   "arguments": []
+  },
+  {
+   "field": "juntaRegulationOrganisms",
+   "path": "/regulations/option-values/organisms_names",
+   "arguments": []
+  },
+  {
+   "field": "juntaRegulationSuborganisms",
+   "path": "/regulations/option-values/suborganisms_names",
+   "arguments": []
+  },
+  {
+   "field": "juntaRegulationKinds",
+   "path": "/regulations/option-values/class_regulations_names",
+   "arguments": []
+  },
+  {
+   "field": "juntaMuseums",
+   "path": "/museums/search",
+   "arguments": [
+    {
+     "name": "province",
+     "parameter": "province",
+     "in": "query",
+     "list": false,
+     "values": {
+      "ANY": "-",
+      "ALMERIA": "Almería",
+      "CADIZ": "Cádiz",
+      "CORDOBA": "Córdoba",
+      "GRANADA": "Granada",
+      "HUELVA": "Huelva",
+      "JAEN": "Jaén",
+      "MALAGA": "Málaga",
+      "SEVILLA": "Sevilla"
+     }
+    },
+    {
+     "name": "municipality",
+     "parameter": "municipality",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "kind",
+     "parameter": "unit_type",
+     "in": "query",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "order_by": "name",
+    "mode": "ASC",
+    "format": "json"
+   },
+   "paging": {
+    "style": "limit",
+    "start": null,
+    "size": "size"
+   }
+  },
+  {
+   "field": "juntaMuseum",
+   "path": "/museums/{bid}",
+   "arguments": [
+    {
+     "name": "id",
+     "parameter": "bid",
+     "in": "path",
+     "list": false
+    }
+   ]
+  },
+  {
+   "field": "juntaMuseumsCount",
+   "path": "/museums/count",
+   "arguments": []
+  },
+  {
+   "field": "juntaMuseumKinds",
+   "path": "/museums/option-values/unit_types",
+   "arguments": []
+  },
+  {
+   "field": "juntaMuseumMunicipalities",
+   "path": "/museums/option-values/municipalities",
+   "arguments": []
+  },
+  {
+   "field": "juntaMuseumProvinces",
+   "path": "/museums/option-values/provinces",
+   "arguments": []
+  },
+  {
+   "field": "juntaLibraries",
+   "path": "/libraries/search",
+   "arguments": [
+    {
+     "name": "province",
+     "parameter": "province_name",
+     "in": "query",
+     "list": false,
+     "values": {
+      "ANY": "-",
+      "ALMERIA": "Almería",
+      "CADIZ": "Cádiz",
+      "CORDOBA": "Córdoba",
+      "GRANADA": "Granada",
+      "HUELVA": "Huelva",
+      "JAEN": "Jaén",
+      "MALAGA": "Málaga",
+      "SEVILLA": "Sevilla"
+     }
+    },
+    {
+     "name": "municipality",
+     "parameter": "municipality_name",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "kind",
+     "parameter": "unit_type_name",
+     "in": "query",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "order_by": "name",
+    "mode": "ASC",
+    "format": "json"
+   },
+   "paging": {
+    "style": "limit",
+    "start": null,
+    "size": "size"
+   }
+  },
+  {
+   "field": "juntaLibrariesCount",
+   "path": "/libraries/count",
+   "arguments": []
+  },
+  {
+   "field": "juntaLibraryKinds",
+   "path": "/libraries/option-values/types",
+   "arguments": []
+  },
+  {
+   "field": "juntaLibraryMunicipalities",
+   "path": "/libraries/option-values/municipalities",
+   "arguments": []
+  },
+  {
+   "field": "juntaLibraryProvinces",
+   "path": "/libraries/option-values/provinces",
+   "arguments": []
+  },
+  {
+   "field": "juntaEvents",
+   "path": "/schedule/search",
+   "arguments": [
+    {
+     "name": "province",
+     "parameter": "province",
+     "in": "query",
+     "list": false,
+     "values": {
+      "ANY": "-",
+      "ALMERIA": "Almería",
+      "CADIZ": "Cádiz",
+      "CORDOBA": "Córdoba",
+      "GRANADA": "Granada",
+      "HUELVA": "Huelva",
+      "JAEN": "Jaén",
+      "MALAGA": "Málaga",
+      "SEVILLA": "Sevilla"
+     }
+    },
+    {
+     "name": "organism",
+     "parameter": "organism",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "theme",
+     "parameter": "theme",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "title",
+     "parameter": "title",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "description",
+     "parameter": "description",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "startsFrom",
+     "parameter": "start_date_registration_from",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "startsTo",
+     "parameter": "start_date_registration_to",
+     "in": "query",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "order_by": "start_date_registration",
+    "mode": "DESC",
+    "format": "json"
+   },
+   "paging": {
+    "style": "limit",
+    "start": null,
+    "size": "size"
+   }
+  },
+  {
+   "field": "juntaEvent",
+   "path": "/schedule/{bid}",
+   "arguments": [
+    {
+     "name": "id",
+     "parameter": "bid",
+     "in": "path",
+     "list": false
+    }
+   ]
+  },
+  {
+   "field": "juntaEventsCount",
+   "path": "/schedule/count",
+   "arguments": []
+  },
+  {
+   "field": "juntaEventThemes",
+   "path": "/schedule/option-values/matter",
+   "arguments": []
+  },
+  {
+   "field": "juntaEventProvinces",
+   "path": "/schedule/option-values/provinces",
+   "arguments": []
+  },
+  {
+   "field": "juntaEventLocations",
+   "path": "/schedule/option-values/locations",
+   "arguments": []
+  },
+  {
+   "field": "juntaEventCosts",
+   "path": "/schedule/option-values/costs",
+   "arguments": []
+  },
+  {
+   "field": "juntaRegistrationOffices",
+   "path": "/registration-offices/search",
+   "arguments": [
+    {
+     "name": "body",
+     "parameter": "name",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "municipality",
+     "parameter": "municipality",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "province",
+     "parameter": "province",
+     "in": "query",
+     "list": false,
+     "values": {
+      "ANY": "-",
+      "ALMERIA": "Almería",
+      "CADIZ": "Cádiz",
+      "CORDOBA": "Córdoba",
+      "GRANADA": "Granada",
+      "HUELVA": "Huelva",
+      "JAEN": "Jaén",
+      "MALAGA": "Málaga",
+      "SEVILLA": "Sevilla"
+     }
+    }
+   ],
+   "fixed": {
+    "office_type": "-",
+    "order_by": "name",
+    "mode": "ASC",
+    "format": "json"
+   },
+   "paging": {
+    "style": "limit",
+    "start": null,
+    "size": "size"
+   }
+  },
+  {
+   "field": "juntaRegistrationOffice",
+   "path": "/registration-offices/{bid}",
+   "arguments": [
+    {
+     "name": "id",
+     "parameter": "bid",
+     "in": "path",
+     "list": false
+    }
+   ]
+  },
+  {
+   "field": "juntaRegistrationOfficesCount",
+   "path": "/registration-offices/count",
+   "arguments": []
+  },
+  {
+   "field": "juntaRegistrationOfficeKinds",
+   "path": "/registration-offices/option-values/office_type",
+   "arguments": []
+  },
+  {
+   "field": "juntaRegistrationOfficeMunicipalities",
+   "path": "/registration-offices/option-values/municipality",
+   "arguments": []
+  },
+  {
+   "field": "juntaRegistrationOfficeProvinces",
+   "path": "/registration-offices/option-values/province",
+   "arguments": []
+  },
+  {
+   "field": "juntaGazetteDispositions",
+   "path": "/boja/search",
+   "arguments": [
+    {
+     "name": "section",
+     "parameter": "titleSec",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "organisation",
+     "parameter": "organisation",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "kind",
+     "parameter": "type",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "year",
+     "parameter": "year",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "number",
+     "parameter": "number",
+     "in": "query",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "subtitle": "-",
+    "version": "-",
+    "order_by": "dateUTC",
+    "mode": "DESC",
+    "format": "json"
+   },
+   "paging": {
+    "style": "limit",
+    "start": null,
+    "size": "size"
+   }
+  },
+  {
+   "field": "juntaGazetteDisposition",
+   "path": "/boja/{bid}",
+   "arguments": [
+    {
+     "name": "id",
+     "parameter": "bid",
+     "in": "path",
+     "list": false
+    }
+   ]
+  },
+  {
+   "field": "juntaGazetteDispositionsCount",
+   "path": "/boja/count",
+   "arguments": []
+  },
+  {
+   "field": "juntaGazetteSections",
+   "path": "/boja/option-values/titleSec",
+   "arguments": []
+  },
+  {
+   "field": "juntaGazetteOrganisations",
+   "path": "/boja/option-values/organisation",
+   "arguments": []
+  },
+  {
+   "field": "juntaGazetteKinds",
+   "path": "/boja/option-values/type",
+   "arguments": []
+  },
+  {
+   "field": "juntaGazetteSubsections",
+   "path": "/boja/option-values/subtitle",
+   "arguments": []
+  },
+  {
+   "field": "juntaPublicConsultations",
+   "path": "/public-consultations/search",
+   "arguments": [
+    {
+     "name": "organism",
+     "parameter": "organism",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "kind",
+     "parameter": "class_consultation",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "theme",
+     "parameter": "themes",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "title",
+     "parameter": "title",
+     "in": "query",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "order_by": "update_date",
+    "mode": "DESC",
+    "format": "json"
+   },
+   "paging": {
+    "style": "limit",
+    "start": null,
+    "size": "size"
+   }
+  },
+  {
+   "field": "juntaPublicConsultation",
+   "path": "/public-consultations/{bid}",
+   "arguments": [
+    {
+     "name": "id",
+     "parameter": "bid",
+     "in": "path",
+     "list": false
+    }
+   ]
+  },
+  {
+   "field": "juntaPublicConsultationsCount",
+   "path": "/public-consultations/count",
+   "arguments": []
+  },
+  {
+   "field": "juntaPublicConsultationOrganisms",
+   "path": "/public-consultations/option-values/organisms_names",
+   "arguments": []
+  },
+  {
+   "field": "juntaPublicConsultationKinds",
+   "path": "/public-consultations/option-values/class_consultations_names",
+   "arguments": []
+  },
+  {
+   "field": "juntaPublicConsultationThemes",
+   "path": "/public-consultations/option-values/themes_names",
+   "arguments": []
+  },
+  {
+   "field": "juntaStatisticalProducts",
+   "path": "/statistical-products/search",
+   "arguments": [
+    {
+     "name": "organism",
+     "parameter": "organism",
+     "in": "query",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "type": "-",
+    "order_by": "update_date",
+    "mode": "DESC",
+    "format": "json"
+   },
+   "paging": {
+    "style": "limit",
+    "start": null,
+    "size": "size"
+   }
+  },
+  {
+   "field": "juntaStatisticalProduct",
+   "path": "/statistical-products/{bid}",
+   "arguments": [
+    {
+     "name": "id",
+     "parameter": "bid",
+     "in": "path",
+     "list": false
+    }
+   ]
+  },
+  {
+   "field": "juntaStatisticalProductsCount",
+   "path": "/statistical-products/count",
+   "arguments": []
+  },
+  {
+   "field": "juntaStatisticalProductOrganisms",
+   "path": "/statistical-products/option-values/organism",
+   "arguments": []
+  },
+  {
+   "field": "juntaStatisticalProductKinds",
+   "path": "/statistical-products/option-values/type",
+   "arguments": []
+  },
+  {
+   "field": "juntaDraftRegulations",
+   "path": "/preparation-regulations/search",
+   "arguments": [
+    {
+     "name": "kind",
+     "parameter": "class_regulation",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "organism",
+     "parameter": "organism",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "status",
+     "parameter": "status_regulation",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "title",
+     "parameter": "title",
+     "in": "query",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "type": "-",
+    "order_by": "update_date",
+    "mode": "DESC",
+    "format": "json"
+   },
+   "paging": {
+    "style": "limit",
+    "start": null,
+    "size": "size"
+   }
+  },
+  {
+   "field": "juntaDraftRegulation",
+   "path": "/preparation-regulations/{bid}",
+   "arguments": [
+    {
+     "name": "id",
+     "parameter": "bid",
+     "in": "path",
+     "list": false
+    }
+   ]
+  },
+  {
+   "field": "juntaDraftRegulationsCount",
+   "path": "/preparation-regulations/count",
+   "arguments": []
+  },
+  {
+   "field": "juntaDraftRegulationTypes",
+   "path": "/preparation-regulations/option-values/type_values",
+   "arguments": []
+  },
+  {
+   "field": "juntaDraftRegulationKinds",
+   "path": "/preparation-regulations/option-values/class_values",
+   "arguments": []
+  },
+  {
+   "field": "juntaDraftRegulationOrganisms",
+   "path": "/preparation-regulations/option-values/organisms_names",
+   "arguments": []
+  },
+  {
+   "field": "juntaDraftRegulationStatuses",
+   "path": "/preparation-regulations/option-values/status_values",
+   "arguments": []
+  },
+  {
+   "field": "juntaPublications",
+   "path": "/publications/search",
+   "arguments": [
+    {
+     "name": "year",
+     "parameter": "year_publication",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "format",
+     "parameter": "pub_format",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "organism",
+     "parameter": "organism",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "topic",
+     "parameter": "topics",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "title",
+     "parameter": "title",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "author",
+     "parameter": "author",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "subject",
+     "parameter": "matter",
+     "in": "query",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "order_by": "year_publication",
+    "mode": "DESC",
+    "format": "json"
+   },
+   "paging": {
+    "style": "limit",
+    "start": null,
+    "size": "size"
+   }
+  },
+  {
+   "field": "juntaPublication",
+   "path": "/publications/{bid}",
+   "arguments": [
+    {
+     "name": "id",
+     "parameter": "bid",
+     "in": "path",
+     "list": false
+    }
+   ]
+  },
+  {
+   "field": "juntaPublicationsCount",
+   "path": "/publications/count",
+   "arguments": []
+  },
+  {
+   "field": "juntaPublicationYears",
+   "path": "/publications/option-values/year_publication",
+   "arguments": []
+  },
+  {
+   "field": "juntaPublicationFormats",
+   "path": "/publications/option-values/formats",
+   "arguments": []
+  },
+  {
+   "field": "juntaPublicationOrganisms",
+   "path": "/publications/option-values/organism",
+   "arguments": []
+  },
+  {
+   "field": "juntaPublicationTopics",
+   "path": "/publications/option-values/topics",
+   "arguments": []
+  },
+  {
+   "field": "juntaPublicationSubjects",
+   "path": "/publications/option-values/matter",
+   "arguments": []
+  },
+  {
+   "field": "juntaNewsItems",
+   "path": "/news/search",
+   "arguments": [
+    {
+     "name": "topic",
+     "parameter": "topic",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "title",
+     "parameter": "title",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "subtitle",
+     "parameter": "subtitle",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "body",
+     "parameter": "body",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "publishedFrom",
+     "parameter": "publication_date_from",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "publishedTo",
+     "parameter": "publication_date_to",
+     "in": "query",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "provider": "-",
+    "order_by": "publication_date",
+    "mode": "DESC",
+    "format": "json"
+   },
+   "paging": {
+    "style": "limit",
+    "start": null,
+    "size": "size"
+   }
+  },
+  {
+   "field": "juntaNewsItem",
+   "path": "/news/{bid}",
+   "arguments": [
+    {
+     "name": "id",
+     "parameter": "bid",
+     "in": "path",
+     "list": false
+    }
+   ]
+  },
+  {
+   "field": "juntaNewsItemsCount",
+   "path": "/news/count",
+   "arguments": []
+  },
+  {
+   "field": "juntaNewsTopics",
+   "path": "/news/option-values/topic",
+   "arguments": []
+  },
+  {
+   "field": "juntaStudyReports",
+   "path": "/study-reports/search",
+   "arguments": [
+    {
+     "name": "theme",
+     "parameter": "theme_name",
+     "in": "query",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "organism_name": "-",
+    "order_by": "date_change",
+    "mode": "DESC",
+    "format": "json"
+   },
+   "paging": {
+    "style": "limit",
+    "start": null,
+    "size": "size"
+   }
+  },
+  {
+   "field": "juntaStudyReport",
+   "path": "/study-reports/{bid}",
+   "arguments": [
+    {
+     "name": "id",
+     "parameter": "bid",
+     "in": "path",
+     "list": false
+    }
+   ]
+  },
+  {
+   "field": "juntaStudyReportsCount",
+   "path": "/study-reports/count",
+   "arguments": []
+  },
+  {
+   "field": "juntaStudyReportOrganisms",
+   "path": "/study-reports/option-values/organisms_names",
+   "arguments": []
+  },
+  {
+   "field": "juntaStudyReportThemes",
+   "path": "/study-reports/option-values/themes_names",
+   "arguments": []
+  },
+  {
+   "field": "juntaStatisticalActivities",
+   "path": "/statistical-activities/search",
+   "arguments": [
+    {
+     "name": "kind",
+     "parameter": "type",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "department",
+     "parameter": "counseling",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "organism",
+     "parameter": "organism",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "title",
+     "parameter": "title",
+     "in": "query",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "category": "-",
+    "order_by": "title",
+    "mode": "ASC",
+    "format": "json"
+   },
+   "paging": {
+    "style": "limit",
+    "start": null,
+    "size": "size"
+   }
+  },
+  {
+   "field": "juntaStatisticalActivity",
+   "path": "/statistical-activities/{bid}",
+   "arguments": [
+    {
+     "name": "id",
+     "parameter": "bid",
+     "in": "path",
+     "list": false
+    }
+   ]
+  },
+  {
+   "field": "juntaStatisticalActivitiesCount",
+   "path": "/statistical-activities/count",
+   "arguments": []
+  },
+  {
+   "field": "juntaStatisticalActivityKinds",
+   "path": "/statistical-activities/option-values/type",
+   "arguments": []
+  },
+  {
+   "field": "juntaStatisticalActivityDepartments",
+   "path": "/statistical-activities/option-values/counseling",
+   "arguments": []
+  },
+  {
+   "field": "juntaStatisticalActivityOrganisms",
+   "path": "/statistical-activities/option-values/organism",
+   "arguments": []
+  },
+  {
+   "field": "juntaConservationWorks",
+   "path": "/heritage-conservation/search",
+   "arguments": [
+    {
+     "name": "typology",
+     "parameter": "typology",
+     "in": "query",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "province": "-",
+    "municipality": "-",
+    "order_by": "id",
+    "mode": "DESC",
+    "format": "json"
+   },
+   "paging": {
+    "style": "limit",
+    "start": null,
+    "size": "size"
+   }
+  },
+  {
+   "field": "juntaConservationWork",
+   "path": "/heritage-conservation/{bid}",
+   "arguments": [
+    {
+     "name": "id",
+     "parameter": "bid",
+     "in": "path",
+     "list": false
+    }
+   ]
+  },
+  {
+   "field": "juntaConservationWorksCount",
+   "path": "/heritage-conservation/count",
+   "arguments": []
+  },
+  {
+   "field": "juntaConservationWorkTypologies",
+   "path": "/heritage-conservation/option-values/typologies",
+   "arguments": []
+  },
+  {
+   "field": "juntaConservationWorkProvinces",
+   "path": "/heritage-conservation/option-values/provinces",
+   "arguments": []
+  },
+  {
+   "field": "juntaConservationWorkMunicipalities",
+   "path": "/heritage-conservation/option-values/municipalities",
+   "arguments": []
+  },
+  {
+   "field": "juntaCulturalCentres",
+   "path": "/cultural-centers-jda/search",
+   "arguments": [
+    {
+     "name": "province",
+     "parameter": "province_name",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "municipality",
+     "parameter": "municipality_name",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "kind",
+     "parameter": "unit_type_name",
+     "in": "query",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "locality_name": "-",
+    "order_by": "name",
+    "mode": "ASC",
+    "format": "json"
+   },
+   "paging": {
+    "style": "limit",
+    "start": null,
+    "size": "size"
+   }
+  },
+  {
+   "field": "juntaCulturalCentresCount",
+   "path": "/cultural-centers-jda/count",
+   "arguments": []
+  },
+  {
+   "field": "juntaCulturalCentreLocalities",
+   "path": "/cultural-centers-jda/option-values/locations",
+   "arguments": []
+  },
+  {
+   "field": "juntaCulturalCentreMunicipalities",
+   "path": "/cultural-centers-jda/option-values/municipalities",
+   "arguments": []
+  },
+  {
+   "field": "juntaCulturalCentreProvinces",
+   "path": "/cultural-centers-jda/option-values/provinces",
+   "arguments": []
+  },
+  {
+   "field": "juntaCulturalCentreKinds",
+   "path": "/cultural-centers-jda/option-values/unit_types",
+   "arguments": []
+  },
+  {
+   "field": "juntaOtherDispositions",
+   "path": "/other-regulations/search",
+   "arguments": [
+    {
+     "name": "organism",
+     "parameter": "organism",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "topic",
+     "parameter": "topic",
+     "in": "query",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "order_by": "publication_date",
+    "mode": "DESC",
+    "format": "json"
+   },
+   "paging": {
+    "style": "limit",
+    "start": null,
+    "size": "size"
+   }
+  },
+  {
+   "field": "juntaOtherDisposition",
+   "path": "/other-regulations/{bid}",
+   "arguments": [
+    {
+     "name": "id",
+     "parameter": "bid",
+     "in": "path",
+     "list": false
+    }
+   ]
+  },
+  {
+   "field": "juntaOtherDispositionsCount",
+   "path": "/other-regulations/count",
+   "arguments": []
+  },
+  {
+   "field": "juntaOtherDispositionTitles",
+   "path": "/other-regulations/option-values/title",
+   "arguments": []
+  },
+  {
+   "field": "juntaOtherDispositionOrganisms",
+   "path": "/other-regulations/option-values/organism",
+   "arguments": []
+  },
+  {
+   "field": "juntaOtherDispositionTopics",
+   "path": "/other-regulations/option-values/topic",
+   "arguments": []
+  },
+  {
+   "field": "juntaAgreements",
+   "path": "/agreements/search",
+   "arguments": [
+    {
+     "name": "organism",
+     "parameter": "organism",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "title",
+     "parameter": "title",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "signedFrom",
+     "parameter": "date_subscription_from",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "signedTo",
+     "parameter": "date_subscription_to",
+     "in": "query",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "signers": "-",
+    "order_by": "date_subscription",
+    "mode": "DESC",
+    "format": "json"
+   },
+   "paging": {
+    "style": "limit",
+    "start": null,
+    "size": "size"
+   }
+  },
+  {
+   "field": "juntaAgreement",
+   "path": "/agreements/{bid}",
+   "arguments": [
+    {
+     "name": "id",
+     "parameter": "bid",
+     "in": "path",
+     "list": false
+    }
+   ]
+  },
+  {
+   "field": "juntaAgreementsCount",
+   "path": "/agreements/count",
+   "arguments": []
+  },
+  {
+   "field": "juntaAgreementOrganisms",
+   "path": "/agreements/option-values/organisms_names",
+   "arguments": []
+  },
+  {
+   "field": "juntaPlans",
+   "path": "/plans-programs/search",
+   "arguments": [
+    {
+     "name": "department",
+     "parameter": "counseling",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "topic",
+     "parameter": "topics",
+     "in": "query",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "title": "-",
+    "order_by": "approval_date",
+    "mode": "DESC",
+    "format": "json"
+   },
+   "paging": {
+    "style": "limit",
+    "start": null,
+    "size": "size"
+   }
+  },
+  {
+   "field": "juntaPlan",
+   "path": "/plans-programs/{bid}",
+   "arguments": [
+    {
+     "name": "id",
+     "parameter": "bid",
+     "in": "path",
+     "list": false
+    }
+   ]
+  },
+  {
+   "field": "juntaPlansCount",
+   "path": "/plans-programs/count",
+   "arguments": []
+  },
+  {
+   "field": "juntaPlanTitles",
+   "path": "/plans-programs/option-values/title",
+   "arguments": []
+  },
+  {
+   "field": "juntaPlanOrganisms",
+   "path": "/plans-programs/option-values/organism",
+   "arguments": []
+  },
+  {
+   "field": "juntaPlanApprovalDates",
+   "path": "/plans-programs/option-values/approval_date",
+   "arguments": []
+  },
+  {
+   "field": "juntaPlanDepartments",
+   "path": "/plans-programs/option-values/counseling",
+   "arguments": []
+  },
+  {
+   "field": "juntaPlanTopics",
+   "path": "/plans-programs/option-values/topics",
+   "arguments": []
+  },
+  {
+   "field": "juntaCouncilMeetings",
+   "path": "/governing-council-meetings/search",
+   "arguments": [
+    {
+     "name": "title",
+     "parameter": "title",
+     "in": "query",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "order_by": "id",
+    "mode": "DESC",
+    "format": "json"
+   },
+   "paging": {
+    "style": "limit",
+    "start": null,
+    "size": "size"
+   }
+  },
+  {
+   "field": "juntaCouncilMeeting",
+   "path": "/governing-council-meetings/{bid}",
+   "arguments": [
+    {
+     "name": "id",
+     "parameter": "bid",
+     "in": "path",
+     "list": false
+    }
+   ]
+  },
+  {
+   "field": "juntaCouncilMeetingsCount",
+   "path": "/governing-council-meetings/count",
+   "arguments": []
+  },
+  {
+   "field": "juntaCouncilMeetingTitles",
+   "path": "/governing-council-meetings/option-values/title",
+   "arguments": []
+  },
+  {
+   "field": "juntaPublicDocuments",
+   "path": "/public-documents/search",
+   "arguments": [
+    {
+     "name": "organism",
+     "parameter": "organism",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "theme",
+     "parameter": "themes",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "department",
+     "parameter": "counseling",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "title",
+     "parameter": "title",
+     "in": "query",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "order_by": "update_date",
+    "mode": "DESC",
+    "format": "json"
+   },
+   "paging": {
+    "style": "limit",
+    "start": null,
+    "size": "size"
+   }
+  },
+  {
+   "field": "juntaPublicDocument",
+   "path": "/public-documents/{bid}",
+   "arguments": [
+    {
+     "name": "id",
+     "parameter": "bid",
+     "in": "path",
+     "list": false
+    }
+   ]
+  },
+  {
+   "field": "juntaPublicDocumentsCount",
+   "path": "/public-documents/count",
+   "arguments": []
+  },
+  {
+   "field": "juntaPublicDocumentOrganisms",
+   "path": "/public-documents/option-values/organisms_names",
+   "arguments": []
+  },
+  {
+   "field": "juntaPublicDocumentThemes",
+   "path": "/public-documents/option-values/themes_names",
+   "arguments": []
+  },
+  {
+   "field": "juntaPublicDocumentDepartments",
+   "path": "/public-documents/option-values/counselings_names",
+   "arguments": []
+  },
+  {
+   "field": "juntaTrainingCourses",
+   "path": "/training-courses/search",
+   "arguments": [
+    {
+     "name": "modality",
+     "parameter": "modality",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "title",
+     "parameter": "title",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "startDate",
+     "parameter": "start_date",
+     "in": "query",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "order_by": "start_date",
+    "mode": "DESC",
+    "format": "json"
+   },
+   "paging": {
+    "style": "limit",
+    "start": null,
+    "size": "size"
+   }
+  },
+  {
+   "field": "juntaTrainingCourse",
+   "path": "/training-courses/{bid}",
+   "arguments": [
+    {
+     "name": "id",
+     "parameter": "bid",
+     "in": "path",
+     "list": false
+    }
+   ]
+  },
+  {
+   "field": "juntaTrainingCoursesCount",
+   "path": "/training-courses/count",
+   "arguments": []
+  },
+  {
+   "field": "juntaTrainingCourseModalities",
+   "path": "/training-courses/option-values/modalities",
+   "arguments": []
+  },
+  {
+   "field": "juntaTrainingCourseTitles",
+   "path": "/training-courses/option-values/titles",
+   "arguments": []
+  },
+  {
+   "field": "juntaJobOffers",
+   "path": "/job-offering-public-sector/search",
+   "arguments": [
+    {
+     "name": "status",
+     "parameter": "announcement_status",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "province",
+     "parameter": "provinces",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "kind",
+     "parameter": "announcement_type",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "degree",
+     "parameter": "job_official_degree_requirements",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "jobName",
+     "parameter": "job_name",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "organism",
+     "parameter": "organism",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "locality",
+     "parameter": "locality",
+     "in": "query",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "job_agreement": "-",
+    "order_by": "id",
+    "mode": "DESC",
+    "format": "json"
+   },
+   "paging": {
+    "style": "limit",
+    "start": null,
+    "size": "size"
+   }
+  },
+  {
+   "field": "juntaJobOffer",
+   "path": "/job-offering-public-sector/{bid}",
+   "arguments": [
+    {
+     "name": "id",
+     "parameter": "bid",
+     "in": "path",
+     "list": false
+    }
+   ]
+  },
+  {
+   "field": "juntaJobOffersCount",
+   "path": "/job-offering-public-sector/count",
+   "arguments": []
+  },
+  {
+   "field": "juntaJobOfferDegrees",
+   "path": "/job-offering-public-sector/option-values/job_official_degree_requirements",
+   "arguments": []
+  },
+  {
+   "field": "juntaJobOfferKinds",
+   "path": "/job-offering-public-sector/option-values/announcement_type",
+   "arguments": []
+  },
+  {
+   "field": "juntaJobOfferContracts",
+   "path": "/job-offering-public-sector/option-values/job_agreement",
+   "arguments": []
+  },
+  {
+   "field": "juntaJobOfferOrganisms",
+   "path": "/job-offering-public-sector/option-values/organization",
+   "arguments": []
+  },
+  {
+   "field": "juntaJobOfferProvinces",
+   "path": "/job-offering-public-sector/option-values/provinces",
+   "arguments": []
+  },
+  {
+   "field": "juntaJobOfferLocalities",
+   "path": "/job-offering-public-sector/option-values/locality",
+   "arguments": []
+  },
+  {
+   "field": "juntaOrganicUnits",
+   "path": "/dir3/search",
+   "arguments": [
+    {
+     "name": "entityType",
+     "parameter": "public_entity_type_name",
+     "in": "query",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "state_name": "-",
+    "adm_level_name": "-",
+    "order_by": "name",
+    "mode": "ASC",
+    "format": "json"
+   },
+   "paging": {
+    "style": "limit",
+    "start": null,
+    "size": "size"
+   }
+  },
+  {
+   "field": "juntaOrganicUnit",
+   "path": "/dir3/{bid}",
+   "arguments": [
+    {
+     "name": "id",
+     "parameter": "bid",
+     "in": "path",
+     "list": false
+    }
+   ]
+  },
+  {
+   "field": "juntaOrganicUnitsCount",
+   "path": "/dir3/count",
+   "arguments": []
+  },
+  {
+   "field": "juntaOrganicUnitLevels",
+   "path": "/dir3/option-values/adm_level",
+   "arguments": []
+  },
+  {
+   "field": "juntaOrganicUnitEntityTypes",
+   "path": "/dir3/option-values/public_entity_type",
+   "arguments": []
+  },
+  {
+   "field": "juntaOrganicUnitStates",
+   "path": "/dir3/option-values/states",
+   "arguments": []
+  },
+  {
+   "field": "juntaProperties",
+   "path": "/inmovables/search",
+   "arguments": [
+    {
+     "name": "department",
+     "parameter": "counseling",
+     "in": "query",
+     "list": false,
+     "upperCase": true
+    },
+    {
+     "name": "nature",
+     "parameter": "nature",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "province",
+     "parameter": "province",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "municipality",
+     "parameter": "municipality",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "usage",
+     "parameter": "current_usage",
+     "in": "query",
+     "list": false,
+     "upperCase": true
+    },
+    {
+     "name": "street",
+     "parameter": "street",
+     "in": "query",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "order_by": "id",
+    "mode": "ASC",
+    "format": "json"
+   },
+   "paging": {
+    "style": "limit",
+    "start": null,
+    "size": "size"
+   }
+  },
+  {
+   "field": "juntaProperty",
+   "path": "/inmovables/{bid}",
+   "arguments": [
+    {
+     "name": "id",
+     "parameter": "bid",
+     "in": "path",
+     "list": false
+    }
+   ]
+  },
+  {
+   "field": "juntaPropertiesCount",
+   "path": "/inmovables/count",
+   "arguments": []
+  },
+  {
+   "field": "juntaPropertyDepartments",
+   "path": "/inmovables/option-values/counseling",
+   "arguments": []
+  },
+  {
+   "field": "juntaPropertyNatures",
+   "path": "/inmovables/option-values/natures",
+   "arguments": []
+  },
+  {
+   "field": "juntaPropertyProvinces",
+   "path": "/inmovables/option-values/provinces",
+   "arguments": []
+  },
+  {
+   "field": "juntaPropertyMunicipalities",
+   "path": "/inmovables/option-values/municipalities",
+   "arguments": []
+  },
+  {
+   "field": "juntaPropertyUsages",
+   "path": "/inmovables/option-values/current_usages",
+   "arguments": []
+  },
+  {
+   "field": "juntaHeritageCourses",
+   "path": "/education-program/search",
+   "arguments": [
+    {
+     "name": "discipline",
+     "parameter": "disciplinary",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "modality",
+     "parameter": "modality",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "location",
+     "parameter": "location",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "title",
+     "parameter": "title",
+     "in": "query",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "order_by": "start_date",
+    "mode": "DESC",
+    "format": "json"
+   },
+   "paging": {
+    "style": "limit",
+    "start": null,
+    "size": "size"
+   }
+  },
+  {
+   "field": "juntaHeritageCourse",
+   "path": "/education-program/{bid}",
+   "arguments": [
+    {
+     "name": "id",
+     "parameter": "bid",
+     "in": "path",
+     "list": false
+    }
+   ]
+  },
+  {
+   "field": "juntaHeritageCoursesCount",
+   "path": "/education-program/count",
+   "arguments": []
+  },
+  {
+   "field": "juntaRatingTables",
+   "path": "/rating-tables/search",
+   "arguments": [
+    {
+     "name": "administration",
+     "parameter": "admon",
+     "in": "query",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "order_by": "code_tv",
+    "mode": "ASC",
+    "format": "json"
+   },
+   "paging": {
+    "style": "limit",
+    "start": null,
+    "size": "size"
+   }
+  },
+  {
+   "field": "juntaRatingTablesCount",
+   "path": "/rating-tables/count",
+   "arguments": []
+  },
+  {
+   "field": "juntaRatingTableAdministrations",
+   "path": "/rating-tables/option-values/admon_types",
+   "arguments": []
+  },
+  {
+   "field": "juntaLocalEntities",
+   "path": "/rael/search",
+   "arguments": [
+    {
+     "name": "kind",
+     "parameter": "entity",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "province",
+     "parameter": "province",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "typology",
+     "parameter": "typology",
+     "in": "query",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "order_by": "denominacion",
+    "mode": "ASC",
+    "format": "json"
+   },
+   "paging": {
+    "style": "limit",
+    "start": null,
+    "size": "size"
+   }
+  },
+  {
+   "field": "juntaLocalEntity",
+   "path": "/rael/{bid}",
+   "arguments": [
+    {
+     "name": "id",
+     "parameter": "bid",
+     "in": "path",
+     "list": false
+    }
+   ]
+  },
+  {
+   "field": "juntaLocalEntitiesCount",
+   "path": "/rael/count",
+   "arguments": []
+  },
+  {
+   "field": "juntaLocalEntityKinds",
+   "path": "/rael/option-values/entities",
+   "arguments": []
+  },
+  {
+   "field": "juntaLocalEntityTypologies",
+   "path": "/rael/option-values/typologies",
+   "arguments": []
+  },
+  {
+   "field": "juntaLocalEntityProvinces",
+   "path": "/rael/option-values/provinces",
+   "arguments": []
+  },
+  {
+   "field": "juntaCommissionReports",
+   "path": "/commission-reports/search",
+   "arguments": [],
+   "fixed": {
+    "moderation_state": "-",
+    "order_by": "publication_date",
+    "mode": "DESC",
+    "format": "json"
+   },
+   "paging": {
+    "style": "limit",
+    "start": null,
+    "size": "size"
+   }
+  },
+  {
+   "field": "juntaCommissionReport",
+   "path": "/commission-reports/{bid}",
+   "arguments": [
+    {
+     "name": "id",
+     "parameter": "bid",
+     "in": "path",
+     "list": false
+    }
+   ]
+  },
+  {
+   "field": "juntaCommissionReportsCount",
+   "path": "/commission-reports/count",
+   "arguments": []
+  },
+  {
+   "field": "juntaCommissionReportStates",
+   "path": "/commission-reports/option-values/moderation_states",
+   "arguments": []
+  },
+  {
+   "field": "juntaAdvertisingExpenses",
+   "path": "/goverment-advertising-expense/search",
+   "arguments": [
+    {
+     "name": "organism",
+     "parameter": "organism",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "year",
+     "parameter": "year",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "period",
+     "parameter": "quarter",
+     "in": "query",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "order_by": "id",
+    "mode": "DESC",
+    "format": "json"
+   },
+   "paging": {
+    "style": "limit",
+    "start": null,
+    "size": "size"
+   }
+  },
+  {
+   "field": "juntaAdvertisingExpense",
+   "path": "/goverment-advertising-expense/{bid}",
+   "arguments": [
+    {
+     "name": "id",
+     "parameter": "bid",
+     "in": "path",
+     "list": false
+    }
+   ]
+  },
+  {
+   "field": "juntaAdvertisingExpensesCount",
+   "path": "/goverment-advertising-expense/count",
+   "arguments": []
+  },
+  {
+   "field": "juntaAdvertisingExpenseTitles",
+   "path": "/goverment-advertising-expense/option-values/title",
+   "arguments": []
+  },
+  {
+   "field": "juntaAdvertisingExpenseOrganisms",
+   "path": "/goverment-advertising-expense/option-values/organism",
+   "arguments": []
+  },
+  {
+   "field": "juntaAdvertisingExpenseYears",
+   "path": "/goverment-advertising-expense/option-values/year",
+   "arguments": []
+  },
+  {
+   "field": "juntaSyllabuses",
+   "path": "/current-topics/search",
+   "arguments": [
+    {
+     "name": "bodyGroup",
+     "parameter": "body_group",
+     "in": "query",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "order_by": "changed",
+    "mode": "DESC",
+    "format": "json"
+   },
+   "paging": {
+    "style": "limit",
+    "start": null,
+    "size": "size"
+   }
+  },
+  {
+   "field": "juntaSyllabus",
+   "path": "/current-topics/{bid}",
+   "arguments": [
+    {
+     "name": "id",
+     "parameter": "bid",
+     "in": "path",
+     "list": false
+    }
+   ]
+  },
+  {
+   "field": "juntaSyllabusesCount",
+   "path": "/current-topics/count",
+   "arguments": []
+  },
+  {
+   "field": "juntaSelectionProcesses",
+   "path": "/selective-processes/search",
+   "arguments": [
+    {
+     "name": "access",
+     "parameter": "access",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "staff",
+     "parameter": "staff",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "subject",
+     "parameter": "subject",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "offerYear",
+     "parameter": "oep",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "status",
+     "parameter": "status",
+     "in": "query",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "order_by": "changed",
+    "mode": "DESC",
+    "format": "json"
+   },
+   "paging": {
+    "style": "limit",
+    "start": null,
+    "size": "size"
+   }
+  },
+  {
+   "field": "juntaSelectionProcess",
+   "path": "/selective-processes/{bid}",
+   "arguments": [
+    {
+     "name": "id",
+     "parameter": "bid",
+     "in": "path",
+     "list": false
+    }
+   ]
+  },
+  {
+   "field": "juntaSelectionProcessesCount",
+   "path": "/selective-processes/count",
+   "arguments": []
+  },
+  {
+   "field": "juntaAssignments",
+   "path": "/concessions-own-entities/search",
+   "arguments": [
+    {
+     "name": "organism",
+     "parameter": "organism",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "title",
+     "parameter": "title",
+     "in": "query",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "order_by": "update_date",
+    "mode": "DESC",
+    "format": "json"
+   },
+   "paging": {
+    "style": "limit",
+    "start": null,
+    "size": "size"
+   }
+  },
+  {
+   "field": "juntaAssignment",
+   "path": "/concessions-own-entities/{bid}",
+   "arguments": [
+    {
+     "name": "id",
+     "parameter": "bid",
+     "in": "path",
+     "list": false
+    }
+   ]
+  },
+  {
+   "field": "juntaAssignmentsCount",
+   "path": "/concessions-own-entities/count",
+   "arguments": []
+  },
+  {
+   "field": "juntaAssignmentOrganisms",
+   "path": "/concessions-own-entities/option-values/organisms_names",
+   "arguments": []
+  },
+  {
+   "field": "juntaDelegations",
+   "path": "/delegations-competencies/search",
+   "arguments": [
+    {
+     "name": "organism",
+     "parameter": "organism",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "title",
+     "parameter": "title",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "from",
+     "parameter": "date_delegation_from",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "to",
+     "parameter": "date_delegation_to",
+     "in": "query",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "order_by": "update_date",
+    "mode": "DESC",
+    "format": "json"
+   },
+   "paging": {
+    "style": "limit",
+    "start": null,
+    "size": "size"
+   }
+  },
+  {
+   "field": "juntaDelegation",
+   "path": "/delegations-competencies/{bid}",
+   "arguments": [
+    {
+     "name": "id",
+     "parameter": "bid",
+     "in": "path",
+     "list": false
+    }
+   ]
+  },
+  {
+   "field": "juntaDelegationsCount",
+   "path": "/delegations-competencies/count",
+   "arguments": []
+  },
+  {
+   "field": "juntaDelegationOrganisms",
+   "path": "/delegations-competencies/option-values/organisms_names",
+   "arguments": []
+  },
+  {
+   "field": "juntaTenderCourtDecisions",
+   "path": "/tender-court-decisions/search",
+   "arguments": [
+    {
+     "name": "contractKind",
+     "parameter": "type_contract",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "contestedAct",
+     "parameter": "contested_act",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "outcome",
+     "parameter": "resolution_type",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "from",
+     "parameter": "resolution_date_from",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "to",
+     "parameter": "resolution_date_to",
+     "in": "query",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "order_by": "resolution_date",
+    "mode": "DESC",
+    "format": "json"
+   },
+   "paging": {
+    "style": "limit",
+    "start": null,
+    "size": "size"
+   }
+  },
+  {
+   "field": "juntaTenderCourtDecision",
+   "path": "/tender-court-decisions/{bid}",
+   "arguments": [
+    {
+     "name": "id",
+     "parameter": "bid",
+     "in": "path",
+     "list": false
+    }
+   ]
+  },
+  {
+   "field": "juntaTenderCourtDecisionsCount",
+   "path": "/tender-court-decisions/count",
+   "arguments": []
+  },
+  {
+   "field": "juntaTenderCourtContractKinds",
+   "path": "/tender-court-decisions/option-values/type_contract",
+   "arguments": []
+  },
+  {
+   "field": "juntaTenderCourtContestedActs",
+   "path": "/tender-court-decisions/option-values/contested_act",
+   "arguments": []
+  },
+  {
+   "field": "juntaTenderCourtOutcomes",
+   "path": "/tender-court-decisions/option-values/resolution_type",
+   "arguments": []
+  },
+  {
+   "field": "juntaJobPositions",
+   "path": "/rpt/search",
+   "arguments": [
+    {
+     "name": "organization",
+     "parameter": "organization",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "department",
+     "parameter": "department",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "group",
+     "parameter": "group",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "description",
+     "parameter": "short_position_description",
+     "in": "query",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "cdce": "-",
+    "position_access_type": "-",
+    "order_by": "adscription",
+    "mode": "ASC",
+    "format": "json"
+   },
+   "paging": {
+    "style": "limit",
+    "start": null,
+    "size": "size"
+   }
+  },
+  {
+   "field": "juntaJobPositionsCount",
+   "path": "/rpt/count",
+   "arguments": []
+  },
+  {
+   "field": "juntaJobPositionOrganizations",
+   "path": "/rpt/option-values/organization",
+   "arguments": []
+  },
+  {
+   "field": "juntaJobPositionDepartments",
+   "path": "/rpt/option-values/department",
+   "arguments": []
+  },
+  {
+   "field": "juntaJobPositionGroups",
+   "path": "/rpt/option-values/group",
+   "arguments": []
+  },
+  {
+   "field": "juntaOrganicStructureUnits",
+   "path": "/basic-data/search",
+   "arguments": [
+    {
+     "name": "department",
+     "parameter": "division",
+     "in": "query",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "status": "-",
+    "order_by": "title",
+    "mode": "ASC",
+    "format": "json"
+   },
+   "paging": {
+    "style": "limit",
+    "start": null,
+    "size": "size"
+   }
+  },
+  {
+   "field": "juntaOrganicStructureUnit",
+   "path": "/basic-data/{bid}",
+   "arguments": [
+    {
+     "name": "id",
+     "parameter": "bid",
+     "in": "path",
+     "list": false
+    }
+   ]
+  },
+  {
+   "field": "juntaOrganicStructureUnitsCount",
+   "path": "/basic-data/count",
+   "arguments": []
+  },
+  {
+   "field": "juntaOrganicStructureUnitNames",
+   "path": "/basic-data/option-values/names",
+   "arguments": []
+  },
+  {
+   "field": "juntaTransparencyUnits",
+   "path": "/transparency-units/search",
+   "arguments": [
+    {
+     "name": "scope",
+     "parameter": "scope_action",
+     "in": "query",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "title": "-",
+    "order_by": "title",
+    "mode": "ASC",
+    "format": "json"
+   },
+   "paging": {
+    "style": "limit",
+    "start": null,
+    "size": "size"
+   }
+  },
+  {
+   "field": "juntaTransparencyUnit",
+   "path": "/transparency-units/{bid}",
+   "arguments": [
+    {
+     "name": "id",
+     "parameter": "bid",
+     "in": "path",
+     "list": false
+    }
+   ]
+  },
+  {
+   "field": "juntaTransparencyUnitsCount",
+   "path": "/transparency-units/count",
+   "arguments": []
+  },
+  {
+   "field": "juntaTransparencyUnitScopes",
+   "path": "/transparency-units/option-values/scope_action",
+   "arguments": []
+  },
+  {
+   "field": "juntaTransparencyUnitTitles",
+   "path": "/transparency-units/option-values/title",
+   "arguments": []
+  },
+  {
+   "field": "juntaDataProcessingActivities",
+   "path": "/data-treatment/search",
+   "arguments": [
+    {
+     "name": "organism",
+     "parameter": "organism",
+     "in": "query",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "interested": "-",
+    "order_by": "update_date",
+    "mode": "DESC",
+    "format": "json"
+   },
+   "paging": {
+    "style": "limit",
+    "start": null,
+    "size": "size"
+   }
+  },
+  {
+   "field": "juntaDataProcessingActivity",
+   "path": "/data-treatment/{bid}",
+   "arguments": [
+    {
+     "name": "id",
+     "parameter": "bid",
+     "in": "path",
+     "list": false
+    }
+   ]
+  },
+  {
+   "field": "juntaDataProcessingActivitiesCount",
+   "path": "/data-treatment/count",
+   "arguments": []
+  },
+  {
+   "field": "juntaDataProcessingActivityOrganisms",
+   "path": "/data-treatment/option-values/organism",
+   "arguments": []
+  },
+  {
+   "field": "juntaAccessDenials",
+   "path": "/administration-responses/search",
+   "arguments": [
+    {
+     "name": "organism",
+     "parameter": "organism",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "outcome",
+     "parameter": "resolution",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "date",
+     "parameter": "resolution_date",
+     "in": "query",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "order_by": "resolution_date",
+    "mode": "DESC",
+    "format": "json"
+   },
+   "paging": {
+    "style": "limit",
+    "start": null,
+    "size": "size"
+   }
+  },
+  {
+   "field": "juntaAccessDenial",
+   "path": "/administration-responses/{bid}",
+   "arguments": [
+    {
+     "name": "id",
+     "parameter": "bid",
+     "in": "path",
+     "list": false
+    }
+   ]
+  },
+  {
+   "field": "juntaAccessDenialsCount",
+   "path": "/administration-responses/count",
+   "arguments": []
+  },
+  {
+   "field": "juntaAccessDenialOrganisms",
+   "path": "/administration-responses/option-values/organism",
+   "arguments": []
+  },
+  {
+   "field": "juntaAccessDenialOutcomes",
+   "path": "/administration-responses/option-values/resolution",
+   "arguments": []
+  }
+ ],
+ "fields": {
+  "JuntaCount": {
+   "total": {
+    "key": "count/result"
+   }
+  },
+  "JuntaOptionValues": {
+   "values": {
+    "key": "result"
+   },
+   "counts": {
+    "key": "stats"
+   }
+  },
+  "JuntaValueCount": {
+   "value": {
+    "key": "key"
+   },
+   "count": {
+    "key": "doc_count"
+   }
+  },
+  "JuntaUtmPoint": {
+   "x": {
+    "key": "longitude",
+    "conversion": "decimal-comma"
+   },
+   "y": {
+    "key": "latitude",
+    "conversion": "decimal-comma"
+   }
+  },
+  "JuntaDateRange": {
+   "start": {
+    "key": "start_date_registration|start_date"
+   },
+   "end": {
+    "key": "end_date_registration|end_date"
+   }
+  },
+  "JuntaHolidayCalendar": {
+   "holidays": {
+    "key": "results"
+   }
+  },
+  "JuntaHoliday": {
+   "date": {
+    "key": "dateformat"
+   },
+   "dayNumber": {
+    "key": "date"
+   },
+   "kind": {
+    "key": "type"
+   }
+  },
+  "JuntaMunicipality": {
+   "name": {
+    "key": "municipality_name"
+   },
+   "ineCode": {
+    "key": "municipality_ine"
+   },
+   "provinceCode": {
+    "key": "province_identifier"
+   },
+   "provincialCapital": {
+    "key": "capital_city",
+    "conversion": "yes-no"
+   },
+   "latitude": {
+    "key": "latitude",
+    "conversion": "decimal-comma"
+   },
+   "longitude": {
+    "key": "longitude",
+    "conversion": "decimal-comma"
+   },
+   "catalogueId": {
+    "key": "icmsId"
+   }
+  },
+  "JuntaTourismEstablishment": {
+   "kind": {
+    "key": "objects_type_id"
+   },
+   "category": {
+    "key": "categories"
+   },
+   "modality": {
+    "key": "modalities"
+   },
+   "registrationCode": {
+    "key": "registration_code"
+   },
+   "address": {
+    "key": "establishment_address"
+   },
+   "roadName": {
+    "key": "road_name"
+   },
+   "postalCode": {
+    "key": "postal_code"
+   },
+   "municipality": {
+    "key": "municipalities"
+   },
+   "province": {
+    "key": "provinces"
+   },
+   "x": {
+    "key": "coord_x",
+    "conversion": "decimal-comma"
+   },
+   "y": {
+    "key": "coord_y",
+    "conversion": "decimal-comma"
+   },
+   "cadastralReference": {
+    "key": "catastral_ref"
+   },
+   "activities": {
+    "key": "active_tourism_activities"
+   },
+   "activityStarted": {
+    "key": "activity_start_date"
+   },
+   "registered": {
+    "key": "registration_date"
+   },
+   "places": {
+    "key": "tot_gen_places"
+   },
+   "units": {
+    "key": "tot_gen_ua"
+   },
+   "campCapacity": {
+    "key": "maximum_capacity_camp"
+   },
+   "campPitches": {
+    "key": "num_camping_plots"
+   },
+   "campSites": {
+    "key": "total_camp_sites"
+   },
+   "fixedInstallations": {
+    "key": "num_fixed_installations"
+   },
+   "fixedInstallationsSurface": {
+    "key": "surface_fixed_installations"
+   },
+   "onlineOnly": {
+    "key": "online_ind",
+    "conversion": "yes-no"
+   },
+   "tourismOfficeNetwork": {
+    "key": "ind_office_tour_integrated_network",
+    "conversion": "yes-no"
+   }
+  },
+  "JuntaRegulation": {
+   "published": {
+    "key": "publication_date"
+   },
+   "updated": {
+    "key": "update_date"
+   },
+   "organisms": {
+    "key": "organism",
+    "conversion": "text-list"
+   },
+   "suborganisms": {
+    "key": "suborganism",
+    "conversion": "text-list"
+   },
+   "kinds": {
+    "key": "range",
+    "conversion": "text-list"
+   },
+   "documents": {
+    "key": "document",
+    "conversion": "text-list"
+   }
+  },
+  "JuntaRegulationTheme": {
+   "themes": {
+    "key": "parent",
+    "conversion": "text-list"
+   }
+  },
+  "JuntaMuseum": {
+   "kind": {
+    "key": "unit_type"
+   },
+   "latitude": {
+    "key": "latitude",
+    "conversion": "decimal-comma"
+   },
+   "longitude": {
+    "key": "longitude",
+    "conversion": "decimal-comma"
+   },
+   "openingHours": {
+    "key": "opening_hours"
+   },
+   "phone": {
+    "key": "phone",
+    "conversion": "text"
+   },
+   "fax": {
+    "key": "fax",
+    "conversion": "text"
+   },
+   "description": {
+    "key": "observations"
+   }
+  },
+  "JuntaLibrary": {
+   "mapName": {
+    "key": "map_name"
+   },
+   "kind": {
+    "key": "unit_type_name"
+   },
+   "kindCode": {
+    "key": "unit_type_acronym"
+   },
+   "address": {
+    "key": "address_name"
+   },
+   "locality": {
+    "key": "locality_name"
+   },
+   "municipality": {
+    "key": "municipality_name"
+   },
+   "municipalityIneCode": {
+    "key": "municipality_ine"
+   },
+   "province": {
+    "key": "province_name"
+   },
+   "latitude": {
+    "key": "latitude",
+    "conversion": "decimal-comma"
+   },
+   "longitude": {
+    "key": "longitude",
+    "conversion": "decimal-comma"
+   },
+   "openingHours": {
+    "key": "horario"
+   },
+   "phone": {
+    "key": "phone",
+    "conversion": "text"
+   },
+   "fax": {
+    "key": "fax",
+    "conversion": "text"
+   },
+   "catalogueId": {
+    "key": "icmsId"
+   },
+   "kindId": {
+    "key": "unit_type_id"
+   },
+   "localityId": {
+    "key": "locality_id"
+   },
+   "localityIneCode": {
+    "key": "locality_ine"
+   },
+   "municipalityId": {
+    "key": "municipality_id"
+   },
+   "provinceId": {
+    "key": "province_id"
+   },
+   "provinceIdCopy": {
+    "key": "province_id_c"
+   },
+   "addressId": {
+    "key": "address_id"
+   }
+  },
+  "JuntaEvent": {
+   "title": {
+    "key": "title",
+    "conversion": "text"
+   },
+   "dates": {
+    "key": "date_registration"
+   },
+   "provinces": {
+    "key": "province",
+    "conversion": "text-list"
+   },
+   "theme": {
+    "key": "matter"
+   },
+   "themes": {
+    "key": "themes",
+    "conversion": "text-list"
+   },
+   "organisms": {
+    "key": "organisms",
+    "conversion": "text-list"
+   },
+   "images": {
+    "key": "image"
+   },
+   "moreInfo": {
+    "key": "more_info"
+   }
+  },
+  "JuntaImage": {
+   "name": {
+    "key": "image"
+   },
+   "thumbnails": {
+    "key": "thumbnail"
+   }
+  },
+  "JuntaThumbnail": {
+   "url": {
+    "key": "image_url"
+   },
+   "size": {
+    "key": "image_size",
+    "conversion": "integer"
+   }
+  },
+  "JuntaLinkList": {
+   "links": {
+    "key": "field_url_mas_informacion"
+   }
+  },
+  "JuntaLink": {
+   "title": {
+    "key": "more_info_title|more_information_title"
+   },
+   "url": {
+    "key": "more_info_url|more_information_url"
+   }
+  },
+  "JuntaRegistrationOffice": {
+   "kinds": {
+    "key": "type",
+    "conversion": "text-list"
+   },
+   "detailPath": {
+    "key": "path/detail"
+   },
+   "coordinates": {
+    "key": "coordinate"
+   }
+  },
+  "JuntaGazetteDisposition": {
+   "bulletin": {
+    "key": "number"
+   },
+   "number": {
+    "key": "dispositionNumber"
+   },
+   "published": {
+    "key": "date"
+   },
+   "publishedAt": {
+    "key": "dateUTC"
+   },
+   "signedAt": {
+    "key": "dateDispositionUTC"
+   },
+   "firstPage": {
+    "key": "startPageDisposition"
+   },
+   "lastPage": {
+    "key": "endPageDisposition"
+   },
+   "section": {
+    "key": "sectionN1"
+   },
+   "subsection": {
+    "key": "sectionN2"
+   },
+   "sectionTitle": {
+    "key": "titleSec"
+   },
+   "sectionHtml": {
+    "key": "section"
+   },
+   "subsectionHtml": {
+    "key": "subsection"
+   },
+   "organismHtml": {
+    "key": "organism"
+   },
+   "kind": {
+    "key": "type"
+   },
+   "summary": {
+    "key": "summaryNoHtml"
+   },
+   "summaryHtml": {
+    "key": "summary"
+   },
+   "body": {
+    "key": "bodyNoHtml"
+   },
+   "bodyHtml": {
+    "key": "body"
+   },
+   "pdfs": {
+    "key": "pdf"
+   },
+   "law": {
+    "key": "lawDisposition"
+   },
+   "headsUp": {
+    "key": "headsup"
+   },
+   "internalId": {
+    "key": "internal"
+   }
+  },
+  "JuntaGazettePdf": {
+   "url": {
+    "key": "publicUrl"
+   },
+   "path": {
+    "key": "pathPdf"
+   },
+   "fileId": {
+    "key": "id_file"
+   },
+   "hash": {
+    "key": "hashPdf"
+   }
+  },
+  "JuntaPublicConsultation": {
+   "updated": {
+    "key": "update_date"
+   },
+   "organisms": {
+    "key": "organism",
+    "conversion": "text-list"
+   },
+   "dates": {
+    "key": "date"
+   },
+   "kinds": {
+    "key": "range",
+    "conversion": "text-list"
+   },
+   "themes": {
+    "key": "themes",
+    "conversion": "text-list"
+   },
+   "background": {
+    "key": "antecedent"
+   },
+   "problems": {
+    "key": "issues"
+   },
+   "alternatives": {
+    "key": "possible_solutions"
+   },
+   "documents": {
+    "key": "more_info"
+   }
+  },
+  "JuntaConsultationDocument": {
+   "title": {
+    "key": "document"
+   },
+   "url": {
+    "key": "more_info"
+   }
+  },
+  "JuntaStatisticalProduct": {
+   "organisms": {
+    "key": "organism",
+    "conversion": "text-list"
+   },
+   "kinds": {
+    "key": "type",
+    "conversion": "text-list"
+   },
+   "periodicity": {
+    "key": "periodicity",
+    "conversion": "text-list"
+   },
+   "updated": {
+    "key": "update_date"
+   },
+   "path": {
+    "key": "path/url"
+   }
+  },
+  "JuntaDraftRegulation": {
+   "status": {
+    "key": "status_regulation"
+   },
+   "started": {
+    "key": "date_start"
+   },
+   "updated": {
+    "key": "update_date"
+   },
+   "organisms": {
+    "key": "organism",
+    "conversion": "text-list"
+   },
+   "kinds": {
+    "key": "range"
+   },
+   "documents": {
+    "key": "document"
+   }
+  },
+  "JuntaDraftKind": {
+   "kind": {
+    "key": "class_regulation"
+   },
+   "activities": {
+    "key": "parent",
+    "conversion": "text-list"
+   }
+  },
+  "JuntaDraftDocument": {
+   "title": {
+    "key": "field_titulo"
+   },
+   "parts": {
+    "key": "field_documento_p"
+   }
+  },
+  "JuntaFileList": {
+   "paths": {
+    "key": "field_media_file",
+    "conversion": "text-list"
+   }
+  },
+  "JuntaPublication": {
+   "authors": {
+    "key": "author",
+    "conversion": "text-list"
+   },
+   "year": {
+    "key": "year_publication"
+   },
+   "format": {
+    "key": "pub_format"
+   },
+   "kind": {
+    "key": "type"
+   },
+   "organisms": {
+    "key": "organisms",
+    "conversion": "text-list"
+   },
+   "responsible": {
+    "key": "responsable",
+    "conversion": "text-list"
+   },
+   "topics": {
+    "key": "topics",
+    "conversion": "text-list"
+   },
+   "subjects": {
+    "key": "matter",
+    "conversion": "text-list"
+   },
+   "languages": {
+    "key": "language",
+    "conversion": "text-list"
+   },
+   "isbn": {
+    "key": "code",
+    "conversion": "text-list"
+   },
+   "updated": {
+    "key": "update_date"
+   },
+   "path": {
+    "key": "path/alias"
+   },
+   "documents": {
+    "key": "document_info"
+   }
+  },
+  "JuntaPublicationDocuments": {
+   "files": {
+    "key": "field_documentotdu"
+   }
+  },
+  "JuntaNewsItem": {
+   "topic": {
+    "key": "prominent_topic"
+   },
+   "published": {
+    "key": "publication_date"
+   },
+   "updated": {
+    "key": "update_date"
+   },
+   "url": {
+    "key": "path/uri"
+   },
+   "photoUrl": {
+    "key": "photo/uri"
+   },
+   "photoCaption": {
+    "key": "photo/name"
+   }
+  },
+  "JuntaStudyReport": {
+   "themes": {
+    "key": "theme",
+    "conversion": "text-list"
+   },
+   "organisms": {
+    "key": "organism",
+    "conversion": "text-list"
+   },
+   "changed": {
+    "key": "date_change"
+   },
+   "path": {
+    "key": "path/url"
+   }
+  },
+  "JuntaStatisticalActivity": {
+   "kinds": {
+    "key": "type",
+    "conversion": "text-list"
+   },
+   "themes": {
+    "key": "theme",
+    "conversion": "text-list"
+   },
+   "categories": {
+    "key": "category",
+    "conversion": "text-list"
+   },
+   "organisms": {
+    "key": "organism",
+    "conversion": "text-list"
+   },
+   "departments": {
+    "key": "counseling",
+    "conversion": "text-list"
+   },
+   "calendars": {
+    "key": "calendar"
+   },
+   "products": {
+    "key": "product"
+   },
+   "path": {
+    "key": "path/url"
+   }
+  },
+  "JuntaStatisticalActivityProduct": {
+   "id": {
+    "key": "product_nid"
+   },
+   "title": {
+    "key": "product_title"
+   },
+   "latestData": {
+    "key": "latest_data"
+   },
+   "updated": {
+    "key": "last_update_date"
+   },
+   "paths": {
+    "key": "path",
+    "conversion": "text-list"
+   }
+  },
+  "JuntaConservationWork": {
+   "data": {
+    "key": "principal_data"
+   }
+  },
+  "JuntaCulturalCentre": {
+   "id": {
+    "key": "identifier"
+   },
+   "kind": {
+    "key": "unit_type_name"
+   },
+   "kindCode": {
+    "key": "unit_type_acronym"
+   },
+   "kindId": {
+    "key": "unit_type_id"
+   },
+   "address": {
+    "key": "address_name"
+   },
+   "postcode": {
+    "key": "postcode",
+    "conversion": "text"
+   },
+   "locality": {
+    "key": "locality_name"
+   },
+   "municipality": {
+    "key": "municipality_name"
+   },
+   "municipalityIneCode": {
+    "key": "municipality_ine",
+    "conversion": "text"
+   },
+   "localityIneCode": {
+    "key": "locality_ine",
+    "conversion": "text"
+   },
+   "province": {
+    "key": "province_name"
+   },
+   "provinceCode": {
+    "key": "province_id"
+   },
+   "latitude": {
+    "key": "latitude",
+    "conversion": "decimal-comma"
+   },
+   "longitude": {
+    "key": "longitude",
+    "conversion": "decimal-comma"
+   },
+   "web": {
+    "key": "web_page"
+   },
+   "directoryOrder": {
+    "key": "directory_order"
+   },
+   "catalogueId": {
+    "key": "icmsId"
+   }
+  },
+  "JuntaOtherDisposition": {
+   "topics": {
+    "key": "topics",
+    "conversion": "text-list"
+   },
+   "published": {
+    "key": "publication_date"
+   },
+   "documents": {
+    "key": "doc_instruction"
+   }
+  },
+  "JuntaOrganism": {
+   "name": {
+    "key": "organisms"
+   },
+   "kinds": {
+    "key": "field_tipo_organismo",
+    "conversion": "text-list"
+   }
+  },
+  "JuntaDispositionDocument": {
+   "files": {
+    "key": "field_documento_p"
+   },
+   "url": {
+    "key": "detail_url"
+   }
+  },
+  "JuntaTitledDocument": {
+   "title": {
+    "key": "field_titulo"
+   },
+   "files": {
+    "key": "field_documento_p"
+   }
+  },
+  "JuntaAgreement": {
+   "organisms": {
+    "key": "organism",
+    "conversion": "text-list"
+   },
+   "signed": {
+    "key": "date_subscription"
+   },
+   "duration": {
+    "key": "expiration"
+   },
+   "economicObligation": {
+    "key": "economic_obligation"
+   },
+   "documents": {
+    "key": "document"
+   },
+   "updated": {
+    "key": "update_date"
+   }
+  },
+  "JuntaPlan": {
+   "approved": {
+    "key": "approval_date"
+   },
+   "periods": {
+    "key": "deadline_date"
+   },
+   "departments": {
+    "key": "counselings"
+   },
+   "organisms": {
+    "key": "domains",
+    "conversion": "text-list"
+   },
+   "topics": {
+    "key": "topics",
+    "conversion": "text-list"
+   },
+   "documents": {
+    "key": "plans_attached"
+   },
+   "moreInfo": {
+    "key": "plans_extra"
+   }
+  },
+  "JuntaPlanDepartment": {
+   "department": {
+    "key": "counseling"
+   }
+  },
+  "JuntaPlanDocument": {
+   "files": {
+    "key": "field_doc_documento"
+   }
+  },
+  "JuntaMediaList": {
+   "files": {
+    "key": "field_media_file"
+   }
+  },
+  "JuntaMediaFile": {
+   "name": {
+    "key": "filename"
+   },
+   "path": {
+    "key": "uri"
+   }
+  },
+  "JuntaCouncilMeeting": {
+   "agendas": {
+    "key": "order_day"
+   },
+   "matters": {
+    "key": "matter"
+   }
+  },
+  "JuntaCouncilAgenda": {
+   "name": {
+    "key": "order_day_name"
+   },
+   "paths": {
+    "key": "field_media_file",
+    "conversion": "text-list"
+   }
+  },
+  "JuntaCouncilMatter": {
+   "title": {
+    "key": "matter"
+   },
+   "subtitle": {
+    "key": "matter_subtitle"
+   },
+   "summary": {
+    "key": "matter_resume"
+   },
+   "date": {
+    "key": "matter_date"
+   }
+  },
+  "JuntaPublicDocument": {
+   "kind": {
+    "key": "document_type"
+   },
+   "organisms": {
+    "key": "organism",
+    "conversion": "text-list"
+   },
+   "themes": {
+    "key": "themes",
+    "conversion": "text-list"
+   },
+   "published": {
+    "key": "publication_date"
+   },
+   "commentPeriods": {
+    "key": "date"
+   },
+   "updated": {
+    "key": "update_date"
+   }
+  },
+  "JuntaCommentPeriod": {
+   "start": {
+    "key": "allegations_start_date"
+   },
+   "end": {
+    "key": "allegations_end_date"
+   },
+   "term": {
+    "key": "expiration"
+   }
+  },
+  "JuntaTrainingCourse": {
+   "sessions": {
+    "key": "course"
+   }
+  },
+  "JuntaCourseSession": {
+   "start": {
+    "key": "start_date"
+   },
+   "end": {
+    "key": "end_date"
+   },
+   "registrationDeadline": {
+    "key": "limit_date"
+   },
+   "hours": {
+    "key": "duration",
+    "conversion": "integer"
+   },
+   "registrationAddress": {
+    "key": "registration_address"
+   }
+  },
+  "JuntaJobOffer": {
+   "jobName": {
+    "key": "job_name"
+   },
+   "code": {
+    "key": "job_code"
+   },
+   "kind": {
+    "key": "announcement_type"
+   },
+   "status": {
+    "key": "announcement_status"
+   },
+   "contract": {
+    "key": "job_agreement"
+   },
+   "places": {
+    "key": "job_number_places",
+    "conversion": "integer"
+   },
+   "officialDegree": {
+    "key": "job_official_degree_requirements"
+   },
+   "specificDegree": {
+    "key": "job_specific_degree_requirements"
+   },
+   "otherRequirements": {
+    "key": "job_other_requirements"
+   },
+   "published": {
+    "key": "publish_date"
+   },
+   "deadline": {
+    "key": "deadline_application"
+   },
+   "organisms": {
+    "key": "organisms",
+    "conversion": "text-list"
+   },
+   "locations": {
+    "key": "job_location"
+   }
+  },
+  "JuntaJobLocation": {
+   "provinces": {
+    "key": "field_lugar_provincia",
+    "conversion": "text-list"
+   }
+  },
+  "JuntaOrganicUnit": {
+   "taxId": {
+    "key": "nif_cif"
+   },
+   "level": {
+    "key": "adm_level_name"
+   },
+   "levelId": {
+    "key": "adm_level_id",
+    "conversion": "integer"
+   },
+   "hierarchicalLevel": {
+    "key": "hierarchical_level",
+    "conversion": "integer"
+   },
+   "entityType": {
+    "key": "public_entity_type_name"
+   },
+   "entityTypeCode": {
+    "key": "public_entity_type"
+   },
+   "topUnitId": {
+    "key": "top_unit_id"
+   },
+   "topUnitName": {
+    "key": "top_unit_name"
+   },
+   "mainUnitId": {
+    "key": "main_unit_department_id"
+   },
+   "mainUnitName": {
+    "key": "main_organic_unit_name"
+   },
+   "publicLawEntity": {
+    "key": "public_law_entity_boolean",
+    "conversion": "yes-no"
+   },
+   "publicLawEntityId": {
+    "key": "public_law_entity_id"
+   },
+   "publicLawEntityName": {
+    "key": "public_law_entity_name"
+   },
+   "state": {
+    "key": "state_name"
+   },
+   "stateCode": {
+    "key": "state"
+   },
+   "released": {
+    "key": "release_date"
+   },
+   "approval": {
+    "key": "approval_date"
+   }
+  },
+  "JuntaProperty": {
+   "name": {
+    "key": "active_name"
+   },
+   "department": {
+    "key": "counseling"
+   },
+   "usage": {
+    "key": "current_usage"
+   },
+   "inventoryNumber": {
+    "key": "inventory_num"
+   },
+   "catalogueId": {
+    "key": "icmsId"
+   },
+   "modified": {
+    "key": "modified_date"
+   }
+  },
+  "JuntaHeritageCourse": {
+   "discipline": {
+    "key": "disciplinary"
+   },
+   "start": {
+    "key": "start_date"
+   },
+   "end": {
+    "key": "end_date"
+   },
+   "registrationStart": {
+    "key": "registration_start_date"
+   },
+   "registrationEnd": {
+    "key": "registration_end_date"
+   },
+   "hours": {
+    "key": "duration"
+   }
+  },
+  "JuntaRatingTable": {
+   "code": {
+    "key": "code_tv"
+   },
+   "administration": {
+    "key": "admon"
+   },
+   "series": {
+    "key": "documentary_series_denomination"
+   },
+   "periodStart": {
+    "key": "start_date_period_studied"
+   },
+   "periodEnd": {
+    "key": "end_date_period_studied"
+   },
+   "approvals": {
+    "key": "approval_order_date",
+    "conversion": "list"
+   },
+   "files": {
+    "key": "rating_file"
+   },
+   "gazette": {
+    "key": "excerpt_publication"
+   }
+  },
+  "JuntaRatingFile": {
+   "files": {
+    "key": "field_tabla_valoracion_fichero"
+   }
+  },
+  "JuntaGazetteExcerptList": {
+   "excerpts": {
+    "key": "field_petvb_titulo"
+   }
+  },
+  "JuntaGazetteExcerpt": {
+   "issue": {
+    "key": "excerpt_publication_tv_in_boja"
+   },
+   "url": {
+    "key": "excerpt_publication_uri"
+   }
+  },
+  "JuntaLocalEntity": {
+   "name": {
+    "key": "registrales/denominacion"
+   },
+   "kind": {
+    "key": "claseEntidad"
+   },
+   "typology": {
+    "key": "tipoEntidad"
+   },
+   "population": {
+    "key": "registrales/poblacion"
+   },
+   "boundaryKm": {
+    "key": "registrales/limiteKM",
+    "conversion": "decimal-comma"
+   },
+   "secretariat": {
+    "key": "registrales/secretaria"
+   },
+   "regime": {
+    "key": "registrales/regimen"
+   },
+   "gazetteIssue": {
+    "key": "registrales/numeroBoja"
+   },
+   "gazetteDate": {
+    "key": "registrales/fechaBoja"
+   },
+   "capital": {
+    "key": "registrales/capitalidad"
+   },
+   "powers": {
+    "key": "registrales/competencias"
+   },
+   "budget": {
+    "key": "registrales/presupuesto"
+   },
+   "municipalities": {
+    "key": "registrales/municipiosMancomunados/municipio",
+    "conversion": "list"
+   },
+   "consortia": {
+    "key": "registrales/consorcios/consorcio",
+    "conversion": "list"
+   },
+   "associations": {
+    "key": "registrales/mancomunidades/mancomunidad",
+    "conversion": "list"
+   },
+   "otherMemberships": {
+    "key": "registrales/entidadesOtras/entidad",
+    "conversion": "list"
+   },
+   "linkedBodies": {
+    "key": "registrales/entesVinculados/enteVinculado",
+    "conversion": "list"
+   },
+   "settlements": {
+    "key": "registrales/nucleosPoblacion/nucleos/nucleo",
+    "conversion": "text-list"
+   },
+   "decentralized": {
+    "key": "registrales/nucleosPoblacion/descentralizadas/nucleo",
+    "conversion": "list"
+   },
+   "neighbours": {
+    "key": "registrales/municipiosColindantes/municipio",
+    "conversion": "list"
+   },
+   "symbols": {
+    "key": "registrales/simbolos/simbolo",
+    "conversion": "list"
+   },
+   "governingGroups": {
+    "key": "registrales/formacionPolitica/gruposPoliticosGobierno/grupoPoliticoGobierno",
+    "conversion": "list"
+   },
+   "councilGroups": {
+    "key": "registrales/formacionPolitica/gruposPoliticos/grupoPolitAdic",
+    "conversion": "list"
+   },
+   "president": {
+    "key": "presidente"
+   },
+   "address": {
+    "key": "direccion"
+   },
+   "phone": {
+    "key": "telefono"
+   },
+   "web": {
+    "key": "direccionWeb"
+   }
+  },
+  "JuntaLocalCapital": {
+   "municipality": {
+    "key": "municipio"
+   },
+   "settlement": {
+    "key": "nucleo"
+   },
+   "province": {
+    "key": "provincia"
+   },
+   "gazetteIssue": {
+    "key": "numeroBoja"
+   },
+   "gazetteDate": {
+    "key": "fechaBoja"
+   }
+  },
+  "JuntaLocalPowers": {
+   "text": {
+    "key": "competencia"
+   },
+   "gazetteIssue": {
+    "key": "numeroBoja"
+   },
+   "gazetteDate": {
+    "key": "fechaBoja"
+   }
+  },
+  "JuntaLocalBudget": {
+   "year": {
+    "key": "ejercicio"
+   },
+   "income": {
+    "key": "ingresos"
+   },
+   "spending": {
+    "key": "gastos"
+   }
+  },
+  "JuntaLocalEntityRef": {
+   "code": {
+    "key": "codigo|codigoRAEL"
+   },
+   "name": {
+    "key": "denominacion"
+   }
+  },
+  "JuntaLocalMembership": {
+   "code": {
+    "key": "codigo"
+   },
+   "kind": {
+    "key": "tipo"
+   },
+   "name": {
+    "key": "denominacion"
+   }
+  },
+  "JuntaLocalLinkedBody": {
+   "name": {
+    "key": "denominacionNif"
+   },
+   "address": {
+    "key": "domicilio"
+   },
+   "kind": {
+    "key": "tipoentederecho"
+   },
+   "service": {
+    "key": "tipoSp"
+   }
+  },
+  "JuntaNeighbourMunicipality": {
+   "name": {
+    "key": "nombre"
+   },
+   "province": {
+    "key": "provincia"
+   }
+  },
+  "JuntaLocalSymbol": {
+   "kind": {
+    "key": "tipo"
+   },
+   "description": {
+    "key": "denominacion"
+   },
+   "imageUrl": {
+    "key": "enlace"
+   }
+  },
+  "JuntaGoverningGroup": {
+   "name": {
+    "key": "descripcion"
+   },
+   "elected": {
+    "key": "fechaEleccion"
+   }
+  },
+  "JuntaCouncilGroup": {
+   "name": {
+    "key": "descripcion"
+   },
+   "members": {
+    "key": "numMiembros",
+    "conversion": "integer"
+   },
+   "nonAttached": {
+    "key": "numMiembrosNoAdscritos",
+    "conversion": "integer"
+   }
+  },
+  "JuntaLocalPresident": {
+   "office": {
+    "key": "cargo"
+   },
+   "party": {
+    "key": "grupoPolitico"
+   },
+   "appointed": {
+    "key": "fechaNombramiento"
+   }
+  },
+  "JuntaLocalAddress": {
+   "streetType": {
+    "key": "tipoVia"
+   },
+   "street": {
+    "key": "nombreVia"
+   },
+   "number": {
+    "key": "numeroVia"
+   },
+   "postcode": {
+    "key": "codPostal"
+   },
+   "municipality": {
+    "key": "municipio"
+   }
+  },
+  "JuntaCommissionReport": {
+   "fileTitle": {
+    "key": "file_title"
+   },
+   "published": {
+    "key": "publication_date"
+   },
+   "state": {
+    "key": "moderation_state"
+   }
+  },
+  "JuntaAdvertisingExpense": {
+   "periods": {
+    "key": "period"
+   },
+   "contracts": {
+    "key": "contract"
+   },
+   "grants": {
+    "key": "grant"
+   },
+   "publication": {
+    "key": "official_publication"
+   }
+  },
+  "JuntaAdvertisingPeriod": {
+   "period": {
+    "key": "quarter"
+   }
+  },
+  "JuntaAdvertisingContract": {
+   "name": {
+    "key": "contract_name"
+   },
+   "contractor": {
+    "key": "contract_purchaser"
+   },
+   "amount": {
+    "key": "contract_amount",
+    "conversion": "number"
+   }
+  },
+  "JuntaAdvertisingGrant": {
+   "name": {
+    "key": "grant_name"
+   },
+   "amount": {
+    "key": "grant_amount",
+    "conversion": "number"
+   }
+  },
+  "JuntaDocumentLink": {
+   "title": {
+    "key": "official_publication_name|title"
+   },
+   "url": {
+    "key": "official_publication_url|uri"
+   }
+  },
+  "JuntaSyllabus": {
+   "id": {
+    "key": "nid"
+   },
+   "kind": {
+    "key": "tipo_temario"
+   },
+   "specialties": {
+    "key": "field_taxo_personal"
+   },
+   "files": {
+    "key": "file"
+   }
+  },
+  "JuntaStaffSpecialty": {
+   "groups": {
+    "key": "parent"
+   }
+  },
+  "JuntaStaffGroup": {
+   "name": {
+    "key": "body_group|body_group_category"
+   },
+   "staff": {
+    "key": "parent"
+   }
+  },
+  "JuntaStaffKind": {
+   "name": {
+    "key": "staff"
+   },
+   "scopes": {
+    "key": "parent",
+    "conversion": "text-list"
+   }
+  },
+  "JuntaSelectionProcess": {
+   "id": {
+    "key": "nid"
+   },
+   "offerYears": {
+    "key": "field_taxo_oep",
+    "conversion": "text-list"
+   },
+   "access": {
+    "key": "field_taxo_acceso"
+   },
+   "specialties": {
+    "key": "field_taxo_personal"
+   },
+   "statuses": {
+    "key": "field_taxo_estado"
+   },
+   "vacancies": {
+    "key": "n_vacancies_total",
+    "conversion": "integer"
+   },
+   "generalVacancies": {
+    "key": "n_vacancies_general",
+    "conversion": "integer"
+   },
+   "disabilityVacancies": {
+    "key": "n_vacancies_disability",
+    "conversion": "integer"
+   },
+   "intellectualDisabilityVacancies": {
+    "key": "n_vacancies_intellectual_disability",
+    "conversion": "integer"
+   },
+   "illnessVacancies": {
+    "key": "n_vacancies_illness",
+    "conversion": "integer"
+   },
+   "steps": {
+    "key": "monitoring"
+   },
+   "path": {
+    "key": "path/alias"
+   }
+  },
+  "JuntaProcessAccess": {
+   "parents": {
+    "key": "parent",
+    "conversion": "text-list"
+   }
+  },
+  "JuntaProcessStatus": {
+   "phases": {
+    "key": "parent",
+    "conversion": "text-list"
+   }
+  },
+  "JuntaProcessStep": {
+   "url": {
+    "key": "field_link_doc_url/uri"
+   }
+  },
+  "JuntaAssignment": {
+   "organisms": {
+    "key": "organism",
+    "conversion": "text-list"
+   },
+   "published": {
+    "key": "date_publication"
+   },
+   "duration": {
+    "key": "expiration"
+   },
+   "economicObligation": {
+    "key": "economic_obligation"
+   },
+   "documents": {
+    "key": "document"
+   },
+   "updated": {
+    "key": "update_date"
+   }
+  },
+  "JuntaAssignmentDocument": {
+   "title": {
+    "key": "field_documento_titulo"
+   },
+   "files": {
+    "key": "field_doc_documento"
+   }
+  },
+  "JuntaDelegation": {
+   "organisms": {
+    "key": "organism",
+    "conversion": "text-list"
+   },
+   "delegated": {
+    "key": "date_delegation"
+   },
+   "documents": {
+    "key": "document",
+    "conversion": "text-list"
+   },
+   "state": {
+    "key": "status"
+   },
+   "path": {
+    "key": "path/url"
+   },
+   "updated": {
+    "key": "update_date"
+   }
+  },
+  "JuntaTenderCourtDecision": {
+   "appealNumber": {
+    "key": "resource_number"
+   },
+   "resolutions": {
+    "key": "resolution"
+   },
+   "contractKinds": {
+    "key": "type_contract",
+    "conversion": "text-list"
+   },
+   "contestedActs": {
+    "key": "contested_act",
+    "conversion": "text-list"
+   },
+   "outcomes": {
+    "key": "resolution_type",
+    "conversion": "text-list"
+   },
+   "files": {
+    "key": "attached_file"
+   }
+  },
+  "JuntaTenderCourtResolution": {
+   "number": {
+    "key": "resolution_number"
+   },
+   "date": {
+    "key": "resolution_date"
+   }
+  },
+  "JuntaTenderCourtFile": {
+   "files": {
+    "key": "field_adjunto_fichero"
+   }
+  },
+  "JuntaJobPosition": {
+   "id": {
+    "key": "position_id"
+   },
+   "description": {
+    "key": "short_position_description"
+   },
+   "targetDepartment": {
+    "key": "target_deparment"
+   },
+   "accessType": {
+    "key": "position_access_type"
+   },
+   "functionalArea": {
+    "key": "functional_area_related_areas"
+   },
+   "professionalCategory": {
+    "key": "professional_category"
+   },
+   "positions": {
+    "key": "avaiable_positions"
+   },
+   "specificComplement": {
+    "key": "specific_position_complement",
+    "conversion": "decimal-comma"
+   },
+   "lowerCost": {
+    "key": "lower_cost_limit",
+    "conversion": "decimal-comma"
+   },
+   "upperCost": {
+    "key": "upper_cost_limit",
+    "conversion": "decimal-comma"
+   },
+   "administrationType": {
+    "key": "public_administration_type"
+   }
+  },
+  "JuntaOrganicStructureUnit": {
+   "department": {
+    "key": "division"
+   },
+   "dir3Code": {
+    "key": "cod_dir3"
+   },
+   "dir3Reference": {
+    "key": "ref_dir3"
+   },
+   "seats": {
+    "key": "directing_center"
+   },
+   "regulations": {
+    "key": "reference_regulation"
+   },
+   "subunits": {
+    "key": "units"
+   },
+   "state": {
+    "key": "status"
+   }
+  },
+  "JuntaUnitSeat": {
+   "postcode": {
+    "key": "zip_code"
+   }
+  },
+  "JuntaTransparencyUnit": {
+   "scopes": {
+    "key": "scope_action",
+    "conversion": "text-list"
+   },
+   "contacts": {
+    "key": "responsable"
+   }
+  },
+  "JuntaDataProcessingActivity": {
+   "organisms": {
+    "key": "organism",
+    "conversion": "text-list"
+   },
+   "controller": {
+    "key": "responsable"
+   },
+   "dataProtectionOfficer": {
+    "key": "delegate"
+   },
+   "purpose": {
+    "key": "finality"
+   },
+   "legalBasis": {
+    "key": "legal_basis"
+   },
+   "dataSubjects": {
+    "key": "interested"
+   },
+   "personalData": {
+    "key": "personal_information"
+   },
+   "recipients": {
+    "key": "data_sessions"
+   },
+   "internationalTransfers": {
+    "key": "international_transfers"
+   },
+   "storagePeriod": {
+    "key": "storage_period"
+   },
+   "securityMeasures": {
+    "key": "security_measures"
+   },
+   "procedures": {
+    "key": "associated_procedures"
+   },
+   "updated": {
+    "key": "update_date"
+   }
+  },
+  "JuntaAccessDenial": {
+   "date": {
+    "key": "resolution_date"
+   },
+   "reasons": {
+    "key": "reason_denial"
+   },
+   "documents": {
+    "key": "attached_file"
+   }
+  },
+  "JuntaDenialReason": {
+   "reason": {
+    "key": "reason_denial"
+   },
+   "outcomes": {
+    "key": "parent",
+    "conversion": "text-list"
+   }
+  },
+  "JuntaHolidayPage": {
+   "returned": {
+    "key": "hits"
+   },
+   "total": {
+    "key": "total_hits"
+   }
+  },
+  "JuntaMunicipalityPage": {
+   "returned": {
+    "key": "hits"
+   },
+   "total": {
+    "key": "total_hits"
+   }
+  },
+  "JuntaTourismEstablishmentPage": {
+   "returned": {
+    "key": "hits"
+   },
+   "total": {
+    "key": "total_hits"
+   }
+  },
+  "JuntaRegulationPage": {
+   "returned": {
+    "key": "hits"
+   },
+   "total": {
+    "key": "total_hits"
+   }
+  },
+  "JuntaMuseumPage": {
+   "returned": {
+    "key": "hits"
+   },
+   "total": {
+    "key": "total_hits"
+   }
+  },
+  "JuntaLibraryPage": {
+   "returned": {
+    "key": "hits"
+   },
+   "total": {
+    "key": "total_hits"
+   }
+  },
+  "JuntaEventPage": {
+   "returned": {
+    "key": "hits"
+   },
+   "total": {
+    "key": "total_hits"
+   }
+  },
+  "JuntaRegistrationOfficePage": {
+   "returned": {
+    "key": "hits"
+   },
+   "total": {
+    "key": "total_hits"
+   }
+  },
+  "JuntaGazetteDispositionPage": {
+   "returned": {
+    "key": "hits"
+   },
+   "total": {
+    "key": "total_hits"
+   }
+  },
+  "JuntaPublicConsultationPage": {
+   "returned": {
+    "key": "hits"
+   },
+   "total": {
+    "key": "total_hits"
+   }
+  },
+  "JuntaStatisticalProductPage": {
+   "returned": {
+    "key": "hits"
+   },
+   "total": {
+    "key": "total_hits"
+   }
+  },
+  "JuntaDraftRegulationPage": {
+   "returned": {
+    "key": "hits"
+   },
+   "total": {
+    "key": "total_hits"
+   }
+  },
+  "JuntaPublicationPage": {
+   "returned": {
+    "key": "hits"
+   },
+   "total": {
+    "key": "total_hits"
+   }
+  },
+  "JuntaNewsItemPage": {
+   "returned": {
+    "key": "hits"
+   },
+   "total": {
+    "key": "total_hits"
+   }
+  },
+  "JuntaStudyReportPage": {
+   "returned": {
+    "key": "hits"
+   },
+   "total": {
+    "key": "total_hits"
+   }
+  },
+  "JuntaStatisticalActivityPage": {
+   "returned": {
+    "key": "hits"
+   },
+   "total": {
+    "key": "total_hits"
+   }
+  },
+  "JuntaConservationWorkPage": {
+   "returned": {
+    "key": "hits"
+   },
+   "total": {
+    "key": "total_hits"
+   }
+  },
+  "JuntaCulturalCentrePage": {
+   "returned": {
+    "key": "hits"
+   },
+   "total": {
+    "key": "total_hits"
+   }
+  },
+  "JuntaOtherDispositionPage": {
+   "returned": {
+    "key": "hits"
+   },
+   "total": {
+    "key": "total_hits"
+   }
+  },
+  "JuntaAgreementPage": {
+   "returned": {
+    "key": "hits"
+   },
+   "total": {
+    "key": "total_hits"
+   }
+  },
+  "JuntaPlanPage": {
+   "returned": {
+    "key": "hits"
+   },
+   "total": {
+    "key": "total_hits"
+   }
+  },
+  "JuntaCouncilMeetingPage": {
+   "returned": {
+    "key": "hits"
+   },
+   "total": {
+    "key": "total_hits"
+   }
+  },
+  "JuntaPublicDocumentPage": {
+   "returned": {
+    "key": "hits"
+   },
+   "total": {
+    "key": "total_hits"
+   }
+  },
+  "JuntaTrainingCoursePage": {
+   "returned": {
+    "key": "hits"
+   },
+   "total": {
+    "key": "total_hits"
+   }
+  },
+  "JuntaJobOfferPage": {
+   "returned": {
+    "key": "hits"
+   },
+   "total": {
+    "key": "total_hits"
+   }
+  },
+  "JuntaOrganicUnitPage": {
+   "returned": {
+    "key": "hits"
+   },
+   "total": {
+    "key": "total_hits"
+   }
+  },
+  "JuntaPropertyPage": {
+   "returned": {
+    "key": "hits"
+   },
+   "total": {
+    "key": "total_hits"
+   }
+  },
+  "JuntaHeritageCoursePage": {
+   "returned": {
+    "key": "hits"
+   },
+   "total": {
+    "key": "total_hits"
+   }
+  },
+  "JuntaRatingTablePage": {
+   "returned": {
+    "key": "hits"
+   },
+   "total": {
+    "key": "total_hits"
+   }
+  },
+  "JuntaLocalEntityPage": {
+   "returned": {
+    "key": "hits"
+   },
+   "total": {
+    "key": "total_hits"
+   }
+  },
+  "JuntaCommissionReportPage": {
+   "returned": {
+    "key": "hits"
+   },
+   "total": {
+    "key": "total_hits"
+   }
+  },
+  "JuntaAdvertisingExpensePage": {
+   "returned": {
+    "key": "hits"
+   },
+   "total": {
+    "key": "total_hits"
+   }
+  },
+  "JuntaSyllabusPage": {
+   "returned": {
+    "key": "hits"
+   },
+   "total": {
+    "key": "total_hits"
+   }
+  },
+  "JuntaSelectionProcessPage": {
+   "returned": {
+    "key": "hits"
+   },
+   "total": {
+    "key": "total_hits"
+   }
+  },
+  "JuntaAssignmentPage": {
+   "returned": {
+    "key": "hits"
+   },
+   "total": {
+    "key": "total_hits"
+   }
+  },
+  "JuntaDelegationPage": {
+   "returned": {
+    "key": "hits"
+   },
+   "total": {
+    "key": "total_hits"
+   }
+  },
+  "JuntaTenderCourtDecisionPage": {
+   "returned": {
+    "key": "hits"
+   },
+   "total": {
+    "key": "total_hits"
+   }
+  },
+  "JuntaJobPositionPage": {
+   "returned": {
+    "key": "hits"
+   },
+   "total": {
+    "key": "total_hits"
+   }
+  },
+  "JuntaOrganicStructureUnitPage": {
+   "returned": {
+    "key": "hits"
+   },
+   "total": {
+    "key": "total_hits"
+   }
+  },
+  "JuntaTransparencyUnitPage": {
+   "returned": {
+    "key": "hits"
+   },
+   "total": {
+    "key": "total_hits"
+   }
+  },
+  "JuntaDataProcessingActivityPage": {
+   "returned": {
+    "key": "hits"
+   },
+   "total": {
+    "key": "total_hits"
+   }
+  },
+  "JuntaAccessDenialPage": {
+   "returned": {
+    "key": "hits"
+   },
+   "total": {
+    "key": "total_hits"
+   }
+  }
+ }
+}

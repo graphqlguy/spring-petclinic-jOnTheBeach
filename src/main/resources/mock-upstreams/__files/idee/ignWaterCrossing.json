@@ -1,0 +1,101 @@
+{
+    "type":"Feature",
+    "properties":{
+        "tipo_cruced":"Conducto",
+        "nilreason_varios":null,
+        "nombre":null,
+        "id_nodo":null,
+        "nil_nombre":true,
+        "fuente":"5053",
+        "id_edif":null,
+        "nil_varios":null,
+        "fuented":"Direcci\u00f3n General del Agua",
+        "condicion":null,
+        "nativeness":null,
+        "id_demarc":"ES050",
+        "condiciond":null,
+        "script":null,
+        "id_demarcd":"Guadalquivir",
+        "resolucion":5,
+        "fecha_alta":"2019-02-27",
+        "hydroid_localid":"ES050HYCRSL0000000014908",
+        "tipo_cruce":"http://inspire.ec.europa.eu/codelist/CrossingTypeValue/culvert",
+        "nilreason_nombre":"other:unpopulated"
+    },
+    "id":"ES050HYCRSL0000001421929",
+    "geometry":{
+        "type":"LineString",
+        "coordinates":[
+            [
+                -5.560804247202605,
+                37.110172165116,
+                119.3
+            ],
+            [
+                -5.560771743986905,
+                37.110121785656894,
+                119.254860373383
+            ],
+            [
+                -5.560771480059085,
+                37.11012137657269,
+                119.254493836975
+            ],
+            [
+                -5.560732241315434,
+                37.110060557046694,
+                119.2
+            ]
+        ]
+    },
+    "prev":"ES050HYCRSL0000001421928",
+    "next":"ES050HYCRSL0000001421930",
+    "links":[
+        {
+            "type":"application/json",
+            "rel":"root",
+            "title":"The landing page of this server as JSON",
+            "href":"https://api-features.idee.es?f=json"
+        },
+        {
+            "type":"text/html",
+            "rel":"root",
+            "title":"The landing page of this server as HTML",
+            "href":"https://api-features.idee.es?f=html"
+        },
+        {
+            "rel":"self",
+            "type":"application/geo+json",
+            "title":"This document as JSON",
+            "href":"https://api-features.idee.es/collections/crossing/items/ES050HYCRSL0000001421929?f=json"
+        },
+        {
+            "rel":"alternate",
+            "type":"application/ld+json",
+            "title":"This document as RDF (JSON-LD)",
+            "href":"https://api-features.idee.es/collections/crossing/items/ES050HYCRSL0000001421929?f=jsonld"
+        },
+        {
+            "rel":"alternate",
+            "type":"text/html",
+            "title":"This document as HTML",
+            "href":"https://api-features.idee.es/collections/crossing/items/ES050HYCRSL0000001421929?f=html"
+        },
+        {
+            "rel":"collection",
+            "type":"application/json",
+            "title":"HY-P Cruce",
+            "href":"https://api-features.idee.es/collections/crossing"
+        },
+        {
+            "rel":"prev",
+            "type":"application/json",
+            "href":"https://api-features.idee.es/collections/crossing/items/ES050HYCRSL0000001421928?f=json"
+        },
+        {
+            "rel":"next",
+            "type":"application/json",
+            "href":"https://api-features.idee.es/collections/crossing/items/ES050HYCRSL0000001421930?f=json"
+        }
+    ]
+}

@@ -1,0 +1,1071 @@
+{
+ "mappings": [
+  {
+   "name": "ignAdministrativeBoundaries: {\"bbox\": \"-4.50,36.65,-4.35,36.75\", \"size\": 3}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ign/collections/administrativeboundary/items",
+    "queryParameters": {
+     "bbox": {
+      "equalTo": "-4.50,36.65,-4.35,36.75"
+     },
+     "skipGeometry": {
+      "equalTo": "true"
+     },
+     "f": {
+      "equalTo": "json"
+     },
+     "offset": {
+      "equalTo": "0"
+     },
+     "limit": {
+      "equalTo": "3"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ign/ignAdministrativeBoundaries.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://api-features.ign.es/collections/administrativeboundary/items?bbox=-4.50%2C36.65%2C-4.35%2C36.75&skipGeometry=true&f=json&offset=0&limit=3 on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignAdministrativeBoundaries: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ign/collections/administrativeboundary/items"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ign/ignAdministrativeBoundaries.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of ignAdministrativeBoundaries with the first recording, from https://api-features.ign.es/collections/administrativeboundary/items?bbox=-4.50%2C36.65%2C-4.35%2C36.75&skipGeometry=true&f=json&offset=0&limit=3 on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignAdministrativeBoundary: {\"id\": \"5659746\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ign/collections/administrativeboundary/items/5659746",
+    "queryParameters": {
+     "skipGeometry": {
+      "equalTo": "true"
+     },
+     "f": {
+      "equalTo": "json"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ign/ignAdministrativeBoundary.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://api-features.ign.es/collections/administrativeboundary/items/5659746?skipGeometry=true&f=json on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignAdministrativeBoundary: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ign/collections/administrativeboundary/items/[^/]+"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ign/ignAdministrativeBoundary.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of ignAdministrativeBoundary with the first recording, from https://api-features.ign.es/collections/administrativeboundary/items/5659746?skipGeometry=true&f=json on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignAdministrativeUnits: {\"bbox\": \"-4.50,36.65,-4.35,36.75\", \"size\": 3}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ign/collections/administrativeunit/items",
+    "queryParameters": {
+     "bbox": {
+      "equalTo": "-4.50,36.65,-4.35,36.75"
+     },
+     "skipGeometry": {
+      "equalTo": "true"
+     },
+     "f": {
+      "equalTo": "json"
+     },
+     "offset": {
+      "equalTo": "0"
+     },
+     "limit": {
+      "equalTo": "3"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ign/ignAdministrativeUnits.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://api-features.ign.es/collections/administrativeunit/items?bbox=-4.50%2C36.65%2C-4.35%2C36.75&skipGeometry=true&f=json&offset=0&limit=3 on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignAdministrativeUnits: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ign/collections/administrativeunit/items"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ign/ignAdministrativeUnits.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of ignAdministrativeUnits with the first recording, from https://api-features.ign.es/collections/administrativeunit/items?bbox=-4.50%2C36.65%2C-4.35%2C36.75&skipGeometry=true&f=json&offset=0&limit=3 on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignAdministrativeUnit: {\"id\": \"1166881\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ign/collections/administrativeunit/items/1166881",
+    "queryParameters": {
+     "skipGeometry": {
+      "equalTo": "true"
+     },
+     "f": {
+      "equalTo": "json"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ign/ignAdministrativeUnit.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://api-features.ign.es/collections/administrativeunit/items/1166881?skipGeometry=true&f=json on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignAdministrativeUnit: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ign/collections/administrativeunit/items/[^/]+"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ign/ignAdministrativeUnit.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of ignAdministrativeUnit with the first recording, from https://api-features.ign.es/collections/administrativeunit/items/1166881?skipGeometry=true&f=json on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignNamedPlaces: {\"bbox\": \"-4.50,36.65,-4.35,36.75\", \"size\": 3}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ign/collections/namedplace/items",
+    "queryParameters": {
+     "bbox": {
+      "equalTo": "-4.50,36.65,-4.35,36.75"
+     },
+     "skipGeometry": {
+      "equalTo": "true"
+     },
+     "f": {
+      "equalTo": "json"
+     },
+     "offset": {
+      "equalTo": "0"
+     },
+     "limit": {
+      "equalTo": "3"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ign/ignNamedPlaces.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://api-features.ign.es/collections/namedplace/items?bbox=-4.50%2C36.65%2C-4.35%2C36.75&skipGeometry=true&f=json&offset=0&limit=3 on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignNamedPlaces: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ign/collections/namedplace/items"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ign/ignNamedPlaces.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of ignNamedPlaces with the first recording, from https://api-features.ign.es/collections/namedplace/items?bbox=-4.50%2C36.65%2C-4.35%2C36.75&skipGeometry=true&f=json&offset=0&limit=3 on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignNamedPlace: {\"id\": \"2429954\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ign/collections/namedplace/items/2429954",
+    "queryParameters": {
+     "skipGeometry": {
+      "equalTo": "true"
+     },
+     "f": {
+      "equalTo": "json"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ign/ignNamedPlace.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://api-features.ign.es/collections/namedplace/items/2429954?skipGeometry=true&f=json on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignNamedPlace: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ign/collections/namedplace/items/[^/]+"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ign/ignNamedPlace.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of ignNamedPlace with the first recording, from https://api-features.ign.es/collections/namedplace/items/2429954?skipGeometry=true&f=json on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignPopulationCentres: {\"bbox\": \"-4.50,36.65,-4.35,36.75\", \"size\": 3}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ign/collections/nuc/items",
+    "queryParameters": {
+     "bbox": {
+      "equalTo": "-4.50,36.65,-4.35,36.75"
+     },
+     "skipGeometry": {
+      "equalTo": "true"
+     },
+     "f": {
+      "equalTo": "json"
+     },
+     "offset": {
+      "equalTo": "0"
+     },
+     "limit": {
+      "equalTo": "3"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ign/ignPopulationCentres.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://api-features.ign.es/collections/nuc/items?bbox=-4.50%2C36.65%2C-4.35%2C36.75&skipGeometry=true&f=json&offset=0&limit=3 on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignPopulationCentres: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ign/collections/nuc/items"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ign/ignPopulationCentres.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of ignPopulationCentres with the first recording, from https://api-features.ign.es/collections/nuc/items?bbox=-4.50%2C36.65%2C-4.35%2C36.75&skipGeometry=true&f=json&offset=0&limit=3 on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignPopulationCentre: {\"id\": \"100019758\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ign/collections/nuc/items/100019758",
+    "queryParameters": {
+     "skipGeometry": {
+      "equalTo": "true"
+     },
+     "f": {
+      "equalTo": "json"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ign/ignPopulationCentre.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://api-features.ign.es/collections/nuc/items/100019758?skipGeometry=true&f=json on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignPopulationCentre: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ign/collections/nuc/items/[^/]+"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ign/ignPopulationCentre.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of ignPopulationCentre with the first recording, from https://api-features.ign.es/collections/nuc/items/100019758?skipGeometry=true&f=json on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignOtherSettlements: {\"bbox\": \"-4.50,36.65,-4.35,36.75\", \"size\": 3}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ign/collections/opob/items",
+    "queryParameters": {
+     "bbox": {
+      "equalTo": "-4.50,36.65,-4.35,36.75"
+     },
+     "skipGeometry": {
+      "equalTo": "true"
+     },
+     "f": {
+      "equalTo": "json"
+     },
+     "offset": {
+      "equalTo": "0"
+     },
+     "limit": {
+      "equalTo": "3"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ign/ignOtherSettlements.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://api-features.ign.es/collections/opob/items?bbox=-4.50%2C36.65%2C-4.35%2C36.75&skipGeometry=true&f=json&offset=0&limit=3 on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignOtherSettlements: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ign/collections/opob/items"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ign/ignOtherSettlements.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of ignOtherSettlements with the first recording, from https://api-features.ign.es/collections/opob/items?bbox=-4.50%2C36.65%2C-4.35%2C36.75&skipGeometry=true&f=json&offset=0&limit=3 on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignOtherSettlement: {\"id\": \"100004795\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ign/collections/opob/items/100004795",
+    "queryParameters": {
+     "skipGeometry": {
+      "equalTo": "true"
+     },
+     "f": {
+      "equalTo": "json"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ign/ignOtherSettlement.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://api-features.ign.es/collections/opob/items/100004795?skipGeometry=true&f=json on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignOtherSettlement: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ign/collections/opob/items/[^/]+"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ign/ignOtherSettlement.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of ignOtherSettlement with the first recording, from https://api-features.ign.es/collections/opob/items/100004795?skipGeometry=true&f=json on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignUnnamedSettlements: {\"bbox\": \"-5.6,36.2,-3.7,37.4\", \"size\": 3}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ign/collections/sin_toponimo/items",
+    "queryParameters": {
+     "bbox": {
+      "equalTo": "-5.6,36.2,-3.7,37.4"
+     },
+     "skipGeometry": {
+      "equalTo": "true"
+     },
+     "f": {
+      "equalTo": "json"
+     },
+     "offset": {
+      "equalTo": "0"
+     },
+     "limit": {
+      "equalTo": "3"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ign/ignUnnamedSettlements.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://api-features.ign.es/collections/sin_toponimo/items?bbox=-5.6%2C36.2%2C-3.7%2C37.4&skipGeometry=true&f=json&offset=0&limit=3 on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignUnnamedSettlements: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ign/collections/sin_toponimo/items"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ign/ignUnnamedSettlements.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of ignUnnamedSettlements with the first recording, from https://api-features.ign.es/collections/sin_toponimo/items?bbox=-5.6%2C36.2%2C-3.7%2C37.4&skipGeometry=true&f=json&offset=0&limit=3 on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignUnnamedSettlement: {\"id\": \"27\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ign/collections/sin_toponimo/items/27",
+    "queryParameters": {
+     "skipGeometry": {
+      "equalTo": "true"
+     },
+     "f": {
+      "equalTo": "json"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ign/ignUnnamedSettlement.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://api-features.ign.es/collections/sin_toponimo/items/27?skipGeometry=true&f=json on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignUnnamedSettlement: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ign/collections/sin_toponimo/items/[^/]+"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ign/ignUnnamedSettlement.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of ignUnnamedSettlement with the first recording, from https://api-features.ign.es/collections/sin_toponimo/items/27?skipGeometry=true&f=json on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignGnssStations: {\"bbox\": \"-5.6,36.2,-3.7,37.4\", \"size\": 3}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ign/collections/red_ergnss/items",
+    "queryParameters": {
+     "bbox": {
+      "equalTo": "-5.6,36.2,-3.7,37.4"
+     },
+     "skipGeometry": {
+      "equalTo": "true"
+     },
+     "f": {
+      "equalTo": "json"
+     },
+     "offset": {
+      "equalTo": "0"
+     },
+     "limit": {
+      "equalTo": "3"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ign/ignGnssStations.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://api-features.ign.es/collections/red_ergnss/items?bbox=-5.6%2C36.2%2C-3.7%2C37.4&skipGeometry=true&f=json&offset=0&limit=3 on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignGnssStations: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ign/collections/red_ergnss/items"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ign/ignGnssStations.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of ignGnssStations with the first recording, from https://api-features.ign.es/collections/red_ergnss/items?bbox=-5.6%2C36.2%2C-3.7%2C37.4&skipGeometry=true&f=json&offset=0&limit=3 on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignGnssStation: {\"id\": \"MALA\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ign/collections/red_ergnss/items/MALA",
+    "queryParameters": {
+     "skipGeometry": {
+      "equalTo": "true"
+     },
+     "f": {
+      "equalTo": "json"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ign/ignGnssStation.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://api-features.ign.es/collections/red_ergnss/items/MALA?skipGeometry=true&f=json on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignGnssStation: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ign/collections/red_ergnss/items/[^/]+"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ign/ignGnssStation.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of ignGnssStation with the first recording, from https://api-features.ign.es/collections/red_ergnss/items/MALA?skipGeometry=true&f=json on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignLevellingBenchmarks: {\"bbox\": \"-4.50,36.65,-4.35,36.75\", \"size\": 3}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ign/collections/red_nap/items",
+    "queryParameters": {
+     "bbox": {
+      "equalTo": "-4.50,36.65,-4.35,36.75"
+     },
+     "skipGeometry": {
+      "equalTo": "true"
+     },
+     "f": {
+      "equalTo": "json"
+     },
+     "offset": {
+      "equalTo": "0"
+     },
+     "limit": {
+      "equalTo": "3"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ign/ignLevellingBenchmarks.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://api-features.ign.es/collections/red_nap/items?bbox=-4.50%2C36.65%2C-4.35%2C36.75&skipGeometry=true&f=json&offset=0&limit=3 on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignLevellingBenchmarks: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ign/collections/red_nap/items"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ign/ignLevellingBenchmarks.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of ignLevellingBenchmarks with the first recording, from https://api-features.ign.es/collections/red_nap/items?bbox=-4.50%2C36.65%2C-4.35%2C36.75&skipGeometry=true&f=json&offset=0&limit=3 on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignLevellingBenchmark: {\"id\": \"135.0\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ign/collections/red_nap/items/135.0",
+    "queryParameters": {
+     "skipGeometry": {
+      "equalTo": "true"
+     },
+     "f": {
+      "equalTo": "json"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ign/ignLevellingBenchmark.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://api-features.ign.es/collections/red_nap/items/135.0?skipGeometry=true&f=json on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignLevellingBenchmark: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ign/collections/red_nap/items/[^/]+"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ign/ignLevellingBenchmark.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of ignLevellingBenchmark with the first recording, from https://api-features.ign.es/collections/red_nap/items/135.0?skipGeometry=true&f=json on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignRegenteGeodeticPoints: {\"bbox\": \"-5.6,36.2,-3.7,37.4\", \"size\": 3}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ign/collections/red_regente/items",
+    "queryParameters": {
+     "bbox": {
+      "equalTo": "-5.6,36.2,-3.7,37.4"
+     },
+     "skipGeometry": {
+      "equalTo": "true"
+     },
+     "f": {
+      "equalTo": "json"
+     },
+     "offset": {
+      "equalTo": "0"
+     },
+     "limit": {
+      "equalTo": "3"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ign/ignRegenteGeodeticPoints.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://api-features.ign.es/collections/red_regente/items?bbox=-5.6%2C36.2%2C-3.7%2C37.4&skipGeometry=true&f=json&offset=0&limit=3 on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignRegenteGeodeticPoints: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ign/collections/red_regente/items"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ign/ignRegenteGeodeticPoints.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of ignRegenteGeodeticPoints with the first recording, from https://api-features.ign.es/collections/red_regente/items?bbox=-5.6%2C36.2%2C-3.7%2C37.4&skipGeometry=true&f=json&offset=0&limit=3 on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignRegenteGeodeticPoint: {\"id\": \"98933\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ign/collections/red_regente/items/98933",
+    "queryParameters": {
+     "skipGeometry": {
+      "equalTo": "true"
+     },
+     "f": {
+      "equalTo": "json"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ign/ignRegenteGeodeticPoint.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://api-features.ign.es/collections/red_regente/items/98933?skipGeometry=true&f=json on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignRegenteGeodeticPoint: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ign/collections/red_regente/items/[^/]+"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ign/ignRegenteGeodeticPoint.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of ignRegenteGeodeticPoint with the first recording, from https://api-features.ign.es/collections/red_regente/items/98933?skipGeometry=true&f=json on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignLowerOrderGeodeticPoints: {\"bbox\": \"-4.50,36.65,-4.35,36.75\", \"size\": 3}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ign/collections/red_roi/items",
+    "queryParameters": {
+     "bbox": {
+      "equalTo": "-4.50,36.65,-4.35,36.75"
+     },
+     "skipGeometry": {
+      "equalTo": "true"
+     },
+     "f": {
+      "equalTo": "json"
+     },
+     "offset": {
+      "equalTo": "0"
+     },
+     "limit": {
+      "equalTo": "3"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ign/ignLowerOrderGeodeticPoints.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://api-features.ign.es/collections/red_roi/items?bbox=-4.50%2C36.65%2C-4.35%2C36.75&skipGeometry=true&f=json&offset=0&limit=3 on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignLowerOrderGeodeticPoints: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ign/collections/red_roi/items"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ign/ignLowerOrderGeodeticPoints.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of ignLowerOrderGeodeticPoints with the first recording, from https://api-features.ign.es/collections/red_roi/items?bbox=-4.50%2C36.65%2C-4.35%2C36.75&skipGeometry=true&f=json&offset=0&limit=3 on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignLowerOrderGeodeticPoint: {\"id\": \"105323\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ign/collections/red_roi/items/105323",
+    "queryParameters": {
+     "skipGeometry": {
+      "equalTo": "true"
+     },
+     "f": {
+      "equalTo": "json"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ign/ignLowerOrderGeodeticPoint.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://api-features.ign.es/collections/red_roi/items/105323?skipGeometry=true&f=json on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignLowerOrderGeodeticPoint: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ign/collections/red_roi/items/[^/]+"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ign/ignLowerOrderGeodeticPoint.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of ignLowerOrderGeodeticPoint with the first recording, from https://api-features.ign.es/collections/red_roi/items/105323?skipGeometry=true&f=json on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignTideGauges: {\"bbox\": \"-10.0,35.0,5.0,44.0\", \"size\": 3}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ign/collections/red_mareografos/items",
+    "queryParameters": {
+     "bbox": {
+      "equalTo": "-10.0,35.0,5.0,44.0"
+     },
+     "skipGeometry": {
+      "equalTo": "true"
+     },
+     "f": {
+      "equalTo": "json"
+     },
+     "offset": {
+      "equalTo": "0"
+     },
+     "limit": {
+      "equalTo": "3"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ign/ignTideGauges.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://api-features.ign.es/collections/red_mareografos/items?bbox=-10.0%2C35.0%2C5.0%2C44.0&skipGeometry=true&f=json&offset=0&limit=3 on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignTideGauges: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ign/collections/red_mareografos/items"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ign/ignTideGauges.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of ignTideGauges with the first recording, from https://api-features.ign.es/collections/red_mareografos/items?bbox=-10.0%2C35.0%2C5.0%2C44.0&skipGeometry=true&f=json&offset=0&limit=3 on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignTideGauge: {\"id\": \"ACOR1\"}",
+   "priority": 1,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ign/collections/red_mareografos/items/ACOR1",
+    "queryParameters": {
+     "skipGeometry": {
+      "equalTo": "true"
+     },
+     "f": {
+      "equalTo": "json"
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ign/ignTideGauge.json"
+   },
+   "metadata": {
+    "description": "Recorded from https://api-features.ign.es/collections/red_mareografos/items/ACOR1?skipGeometry=true&f=json on 2026-10-23."
+   }
+  },
+  {
+   "name": "ignTideGauge: any other arguments",
+   "priority": 5,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ign/collections/red_mareografos/items/[^/]+"
+   },
+   "response": {
+    "status": 200,
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "bodyFileName": "ign/ignTideGauge.json"
+   },
+   "metadata": {
+    "description": "Answers every other call of ignTideGauge with the first recording, from https://api-features.ign.es/collections/red_mareografos/items/ACOR1?skipGeometry=true&f=json on 2026-10-23."
+   }
+  }
+ ]
+}

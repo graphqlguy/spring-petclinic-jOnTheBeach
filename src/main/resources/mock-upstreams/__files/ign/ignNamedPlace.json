@@ -1,0 +1,69 @@
+{
+    "type":"Feature",
+    "properties":{
+        "tiponombre":"identificador_geografico",
+        "etiqueta":"Guadalmar",
+        "tipo":"Barrio",
+        "fecha":"2023-07-06",
+        "codigo_ngbe":"2.1.8",
+        "fuente":"MITMA.IGN.BTN25"
+    },
+    "id":"2429954",
+    "geometry":{
+        "type":"Point",
+        "coordinates":[
+            -4.46350100699993,
+            36.668090927
+        ]
+    },
+    "prev":"2429952",
+    "next":"2429955",
+    "links":[
+        {
+            "type":"application/json",
+            "rel":"root",
+            "title":"The landing page of this server as JSON",
+            "href":"https://api-features.ign.es?f=json"
+        },
+        {
+            "type":"text/html",
+            "rel":"root",
+            "title":"The landing page of this server as HTML",
+            "href":"https://api-features.ign.es?f=html"
+        },
+        {
+            "rel":"self",
+            "type":"application/geo+json",
+            "title":"This document as JSON",
+            "href":"https://api-features.ign.es/collections/namedplace/items/2429954?f=json"
+        },
+        {
+            "rel":"alternate",
+            "type":"application/ld+json",
+            "title":"This document as RDF (JSON-LD)",
+            "href":"https://api-features.ign.es/collections/namedplace/items/2429954?f=jsonld"
+        },
+        {
+            "rel":"alternate",
+            "type":"text/html",
+            "title":"This document as HTML",
+            "href":"https://api-features.ign.es/collections/namedplace/items/2429954?f=html"
+        },
+        {
+            "rel":"collection",
+            "type":"application/json",
+            "title":"GN Lugar nombrado",
+            "href":"https://api-features.ign.es/collections/namedplace"
+        },
+        {
+            "rel":"prev",
+            "type":"application/json",
+            "href":"https://api-features.ign.es/collections/namedplace/items/2429952?f=json"
+        },
+        {
+            "rel":"next",
+            "type":"application/json",
+            "href":"https://api-features.ign.es/collections/namedplace/items/2429955?f=json"
+        }
+    ]
+}

@@ -1,0 +1,857 @@
+{
+ "operations": [
+  {
+   "field": "cimaMedicines",
+   "path": "/medicamentos",
+   "arguments": [
+    {
+     "name": "name",
+     "parameter": "nombre",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "activeIngredient",
+     "parameter": "practiv1",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "atcCode",
+     "parameter": "atc",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "laboratory",
+     "parameter": "laboratorio",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "nationalCode",
+     "parameter": "cn",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "marketed",
+     "parameter": "comerc",
+     "in": "query",
+     "list": false,
+     "values": {
+      "true": "1",
+      "false": "0"
+     }
+    },
+    {
+     "name": "prescription",
+     "parameter": "receta",
+     "in": "query",
+     "list": false,
+     "values": {
+      "true": "1",
+      "false": "0"
+     }
+    },
+    {
+     "name": "orphan",
+     "parameter": "huerfano",
+     "in": "query",
+     "list": false,
+     "values": {
+      "true": "1",
+      "false": "0"
+     }
+    },
+    {
+     "name": "biosimilar",
+     "parameter": "biosimilar",
+     "in": "query",
+     "list": false,
+     "values": {
+      "true": "1",
+      "false": "0"
+     }
+    },
+    {
+     "name": "additionalMonitoring",
+     "parameter": "triangulo",
+     "in": "query",
+     "list": false,
+     "values": {
+      "true": "1",
+      "false": "0"
+     }
+    }
+   ],
+   "paging": {
+    "style": "page",
+    "start": "pagina",
+    "size": null
+   }
+  },
+  {
+   "field": "cimaMedicine",
+   "path": "/medicamento",
+   "arguments": [
+    {
+     "name": "registrationNumber",
+     "parameter": "nregistro",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "nationalCode",
+     "parameter": "cn",
+     "in": "query",
+     "list": false
+    }
+   ]
+  },
+  {
+   "field": "cimaPresentations",
+   "path": "/presentaciones",
+   "arguments": [
+    {
+     "name": "registrationNumber",
+     "parameter": "nregistro",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "nationalCode",
+     "parameter": "cn",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "marketed",
+     "parameter": "comerc",
+     "in": "query",
+     "list": false,
+     "values": {
+      "true": "1",
+      "false": "0"
+     }
+    }
+   ],
+   "paging": {
+    "style": "page",
+    "start": "pagina",
+    "size": null
+   }
+  },
+  {
+   "field": "cimaPresentation",
+   "path": "/presentacion/{cn}",
+   "arguments": [
+    {
+     "name": "nationalCode",
+     "parameter": "cn",
+     "in": "path",
+     "list": false
+    }
+   ]
+  },
+  {
+   "field": "cimaClinicalDrugs",
+   "path": "/vmpp",
+   "arguments": [
+    {
+     "name": "activeIngredient",
+     "parameter": "practiv1",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "name",
+     "parameter": "nombre",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "atcCode",
+     "parameter": "atc",
+     "in": "query",
+     "list": false
+    }
+   ],
+   "paging": {
+    "style": "page",
+    "start": "pagina",
+    "size": null
+   }
+  },
+  {
+   "field": "cimaSupplyProblems",
+   "path": "/psuministro",
+   "arguments": [],
+   "paging": {
+    "style": "page",
+    "start": "pagina",
+    "size": null
+   }
+  },
+  {
+   "field": "cimaSupplyProblemsForPack",
+   "path": "/psuministro/{cn}",
+   "arguments": [
+    {
+     "name": "nationalCode",
+     "parameter": "cn",
+     "in": "path",
+     "list": false
+    }
+   ]
+  },
+  {
+   "field": "cimaRegisterChanges",
+   "path": "/registroCambios",
+   "arguments": [
+    {
+     "name": "since",
+     "parameter": "fecha",
+     "in": "query",
+     "list": false,
+     "dateFormat": "dd/MM/yyyy"
+    },
+    {
+     "name": "registrationNumber",
+     "parameter": "nregistro",
+     "in": "query",
+     "list": false
+    }
+   ],
+   "paging": {
+    "style": "page",
+    "start": "pagina",
+    "size": null
+   }
+  },
+  {
+   "field": "cimaSafetyNotes",
+   "path": "/notas",
+   "arguments": [
+    {
+     "name": "registrationNumber",
+     "parameter": "nregistro",
+     "in": "query",
+     "list": false
+    }
+   ]
+  },
+  {
+   "field": "cimaInformationMaterials",
+   "path": "/materiales",
+   "arguments": [
+    {
+     "name": "registrationNumber",
+     "parameter": "nregistro",
+     "in": "query",
+     "list": false
+    }
+   ]
+  },
+  {
+   "field": "cimaDocumentSections",
+   "path": "/docSegmentado/secciones/{tipoDoc}",
+   "arguments": [
+    {
+     "name": "documentType",
+     "parameter": "tipoDoc",
+     "in": "path",
+     "list": false,
+     "values": {
+      "SUMMARY_OF_PRODUCT_CHARACTERISTICS": "1",
+      "PACKAGE_LEAFLET": "2"
+     }
+    },
+    {
+     "name": "registrationNumber",
+     "parameter": "nregistro",
+     "in": "query",
+     "list": false
+    }
+   ]
+  },
+  {
+   "field": "cimaDocumentSection",
+   "path": "/docSegmentado/contenido/{tipoDoc}",
+   "arguments": [
+    {
+     "name": "documentType",
+     "parameter": "tipoDoc",
+     "in": "path",
+     "list": false,
+     "values": {
+      "SUMMARY_OF_PRODUCT_CHARACTERISTICS": "1",
+      "PACKAGE_LEAFLET": "2"
+     }
+    },
+    {
+     "name": "registrationNumber",
+     "parameter": "nregistro",
+     "in": "query",
+     "list": false
+    },
+    {
+     "name": "section",
+     "parameter": "seccion",
+     "in": "query",
+     "list": false
+    }
+   ]
+  },
+  {
+   "field": "cimaActiveIngredients",
+   "path": "/maestras",
+   "arguments": [
+    {
+     "name": "name",
+     "parameter": "nombre",
+     "in": "query",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "maestra": "1"
+   },
+   "paging": {
+    "style": "page",
+    "start": "pagina",
+    "size": null
+   }
+  },
+  {
+   "field": "cimaPharmaceuticalForms",
+   "path": "/maestras",
+   "arguments": [
+    {
+     "name": "name",
+     "parameter": "nombre",
+     "in": "query",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "maestra": "3"
+   },
+   "paging": {
+    "style": "page",
+    "start": "pagina",
+    "size": null
+   }
+  },
+  {
+   "field": "cimaAdministrationRoutes",
+   "path": "/maestras",
+   "arguments": [
+    {
+     "name": "name",
+     "parameter": "nombre",
+     "in": "query",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "maestra": "4"
+   },
+   "paging": {
+    "style": "page",
+    "start": "pagina",
+    "size": null
+   }
+  },
+  {
+   "field": "cimaLaboratories",
+   "path": "/maestras",
+   "arguments": [
+    {
+     "name": "name",
+     "parameter": "nombre",
+     "in": "query",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "maestra": "6"
+   },
+   "paging": {
+    "style": "page",
+    "start": "pagina",
+    "size": null
+   }
+  },
+  {
+   "field": "cimaAtcCodes",
+   "path": "/maestras",
+   "arguments": [
+    {
+     "name": "name",
+     "parameter": "nombre",
+     "in": "query",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "maestra": "7"
+   },
+   "paging": {
+    "style": "page",
+    "start": "pagina",
+    "size": null
+   }
+  }
+ ],
+ "fields": {
+  "CimaMedicinePage": {
+   "totalCount": {
+    "key": "totalFilas"
+   },
+   "medicines": {
+    "key": "resultados"
+   }
+  },
+  "CimaMedicine": {
+   "registrationNumber": {
+    "key": "nregistro"
+   },
+   "name": {
+    "key": "nombre"
+   },
+   "activeIngredientNames": {
+    "key": "pactivos"
+   },
+   "holder": {
+    "key": "labtitular"
+   },
+   "marketer": {
+    "key": "labcomercializador"
+   },
+   "prescriptionConditions": {
+    "key": "cpresc"
+   },
+   "status": {
+    "key": "estado"
+   },
+   "marketed": {
+    "key": "comerc"
+   },
+   "prescription": {
+    "key": "receta"
+   },
+   "generic": {
+    "key": "generico"
+   },
+   "affectsDriving": {
+    "key": "conduc"
+   },
+   "additionalMonitoring": {
+    "key": "triangulo"
+   },
+   "orphan": {
+    "key": "huerfano"
+   },
+   "substitution": {
+    "key": "nosustituible"
+   },
+   "hasSupplyProblems": {
+    "key": "psum"
+   },
+   "hasSafetyNotes": {
+    "key": "notas"
+   },
+   "hasInformationMaterials": {
+    "key": "materialesInf"
+   },
+   "centrallyAuthorized": {
+    "key": "ema"
+   },
+   "documents": {
+    "key": "docs"
+   },
+   "photos": {
+    "key": "fotos"
+   },
+   "activeIngredients": {
+    "key": "principiosActivos"
+   },
+   "excipients": {
+    "key": "excipientes"
+   },
+   "administrationRoutes": {
+    "key": "viasAdministracion"
+   },
+   "pharmaceuticalForm": {
+    "key": "formaFarmaceutica"
+   },
+   "simplifiedForm": {
+    "key": "formaFarmaceuticaSimplificada"
+   },
+   "substance": {
+    "key": "vtm"
+   },
+   "strength": {
+    "key": "dosis"
+   },
+   "atcCodes": {
+    "key": "atcs"
+   },
+   "presentations": {
+    "key": "presentaciones"
+   }
+  },
+  "CimaStatus": {
+   "authorized": {
+    "key": "aut",
+    "conversion": "epoch-millis-date"
+   },
+   "suspended": {
+    "key": "susp",
+    "conversion": "epoch-millis-date"
+   },
+   "revoked": {
+    "key": "rev",
+    "conversion": "epoch-millis-date"
+   }
+  },
+  "CimaCategory": {
+   "name": {
+    "key": "nombre"
+   }
+  },
+  "CimaClinicalConcept": {
+   "name": {
+    "key": "nombre"
+   }
+  },
+  "CimaAtc": {
+   "code": {
+    "key": "codigo"
+   },
+   "name": {
+    "key": "nombre"
+   },
+   "level": {
+    "key": "nivel"
+   }
+  },
+  "CimaIngredient": {
+   "code": {
+    "key": "codigo"
+   },
+   "name": {
+    "key": "nombre"
+   },
+   "amount": {
+    "key": "cantidad"
+   },
+   "unit": {
+    "key": "unidad"
+   },
+   "order": {
+    "key": "orden"
+   }
+  },
+  "CimaDocument": {
+   "type": {
+    "key": "tipo"
+   },
+   "htmlUrl": {
+    "key": "urlHtml"
+   },
+   "hasSections": {
+    "key": "secc"
+   },
+   "updated": {
+    "key": "fecha",
+    "conversion": "epoch-millis-date"
+   }
+  },
+  "CimaPhoto": {
+   "type": {
+    "key": "tipo"
+   },
+   "updated": {
+    "key": "fecha",
+    "conversion": "epoch-millis-date"
+   }
+  },
+  "CimaPresentationSummary": {
+   "nationalCode": {
+    "key": "cn"
+   },
+   "name": {
+    "key": "nombre"
+   },
+   "status": {
+    "key": "estado"
+   },
+   "marketed": {
+    "key": "comerc"
+   },
+   "hasSupplyProblems": {
+    "key": "psum"
+   },
+   "clinicalPack": {
+    "key": "envaseClinico"
+   }
+  },
+  "CimaPresentationPage": {
+   "totalCount": {
+    "key": "totalFilas"
+   },
+   "presentations": {
+    "key": "resultados"
+   }
+  },
+  "CimaPresentation": {
+   "registrationNumber": {
+    "key": "nregistro"
+   },
+   "name": {
+    "key": "nombre"
+   },
+   "activeIngredientNames": {
+    "key": "pactivos"
+   },
+   "holder": {
+    "key": "labtitular"
+   },
+   "marketer": {
+    "key": "labcomercializador"
+   },
+   "prescriptionConditions": {
+    "key": "cpresc"
+   },
+   "status": {
+    "key": "estado"
+   },
+   "marketed": {
+    "key": "comerc"
+   },
+   "prescription": {
+    "key": "receta"
+   },
+   "generic": {
+    "key": "generico"
+   },
+   "affectsDriving": {
+    "key": "conduc"
+   },
+   "additionalMonitoring": {
+    "key": "triangulo"
+   },
+   "orphan": {
+    "key": "huerfano"
+   },
+   "substitution": {
+    "key": "nosustituible"
+   },
+   "hasSupplyProblems": {
+    "key": "psum"
+   },
+   "hasSafetyNotes": {
+    "key": "notas"
+   },
+   "hasInformationMaterials": {
+    "key": "materialesInf"
+   },
+   "centrallyAuthorized": {
+    "key": "ema"
+   },
+   "documents": {
+    "key": "docs"
+   },
+   "photos": {
+    "key": "fotos"
+   },
+   "activeIngredients": {
+    "key": "principiosActivos"
+   },
+   "excipients": {
+    "key": "excipientes"
+   },
+   "substance": {
+    "key": "vtm"
+   },
+   "nationalCode": {
+    "key": "cn"
+   },
+   "clinicalDrug": {
+    "key": "dcp"
+   },
+   "clinicalDrugPack": {
+    "key": "dcpf"
+   },
+   "clinicalPack": {
+    "key": "envaseClinico"
+   },
+   "atcCodes": {
+    "key": "atcs"
+   }
+  },
+  "CimaClinicalDrugPage": {
+   "totalCount": {
+    "key": "totalFilas"
+   },
+   "clinicalDrugs": {
+    "key": "resultados"
+   }
+  },
+  "CimaClinicalDrug": {
+   "clinicalDrugId": {
+    "key": "vmp"
+   },
+   "clinicalDrug": {
+    "key": "vmpDesc"
+   },
+   "packId": {
+    "key": "vmpp"
+   },
+   "pack": {
+    "key": "vmppDesc"
+   },
+   "marketedProducts": {
+    "key": "presComerc"
+   }
+  },
+  "CimaSupplyProblemPage": {
+   "totalCount": {
+    "key": "totalFilas"
+   },
+   "problems": {
+    "key": "resultados"
+   }
+  },
+  "CimaSupplyProblem": {
+   "nationalCode": {
+    "key": "cn"
+   },
+   "name": {
+    "key": "nombre"
+   },
+   "problemType": {
+    "key": "tipoProblemaSuministro"
+   },
+   "started": {
+    "key": "fini",
+    "conversion": "epoch-millis-date"
+   },
+   "expectedEnd": {
+    "key": "ffin",
+    "conversion": "epoch-millis-date"
+   },
+   "active": {
+    "key": "activo"
+   },
+   "notes": {
+    "key": "observ"
+   }
+  },
+  "CimaRegisterChangePage": {
+   "totalCount": {
+    "key": "totalFilas"
+   },
+   "changes": {
+    "key": "resultados"
+   }
+  },
+  "CimaRegisterChange": {
+   "registrationNumber": {
+    "key": "nregistro"
+   },
+   "name": {
+    "key": "nombre"
+   },
+   "holder": {
+    "key": "labtitular"
+   },
+   "changedAt": {
+    "key": "fecha",
+    "conversion": "epoch-millis-date-time"
+   },
+   "kind": {
+    "key": "tipoCambio"
+   },
+   "changes": {
+    "key": "cambio"
+   }
+  },
+  "CimaSafetyNote": {
+   "type": {
+    "key": "tipo"
+   },
+   "number": {
+    "key": "num"
+   },
+   "reference": {
+    "key": "referencia"
+   },
+   "subject": {
+    "key": "asunto"
+   },
+   "published": {
+    "key": "fecha",
+    "conversion": "epoch-millis-date"
+   }
+  },
+  "CimaInformationMaterials": {
+   "forProfessionals": {
+    "key": "listaDocsProfesional"
+   }
+  },
+  "CimaInformationMaterial": {
+   "name": {
+    "key": "nombre"
+   },
+   "published": {
+    "key": "fecha",
+    "conversion": "epoch-millis-date"
+   }
+  },
+  "CimaDocumentSection": {
+   "section": {
+    "key": "seccion"
+   },
+   "title": {
+    "key": "titulo"
+   },
+   "order": {
+    "key": "orden"
+   }
+  },
+  "CimaDocumentSectionText": {
+   "section": {
+    "key": "seccion"
+   },
+   "title": {
+    "key": "titulo"
+   },
+   "content": {
+    "key": "contenido"
+   },
+   "order": {
+    "key": "orden",
+    "conversion": "integer"
+   }
+  },
+  "CimaCodedEntryPage": {
+   "totalCount": {
+    "key": "totalFilas"
+   },
+   "entries": {
+    "key": "resultados"
+   }
+  },
+  "CimaCodedEntry": {
+   "code": {
+    "key": "codigo"
+   },
+   "name": {
+    "key": "nombre"
+   }
+  }
+ }
+}

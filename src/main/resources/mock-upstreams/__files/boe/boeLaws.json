@@ -1,0 +1,218 @@
+{
+    "status": {
+        "code": "200",
+        "text": "ok"
+    },
+    "data": [
+        {
+            "fecha_actualizacion": "20260917T074529Z",
+            "identificador": "BOE-A-2023-7421",
+            "ambito": {
+                "codigo": "2",
+                "texto": "Auton\u00f3mico"
+            },
+            "departamento": {
+                "codigo": "8162",
+                "texto": "Comunitat Valenciana"
+            },
+            "rango": {
+                "codigo": "1300",
+                "texto": "Ley"
+            },
+            "fecha_disposicion": "20230313",
+            "numero_oficial": "2\/2023",
+            "titulo": "Ley 2\/2023, de 13 de marzo, de Protecci\u00f3n, Bienestar y Tenencia de animales de compa\u00f1\u00eda y otras medidas de bienestar animal.",
+            "diario": "Bolet\u00edn Oficial del Estado",
+            "fecha_publicacion": "20230322",
+            "diario_numero": "69",
+            "fecha_vigencia": "20230315",
+            "vigencia_agotada": "N",
+            "estado_consolidacion": {
+                "codigo": "3",
+                "texto": "Finalizado"
+            },
+            "url_eli": "https:\/\/www.boe.es\/eli\/es-vc\/l\/2023\/03\/13\/2",
+            "url_html_consolidada": "https:\/\/www.boe.es\/buscar\/act.php?id=BOE-A-2023-7421"
+        },
+        {
+            "fecha_actualizacion": "20260702T062030Z",
+            "identificador": "BOE-A-2023-7936",
+            "ambito": {
+                "codigo": "1",
+                "texto": "Estatal"
+            },
+            "departamento": {
+                "codigo": "7723",
+                "texto": "Jefatura del Estado"
+            },
+            "rango": {
+                "codigo": "1300",
+                "texto": "Ley"
+            },
+            "fecha_disposicion": "20230328",
+            "numero_oficial": "7\/2023",
+            "titulo": "Ley 7\/2023, de 28 de marzo, de protecci\u00f3n de los derechos y el bienestar de los animales.",
+            "diario": "Bolet\u00edn Oficial del Estado",
+            "fecha_publicacion": "20230329",
+            "diario_numero": "75",
+            "fecha_vigencia": "20230929",
+            "vigencia_agotada": "N",
+            "estado_consolidacion": {
+                "codigo": "3",
+                "texto": "Finalizado"
+            },
+            "url_eli": "https:\/\/www.boe.es\/eli\/es\/l\/2023\/03\/28\/7",
+            "url_html_consolidada": "https:\/\/www.boe.es\/buscar\/act.php?id=BOE-A-2023-7936"
+        },
+        {
+            "fecha_actualizacion": "20260223T110735Z",
+            "identificador": "BOE-A-2020-13916",
+            "ambito": {
+                "codigo": "2",
+                "texto": "Auton\u00f3mico"
+            },
+            "departamento": {
+                "codigo": "8060",
+                "texto": "Comunidad Aut\u00f3noma de Castilla-La Mancha"
+            },
+            "rango": {
+                "codigo": "1300",
+                "texto": "Ley"
+            },
+            "fecha_disposicion": "20200831",
+            "numero_oficial": "7\/2020",
+            "titulo": "Ley 7\/2020, de 31 de agosto, de Bienestar, Protecci\u00f3n y Defensa de los Animales de Castilla-La Mancha.",
+            "diario": "Bolet\u00edn Oficial del Estado",
+            "fecha_publicacion": "20201110",
+            "diario_numero": "296",
+            "fecha_vigencia": "20210307",
+            "vigencia_agotada": "N",
+            "estado_consolidacion": {
+                "codigo": "3",
+                "texto": "Finalizado"
+            },
+            "url_eli": "https:\/\/www.boe.es\/eli\/es-cm\/l\/2020\/08\/31\/7",
+            "url_html_consolidada": "https:\/\/www.boe.es\/buscar\/act.php?id=BOE-A-2020-13916"
+        },
+        {
+            "fecha_actualizacion": "20260206T093037Z",
+            "identificador": "BOE-A-2026-2727",
+            "ambito": {
+                "codigo": "1",
+                "texto": "Estatal"
+            },
+            "departamento": {
+                "codigo": "3120",
+                "texto": "Ministerio de Agricultura, Pesca y Alimentaci\u00f3n"
+            },
+            "rango": {
+                "codigo": "1340",
+                "texto": "Real Decreto"
+            },
+            "fecha_disposicion": "20260204",
+            "numero_oficial": "69\/2026",
+            "titulo": "Real Decreto 69\/2026, de 4 de febrero, por el que se regulan aspectos organizativos en materia de bienestar y protecci\u00f3n de los animales mantenidos con fines agrarios y para la acuicultura.",
+            "diario": "Bolet\u00edn Oficial del Estado",
+            "fecha_publicacion": "20260206",
+            "diario_numero": "33",
+            "fecha_vigencia": "20260207",
+            "vigencia_agotada": "N",
+            "estado_consolidacion": {
+                "codigo": "3",
+                "texto": "Finalizado"
+            },
+            "url_eli": "https:\/\/www.boe.es\/eli\/es\/rd\/2026\/02\/04\/69",
+            "url_html_consolidada": "https:\/\/www.boe.es\/buscar\/act.php?id=BOE-A-2026-2727"
+        },
+        {
+            "fecha_actualizacion": "20251220T151349Z",
+            "identificador": "BOE-A-2022-14057",
+            "ambito": {
+                "codigo": "1",
+                "texto": "Estatal"
+            },
+            "departamento": {
+                "codigo": "9574",
+                "texto": "Ministerio de la Presidencia, Relaciones con las Cortes y Memoria Democr\u00e1tica"
+            },
+            "rango": {
+                "codigo": "1340",
+                "texto": "Real Decreto"
+            },
+            "fecha_disposicion": "20220823",
+            "numero_oficial": "695\/2022",
+            "titulo": "Real Decreto 695\/2022, de 23 de agosto, por el que se establecen medidas para el control del bienestar de los animales en los mataderos mediante la instalaci\u00f3n de sistemas de videovigilancia.",
+            "diario": "Bolet\u00edn Oficial del Estado",
+            "fecha_publicacion": "20220824",
+            "diario_numero": "203",
+            "fecha_vigencia": "20230824",
+            "vigencia_agotada": "N",
+            "estado_consolidacion": {
+                "codigo": "3",
+                "texto": "Finalizado"
+            },
+            "url_eli": "https:\/\/www.boe.es\/eli\/es\/rd\/2022\/08\/23\/695",
+            "url_html_consolidada": "https:\/\/www.boe.es\/buscar\/act.php?id=BOE-A-2022-14057"
+        },
+        {
+            "fecha_actualizacion": "20251219T194430Z",
+            "identificador": "BOE-A-2017-12357",
+            "ambito": {
+                "codigo": "2",
+                "texto": "Auton\u00f3mico"
+            },
+            "departamento": {
+                "codigo": "8090",
+                "texto": "Comunidad Aut\u00f3noma de Galicia"
+            },
+            "rango": {
+                "codigo": "1300",
+                "texto": "Ley"
+            },
+            "fecha_disposicion": "20171003",
+            "numero_oficial": "4\/2017",
+            "titulo": "Ley 4\/2017, de 3 de octubre, de protecci\u00f3n y bienestar de los animales de compa\u00f1\u00eda en Galicia.",
+            "diario": "Bolet\u00edn Oficial del Estado",
+            "fecha_publicacion": "20171030",
+            "diario_numero": "263",
+            "fecha_vigencia": "20180111",
+            "vigencia_agotada": "N",
+            "estado_consolidacion": {
+                "codigo": "3",
+                "texto": "Finalizado"
+            },
+            "url_eli": "https:\/\/www.boe.es\/eli\/es-ga\/l\/2017\/10\/03\/4",
+            "url_html_consolidada": "https:\/\/www.boe.es\/buscar\/act.php?id=BOE-A-2017-12357"
+        },
+        {
+            "fecha_actualizacion": "20251218T213525Z",
+            "identificador": "BOE-A-2006-11289",
+            "ambito": {
+                "codigo": "1",
+                "texto": "Estatal"
+            },
+            "departamento": {
+                "codigo": "7710",
+                "texto": "Ministerio de la Presidencia"
+            },
+            "rango": {
+                "codigo": "1340",
+                "texto": "Real Decreto"
+            },
+            "fecha_disposicion": "20060616",
+            "numero_oficial": "751\/2006",
+            "titulo": "Real Decreto 751\/2006, de 16 de junio, sobre autorizaci\u00f3n y registro de transportistas y medios de transporte de animales y por el que se crea el Comit\u00e9 espa\u00f1ol de bienestar y protecci\u00f3n de los animales de producci\u00f3n.",
+            "diario": "Bolet\u00edn Oficial del Estado",
+            "fecha_publicacion": "20060624",
+            "diario_numero": "150",
+            "fecha_vigencia": "20060714",
+            "vigencia_agotada": "S",
+            "estado_consolidacion": {
+                "codigo": "3",
+                "texto": "Finalizado"
+            },
+            "url_eli": "https:\/\/www.boe.es\/eli\/es\/rd\/2006\/06\/16\/751",
+            "url_html_consolidada": "https:\/\/www.boe.es\/buscar\/act.php?id=BOE-A-2006-11289"
+        }
+    ]
+}
