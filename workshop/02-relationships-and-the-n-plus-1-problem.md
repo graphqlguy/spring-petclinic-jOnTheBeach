@@ -289,6 +289,9 @@ query {
 
 The console shows three statements: the page of owners, its count, and one `... from pets p1_0 ... where p1_0.owner_id in (?,?,...)` for the pets of all ten. `@BatchMapping` batches the resolvers we write, and Hibernate batches the lazy relationships behind the getters.
 
+> [!NOTE]
+> Hibernate's batch fetching works here because `spring.jpa.open-in-view=true` keeps the persistence context open while GraphQL calls the getters. With it set to `false`, as many applications run, the same query fails with a `LazyInitializationException`. Batch fetching also takes one statement for every 16 owners, so a page of 100 owners needs 7 statements for their pets. To fix the trap properly, resolve each lazy relationship with a `@BatchMapping`: it works with open-in-view off, and loads the field for every parent of the request in one call. The workshop keeps the getters to save time.
+
 ### Turn the instrumentation off
 
 Set the two properties back, so that the rest of the workshop runs at full speed:
@@ -431,6 +434,6 @@ Spring takes the type, `Specialty`, from the element type of the parameter, and 
 - `@SchemaMapping` resolves a field that the parent cannot answer, one parent at a time.
 - One call per parent is the N+1 problem: invisible on a laptop, and slow in production.
 - `@BatchMapping` makes one call per request, and the schema stays the same.
-- Hibernate's batch fetching does the same for lazy relationships behind getters.
+- Hibernate's batch fetching does the same for lazy relationships behind getters, as long as open-in-view keeps the persistence context open.
 
 Chapter 3 changes data: mutations, input types, and a `Date` type for the dates.
