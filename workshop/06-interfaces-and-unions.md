@@ -41,7 +41,7 @@ import java.util.List;
 import org.springframework.graphql.data.method.annotation.Argument;
 import org.springframework.graphql.data.method.annotation.QueryMapping;
 import org.springframework.samples.petclinic.owner.OwnerService;
-import org.springframework.samples.petclinic.owner.PetService;
+import org.springframework.samples.petclinic.owner.pet.PetService;
 import org.springframework.samples.petclinic.vet.VetService;
 import org.springframework.stereotype.Controller;
 

@@ -21,6 +21,8 @@ import java.util.Objects;
 
 import org.springframework.core.style.ToStringCreator;
 import org.springframework.samples.petclinic.model.Person;
+import org.springframework.samples.petclinic.owner.pet.Pet;
+import org.springframework.samples.petclinic.owner.visit.Visit;
 import org.springframework.util.Assert;
 
 import jakarta.persistence.CascadeType;

@@ -233,7 +233,7 @@ Owner updateOwner(@Argument UpdateOwnerInput input) {
 
 And to booking a visit:
 
-`src/main/java/org/springframework/samples/petclinic/owner/VisitGraphQLController.java`
+`src/main/java/org/springframework/samples/petclinic/owner/visit/VisitGraphQLController.java`
 
 ```java
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -342,7 +342,7 @@ Run `./mvnw test`: all 109 tests pass. Chapter 8 adds tests of our own.
 <details>
 <summary>Show solution</summary>
 
-`src/main/java/org/springframework/samples/petclinic/owner/PetGraphQLController.java`
+`src/main/java/org/springframework/samples/petclinic/owner/pet/PetGraphQLController.java`
 
 ```java
 import org.springframework.security.access.prepost.PreAuthorize;

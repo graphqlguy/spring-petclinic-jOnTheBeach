@@ -13,13 +13,4 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.springframework.samples.petclinic.owner;
-
-/**
- * Published by {@link VisitService} each time a visit is booked.
- *
- * @param visitId the id of the new visit
- */
-public record VisitBookedEvent(Integer visitId) {
-
-}
+package org.springframework.samples.petclinic.owner.pet;

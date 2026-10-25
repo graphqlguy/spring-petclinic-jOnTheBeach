@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.springframework.samples.petclinic.owner;
+package org.springframework.samples.petclinic.owner.pet;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
@@ -24,6 +24,7 @@ import org.junit.jupiter.api.Test;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.samples.petclinic.owner.OwnerService;
 import org.springframework.samples.petclinic.system.EntityNotFoundException;
 import org.springframework.samples.petclinic.system.InvalidInputException;
 import org.springframework.transaction.annotation.Transactional;

@@ -13,14 +13,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.springframework.samples.petclinic.owner;
+package org.springframework.samples.petclinic.owner.pet;
 
 import java.time.LocalDate;
 
 /**
- * A visit to book. A null date books the visit for tomorrow, and a null vet leaves the
- * visit without one.
+ * The details of a new pet, and the owner it belongs to.
  */
-public record AddVisitInput(Integer petId, Integer vetId, LocalDate date, String description) {
+public record AddPetInput(Integer ownerId, String name, LocalDate birthDate, Integer typeId) {
 
 }

@@ -13,13 +13,4 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.springframework.samples.petclinic.owner;
-
-import java.time.LocalDate;
-
-/**
- * Changes to a pet. A field left null keeps its current value.
- */
-public record UpdatePetInput(Integer id, String name, LocalDate birthDate, Integer typeId) {
-
-}
+package org.springframework.samples.petclinic.owner.visit;

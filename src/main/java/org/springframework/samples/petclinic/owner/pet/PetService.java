@@ -13,13 +13,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.springframework.samples.petclinic.owner;
+package org.springframework.samples.petclinic.owner.pet;
 
 import java.time.LocalDate;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.springframework.samples.petclinic.owner.Owner;
+import org.springframework.samples.petclinic.owner.OwnerRepository;
 import org.springframework.samples.petclinic.system.EntityNotFoundException;
 import org.springframework.samples.petclinic.system.InvalidInputException;
 import org.springframework.samples.petclinic.system.LatencySimulator;

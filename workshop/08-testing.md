@@ -169,10 +169,10 @@ Our two users have their name as their password, which keeps the helper short.
 
 A subscription test needs to listen first and book second. Over HTTP that needs a WebSocket client, so this test runs the operation in-process instead, through the `GraphQlTester` that `@AutoConfigureGraphQlTester` provides. It calls the same engine, without the network. **Create a new test class** next to `VisitService`'s tests:
 
-`src/test/java/org/springframework/samples/petclinic/owner/VisitSubscriptionTests.java`
+`src/test/java/org/springframework/samples/petclinic/owner/visit/VisitSubscriptionTests.java`
 
 ```java
-package org.springframework.samples.petclinic.owner;
+package org.springframework.samples.petclinic.owner.visit;
 
 import java.time.Duration;
 

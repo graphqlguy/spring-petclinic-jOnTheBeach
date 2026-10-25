@@ -56,7 +56,7 @@ A subscription field returns one event at a time: here, one `Visit` per booking.
 
 `VisitService.addVisit` publishes a `VisitBookedEvent`, with the new visit's id, each time it books a visit. The subscription turns those events into a stream. Add a sink, a listener and the subscription to `VisitGraphQLController`:
 
-`src/main/java/org/springframework/samples/petclinic/owner/VisitGraphQLController.java`
+`src/main/java/org/springframework/samples/petclinic/owner/visit/VisitGraphQLController.java`
 
 ```java
 import org.springframework.graphql.data.method.annotation.SubscriptionMapping;
@@ -135,7 +135,7 @@ type Subscription {
 }
 ```
 
-`src/main/java/org/springframework/samples/petclinic/owner/VisitGraphQLController.java`
+`src/main/java/org/springframework/samples/petclinic/owner/visit/VisitGraphQLController.java`
 
 ```java
 @SubscriptionMapping

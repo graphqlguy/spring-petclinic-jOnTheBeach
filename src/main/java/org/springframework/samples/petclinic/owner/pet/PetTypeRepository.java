@@ -13,13 +13,27 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.springframework.samples.petclinic.owner;
 
-import java.time.LocalDate;
+package org.springframework.samples.petclinic.owner.pet;
+
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 
 /**
- * The details of a new pet, and the owner it belongs to.
+ * Repository class for <code>PetType</code> domain objects.
+ *
+ * @author Patrick Baumgartner
  */
-public record AddPetInput(Integer ownerId, String name, LocalDate birthDate, Integer typeId) {
+
+public interface PetTypeRepository extends JpaRepository<PetType, Integer> {
+
+	/**
+	 * Retrieve all {@link PetType}s from the data store.
+	 * @return a Collection of {@link PetType}s.
+	 */
+	@Query("SELECT ptype FROM PetType ptype ORDER BY ptype.name")
+	List<PetType> findPetTypes();
 
 }

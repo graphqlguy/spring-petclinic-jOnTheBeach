@@ -96,12 +96,12 @@ type Query {
 }
 ```
 
-**Create a new class** named `VisitGraphQLController` in the `org.springframework.samples.petclinic.owner` package:
+**Create a new class** named `VisitGraphQLController` in the `org.springframework.samples.petclinic.owner.visit` package:
 
-`src/main/java/org/springframework/samples/petclinic/owner/VisitGraphQLController.java`
+`src/main/java/org/springframework/samples/petclinic/owner/visit/VisitGraphQLController.java`
 
 ```java
-package org.springframework.samples.petclinic.owner;
+package org.springframework.samples.petclinic.owner.visit;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -176,7 +176,7 @@ input AddVisitInput {
 
 The Java side is one method. The starting point has a matching `AddVisitInput` record, and Spring for GraphQL fills it in by matching the field names. Add the method to `VisitGraphQLController`:
 
-`src/main/java/org/springframework/samples/petclinic/owner/VisitGraphQLController.java`
+`src/main/java/org/springframework/samples/petclinic/owner/visit/VisitGraphQLController.java`
 
 ```java
 import org.springframework.graphql.data.method.annotation.MutationMapping;
@@ -344,7 +344,7 @@ Refresh the frontend. The owner pages now have **Add owner** and **Edit owner**,
 
 ### Exercise 1: add a pet
 
-The **Add pet** form needs two operations: a `petTypes` query for its list of types, and an `addPet` mutation. Write both. `PetService` has `findPetTypes()` and `addPet(AddPetInput)`, and `AddPetInput` has `ownerId`, `name`, `birthDate` and `typeId`. Put them in a new `PetGraphQLController` in the `owner` package. Then add a pet in the frontend.
+The **Add pet** form needs two operations: a `petTypes` query for its list of types, and an `addPet` mutation. Write both. `PetService` has `findPetTypes()` and `addPet(AddPetInput)`, and `AddPetInput` has `ownerId`, `name`, `birthDate` and `typeId`. Put them in a new `PetGraphQLController` in the `owner.pet` package. Then add a pet in the frontend.
 
 <details>
 <summary>Show solution</summary>
@@ -370,10 +370,10 @@ input AddPetInput {
 }
 ```
 
-`src/main/java/org/springframework/samples/petclinic/owner/PetGraphQLController.java`
+`src/main/java/org/springframework/samples/petclinic/owner/pet/PetGraphQLController.java`
 
 ```java
-package org.springframework.samples.petclinic.owner;
+package org.springframework.samples.petclinic.owner.pet;
 
 import java.util.List;
 
@@ -430,7 +430,7 @@ input UpdatePetInput {
 }
 ```
 
-`src/main/java/org/springframework/samples/petclinic/owner/PetGraphQLController.java`
+`src/main/java/org/springframework/samples/petclinic/owner/pet/PetGraphQLController.java`
 
 ```java
 @MutationMapping

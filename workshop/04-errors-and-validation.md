@@ -231,7 +231,7 @@ Three layers now check what a client sends: the schema's types, which the engine
 <details>
 <summary>Show solution</summary>
 
-`src/main/java/org/springframework/samples/petclinic/owner/VisitGraphQLController.java`
+`src/main/java/org/springframework/samples/petclinic/owner/visit/VisitGraphQLController.java`
 
 ```java
 import org.springframework.samples.petclinic.system.InvalidInputException;
