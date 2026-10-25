@@ -47,13 +47,14 @@ export default function PetFormPage() {
   const editing = Boolean(petId)
   const { available } = useGraphQL()
   const navigate = useNavigate()
-  const ready = available('addPet', 'updatePet', 'listPetTypes', 'getOwnerDetails')
+  // Adding needs addPet and editing needs updatePet, which chapter 3 adds in two exercises
+  const ready = available(editing ? 'updatePet' : 'addPet', 'listPetTypes', 'getOwnerDetails')
   const types = useQuery('listPetTypes', {}, { skip: !ready })
   const owner = useQuery('getOwnerDetails', { id: ownerId }, { skip: !ready })
   const [save, state] = useMutation(editing ? 'updatePet' : 'addPet')
 
   if (!ready) {
-    return <FeaturePending featureKey="petForms" />
+    return <FeaturePending featureKey={editing ? 'petEdit' : 'petAdd'} />
   }
   if (types.loading || owner.loading) {
     return <Loading />

@@ -308,6 +308,8 @@ petclinic.demo.latency=0s
 
 ## 5. Follow the graph both ways
 
+So far each relationship points one way: an owner lists their pets, and a vet lists their visits. A client that starts from a vet can read the visits, but it cannot reach the pet of a visit or the pet's owner, and the vet page needs both to show who came in. In GraphQL a relationship is a field, so a field in the other direction lets a client start from whatever object it has and follow the links it needs, all in one query, where a REST client would send one more request per visit.
+
 The starting point gave `Pet` a `getOwner()` and `Visit` a `getPet()`, so both directions resolve through getters. Add the two fields:
 
 `src/main/resources/graphql/schema.graphqls`

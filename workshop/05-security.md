@@ -121,7 +121,7 @@ Restart: GraphiQL and the web pages answer again.
 
 ## 3. Sign in with a mutation
 
-Add the mutation to the schema:
+Once the next step protects the mutations, a client needs a token to change data. A `login` field lets the frontend get one with the same GraphQL client it uses for everything else. It is a mutation because signing in is an action on the server, which checks a password and issues a token. Add it to the schema:
 
 `src/main/resources/graphql/schema.graphqls`
 

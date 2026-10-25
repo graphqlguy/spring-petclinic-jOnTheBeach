@@ -47,8 +47,9 @@ export default function OwnerFormPage() {
   const [save, state] = useMutation(editing ? 'updateOwner' : 'addOwner')
   const { data, loading } = useQuery('ownerSummary', { id: ownerId }, { skip: !editing || !available('ownerSummary') })
 
-  if (!available('addOwner', 'updateOwner')) {
-    return <FeaturePending featureKey="ownerForms" />
+  // Adding needs addOwner and editing needs updateOwner, which chapter 3 adds one step apart
+  if (!available(editing ? 'updateOwner' : 'addOwner')) {
+    return <FeaturePending featureKey={editing ? 'ownerEdit' : 'ownerAdd'} />
   }
   if (editing && (loading || !data)) {
     return <Loading />
