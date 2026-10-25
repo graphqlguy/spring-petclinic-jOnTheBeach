@@ -94,7 +94,7 @@ The log goes on to list the same tools as **in-process** tools, which chapter 12
 
 ## 4. Call the tools from the MCP Inspector
 
-In a new terminal, start the MCP Inspector with our server's address:
+In a new terminal, start the MCP Inspector with our server's address. If MCPJam is running too, first set the Inspector's port variables from [step 6 of the setup](00-setup.md#6-fetch-the-mcp-inspector-and-mcpjam):
 
 ```bash
 npx -y @modelcontextprotocol/inspector@2.9.0 --web --transport http --server-url http://localhost:8080/mcp

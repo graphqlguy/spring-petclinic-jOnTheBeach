@@ -98,6 +98,16 @@ npx -y @mcpjam/inspector@3.16.2
 
 Each one opens a browser tab. Close the tab and stop it with `Ctrl+C` before you start the next.
 
+Both use port 6274, and MCPJam's sign-in only works on that port, so during the workshop run one at a time: stop one with `Ctrl+C` before you start the other. To run both at once, move the Inspector to port 6284 with three environment variables, set in the terminal you start it from:
+
+| Terminal | Command |
+|--------|---------|
+| macOS, Linux, Git Bash | `export CLIENT_PORT=6284 MCP_SANDBOX_PORT=6285 MCP_APP_ORIGIN_PORT=6288` |
+| Windows PowerShell | `$env:CLIENT_PORT="6284"; $env:MCP_SANDBOX_PORT="6285"; $env:MCP_APP_ORIGIN_PORT="6288"` |
+| Windows Command Prompt | `set "CLIENT_PORT=6284" & set "MCP_SANDBOX_PORT=6285" & set "MCP_APP_ORIGIN_PORT=6288"` |
+
+Set them again in each new terminal you start the Inspector from.
+
 ## 7. Install Open WebUI
 
 [Open WebUI](https://openwebui.com) is a chat interface for the models in Ollama. It needs Python 3.11 or 3.12, which [uv](https://docs.astral.sh/uv/) downloads for it. If `uv --version` fails, install uv:
