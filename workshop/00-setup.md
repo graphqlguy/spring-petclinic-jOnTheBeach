@@ -16,7 +16,7 @@ The project also brings its own Maven, the wrapper `./mvnw`, which the instructi
 
 ## 2. Install Node.js
 
-The frontend needs Node.js 22 or 24 (20.19 at least). Check what you have:
+The frontend and MCPJam need Node.js 22 or 24. Check what you have:
 
 ```bash
 node -v
@@ -84,20 +84,46 @@ RAM decides whether a model can run at all, and a graphics card decides how fast
 
 `qwen3:8b` thinks before it answers. In our runs of chapter 12's questions on the same machine, it booked "next Wednesday" on the right day 5 times in 5, where `granite4.1:8b` did 2 times in 5, and a booking took it 17 to 54 seconds, where `granite4.1:8b` took 2 to 4. To try it, set `spring.ai.ollama.chat.model=qwen3:8b` in chapter 12.
 
-## 6. Fetch the MCP Inspector
+## 6. Fetch the MCP Inspector and MCPJam
 
-The MCP Inspector is a browser client for MCP servers. It runs with `npx`, which came with Node.js. Fetch it once, so that it starts quickly during the workshop:
+The MCP Inspector and MCPJam are browser clients for MCP servers. Both run with `npx`, which came with Node.js. Fetch each one once, so that it starts quickly during the workshop. MCPJam is the larger download, about 840 MB:
 
 ```bash
 npx -y @modelcontextprotocol/inspector@2.9.0
 ```
 
-It opens a browser tab. Close the tab and stop it with `Ctrl+C`.
+```bash
+npx -y @mcpjam/inspector@3.16.2
+```
+
+Each one opens a browser tab. Close the tab and stop it with `Ctrl+C` before you start the next.
+
+## 7. Install Open WebUI
+
+[Open WebUI](https://openwebui.com) is a chat interface for the models in Ollama. It needs Python 3.11 or 3.12, which [uv](https://docs.astral.sh/uv/) downloads for it. If `uv --version` fails, install uv:
+
+| System | Command |
+|--------|---------|
+| macOS (Homebrew) | `brew install uv` |
+| macOS, Linux | `curl -LsSf https://astral.sh/uv/install.sh \| sh` |
+| Windows | `winget install --id=astral-sh.uv -e` |
+
+Then install Open WebUI, about 2 GB, and start it once. It uses port 8080 unless told otherwise, and the backend needs that port, so give it 3000:
+
+```bash
+uv tool install --python 3.11 open-webui==0.12.3
+open-webui serve --port 3000
+```
+
+If the terminal cannot find `open-webui`, run `uv tool update-shell` and open a new terminal. The first start also fetches an embedding model. Open http://localhost:3000, create the local admin account it asks for, and stop it with `Ctrl+C`.
 
 ## Checklist
 
 - [ ] `java -version` shows 21 or newer
+- [ ] `node -v` shows 22 or newer
 - [ ] `./mvnw spring-boot:run` starts the application, and http://localhost:8080 shows Spring Petclinic
 - [ ] http://localhost:5173 shows the frontend's home page
 - [ ] `ollama list` shows `granite4.1:8b` (or `granite4.1:3b`) and `qwen3-graphql-embedder`
 - [ ] `npx -y @modelcontextprotocol/inspector@2.9.0` opens the Inspector
+- [ ] `npx -y @mcpjam/inspector@3.16.2` opens MCPJam
+- [ ] `open-webui serve --port 3000` starts, and http://localhost:3000 shows Open WebUI
