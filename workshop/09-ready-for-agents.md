@@ -199,9 +199,9 @@ query {
 }
 ```
 
-GraphQL Java has two limits that refuse such a query before any of it runs: a maximum **depth**, counted in fields from the root, and a maximum **complexity**, counted as the number of fields selected at every level. Spring Boot adds every `Instrumentation` bean to the engine. **Create a new class** named `GraphQlLimitsConfiguration` in the `org.springframework.samples.petclinic.system` package:
+GraphQL Java has two limits that refuse such a query before any of it runs: a maximum **depth**, counted in fields from the root, and a maximum **complexity**, counted as the number of fields selected at every level. Spring Boot adds every `Instrumentation` bean to the engine. **Create a new class** named `GraphQLLimitsConfiguration` in the `org.springframework.samples.petclinic.system` package:
 
-`src/main/java/org/springframework/samples/petclinic/system/GraphQlLimitsConfiguration.java`
+`src/main/java/org/springframework/samples/petclinic/system/GraphQLLimitsConfiguration.java`
 
 ```java
 package org.springframework.samples.petclinic.system;
@@ -220,7 +220,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration(proxyBeanMethods = false)
-class GraphQlLimitsConfiguration {
+class GraphQLLimitsConfiguration {
 
 	@Bean
 	MaxQueryDepthInstrumentation maxQueryDepth() {

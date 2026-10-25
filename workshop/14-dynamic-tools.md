@@ -240,9 +240,9 @@ type Vet implements Person {
 }
 ```
 
-In `VetGraphQlController`, add this method below the `visits` method:
+In `VetGraphQLController`, add this method below the `visits` method:
 
-`src/main/java/org/springframework/samples/petclinic/vet/VetGraphQlController.java`
+`src/main/java/org/springframework/samples/petclinic/vet/VetGraphQLController.java`
 
 ```java
 	@BatchMapping

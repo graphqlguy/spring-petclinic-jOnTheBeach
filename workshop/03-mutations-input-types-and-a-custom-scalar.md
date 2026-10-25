@@ -28,9 +28,9 @@ By the end of this chapter, you will:
 > [!NOTE]
 > With Gradle, add `implementation 'com.graphql-java:graphql-java-extended-scalars:24.0'` to `build.gradle`.
 
-A scalar needs Java code that turns values into text and back, and the library provides it. We register it with the engine. **Create a new class** named `GraphQlScalarsConfiguration` in the `org.springframework.samples.petclinic.system` package:
+A scalar needs Java code that turns values into text and back, and the library provides it. We register it with the engine. **Create a new class** named `GraphQLScalarsConfiguration` in the `org.springframework.samples.petclinic.system` package:
 
-`src/main/java/org/springframework/samples/petclinic/system/GraphQlScalarsConfiguration.java`
+`src/main/java/org/springframework/samples/petclinic/system/GraphQLScalarsConfiguration.java`
 
 ```java
 package org.springframework.samples.petclinic.system;
@@ -42,7 +42,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.graphql.execution.RuntimeWiringConfigurer;
 
 @Configuration(proxyBeanMethods = false)
-class GraphQlScalarsConfiguration {
+class GraphQLScalarsConfiguration {
 
 	@Bean
 	RuntimeWiringConfigurer scalars() {
@@ -96,9 +96,9 @@ type Query {
 }
 ```
 
-**Create a new class** named `VisitGraphQlController` in the `org.springframework.samples.petclinic.owner` package:
+**Create a new class** named `VisitGraphQLController` in the `org.springframework.samples.petclinic.owner` package:
 
-`src/main/java/org/springframework/samples/petclinic/owner/VisitGraphQlController.java`
+`src/main/java/org/springframework/samples/petclinic/owner/VisitGraphQLController.java`
 
 ```java
 package org.springframework.samples.petclinic.owner;
@@ -111,11 +111,11 @@ import org.springframework.graphql.data.method.annotation.QueryMapping;
 import org.springframework.stereotype.Controller;
 
 @Controller
-class VisitGraphQlController {
+class VisitGraphQLController {
 
 	private final VisitService visitService;
 
-	VisitGraphQlController(VisitService visitService) {
+	VisitGraphQLController(VisitService visitService) {
 		this.visitService = visitService;
 	}
 
@@ -174,9 +174,9 @@ input AddVisitInput {
 }
 ```
 
-The Java side is one method. The starting point has a matching `AddVisitInput` record, and Spring for GraphQL fills it in by matching the field names. Add the method to `VisitGraphQlController`:
+The Java side is one method. The starting point has a matching `AddVisitInput` record, and Spring for GraphQL fills it in by matching the field names. Add the method to `VisitGraphQLController`:
 
-`src/main/java/org/springframework/samples/petclinic/owner/VisitGraphQlController.java`
+`src/main/java/org/springframework/samples/petclinic/owner/VisitGraphQLController.java`
 
 ```java
 import org.springframework.graphql.data.method.annotation.MutationMapping;
@@ -230,9 +230,9 @@ input AddOwnerInput {
 }
 ```
 
-Add the method to `OwnerGraphQlController`:
+Add the method to `OwnerGraphQLController`:
 
-`src/main/java/org/springframework/samples/petclinic/owner/OwnerGraphQlController.java`
+`src/main/java/org/springframework/samples/petclinic/owner/OwnerGraphQLController.java`
 
 ```java
 import org.springframework.graphql.data.method.annotation.MutationMapping;
@@ -310,7 +310,7 @@ input UpdateOwnerInput {
 }
 ```
 
-`src/main/java/org/springframework/samples/petclinic/owner/OwnerGraphQlController.java`
+`src/main/java/org/springframework/samples/petclinic/owner/OwnerGraphQLController.java`
 
 ```java
 @MutationMapping
@@ -344,7 +344,7 @@ Refresh the frontend. The owner pages now have **Add owner** and **Edit owner**,
 
 ### Exercise 1: add a pet
 
-The **Add pet** form needs two operations: a `petTypes` query for its list of types, and an `addPet` mutation. Write both. `PetService` has `findPetTypes()` and `addPet(AddPetInput)`, and `AddPetInput` has `ownerId`, `name`, `birthDate` and `typeId`. Put them in a new `PetGraphQlController` in the `owner` package. Then add a pet in the frontend.
+The **Add pet** form needs two operations: a `petTypes` query for its list of types, and an `addPet` mutation. Write both. `PetService` has `findPetTypes()` and `addPet(AddPetInput)`, and `AddPetInput` has `ownerId`, `name`, `birthDate` and `typeId`. Put them in a new `PetGraphQLController` in the `owner` package. Then add a pet in the frontend.
 
 <details>
 <summary>Show solution</summary>
@@ -370,7 +370,7 @@ input AddPetInput {
 }
 ```
 
-`src/main/java/org/springframework/samples/petclinic/owner/PetGraphQlController.java`
+`src/main/java/org/springframework/samples/petclinic/owner/PetGraphQLController.java`
 
 ```java
 package org.springframework.samples.petclinic.owner;
@@ -383,11 +383,11 @@ import org.springframework.graphql.data.method.annotation.QueryMapping;
 import org.springframework.stereotype.Controller;
 
 @Controller
-class PetGraphQlController {
+class PetGraphQLController {
 
 	private final PetService petService;
 
-	PetGraphQlController(PetService petService) {
+	PetGraphQLController(PetService petService) {
 		this.petService = petService;
 	}
 
@@ -430,7 +430,7 @@ input UpdatePetInput {
 }
 ```
 
-`src/main/java/org/springframework/samples/petclinic/owner/PetGraphQlController.java`
+`src/main/java/org/springframework/samples/petclinic/owner/PetGraphQLController.java`
 
 ```java
 @MutationMapping

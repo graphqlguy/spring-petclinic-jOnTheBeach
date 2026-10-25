@@ -128,9 +128,9 @@ query {
 
 The answer is the error from chapter 1, `The field at path '/vet/visits' was declared as a non null type, but the code involved in retrieving data has wrongly returned a null value`, with `"data": {"vet": null}`. The default resolver did not find a `getVisits()`, so it returned `null`. `visits` promises a list, so GraphQL sets its parent to `null` instead: the nearest field that may be `null` is `vet`.
 
-This is the moment for our first **schema mapping**: a controller method that resolves one field of one type. `VisitService.findByVet` is ready. Replace the whole `VetGraphQlController` with this version, which adds the `VisitService` and the new method:
+This is the moment for our first **schema mapping**: a controller method that resolves one field of one type. `VisitService.findByVet` is ready. Replace the whole `VetGraphQLController` with this version, which adds the `VisitService` and the new method:
 
-`src/main/java/org/springframework/samples/petclinic/vet/VetGraphQlController.java`
+`src/main/java/org/springframework/samples/petclinic/vet/VetGraphQLController.java`
 
 ```java
 package org.springframework.samples.petclinic.vet;
@@ -145,13 +145,13 @@ import org.springframework.samples.petclinic.owner.VisitService;
 import org.springframework.stereotype.Controller;
 
 @Controller
-class VetGraphQlController {
+class VetGraphQLController {
 
 	private final VetService vetService;
 
 	private final VisitService visitService;
 
-	VetGraphQlController(VetService vetService, VisitService visitService) {
+	VetGraphQLController(VetService vetService, VisitService visitService) {
 		this.vetService = vetService;
 		this.visitService = visitService;
 	}
@@ -235,7 +235,7 @@ The data access is in the starting point, because it is repository code. `VisitR
 
 Replace the `@SchemaMapping` method from step 2 with this one, and replace the `SchemaMapping` import with the three new ones:
 
-`src/main/java/org/springframework/samples/petclinic/vet/VetGraphQlController.java`
+`src/main/java/org/springframework/samples/petclinic/vet/VetGraphQLController.java`
 
 ```java
 import java.util.Map;
@@ -406,7 +406,7 @@ type Specialty {
 }
 ```
 
-`src/main/java/org/springframework/samples/petclinic/vet/VetGraphQlController.java`
+`src/main/java/org/springframework/samples/petclinic/vet/VetGraphQLController.java`
 
 ```java
 @BatchMapping(field = "vets")

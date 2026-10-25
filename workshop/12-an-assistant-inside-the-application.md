@@ -256,11 +256,11 @@ query {
 }
 ```
 
-GraphQL's `ID` type accepts any text, so the request reaches `OwnerGraphQlController`, whose `Integer` parameter cannot take `pablo_morales`. The log says `Unresolved BindException`. Given `INTERNAL_ERROR`, the model in our runs told the user that the clinic's system was having internal errors.
+GraphQL's `ID` type accepts any text, so the request reaches `OwnerGraphQLController`, whose `Integer` parameter cannot take `pablo_morales`. The log says `Unresolved BindException`. Given `INTERNAL_ERROR`, the model in our runs told the user that the clinic's system was having internal errors.
 
 Add a handler to the class from chapter 4, after `invalidInput`:
 
-`src/main/java/org/springframework/samples/petclinic/system/GraphQlExceptionHandlers.java`
+`src/main/java/org/springframework/samples/petclinic/system/GraphQLExceptionHandlers.java`
 
 ```java
 	@GraphQlExceptionHandler

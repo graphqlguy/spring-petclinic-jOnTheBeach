@@ -153,9 +153,9 @@ The error is expected: the schema promises a non-null list, and the Java code th
 
 The service layer is ready: `OwnerService` reads the owners from the database. We add the GraphQL entry point, a controller whose methods Spring for GraphQL maps to schema fields.
 
-**Create a new Java class** named `OwnerGraphQlController` in the `org.springframework.samples.petclinic.owner` package, next to `OwnerService` in `src/main/java/org/springframework/samples/petclinic/owner/`. That package already has an `OwnerController`, which serves the Petclinic web pages, so ours gets `GraphQl` in its name.
+**Create a new Java class** named `OwnerGraphQLController` in the `org.springframework.samples.petclinic.owner` package, next to `OwnerService` in `src/main/java/org/springframework/samples/petclinic/owner/`. That package already has an `OwnerController`, which serves the Petclinic web pages, so ours gets `GraphQL` in its name.
 
-`src/main/java/org/springframework/samples/petclinic/owner/OwnerGraphQlController.java`
+`src/main/java/org/springframework/samples/petclinic/owner/OwnerGraphQLController.java`
 
 ```java
 package org.springframework.samples.petclinic.owner;
@@ -166,11 +166,11 @@ import org.springframework.graphql.data.method.annotation.QueryMapping;
 import org.springframework.stereotype.Controller;
 
 @Controller
-class OwnerGraphQlController {
+class OwnerGraphQLController {
 
 	private final OwnerService ownerService;
 
-	OwnerGraphQlController(OwnerService ownerService) {
+	OwnerGraphQLController(OwnerService ownerService) {
 		this.ownerService = ownerService;
 	}
 
@@ -214,7 +214,7 @@ The type is `Owner`, without `!`. When no owner has the id, the field is `null`,
 
 Then Java, in the same controller:
 
-`src/main/java/org/springframework/samples/petclinic/owner/OwnerGraphQlController.java`
+`src/main/java/org/springframework/samples/petclinic/owner/OwnerGraphQLController.java`
 
 ```java
 import org.springframework.graphql.data.method.annotation.Argument;
@@ -323,7 +323,7 @@ type OwnerPage {
 
 The Java side is one method. The `OwnerFilter`, `OwnerSort` and `OwnerPage` records are already in the starting point, and Spring for GraphQL builds the records from the input objects by matching their field names. Add the method to the controller:
 
-`src/main/java/org/springframework/samples/petclinic/owner/OwnerGraphQlController.java`
+`src/main/java/org/springframework/samples/petclinic/owner/OwnerGraphQLController.java`
 
 ```java
 @QueryMapping
@@ -381,7 +381,7 @@ The **Veterinarians** page needs two queries. `VetService` is ready, and so are 
 
 ### Exercise 1: list the vets
 
-Add a `vets` query that returns every vet. A vet has an `id`, a `firstName`, a `lastName` and a list of `specialties`, and a specialty has an `id` and a `name`. Use `VetService.findAll()`, in a new `VetGraphQlController` in the `org.springframework.samples.petclinic.vet` package (`VetController` already serves the web pages). When it works, the frontend shows a **Veterinarians** link.
+Add a `vets` query that returns every vet. A vet has an `id`, a `firstName`, a `lastName` and a list of `specialties`, and a specialty has an `id` and a `name`. Use `VetService.findAll()`, in a new `VetGraphQLController` in the `org.springframework.samples.petclinic.vet` package (`VetController` already serves the web pages). When it works, the frontend shows a **Veterinarians** link.
 
 <details>
 <summary>Show solution</summary>
@@ -409,7 +409,7 @@ type Specialty {
 }
 ```
 
-`src/main/java/org/springframework/samples/petclinic/vet/VetGraphQlController.java`
+`src/main/java/org/springframework/samples/petclinic/vet/VetGraphQLController.java`
 
 ```java
 package org.springframework.samples.petclinic.vet;
@@ -420,11 +420,11 @@ import org.springframework.graphql.data.method.annotation.QueryMapping;
 import org.springframework.stereotype.Controller;
 
 @Controller
-class VetGraphQlController {
+class VetGraphQLController {
 
 	private final VetService vetService;
 
-	VetGraphQlController(VetService vetService) {
+	VetGraphQLController(VetService vetService) {
 		this.vetService = vetService;
 	}
 
@@ -456,7 +456,7 @@ type Query {
 }
 ```
 
-`src/main/java/org/springframework/samples/petclinic/vet/VetGraphQlController.java`
+`src/main/java/org/springframework/samples/petclinic/vet/VetGraphQLController.java`
 
 ```java
 import org.springframework.graphql.data.method.annotation.Argument;

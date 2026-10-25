@@ -347,7 +347,7 @@ public class SecurityConfiguration {
 
 The decoder now checks the issuer and the audience of every token, the frontend's included. Replace the whole class:
 
-`src/main/java/org/springframework/samples/petclinic/system/LoginGraphQlController.java`
+`src/main/java/org/springframework/samples/petclinic/system/LoginGraphQLController.java`
 
 ```java
 package org.springframework.samples.petclinic.system;
@@ -371,7 +371,7 @@ import org.springframework.security.oauth2.jwt.JwtEncoderParameters;
 import org.springframework.stereotype.Controller;
 
 @Controller
-class LoginGraphQlController {
+class LoginGraphQLController {
 
 	private final UserDetailsService users;
 
@@ -383,7 +383,7 @@ class LoginGraphQlController {
 
 	private final String audience;
 
-	LoginGraphQlController(UserDetailsService users, PasswordEncoder passwordEncoder, JwtEncoder jwtEncoder,
+	LoginGraphQLController(UserDetailsService users, PasswordEncoder passwordEncoder, JwtEncoder jwtEncoder,
 			@Value("${spring.security.oauth2.resourceserver.jwt.issuer-uri}") String issuer,
 			@Value("${gatool.mcp.security.resource}") String audience) {
 		this.users = users;

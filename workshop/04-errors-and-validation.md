@@ -46,9 +46,9 @@ The starting point's services throw two exceptions of their own:
 | `EntityNotFoundException` | An unknown id | The entity and the id |
 | `InvalidInputException` | Input that breaks a rule of the clinic | One message per field |
 
-**Create a new class** named `GraphQlExceptionHandlers` in the `org.springframework.samples.petclinic.system` package:
+**Create a new class** named `GraphQLExceptionHandlers` in the `org.springframework.samples.petclinic.system` package:
 
-`src/main/java/org/springframework/samples/petclinic/system/GraphQlExceptionHandlers.java`
+`src/main/java/org/springframework/samples/petclinic/system/GraphQLExceptionHandlers.java`
 
 ```java
 package org.springframework.samples.petclinic.system;
@@ -65,7 +65,7 @@ import org.springframework.graphql.execution.ErrorType;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 
 @ControllerAdvice
-class GraphQlExceptionHandlers {
+class GraphQLExceptionHandlers {
 
 	@GraphQlExceptionHandler
 	GraphQLError notFound(EntityNotFoundException ex, DataFetchingEnvironment environment) {
@@ -158,7 +158,7 @@ The client keeps what worked, and the error's `path` says which part failed. How
 
 Spring for GraphQL applies Bean Validation to controller arguments. Add constraints to the `owners` method:
 
-`src/main/java/org/springframework/samples/petclinic/owner/OwnerGraphQlController.java`
+`src/main/java/org/springframework/samples/petclinic/owner/OwnerGraphQLController.java`
 
 ```java
 import jakarta.validation.constraints.Max;
@@ -171,9 +171,9 @@ OwnerPage owners(@Argument OwnerFilter filter, @Argument @Min(0) int page, @Argu
 }
 ```
 
-A broken constraint throws a `ConstraintViolationException`. Add a third handler to `GraphQlExceptionHandlers`, with the imports it needs:
+A broken constraint throws a `ConstraintViolationException`. Add a third handler to `GraphQLExceptionHandlers`, with the imports it needs:
 
-`src/main/java/org/springframework/samples/petclinic/system/GraphQlExceptionHandlers.java`
+`src/main/java/org/springframework/samples/petclinic/system/GraphQLExceptionHandlers.java`
 
 ```java
 import jakarta.validation.ConstraintViolation;
@@ -226,12 +226,12 @@ Three layers now check what a client sends: the schema's types, which the engine
 
 ## Exercise: a range that ends before it starts
 
-`visits(from: "2026-10-31", to: "2026-10-21")` returns an empty list today, which looks like an empty calendar. Make it a `BAD_REQUEST` on the `to` field instead, with a message that says what is wrong. Throw an `InvalidInputException` from `VisitGraphQlController`: the handler from step 2 does the rest.
+`visits(from: "2026-10-31", to: "2026-10-21")` returns an empty list today, which looks like an empty calendar. Make it a `BAD_REQUEST` on the `to` field instead, with a message that says what is wrong. Throw an `InvalidInputException` from `VisitGraphQLController`: the handler from step 2 does the rest.
 
 <details>
 <summary>Show solution</summary>
 
-`src/main/java/org/springframework/samples/petclinic/owner/VisitGraphQlController.java`
+`src/main/java/org/springframework/samples/petclinic/owner/VisitGraphQLController.java`
 
 ```java
 import org.springframework.samples.petclinic.system.InvalidInputException;

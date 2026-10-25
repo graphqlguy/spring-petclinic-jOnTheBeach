@@ -28,9 +28,9 @@ type Query {
 union SearchResult = Owner | Pet | Vet
 ```
 
-The services already search each type. A search spans the clinic, so it gets a package of its own: **create a new class** named `SearchGraphQlController` in a new `org.springframework.samples.petclinic.search` package:
+The services already search each type. A search spans the clinic, so it gets a package of its own: **create a new class** named `SearchGraphQLController` in a new `org.springframework.samples.petclinic.search` package:
 
-`src/main/java/org/springframework/samples/petclinic/search/SearchGraphQlController.java`
+`src/main/java/org/springframework/samples/petclinic/search/SearchGraphQLController.java`
 
 ```java
 package org.springframework.samples.petclinic.search;
@@ -46,7 +46,7 @@ import org.springframework.samples.petclinic.vet.VetService;
 import org.springframework.stereotype.Controller;
 
 @Controller
-class SearchGraphQlController {
+class SearchGraphQLController {
 
 	private final OwnerService ownerService;
 
@@ -54,7 +54,7 @@ class SearchGraphQlController {
 
 	private final PetService petService;
 
-	SearchGraphQlController(OwnerService ownerService, VetService vetService, PetService petService) {
+	SearchGraphQLController(OwnerService ownerService, VetService vetService, PetService petService) {
 		this.ownerService = ownerService;
 		this.vetService = vetService;
 		this.petService = petService;
@@ -185,7 +185,7 @@ A type can belong to several unions and implement several interfaces, so the two
 
 ## Exercise: find people by name
 
-Add a `people(name: String!)` query that returns owners and vets whose name contains the text, typed as the interface: `[Person!]!`. Use `OwnerService.search` and `VetService.search`, in `SearchGraphQlController`. Then ask for the shared fields directly, and for the city of the owners and the specialties of the vets with fragments.
+Add a `people(name: String!)` query that returns owners and vets whose name contains the text, typed as the interface: `[Person!]!`. Use `OwnerService.search` and `VetService.search`, in `SearchGraphQLController`. Then ask for the shared fields directly, and for the city of the owners and the specialties of the vets with fragments.
 
 <details>
 <summary>Show solution</summary>
@@ -200,7 +200,7 @@ type Query {
 }
 ```
 
-`src/main/java/org/springframework/samples/petclinic/search/SearchGraphQlController.java`
+`src/main/java/org/springframework/samples/petclinic/search/SearchGraphQLController.java`
 
 ```java
 import org.springframework.samples.petclinic.model.Person;

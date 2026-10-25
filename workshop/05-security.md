@@ -133,9 +133,9 @@ type Mutation {
 }
 ```
 
-**Create a new class** named `LoginGraphQlController` in the `org.springframework.samples.petclinic.system` package:
+**Create a new class** named `LoginGraphQLController` in the `org.springframework.samples.petclinic.system` package:
 
-`src/main/java/org/springframework/samples/petclinic/system/LoginGraphQlController.java`
+`src/main/java/org/springframework/samples/petclinic/system/LoginGraphQLController.java`
 
 ```java
 package org.springframework.samples.petclinic.system;
@@ -157,7 +157,7 @@ import org.springframework.security.oauth2.jwt.JwtEncoderParameters;
 import org.springframework.stereotype.Controller;
 
 @Controller
-class LoginGraphQlController {
+class LoginGraphQLController {
 
 	private final UserDetailsService users;
 
@@ -165,7 +165,7 @@ class LoginGraphQlController {
 
 	private final JwtEncoder jwtEncoder;
 
-	LoginGraphQlController(UserDetailsService users, PasswordEncoder passwordEncoder, JwtEncoder jwtEncoder) {
+	LoginGraphQLController(UserDetailsService users, PasswordEncoder passwordEncoder, JwtEncoder jwtEncoder) {
 		this.users = users;
 		this.passwordEncoder = passwordEncoder;
 		this.jwtEncoder = jwtEncoder;
@@ -213,7 +213,7 @@ The `scope` says what the token allows. A `guest` token has an empty scope. Try 
 
 `@PreAuthorize` checks a rule before a method runs. Spring Security turns each scope of a token into an authority named `SCOPE_` plus the scope, so the rule asks for `SCOPE_petclinic:write`. Add the annotation to both owner mutations:
 
-`src/main/java/org/springframework/samples/petclinic/owner/OwnerGraphQlController.java`
+`src/main/java/org/springframework/samples/petclinic/owner/OwnerGraphQLController.java`
 
 ```java
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -233,7 +233,7 @@ Owner updateOwner(@Argument UpdateOwnerInput input) {
 
 And to booking a visit:
 
-`src/main/java/org/springframework/samples/petclinic/owner/VisitGraphQlController.java`
+`src/main/java/org/springframework/samples/petclinic/owner/VisitGraphQLController.java`
 
 ```java
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -277,9 +277,9 @@ type Owner {
 }
 ```
 
-Then a resolver for the field, in `OwnerGraphQlController`:
+Then a resolver for the field, in `OwnerGraphQLController`:
 
-`src/main/java/org/springframework/samples/petclinic/owner/OwnerGraphQlController.java`
+`src/main/java/org/springframework/samples/petclinic/owner/OwnerGraphQLController.java`
 
 ```java
 import org.springframework.graphql.data.method.annotation.SchemaMapping;
@@ -342,7 +342,7 @@ Run `./mvnw test`: all 108 tests pass. Chapter 8 adds tests of our own.
 <details>
 <summary>Show solution</summary>
 
-`src/main/java/org/springframework/samples/petclinic/owner/PetGraphQlController.java`
+`src/main/java/org/springframework/samples/petclinic/owner/PetGraphQLController.java`
 
 ```java
 import org.springframework.security.access.prepost.PreAuthorize;

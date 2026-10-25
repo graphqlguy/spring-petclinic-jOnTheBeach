@@ -48,9 +48,9 @@ The first brings `GraphQlTester` and its Spring Boot support. The second brings 
 
 ## 3. Integration tests: HttpGraphQlTester
 
-**Create a new test class** named `PetclinicGraphQlTests` in a new `org.springframework.samples.petclinic.graphql` package, under `src/test/java`:
+**Create a new test class** named `PetclinicGraphQLTests` in a new `org.springframework.samples.petclinic.graphql` package, under `src/test/java`:
 
-`src/test/java/org/springframework/samples/petclinic/graphql/PetclinicGraphQlTests.java`
+`src/test/java/org/springframework/samples/petclinic/graphql/PetclinicGraphQLTests.java`
 
 ```java
 package org.springframework.samples.petclinic.graphql;
@@ -66,7 +66,7 @@ import org.springframework.graphql.test.tester.HttpGraphQlTester;
 
 @SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
 @AutoConfigureHttpGraphQlTester
-class PetclinicGraphQlTests {
+class PetclinicGraphQLTests {
 
 	@Autowired
 	private HttpGraphQlTester graphQlTester;
@@ -103,7 +103,7 @@ class PetclinicGraphQlTests {
 | `path("owners.totalElements")` | Picks a value from `data`, with the dots and `[*]` of JSONPath. |
 | `entity(...)`, `entityList(...)` | Converts the value to Java, then asserts on it. |
 
-Run it from your IDE, or with `./mvnw test -Dtest=PetclinicGraphQlTests`. To see a failure, change the expected `3` to `4` and run it again:
+Run it from your IDE, or with `./mvnw test -Dtest=PetclinicGraphQLTests`. To see a failure, change the expected `3` to `4` and run it again:
 
 ```text
 owners.totalElements expected:<4> but was:<3>
@@ -221,17 +221,17 @@ class VisitSubscriptionTests {
 
 ## 6. Faster feedback: the @GraphQlTest slice
 
-A slice starts only the GraphQL layer: the schema, the controller under test and its exception handlers, without the web server or the database. The service is a Mockito mock, so the test checks the controller and the schema alone. The schema uses our `Date` scalar, so the slice needs `GraphQlScalarsConfiguration`. That class is package-private, so first make it `public`:
+A slice starts only the GraphQL layer: the schema, the controller under test and its exception handlers, without the web server or the database. The service is a Mockito mock, so the test checks the controller and the schema alone. The schema uses our `Date` scalar, so the slice needs `GraphQLScalarsConfiguration`. That class is package-private, so first make it `public`:
 
-`src/main/java/org/springframework/samples/petclinic/system/GraphQlScalarsConfiguration.java`
+`src/main/java/org/springframework/samples/petclinic/system/GraphQLScalarsConfiguration.java`
 
 ```java
-public class GraphQlScalarsConfiguration {
+public class GraphQLScalarsConfiguration {
 ```
 
 **Create a new test class** next to the controller:
 
-`src/test/java/org/springframework/samples/petclinic/owner/OwnerGraphQlControllerTests.java`
+`src/test/java/org/springframework/samples/petclinic/owner/OwnerGraphQLControllerTests.java`
 
 ```java
 package org.springframework.samples.petclinic.owner;
@@ -244,12 +244,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.graphql.test.autoconfigure.GraphQlTest;
 import org.springframework.context.annotation.Import;
 import org.springframework.graphql.test.tester.GraphQlTester;
-import org.springframework.samples.petclinic.system.GraphQlScalarsConfiguration;
+import org.springframework.samples.petclinic.system.GraphQLScalarsConfiguration;
 import org.springframework.test.context.bean.override.mockito.MockitoBean;
 
-@GraphQlTest(OwnerGraphQlController.class)
-@Import(GraphQlScalarsConfiguration.class)
-class OwnerGraphQlControllerTests {
+@GraphQlTest(OwnerGraphQLController.class)
+@Import(GraphQLScalarsConfiguration.class)
+class OwnerGraphQLControllerTests {
 
 	@Autowired
 	private GraphQlTester graphQlTester;
@@ -291,7 +291,7 @@ Tests run: 113, Failures: 0, Errors: 0, Skipped: 0
 
 ## Exercise: prove the authorization rules
 
-Tests of the happy path leave the security of chapter 5 unguarded: a careless change could open a mutation to everyone, and every test above would still pass. Add two tests to `PetclinicGraphQlTests`:
+Tests of the happy path leave the security of chapter 5 unguarded: a careless change could open a mutation to everyone, and every test above would still pass. Add two tests to `PetclinicGraphQLTests`:
 
 1. `guest` tries to add an owner, and gets `FORBIDDEN`.
 2. An anonymous caller asks for owner 6's last name and telephone, gets the last name, a `null` telephone, and an `UNAUTHORIZED` error.
@@ -299,7 +299,7 @@ Tests of the happy path leave the security of chapter 5 unguarded: a careless ch
 <details>
 <summary>Show solution</summary>
 
-`src/test/java/org/springframework/samples/petclinic/graphql/PetclinicGraphQlTests.java`
+`src/test/java/org/springframework/samples/petclinic/graphql/PetclinicGraphQLTests.java`
 
 ```java
 @Test
