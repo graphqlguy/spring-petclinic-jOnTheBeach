@@ -63,9 +63,9 @@ class SearchGraphQLController {
 	@QueryMapping
 	List<Object> search(@Argument String text) {
 		List<Object> results = new ArrayList<>();
-		results.addAll(this.ownerService.search(text));
-		results.addAll(this.vetService.search(text));
-		results.addAll(this.petService.search(text));
+		results.addAll(ownerService.search(text));
+		results.addAll(vetService.search(text));
+		results.addAll(petService.search(text));
 		return results;
 	}
 
@@ -208,8 +208,8 @@ import org.springframework.samples.petclinic.model.Person;
 @QueryMapping
 List<Person> people(@Argument String name) {
 	List<Person> people = new ArrayList<>();
-	people.addAll(this.ownerService.search(name));
-	people.addAll(this.vetService.search(name));
+	people.addAll(ownerService.search(name));
+	people.addAll(vetService.search(name));
 	return people;
 }
 ```

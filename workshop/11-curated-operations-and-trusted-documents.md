@@ -247,7 +247,7 @@ class TrustedDocumentsInterceptor implements WebGraphQlInterceptor {
 		for (String location : List.of("classpath:operations/**/*.graphql", "classpath:operations-ui/**/*.graphql")) {
 			for (Resource file : resolver.getResources(location)) {
 				byte[] content = file.getContentAsByteArray();
-				this.documents.put(sha256(content), printed(new String(content, StandardCharsets.UTF_8)));
+				documents.put(sha256(content), printed(new String(content, StandardCharsets.UTF_8)));
 			}
 		}
 	}
@@ -256,7 +256,7 @@ class TrustedDocumentsInterceptor implements WebGraphQlInterceptor {
 	public Mono<WebGraphQlResponse> intercept(WebGraphQlRequest request, Chain chain) {
 		Object hash = hashOf(request);
 		if (hash != null) {
-			String document = this.documents.get(hash);
+			String document = documents.get(hash);
 			if (document == null) {
 				return refuse(request, ErrorType.NOT_FOUND,
 						"No operation file has this hash. After you change an operation file, restart the backend.");
@@ -267,7 +267,7 @@ class TrustedDocumentsInterceptor implements WebGraphQlInterceptor {
 		}
 		// GATool sends the text of an operation file as GraphQL Java prints it, so its
 		// tool calls match one of our documents
-		if (this.trustedOnly && !this.documents.containsValue(request.getDocument())) {
+		if (trustedOnly && !documents.containsValue(request.getDocument())) {
 			return refuse(request, ErrorType.FORBIDDEN,
 					"This server runs trusted documents alone: send the SHA-256 hash of an operation file");
 		}

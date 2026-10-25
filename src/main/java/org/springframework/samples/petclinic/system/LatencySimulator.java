@@ -35,11 +35,11 @@ public class LatencySimulator {
 	}
 
 	public void pause() {
-		if (this.latency.isZero()) {
+		if (latency.isZero()) {
 			return;
 		}
 		try {
-			Thread.sleep(this.latency);
+			Thread.sleep(latency);
 		}
 		catch (InterruptedException ex) {
 			Thread.currentThread().interrupt();

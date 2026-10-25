@@ -370,7 +370,7 @@ The chapter adds 21 tests: a test class for each kind of field, against the reco
 
 ```java
 		// the Junta matches the municipality in capitals alone
-		this.mockUpstreams.verify(getRequestedFor(urlPathEqualTo("/junta/work-calendar/get/search_calendar"))
+		mockUpstreams.verify(getRequestedFor(urlPathEqualTo("/junta/work-calendar/get/search_calendar"))
 			.withQueryParam("municipality", equalTo("MÁLAGA")));
 ```
 

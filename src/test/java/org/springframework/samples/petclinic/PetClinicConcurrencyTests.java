@@ -131,7 +131,7 @@ public class PetClinicConcurrencyTests {
 
 	// The pets of an owner load lazily, so they are read inside a transaction
 	private List<String> petNames(int ownerId) {
-		return this.transactions.execute(
+		return transactions.execute(
 				(status) -> ownerRepository.findById(ownerId).orElseThrow().getPets().stream().map(Pet::getName).toList());
 	}
 

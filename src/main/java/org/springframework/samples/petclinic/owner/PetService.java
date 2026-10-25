@@ -55,24 +55,24 @@ public class PetService {
 	 * @throws EntityNotFoundException when no pet has the id
 	 */
 	public Pet findById(Integer id) {
-		this.latency.pause();
-		return this.pets.findById(id).orElseThrow(() -> new EntityNotFoundException("Pet", id));
+		latency.pause();
+		return pets.findById(id).orElseThrow(() -> new EntityNotFoundException("Pet", id));
 	}
 
 	/**
 	 * Every pet type, ordered by name.
 	 */
 	public List<PetType> findPetTypes() {
-		this.latency.pause();
-		return this.petTypes.findPetTypes();
+		latency.pause();
+		return petTypes.findPetTypes();
 	}
 
 	/**
 	 * Pets whose name contains the text, in any case.
 	 */
 	public List<Pet> search(String text) {
-		this.latency.pause();
-		return this.pets.search(text);
+		latency.pause();
+		return pets.search(text);
 	}
 
 	/**
@@ -82,15 +82,15 @@ public class PetService {
 	 */
 	@Transactional
 	public Pet addPet(AddPetInput input) {
-		this.latency.pause();
-		Owner owner = this.owners.findById(input.ownerId())
+		latency.pause();
+		Owner owner = owners.findById(input.ownerId())
 			.orElseThrow(() -> new EntityNotFoundException("Owner", input.ownerId()));
 		PetType type = findType(input.typeId());
 		Map<String, String> errors = new LinkedHashMap<>();
 		if (!StringUtils.hasText(input.name())) {
 			errors.put("name", "Name is required");
 		}
-		else if (this.pets.existsByOwnerIdAndNameIgnoreCase(owner.getId(), input.name().trim())) {
+		else if (pets.existsByOwnerIdAndNameIgnoreCase(owner.getId(), input.name().trim())) {
 			errors.put("name", duplicateName(owner, input.name()));
 		}
 		checkBirthDate(input.birthDate(), true, errors);
@@ -102,7 +102,7 @@ public class PetService {
 		pet.setBirthDate(input.birthDate());
 		pet.setType(type);
 		owner.addPet(pet);
-		return this.pets.save(pet);
+		return pets.save(pet);
 	}
 
 	/**
@@ -112,14 +112,14 @@ public class PetService {
 	 */
 	@Transactional
 	public Pet updatePet(UpdatePetInput input) {
-		this.latency.pause();
-		Pet pet = this.pets.findById(input.id()).orElseThrow(() -> new EntityNotFoundException("Pet", input.id()));
+		latency.pause();
+		Pet pet = pets.findById(input.id()).orElseThrow(() -> new EntityNotFoundException("Pet", input.id()));
 		Map<String, String> errors = new LinkedHashMap<>();
 		if (input.name() != null) {
 			if (!StringUtils.hasText(input.name())) {
 				errors.put("name", "Name is required");
 			}
-			else if (this.pets.existsByOwnerIdAndNameIgnoreCaseAndIdNot(pet.getOwner().getId(), input.name().trim(),
+			else if (pets.existsByOwnerIdAndNameIgnoreCaseAndIdNot(pet.getOwner().getId(), input.name().trim(),
 					pet.getId())) {
 				errors.put("name", duplicateName(pet.getOwner(), input.name()));
 			}
@@ -141,7 +141,7 @@ public class PetService {
 	}
 
 	private PetType findType(Integer typeId) {
-		return this.petTypes.findById(typeId).orElseThrow(() -> new EntityNotFoundException("PetType", typeId));
+		return petTypes.findById(typeId).orElseThrow(() -> new EntityNotFoundException("PetType", typeId));
 	}
 
 	private static void checkBirthDate(LocalDate birthDate, boolean required, Map<String, String> errors) {

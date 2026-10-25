@@ -395,22 +395,22 @@ class LoginGraphQLController {
 
 	@MutationMapping
 	String login(@Argument String username, @Argument String password) {
-		UserDetails user = this.users.loadUserByUsername(username);
-		if (!this.passwordEncoder.matches(password, user.getPassword())) {
+		UserDetails user = users.loadUserByUsername(username);
+		if (!passwordEncoder.matches(password, user.getPassword())) {
 			throw new BadCredentialsException("Wrong username or password");
 		}
 		boolean staff = user.getAuthorities().stream().anyMatch((a) -> a.getAuthority().equals("ROLE_STAFF"));
 		Instant now = Instant.now();
 		JwtClaimsSet claims = JwtClaimsSet.builder()
-			.issuer(this.issuer)
-			.audience(List.of(this.audience))
+			.issuer(issuer)
+			.audience(List.of(audience))
 			.subject(user.getUsername())
 			.issuedAt(now)
 			.expiresAt(now.plus(Duration.ofHours(8)))
 			.claim("scope", staff ? "petclinic:write" : "")
 			.build();
 		JwsHeader header = JwsHeader.with(SignatureAlgorithm.RS256).build();
-		return this.jwtEncoder.encode(JwtEncoderParameters.from(header, claims)).getTokenValue();
+		return jwtEncoder.encode(JwtEncoderParameters.from(header, claims)).getTokenValue();
 	}
 
 }

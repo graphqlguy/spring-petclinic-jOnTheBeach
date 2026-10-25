@@ -45,28 +45,28 @@ class PetServiceTests {
 
 	@Test
 	void findPetTypesOrdersByName() {
-		assertThat(this.pets.findPetTypes()).extracting(PetType::getName)
+		assertThat(pets.findPetTypes()).extracting(PetType::getName)
 			.containsExactly("bird", "cat", "dog", "hamster", "lizard", "snake");
 	}
 
 	@Test
 	void findByIdRefusesAnUnknownId() {
-		assertThat(this.pets.findById(7).getName()).isEqualTo("Samantha");
-		assertThatExceptionOfType(EntityNotFoundException.class).isThrownBy(() -> this.pets.findById(999));
+		assertThat(pets.findById(7).getName()).isEqualTo("Samantha");
+		assertThatExceptionOfType(EntityNotFoundException.class).isThrownBy(() -> pets.findById(999));
 	}
 
 	@Test
 	void addPetGivesThePetToItsOwner() {
-		Pet pet = this.pets.addPet(new AddPetInput(1, "Bobby", LocalDate.of(2024, 5, 1), DOG));
+		Pet pet = pets.addPet(new AddPetInput(1, "Bobby", LocalDate.of(2024, 5, 1), DOG));
 		assertThat(pet.getId()).isNotNull();
 		assertThat(pet.getOwner().getId()).isEqualTo(1);
-		assertThat(this.owners.findById(1).getPets()).extracting(Pet::getName).contains("Bobby", "Leo");
+		assertThat(owners.findById(1).getPets()).extracting(Pet::getName).contains("Bobby", "Leo");
 	}
 
 	@Test
 	void addPetRefusesADuplicateNameAndAFutureBirthDate() {
 		assertThatExceptionOfType(InvalidInputException.class)
-			.isThrownBy(() -> this.pets.addPet(new AddPetInput(1, "leo", LocalDate.now().plusDays(1), DOG)))
+			.isThrownBy(() -> pets.addPet(new AddPetInput(1, "leo", LocalDate.now().plusDays(1), DOG)))
 			.satisfies((ex) -> assertThat(ex.getFieldErrors()).containsOnlyKeys("name", "birthDate")
 				.containsEntry("name", "George Franklin already has a pet named leo"));
 	}
@@ -74,14 +74,14 @@ class PetServiceTests {
 	@Test
 	void addPetRefusesAnUnknownOwnerOrType() {
 		assertThatExceptionOfType(EntityNotFoundException.class)
-			.isThrownBy(() -> this.pets.addPet(new AddPetInput(999, "Bobby", LocalDate.of(2024, 5, 1), DOG)));
+			.isThrownBy(() -> pets.addPet(new AddPetInput(999, "Bobby", LocalDate.of(2024, 5, 1), DOG)));
 		assertThatExceptionOfType(EntityNotFoundException.class)
-			.isThrownBy(() -> this.pets.addPet(new AddPetInput(1, "Bobby", LocalDate.of(2024, 5, 1), 99)));
+			.isThrownBy(() -> pets.addPet(new AddPetInput(1, "Bobby", LocalDate.of(2024, 5, 1), 99)));
 	}
 
 	@Test
 	void updatePetChangesOnlyTheFieldsItSets() {
-		Pet pet = this.pets.updatePet(new UpdatePetInput(7, "Samantha II", null, null));
+		Pet pet = pets.updatePet(new UpdatePetInput(7, "Samantha II", null, null));
 		assertThat(pet.getName()).isEqualTo("Samantha II");
 		assertThat(pet.getType().getName()).isEqualTo("cat");
 	}
@@ -89,12 +89,12 @@ class PetServiceTests {
 	@Test
 	void updatePetRefusesTheNameOfASibling() {
 		assertThatExceptionOfType(InvalidInputException.class)
-			.isThrownBy(() -> this.pets.updatePet(new UpdatePetInput(7, "Max", null, null)));
+			.isThrownBy(() -> pets.updatePet(new UpdatePetInput(7, "Max", null, null)));
 	}
 
 	@Test
 	void searchMatchesPartOfTheName() {
-		assertThat(this.pets.search("WOOF")).extracting(Pet::getName).containsExactly("Woofy");
+		assertThat(pets.search("WOOF")).extracting(Pet::getName).containsExactly("Woofy");
 	}
 
 }

@@ -51,8 +51,8 @@ class VisitServiceTests {
 
 	@Test
 	void findByVetReturnsTheVetsVisitsNewestFirst() {
-		Vet douglas = this.vets.findById(3);
-		List<Visit> found = this.visits.findByVet(douglas);
+		Vet douglas = vets.findById(3);
+		List<Visit> found = visits.findByVet(douglas);
 		assertThat(found).isNotEmpty().allMatch((visit) -> visit.getVet().getId().equals(3));
 		assertThat(found).extracting(Visit::getDate).isSortedAccordingTo((a, b) -> b.compareTo(a));
 	}
@@ -60,23 +60,23 @@ class VisitServiceTests {
 	@Test
 	void findVisitsByVetIdsMatchesOneCallPerVet() {
 		List<Integer> ids = List.of(1, 2, 3, 4, 5, 6);
-		Map<Integer, List<Visit>> batch = this.visits.findVisitsByVetIds(ids);
+		Map<Integer, List<Visit>> batch = visits.findVisitsByVetIds(ids);
 		for (Integer id : ids) {
 			assertThat(batch.getOrDefault(id, List.of())).extracting(Visit::getId)
 				.containsExactlyElementsOf(
-						this.visits.findByVet(this.vets.findById(id)).stream().map(Visit::getId).toList());
+						visits.findByVet(vets.findById(id)).stream().map(Visit::getId).toList());
 		}
 	}
 
 	@Test
 	void findVisitsReturnsTheVisitsBetweenTwoDates() {
-		List<Visit> found = this.visits.findVisits(LocalDate.of(2026, 10, 22), LocalDate.of(2026, 12, 31));
+		List<Visit> found = visits.findVisits(LocalDate.of(2026, 10, 22), LocalDate.of(2026, 12, 31));
 		assertThat(found).hasSize(3).extracting(Visit::getDate).isSorted();
 	}
 
 	@Test
 	void addVisitBooksForTomorrowAndPublishesAnEvent(ApplicationEvents events) {
-		Visit visit = this.visits.addVisit(new AddVisitInput(7, 1, null, "check-up"));
+		Visit visit = visits.addVisit(new AddVisitInput(7, 1, null, "check-up"));
 		assertThat(visit.getDate()).isEqualTo(LocalDate.now().plusDays(1));
 		assertThat(visit.getPet().getName()).isEqualTo("Samantha");
 		assertThat(events.stream(VisitBookedEvent.class)).containsExactly(new VisitBookedEvent(visit.getId()));
@@ -85,17 +85,17 @@ class VisitServiceTests {
 	@Test
 	void addVisitRefusesAMissingDescriptionAndUnknownIds() {
 		assertThatExceptionOfType(InvalidInputException.class)
-			.isThrownBy(() -> this.visits.addVisit(new AddVisitInput(7, null, null, " ")));
+			.isThrownBy(() -> visits.addVisit(new AddVisitInput(7, null, null, " ")));
 		assertThatExceptionOfType(EntityNotFoundException.class)
-			.isThrownBy(() -> this.visits.addVisit(new AddVisitInput(999, null, null, "check-up")));
+			.isThrownBy(() -> visits.addVisit(new AddVisitInput(999, null, null, "check-up")));
 		assertThatExceptionOfType(EntityNotFoundException.class)
-			.isThrownBy(() -> this.visits.addVisit(new AddVisitInput(7, 99, null, "check-up")));
+			.isThrownBy(() -> visits.addVisit(new AddVisitInput(7, 99, null, "check-up")));
 	}
 
 	@Test
 	@Transactional(propagation = Propagation.NOT_SUPPORTED)
 	void findWithDetailsCanBeReadAfterTheTransaction() {
-		Visit visit = this.visits.findWithDetails(1);
+		Visit visit = visits.findWithDetails(1);
 		assertThat(visit.getPet().getOwner().getLastName()).isNotBlank();
 		assertThat(visit.getPet().getType().getName()).isNotBlank();
 		assertThat(visit.getVet().getLastName()).isNotBlank();

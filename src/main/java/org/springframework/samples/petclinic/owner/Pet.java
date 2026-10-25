@@ -66,11 +66,11 @@ public class Pet extends NamedEntity {
 	}
 
 	public LocalDate getBirthDate() {
-		return this.birthDate;
+		return birthDate;
 	}
 
 	public PetType getType() {
-		return this.type;
+		return type;
 	}
 
 	public void setType(PetType type) {
@@ -78,7 +78,7 @@ public class Pet extends NamedEntity {
 	}
 
 	public Owner getOwner() {
-		return this.owner;
+		return owner;
 	}
 
 	public void setOwner(Owner owner) {
@@ -86,7 +86,7 @@ public class Pet extends NamedEntity {
 	}
 
 	public Collection<Visit> getVisits() {
-		return this.visits;
+		return visits;
 	}
 
 	public void addVisit(Visit visit) {

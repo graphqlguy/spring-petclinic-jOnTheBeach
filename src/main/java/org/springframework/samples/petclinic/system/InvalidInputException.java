@@ -46,7 +46,7 @@ public class InvalidInputException extends RuntimeException {
 	 * @return the message for each field
 	 */
 	public Map<String, String> getFieldErrors() {
-		return this.fieldErrors;
+		return fieldErrors;
 	}
 
 }

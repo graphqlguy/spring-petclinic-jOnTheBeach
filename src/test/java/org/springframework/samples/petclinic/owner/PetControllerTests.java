@@ -72,7 +72,7 @@ class PetControllerTests {
 		PetType cat = new PetType();
 		cat.setId(3);
 		cat.setName("hamster");
-		given(this.types.findPetTypes()).willReturn(List.of(cat));
+		given(types.findPetTypes()).willReturn(List.of(cat));
 
 		Owner owner = new Owner();
 		Pet pet = new Pet();
@@ -83,7 +83,7 @@ class PetControllerTests {
 		dog.setId(TEST_PET_ID + 1);
 		pet.setName("petty");
 		dog.setName("doggy");
-		given(this.owners.findById(TEST_OWNER_ID)).willReturn(Optional.of(owner));
+		given(owners.findById(TEST_OWNER_ID)).willReturn(Optional.of(owner));
 	}
 
 	@Test

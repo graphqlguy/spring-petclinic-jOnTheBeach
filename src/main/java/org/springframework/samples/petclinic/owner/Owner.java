@@ -67,7 +67,7 @@ public class Owner extends Person {
 	private final List<Pet> pets = new ArrayList<>();
 
 	public String getAddress() {
-		return this.address;
+		return address;
 	}
 
 	public void setAddress(String address) {
@@ -75,7 +75,7 @@ public class Owner extends Person {
 	}
 
 	public String getCity() {
-		return this.city;
+		return city;
 	}
 
 	public void setCity(String city) {
@@ -83,7 +83,7 @@ public class Owner extends Person {
 	}
 
 	public String getTelephone() {
-		return this.telephone;
+		return telephone;
 	}
 
 	public void setTelephone(String telephone) {
@@ -91,7 +91,7 @@ public class Owner extends Person {
 	}
 
 	public List<Pet> getPets() {
-		return this.pets;
+		return pets;
 	}
 
 	public void addPet(Pet pet) {
@@ -156,13 +156,13 @@ public class Owner extends Person {
 
 	@Override
 	public String toString() {
-		return new ToStringCreator(this).append("id", this.getId())
-			.append("new", this.isNew())
-			.append("lastName", this.getLastName())
-			.append("firstName", this.getFirstName())
-			.append("address", this.address)
-			.append("city", this.city)
-			.append("telephone", this.telephone)
+		return new ToStringCreator(this).append("id", getId())
+			.append("new", isNew())
+			.append("lastName", getLastName())
+			.append("firstName", getFirstName())
+			.append("address", address)
+			.append("city", city)
+			.append("telephone", telephone)
 			.toString();
 	}
 

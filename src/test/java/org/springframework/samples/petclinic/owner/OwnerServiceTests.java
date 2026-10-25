@@ -39,82 +39,82 @@ class OwnerServiceTests {
 
 	@Test
 	void findAllOrdersByLastName() {
-		assertThat(this.owners.findAll()).hasSize(15)
+		assertThat(owners.findAll()).hasSize(15)
 			.extracting(Owner::getLastName)
 			.startsWith("Beach", "Black", "Coleman");
 	}
 
 	@Test
 	void findByIdReturnsNullForAnUnknownId() {
-		assertThat(this.owners.findById(1).getLastName()).isEqualTo("Franklin");
-		assertThat(this.owners.findById(999)).isNull();
+		assertThat(owners.findById(1).getLastName()).isEqualTo("Franklin");
+		assertThat(owners.findById(999)).isNull();
 	}
 
 	@Test
 	void findOwnersFiltersByLastNameAndCityInAnyCase() {
-		OwnerPage davises = this.owners.findOwners(new OwnerFilter("davi", null), 0, 10, null);
+		OwnerPage davises = owners.findOwners(new OwnerFilter("davi", null), 0, 10, null);
 		assertThat(davises.content()).extracting(Owner::getFirstName).containsExactly("Betty", "Harold");
 
-		OwnerPage torremolinos = this.owners.findOwners(new OwnerFilter(null, "TORREMOLINOS"), 0, 10, null);
+		OwnerPage torremolinos = owners.findOwners(new OwnerFilter(null, "TORREMOLINOS"), 0, 10, null);
 		assertThat(torremolinos.totalElements()).isEqualTo(3);
 
-		OwnerPage blank = this.owners.findOwners(new OwnerFilter(" ", ""), 0, 10, null);
+		OwnerPage blank = owners.findOwners(new OwnerFilter(" ", ""), 0, 10, null);
 		assertThat(blank.totalElements()).isEqualTo(15);
 	}
 
 	@Test
 	void findOwnersMatchesTheCityWithOrWithoutAccents() {
-		assertThat(this.owners.findOwners(new OwnerFilter(null, "Malaga"), 0, 10, null).content())
+		assertThat(owners.findOwners(new OwnerFilter(null, "Malaga"), 0, 10, null).content())
 			.extracting(Owner::getLastName)
 			.containsExactly("Navarro", "Ruiz");
-		assertThat(this.owners.findOwners(new OwnerFilter(null, "MÁLAGA"), 0, 10, null).totalElements()).isEqualTo(2);
+		assertThat(owners.findOwners(new OwnerFilter(null, "MÁLAGA"), 0, 10, null).totalElements()).isEqualTo(2);
 
-		this.owners.addOwner(new AddOwnerInput("Ana", "Lozano", "Calle Larios 3", "Malaga", "9521234567"));
-		assertThat(this.owners.findOwners(new OwnerFilter(null, "Málaga"), 0, 10, null).totalElements()).isEqualTo(3);
+		owners.addOwner(new AddOwnerInput("Ana", "Lozano", "Calle Larios 3", "Malaga", "9521234567"));
+		assertThat(owners.findOwners(new OwnerFilter(null, "Málaga"), 0, 10, null).totalElements()).isEqualTo(3);
 
-		assertThat(this.owners.findOwners(new OwnerFilter(null, "Nerja"), 0, 10, null).totalElements()).isZero();
+		assertThat(owners.findOwners(new OwnerFilter(null, "Nerja"), 0, 10, null).totalElements()).isZero();
 	}
 
 	@Test
 	void findOwnersPagesAndSorts() {
-		OwnerPage first = this.owners.findOwners(null, 0, 6, null);
+		OwnerPage first = owners.findOwners(null, 0, 6, null);
 		assertThat(first.totalPages()).isEqualTo(3);
 		assertThat(first.isFirst()).isTrue();
 		assertThat(first.hasNext()).isTrue();
 
-		OwnerPage last = this.owners.findOwners(null, 2, 6, null);
+		OwnerPage last = owners.findOwners(null, 2, 6, null);
 		assertThat(last.content()).hasSize(3);
 		assertThat(last.isLast()).isTrue();
 		assertThat(last.hasPrevious()).isTrue();
 
-		OwnerPage byCity = this.owners.findOwners(null, 0, 1, new OwnerSort(OwnerSortField.CITY, SortOrder.DESC));
+		OwnerPage byCity = owners.findOwners(null, 0, 1, new OwnerSort(OwnerSortField.CITY, SortOrder.DESC));
 		assertThat(byCity.content().get(0).getCity()).isEqualTo("Windsor");
 	}
 
 	@Test
 	void searchMatchesFirstOrLastName() {
-		assertThat(this.owners.search("beach")).extracting(Owner::getFirstName).containsExactly("J On The");
-		assertThat(this.owners.search("ANTONIO")).extracting(Owner::getLastName).containsExactly("Ruiz");
+		assertThat(owners.search("beach")).extracting(Owner::getFirstName).containsExactly("J On The");
+		assertThat(owners.search("ANTONIO")).extracting(Owner::getLastName).containsExactly("Ruiz");
 	}
 
 	@Test
 	void addOwner() {
-		Owner owner = this.owners
+		Owner owner = owners
 			.addOwner(new AddOwnerInput("Ana", "Lozano", "Calle Larios 3", "Málaga", "9521234567"));
 		assertThat(owner.getId()).isNotNull();
-		assertThat(this.owners.findAll()).hasSize(16);
+		assertThat(owners.findAll()).hasSize(16);
 	}
 
 	@Test
 	void addOwnerRefusesATelephoneThatIsNotTenDigits() {
 		assertThatExceptionOfType(InvalidInputException.class)
-			.isThrownBy(() -> this.owners.addOwner(new AddOwnerInput("Ana", "", "Calle Larios 3", "Málaga", "123")))
+			.isThrownBy(() -> owners.addOwner(new AddOwnerInput("Ana", "", "Calle Larios 3", "Málaga", "123")))
 			.satisfies((ex) -> assertThat(ex.getFieldErrors()).containsOnlyKeys("lastName", "telephone"));
 	}
 
 	@Test
 	void updateOwnerChangesOnlyTheFieldsItSets() {
-		Owner owner = this.owners.updateOwner(new UpdateOwnerInput(1, null, null, null, "Nerja", null));
+		Owner owner = owners.updateOwner(new UpdateOwnerInput(1, null, null, null, "Nerja", null));
 		assertThat(owner.getCity()).isEqualTo("Nerja");
 		assertThat(owner.getLastName()).isEqualTo("Franklin");
 	}
@@ -122,7 +122,7 @@ class OwnerServiceTests {
 	@Test
 	void updateOwnerRefusesAnUnknownId() {
 		assertThatExceptionOfType(EntityNotFoundException.class)
-			.isThrownBy(() -> this.owners.updateOwner(new UpdateOwnerInput(999, "X", null, null, null, null)));
+			.isThrownBy(() -> owners.updateOwner(new UpdateOwnerInput(999, "X", null, null, null, null)));
 	}
 
 }

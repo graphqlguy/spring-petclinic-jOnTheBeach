@@ -69,8 +69,8 @@ public class VisitService {
 	 * of them. Chapter 2 replaces it with {@link #findVisitsByVetIds(List)}.
 	 */
 	public List<Visit> findByVet(Vet vet) {
-		this.latency.pause();
-		return this.visits.findByVetIdOrderByDateDescIdDesc(vet.getId());
+		latency.pause();
+		return visits.findByVetIdOrderByDateDescIdDesc(vet.getId());
 	}
 
 	/**
@@ -79,9 +79,9 @@ public class VisitService {
 	 */
 	public Map<Integer, List<Visit>> findVisitsByVetIds(List<Integer> vetIds) {
 		logger.info("Batch fetching visits for {} vets", vetIds.size());
-		this.latency.pause();
+		latency.pause();
 		Map<Integer, List<Visit>> visitsByVetId = new HashMap<>();
-		for (Visit visit : this.visits.findByVetIds(vetIds)) {
+		for (Visit visit : visits.findByVetIds(vetIds)) {
 			visitsByVetId.computeIfAbsent(visit.getVet().getId(), (id) -> new ArrayList<>()).add(visit);
 		}
 		return visitsByVetId;
@@ -91,8 +91,8 @@ public class VisitService {
 	 * The visits from one date to another, both included, in date order.
 	 */
 	public List<Visit> findVisits(LocalDate from, LocalDate to) {
-		this.latency.pause();
-		return this.visits.findByDateBetweenOrderByDateAsc(from, to);
+		latency.pause();
+		return visits.findByDateBetweenOrderByDateAsc(from, to);
 	}
 
 	/**
@@ -101,7 +101,7 @@ public class VisitService {
 	 * @throws EntityNotFoundException when no visit has the id
 	 */
 	public Visit findWithDetails(Integer id) {
-		return this.visits.findWithDetailsById(id).orElseThrow(() -> new EntityNotFoundException("Visit", id));
+		return visits.findWithDetailsById(id).orElseThrow(() -> new EntityNotFoundException("Visit", id));
 	}
 
 	/**
@@ -111,10 +111,10 @@ public class VisitService {
 	 */
 	@Transactional
 	public Visit addVisit(AddVisitInput input) {
-		this.latency.pause();
-		Pet pet = this.pets.findById(input.petId()).orElseThrow(() -> new EntityNotFoundException("Pet", input.petId()));
+		latency.pause();
+		Pet pet = pets.findById(input.petId()).orElseThrow(() -> new EntityNotFoundException("Pet", input.petId()));
 		Vet vet = (input.vetId() != null)
-				? this.vets.findById(input.vetId()).orElseThrow(() -> new EntityNotFoundException("Vet", input.vetId()))
+				? vets.findById(input.vetId()).orElseThrow(() -> new EntityNotFoundException("Vet", input.vetId()))
 				: null;
 		if (!StringUtils.hasText(input.description())) {
 			throw new InvalidInputException("description", "Description is required");
@@ -129,8 +129,8 @@ public class VisitService {
 		visit.setDescription(input.description().trim());
 		visit.setVet(vet);
 		pet.addVisit(visit);
-		Visit saved = this.visits.save(visit);
-		this.events.publishEvent(new VisitBookedEvent(saved.getId()));
+		Visit saved = visits.save(visit);
+		events.publishEvent(new VisitBookedEvent(saved.getId()));
 		return saved;
 	}
 

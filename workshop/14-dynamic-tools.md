@@ -176,7 +176,7 @@ class ChatController {
 				find the fields with searchSchema, read their types with introspectType, and run the query with executeGraphql.
 				Today is %s. Answer briefly."""
 			.formatted(LocalDate.now().format(DAY));
-		return this.chatClient.prompt()
+		return chatClient.prompt()
 			.system(system)
 			.user(question)
 			.advisors((advisor) -> advisor.param(ChatMemory.CONVERSATION_ID, session.getId()))

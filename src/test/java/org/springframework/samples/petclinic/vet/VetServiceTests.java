@@ -46,18 +46,18 @@ class VetServiceTests {
 
 	@Test
 	void findAllReturnsTheSixVets() {
-		assertThat(this.vets.findAll()).hasSize(6);
+		assertThat(vets.findAll()).hasSize(6);
 	}
 
 	@Test
 	void findByIdRefusesAnUnknownId() {
-		assertThat(this.vets.findById(2).getLastName()).isEqualTo("Leary");
-		assertThatExceptionOfType(EntityNotFoundException.class).isThrownBy(() -> this.vets.findById(99));
+		assertThat(vets.findById(2).getLastName()).isEqualTo("Leary");
+		assertThatExceptionOfType(EntityNotFoundException.class).isThrownBy(() -> vets.findById(99));
 	}
 
 	@Test
 	void findVetsBySpecialtyIdsGroupsBySpecialty() {
-		Map<Integer, List<Vet>> bySpecialty = this.vets.findVetsBySpecialtyIds(List.of(RADIOLOGY, SURGERY, DENTISTRY));
+		Map<Integer, List<Vet>> bySpecialty = vets.findVetsBySpecialtyIds(List.of(RADIOLOGY, SURGERY, DENTISTRY));
 		assertThat(bySpecialty.get(RADIOLOGY)).extracting(Vet::getLastName)
 			.containsExactlyInAnyOrder("Leary", "Stevens");
 		assertThat(bySpecialty.get(SURGERY)).extracting(Vet::getLastName)
@@ -67,7 +67,7 @@ class VetServiceTests {
 
 	@Test
 	void searchMatchesFirstOrLastName() {
-		assertThat(this.vets.search("HELEN")).extracting(Vet::getLastName).containsExactly("Leary");
+		assertThat(vets.search("HELEN")).extracting(Vet::getLastName).containsExactly("Leary");
 	}
 
 }

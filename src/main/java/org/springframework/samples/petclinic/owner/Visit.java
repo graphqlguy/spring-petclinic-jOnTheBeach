@@ -67,7 +67,7 @@ public class Visit extends BaseEntity {
 	}
 
 	public LocalDate getDate() {
-		return this.date;
+		return date;
 	}
 
 	public void setDate(LocalDate date) {
@@ -75,7 +75,7 @@ public class Visit extends BaseEntity {
 	}
 
 	public String getDescription() {
-		return this.description;
+		return description;
 	}
 
 	public void setDescription(String description) {
@@ -83,7 +83,7 @@ public class Visit extends BaseEntity {
 	}
 
 	public Pet getPet() {
-		return this.pet;
+		return pet;
 	}
 
 	public void setPet(Pet pet) {
@@ -91,7 +91,7 @@ public class Visit extends BaseEntity {
 	}
 
 	public Vet getVet() {
-		return this.vet;
+		return vet;
 	}
 
 	public void setVet(Vet vet) {

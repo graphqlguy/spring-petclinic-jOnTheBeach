@@ -69,12 +69,12 @@ private final Sinks.Many<Visit> bookedVisits = Sinks.many().multicast().directBe
 
 @TransactionalEventListener
 void onVisitBooked(VisitBookedEvent event) {
-	this.bookedVisits.tryEmitNext(this.visitService.findWithDetails(event.visitId()));
+	bookedVisits.tryEmitNext(visitService.findWithDetails(event.visitId()));
 }
 
 @SubscriptionMapping
 Flux<Visit> visitBooked() {
-	return this.bookedVisits.asFlux();
+	return bookedVisits.asFlux();
 }
 ```
 
@@ -140,7 +140,7 @@ type Subscription {
 ```java
 @SubscriptionMapping
 Flux<Visit> visitBooked(@Argument Integer vetId) {
-	return this.bookedVisits.asFlux()
+	return bookedVisits.asFlux()
 		.filter((visit) -> vetId == null || (visit.getVet() != null && vetId.equals(visit.getVet().getId())));
 }
 ```

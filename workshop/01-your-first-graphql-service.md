@@ -176,7 +176,7 @@ class OwnerGraphQLController {
 
 	@QueryMapping
 	List<Owner> ownersAll() {
-		return this.ownerService.findAll();
+		return ownerService.findAll();
 	}
 
 }
@@ -221,7 +221,7 @@ import org.springframework.graphql.data.method.annotation.Argument;
 
 @QueryMapping
 Owner owner(@Argument Integer id) {
-	return this.ownerService.findById(id);
+	return ownerService.findById(id);
 }
 ```
 
@@ -328,7 +328,7 @@ The Java side is one method. The `OwnerFilter`, `OwnerSort` and `OwnerPage` reco
 ```java
 @QueryMapping
 OwnerPage owners(@Argument OwnerFilter filter, @Argument int page, @Argument int size, @Argument OwnerSort sort) {
-	return this.ownerService.findOwners(filter, page, size, sort);
+	return ownerService.findOwners(filter, page, size, sort);
 }
 ```
 
@@ -430,7 +430,7 @@ class VetGraphQLController {
 
 	@QueryMapping
 	List<Vet> vets() {
-		return this.vetService.findAll();
+		return vetService.findAll();
 	}
 
 }
@@ -463,7 +463,7 @@ import org.springframework.graphql.data.method.annotation.Argument;
 
 @QueryMapping
 Vet vet(@Argument Integer id) {
-	return this.vetService.findById(id);
+	return vetService.findById(id);
 }
 ```
 

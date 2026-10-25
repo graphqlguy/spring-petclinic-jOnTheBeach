@@ -158,17 +158,17 @@ class VetGraphQLController {
 
 	@QueryMapping
 	List<Vet> vets() {
-		return this.vetService.findAll();
+		return vetService.findAll();
 	}
 
 	@QueryMapping
 	Vet vet(@Argument Integer id) {
-		return this.vetService.findById(id);
+		return vetService.findById(id);
 	}
 
 	@SchemaMapping
 	List<Visit> visits(Vet vet) {
-		return this.visitService.findByVet(vet);
+		return visitService.findByVet(vet);
 	}
 
 }
@@ -246,7 +246,7 @@ import org.springframework.graphql.data.method.annotation.BatchMapping;
 @BatchMapping
 Map<Vet, List<Visit>> visits(List<Vet> vets) {
 	List<Integer> vetIds = vets.stream().map(Vet::getId).toList();
-	Map<Integer, List<Visit>> visitsByVetId = this.visitService.findVisitsByVetIds(vetIds);
+	Map<Integer, List<Visit>> visitsByVetId = visitService.findVisitsByVetIds(vetIds);
 	return vets.stream()
 		.collect(Collectors.toMap((vet) -> vet, (vet) -> visitsByVetId.getOrDefault(vet.getId(), List.of())));
 }
@@ -412,7 +412,7 @@ type Specialty {
 @BatchMapping(field = "vets")
 Map<Specialty, List<Vet>> specialtyVets(List<Specialty> specialties) {
 	List<Integer> specialtyIds = specialties.stream().map(Specialty::getId).toList();
-	Map<Integer, List<Vet>> vetsBySpecialtyId = this.vetService.findVetsBySpecialtyIds(specialtyIds);
+	Map<Integer, List<Vet>> vetsBySpecialtyId = vetService.findVetsBySpecialtyIds(specialtyIds);
 	return specialties.stream()
 		.collect(Collectors.toMap((specialty) -> specialty,
 				(specialty) -> vetsBySpecialtyId.getOrDefault(specialty.getId(), List.of())));

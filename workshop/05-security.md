@@ -173,8 +173,8 @@ class LoginGraphQLController {
 
 	@MutationMapping
 	String login(@Argument String username, @Argument String password) {
-		UserDetails user = this.users.loadUserByUsername(username);
-		if (!this.passwordEncoder.matches(password, user.getPassword())) {
+		UserDetails user = users.loadUserByUsername(username);
+		if (!passwordEncoder.matches(password, user.getPassword())) {
 			throw new BadCredentialsException("Wrong username or password");
 		}
 		boolean staff = user.getAuthorities().stream().anyMatch((a) -> a.getAuthority().equals("ROLE_STAFF"));
@@ -187,7 +187,7 @@ class LoginGraphQLController {
 			.claim("scope", staff ? "petclinic:write" : "")
 			.build();
 		JwsHeader header = JwsHeader.with(SignatureAlgorithm.RS256).build();
-		return this.jwtEncoder.encode(JwtEncoderParameters.from(header, claims)).getTokenValue();
+		return jwtEncoder.encode(JwtEncoderParameters.from(header, claims)).getTokenValue();
 	}
 
 }
@@ -221,13 +221,13 @@ import org.springframework.security.access.prepost.PreAuthorize;
 @MutationMapping
 @PreAuthorize("hasAuthority('SCOPE_petclinic:write')")
 Owner addOwner(@Argument AddOwnerInput input) {
-	return this.ownerService.addOwner(input);
+	return ownerService.addOwner(input);
 }
 
 @MutationMapping
 @PreAuthorize("hasAuthority('SCOPE_petclinic:write')")
 Owner updateOwner(@Argument UpdateOwnerInput input) {
-	return this.ownerService.updateOwner(input);
+	return ownerService.updateOwner(input);
 }
 ```
 
@@ -241,7 +241,7 @@ import org.springframework.security.access.prepost.PreAuthorize;
 @MutationMapping
 @PreAuthorize("hasAuthority('SCOPE_petclinic:write')")
 Visit addVisit(@Argument AddVisitInput input) {
-	return this.visitService.addVisit(input);
+	return visitService.addVisit(input);
 }
 ```
 
@@ -350,13 +350,13 @@ import org.springframework.security.access.prepost.PreAuthorize;
 @MutationMapping
 @PreAuthorize("hasAuthority('SCOPE_petclinic:write')")
 Pet addPet(@Argument AddPetInput input) {
-	return this.petService.addPet(input);
+	return petService.addPet(input);
 }
 
 @MutationMapping
 @PreAuthorize("hasAuthority('SCOPE_petclinic:write')")
 Pet updatePet(@Argument UpdatePetInput input) {
-	return this.petService.updatePet(input);
+	return petService.updatePet(input);
 }
 ```
 

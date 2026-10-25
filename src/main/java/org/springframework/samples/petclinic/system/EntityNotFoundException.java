@@ -32,11 +32,11 @@ public class EntityNotFoundException extends RuntimeException {
 	}
 
 	public String getEntity() {
-		return this.entity;
+		return entity;
 	}
 
 	public Object getId() {
-		return this.id;
+		return id;
 	}
 
 }

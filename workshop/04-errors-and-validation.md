@@ -167,7 +167,7 @@ import jakarta.validation.constraints.Min;
 @QueryMapping
 OwnerPage owners(@Argument OwnerFilter filter, @Argument @Min(0) int page, @Argument @Min(1) @Max(100) int size,
 		@Argument OwnerSort sort) {
-	return this.ownerService.findOwners(filter, page, size, sort);
+	return ownerService.findOwners(filter, page, size, sort);
 }
 ```
 
@@ -241,7 +241,7 @@ List<Visit> visits(@Argument LocalDate from, @Argument LocalDate to) {
 	if (to.isBefore(from)) {
 		throw new InvalidInputException("to", "The end date " + to + " comes before the start date " + from);
 	}
-	return this.visitService.findVisits(from, to);
+	return visitService.findVisits(from, to);
 }
 ```
 

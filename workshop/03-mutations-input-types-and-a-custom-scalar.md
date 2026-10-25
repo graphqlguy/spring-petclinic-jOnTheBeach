@@ -121,7 +121,7 @@ class VisitGraphQLController {
 
 	@QueryMapping
 	List<Visit> visits(@Argument LocalDate from, @Argument LocalDate to) {
-		return this.visitService.findVisits(from, to);
+		return visitService.findVisits(from, to);
 	}
 
 }
@@ -183,7 +183,7 @@ import org.springframework.graphql.data.method.annotation.MutationMapping;
 
 @MutationMapping
 Visit addVisit(@Argument AddVisitInput input) {
-	return this.visitService.addVisit(input);
+	return visitService.addVisit(input);
 }
 ```
 
@@ -239,7 +239,7 @@ import org.springframework.graphql.data.method.annotation.MutationMapping;
 
 @MutationMapping
 Owner addOwner(@Argument AddOwnerInput input) {
-	return this.ownerService.addOwner(input);
+	return ownerService.addOwner(input);
 }
 ```
 
@@ -315,7 +315,7 @@ input UpdateOwnerInput {
 ```java
 @MutationMapping
 Owner updateOwner(@Argument UpdateOwnerInput input) {
-	return this.ownerService.updateOwner(input);
+	return ownerService.updateOwner(input);
 }
 ```
 
@@ -393,12 +393,12 @@ class PetGraphQLController {
 
 	@QueryMapping
 	List<PetType> petTypes() {
-		return this.petService.findPetTypes();
+		return petService.findPetTypes();
 	}
 
 	@MutationMapping
 	Pet addPet(@Argument AddPetInput input) {
-		return this.petService.addPet(input);
+		return petService.addPet(input);
 	}
 
 }
@@ -435,7 +435,7 @@ input UpdatePetInput {
 ```java
 @MutationMapping
 Pet updatePet(@Argument UpdatePetInput input) {
-	return this.petService.updatePet(input);
+	return petService.updatePet(input);
 }
 ```
 

@@ -124,7 +124,7 @@ class ChatController {
 				Changing data needs a signed-in staff member, so when a tool answers Unauthorized, ask the user to sign in.
 				Today is %s. Answer briefly."""
 			.formatted(LocalDate.now().format(DAY));
-		return this.chatClient.prompt().system(system).user(question).call().content();
+		return chatClient.prompt().system(system).user(question).call().content();
 	}
 
 	// The chat panel shows this text, for example when Ollama is not running
@@ -459,7 +459,7 @@ class ChatController {
 				Changing data needs a signed-in staff member, so when a tool answers Unauthorized, ask the user to sign in.
 				Today is %s. Answer briefly."""
 			.formatted(LocalDate.now().format(DAY));
-		return this.chatClient.prompt()
+		return chatClient.prompt()
 			.system(system)
 			.user(question)
 			.advisors((advisor) -> advisor.param(ChatMemory.CONVERSATION_ID, session.getId()))

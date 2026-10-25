@@ -50,8 +50,8 @@ public class VetService {
 	 * Every vet, with their specialties.
 	 */
 	public List<Vet> findAll() {
-		this.latency.pause();
-		return new ArrayList<>(this.vets.findAll());
+		latency.pause();
+		return new ArrayList<>(vets.findAll());
 	}
 
 	/**
@@ -59,24 +59,24 @@ public class VetService {
 	 * @throws EntityNotFoundException when no vet has the id
 	 */
 	public Vet findById(Integer id) {
-		this.latency.pause();
-		return this.vets.findById(id).orElseThrow(() -> new EntityNotFoundException("Vet", id));
+		latency.pause();
+		return vets.findById(id).orElseThrow(() -> new EntityNotFoundException("Vet", id));
 	}
 
 	/**
 	 * Vets whose first or last name contains the text, in any case.
 	 */
 	public List<Vet> search(String text) {
-		this.latency.pause();
-		return this.vets.search(text);
+		latency.pause();
+		return vets.search(text);
 	}
 
 	/**
 	 * The vets who have one specialty. One SQL statement for each specialty.
 	 */
 	public List<Vet> findBySpecialty(Specialty specialty) {
-		this.latency.pause();
-		return this.vets.findBySpecialtyIds(List.of(specialty.getId()));
+		latency.pause();
+		return vets.findBySpecialtyIds(List.of(specialty.getId()));
 	}
 
 	/**
@@ -85,9 +85,9 @@ public class VetService {
 	 */
 	public Map<Integer, List<Vet>> findVetsBySpecialtyIds(List<Integer> specialtyIds) {
 		logger.info("Batch fetching vets for {} specialties", specialtyIds.size());
-		this.latency.pause();
+		latency.pause();
 		Map<Integer, List<Vet>> vetsBySpecialtyId = new HashMap<>();
-		for (Vet vet : this.vets.findBySpecialtyIds(specialtyIds)) {
+		for (Vet vet : vets.findBySpecialtyIds(specialtyIds)) {
 			for (Specialty specialty : vet.getSpecialties()) {
 				if (specialtyIds.contains(specialty.getId())) {
 					vetsBySpecialtyId.computeIfAbsent(specialty.getId(), (id) -> new ArrayList<>()).add(vet);

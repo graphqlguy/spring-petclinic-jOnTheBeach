@@ -73,7 +73,7 @@ class PetclinicGraphQLTests {
 
 	@Test
 	void findsTheOwnersOfACity() {
-		this.graphQlTester.document("""
+		graphQlTester.document("""
 				query {
 				  owners(filter: { city: "Torremolinos" }) {
 				    totalElements
@@ -121,7 +121,7 @@ An unexpected error fails a test at its first assertion. A test that expects an 
 ```java
 @Test
 void reportsAnUnknownVet() {
-	this.graphQlTester.document("{ vet(id: 99) { lastName } }")
+	graphQlTester.document("{ vet(id: 99) { lastName } }")
 		.execute()
 		.errors()
 		.expect((error) -> error.getErrorType() == ErrorType.NOT_FOUND)
@@ -153,13 +153,13 @@ void staffCanAddAnOwner() {
 }
 
 private HttpGraphQlTester signedIn(String username) {
-	String token = this.graphQlTester.document("mutation ($user: String!) { login(username: $user, password: $user) }")
+	String token = graphQlTester.document("mutation ($user: String!) { login(username: $user, password: $user) }")
 		.variable("user", username)
 		.execute()
 		.path("login")
 		.entity(String.class)
 		.get();
-	return this.graphQlTester.mutate().header("Authorization", "Bearer " + token).build();
+	return graphQlTester.mutate().header("Authorization", "Bearer " + token).build();
 }
 ```
 
@@ -197,12 +197,12 @@ class VisitSubscriptionTests {
 
 	@Test
 	void announcesEachBookedVisit() {
-		Flux<String> descriptions = this.graphQlTester.document("subscription { visitBooked { description } }")
+		Flux<String> descriptions = graphQlTester.document("subscription { visitBooked { description } }")
 			.executeSubscription()
 			.toFlux("visitBooked.description", String.class);
 
 		StepVerifier.create(descriptions)
-			.then(() -> this.visitService.addVisit(new AddVisitInput(7, 1, null, "check-up")))
+			.then(() -> visitService.addVisit(new AddVisitInput(7, 1, null, "check-up")))
 			.expectNext("check-up")
 			.thenCancel()
 			.verify(Duration.ofSeconds(5));
@@ -263,9 +263,9 @@ class OwnerGraphQLControllerTests {
 		owner.setId(1);
 		owner.setFirstName("Ana");
 		owner.setLastName("Lozano");
-		given(this.ownerService.findById(1)).willReturn(owner);
+		given(ownerService.findById(1)).willReturn(owner);
 
-		this.graphQlTester.document("{ owner(id: 1) { firstName lastName } }")
+		graphQlTester.document("{ owner(id: 1) { firstName lastName } }")
 			.execute()
 			.path("owner.lastName")
 			.entity(String.class)
@@ -319,7 +319,7 @@ void guestCannotAddAnOwner() {
 
 @Test
 void hidesTheTelephoneFromAnonymousCallers() {
-	this.graphQlTester.document("{ owner(id: 12) { lastName telephone } }")
+	graphQlTester.document("{ owner(id: 12) { lastName telephone } }")
 		.execute()
 		.errors()
 		.expect((error) -> error.getErrorType() == ErrorType.UNAUTHORIZED)

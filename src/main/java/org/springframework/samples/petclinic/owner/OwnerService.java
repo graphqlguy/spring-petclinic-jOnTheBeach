@@ -60,16 +60,16 @@ public class OwnerService {
 	 * Every owner, ordered by last name and first name.
 	 */
 	public List<Owner> findAll() {
-		this.latency.pause();
-		return this.owners.findAll(Sort.by("lastName", "firstName"));
+		latency.pause();
+		return owners.findAll(Sort.by("lastName", "firstName"));
 	}
 
 	/**
 	 * The owner with this id, or {@code null} when no owner has it.
 	 */
 	public Owner findById(Integer id) {
-		this.latency.pause();
-		return this.owners.findById(id).orElse(null);
+		latency.pause();
+		return owners.findById(id).orElse(null);
 	}
 
 	/**
@@ -80,11 +80,11 @@ public class OwnerService {
 	 * @param sort the order, or {@code null} for last name ascending
 	 */
 	public OwnerPage findOwners(OwnerFilter filter, int page, int size, OwnerSort sort) {
-		this.latency.pause();
+		latency.pause();
 		String lastName = (filter != null) ? blankToNull(filter.lastName()) : null;
 		String city = (filter != null) ? blankToNull(filter.city()) : null;
 		List<String> cities = (city != null) ? spellingsOf(city) : null;
-		Page<Owner> result = this.owners.findWithFilters(lastName, cities, PageRequest.of(page, size, toSort(sort)));
+		Page<Owner> result = owners.findWithFilters(lastName, cities, PageRequest.of(page, size, toSort(sort)));
 		return new OwnerPage(result.getContent(), result.getTotalElements(), result.getTotalPages(),
 				result.getNumber(), result.getSize(), result.isFirst(), result.isLast(), result.hasNext(),
 				result.hasPrevious());
@@ -94,13 +94,13 @@ public class OwnerService {
 	 * Owners whose first or last name contains the text, in any case.
 	 */
 	public List<Owner> search(String text) {
-		this.latency.pause();
-		return this.owners.search(text);
+		latency.pause();
+		return owners.search(text);
 	}
 
 	@Transactional
 	public Owner addOwner(AddOwnerInput input) {
-		this.latency.pause();
+		latency.pause();
 		Owner owner = new Owner();
 		owner.setFirstName(input.firstName());
 		owner.setLastName(input.lastName());
@@ -108,7 +108,7 @@ public class OwnerService {
 		owner.setCity(input.city());
 		owner.setTelephone(input.telephone());
 		validate(owner);
-		return this.owners.save(owner);
+		return owners.save(owner);
 	}
 
 	/**
@@ -118,8 +118,8 @@ public class OwnerService {
 	 */
 	@Transactional
 	public Owner updateOwner(UpdateOwnerInput input) {
-		this.latency.pause();
-		Owner owner = this.owners.findById(input.id())
+		latency.pause();
+		Owner owner = owners.findById(input.id())
 			.orElseThrow(() -> new EntityNotFoundException("Owner", input.id()));
 		applyIfPresent(input.firstName(), owner::setFirstName);
 		applyIfPresent(input.lastName(), owner::setLastName);
@@ -133,7 +133,7 @@ public class OwnerService {
 	// The same rules the web form applies: the constraints on Owner and Person.
 	private void validate(Owner owner) {
 		Map<String, String> errors = new LinkedHashMap<>();
-		this.validator.validate(owner)
+		validator.validate(owner)
 			.stream()
 			.sorted(Comparator.comparing((ConstraintViolation<Owner> violation) -> violation.getPropertyPath().toString()))
 			.forEach((violation) -> errors.putIfAbsent(violation.getPropertyPath().toString(), violation.getMessage()));
@@ -159,7 +159,7 @@ public class OwnerService {
 	// with or without accents, so that "malaga" finds the owners of "Málaga"
 	private List<String> spellingsOf(String city) {
 		String wanted = withoutAccents(city);
-		return this.owners.findCities().stream().filter((stored) -> withoutAccents(stored).equals(wanted)).toList();
+		return owners.findCities().stream().filter((stored) -> withoutAccents(stored).equals(wanted)).toList();
 	}
 
 	private static String withoutAccents(String text) {

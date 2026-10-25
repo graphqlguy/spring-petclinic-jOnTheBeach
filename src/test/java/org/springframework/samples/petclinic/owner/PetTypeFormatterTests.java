@@ -49,14 +49,14 @@ class PetTypeFormatterTests {
 
 	@BeforeEach
 	void setup() {
-		this.petTypeFormatter = new PetTypeFormatter(types);
+		petTypeFormatter = new PetTypeFormatter(types);
 	}
 
 	@Test
 	void testPrint() {
 		PetType petType = new PetType();
 		petType.setName("Hamster");
-		String petTypeName = this.petTypeFormatter.print(petType, Locale.ENGLISH);
+		String petTypeName = petTypeFormatter.print(petType, Locale.ENGLISH);
 		assertThat(petTypeName).isEqualTo("Hamster");
 	}
 
