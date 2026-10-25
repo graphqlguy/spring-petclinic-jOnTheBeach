@@ -52,7 +52,7 @@ class GraphQLScalarsConfiguration {
 }
 ```
 
-Declare the scalar at the end of the schema, and use it for the two dates:
+Declare the scalar on the first line of the schema, above the comment from chapter 1, and use it for the two dates:
 
 `src/main/resources/graphql/schema.graphqls`
 
@@ -73,6 +73,8 @@ type Visit {
 ```
 
 Change the existing `birthDate` and `date` lines; do not add second ones.
+
+GraphQL accepts the definitions of a schema in any order, so a field may use a type that is declared further down. We declare scalars first, so that a reader meets `Date` before the fields that use it.
 
 | Element | Meaning |
 |---|---|
