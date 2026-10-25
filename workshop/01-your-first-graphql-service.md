@@ -91,7 +91,7 @@ SDL has two ways to write text, and they serve different readers:
 Rule of thumb: if a client of your API would benefit from reading it, make it a description. If it is a note for whoever edits the schema file, make it a comment.
 
 > [!IMPORTANT]
-> GraphQL Java has one exception. When a type or a field has no description, it takes the comment lines directly above it as its description, and sends them to every client. That is why `Query` has a description here: the comment above it then stays in the file. In the second half of the workshop the client is an AI agent, and it reads every description it gets.
+> GraphQL Java has one exception. When a type or a field lacks a description, it takes the comment lines directly above it as its description, and sends them to every client. That is why `Query` has a description here: the comment above it then stays in the file. In the second half of the workshop the client is an AI agent, and it reads every description it gets.
 
 ## 4. Start the server and explore
 
