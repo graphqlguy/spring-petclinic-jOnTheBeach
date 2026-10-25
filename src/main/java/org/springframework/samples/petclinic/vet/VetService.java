@@ -25,6 +25,7 @@ import org.slf4j.LoggerFactory;
 
 import org.springframework.samples.petclinic.system.EntityNotFoundException;
 import org.springframework.samples.petclinic.system.LatencySimulator;
+import org.springframework.samples.petclinic.system.Text;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -64,11 +65,12 @@ public class VetService {
 	}
 
 	/**
-	 * Vets whose first or last name contains the text, in any case.
+	 * Vets whose first or last name contains the text, in any case and with or without
+	 * accents.
 	 */
 	public List<Vet> search(String text) {
 		latency.pause();
-		return vets.search(text);
+		return vets.search(Text.withoutAccents(text));
 	}
 
 	/**

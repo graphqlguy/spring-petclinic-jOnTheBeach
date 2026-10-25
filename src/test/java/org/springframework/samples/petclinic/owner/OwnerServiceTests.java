@@ -95,6 +95,8 @@ class OwnerServiceTests {
 	void searchMatchesFirstOrLastName() {
 		assertThat(owners.search("beach")).extracting(Owner::getFirstName).containsExactly("J On The");
 		assertThat(owners.search("ANTONIO")).extracting(Owner::getLastName).containsExactly("Ruiz");
+		assertThat(owners.search("lucia")).extracting(Owner::getLastName).containsExactly("Navarro");
+		assertThat(owners.search("LUCÍA NAV")).extracting(Owner::getLastName).containsExactly("Navarro");
 	}
 
 	@Test

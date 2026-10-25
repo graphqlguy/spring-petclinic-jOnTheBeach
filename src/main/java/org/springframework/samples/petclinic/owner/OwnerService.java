@@ -15,11 +15,9 @@
  */
 package org.springframework.samples.petclinic.owner;
 
-import java.text.Normalizer;
 import java.util.Comparator;
 import java.util.LinkedHashMap;
 import java.util.List;
-import java.util.Locale;
 import java.util.Map;
 import java.util.function.Consumer;
 
@@ -30,6 +28,7 @@ import org.springframework.samples.petclinic.system.EntityNotFoundException;
 import org.springframework.samples.petclinic.system.InvalidInputException;
 import org.springframework.samples.petclinic.system.LatencySimulator;
 import org.springframework.samples.petclinic.system.SortOrder;
+import org.springframework.samples.petclinic.system.Text;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.StringUtils;
@@ -91,11 +90,12 @@ public class OwnerService {
 	}
 
 	/**
-	 * Owners whose first or last name contains the text, in any case.
+	 * Owners whose first or last name contains the text, in any case and with or without
+	 * accents.
 	 */
 	public List<Owner> search(String text) {
 		latency.pause();
-		return owners.search(text);
+		return owners.search(Text.withoutAccents(text));
 	}
 
 	@Transactional
@@ -158,13 +158,8 @@ public class OwnerService {
 	// The cities as the database spells them that match the given one in any case and
 	// with or without accents, so that "malaga" finds the owners of "Málaga"
 	private List<String> spellingsOf(String city) {
-		String wanted = withoutAccents(city);
-		return owners.findCities().stream().filter((stored) -> withoutAccents(stored).equals(wanted)).toList();
-	}
-
-	private static String withoutAccents(String text) {
-		String decomposed = Normalizer.normalize(text.strip(), Normalizer.Form.NFD);
-		return decomposed.replaceAll("\\p{M}", "").toLowerCase(Locale.ROOT);
+		String wanted = Text.withoutAccents(city);
+		return owners.findCities().stream().filter((stored) -> Text.withoutAccents(stored).equals(wanted)).toList();
 	}
 
 	private static String blankToNull(String text) {

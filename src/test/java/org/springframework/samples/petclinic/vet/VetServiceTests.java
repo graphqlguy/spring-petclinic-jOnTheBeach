@@ -68,6 +68,7 @@ class VetServiceTests {
 	@Test
 	void searchMatchesFirstOrLastName() {
 		assertThat(vets.search("HELEN")).extracting(Vet::getLastName).containsExactly("Leary");
+		assertThat(vets.search("helen lea")).extracting(Vet::getLastName).containsExactly("Leary");
 	}
 
 }

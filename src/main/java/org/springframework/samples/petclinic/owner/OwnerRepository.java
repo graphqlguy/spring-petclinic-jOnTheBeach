@@ -81,12 +81,16 @@ public interface OwnerRepository extends JpaRepository<Owner, Integer> {
 	List<String> findCities();
 
 	/**
-	 * Owners whose first or last name contains the given text, in any case.
+	 * Owners whose name contains the given text, in any case and with or without accents.
+	 * The service passes the text in lower case and without accents, and the query folds
+	 * the name the same way, for the accented letters of Spanish.
 	 */
 	@Query("""
 			SELECT owner FROM Owner owner
-			WHERE LOWER(owner.firstName) LIKE LOWER(CONCAT('%', :text, '%'))
-			OR LOWER(owner.lastName) LIKE LOWER(CONCAT('%', :text, '%'))
+			WHERE replace(replace(replace(replace(replace(replace(replace(
+				LOWER(CONCAT(owner.firstName, ' ', owner.lastName)),
+				'á', 'a'), 'é', 'e'), 'í', 'i'), 'ó', 'o'), 'ú', 'u'), 'ü', 'u'), 'ñ', 'n')
+				LIKE CONCAT('%', :text, '%')
 			ORDER BY owner.lastName, owner.firstName""")
 	List<Owner> search(@Param("text") String text);
 

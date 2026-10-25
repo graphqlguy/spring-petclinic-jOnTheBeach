@@ -27,9 +27,17 @@ import org.springframework.data.repository.query.Param;
 public interface PetRepository extends JpaRepository<Pet, Integer> {
 
 	/**
-	 * Pets whose name contains the given text, in any case.
+	 * Pets whose name contains the given text, in any case and with or without accents.
+	 * The service passes the text in lower case and without accents, and the query folds
+	 * the name the same way, for the accented letters of Spanish.
 	 */
-	@Query("SELECT pet FROM Pet pet WHERE LOWER(pet.name) LIKE LOWER(CONCAT('%', :text, '%')) ORDER BY pet.name")
+	@Query("""
+			SELECT pet FROM Pet pet
+			WHERE replace(replace(replace(replace(replace(replace(replace(
+				LOWER(pet.name),
+				'á', 'a'), 'é', 'e'), 'í', 'i'), 'ó', 'o'), 'ú', 'u'), 'ü', 'u'), 'ñ', 'n')
+				LIKE CONCAT('%', :text, '%')
+			ORDER BY pet.name""")
 	List<Pet> search(@Param("text") String text);
 
 	boolean existsByOwnerIdAndNameIgnoreCase(Integer ownerId, String name);

@@ -96,6 +96,7 @@ class PetServiceTests {
 	@Test
 	void searchMatchesPartOfTheName() {
 		assertThat(pets.search("WOOF")).extracting(Pet::getName).containsExactly("Woofy");
+		assertThat(pets.search("boqueron")).extracting(Pet::getName).containsExactly("Boquerón");
 	}
 
 }

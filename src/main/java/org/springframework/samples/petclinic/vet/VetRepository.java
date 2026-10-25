@@ -68,8 +68,10 @@ public interface VetRepository extends Repository<Vet, Integer> {
 	@Transactional(readOnly = true)
 	@Query("""
 			SELECT vet FROM Vet vet
-			WHERE LOWER(vet.firstName) LIKE LOWER(CONCAT('%', :text, '%'))
-			OR LOWER(vet.lastName) LIKE LOWER(CONCAT('%', :text, '%'))
+			WHERE replace(replace(replace(replace(replace(replace(replace(
+				LOWER(CONCAT(vet.firstName, ' ', vet.lastName)),
+				'á', 'a'), 'é', 'e'), 'í', 'i'), 'ó', 'o'), 'ú', 'u'), 'ü', 'u'), 'ñ', 'n')
+				LIKE CONCAT('%', :text, '%')
 			ORDER BY vet.lastName, vet.firstName""")
 	List<Vet> search(@Param("text") String text);
 
