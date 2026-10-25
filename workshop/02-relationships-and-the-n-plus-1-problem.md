@@ -181,6 +181,8 @@ class VetGraphQLController {
 
 Restart and run the query again: Linda Douglas has 29 visits. `@QueryMapping`, from chapter 1, is a shorthand for `@SchemaMapping` on the `Query` type.
 
+Refresh the frontend and open a vet from the **Veterinarians** page: the vet page now lists the visits, and step 5 adds each visit's pet and owner.
+
 ## 3. The hidden cost: N+1
 
 Think about *when* our resolver runs: once per vet. Ask for one vet and its visits, and it runs once. Ask for all six vets and their visits, and it runs six times, each time with its own database query. One query for the list, plus N queries for the nested field: this is the **N+1 problem**, the classic performance trap of GraphQL APIs.
@@ -340,7 +342,7 @@ query {
 }
 ```
 
-The first visit is a dental cleaning for Pelusa, Marta Ramos's cat. Refresh the frontend and open a vet from the **Veterinarians** page: the vet's visits are there, with each pet and its owner.
+The first visit is a dental cleaning for Pelusa, Marta Ramos's cat. Refresh the frontend and open a vet again: each visit now shows its pet and the pet's owner.
 
 A client can follow these fields as deep as it likes, `owner { pets { owner { pets ... } } }`, and the server answers every level. Chapter 9 puts a limit on that.
 

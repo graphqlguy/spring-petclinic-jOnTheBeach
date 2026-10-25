@@ -1,0 +1,17 @@
+# The vet page in chapter 2, once vets have their visits and before the visits have their pets.
+query VetVisits($id: ID!) {
+  vet(id: $id) {
+    id
+    firstName
+    lastName
+    specialties {
+      id
+      name
+    }
+    visits {
+      id
+      date
+      description
+    }
+  }
+}

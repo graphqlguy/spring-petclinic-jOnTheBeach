@@ -13,7 +13,14 @@ export const FEATURES = [
     operations: ['getOwnerDetails'],
     needs: 'the visits of a pet and the vet of a visit (exercise 1)',
   },
-  { key: 'vetDetails', title: 'Visits on the vet page', chapter: 2, operations: ['getVetDetails'], needs: 'the visits of a vet' },
+  { key: 'vetVisits', title: 'Visits on the vet page', chapter: 2, operations: ['vetVisits'], needs: 'the visits of a vet' },
+  {
+    key: 'vetDetails',
+    title: 'Pets and owners on the vet page',
+    chapter: 2,
+    operations: ['getVetDetails'],
+    needs: 'the pet of a visit and the owner of a pet',
+  },
   { key: 'ownerForms', title: 'Add and edit owners', chapter: 3, operations: ['addOwner', 'updateOwner'], needs: 'the addOwner and updateOwner mutations' },
   { key: 'visitForm', title: 'Book a visit', chapter: 3, operations: ['addVisit', 'listVets'], needs: 'the addVisit mutation' },
   {
