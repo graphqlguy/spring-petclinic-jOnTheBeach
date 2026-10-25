@@ -44,7 +44,7 @@ Each service has a schema file of its own in `src/main/resources/graphql`:
 
 | File | What it reads | Who runs it | Root fields | Characters | Tokens |
 |---|---|---|---:|---:|---:|
-| `schema.graphqls` | The clinic: owners, pets, visits and vets | You | 9 | 7,057 | 1,803 |
+| `schema.graphqls` | The clinic: owners, pets, visits and vets | You | 9 | 7,095 | 1,811 |
 | `malaga.graphqls` | Parks for dogs, drinking fountains and city buses of Málaga | City of Málaga | 4 | 4,966 | 1,320 |
 | `nominatim.graphqls` | The geocoder of OpenStreetMap, for owners' addresses | OpenStreetMap Foundation | 2 | 1,946 | 510 |
 | `catastro.graphqls` | The land registry, over SOAP: parcels, units and streets | Catastro | 10 | 16,386 | 4,321 |
@@ -62,9 +62,9 @@ Each service has a schema file of its own in `src/main/resources/graphql`:
 | `idee.graphqls` | Addresses, land use, rivers and transport networks of Spain | National Cartographic System (IDEE) | 71 | 162,874 | 39,745 |
 | `ign.graphqls` | Administrative units, place names, towns and geodetic stations | National Geographic Institute (IGN) | 22 | 44,362 | 10,771 |
 | `upstream.graphqls` | The `DateTime` and `JSON` scalars the services need | | 0 | 400 | 109 |
-| **Total** | | | **602** | **604,296** | **152,676** |
+| **Total** | | | **602** | **604,334** | **152,684** |
 
-We counted the tokens with the `cl100k_base` encoding of [tiktoken](https://github.com/openai/tiktoken). The `o200k_base` encoding gives 149,119, and other models' tokenizers give counts of the same order. The schema is about 18 times the 8,192 tokens that chapter 12 gave `granite4.1:8b`, and one `searchSchema` call returns at most 2,000 tokens of it.
+We counted the tokens with the `cl100k_base` encoding of [tiktoken](https://github.com/openai/tiktoken). The `o200k_base` encoding gives 149,127, and other models' tokenizers give counts of the same order. The schema is about 18 times the 8,192 tokens that chapter 12 gave `granite4.1:8b`, and one `searchSchema` call returns at most 2,000 tokens of it.
 
 ## 3. How the fields were built
 

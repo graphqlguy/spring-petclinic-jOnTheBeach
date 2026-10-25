@@ -66,7 +66,7 @@ Restart. GATool says how it runs the tools, and lists them:
 ```text
 GATool runs each document inside this application.
 GATool serves 15 MCP tools:
-  ownersAll from generated:query/ownersAll (about 71 tokens)
+  ownersAll from generated:query/ownersAll (about 82 tokens)
   owner from generated:query/owner (about 98 tokens)
   owners from generated:query/owners (about 330 tokens)
   vets from generated:query/vets (about 70 tokens)
@@ -81,13 +81,13 @@ GATool serves 15 MCP tools:
   addPet from generated:mutation/addPet (about 254 tokens)
   updatePet from generated:mutation/updatePet (about 204 tokens)
   login from generated:mutation/login (about 114 tokens)
-  about 2357 tokens in all, which every agent that lists these tools reads before it calls one
+  about 2368 tokens in all, which every agent that lists these tools reads before it calls one
 ```
 
 | Line | Meaning |
 |---|---|
 | `runs each document inside this application` | A tool call goes straight to the GraphQL engine, in the same application, without an HTTP request to `/graphql`. |
-| `about 71 tokens` | The size of the tool's name, description and JSON Schema. An AI application sends every tool to its model with every question, so these tokens are paid on every request. |
+| `about 82 tokens` | The size of the tool's name, description and JSON Schema. An AI application sends every tool to its model with every question, so these tokens are paid on every request. |
 | `login` | Every root field became a tool, `login` too: a tool that takes a password and returns a token the agent cannot use, since a token travels in a header that the MCP client sets. Chapter 11 publishes only the operations we choose. |
 
 The log goes on to list the same tools as **in-process** tools, which chapter 12 gives to an assistant inside the application. It also warns that the MCP endpoint answers anyone who can reach your laptop. `/graphql` has been open the same way since chapter 1, and the mutations still need a staff token, as step 7 shows.

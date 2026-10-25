@@ -47,6 +47,7 @@ Reads the clinic's data. Anyone may read it, except an owner's telephone, which 
 An id identifies an object within its type, so an owner and a pet can have the same id.
 """
 type Query {
+    "All owners, from all pages, without filters"
     ownersAll: [Owner!]! @deprecated(reason: "Unbounded. Use 'owners' instead.")
 
     "One owner with their pets, or null when no owner has the id. owners and search give the ids of owners."

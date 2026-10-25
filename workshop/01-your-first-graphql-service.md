@@ -47,10 +47,11 @@ This is schema-first development: we describe the API in the GraphQL Schema Defi
 `src/main/resources/graphql/schema.graphqls`
 
 ```graphql
-# The entry point of our API. This line is a comment, by the way:
+# The entry point of our API. This line is a comment:
 # comments start with # and are only for people reading this file.
 "The queries a client can send"
 type Query {
+    "All owners, from all pages, without filters"
     ownersAll: [Owner!]!
 }
 
@@ -118,7 +119,7 @@ GraphQL endpoint HTTP POST /graphql
 
 Open GraphiQL at [http://localhost:8080/graphiql](http://localhost:8080/graphiql) and click the book icon at the top left to open the documentation explorer. `ownersAll` and the `Owner` type are there, with their descriptions. Nobody wrote this documentation by hand: GraphiQL asked the API for its own schema. This is called **introspection**, and the frontend and the agents use it too.
 
-Look at the two kinds of text: the descriptions of `Query`, `Owner` and `telephone` are there, and the `#` comments are missing.
+Look at the two kinds of text: the descriptions of `Query`, `ownersAll`, `Owner` and `telephone` are there, and the `#` comments are missing.
 
 Now run this query in the editor, with the ▶ button:
 
