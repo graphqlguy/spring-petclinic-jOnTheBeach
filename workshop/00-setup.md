@@ -1,6 +1,6 @@
 # Setup
 
-Do this before the workshop. The models for the second half are several gigabytes, and conference wifi is slow.
+Do this at the start of the workshop. The models for the agentic part are several gigabytes, and conference wifi is slow.
 
 ## 1. Check the prerequisites
 
@@ -54,20 +54,35 @@ npm run dev
 
 Open http://localhost:5173. With the backend running, the home page says *"The backend is running. Its GraphQL endpoint arrives in chapter 1."* That is the starting point. Stop the frontend with `Ctrl+C`.
 
-## 5. Pull the models for the second half
+## 5. Pull the models for the agentic part
 
-The second half runs an agent on your laptop with [Ollama](https://ollama.com). Install it from [ollama.com/download](https://ollama.com/download) (tested with 0.32.15), then pull two models:
+The agentic part runs an agent on your laptop with [Ollama](https://ollama.com). Install it from [ollama.com/download](https://ollama.com/download) (tested with 0.32.15), then pull two models:
 
 ```bash
 # the chat model, 5.3 GB
 ollama pull granite4.1:8b
+
+# optional: a second chat model to compare with in chapter 12, 5.2 GB
+ollama pull qwen3:8b
 
 # an embedding model tuned for GraphQL schemas, 639 MB, under the name the project uses
 ollama pull hf.co/xthor/Qwen3-Embedding-0.6B-GraphQL:Q8_0
 ollama cp hf.co/xthor/Qwen3-Embedding-0.6B-GraphQL:Q8_0 qwen3-graphql-embedder
 ```
 
-The chat model needs about 8 GB of free memory, so a laptop with 16 GB of RAM works best. If yours cannot run it, chapter 12 shows how to use a hosted model instead.
+The chat model needs about 8 GB of free memory, so a laptop with 16 GB of RAM works best. To see how much RAM you have:
+
+| System | Where |
+|--------|-------|
+| macOS | Apple menu > About This Mac |
+| Windows | Settings > System > About > Installed RAM |
+| Linux | `free -h` |
+
+> **With 8 GB of RAM**, the operating system, the IDE, the browser and the application already use most of it, so `granite4.1:8b` may fail to load or answer very slowly. Pull `granite4.1:3b` instead (2.1 GB, [all sizes](https://ollama.com/library/granite4.1)), and in chapter 12 set `spring.ai.ollama.chat.model=granite4.1:3b`. In our runs of chapter 12's questions, it asked to sign in when it had to and booked "tomorrow" on the right day, but left the vet out of 12 bookings in 13. If neither runs well, chapter 12 shows how to use a hosted model instead.
+
+RAM decides whether a model can run at all, and a graphics card decides how fast it runs. The card helps when the whole model fits in its own memory. When it does not fit, Ollama runs the model, or part of it, on the CPU, which works but is slower. On a Mac with Apple Silicon the CPU and GPU share the same memory, so RAM is the only number to check. While a model runs, `ollama ps` shows where it loaded, for example `100% GPU` or `48%/52% CPU/GPU` ([Ollama FAQ](https://docs.ollama.com/faq)).
+
+`qwen3:8b` thinks before it answers. In our runs of chapter 12's questions on the same machine, it booked "next Wednesday" on the right day 5 times in 5, where `granite4.1:8b` did 2 times in 5, and a booking took it 17 to 54 seconds, where `granite4.1:8b` took 2 to 4. To try it, set `spring.ai.ollama.chat.model=qwen3:8b` in chapter 12.
 
 ## 6. Fetch the MCP Inspector
 
@@ -84,5 +99,5 @@ It opens a browser tab. Close the tab and stop it with `Ctrl+C`.
 - [ ] `java -version` shows 21 or newer
 - [ ] `./mvnw spring-boot:run` starts the application, and http://localhost:8080 shows Spring Petclinic
 - [ ] http://localhost:5173 shows the frontend's home page
-- [ ] `ollama list` shows `granite4.1:8b` and `qwen3-graphql-embedder`
+- [ ] `ollama list` shows `granite4.1:8b` (or `granite4.1:3b`) and `qwen3-graphql-embedder`
 - [ ] `npx -y @modelcontextprotocol/inspector@2.9.0` opens the Inspector
