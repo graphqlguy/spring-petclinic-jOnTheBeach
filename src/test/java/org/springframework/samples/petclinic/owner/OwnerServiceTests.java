@@ -63,6 +63,19 @@ class OwnerServiceTests {
 	}
 
 	@Test
+	void findOwnersMatchesTheCityWithOrWithoutAccents() {
+		assertThat(this.owners.findOwners(new OwnerFilter(null, "Malaga"), 0, 10, null).content())
+			.extracting(Owner::getLastName)
+			.containsExactly("Navarro", "Ruiz");
+		assertThat(this.owners.findOwners(new OwnerFilter(null, "MÁLAGA"), 0, 10, null).totalElements()).isEqualTo(2);
+
+		this.owners.addOwner(new AddOwnerInput("Ana", "Lozano", "Calle Larios 3", "Malaga", "9521234567"));
+		assertThat(this.owners.findOwners(new OwnerFilter(null, "Málaga"), 0, 10, null).totalElements()).isEqualTo(3);
+
+		assertThat(this.owners.findOwners(new OwnerFilter(null, "Nerja"), 0, 10, null).totalElements()).isZero();
+	}
+
+	@Test
 	void findOwnersPagesAndSorts() {
 		OwnerPage first = this.owners.findOwners(null, 0, 6, null);
 		assertThat(first.totalPages()).isEqualTo(3);

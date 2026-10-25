@@ -19,7 +19,7 @@ package org.springframework.samples.petclinic.owner;
  * Narrows a list of owners. A null or blank field leaves its condition out.
  *
  * @param lastName owners whose last name starts with this text, in any case
- * @param city owners who live in this city, in any case
+ * @param city owners who live in this city, in any case and with or without accents
  */
 public record OwnerFilter(String lastName, String city) {
 

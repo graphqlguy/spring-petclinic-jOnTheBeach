@@ -15,9 +15,11 @@
  */
 package org.springframework.samples.petclinic.owner;
 
+import java.text.Normalizer;
 import java.util.Comparator;
 import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 import java.util.function.Consumer;
 
@@ -81,7 +83,8 @@ public class OwnerService {
 		this.latency.pause();
 		String lastName = (filter != null) ? blankToNull(filter.lastName()) : null;
 		String city = (filter != null) ? blankToNull(filter.city()) : null;
-		Page<Owner> result = this.owners.findWithFilters(lastName, city, PageRequest.of(page, size, toSort(sort)));
+		List<String> cities = (city != null) ? spellingsOf(city) : null;
+		Page<Owner> result = this.owners.findWithFilters(lastName, cities, PageRequest.of(page, size, toSort(sort)));
 		return new OwnerPage(result.getContent(), result.getTotalElements(), result.getTotalPages(),
 				result.getNumber(), result.getSize(), result.isFirst(), result.isLast(), result.hasNext(),
 				result.hasPrevious());
@@ -150,6 +153,18 @@ public class OwnerService {
 		};
 		// the id breaks ties, so that each owner shows on exactly one page
 		return Sort.by(direction, property).and(Sort.by("id"));
+	}
+
+	// The cities as the database spells them that match the given one in any case and
+	// with or without accents, so that "malaga" finds the owners of "Málaga"
+	private List<String> spellingsOf(String city) {
+		String wanted = withoutAccents(city);
+		return this.owners.findCities().stream().filter((stored) -> withoutAccents(stored).equals(wanted)).toList();
+	}
+
+	private static String withoutAccents(String text) {
+		String decomposed = Normalizer.normalize(text.strip(), Normalizer.Form.NFD);
+		return decomposed.replaceAll("\\p{M}", "").toLowerCase(Locale.ROOT);
 	}
 
 	private static String blankToNull(String text) {
