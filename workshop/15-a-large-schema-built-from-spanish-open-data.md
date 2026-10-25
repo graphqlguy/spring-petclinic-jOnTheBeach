@@ -354,14 +354,14 @@ Some failures stay with the model. It took the first id of an example in a descr
 
 ## 8. The tests
 
-The chapter adds 21 tests: a test class for each kind of field, against the recorded answers, and unit tests for the conversions and the errors of the Catastro. Run them all:
+The chapter adds 22 tests: a test class for each kind of field, against the recorded answers, and unit tests for the conversions and the errors of the Catastro. Run them all:
 
 ```bash
 ./mvnw test
 ```
 
 ```text
-[INFO] Tests run: 136, Failures: 0, Errors: 0, Skipped: 0
+[INFO] Tests run: 138, Failures: 0, Errors: 0, Skipped: 0
 ```
 
 `MockUpstreamTests` starts the application once with the `mock` profile, on a free port for WireMock, and each test class extends it. A test can check what the application sent to a service:

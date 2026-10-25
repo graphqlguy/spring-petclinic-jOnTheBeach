@@ -333,7 +333,7 @@ import org.springframework.samples.petclinic.system.SecurityConfiguration;
 @Import(SecurityConfiguration.class)
 ```
 
-Run `./mvnw test`: all 108 tests pass. Chapter 8 adds tests of our own.
+Run `./mvnw test`: all 109 tests pass. Chapter 8 adds tests of our own.
 
 ## Exercise: protect the pet mutations
 

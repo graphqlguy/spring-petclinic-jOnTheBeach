@@ -286,7 +286,7 @@ The test runs in about a third of a second, against several seconds for a test t
 Petclinic's tests, the starting point's service tests and the new ones run together:
 
 ```text
-Tests run: 113, Failures: 0, Errors: 0, Skipped: 0
+Tests run: 114, Failures: 0, Errors: 0, Skipped: 0
 ```
 
 ## Exercise: prove the authorization rules
@@ -332,7 +332,7 @@ void hidesTheTelephoneFromAnonymousCallers() {
 }
 ```
 
-With both, `./mvnw test` runs 115 tests.
+With both, `./mvnw test` runs 116 tests.
 
 </details>
 
