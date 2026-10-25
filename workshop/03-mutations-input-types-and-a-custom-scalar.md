@@ -9,7 +9,7 @@ By the end of this chapter, you will:
 - Add a custom scalar and use it in results and in arguments
 - Write mutations with `@MutationMapping`
 - Pass structured input with `input` types, and values with variables
-- Know what a field left out of an update means
+- Write a partial update: a mutation that changes the fields the client sends, and keeps the others as they are
 
 ## 1. A type for dates
 
@@ -447,6 +447,6 @@ Pet updatePet(@Argument UpdatePetInput input) {
 - Mutations live in the `Mutation` root type, and `@MutationMapping` binds them.
 - `input` types group the values of an argument, and Spring for GraphQL fills a matching record.
 - Variables keep the operation fixed and send the values separately.
-- An update with optional fields changes what the client sends.
+- An update with optional fields changes the fields the client sends, and keeps the others as they are.
 
 Chapter 4 turns exceptions into errors a client can act on.
