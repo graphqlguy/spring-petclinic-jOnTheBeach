@@ -75,7 +75,7 @@ class PetclinicGraphQlTests {
 	void findsTheOwnersOfACity() {
 		this.graphQlTester.document("""
 				query {
-				  owners(filter: { city: "Marbella" }) {
+				  owners(filter: { city: "Torremolinos" }) {
 				    totalElements
 				    content {
 				      lastName
@@ -85,10 +85,10 @@ class PetclinicGraphQlTests {
 			.execute()
 			.path("owners.totalElements")
 			.entity(Integer.class)
-			.isEqualTo(2)
+			.isEqualTo(3)
 			.path("owners.content[*].lastName")
 			.entityList(String.class)
-			.containsExactly("Fernández", "Morales");
+			.containsExactly("Beach", "Morales", "Ramos");
 	}
 
 }
@@ -103,16 +103,16 @@ class PetclinicGraphQlTests {
 | `path("owners.totalElements")` | Picks a value from `data`, with the dots and `[*]` of JSONPath. |
 | `entity(...)`, `entityList(...)` | Converts the value to Java, then asserts on it. |
 
-Run it from your IDE, or with `./mvnw test -Dtest=PetclinicGraphQlTests`. To see a failure, change the expected `2` to `3` and run it again:
+Run it from your IDE, or with `./mvnw test -Dtest=PetclinicGraphQlTests`. To see a failure, change the expected `3` to `4` and run it again:
 
 ```text
-owners.totalElements expected:<3> but was:<2>
+owners.totalElements expected:<4> but was:<3>
 Request: document='query {
-  owners(filter: { city: "Marbella" }) {
+  owners(filter: { city: "Torremolinos" }) {
 ...
 ```
 
-The message names the path and both values, then prints the request that produced them. Change it back to `2`.
+The message names the path and both values, then prints the request that produced them. Change it back to `3`.
 
 ## 4. Errors, and mutations with a token
 
@@ -319,7 +319,7 @@ void guestCannotAddAnOwner() {
 
 @Test
 void hidesTheTelephoneFromAnonymousCallers() {
-	this.graphQlTester.document("{ owner(id: 6) { lastName telephone } }")
+	this.graphQlTester.document("{ owner(id: 12) { lastName telephone } }")
 		.execute()
 		.errors()
 		.expect((error) -> error.getErrorType() == ErrorType.UNAUTHORIZED)

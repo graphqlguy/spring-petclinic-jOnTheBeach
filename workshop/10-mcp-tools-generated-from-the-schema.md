@@ -105,13 +105,13 @@ The Inspector opens in your browser, with one server card, `localhost:8080`.
 1. Flip the switch on the card. It says **Connected**, and the **Messages** panel on the right lists the requests the Inspector sent, `INITIALIZE` and `TOOLS/LIST` among them.
 2. Open the **Tools** tab at the top. It lists the 15 tools.
 3. Select `owners`. The description and the description of each argument are the ones we wrote in chapter 9. The badges **READ-ONLY** and **IDEMPOTENT** come from GATool, which marks every query that way and every mutation **DESTRUCTIVE**.
-4. Type `Marbella` in **city** and click **Execute Tool**.
+4. Type `Torremolinos` in **city** and click **Execute Tool**.
 
 ```json
 {
   "data": {
     "owners": {
-      "totalElements": 2,
+      "totalElements": 3,
       "totalPages": 1,
       "currentPage": 0,
       "size": 10,
@@ -124,7 +124,7 @@ The Inspector opens in your browser, with one server card, `localhost:8080`.
 }
 ```
 
-Two owners live in Marbella, and the answer leaves out who they are. This is the operation GATool wrote for the tool:
+Three owners live in Torremolinos, and the answer leaves out who they are. This is the operation GATool wrote for the tool:
 
 ```graphql
 query owners($filter: OwnerFilter, $page: Int! = 0, $size: Int! = 10, $sort: OwnerSort) {
@@ -156,23 +156,25 @@ gatool.dev.experimental.generated-selection-depth=2
 gatool.dev.experimental.generate-tools-for-deprecated-root-fields=false
 ```
 
-Restart. The log says `GATool serves 14 MCP tools`: `ownersAll` is gone, because chapter 1 deprecated it. Reload the Inspector's page, flip the switch again, and run `owners` for Marbella. The Inspector shows the answer as a **Tool Error**:
+Restart. The log says `GATool serves 14 MCP tools`: `ownersAll` is gone, because chapter 1 deprecated it. Reload the Inspector's page, flip the switch again, and run `owners` for Torremolinos. The Inspector shows the answer as a **Tool Error**:
 
 ```json
 {
   "data": {
     "owners": {
       "content": [
-        { "id": "9", "firstName": "David", "lastName": "Fernández", "address": "Avenida Ricardo Soriano 36", "city": "Marbella", "telephone": null },
-        { "id": "17", "firstName": "Pablo", "lastName": "Morales", "address": "Calle Ancha 9", "city": "Marbella", "telephone": null }
+        { "id": "15", "firstName": "J On The", "lastName": "Beach", "address": "Calle México 3", "city": "Torremolinos", "telephone": null },
+        { "id": "13", "firstName": "Pablo", "lastName": "Morales", "address": "Calle San Miguel 8", "city": "Torremolinos", "telephone": null },
+        { "id": "14", "firstName": "Marta", "lastName": "Ramos", "address": "Avenida Palma de Mallorca 17", "city": "Torremolinos", "telephone": null }
       ],
-      "totalElements": 2,
+      "totalElements": 3,
       ...
     }
   },
   "errors": [
     { "message": "Unauthorized", "path": ["owners", "content", 0, "telephone"], "extensions": { "classification": "UNAUTHORIZED" } },
-    { "message": "Unauthorized", "path": ["owners", "content", 1, "telephone"], "extensions": { "classification": "UNAUTHORIZED" } }
+    { "message": "Unauthorized", "path": ["owners", "content", 1, "telephone"], "extensions": { "classification": "UNAUTHORIZED" } },
+    { "message": "Unauthorized", "path": ["owners", "content", 2, "telephone"], "extensions": { "classification": "UNAUTHORIZED" } }
   ]
 }
 ```
@@ -183,11 +185,11 @@ The depth applies to every tool at once. Here is the size of three answers, in c
 
 | Tool | Depth 1 | Depth 2 | Depth 3 |
 |---|---|---|---|
-| `owners` (first page) | 146 | 2,935 | 3,850 |
-| `vet` (id 1) | 67 | 4,022 | 7,482 |
-| `vets` | 329 | 12,122 | 22,457 |
+| `owners` (first page) | 146 | 2,856 | 3,618 |
+| `vet` (id 1) | 67 | 1,047 | 1,918 |
+| `vets` | 329 | 2,630 | 4,487 |
 
-Depth 2 gives `owners` its owners, and gives `vets` every visit of every vet: 12,122 characters that the model reads to answer a question such as "which vets do surgery?". Each tool needs a selection of its own, which an operation file gives it in chapter 11.
+Depth 2 gives `owners` its owners, and gives `vets` every visit of every vet: 2,630 characters that the model reads to answer a question such as "which vets do surgery?". Each tool needs a selection of its own, which an operation file gives it in chapter 11.
 
 ## 6. Give the Date scalar a type
 
@@ -232,7 +234,7 @@ Select `addVisit`. Switch on **Edit as JSON**, replace the arguments with these,
 ```json
 {
   "input": {
-    "petId": 7,
+    "petId": 15,
     "vetId": 3,
     "description": "limping on a back leg"
   }
@@ -266,10 +268,10 @@ Open the frontend's **Live** page from chapter 7 in another tab. In the Inspecto
 {
   "data": {
     "addVisit": {
-      "id": "180",
+      "id": "33",
       "date": "2026-10-23",
       "description": "limping on a back leg",
-      "pet": { "id": "7", "name": "Nala", "birthDate": "2023-09-30" },
+      "pet": { "id": "15", "name": "Nala", "birthDate": "2023-09-30" },
       "vet": { "id": "3", "firstName": "Linda", "lastName": "Douglas" }
     }
   }
@@ -283,19 +285,19 @@ The date is tomorrow's, because the input left it out. The visit also appears on
 
 ## Exercise: book a visit the way an agent does
 
-A receptionist hears names, and the tools need ids. Pablo Morales from Marbella calls: his cat needs an x-ray tomorrow, with a vet who does radiology. Book it in the Inspector with the tools alone, and note which calls you needed. An agent makes the same calls, guided by the descriptions of chapter 9.
+A receptionist hears names, and the tools need ids. Pablo Morales from Torremolinos calls: his cat needs an x-ray tomorrow, with a vet who does radiology. Book it in the Inspector with the tools alone, and note which calls you needed. An agent makes the same calls, guided by the descriptions of chapter 9.
 
 <details>
 <summary>Show solution</summary>
 
-1. `search` with `{"text": "Morales"}` returns the owner with id `17`, and at depth 2 his pets: Perla, with id `25`.
+1. `search` with `{"text": "Morales"}` returns the owner with id `13`, and at depth 2 his pets: Perla, with id `17`.
 2. `vets` returns each vet with their specialties. Helen Leary (id `2`) and Henry Stevens (id `5`) do radiology.
 3. `addVisit`, with the staff token, books it. The date stays out, since the description says a visit without a date is booked for tomorrow:
 
 ```json
 {
   "input": {
-    "petId": 25,
+    "petId": 17,
     "vetId": 2,
     "description": "x-ray"
   }

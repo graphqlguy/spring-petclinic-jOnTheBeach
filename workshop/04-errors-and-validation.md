@@ -128,7 +128,7 @@ Each field of a query succeeds or fails on its own. Ask for an owner that exists
 
 ```graphql
 query {
-  owner(id: 6) {
+  owner(id: 12) {
     lastName
   }
   vet(id: 99) {

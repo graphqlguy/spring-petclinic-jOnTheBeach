@@ -228,7 +228,7 @@ Owner owner(@Argument Integer id) {
 
 ```graphql
 query {
-  owner(id: 40) {
+  owner(id: 15) {
     firstName
     lastName
     address
@@ -243,8 +243,8 @@ query {
     "owner": {
       "firstName": "J On The",
       "lastName": "Beach",
-      "address": "Avenida de José Ortega y Gasset 201",
-      "city": "Málaga"
+      "address": "Calle México 3",
+      "city": "Torremolinos"
     }
   }
 }
@@ -254,7 +254,7 @@ Try `owner(id: 999)` as well. The answer is `{"data": {"owner": null}}`, as the 
 
 ## 7. Evolve the API: filtering, sorting and paging
 
-`ownersAll` returns every owner in one response. That works for 40 owners, and it stops working for a clinic with thousands: the response and the memory it takes grow with every new client. We need paging and filtering. But clients may already depend on `ownersAll`, so we can't simply remove it.
+`ownersAll` returns every owner in one response. That works for 15 owners, and it stops working for a clinic with thousands: the response and the memory it takes grow with every new client. We need paging and filtering. But clients may already depend on `ownersAll`, so we can't simply remove it.
 
 First we mark the old query as deprecated, then we add a better one. Change the `ownersAll` line:
 
@@ -336,10 +336,10 @@ Restart, open the documentation explorer again, and look at `ownersAll`: GraphiQ
 ```graphql
 query {
   owners(
-    filter: { city: "Málaga" }
+    filter: { city: "Torremolinos" }
     sort: { field: FIRST_NAME, order: DESC }
     page: 0
-    size: 5
+    size: 2
   ) {
     totalElements
     totalPages
@@ -351,7 +351,7 @@ query {
 }
 ```
 
-23 owners live in Málaga, so there are 5 pages of 5, starting with Sara Delgado. Then try `owners(page: null)`. The engine refuses it during validation, before any Java runs:
+Three owners live in Torremolinos, so there are 2 pages of 2, starting with Pablo Morales. Then try `owners(page: null)`. The engine refuses it during validation, before any Java runs:
 
 ```text
 Validation error (WrongType@[owners]) : argument 'page' with value 'NullValue{}' must not be null

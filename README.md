@@ -13,7 +13,7 @@ Start with [the setup page](workshop/00-setup.md). Some downloads are large, so 
 
 - **Services for every chapter.** Owner, pet, visit and vet services with paging, filtering, sorting, search and batch lookups, so the workshop writes only GraphQL code.
 - **Lazy, two-way relationships.** GraphQL decides what each request reads. A pet knows its owner, and a visit knows its pet and its vet.
-- **More data.** 40 owners in and around Málaga, 60 pets and 179 visits, ten of them still to come.
+- **More data.** The ten owners Spring Petclinic comes with, and five from Málaga and Torremolinos: 15 owners, 22 pets and 32 visits, three of them still to come.
 - **A React frontend** in [`frontend/`](frontend/) that lights up page by page as the API grows.
 - **The frontend's operations** as `.graphql` files in `src/main/resources/operations`, which the second half hands to an agent as tools.
 

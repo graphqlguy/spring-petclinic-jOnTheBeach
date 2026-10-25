@@ -115,11 +115,9 @@ query {
 {
   "data": {
     "search": [
-      { "__typename": "Owner", "firstName": "Alejandro", "lastName": "Blanco", "city": "Rincón de la Victoria" },
-      { "__typename": "Owner", "firstName": "Pablo", "lastName": "Morales", "city": "Marbella" },
-      { "__typename": "Owner", "firstName": "Elena", "lastName": "Serrano", "city": "Málaga" },
+      { "__typename": "Owner", "firstName": "Jean", "lastName": "Coleman", "city": "Monona" },
+      { "__typename": "Owner", "firstName": "Pablo", "lastName": "Morales", "city": "Torremolinos" },
       { "__typename": "Vet", "firstName": "Helen", "lastName": "Leary" },
-      { "__typename": "Pet", "name": "Galleta", "type": { "name": "hamster" } },
       { "__typename": "Pet", "name": "Leo", "type": { "name": "cat" } }
     ]
   }

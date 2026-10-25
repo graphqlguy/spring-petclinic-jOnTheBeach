@@ -71,14 +71,14 @@ class VisitServiceTests {
 	@Test
 	void findVisitsReturnsTheVisitsBetweenTwoDates() {
 		List<Visit> found = this.visits.findVisits(LocalDate.of(2026, 10, 22), LocalDate.of(2026, 12, 31));
-		assertThat(found).hasSize(10).extracting(Visit::getDate).isSorted();
+		assertThat(found).hasSize(3).extracting(Visit::getDate).isSorted();
 	}
 
 	@Test
 	void addVisitBooksForTomorrowAndPublishesAnEvent(ApplicationEvents events) {
 		Visit visit = this.visits.addVisit(new AddVisitInput(7, 1, null, "check-up"));
 		assertThat(visit.getDate()).isEqualTo(LocalDate.now().plusDays(1));
-		assertThat(visit.getPet().getName()).isEqualTo("Nala");
+		assertThat(visit.getPet().getName()).isEqualTo("Samantha");
 		assertThat(events.stream(VisitBookedEvent.class)).containsExactly(new VisitBookedEvent(visit.getId()));
 	}
 

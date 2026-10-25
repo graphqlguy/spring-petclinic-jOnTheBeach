@@ -194,7 +194,7 @@ The log shows `search`, `getOwnerDetails`, `listVets` and `addVisit`. `addVisit`
 
 Sign in as `staff` / `staff`, open the **Live** page, and ask again. The visit appears on the Live page, and the assistant answers:
 
-> The x-ray for Perla, owned by Pablo Morales, has been booked with Helen Leary for tomorrow, 2026-10-23. Visit ID: 180.
+> The x-ray for Perla, owned by Pablo Morales, has been booked with Helen Leary for tomorrow, 2026-10-23. Visit ID: 33.
 
 | Part | What it does |
 |---|---|
@@ -478,9 +478,9 @@ class ChatController {
 
 Restart and ask the two questions again:
 
-> An x-ray visit has been scheduled for Perla (Pablo Morales's cat) with Helen Leary for tomorrow, 2026-10-23. The visit ID is 180.
+> An x-ray visit has been scheduled for Perla (Pablo Morales's cat) with Helen Leary for tomorrow, 2026-10-23. The visit ID is 33.
 
-The memory lives in the backend, one conversation for each session, and a restart empties it. In one of our four runs, the model booked Mía, the cat of Laura Domínguez, so check the Live page here too.
+The memory lives in the backend, one conversation for each session, and a restart empties it. In one of our four runs, the model booked another owner's cat, so check the Live page here too.
 
 </details>
 

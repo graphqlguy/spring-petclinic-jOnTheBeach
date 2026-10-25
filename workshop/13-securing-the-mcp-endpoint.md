@@ -503,13 +503,13 @@ On the **Servers** tab, open **Connection Info**. Its **OAuth Details** say *Cli
 The Inspector lists the scope it asked for, and the token carries `petclinic:write` too, because `accessTokens` adds it for staff. On the **Tools** tab, run `addVisit` with:
 
 ```json
-{"petId": 25, "vetId": 2, "description": "x-ray"}
+{"petId": 17, "vetId": 2, "description": "x-ray"}
 ```
 
 ```json
 {
   "data": {
-    "addVisit": { "id": "180", "date": "2026-10-23", "description": "x-ray" }
+    "addVisit": { "id": "33", "date": "2026-10-23", "description": "x-ray" }
   }
 }
 ```
@@ -560,7 +560,7 @@ HTTP/1.1 403
 WWW-Authenticate: Bearer error="insufficient_scope", error_description="This endpoint needs mcp:tools. The token does not hold any of them.", scope="mcp:tools", resource_metadata="http://localhost:8080/.well-known/oauth-protected-resource/mcp"
 ```
 
-Both tokens are signed with the same key, by the same issuer, for the same audience, so the decoder accepts both. The login mutation's token lacks `mcp:tools`, and GATool's chain answers `403` with the scope to ask for. The Inspector's token works on `/graphql` as well, and a staff member's returns the telephone of `owner(id: 25)`, since it carries `petclinic:write`.
+Both tokens are signed with the same key, by the same issuer, for the same audience, so the decoder accepts both. The login mutation's token lacks `mcp:tools`, and GATool's chain answers `403` with the scope to ask for. The Inspector's token works on `/graphql` as well, and a staff member's returns the telephone of `owner(id: 12)`, since it carries `petclinic:write`.
 
 </details>
 

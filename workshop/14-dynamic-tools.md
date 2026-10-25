@@ -207,18 +207,18 @@ DEBUG ... o.s.a.m.tool.DefaultToolCallingManager   : Executing tool call: execut
 DEBUG ... o.s.a.m.tool.DefaultToolCallingManager   : Executing tool call: executeGraphql
 ```
 
-The model wrote a query such as `{ vets { id visits { id } } }`, which returns every visit of every vet, and then counted the ids. These are the counts it gave in three of our runs:
+The model wrote a query such as `{ vets { id visits { id } } }`, which returns every visit of every vet, and then counted the ids. These are the counts it gave in our five runs:
 
-| Vet | Visits | Run 1 | Run 2 | Run 3 |
-|---|---|---|---|---|
-| James Carter | 60 | 33 | 43 | 33 |
-| Helen Leary | 5 | 5 | 5 | 5 |
-| Linda Douglas | 29 | 29 | 38 | 27 |
-| Rafael Ortega | 29 | 24 | 25 | 19 |
-| Henry Stevens | 8 | 8 | 8 | 8 |
-| Sharon Jenkins | 48 | 53 | 72 | 61 |
+| Vet | Visits | Run 1 | Run 2 | Run 3 | Run 4 | Run 5 |
+|---|---|---|---|---|---|---|
+| James Carter | 15 | 15 | 15 | 15 | 9 | 12 |
+| Helen Leary | 2 | 2 | 2 | 2 | 2 | 2 |
+| Linda Douglas | 7 | 6 | 6 | 6 | 6 | 6 |
+| Rafael Ortega | 4 | 4 | 4 | 4 | 4 | 4 |
+| Henry Stevens | 0 | 0 | 0 | 0 | 0 | 0 |
+| Sharon Jenkins | 4 | 4 | 4 | 4 | 4 | 4 |
 
-The query was right, and the short lists were counted right. A model reads text in tokens, and counting 60 ids in a JSON answer is a task it gets wrong. In our two other runs, the answer was empty once, and once the model counted the visits that `findVisits` returned for the last seven weeks.
+The query was right in every run, and every answer had at least one count wrong. A model reads text in tokens, and counting the ids in a JSON answer is a task it gets wrong, even for a list of 7.
 
 ## 6. A field that does the counting
 
@@ -266,10 +266,10 @@ The counts were right in all 5 of our runs, each answered within 6 seconds. The 
 
 | Document | Answer |
 |---|---|
-| `mutation { addVisit(input: {petId: 25, description: "x-ray"}) { id } }` | A **Tool Error**: *This server runs queries here, and that document is a mutation. gatool.dev.experimental.dynamic-operations.allow-mutations turns writing on, and it is an unsafe switch because the operation is one nobody reviewed.* |
+| `mutation { addVisit(input: {petId: 17, description: "x-ray"}) { id } }` | A **Tool Error**: *This server runs queries here, and that document is a mutation. gatool.dev.experimental.dynamic-operations.allow-mutations turns writing on, and it is an unsafe switch because the operation is one nobody reviewed.* |
 | `{ __schema { types { name } } }` | A **Tool Error**: *That document selects __schema, and introspection runs through the schema tools here: search the schema for what you need, and read one type in full by its name.* |
 | `{ vets { visits { pet { owner { pets { visits { vet { visits { pet { name } } } } } } } } } }` | A **Tool Error**: `maximum query depth exceeded 10 > 8`, from chapter 9's depth limit |
-| `{ owner(id: 25) { firstName lastName telephone } }` | Signed in as guest: `"telephone": null`, with a `FORBIDDEN` error from chapter 5's `@PreAuthorize`. Signed in as staff: `"telephone": "6651736569"`. |
+| `{ owner(id: 12) { firstName lastName telephone } }` | Signed in as guest: `"telephone": null`, with a `FORBIDDEN` error from chapter 5's `@PreAuthorize`. Signed in as staff: `"telephone": "9521471193"`. |
 
 | Check | Where it runs |
 |---|---|

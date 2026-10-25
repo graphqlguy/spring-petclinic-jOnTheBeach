@@ -16,7 +16,7 @@ By the end of this chapter, you will:
 | Chapter 10 | What happened | This chapter |
 |---|---|---|
 | Every owner selection took `telephone` | Every anonymous call to `owner`, `owners` and `search` failed | Each file selects what its question needs |
-| One selection depth for every tool | `vets` returned 12,122 characters to say which vet does surgery | `listVets` selects the names and the specialties |
+| One selection depth for every tool | `vets` returned 2,630 characters to say which vet does surgery | `listVets` selects the names and the specialties |
 | Every root field became a tool | `login` asked the model for a password | The files for the agent leave `login` out |
 
 ## 2. The frontend's operations
@@ -111,20 +111,21 @@ Reload the Inspector's page and flip the switch on the card. If you stopped the 
 - The arguments are the variables, with their defaults. `sortBy` and `order` are lists to choose from, filled with the values of their enums.
 - `lastName` reads *Owners whose last name starts with this text*: the variable fills `OwnerFilter.lastName`, and GATool takes that field's description from the schema.
 
-Type `Marbella` in **city** and click **Execute Tool**:
+Type `Torremolinos` in **city** and click **Execute Tool**:
 
 ```json
 {
   "data": {
     "owners": {
-      "totalElements": 2,
+      "totalElements": 3,
       "totalPages": 1,
       "currentPage": 0,
       "hasNext": false,
       "hasPrevious": false,
       "content": [
-        { "id": "9", "firstName": "David", "lastName": "Fernández", "address": "Avenida Ricardo Soriano 36", "city": "Marbella" },
-        { "id": "17", "firstName": "Pablo", "lastName": "Morales", "address": "Calle Ancha 9", "city": "Marbella" }
+        { "id": "15", "firstName": "J On The", "lastName": "Beach", "address": "Calle México 3", "city": "Torremolinos" },
+        { "id": "13", "firstName": "Pablo", "lastName": "Morales", "address": "Calle San Miguel 8", "city": "Torremolinos" },
+        { "id": "14", "firstName": "Marta", "lastName": "Ramos", "address": "Avenida Palma de Mallorca 17", "city": "Torremolinos" }
       ]
     }
   }
@@ -141,23 +142,23 @@ The owners arrive without a Tool Error, because the file leaves the telephone ou
 | Answer | The selection |
 | **READ-ONLY**, **IDEMPOTENT**, **DESTRUCTIVE** | The operation type, as in chapter 10 |
 
-Run `listVets`: every vet with their specialties, in 573 characters. Chapter 10's `vets` answered the same question in 12,122.
+Run `listVets`: every vet with their specialties, in 573 characters. Chapter 10's `vets` answered the same question in 2,630.
 
 ## 5. Count a partial answer as an answer
 
-Run `getOwnerDetails` with `17` as the **id**. The Inspector shows a **Tool Error**:
+Run `getOwnerDetails` with `13` as the **id**. The Inspector shows a **Tool Error**:
 
 ```json
 {
   "data": {
     "owner": {
-      "id": "17",
+      "id": "13",
       "firstName": "Pablo",
       "lastName": "Morales",
-      "address": "Calle Ancha 9",
-      "city": "Marbella",
+      "address": "Calle San Miguel 8",
+      "city": "Torremolinos",
       "telephone": null,
-      "pets": [ { "id": "25", "name": "Perla", ... } ]
+      "pets": [ { "id": "17", "name": "Perla", ... } ]
     }
   },
   "errors": [
@@ -423,13 +424,13 @@ query Search($text: String!) {
 
 Restart, so that the tool and the server's hash both follow the new file. The frontend reads the new file when you reload it, and its search page shows the same results as before, since it ignores the pets.
 
-1. `search` with `{"text": "Morales"}` returns Pablo Morales with his cat Perla, id `25`.
+1. `search` with `{"text": "Morales"}` returns Pablo Morales with his cat Perla, id `17`.
 2. `listVets` shows that Helen Leary (id `2`) and Henry Stevens (id `5`) do radiology.
 3. `addVisit`, with the staff token, books it:
 
 ```json
 {
-  "petId": 25,
+  "petId": 17,
   "vetId": 2,
   "description": "x-ray"
 }

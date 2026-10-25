@@ -51,7 +51,7 @@ class PetServiceTests {
 
 	@Test
 	void findByIdRefusesAnUnknownId() {
-		assertThat(this.pets.findById(7).getName()).isEqualTo("Nala");
+		assertThat(this.pets.findById(7).getName()).isEqualTo("Samantha");
 		assertThatExceptionOfType(EntityNotFoundException.class).isThrownBy(() -> this.pets.findById(999));
 	}
 
@@ -60,15 +60,15 @@ class PetServiceTests {
 		Pet pet = this.pets.addPet(new AddPetInput(1, "Bobby", LocalDate.of(2024, 5, 1), DOG));
 		assertThat(pet.getId()).isNotNull();
 		assertThat(pet.getOwner().getId()).isEqualTo(1);
-		assertThat(this.owners.findById(1).getPets()).extracting(Pet::getName).contains("Bobby", "Luna");
+		assertThat(this.owners.findById(1).getPets()).extracting(Pet::getName).contains("Bobby", "Leo");
 	}
 
 	@Test
 	void addPetRefusesADuplicateNameAndAFutureBirthDate() {
 		assertThatExceptionOfType(InvalidInputException.class)
-			.isThrownBy(() -> this.pets.addPet(new AddPetInput(1, "luna", LocalDate.now().plusDays(1), DOG)))
+			.isThrownBy(() -> this.pets.addPet(new AddPetInput(1, "leo", LocalDate.now().plusDays(1), DOG)))
 			.satisfies((ex) -> assertThat(ex.getFieldErrors()).containsOnlyKeys("name", "birthDate")
-				.containsEntry("name", "Antonio Ruiz already has a pet named luna"));
+				.containsEntry("name", "George Franklin already has a pet named leo"));
 	}
 
 	@Test
@@ -81,15 +81,15 @@ class PetServiceTests {
 
 	@Test
 	void updatePetChangesOnlyTheFieldsItSets() {
-		Pet pet = this.pets.updatePet(new UpdatePetInput(7, "Nala II", null, null));
-		assertThat(pet.getName()).isEqualTo("Nala II");
+		Pet pet = this.pets.updatePet(new UpdatePetInput(7, "Samantha II", null, null));
+		assertThat(pet.getName()).isEqualTo("Samantha II");
 		assertThat(pet.getType().getName()).isEqualTo("cat");
 	}
 
 	@Test
 	void updatePetRefusesTheNameOfASibling() {
 		assertThatExceptionOfType(InvalidInputException.class)
-			.isThrownBy(() -> this.pets.updatePet(new UpdatePetInput(7, "Simba", null, null)));
+			.isThrownBy(() -> this.pets.updatePet(new UpdatePetInput(7, "Max", null, null)));
 	}
 
 	@Test

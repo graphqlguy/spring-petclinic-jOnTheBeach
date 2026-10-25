@@ -88,10 +88,10 @@ class ClinicServiceTests {
 
 	@Test
 	void shouldFindOwnersByLastName() {
-		Page<Owner> owners = this.owners.findByLastNameStartingWith("García", pageable);
+		Page<Owner> owners = this.owners.findByLastNameStartingWith("Davis", pageable);
 		assertThat(owners).hasSize(2);
 
-		owners = this.owners.findByLastNameStartingWith("Garcías", pageable);
+		owners = this.owners.findByLastNameStartingWith("Daviss", pageable);
 		assertThat(owners).isEmpty();
 	}
 
@@ -100,7 +100,7 @@ class ClinicServiceTests {
 		Optional<Owner> optionalOwner = this.owners.findById(1);
 		assertThat(optionalOwner).isPresent();
 		Owner owner = optionalOwner.get();
-		assertThat(owner.getLastName()).startsWith("Ruiz");
+		assertThat(owner.getLastName()).startsWith("Franklin");
 		assertThat(owner.getPets()).hasSize(1);
 		assertThat(owner.getPets().get(0).getType()).isNotNull();
 		assertThat(owner.getPets().get(0).getType().getName()).isEqualTo("cat");

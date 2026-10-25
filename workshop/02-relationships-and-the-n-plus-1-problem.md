@@ -45,7 +45,7 @@ Restart the application and run a nested query in GraphiQL:
 
 ```graphql
 query {
-  owner(id: 6) {
+  owner(id: 12) {
     firstName
     lastName
     pets {

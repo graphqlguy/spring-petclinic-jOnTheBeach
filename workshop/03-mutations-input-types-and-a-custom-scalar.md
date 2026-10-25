@@ -127,11 +127,11 @@ class VisitGraphQlController {
 }
 ```
 
-Restart and ask for the visits of the coming days:
+Restart and ask for the visits of the coming two weeks:
 
 ```graphql
 query {
-  visits(from: "2026-10-21", to: "2026-10-31") {
+  visits(from: "2026-10-21", to: "2026-11-05") {
     date
     description
     pet {
@@ -144,7 +144,7 @@ query {
 }
 ```
 
-Two visits are booked: Duna's vaccination booster on 24 October, and Woofy's annual check-up on 28 October. Now write the first date the way many people do, `from: "21/10/2026"`. The engine refuses it during validation, before our code runs:
+Two visits are booked: Woofy's annual check-up on 28 October, and Simba's urinary infection on 2 November. Now write the first date the way many people do, `from: "21/10/2026"`. The engine refuses it during validation, before our code runs:
 
 ```text
 Validation error (WrongType@[visits]) : argument 'from' with value 'StringValue{value='21/10/2026'}' is not a valid 'Date' - Invalid RFC3339 full date value : '21/10/2026'. ...
@@ -187,12 +187,12 @@ Visit addVisit(@Argument AddVisitInput input) {
 }
 ```
 
-Restart and book a visit for Woofy, the conference dog (pet 59), with James Carter (vet 1):
+Restart and book a visit for Woofy, the conference dog (pet 21), with James Carter (vet 1):
 
 ```graphql
 mutation {
   addVisit(
-    input: { petId: 59, vetId: 1, date: "2026-10-30", description: "check-up after the conference" }
+    input: { petId: 21, vetId: 1, date: "2026-10-30", description: "check-up after the conference" }
   ) {
     id
     date
@@ -206,7 +206,7 @@ mutation {
 }
 ```
 
-The answer is the new visit, with id 180: the seed data has 179. A mutation returns an object like any query, so the client asks for exactly the fields it needs next. When an operation has several mutation fields, GraphQL runs them one after another, in order, where it may run the fields of a query in parallel.
+The answer is the new visit, with id 33: the seed data has 32. A mutation returns an object like any query, so the client asks for exactly the fields it needs next. When an operation has several mutation fields, GraphQL runs them one after another, in order, where it may run the fields of a query in parallel.
 
 ## 4. Variables: register an owner
 
@@ -269,7 +269,7 @@ Open the **Variables** tab below the editor and give the variable a value, as JS
 }
 ```
 
-Run it, and Ana Lozano is owner 41.
+Run it, and Ana Lozano is owner 16.
 
 | Syntax | Meaning |
 |---|---|

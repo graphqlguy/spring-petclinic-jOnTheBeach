@@ -291,7 +291,7 @@ String telephone(Owner owner) {
 }
 ```
 
-Restart and run `owner(id: 6) { lastName telephone }` without a token:
+Restart and run `owner(id: 12) { lastName telephone }` without a token:
 
 ```json
 {
