@@ -382,7 +382,7 @@ type Visit {
 
 ### Exercise 2: the vets of a specialty
 
-Add a `vets` field to `Specialty`, with the vets who have that specialty, and resolve it with a `@BatchMapping`. `VetService.findVetsBySpecialtyIds` takes a list of specialty ids and returns a `Map<Integer, List<Vet>>`. Our controller already has a method named `vets`, the query, so give the new method another name, and name the field in the annotation: `@BatchMapping(field = "vets")`.
+A vet who wants a second opinion looks for a colleague with the same specialty. Add a `vets` field to `Specialty`, with the vets who have that specialty, so that a client can go from a vet to their specialties and on to the colleagues who share them. Resolve it with a `@BatchMapping`. `VetService.findVetsBySpecialtyIds` takes a list of specialty ids and returns a `Map<Integer, List<Vet>>`. Our controller already has a method named `vets`, the query, so give the new method another name, and name the field in the annotation: `@BatchMapping(field = "vets")`.
 
 Check it with this query, and look for a single `Batch fetching vets for 3 specialties` line in the log:
 
@@ -399,6 +399,8 @@ query {
   }
 }
 ```
+
+Every query starts from a field of `Query`, so this schema reaches a specialty only through a vet. A `specialties` field on `Query` would make sense as well, for example for a page where the clinic advertises its specialties. The workshop leaves it out to save time.
 
 <details>
 <summary>Show solution</summary>
@@ -427,6 +429,8 @@ Map<Specialty, List<Vet>> specialtyVets(List<Specialty> specialties) {
 ```
 
 Spring takes the type, `Specialty`, from the element type of the parameter, and the field from `field = "vets"`.
+
+Between them, the vets list five specialties: radiology twice, surgery twice and dentistry once. The batch method gets three, because the DataLoader collects each specialty once per request, however many vets share it.
 
 </details>
 
