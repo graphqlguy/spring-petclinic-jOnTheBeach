@@ -30,7 +30,7 @@ function Pet({ ownerId, pet }) {
           )}
         </div>
       </div>
-      {pet.visits.length === 0 ? (
+      {!pet.visits ? null : pet.visits.length === 0 ? (
         <p className="text-sm text-spring-grey">No visits yet.</p>
       ) : (
         <Table headers={['Date', 'Description', 'Vet']}>
@@ -56,8 +56,10 @@ function Pet({ ownerId, pet }) {
 export default function OwnerDetailPage() {
   const { ownerId } = useParams()
   const { available } = useGraphQL()
+  // The page grows with the schema: the owner, then their pets, then each pet's visits
   const detailed = available('getOwnerDetails')
-  const operation = detailed ? 'getOwnerDetails' : 'ownerSummary'
+  const withPets = detailed || available('ownerPets')
+  const operation = detailed ? 'getOwnerDetails' : withPets ? 'ownerPets' : 'ownerSummary'
   const { data, errors, loading } = useQuery(operation, { id: ownerId }, { skip: !available(operation) })
 
   if (!available(operation)) {
@@ -103,18 +105,21 @@ export default function OwnerDetailPage() {
       </table>
       <div className="mb-4 flex items-center justify-between">
         <h2 className="text-lg">Pets and visits</h2>
-        {detailed && available('addPet', 'listPetTypes') && (
+        {withPets && available('addPet', 'listPetTypes') && (
           <ButtonLink to={`/owners/${owner.id}/pets/new`}>Add pet</ButtonLink>
         )}
       </div>
-      {detailed ? (
-        owner.pets.length === 0 ? (
-          <p className="text-sm text-spring-grey">No pets yet.</p>
-        ) : (
-          owner.pets.map((pet) => <Pet key={pet.id} ownerId={owner.id} pet={pet} />)
-        )
+      {withPets ? (
+        <>
+          {owner.pets.length === 0 ? (
+            <p className="text-sm text-spring-grey">No pets yet.</p>
+          ) : (
+            owner.pets.map((pet) => <Pet key={pet.id} ownerId={owner.id} pet={pet} />)
+          )}
+          {!detailed && <FeaturePending featureKey="ownerDetails" compact />}
+        </>
       ) : (
-        <FeaturePending featureKey="ownerDetails" compact />
+        <FeaturePending featureKey="ownerPets" compact />
       )}
     </div>
   )

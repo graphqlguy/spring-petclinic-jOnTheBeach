@@ -26,7 +26,7 @@ The frontend sends only the operations in two folders, one `.graphql` file each:
 | Folder | Holds |
 |---|---|
 | `src/main/resources/operations` | The queries and mutations of the pages: 7 in `queries/` and 5 in `mutations/` |
-| `src/main/resources/operations-ui` | What the frontend alone needs: `login`, the schema check, the two summaries of chapter 1, and the `visitBooked` subscription |
+| `src/main/resources/operations-ui` | What the frontend alone needs: `login`, the schema check, the two summaries of chapter 1, the owner's pets of chapter 2, and the `visitBooked` subscription |
 
 Open one of them:
 

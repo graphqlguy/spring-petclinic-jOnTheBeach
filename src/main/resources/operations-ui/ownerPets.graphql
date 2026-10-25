@@ -1,0 +1,20 @@
+# The owner page in chapter 2, once owners have their pets and before the pets have their visits.
+query OwnerPets($id: ID!) {
+  owner(id: $id) {
+    id
+    firstName
+    lastName
+    address
+    city
+    telephone
+    pets {
+      id
+      name
+      birthDate
+      type {
+        id
+        name
+      }
+    }
+  }
+}

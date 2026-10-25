@@ -74,7 +74,7 @@ query {
 }
 ```
 
-It works without a line of Java.
+It works without a line of Java. Refresh the frontend and open an owner: the owner page now lists the pets, and their visits follow in exercise 1.
 
 ### Why does this work?
 
