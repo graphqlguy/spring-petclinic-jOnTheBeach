@@ -108,25 +108,6 @@ Both use port 6274, and MCPJam's sign-in only works on that port, so during the 
 
 Set them again in each new terminal you start the Inspector from.
 
-## 7. Install Open WebUI
-
-[Open WebUI](https://openwebui.com) is a chat interface for the models in Ollama. It needs Python 3.11 or 3.12, which [uv](https://docs.astral.sh/uv/) downloads for it. If `uv --version` fails, install uv:
-
-| System | Command |
-|--------|---------|
-| macOS (Homebrew) | `brew install uv` |
-| macOS, Linux | `curl -LsSf https://astral.sh/uv/install.sh \| sh` |
-| Windows | `winget install --id=astral-sh.uv -e` |
-
-Then install Open WebUI, about 2 GB, and start it once. It uses port 8080 unless told otherwise, and the backend needs that port, so give it 3000:
-
-```bash
-uv tool install --python 3.11 open-webui==0.12.3
-open-webui serve --port 3000
-```
-
-If the terminal cannot find `open-webui`, run `uv tool update-shell` and open a new terminal. The first start also fetches an embedding model. Open http://localhost:3000, create the local admin account it asks for, and stop it with `Ctrl+C`.
-
 ## Checklist
 
 - [ ] `java -version` shows 21 or newer
@@ -136,4 +117,3 @@ If the terminal cannot find `open-webui`, run `uv tool update-shell` and open a 
 - [ ] `ollama list` shows `granite4.1:8b` (or `granite4.1:3b`) and `qwen3-graphql-embedder`
 - [ ] `npx -y @modelcontextprotocol/inspector@2.9.0` opens the Inspector
 - [ ] `npx -y @mcpjam/inspector@3.16.2` opens MCPJam
-- [ ] `open-webui serve --port 3000` starts, and http://localhost:3000 shows Open WebUI
