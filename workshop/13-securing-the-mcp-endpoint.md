@@ -511,7 +511,7 @@ The Inspector lists the scope it asked for, and the token carries `petclinic:wri
 
 ## 9. Sign in as guest
 
-In **Connection Info**, click **Clear OAuth state and disconnect**. Flip the switch, sign in as `guest` / `guest`, tick `mcp:tools` and submit. Run `addVisit` again. The Inspector shows a **Tool Error**:
+Open http://localhost:8080/logout in the same browser. The browser is still signed in as staff from step 8, and while that session lasts, the authorization server skips the sign-in page and asks for consent alone. In **Connection Info**, click **Clear OAuth state and disconnect**. Flip the switch, sign in as `guest` / `guest`, tick `mcp:tools` and submit. Run `addVisit` again. The Inspector shows a **Tool Error**:
 
 ```json
 {"data":null,"errors":[{"message":"Forbidden","locations":[{"line":2,"column":3}],"path":["addVisit"],"extensions":{"classification":"FORBIDDEN"}}]}
