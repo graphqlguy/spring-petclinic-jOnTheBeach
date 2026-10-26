@@ -45,7 +45,7 @@ Add the starter next to the resource server starter:
 
 Make two changes in `application.properties`:
 
-1. In the Security section, delete chapter 5's line `spring.security.oauth2.resourceserver.jwt.public-key-location=classpath:keys/petclinic-dev.pub`. The decoder of step 5 reads the key itself. The two `petclinic.jwt` lines stay, because step 5 signs and checks the tokens with that key pair.
+1. In the Security section, delete the starting point's line `spring.security.oauth2.resourceserver.jwt.public-key-location=classpath:keys/petclinic-dev.pub`. The decoder of step 5 reads the key itself. The two `petclinic.jwt` lines stay, because step 5 signs and checks the tokens with that key pair.
 2. At the end of the MCP section, replace the unsafe switch and its comment with these lines, and the new Authorization server section below them:
 
 `src/main/resources/application.properties`
@@ -235,7 +235,7 @@ class McpSecurityConfiguration {
 | `registeredClients` | Keeps the registered clients in a map, so a restart forgets them. The note in step 9 says what that means for the Inspector. |
 | `accessTokens` | Writes the audience into every access token, and gives `petclinic:write`, the scope that chapter 5's `@PreAuthorize` rules check, to staff alone. |
 
-Chapter 5's chain matches every request. A chain without `@Order` sorts last, so it comes after these two.
+The starting point's chain matches every request. A chain without `@Order` sorts last, so it comes after these two.
 
 ## 5. The keys, the sign-in page and the decoder
 
@@ -332,84 +332,13 @@ public class SecurityConfiguration {
 | Element | Meaning |
 |---|---|
 | `formLogin` | The sign-in page at `/login`, where the authorization server sends you. |
-| `jwkSource` | Chapter 5's development key pair. The authorization server signs its tokens with it, and publishes the public half. |
+| `jwkSource` | The starting point's development key pair. The authorization server signs its tokens with it, and publishes the public half. |
 | `jwtEncoder` | Signs the login mutation's tokens with the same key, as before. |
 | `jwtDecoder` | Accepts a token signed with the key, issued by `issuer-uri`, for the audience `/mcp`. With `issuer-uri` set, Spring Boot's own decoder would download the keys from that address at the first token, and the tests run the application on a random port. |
 
 ## 6. The login mutation's tokens
 
-The decoder now checks the issuer and the audience of every token, the frontend's included. Replace the whole class:
-
-`src/main/java/org/springframework/samples/petclinic/system/LoginGraphQLController.java`
-
-```java
-package org.springframework.samples.petclinic.system;
-
-import java.time.Duration;
-import java.time.Instant;
-import java.util.List;
-
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.graphql.data.method.annotation.Argument;
-import org.springframework.graphql.data.method.annotation.MutationMapping;
-import org.springframework.security.authentication.BadCredentialsException;
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.security.oauth2.jose.jws.SignatureAlgorithm;
-import org.springframework.security.oauth2.jwt.JwsHeader;
-import org.springframework.security.oauth2.jwt.JwtClaimsSet;
-import org.springframework.security.oauth2.jwt.JwtEncoder;
-import org.springframework.security.oauth2.jwt.JwtEncoderParameters;
-import org.springframework.stereotype.Controller;
-
-@Controller
-class LoginGraphQLController {
-
-	private final UserDetailsService users;
-
-	private final PasswordEncoder passwordEncoder;
-
-	private final JwtEncoder jwtEncoder;
-
-	private final String issuer;
-
-	private final String audience;
-
-	LoginGraphQLController(UserDetailsService users, PasswordEncoder passwordEncoder, JwtEncoder jwtEncoder,
-			@Value("${spring.security.oauth2.resourceserver.jwt.issuer-uri}") String issuer,
-			@Value("${gatool.mcp.security.resource}") String audience) {
-		this.users = users;
-		this.passwordEncoder = passwordEncoder;
-		this.jwtEncoder = jwtEncoder;
-		this.issuer = issuer;
-		this.audience = audience;
-	}
-
-	@MutationMapping
-	String login(@Argument String username, @Argument String password) {
-		UserDetails user = users.loadUserByUsername(username);
-		if (!passwordEncoder.matches(password, user.getPassword())) {
-			throw new BadCredentialsException("Wrong username or password");
-		}
-		boolean staff = user.getAuthorities().stream().anyMatch((a) -> a.getAuthority().equals("ROLE_STAFF"));
-		Instant now = Instant.now();
-		JwtClaimsSet claims = JwtClaimsSet.builder()
-			.issuer(issuer)
-			.audience(List.of(audience))
-			.subject(user.getUsername())
-			.issuedAt(now)
-			.expiresAt(now.plus(Duration.ofHours(8)))
-			.claim("scope", staff ? "petclinic:write" : "")
-			.build();
-		JwsHeader header = JwsHeader.with(SignatureAlgorithm.RS256).build();
-		return jwtEncoder.encode(JwtEncoderParameters.from(header, claims)).getTokenValue();
-	}
-
-}
-```
-
-The issuer and the audience come from the properties, and the scope stays as it was. Without `mcp:tools`, the frontend's token works on `/graphql` and `/api/chat`, and `/mcp` refuses it.
+The decoder now checks the issuer and the audience of every token, the frontend's included. The starting point's `LoginService` reads the same two properties as the decoder, `spring.security.oauth2.resourceserver.jwt.issuer-uri` and `gatool.mcp.security.resource`, so from this restart on, the login mutation's tokens name this issuer and the audience `/mcp`. Until step 3 set the two properties, the issuer was `petclinic`, and the tokens left the audience out. The scope stays as it was. Without `mcp:tools`, the frontend's token works on `/graphql` and `/api/chat`, and `/mcp` refuses it.
 
 ## 7. Restart, and follow the first steps by hand
 
@@ -562,7 +491,7 @@ Both tokens are signed with the same key, by the same issuer, for the same audie
 ## Recap
 
 - An MCP client finds the authorization server through the MCP server's `401` and its protected resource metadata, registers itself, and signs the user in through the browser.
-- Spring Security's authorization server runs inside the application, in its own filter chain, ahead of chapter 5's.
+- Spring Security's authorization server runs inside the application, in its own filter chain, ahead of the starting point's.
 - A token names the MCP endpoint as its audience, and the decoder refuses a token for another audience or another issuer.
 - `mcp:tools` opens the endpoint, and `@PreAuthorize` still decides each write, with the `petclinic:write` scope that the authorization server gives to staff.
 
