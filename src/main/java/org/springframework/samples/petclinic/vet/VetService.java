@@ -16,12 +16,7 @@
 package org.springframework.samples.petclinic.vet;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import org.springframework.samples.petclinic.system.EntityNotFoundException;
 import org.springframework.samples.petclinic.system.LatencySimulator;
@@ -35,8 +30,6 @@ import org.springframework.transaction.annotation.Transactional;
 @Service
 @Transactional(readOnly = true)
 public class VetService {
-
-	private static final Logger logger = LoggerFactory.getLogger(VetService.class);
 
 	private final VetRepository vets;
 
@@ -71,32 +64,6 @@ public class VetService {
 	public List<Vet> search(String text) {
 		latency.pause();
 		return vets.search(Text.withoutAccents(text));
-	}
-
-	/**
-	 * The vets who have one specialty. One SQL statement for each specialty.
-	 */
-	public List<Vet> findBySpecialty(Specialty specialty) {
-		latency.pause();
-		return vets.findBySpecialtyIds(List.of(specialty.getId()));
-	}
-
-	/**
-	 * The vets of many specialties in one SQL statement, keyed by specialty id. A
-	 * specialty without vets is missing from the map.
-	 */
-	public Map<Integer, List<Vet>> findVetsBySpecialtyIds(List<Integer> specialtyIds) {
-		logger.info("Batch fetching vets for {} specialties", specialtyIds.size());
-		latency.pause();
-		Map<Integer, List<Vet>> vetsBySpecialtyId = new HashMap<>();
-		for (Vet vet : vets.findBySpecialtyIds(specialtyIds)) {
-			for (Specialty specialty : vet.getSpecialties()) {
-				if (specialtyIds.contains(specialty.getId())) {
-					vetsBySpecialtyId.computeIfAbsent(specialty.getId(), (id) -> new ArrayList<>()).add(vet);
-				}
-			}
-		}
-		return vetsBySpecialtyId;
 	}
 
 }

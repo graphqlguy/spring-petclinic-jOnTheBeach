@@ -18,9 +18,6 @@ package org.springframework.samples.petclinic.vet;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
 
-import java.util.List;
-import java.util.Map;
-
 import org.junit.jupiter.api.Test;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,12 +32,6 @@ import org.springframework.transaction.annotation.Transactional;
 @Transactional
 class VetServiceTests {
 
-	private static final int RADIOLOGY = 1;
-
-	private static final int SURGERY = 2;
-
-	private static final int DENTISTRY = 3;
-
 	@Autowired
 	private VetService vets;
 
@@ -53,16 +44,6 @@ class VetServiceTests {
 	void findByIdRefusesAnUnknownId() {
 		assertThat(vets.findById(2).getLastName()).isEqualTo("Leary");
 		assertThatExceptionOfType(EntityNotFoundException.class).isThrownBy(() -> vets.findById(99));
-	}
-
-	@Test
-	void findVetsBySpecialtyIdsGroupsBySpecialty() {
-		Map<Integer, List<Vet>> bySpecialty = vets.findVetsBySpecialtyIds(List.of(RADIOLOGY, SURGERY, DENTISTRY));
-		assertThat(bySpecialty.get(RADIOLOGY)).extracting(Vet::getLastName)
-			.containsExactlyInAnyOrder("Leary", "Stevens");
-		assertThat(bySpecialty.get(SURGERY)).extracting(Vet::getLastName)
-			.containsExactlyInAnyOrder("Douglas", "Ortega");
-		assertThat(bySpecialty.get(DENTISTRY)).extracting(Vet::getLastName).containsExactly("Douglas");
 	}
 
 	@Test

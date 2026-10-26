@@ -75,11 +75,4 @@ public interface VetRepository extends Repository<Vet, Integer> {
 			ORDER BY vet.lastName, vet.firstName""")
 	List<Vet> search(@Param("text") String text);
 
-	/**
-	 * The vets who have any of the given specialties, in one statement.
-	 */
-	@Transactional(readOnly = true)
-	@Query("SELECT DISTINCT vet FROM Vet vet JOIN vet.specialties specialty WHERE specialty.id IN :specialtyIds")
-	List<Vet> findBySpecialtyIds(@Param("specialtyIds") Collection<Integer> specialtyIds);
-
 }

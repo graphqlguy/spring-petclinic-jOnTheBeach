@@ -74,7 +74,7 @@ query {
 }
 ```
 
-It works without a line of Java. Refresh the frontend and open an owner: the owner page now lists the pets, and their visits follow in exercise 1.
+It works without a line of Java. Refresh the frontend and open an owner: the owner page now lists the pets, and their visits follow in the exercise.
 
 ### Why does this work?
 
@@ -179,7 +179,7 @@ class VetGraphQLController {
 | `@SchemaMapping` | Binds the method to a field. By convention, the method name is the field (`visits`), and the parameter's type is the type the field belongs to (`Vet`). |
 | `Vet vet` | The parent object, as the resolver above it produced it. GraphQL hands it over, so that we can resolve the child field. |
 
-Restart and run the query again: Linda Douglas has 29 visits. `@QueryMapping`, from chapter 1, is a shorthand for `@SchemaMapping` on the `Query` type.
+Restart and run the query again: Linda Douglas has 7 visits. `@QueryMapping`, from chapter 1, is a shorthand for `@SchemaMapping` on the `Query` type.
 
 Refresh the frontend and open a vet from the **Veterinarians** page: the vet page now lists the visits, and step 5 adds each visit's pet and owner.
 
@@ -308,7 +308,7 @@ petclinic.demo.latency=0s
 
 ## 5. Follow the graph both ways
 
-So far each relationship points one way: an owner lists their pets, and a vet lists their visits. A client that starts from a vet can read the visits, but it cannot reach the pet of a visit or the pet's owner, and the vet page needs both to show who came in. In GraphQL a relationship is a field, so a field in the other direction lets a client start from whatever object it has and follow the links it needs, all in one query, where a REST client would send one more request per visit.
+So far each relationship points one way: an owner lists their pets, and a vet lists their visits. The vet page also needs the pet of each visit and the pet's owner, to show who came in. In GraphQL a relationship is a field, so a field in the other direction lets a client follow the links it needs in one query, where a REST client would send one more request per visit.
 
 The starting point gave `Pet` a `getOwner()` and `Visit` a `getPet()`, so both directions resolve through getters. Add the two fields:
 
@@ -351,9 +351,7 @@ The first visit is a dental cleaning for Pelusa, Marta Ramos's cat. Refresh the 
 
 A client can follow these fields as deep as it likes, `owner { pets { owner { pets ... } } }`, and the server answers every level. Chapter 9 puts a limit on that.
 
-## Exercises
-
-### Exercise 1: a pet's visits and their vets
+## Exercise: a pet's visits and their vets
 
 The owner page in the frontend shows each pet's visits, with the vet who saw it, once the schema has them. `Pet` has `getVisits()`, oldest first, and `Visit` has `getVet()`. Add a `visits` field to `Pet` and a `vet` field to `Visit`, and decide which one may be `null`: the Petclinic web pages book visits without a vet. Then open an owner in the frontend.
 
@@ -377,60 +375,6 @@ type Visit {
 ```
 
 `vet` may be `null`, because the web pages book visits without a vet. Both fields resolve through getters, so the Java stays as it is, and Hibernate's batch fetching keeps the number of statements low.
-
-</details>
-
-### Exercise 2: the vets of a specialty
-
-A vet who wants a second opinion looks for a colleague with the same specialty. Add a `vets` field to `Specialty`, with the vets who have that specialty, so that a client can go from a vet to their specialties and on to the colleagues who share them. Resolve it with a `@BatchMapping`. `VetService.findVetsBySpecialtyIds` takes a list of specialty ids and returns a `Map<Integer, List<Vet>>`. Our controller already has a method named `vets`, the query, so give the new method another name, and name the field in the annotation: `@BatchMapping(field = "vets")`.
-
-Check it with this query, and look for a single `Batch fetching vets for 3 specialties` line in the log:
-
-```graphql
-query {
-  vets {
-    lastName
-    specialties {
-      name
-      vets {
-        lastName
-      }
-    }
-  }
-}
-```
-
-Every query starts from a field of `Query`, so this schema reaches a specialty only through a vet. A `specialties` field on `Query` would make sense as well, for example for a page where the clinic advertises its specialties. The workshop leaves it out to save time.
-
-<details>
-<summary>Show solution</summary>
-
-`src/main/resources/graphql/schema.graphqls`
-
-```graphql
-type Specialty {
-    # ...existing fields...
-    "The vets who have this specialty"
-    vets: [Vet!]!
-}
-```
-
-`src/main/java/org/springframework/samples/petclinic/vet/VetGraphQLController.java`
-
-```java
-@BatchMapping(field = "vets")
-Map<Specialty, List<Vet>> specialtyVets(List<Specialty> specialties) {
-	List<Integer> specialtyIds = specialties.stream().map(Specialty::getId).toList();
-	Map<Integer, List<Vet>> vetsBySpecialtyId = vetService.findVetsBySpecialtyIds(specialtyIds);
-	return specialties.stream()
-		.collect(Collectors.toMap((specialty) -> specialty,
-				(specialty) -> vetsBySpecialtyId.getOrDefault(specialty.getId(), List.of())));
-}
-```
-
-Spring takes the type, `Specialty`, from the element type of the parameter, and the field from `field = "vets"`.
-
-Between them, the vets list five specialties: radiology twice, surgery twice and dentistry once. The batch method gets three, because the DataLoader collects each specialty once per request, however many vets share it.
 
 </details>
 

@@ -86,13 +86,13 @@ Restart:
 
 ```text
 WARN ... i.g.b.a.GAToolAutoConfiguration          : GATool serves zero MCP tools. These locations were read: optional:classpath*:none/. An operation file there becomes a tool, and gatool.mcp.operations.locations names the folders.
-INFO ... i.g.b.i.search.EmbeddingSchemaSearch     : GATool is embedding 48 schema coordinates, which is one call to your embedding model for each of them. The result is cached, so later starts read it.
+INFO ... i.g.b.i.search.EmbeddingSchemaSearch     : GATool is embedding 47 schema coordinates, which is one call to your embedding model for each of them. The result is cached, so later starts read it.
 INFO ... i.g.b.i.search.EmbeddingSchemaSearch     : GATool cached them in /var/folders/.../T/gatool-<you>/vectors/<hash>.vectors.
 WARN ... i.g.b.a.GAToolAutoConfiguration          : gatool.dev.experimental.generate-tools is dynamic-three-step, so a model can search your schema and run GraphQL it wrote against your API. The trusted documents keep working beside it. Turn this off before you deploy.
-INFO ... i.g.b.a.GAToolAutoConfiguration          : GATool publishes searchSchema, introspectType, executeGraphql, ranking 48 schema coordinates with EMBEDDING and returning up to 2000 tokens of results per call.
+INFO ... i.g.b.a.GAToolAutoConfiguration          : GATool publishes searchSchema, introspectType, executeGraphql, ranking 47 schema coordinates with EMBEDDING and returning up to 2000 tokens of results per call.
 ```
 
-GATool warns that it serves zero MCP tools, which is what the empty folder is for, and that a model can now run queries it wrote itself: step 6 shows the checks that still apply. The 48 coordinates are the schema's query fields, without the mutations, the subscription and the deprecated `ownersAll`. On our laptop, embedding them took under a second, and the next start reads them from the cache.
+GATool warns that it serves zero MCP tools, which is what the empty folder is for, and that a model can now run queries it wrote itself: step 6 shows the checks that still apply. The 47 coordinates are the schema's query fields, without the mutations, the subscription and the deprecated `ownersAll`. On our laptop, embedding them took under a second, and the next start reads them from the cache.
 
 > [!NOTE]
 > The embedding model runs in Ollama. With a hosted model from chapter 12, add `gatool.dev.experimental.dynamic-operations.search-backend=bm25` to its `application-<name>.properties`: BM25 ranks the fields by their words, and runs without a model. With the Mistral or OpenAI starter, the application holds two embedding models, and GATool stops at startup and asks which one to use. The tests run without Ollama, so `src/test/resources/config/application.properties` sets `bm25` for them.
@@ -112,14 +112,14 @@ Query.vets:
 """Every vet of the clinic, with their specialties"""
 vets: [Vet!]!  # on type Query
 
-Specialty.vets:
-reach it from Query.vets -> Vet.specialties
-"""The vets who have this specialty"""
-vets: [Vet!]!  # on type Specialty
+Visit.vet:
+reach it from Query.visits(from: Date!, to: Date!)
+"""The vet who sees the pet. The Petclinic web pages book visits without a vet."""
+vet: Vet  # on type Visit
 ...
 ```
 
-The answer lists all 48 coordinates, best first, because the whole schema fits in 2000 tokens. A field below the root comes with the path that reaches it, such as `Query.vets -> Vet.specialties`. `Vet.specialties` and `Specialty.name` come fourth and fifth, so this result already holds every field the query needs. To see a whole type at once, read it with `introspectType`:
+The answer lists all 47 coordinates, best first, because the whole schema fits in 2000 tokens. A field below the root comes with the path that reaches it, such as `Query.visits` for `Visit.vet`. `Vet.specialties` and `Specialty.name` come third and fourth, so this result already holds every field the query needs. To see a whole type at once, read it with `introspectType`:
 
 ```json
 {"name": "Specialty"}
@@ -130,8 +130,6 @@ The answer lists all 48 coordinates, best first, because the whole schema fits i
 type Specialty {
   id: ID!
   name: String!
-  """The vets who have this specialty"""
-  vets: [Vet!]!
 }
 ```
 
@@ -149,7 +147,7 @@ These are the calls a model makes, and it needs `introspectType` only when the s
 
 | Question | By meaning | By words (BM25) |
 |---|---|---|
-| `doctors` | `Specialty.vets`, then `Query.vets` | *Nothing in this schema matched "doctors".* |
+| `doctors` | `Query.vets`, then `Vet.specialties` | *Nothing in this schema matched "doctors".* |
 | `phone number` | `Owner.telephone` | *Nothing in this schema matched "phone number".* |
 | `¿Cuántas visitas ha tenido cada veterinario?` | `Vet.visits`, then `Visit.vet` | `OwnerPage.hasNext`, then `OwnerPage.hasPrevious`, then `Vet.visits` |
 
@@ -184,7 +182,7 @@ DEBUG ... o.s.a.m.tool.DefaultToolCallingManager   : Executing tool call: intros
 DEBUG ... o.s.a.m.tool.DefaultToolCallingManager   : Executing tool call: executeGraphql
 ```
 
-In our 5 runs with `granite4.1:8b`, every answer said yes and named Linda Douglas and Rafael Ortega, within 4 seconds. Every answer also mentioned "others" or "another vet" with the surgery specialty, which the data does not hold. Asked for Lucía Navarro's telephone as a guest, the model asked us to sign in in 2 of our 3 runs.
+In our 5 runs with `granite4.1:8b`, every answer said yes and named Linda Douglas and Rafael Ortega, within 4 seconds. Four of the five answers also mentioned "others" or "another vet" with the surgery specialty, which the data does not hold. Asked for Lucía Navarro's telephone as a guest, the model asked us to sign in in all 3 of our runs.
 
 Now ask:
 
@@ -260,7 +258,7 @@ In `VetGraphQLController`, add this method below the `visits` method:
 	}
 ```
 
-`visitCount` calls the batch method of chapter 2, which reads the visits of every vet in one SQL statement, and returns the size of each list. Restart: the schema changed, so GATool embeds it again, and the log says `GATool is embedding 49 schema coordinates`. For the question `How many visits has each vet had?`, `searchSchema` now ranks `Vet.visitCount` first, because its description says what it holds. Ask the assistant again: the counts were right in all 5 of our runs, each within 4 seconds. A field that does the arithmetic gives every agent the right number.
+`visitCount` calls the batch method of chapter 2, which reads the visits of every vet in one SQL statement, and returns the size of each list. Restart: the schema changed, so GATool embeds it again, and the log says `GATool is embedding 48 schema coordinates`. For the question `How many visits has each vet had?`, `searchSchema` now ranks `Vet.visitCount` first, because its description says what it holds. Ask the assistant again: the counts were right in all 5 of our runs, each within 4 seconds. A field that does the arithmetic gives every agent the right number.
 
 </details>
 

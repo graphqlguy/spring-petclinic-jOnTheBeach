@@ -11,7 +11,7 @@ export const FEATURES = [
     title: 'Visits on the owner page',
     chapter: 2,
     operations: ['getOwnerDetails'],
-    needs: 'the visits of a pet and the vet of a visit (exercise 1)',
+    needs: 'the visits of a pet and the vet of a visit (the exercise)',
   },
   { key: 'vetVisits', title: 'Visits on the vet page', chapter: 2, operations: ['vetVisits'], needs: 'the visits of a vet' },
   {
