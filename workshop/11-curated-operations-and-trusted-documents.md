@@ -338,12 +338,21 @@ Add the switch to the GraphQL section:
 petclinic.trusted-documents-only=false
 ```
 
-Restart. On macOS, Linux or Git Bash, ask for the vets with the hash alone, from the project folder:
+Restart. The hash that the frontend sent is the SHA-256 of the file's bytes. On macOS, Linux or Git Bash, compute it from the project folder:
 
 ```bash
-HASH=$(shasum -a 256 src/main/resources/operations/queries/listVets.graphql | cut -d' ' -f1)
+shasum -a 256 src/main/resources/operations/queries/listVets.graphql
+```
+
+```text
+d98d297f92fb2f864b0466e9c73c46d26ca0642aa8853e591d513d4763c4e27b  src/main/resources/operations/queries/listVets.graphql
+```
+
+The same bytes always give the same hash, so every copy of the project has this one until someone edits the file. Git on Windows converts line endings by default, which would change the bytes, so the project's `.gitattributes` gives the operation files the same line endings on every system. Ask for the vets with the hash alone:
+
+```bash
 curl -s http://localhost:8080/graphql -H 'Content-Type: application/json' \
-  -d "{\"extensions\":{\"persistedQuery\":{\"version\":1,\"sha256Hash\":\"$HASH\"}}}"
+  -d '{"extensions":{"persistedQuery":{"version":1,"sha256Hash":"d98d297f92fb2f864b0466e9c73c46d26ca0642aa8853e591d513d4763c4e27b"}}}'
 ```
 
 ```json
