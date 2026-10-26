@@ -8,18 +8,19 @@ You need these three already installed:
 
 | Tool | Version | Check with |
 |------|---------|------------|
-| JDK | 21 or newer (tested with 21.0.12 and 25.0.2), see the note below | `java -version` |
+| JDK | 21 or newer, see the note below | `java -version` |
 | Maven | 3.9 or newer | `mvn -v` |
 | Git | any recent version | `git --version` |
 
 > [!NOTE]
-> Chapter 15 calls public services of Spain, such as the register of veterinary medicines and the Junta de Andalucía, whose certificates come from FNMT-RCM, the Spanish state's certificate authority. Eclipse Temurin and the Microsoft Build of OpenJDK trust it. The OpenJDK builds of jdk.java.net, Azul Zulu and JetBrains JBR leave it out of their trust store, so the calls to those services fail with `PKIX path building failed`. To check your JDK:
+> Chapter 15 calls public services of Spain, such as the register of veterinary medicines and the Junta de Andalucía, whose certificates come from FNMT-RCM, the Spanish state's certificate authority. Whether a JDK trusts it depends on the build. We checked these:
 >
-> ```bash
-> keytool -list -cacerts -storepass changeit | grep -i fnmt
-> ```
+> | Trusts FNMT-RCM | JDK |
+> |---|---|
+> | yes | Microsoft Build of OpenJDK 21.0.11 and 21.0.12.1, Eclipse Temurin 21.0.13 and 25.0.5 |
+> | no | OpenJDK 25.0.2 and 26.0.2.1 from jdk.java.net, Azul Zulu 21.0.11 |
 >
-> In Windows PowerShell, write `findstr /i fnmt` in place of `grep -i fnmt`. A JDK that trusts FNMT-RCM prints two lines, such as `ou=ac_raiz_fnmt-rcm,o=fnmt-rcm,c=es, ..., trustedCertEntry`. If the list stays empty, install Eclipse Temurin 21 from [adoptium.net](https://adoptium.net) for chapter 15.
+> With a JDK of the second row, 9 of the 16 services of chapter 15 fail with `PKIX path building failed`. If you see that error, start the backend with the `mock` profile of chapter 15, which answers from recorded responses and works with any JDK.
 
 The project also brings its own Maven, the wrapper `./mvnw`, which the instructions use. On Windows, type `mvnw.cmd` wherever the instructions say `./mvnw`.
 

@@ -40,9 +40,7 @@ spring.graphql.graphiql.enabled=true
 
 ## 3. Write your first schema
 
-This is schema-first development: we describe the API in the GraphQL Schema Definition Language (SDL), and only then implement it. Spring reads every `.graphqls` file under `src/main/resources/graphql/`, and that folder does not exist yet.
-
-**Create a folder named `graphql`** under `src/main/resources`, and in it **a file named `schema.graphqls`**. A schema file in any other place is ignored. Fill it with one query and one type:
+This is schema-first development: we describe the API in the GraphQL Schema Definition Language (SDL), and only then implement it. Spring reads the `.graphqls` files under `src/main/resources/graphql/`, so **create a folder named `graphql`** under `src/main/resources`, and in it **a file named `schema.graphqls`** with one query and one type:
 
 `src/main/resources/graphql/schema.graphqls`
 
@@ -80,18 +78,15 @@ type Owner {
 
 ### Descriptions and comments
 
-SDL has two ways to write text, and they serve different readers:
+SDL has two kinds of text, for different readers:
 
-| Syntax | Name | Who sees it |
+| Syntax | Who reads it | Use it for |
 |---|---|---|
-| `"..."` | Description, one line | **Clients.** It is part of the schema: introspection returns it, and GraphiQL and every other GraphQL tool show it. |
-| `"""..."""` | Description, several lines | **Clients**, the same as above. |
-| `# ...` | Comment | **People reading the file**, as long as the definition below it has a description. |
-
-Rule of thumb: if a client of your API would benefit from reading it, make it a description. If it is a note for whoever edits the schema file, make it a comment.
+| `"..."`, or `"""..."""` for several lines | **Clients.** A description is part of the schema: introspection returns it, GraphiQL shows it, and the AI agents of the second half read it. | What a client of the API needs to know |
+| `# ...` | **People reading the file**, as long as the definition below it has a description | Notes for whoever edits the schema |
 
 > [!IMPORTANT]
-> GraphQL Java has one exception. When a type or a field lacks a description, it takes the comment lines directly above it as its description, and sends them to every client. That is why `Query` has a description here: the comment above it then stays in the file. In the second half of the workshop the client is an AI agent, and it reads every description it gets.
+> When a type or a field lacks a description, GraphQL Java takes the comment lines directly above it as its description, and sends them to every client. That is why `Query` has a description here: the comment above it then stays in the file.
 
 ## 4. Start the server and explore
 
@@ -117,9 +112,7 @@ GraphQL endpoint HTTP POST /graphql
 > [!NOTE]
 > If startup fails with `Port 8080 was already in use`, another program holds the port. See [changing the port](../README.md#changing-the-port), and use your port in place of `8080` in the addresses below.
 
-Open GraphiQL at [http://localhost:8080/graphiql](http://localhost:8080/graphiql) and click the book icon at the top left to open the documentation explorer. `ownersAll` and the `Owner` type are there, with their descriptions. Nobody wrote this documentation by hand: GraphiQL asked the API for its own schema. This is called **introspection**, and the frontend and the agents use it too.
-
-Look at the two kinds of text: the descriptions of `Query`, `ownersAll`, `Owner` and `telephone` are there, and the `#` comments are missing.
+Open GraphiQL at [http://localhost:8080/graphiql](http://localhost:8080/graphiql) and click the book icon at the top left to open the documentation explorer. `ownersAll` and the `Owner` type are there, with their descriptions. Nobody wrote this documentation by hand: GraphiQL asked the API for its own schema. This is called **introspection**, and the frontend and the agents use it too. Compare the two kinds of text: the descriptions of `Query`, `ownersAll`, `Owner` and `telephone` are there, and the `#` comments are missing.
 
 Now run this query in the editor, with the ▶ button:
 
@@ -147,7 +140,7 @@ The answer is an error:
 }
 ```
 
-The error is expected: the schema promises a non-null list, and the Java code that would produce one does not exist yet, so GraphQL reports the broken promise. The schema says *what* the API offers, and the implementation comes next.
+The error is expected: the schema promises a non-null list, and GraphQL checks that promise on every response. The Java code that keeps it comes next.
 
 ## 5. Implement the controller
 
@@ -188,7 +181,7 @@ class OwnerGraphQLController {
 | `@QueryMapping` | Binds the method to the `Query` field with the same name, `ownersAll`. |
 | The constructor | Spring passes in the `OwnerService` bean. |
 
-Restart the application: stop it with `Ctrl+C`, and run `./mvnw spring-boot:run` again. The startup report now says `Unmapped fields: {}`. Run the query again, and the answer holds all 40 owners.
+Restart the application: stop it with `Ctrl+C`, and run `./mvnw spring-boot:run` again. The startup report now says `Unmapped fields: {}`. Run the query again, and the answer holds all 15 owners.
 
 Remove `id` from the query, or add `firstName` and `city`, and run it again. The answer always has exactly the fields you asked for: in GraphQL, **the client decides the shape of the response**.
 
@@ -255,9 +248,7 @@ Try `owner(id: 999)` as well. The answer is `{"data": {"owner": null}}`, as the 
 
 ## 7. Evolve the API: filtering, sorting and paging
 
-`ownersAll` returns every owner in one response. That works for 15 owners, and it stops working for a clinic with thousands: the response and the memory it takes grow with every new client. We need paging and filtering. But clients may already depend on `ownersAll`, so we can't simply remove it.
-
-First we mark the old query as deprecated, then we add a better one. Change the `ownersAll` line:
+`ownersAll` returns every owner in one response. That works for 15 owners, and it stops working for a clinic with thousands: the response and the memory it takes grow with every new client, so we need paging and filtering. Clients may already depend on `ownersAll`, so we mark it as deprecated and add a better query next to it. Change the `ownersAll` line:
 
 `src/main/resources/graphql/schema.graphqls`
 
@@ -332,7 +323,7 @@ OwnerPage owners(@Argument OwnerFilter filter, @Argument int page, @Argument int
 }
 ```
 
-Restart, open the documentation explorer again, and look at `ownersAll`: GraphiQL now marks it as deprecated and shows our reason. Existing clients keep working, and everyone reading the schema can see what to move to. Try the new query:
+Restart, open the documentation explorer again, and look at `ownersAll`: GraphiQL now marks it as deprecated and shows our reason. Chapter 10 uses the same mark to leave `ownersAll` out of the tools it generates for AI agents. Try the new query:
 
 ```graphql
 query {
@@ -360,7 +351,7 @@ Validation error (WrongType@[owners]) : argument 'page' with value 'NullValue{}'
 
 ## 8. Start the frontend
 
-Let's look at our API through a real client. The repository has a React frontend that reads our schema when it starts and turns on the pages the API can serve. In a second terminal, from the project folder:
+The repository has a React frontend that reads our schema when it starts and turns on the pages the API can serve. In a second terminal, from the project folder:
 
 ```bash
 cd frontend
@@ -377,7 +368,7 @@ The frontend sends only the operations in `src/main/resources/operations`. Open 
 
 ## Exercises
 
-The **Veterinarians** page needs two queries. `VetService` is ready, and so are the `Vet` and `Specialty` entities. You write the schema and the controller, in the same order as above: schema first, then Java.
+The **Veterinarians** page needs two queries. `VetService` is ready, and so are the `Vet` and `Specialty` entities. You write the schema and the controller, in the same order as above: schema first, then Java. The frontend and the later chapters use both queries, so if you are short of time, copy the solutions.
 
 ### Exercise 1: list the vets
 
