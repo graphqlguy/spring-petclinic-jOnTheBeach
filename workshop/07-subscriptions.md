@@ -1,6 +1,6 @@
 # Chapter 7: Subscriptions
 
-> **User story** · As a vet, I want new bookings to appear on my screen as they happen, so that I see my day fill up without reloading.
+> **User story** · As a member of staff, I want a notification for each new booking, so that I see it without reloading the page.
 
 Queries and mutations answer once. A **subscription** keeps the connection open, and the server sends an event each time something happens. In this chapter, every new visit goes out to the clients that listen.
 

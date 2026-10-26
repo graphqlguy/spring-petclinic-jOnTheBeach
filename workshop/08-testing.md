@@ -1,6 +1,6 @@
 # Chapter 8: Testing
 
-> **User story** · As the clinic manager, I want every feature guarded by tests that use the API the way clients do, so that tomorrow's changes keep today's promises.
+> **User story** · As the clinic's developer, I want every feature covered by tests that use the API the way clients do and run in every build, so that the build catches a bug before it reaches the clinic.
 
 The starting point's services have tests already. In this chapter we test the GraphQL layer itself: the queries, the errors, the security rules and the subscription, through the same requests a client sends. Spring for GraphQL's `GraphQlTester` does the work.
 
