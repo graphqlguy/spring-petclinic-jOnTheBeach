@@ -224,7 +224,7 @@ class GraphQLLimitsConfiguration {
 
 	@Bean
 	MaxQueryDepthInstrumentation maxQueryDepth() {
-		return new MaxQueryDepthInstrumentation(8) {
+		return new MaxQueryDepthInstrumentation(5) {
 
 			// Introspection reads the schema, whose nesting is fixed, and GraphQL Java
 			// checks it already, so the depth limit applies to the data alone
@@ -257,7 +257,7 @@ class GraphQLLimitsConfiguration {
 
 | Element | Meaning |
 |---|---|
-| `MaxQueryDepthInstrumentation(8)` | Refuses a query nested more than 8 fields deep. The deepest operations of the frontend have 5 levels. |
+| `MaxQueryDepthInstrumentation(5)` | Refuses a query nested more than 5 fields deep. The owner and vet pages send the deepest operations of the frontend, such as `owner { pets { visits { vet { firstName } } } }`, with 5 levels, so the limit lets every page through and refuses anything deeper. |
 | `beginExecuteOperation` override | The introspection query that GraphiQL and the frontend send to read the schema is 15 levels deep, and the limit would refuse it. An operation whose root fields all start with `__` reads only the schema, so it skips the depth check. |
 | `MaxQueryComplexityInstrumentation(200)` | Refuses a query that selects more than 200 fields, counted at every level. |
 
@@ -267,14 +267,14 @@ Restart and run the deep query:
 {
   "errors": [
     {
-      "message": "maximum query depth exceeded 10 > 8",
+      "message": "maximum query depth exceeded 10 > 5",
       "extensions": { "classification": "ExecutionAborted" }
     }
   ]
 }
 ```
 
-A query that selects the same field 210 times under aliases, `a1: firstName a2: firstName ...`, is refused by the other limit: `maximum query complexity exceeded 210 > 200`. Refresh the frontend: every page still works, because its operations stay well within both limits.
+A query that selects the same field 210 times under aliases, `a1: firstName a2: firstName ...`, is refused by the other limit: `maximum query complexity exceeded 210 > 200`. Refresh the frontend: every page still works, because its operations stay within both limits.
 
 ## Exercise: describe the inputs
 

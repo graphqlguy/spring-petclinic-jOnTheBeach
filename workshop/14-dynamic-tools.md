@@ -268,14 +268,14 @@ The counts were right in all 5 of our runs, each answered within 6 seconds. The 
 |---|---|
 | `mutation { addVisit(input: {petId: 17, description: "x-ray"}) { id } }` | A **Tool Error**: *This server runs queries here, and that document is a mutation. gatool.dev.experimental.dynamic-operations.allow-mutations turns writing on, and it is an unsafe switch because the operation is one nobody reviewed.* |
 | `{ __schema { types { name } } }` | A **Tool Error**: *That document selects __schema, and introspection runs through the schema tools here: search the schema for what you need, and read one type in full by its name.* |
-| `{ vets { visits { pet { owner { pets { visits { vet { visits { pet { name } } } } } } } } } }` | A **Tool Error**: `maximum query depth exceeded 10 > 8`, from chapter 9's depth limit |
+| `{ vets { visits { pet { owner { pets { visits { vet { visits { pet { name } } } } } } } } } }` | A **Tool Error**: `maximum query depth exceeded 10 > 5`, from chapter 9's depth limit |
 | `{ owner(id: 12) { firstName lastName telephone } }` | Signed in as guest: `"telephone": null`, with a `FORBIDDEN` error from chapter 5's `@PreAuthorize`. Signed in as staff: `"telephone": "9521471193"`. |
 
 | Check | Where it runs |
 |---|---|
 | Queries only | GATool, before the API. Writes go through the operation files, which someone reviewed. |
 | Introspection | GATool, which sends the model to `searchSchema` and `introspectType`, within their token budget |
-| Size | GATool allows 15 levels, 500 fields and 30 aliases. Chapter 9's limits of 8 levels and a complexity of 200 are stricter, and they apply to every query. |
+| Size | GATool allows 15 levels, 500 fields and 30 aliases. Chapter 9's limits of 5 levels and a complexity of 200 are stricter, and they apply to every query. |
 | The caller's rights | Our resolvers, with the caller's token, as for the operation files |
 
 ## 8. Search by meaning
