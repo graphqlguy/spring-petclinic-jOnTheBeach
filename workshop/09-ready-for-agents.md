@@ -61,9 +61,9 @@ type Query {
         "Narrows the list by the start of the last name and by city. Leave it out to list every owner."
         filter: OwnerFilter
         "The page to return. Pages count from 0."
-        page: Int! = 0
+        page: Int! = 0 @PositiveOrZero
         "The number of owners on a page, from 1 to 100"
-        size: Int! = 10
+        size: Int! = 10 @Range(min: 1, max: 100)
         sort: OwnerSort
     ): OwnerPage!
 

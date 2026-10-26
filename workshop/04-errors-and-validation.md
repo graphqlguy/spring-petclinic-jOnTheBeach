@@ -10,7 +10,7 @@ By the end of this chapter, you will:
 - Turn your exceptions into classified errors with `@GraphQlExceptionHandler`
 - Return one error per broken field, with the field named
 - Read a partial response: data and errors in one answer
-- Check arguments with Bean Validation
+- Check arguments with validation directives in the schema
 
 ## 1. Where errors come from
 
@@ -152,55 +152,75 @@ query {
 
 The client keeps what worked, and the error's `path` says which part failed. How far a failure spreads depends on nullability: `vet` may be `null`, so the failure stops there. In chapter 2, a `null` in the non-null `visits` list emptied the whole `vet`.
 
-## 4. Check arguments with Bean Validation
+## 4. Check arguments in the schema
 
 `owners` accepts any page size. Try `owners(size: 1000000)`: it returns every owner in one page, which is exactly what we deprecated `ownersAll` for. A negative page is worse, `owners(page: -1)` ends as an `INTERNAL_ERROR`.
 
-Spring for GraphQL applies Bean Validation to controller arguments. Add constraints to the `owners` method:
+The limits belong in the schema, next to the arguments they limit. GraphQL Java enforces only its built-in directives, such as `@deprecated`, so the GraphQL Java project publishes a library of validation directives: `@Size`, `@Pattern`, `@Range` and more, named after the Bean Validation constraints. Add it next to the scalars library:
 
-`src/main/java/org/springframework/samples/petclinic/owner/OwnerGraphQLController.java`
+`pom.xml`
 
-```java
-import jakarta.validation.constraints.Max;
-import jakarta.validation.constraints.Min;
-
-@QueryMapping
-OwnerPage owners(@Argument OwnerFilter filter, @Argument @Min(0) int page, @Argument @Min(1) @Max(100) int size,
-		@Argument OwnerSort sort) {
-	return ownerService.findOwners(filter, page, size, sort);
-}
+```xml
+<dependency>
+  <groupId>com.graphql-java</groupId>
+  <artifactId>graphql-java-extended-validation</artifactId>
+  <version>24.0</version>
+</dependency>
 ```
 
-A broken constraint throws a `ConstraintViolationException`. Add a third handler to `GraphQLExceptionHandlers`, with the imports it needs:
+> [!NOTE]
+> With Gradle, add `implementation 'com.graphql-java:graphql-java-extended-validation:24.0'` to `build.gradle`.
 
-`src/main/java/org/springframework/samples/petclinic/system/GraphQLExceptionHandlers.java`
+The engine needs the library's code behind the directives, as it needed the code behind `Date`. **Create a new class** named `GraphQLValidationConfiguration` in the `org.springframework.samples.petclinic.system` package:
+
+`src/main/java/org/springframework/samples/petclinic/system/GraphQLValidationConfiguration.java`
 
 ```java
-import jakarta.validation.ConstraintViolation;
-import jakarta.validation.ConstraintViolationException;
-import jakarta.validation.Path;
+package org.springframework.samples.petclinic.system;
 
-@GraphQlExceptionHandler
-List<GraphQLError> constraintViolation(ConstraintViolationException ex, DataFetchingEnvironment environment) {
-	return ex.getConstraintViolations()
-		.stream()
-		.map((violation) -> GraphqlErrorBuilder.newError(environment)
-			.errorType(ErrorType.BAD_REQUEST)
-			.message(violation.getMessage())
-			.extensions(Map.of("field", argumentName(violation)))
-			.build())
-		.toList();
-}
+import graphql.validation.rules.ValidationRules;
+import graphql.validation.schemawiring.ValidationSchemaWiring;
 
-// The path of a violation on a method argument ends with the argument's name
-private static String argumentName(ConstraintViolation<?> violation) {
-	String name = "";
-	for (Path.Node node : violation.getPropertyPath()) {
-		name = node.getName();
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.graphql.execution.RuntimeWiringConfigurer;
+
+@Configuration(proxyBeanMethods = false)
+class GraphQLValidationConfiguration {
+
+	@Bean
+	RuntimeWiringConfigurer validation() {
+		ValidationRules rules = ValidationRules.newValidationRules().build();
+		return (wiring) -> wiring.directiveWiring(new ValidationSchemaWiring(rules));
 	}
-	return name;
+
 }
 ```
+
+Declare two of the library's directives below `Date`, at the top of the schema, and put them on the arguments of `owners`:
+
+`src/main/resources/graphql/schema.graphqls`
+
+```graphql
+directive @PositiveOrZero(message: String = "graphql.validation.PositiveOrZero.message") on ARGUMENT_DEFINITION | INPUT_FIELD_DEFINITION
+directive @Range(min: Int = 0, max: Int = 2147483647, message: String = "graphql.validation.Range.message") on ARGUMENT_DEFINITION | INPUT_FIELD_DEFINITION
+```
+
+```graphql
+type Query {
+    # ...existing queries...
+    owners(filter: OwnerFilter, page: Int! = 0 @PositiveOrZero, size: Int! = 10 @Range(min: 1, max: 100), sort: OwnerSort): OwnerPage!
+}
+```
+
+Change the existing `owners` line; do not add a second one.
+
+| Element | Meaning |
+|---|---|
+| `directive @Range(...)` | Declares the directive: its arguments, their defaults, and where it may go, here on an argument or on a field of an `input` type. The library expects exactly these declarations. |
+| `@Range(min: 1, max: 100)` | Puts the rule on `size`. Anyone who reads the schema sees the limit next to the argument. |
+| `ValidationSchemaWiring` | Finds the fields whose arguments carry these directives, and checks the values before the field's resolver runs. |
+| `message` | A key in the library's messages. Pass your own text to replace it: `@Range(min: 1, max: 100, message: "...")`. |
 
 Restart and try both at once, `owners(page: -1, size: 1000) { totalElements }`:
 
@@ -208,21 +228,31 @@ Restart and try both at once, `owners(page: -1, size: 1000) { totalElements }`:
 {
   "errors": [
     {
-      "message": "must be less than or equal to 100",
+      "message": "/owners/page must be greater than or equal to 0",
       "path": ["owners"],
-      "extensions": { "field": "size", "classification": "BAD_REQUEST" }
+      "extensions": {
+        "classification": { "type": "ExtendedValidationError", "validatedPath": ["owners", "page"], "constraint": "@PositiveOrZero" }
+      }
     },
     {
-      "message": "must be greater than or equal to 0",
+      "message": "/owners/size range must be between 1 and 100",
       "path": ["owners"],
-      "extensions": { "field": "page", "classification": "BAD_REQUEST" }
+      "extensions": {
+        "classification": { "type": "ExtendedValidationError", "validatedPath": ["owners", "size"], "constraint": "@Range" }
+      }
     }
   ],
   "data": null
 }
 ```
 
-Three layers now check what a client sends: the schema's types, which the engine enforces; constraints on arguments; and the rules in the services. The handlers give all of them the same shape. Chapter 9 adds one more limit, on the shape of the query itself.
+The controller did not run: the library refused both values first, and `validatedPath` names each argument. Its `classification` is an object, where our handlers give a single value such as `BAD_REQUEST`.
+
+Introspection, which GraphiQL uses, lists the directives a schema declares and leaves out where they are applied, so clients read the rules from the schema file, which Spring for GraphQL serves at `/graphql/schema` when `spring.graphql.schema.printer.enabled=true`.
+
+Bean Validation can check the same limits with `@Min` and `@Max` on the controller's parameters, and the directive puts them into the contract that clients read. The entities keep their Bean Validation, because the Petclinic web pages and `OwnerService` rely on it.
+
+Three layers now check what a client sends: the schema's types, which the engine enforces; the directives on arguments, which the library checks before the resolver runs; and the rules in the services, which our handlers report. Chapter 9 adds one more limit, on the shape of the query itself.
 
 ## Exercise: a range that ends before it starts
 
@@ -266,6 +296,6 @@ List<Visit> visits(@Argument LocalDate from, @Argument LocalDate to) {
 - An untranslated exception reaches the client as `INTERNAL_ERROR`, with the details in the log.
 - `@GraphQlExceptionHandler` turns our exceptions into classified errors, one or several, with whatever `extensions` a client needs.
 - A response can carry data and errors together; nullability decides how far a failure spreads.
-- Bean Validation checks arguments before the service runs.
+- Validation directives from `graphql-java-extended-validation` put limits in the schema, and check them before the resolver runs.
 
 Chapter 5 decides who may change the clinic's data.

@@ -2,7 +2,7 @@
 
 > **User story** · As a vet in Málaga, I want to ask the assistant about medicines, mosquitoes, dog parks and the neighbourhood of an owner, so that the answers come from official sources while I stay in the clinic's application.
 
-The schema grows from the clinic's 9 root fields to 602, read from 16 public services of Spain, Andalusia and Málaga. Its 604,000 characters come to about 150,000 tokens, and the model on your laptop reads 8,192 tokens at a time. The code is ready on a branch: you switch to it, see how the fields were built, run them, and watch the assistant find its way through the schema with the three tools of chapter 14.
+The schema grows from the clinic's 9 root fields to 602, read from 16 public services of Spain, Andalusia and Málaga. Its 605,000 characters come to about 150,000 tokens, and the model on your laptop reads 8,192 tokens at a time. The code is ready on a branch: you switch to it, see how the fields were built, run them, and watch the assistant find its way through the schema with the three tools of chapter 14.
 
 By the end of this chapter, you will:
 
@@ -44,7 +44,7 @@ Each service has a schema file of its own in `src/main/resources/graphql`:
 
 | File | What it reads | Who runs it | Root fields | Characters | Tokens |
 |---|---|---|---:|---:|---:|
-| `schema.graphqls` | The clinic: owners, pets, visits and vets | You | 9 | 7,095 | 1,811 |
+| `schema.graphqls` | The clinic: owners, pets, visits and vets | You | 9 | 7,429 | 1,891 |
 | `malaga.graphqls` | Parks for dogs, drinking fountains and city buses of Málaga | City of Málaga | 4 | 4,966 | 1,318 |
 | `nominatim.graphqls` | The geocoder of OpenStreetMap, for owners' addresses | OpenStreetMap Foundation | 2 | 1,946 | 508 |
 | `catastro.graphqls` | The land registry, over SOAP: parcels, units and streets | Catastro | 10 | 16,386 | 4,321 |
@@ -62,9 +62,9 @@ Each service has a schema file of its own in `src/main/resources/graphql`:
 | `idee.graphqls` | Addresses, land use, rivers and transport networks of Spain | National Cartographic System (IDEE) | 71 | 162,874 | 39,745 |
 | `ign.graphqls` | Administrative units, place names, towns and geodetic stations | National Geographic Institute (IGN) | 22 | 44,362 | 10,771 |
 | `upstream.graphqls` | The `DateTime` and `JSON` scalars the services need | | 0 | 400 | 109 |
-| **Total** | | | **602** | **604,334** | **152,680** |
+| **Total** | | | **602** | **604,668** | **152,760** |
 
-We counted the tokens with the `cl100k_base` encoding of [tiktoken](https://github.com/openai/tiktoken). The `o200k_base` encoding gives 149,127, and other models' tokenizers give counts of the same order. The schema is about 18 times the 8,192 tokens that chapter 12 gave `granite4.1:8b`, and one `searchSchema` call returns at most 2,000 tokens of it.
+We counted the tokens with the `cl100k_base` encoding of [tiktoken](https://github.com/openai/tiktoken). The `o200k_base` encoding gives 149,211, and other models' tokenizers give counts of the same order. The schema is about 18 times the 8,192 tokens that chapter 12 gave `granite4.1:8b`, and one `searchSchema` call returns at most 2,000 tokens of it.
 
 ## 3. How the fields were built
 
