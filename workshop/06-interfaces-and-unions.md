@@ -171,7 +171,7 @@ query {
 }
 ```
 
-Refresh the frontend: a search box appears in the navigation bar. Search for `le`: the page lists owners, a vet and pets, each linked to its page. Its operation is `src/main/resources/operations/queries/search.graphql`, which uses both the union and the interface.
+Refresh the frontend: a search box appears in the navigation bar. Search for `le`: the page lists two owners, a vet and a pet, each linked to its page. Its operation is `src/main/resources/operations/queries/search.graphql`, which uses both the union and the interface.
 
 ## 4. Union or interface?
 
