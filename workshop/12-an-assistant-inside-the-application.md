@@ -188,7 +188,7 @@ Without signing in, ask:
 Book an x-ray for Perla, the pet of Pablo Morales, with Helen Leary tomorrow.
 ```
 
-The log shows `search`, `getOwnerDetails`, `listVets` and `addVisit`. `addVisit` answered `Unauthorized`, and the assistant asks you to sign in:
+The log shows which tools the model called, and they vary from run to run: one of our runs called `findOwners`, `getOwnerDetails`, `listVets` and `addVisit`. All 5 of our runs ended with `addVisit`, which answered `Unauthorized`, and the assistant asks you to sign in:
 
 > I need you to sign in so that I can book the x-ray for Perla with Helen Leary for tomorrow.
 
