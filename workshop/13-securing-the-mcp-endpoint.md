@@ -473,6 +473,8 @@ If the Inspector still runs with chapter 10's `--header`, stop it with `Ctrl+C`.
 npx -y @modelcontextprotocol/inspector@2.9.0 --web --transport http --server-url http://localhost:8080/mcp
 ```
 
+The command gives the Inspector the server's URL alone. Leave its OAuth settings empty, the client id included: the Inspector reads the authorization server from the backend's metadata, and registers a client of its own.
+
 1. Flip the switch on the card. The tab goes to http://localhost:8080/login: the Inspector took steps 1 to 4 on its own, and opened step 5.
 2. Sign in as `staff` / `staff`.
 3. The consent page reads *&lt;client id&gt; wants to access your account staff* and lists `mcp:tools`. Tick `mcp:tools`, then click **Submit Consent**. A consent with the box left empty approves an empty list of scopes, and the Inspector reports `access_denied`.
@@ -518,7 +520,7 @@ In **Connection Info**, click **Clear OAuth state and disconnect**. Flip the swi
 **Decode JWT** shows `"sub": "guest"` and `"scope": ["mcp:tools"]`. The guest can use every tool, and chapter 5's `@PreAuthorize` refuses the write, as it does in the frontend.
 
 > [!NOTE]
-> The Inspector keeps its token, which lasts 8 hours and is signed with the development key, so it reconnects after you restart the backend. The registered clients live in memory, so a sign-in after a restart can stop at an error page that says *[invalid_request] OAuth 2.0 Parameter: client_id*: the Inspector used a client id that the backend has forgotten. While the Inspector is connected, **Clear OAuth state and disconnect** makes it register again. Otherwise stop the Inspector, delete `~/.mcp-inspector/storage/oauth.json` (on Windows, `%USERPROFILE%\.mcp-inspector\storage\oauth.json`), and start it again.
+> The Inspector keeps its token, which lasts 8 hours and is signed with the development key, so it reconnects after you restart the backend. The registered clients live in memory, so a sign-in after a restart can stop at an error page that says *[invalid_request] OAuth 2.0 Parameter: client_id*: the Inspector used a client id that the backend has forgotten. While the Inspector is connected, **Clear OAuth state and disconnect** makes it register again. Otherwise stop the Inspector, delete `~/.mcp-inspector/storage/oauth.json` (on Windows, `%USERPROFILE%\.mcp-inspector\storage\oauth.json`), and start it again. Delete the same file when the switch opens the sign-in page of another server, such as a Keycloak from an earlier project on port 8080: the file keeps what the Inspector found for each URL, and the Inspector uses it again.
 
 The frontend still holds a token from before this chapter, with the old issuer. The backend answers it with `401` and `The iss claim is not valid`, and the frontend signs you out, so sign in again.
 
