@@ -6,7 +6,7 @@ So far the API only reads. In this chapter it starts to change data. First we gi
 
 By the end of this chapter, you will:
 
-- Add a custom scalar and use it in results and in arguments
+- Add a custom scalar and use it in results and in input
 - Write mutations with `@MutationMapping`
 - Pass structured input with `input` types, and values with variables
 - Write a partial update: a mutation that changes the fields the client sends, and keeps the others as they are
@@ -84,77 +84,7 @@ GraphQL accepts the definitions of a schema in any order, so a field may use a t
 
 Restart and run the query from chapter 2 again. The dates look the same, `"2023-09-30"`, but the documentation explorer now shows them as `Date`, described as *An RFC-3339 compliant Full Date Scalar*. In Java, they arrive and leave as `LocalDate`.
 
-## 2. A date as an argument
-
-A scalar also checks what clients send. Add a query for the visits between two dates:
-
-`src/main/resources/graphql/schema.graphqls`
-
-```graphql
-type Query {
-    # ...existing queries...
-    "The visits from one date to another, both included, in date order"
-    visits(from: Date!, to: Date!): [Visit!]!
-}
-```
-
-**Create a new class** named `VisitGraphQLController` in the `org.springframework.samples.petclinic.owner.visit` package:
-
-`src/main/java/org/springframework/samples/petclinic/owner/visit/VisitGraphQLController.java`
-
-```java
-package org.springframework.samples.petclinic.owner.visit;
-
-import java.time.LocalDate;
-import java.util.List;
-
-import org.springframework.graphql.data.method.annotation.Argument;
-import org.springframework.graphql.data.method.annotation.QueryMapping;
-import org.springframework.stereotype.Controller;
-
-@Controller
-class VisitGraphQLController {
-
-	private final VisitService visitService;
-
-	VisitGraphQLController(VisitService visitService) {
-		this.visitService = visitService;
-	}
-
-	@QueryMapping
-	List<Visit> visits(@Argument LocalDate from, @Argument LocalDate to) {
-		return visitService.findVisits(from, to);
-	}
-
-}
-```
-
-Restart and ask for the visits of the coming two weeks:
-
-```graphql
-query {
-  visits(from: "2026-10-21", to: "2026-11-05") {
-    date
-    description
-    pet {
-      name
-    }
-    vet {
-      lastName
-    }
-  }
-}
-```
-
-Two visits are booked: Woofy's annual check-up on 28 October, and Simba's urinary infection on 2 November. Now write the first date the way many people do, `from: "21/10/2026"`. The engine refuses it during validation, before our code runs:
-
-```text
-Validation error (WrongType@[visits]) : argument 'from' with value 'StringValue{value='21/10/2026'}' is not a valid 'Date' - Invalid RFC3339 full date value : '21/10/2026'. ...
-```
-
-Refresh the frontend: a **Visits** link appears, with the visits of the next 30 days.
-
-## 3. Your first mutation: book a visit
+## 2. Your first mutation: book a visit
 
 Queries read, and **mutations** change data. A schema declares them in a second root type, `Mutation`. Booking a visit takes four values, so we group them in an **input type**. Add both to the schema:
 
@@ -176,16 +106,31 @@ input AddVisitInput {
 }
 ```
 
-The Java side is one method. The starting point has a matching `AddVisitInput` record, and Spring for GraphQL fills it in by matching the field names. Add the method to `VisitGraphQLController`:
+The Java side is one method. The starting point has a matching `AddVisitInput` record, and Spring for GraphQL fills it in by matching the field names. **Create a new class** named `VisitGraphQLController` in the `org.springframework.samples.petclinic.owner.visit` package:
 
 `src/main/java/org/springframework/samples/petclinic/owner/visit/VisitGraphQLController.java`
 
 ```java
-import org.springframework.graphql.data.method.annotation.MutationMapping;
+package org.springframework.samples.petclinic.owner.visit;
 
-@MutationMapping
-Visit addVisit(@Argument AddVisitInput input) {
-	return visitService.addVisit(input);
+import org.springframework.graphql.data.method.annotation.Argument;
+import org.springframework.graphql.data.method.annotation.MutationMapping;
+import org.springframework.stereotype.Controller;
+
+@Controller
+class VisitGraphQLController {
+
+	private final VisitService visitService;
+
+	VisitGraphQLController(VisitService visitService) {
+		this.visitService = visitService;
+	}
+
+	@MutationMapping
+	Visit addVisit(@Argument AddVisitInput input) {
+		return visitService.addVisit(input);
+	}
+
 }
 ```
 
@@ -210,7 +155,13 @@ mutation {
 
 The answer is the new visit, with id 33: the seed data has 32. A mutation returns an object like any query, so the client asks for exactly the fields it needs next. When an operation has several mutation fields, GraphQL runs them one after another, in order, where it may run the fields of a query in parallel.
 
-## 4. Variables: register an owner
+`date` is a `Date`, so the scalar also checks what clients send. Run the mutation again with the date written the way many people do, `date: "30/10/2026"`. The engine refuses it during validation, before our code runs, so the clinic's visits stay as they were:
+
+```text
+Validation error (WrongType@[addVisit]) : argument 'input.date' with value 'StringValue{value='30/10/2026'}' is not a valid 'Date' - Invalid RFC3339 full date value : '30/10/2026'. ...
+```
+
+## 3. Variables: register an owner
 
 So far every value sat inside the query text. Real clients keep the operation fixed and send the values separately, as **variables**. Add the mutation and its input:
 
@@ -289,7 +240,7 @@ Variable 'input' has an invalid value: Field 'telephone' has coerced Null value 
 
 Then send a telephone of `"123"`. That value is a valid `String`, so the engine passes it to our code, and the service refuses it. The answer is an `INTERNAL_ERROR`, with the reason hidden in the log. Chapter 4 turns it into an error a client can act on.
 
-## 5. Partial updates: correct an owner's details
+## 4. Partial updates: correct an owner's details
 
 An update should change the fields the client sends and keep the rest. Make every field optional except the id:
 
@@ -325,7 +276,7 @@ Restart and move Ana to Nerja:
 
 ```graphql
 mutation {
-  updateOwner(input: { id: 41, city: "Nerja" }) {
+  updateOwner(input: { id: 16, city: "Nerja" }) {
     firstName
     lastName
     city
@@ -338,9 +289,9 @@ Her city changes, and her name and telephone stay as they were.
 
 GraphQL tells apart a field the client **left out** and a field it **set to `null`**. `OwnerService.updateOwner` treats both as "keep the value", because every field of an owner is required. When the difference matters, for example to clear an optional field, Spring for GraphQL can bind a field to an `ArgumentValue`, which says whether the client sent it.
 
-## 6. The forms light up
+## 5. The forms light up
 
-Refresh the frontend. The owner pages now have **Add owner** and **Edit owner**, and every pet has **Book visit**. Book a visit, then open **Visits**: it is there.
+Refresh the frontend. The owner pages now have **Add owner** and **Edit owner**, and every pet has **Book visit**. Book a visit: the form takes you back to the owner's page, which lists the new visit under the pet.
 
 ## Exercises
 
@@ -445,7 +396,7 @@ Pet updatePet(@Argument UpdatePetInput input) {
 
 ## Recap
 
-- A custom scalar gives a value a type and rules: `Date` accepts `2026-10-21` and refuses `21/10/2026`.
+- A custom scalar gives a value a type and rules: `Date` accepts `2026-10-30` and refuses `30/10/2026`.
 - Mutations live in the `Mutation` root type, and `@MutationMapping` binds them.
 - `input` types group the values of an argument, and Spring for GraphQL fills a matching record.
 - Variables keep the operation fixed and send the values separately.

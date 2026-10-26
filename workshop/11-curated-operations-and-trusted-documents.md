@@ -74,20 +74,19 @@ Restart. GATool checks every file against the schema, then lists the tools:
 
 ```text
 GATool validates every operation file against the schema this application serves.
-GATool serves 12 MCP tools:
+GATool serves 11 MCP tools:
   addOwner from file:.../target/classes/operations/mutations/addOwner.graphql (about 176 tokens)
   addPet from file:.../target/classes/operations/mutations/addPet.graphql (about 255 tokens)
-  addVisit from file:.../target/classes/operations/mutations/addVisit.graphql (about 303 tokens)
+  addVisit from file:.../target/classes/operations/mutations/addVisit.graphql (about 301 tokens)
   updateOwner from file:.../target/classes/operations/mutations/updateOwner.graphql (about 185 tokens)
   updatePet from file:.../target/classes/operations/mutations/updatePet.graphql (about 193 tokens)
   findOwners from file:.../target/classes/operations/queries/findOwners.graphql (about 334 tokens)
-  findVisits from file:.../target/classes/operations/queries/findVisits.graphql (about 179 tokens)
   getOwnerDetails from file:.../target/classes/operations/queries/getOwnerDetails.graphql (about 127 tokens)
   getVetDetails from file:.../target/classes/operations/queries/getVetDetails.graphql (about 124 tokens)
   listPetTypes from file:.../target/classes/operations/queries/listPetTypes.graphql (about 89 tokens)
   listVets from file:.../target/classes/operations/queries/listVets.graphql (about 102 tokens)
   search from file:.../target/classes/operations/queries/search.graphql (about 123 tokens)
-  about 2190 tokens in all, which every agent that lists these tools reads before it calls one
+  about 2009 tokens in all, which every agent that lists these tools reads before it calls one
 ```
 
 A file that asks for a field the schema lacks stops the application at startup, and the message names the file and the line:
@@ -102,7 +101,7 @@ The in-process tools of chapter 10 are gone from the log as well. They read a fo
 
 ## 4. Call the curated tools
 
-Reload the Inspector's page and flip the switch on the card. If you stopped the Inspector, start it with the first command of chapter 10. Open the **Tools** tab: it lists the 12 tools. Select `findOwners`:
+Reload the Inspector's page and flip the switch on the card. If you stopped the Inspector, start it with the first command of chapter 10. Open the **Tools** tab: it lists the 11 tools. Select `findOwners`:
 
 - The description is the four `#` lines of the file.
 - The arguments are the variables, with their defaults. `sortBy` and `order` are lists to choose from, filled with the values of their enums.

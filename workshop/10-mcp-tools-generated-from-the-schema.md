@@ -65,23 +65,22 @@ Restart. GATool says how it runs the tools, and lists them:
 
 ```text
 GATool runs each document inside this application.
-GATool serves 15 MCP tools:
+GATool serves 14 MCP tools:
   ownersAll from generated:query/ownersAll (about 82 tokens)
   owner from generated:query/owner (about 98 tokens)
   owners from generated:query/owners (about 330 tokens)
   vets from generated:query/vets (about 70 tokens)
   vet from generated:query/vet (about 101 tokens)
-  visits from generated:query/visits (about 183 tokens)
   petTypes from generated:query/petTypes (about 84 tokens)
   search from generated:query/search (about 101 tokens)
   people from generated:query/people (about 87 tokens)
-  addVisit from generated:mutation/addVisit (about 278 tokens)
+  addVisit from generated:mutation/addVisit (about 276 tokens)
   addOwner from generated:mutation/addOwner (about 172 tokens)
   updateOwner from generated:mutation/updateOwner (about 210 tokens)
   addPet from generated:mutation/addPet (about 254 tokens)
   updatePet from generated:mutation/updatePet (about 204 tokens)
   login from generated:mutation/login (about 114 tokens)
-  about 2368 tokens in all, which every agent that lists these tools reads before it calls one
+  about 2183 tokens in all, which every agent that lists these tools reads before it calls one
 ```
 
 | Line | Meaning |
@@ -103,7 +102,7 @@ npx -y @modelcontextprotocol/inspector@2.9.0 --web --transport http --server-url
 The Inspector opens in your browser, with one server card, `localhost:8080`.
 
 1. Flip the switch on the card. It says **Connected**, and the **Messages** panel on the right lists the requests the Inspector sent, `INITIALIZE` and `TOOLS/LIST` among them.
-2. Open the **Tools** tab at the top. It lists the 15 tools.
+2. Open the **Tools** tab at the top. It lists the 14 tools.
 3. Select `owners`. The description and the description of each argument are the ones we wrote in chapter 9. The badges **READ-ONLY** and **IDEMPOTENT** come from GATool, which marks every query that way and every mutation **DESTRUCTIVE**.
 4. Type `Torremolinos` in **city** and click **Execute Tool**.
 
@@ -156,7 +155,7 @@ gatool.dev.experimental.generated-selection-depth=2
 gatool.dev.experimental.generate-tools-for-deprecated-root-fields=false
 ```
 
-Restart. The log says `GATool serves 14 MCP tools`: `ownersAll` is gone, because chapter 1 deprecated it. Reload the Inspector's page, flip the switch again, and run `owners` for Torremolinos. The Inspector shows the answer as a **Tool Error**:
+Restart. The log says `GATool serves 13 MCP tools`: `ownersAll` is gone, because chapter 1 deprecated it. Reload the Inspector's page, flip the switch again, and run `owners` for Torremolinos. The Inspector shows the answer as a **Tool Error**:
 
 ```json
 {
@@ -193,17 +192,17 @@ Depth 2 gives `owners` its owners, and gives `vets` every visit of every vet: 2,
 
 ## 6. Give the Date scalar a type
 
-The Inspector marks `visits` with a warning sign. GATool's log says why:
+The Inspector marks `addVisit`, `addPet` and `updatePet` with a warning sign. GATool's log says why:
 
 ```text
-The schema declares custom scalars that GATool describes to the model as any JSON value: Date (used by visits, addVisit, addPet, updatePet).
+The schema declares custom scalars that GATool describes to the model as any JSON value: Date (used by addVisit, addPet, updatePet).
 ```
 
-The JSON Schema of the `from` argument holds only a description, so the model may send any JSON value:
+The JSON Schema of `addPet`'s `birthDate` holds only a description, so the model may send any JSON value:
 
 ```json
-"from": {
-  "description": "The first day, written as 2026-10-21 An RFC-3339 compliant Full Date Scalar See https://tools.ietf.org/html/rfc3339 for the format of this value."
+"birthDate": {
+  "description": "Written as 2024-05-01, today or earlier An RFC-3339 compliant Full Date Scalar See https://tools.ietf.org/html/rfc3339 for the format of this value."
 }
 ```
 
@@ -215,17 +214,17 @@ GATool reads a scalar's `@specifiedBy` URL, and it knows the specifications publ
 scalar Date @specifiedBy(url: "https://scalars.graphql.org/andimarek/local-date")
 ```
 
-Restart, reload the Inspector and connect. The warning sign is gone, and so is the warning in the log. The argument now has a type and a format, which a model and a client can check before they call:
+Restart, reload the Inspector and connect. The warning signs are gone, and so is the warning in the log. The field now has a type and a format, which a model and a client can check before they call:
 
 ```json
-"from": {
+"birthDate": {
   "type": "string",
   "format": "date",
-  "description": "The first day, written as 2026-10-21 An RFC-3339 compliant Full Date Scalar"
+  "description": "Written as 2024-05-01, today or earlier An RFC-3339 compliant Full Date Scalar"
 }
 ```
 
-To read the schemas yourself, click the arrow ↕ on the `TOOLS/LIST` entry in the **Messages** panel, and find `visits` in the response.
+To read the schemas yourself, click the arrow ↕ on the `TOOLS/LIST` entry in the **Messages** panel, and find `addPet` in the response.
 
 ## 7. Write with a staff token
 

@@ -10,7 +10,6 @@ import SearchPage from './pages/SearchPage'
 import VetDetailPage from './pages/VetDetailPage'
 import VetsPage from './pages/VetsPage'
 import VisitFormPage from './pages/VisitFormPage'
-import VisitsPage from './pages/VisitsPage'
 
 function NotFound() {
   return (
@@ -37,7 +36,6 @@ export default function App() {
         <Route path="/owners/:ownerId/pets/:petId/visits/new" element={<VisitFormPage />} />
         <Route path="/vets" element={<VetsPage />} />
         <Route path="/vets/:vetId" element={<VetDetailPage />} />
-        <Route path="/visits" element={<VisitsPage />} />
         <Route path="/search" element={<SearchPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="*" element={<NotFound />} />

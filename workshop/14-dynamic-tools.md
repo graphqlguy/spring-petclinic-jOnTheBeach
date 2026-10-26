@@ -43,7 +43,7 @@ The vector holds 1,024 numbers. Two vectors are compared by the angle between th
 |---|---|---|
 | Every vet of the clinic, with their specialties | `Query.vets` | 0.57 |
 | The kinds of pet the clinic treats, sorted by name | `Query.petTypes` | 0.31 |
-| The visits from one date to another, both included, in date order, past and booked | `Query.visits` | 0.11 |
+| Owners, one page at a time, sorted by last name unless sort says otherwise | `Query.owners` | 0.09 |
 
 `searchSchema` works the same way. At startup, GATool asks the embedding model for the vector of every query field, written as a declaration with its description, and caches the vectors on disk. For each question, it ranks the fields by their similarity to the question's vector and returns the best ones within 2000 tokens.
 
@@ -86,13 +86,13 @@ Restart:
 
 ```text
 WARN ... i.g.b.a.GAToolAutoConfiguration          : GATool serves zero MCP tools. These locations were read: optional:classpath*:none/. An operation file there becomes a tool, and gatool.mcp.operations.locations names the folders.
-INFO ... i.g.b.i.search.EmbeddingSchemaSearch     : GATool is embedding 47 schema coordinates, which is one call to your embedding model for each of them. The result is cached, so later starts read it.
+INFO ... i.g.b.i.search.EmbeddingSchemaSearch     : GATool is embedding 46 schema coordinates, which is one call to your embedding model for each of them. The result is cached, so later starts read it.
 INFO ... i.g.b.i.search.EmbeddingSchemaSearch     : GATool cached them in /var/folders/.../T/gatool-<you>/vectors/<hash>.vectors.
 WARN ... i.g.b.a.GAToolAutoConfiguration          : gatool.dev.experimental.generate-tools is dynamic-three-step, so a model can search your schema and run GraphQL it wrote against your API. The trusted documents keep working beside it. Turn this off before you deploy.
-INFO ... i.g.b.a.GAToolAutoConfiguration          : GATool publishes searchSchema, introspectType, executeGraphql, ranking 47 schema coordinates with EMBEDDING and returning up to 2000 tokens of results per call.
+INFO ... i.g.b.a.GAToolAutoConfiguration          : GATool publishes searchSchema, introspectType, executeGraphql, ranking 46 schema coordinates with EMBEDDING and returning up to 2000 tokens of results per call.
 ```
 
-GATool warns that it serves zero MCP tools, which is what the empty folder is for, and that a model can now run queries it wrote itself: step 6 shows the checks that still apply. The 47 coordinates are the schema's query fields, without the mutations, the subscription and the deprecated `ownersAll`. On our laptop, embedding them took under a second, and the next start reads them from the cache.
+GATool warns that it serves zero MCP tools, which is what the empty folder is for, and that a model can now run queries it wrote itself: step 6 shows the checks that still apply. The 46 coordinates are the schema's query fields, without the mutations, the subscription and the deprecated `ownersAll`. On our laptop, embedding them took under a second, and the next start reads them from the cache.
 
 > [!NOTE]
 > The embedding model runs in Ollama. With a hosted model from chapter 12, add `gatool.dev.experimental.dynamic-operations.search-backend=bm25` to its `application-<name>.properties`: BM25 ranks the fields by their words, and runs without a model. With the Mistral or OpenAI starter, the application holds two embedding models, and GATool stops at startup and asks which one to use. The tests run without Ollama, so `src/test/resources/config/application.properties` sets `bm25` for them.
@@ -113,13 +113,13 @@ Query.vets:
 vets: [Vet!]!  # on type Query
 
 Visit.vet:
-reach it from Query.visits(from: Date!, to: Date!)
+reach it from Query.vets -> Vet.visits
 """The vet who sees the pet. The Petclinic web pages book visits without a vet."""
 vet: Vet  # on type Visit
 ...
 ```
 
-The answer lists all 47 coordinates, best first, because the whole schema fits in 2000 tokens. A field below the root comes with the path that reaches it, such as `Query.visits` for `Visit.vet`. `Vet.specialties` and `Specialty.name` come third and fourth, so this result already holds every field the query needs. To see a whole type at once, read it with `introspectType`:
+The answer lists all 46 coordinates, best first, because the whole schema fits in 2000 tokens. A field below the root comes with the path that reaches it, such as `Query.vets -> Vet.visits` for `Visit.vet`. `Vet.specialties` and `Specialty.name` come third and fourth, so this result already holds every field the query needs. To see a whole type at once, read it with `introspectType`:
 
 ```json
 {"name": "Specialty"}
@@ -182,7 +182,7 @@ DEBUG ... o.s.a.m.tool.DefaultToolCallingManager   : Executing tool call: intros
 DEBUG ... o.s.a.m.tool.DefaultToolCallingManager   : Executing tool call: executeGraphql
 ```
 
-In our 5 runs with `granite4.1:8b`, every answer said yes and named Linda Douglas and Rafael Ortega, within 4 seconds. Four of the five answers also mentioned "others" or "another vet" with the surgery specialty, which the data does not hold. Asked for Lucía Navarro's telephone as a guest, the model asked us to sign in in all 3 of our runs.
+In our 5 runs with `granite4.1:8b`, every answer said yes and named Linda Douglas and Rafael Ortega, within 4 seconds. Four of the five answers also added a surgeon the data does not hold, such as "others" or "another vet". Asked for Lucía Navarro's telephone as a guest, the model asked us to sign in in all 3 of our runs.
 
 Now ask:
 
@@ -200,7 +200,7 @@ gatool.mcp.operations.locations=classpath*:operations/
 gatool.dev.experimental.dynamic-operations.required-scopes=petclinic:write
 ```
 
-A guest still sees the 15 tools, and a call to `searchSchema` gets `403` with `error="insufficient_scope"`: *searchSchema needs mcp:tools petclinic:write. The token holds mcp:tools and lacks petclinic:write.* We skip this setup in the workshop for time.
+A guest still sees the 14 tools, and a call to `searchSchema` gets `403` with `error="insufficient_scope"`: *searchSchema needs mcp:tools petclinic:write. The token holds mcp:tools and lacks petclinic:write.* We skip this setup in the workshop for time.
 
 ## 6. What a query from the model can do
 
@@ -223,7 +223,7 @@ Ask the assistant:
 How many visits has each vet had? Give their names.
 ```
 
-The schema holds each vet's visits as a list, so the model reads every visit and counts them. In our 5 runs, every answer had at least one count wrong: Linda Douglas has 7 visits, and every answer said 6. A model reads text in tokens, and it miscounts the ids in a JSON answer, even in a list of 7. Make the counts right.
+The schema holds each vet's visits as a list, so the model reads every visit and counts them. In our 5 runs, every answer had at least one count wrong. Linda Douglas has 7 visits, and four answers said 6. James Carter has 15, and three answers said 9, 12 or 14. A model reads text in tokens, and it miscounts the ids in a JSON answer, even in a list of 7. Make the counts right.
 
 <details>
 <summary>Show solution</summary>
@@ -258,7 +258,7 @@ In `VetGraphQLController`, add this method below the `visits` method:
 	}
 ```
 
-`visitCount` calls the batch method of chapter 2, which reads the visits of every vet in one SQL statement, and returns the size of each list. Restart: the schema changed, so GATool embeds it again, and the log says `GATool is embedding 48 schema coordinates`. For the question `How many visits has each vet had?`, `searchSchema` now ranks `Vet.visitCount` first, because its description says what it holds. Ask the assistant again: the counts were right in all 5 of our runs, each within 4 seconds. A field that does the arithmetic gives every agent the right number.
+`visitCount` calls the batch method of chapter 2, which reads the visits of every vet in one SQL statement, and returns the size of each list. Restart: the schema changed, so GATool embeds it again, and the log says `GATool is embedding 47 schema coordinates`. For the question `How many visits has each vet had?`, `searchSchema` now ranks `Vet.visitCount` first, because its description says what it holds. Ask the assistant again: the counts were right in all 5 of our runs, each within 4 seconds. A field that does the arithmetic gives every agent the right number.
 
 </details>
 

@@ -30,12 +30,12 @@ Start the backend:
 At the first start, GATool embeds the new schema with the embedding model of chapter 14:
 
 ```text
-INFO ... i.g.b.i.search.EmbeddingSchemaSearch     : GATool is embedding 3840 schema coordinates, which is one call to your embedding model for each of them. The result is cached, so later starts read it.
+INFO ... i.g.b.i.search.EmbeddingSchemaSearch     : GATool is embedding 3839 schema coordinates, which is one call to your embedding model for each of them. The result is cached, so later starts read it.
 INFO ... i.g.b.i.search.EmbeddingSchemaSearch     : GATool cached them in /var/folders/.../T/gatool-<you>/vectors/<hash>.vectors.
-INFO ... i.g.b.a.GAToolAutoConfiguration          : GATool publishes searchSchema, introspectType, executeGraphql, ranking 3840 schema coordinates with EMBEDDING and returning up to 2000 tokens of results per call.
+INFO ... i.g.b.a.GAToolAutoConfiguration          : GATool publishes searchSchema, introspectType, executeGraphql, ranking 3839 schema coordinates with EMBEDDING and returning up to 2000 tokens of results per call.
 ```
 
-The embedding took 42 seconds on our laptop, and later starts read the vectors from the cache. Every new field calls a service on the internet. On a slow or missing connection, start with the recorded answers of step 3.
+The embedding took 41 seconds on our laptop, and later starts read the vectors from the cache. Every new field calls a service on the internet. On a slow or missing connection, start with the recorded answers of step 3.
 
 ## 2. What we integrated with
 
@@ -410,7 +410,7 @@ The chapter adds 22 tests: a test class for each kind of field, against the reco
 ```
 
 ```text
-[INFO] Tests run: 137, Failures: 0, Errors: 0, Skipped: 0
+[INFO] Tests run: 136, Failures: 0, Errors: 0, Skipped: 0
 ```
 
 `MockUpstreamTests` starts the application once with the `mock` profile, on a free port for WireMock, and each test class extends it. A test can check what the application sent to a service:

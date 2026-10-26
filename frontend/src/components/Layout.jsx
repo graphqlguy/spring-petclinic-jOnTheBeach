@@ -54,7 +54,6 @@ export default function Layout() {
           <NavItem to="/">Home</NavItem>
           {available('findOwners') && <NavItem to="/owners">Find owners</NavItem>}
           {available('listVets') && <NavItem to="/vets">Veterinarians</NavItem>}
-          {available('findVisits') && <NavItem to="/visits">Visits</NavItem>}
           <div className="ml-auto flex items-center gap-3">
             {available('search') && <SearchBox />}
             {user ? (

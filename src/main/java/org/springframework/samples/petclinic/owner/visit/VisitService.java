@@ -15,7 +15,6 @@
  */
 package org.springframework.samples.petclinic.owner.visit;
 
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -87,14 +86,6 @@ public class VisitService {
 			visitsByVetId.computeIfAbsent(visit.getVet().getId(), (id) -> new ArrayList<>()).add(visit);
 		}
 		return visitsByVetId;
-	}
-
-	/**
-	 * The visits from one date to another, both included, in date order.
-	 */
-	public List<Visit> findVisits(LocalDate from, LocalDate to) {
-		latency.pause();
-		return visits.findByDateBetweenOrderByDateAsc(from, to);
 	}
 
 	/**

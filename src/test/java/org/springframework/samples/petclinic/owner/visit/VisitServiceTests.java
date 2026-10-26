@@ -69,12 +69,6 @@ class VisitServiceTests {
 	}
 
 	@Test
-	void findVisitsReturnsTheVisitsBetweenTwoDates() {
-		List<Visit> found = visits.findVisits(LocalDate.of(2026, 10, 22), LocalDate.of(2026, 12, 31));
-		assertThat(found).hasSize(3).extracting(Visit::getDate).isSorted();
-	}
-
-	@Test
 	void addVisitBooksForTomorrowAndPublishesAnEvent(ApplicationEvents events) {
 		Visit visit = visits.addVisit(new AddVisitInput(7, 1, null, "check-up"));
 		assertThat(visit.getDate()).isEqualTo(LocalDate.now().plusDays(1));

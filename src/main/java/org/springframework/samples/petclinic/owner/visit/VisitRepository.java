@@ -15,7 +15,6 @@
  */
 package org.springframework.samples.petclinic.owner.visit;
 
-import java.time.LocalDate;
 import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
@@ -36,8 +35,6 @@ public interface VisitRepository extends JpaRepository<Visit, Integer> {
 	 */
 	@Query("SELECT visit FROM Visit visit WHERE visit.vet.id IN :vetIds ORDER BY visit.date DESC, visit.id DESC")
 	List<Visit> findByVetIds(@Param("vetIds") Collection<Integer> vetIds);
-
-	List<Visit> findByDateBetweenOrderByDateAsc(LocalDate from, LocalDate to);
 
 	/**
 	 * A visit with its pet, the pet's owner and type, and its vet, read in one statement,

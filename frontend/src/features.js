@@ -32,7 +32,6 @@ export const FEATURES = [
     needs: 'the addPet mutation and the petTypes query (exercise 1)',
   },
   { key: 'petEdit', title: 'Edit pets', chapter: 3, operations: ['updatePet', 'listPetTypes'], needs: 'the updatePet mutation (exercise 2)' },
-  { key: 'agenda', title: 'Visits agenda', chapter: 3, operations: ['findVisits'], needs: 'the visits query and the Date scalar' },
   { key: 'login', title: 'Sign in', chapter: 5, operations: ['login'], needs: 'the login mutation' },
   { key: 'search', title: 'Search', chapter: 6, operations: ['search'], needs: 'the search query and its union' },
   { key: 'notifications', title: 'Booking notifications', chapter: 7, operations: ['visitBooked'], needs: 'the visitBooked subscription' },

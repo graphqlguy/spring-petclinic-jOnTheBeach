@@ -16,7 +16,7 @@ By the end of this chapter, you will:
 | Step | What happens |
 |---|---|
 | 1 | The frontend sends the question to `POST /api/chat`, with the user's token when someone is signed in. |
-| 2 | Spring AI's `ChatClient` sends the model a system prompt, the question and the 12 tools. |
+| 2 | Spring AI's `ChatClient` sends the model a system prompt, the question and the 11 tools. |
 | 3 | The model answers, or asks for a tool with its arguments. |
 | 4 | Spring AI runs the tool: GATool runs the tool's operation file in our GraphQL engine, as the user who asked. |
 | 5 | The model reads the tool's result, then asks for another tool or answers. |
@@ -139,7 +139,7 @@ class ChatController {
 | Element | Meaning |
 |---|---|
 | `ChatClient.Builder` | Spring AI's builder, set up for the model of step 3. |
-| `defaultTools(tools.toolCallbackProvider())` | Gives every prompt of this client the 12 in-process tools. |
+| `defaultTools(tools.toolCallbackProvider())` | Gives every prompt of this client the 11 in-process tools. |
 | The system prompt | What the model needs and cannot know: its role, what to do when a tool refuses, and today's date, which goes with every question. |
 | `call().content()` | Sends the prompt, runs every tool the model asks for, and returns the model's last answer as text. |
 | `@PostMapping` | The frontend sends the question as plain text. A `GET` answers `405`. |
@@ -150,20 +150,19 @@ class ChatController {
 Restart. After the MCP tools, GATool lists the in-process tools:
 
 ```text
-GATool serves 12 in-process tools:
+GATool serves 11 in-process tools:
   addOwner from file:.../target/classes/operations/mutations/addOwner.graphql (about 152 tokens)
   addPet from file:.../target/classes/operations/mutations/addPet.graphql (about 231 tokens)
-  addVisit from file:.../target/classes/operations/mutations/addVisit.graphql (about 279 tokens)
+  addVisit from file:.../target/classes/operations/mutations/addVisit.graphql (about 277 tokens)
   updateOwner from file:.../target/classes/operations/mutations/updateOwner.graphql (about 160 tokens)
   updatePet from file:.../target/classes/operations/mutations/updatePet.graphql (about 168 tokens)
   findOwners from file:.../target/classes/operations/queries/findOwners.graphql (about 310 tokens)
-  findVisits from file:.../target/classes/operations/queries/findVisits.graphql (about 155 tokens)
   getOwnerDetails from file:.../target/classes/operations/queries/getOwnerDetails.graphql (about 103 tokens)
   getVetDetails from file:.../target/classes/operations/queries/getVetDetails.graphql (about 100 tokens)
   listPetTypes from file:.../target/classes/operations/queries/listPetTypes.graphql (about 65 tokens)
   listVets from file:.../target/classes/operations/queries/listVets.graphql (about 78 tokens)
   search from file:.../target/classes/operations/queries/search.graphql (about 106 tokens)
-  about 1907 tokens in all, which every agent that lists these tools reads before it calls one
+  about 1750 tokens in all, which every agent that lists these tools reads before it calls one
 ```
 
 Refresh the frontend. The home page lists *Chapter 12 Clinic assistant*, and every page has an **Ask the assistant** button at the bottom right. Open it and ask:
@@ -188,13 +187,13 @@ Without signing in, ask:
 Book an x-ray for Perla, the pet of Pablo Morales, with Helen Leary tomorrow.
 ```
 
-The log shows which tools the model called, and they vary from run to run: one of our runs called `findOwners`, `getOwnerDetails`, `listVets` and `addVisit`. All 5 of our runs ended with `addVisit`, which answered `Unauthorized`, and the assistant asks you to sign in:
+The log shows which tools the model called, and they vary from run to run: one of our runs called `findOwners`, `getOwnerDetails`, `listVets` and `addVisit`. Four of our 5 runs ended with `addVisit`, which answered `Unauthorized`. In all 5, the assistant asks you to sign in:
 
 > I need you to sign in so that I can book the x-ray for Perla with Helen Leary for tomorrow.
 
 Sign in as `staff` / `staff` and ask again. A notification for the visit appears at the top right, and the assistant answers:
 
-> The x-ray for Perla, owned by Pablo Morales, has been booked with Helen Leary for tomorrow, 2026-10-23. Visit ID: 33.
+> The x-ray for Perla, owned by Pablo Morales, has been booked with Helen Leary for tomorrow, 2026-10-27. Visit ID: 33.
 
 | Part | What it does |
 |---|---|
@@ -219,14 +218,12 @@ Signed in as staff, ask:
 Book a check-up for Perla, the pet of Pablo Morales, with Helen Leary next Wednesday.
 ```
 
-Then open the **Visits** page and look for the date. These are mistakes `granite4.1:8b` made in our test runs on Thursday 2026-10-22:
+Then open Pablo Morales on the **Find owners** page and look for the date under Perla's visits. These are mistakes `granite4.1:8b` made in our test runs on Monday 2026-10-26:
 
 | Asked | What it did |
 |---|---|
-| "next Wednesday" | Booked Sunday 2026-10-25, and answered "next Wednesday, 2026-10-25" |
-| "next Monday" | Booked a wrong date in all five runs, from 2026-10-23 to 2026-10-30, where Monday is 2026-10-26 |
-| "next week" | Answered that next week runs from October 25 to November 1 |
-| "with Helen Leary" | Left the vet out of 2 bookings in 6, and answered "with Helen Leary" each time |
+| "next Wednesday" | Booked Friday 2026-10-30 in all five runs, and called that day Wednesday |
+| "next Monday" | Booked a wrong date in all five runs, 2026-10-29 or 2026-10-30, where next Monday is 2026-11-02 |
 | "tomorrow" | Booked the right day every time |
 
 The system prompt gives the model today's date, and turning a weekday into a date is arithmetic, which a model of this size gets wrong more often than right. "Tomorrow" works because `addVisit`'s description says *Leave the date out to book the visit for tomorrow*, and the model follows it. Every booking shows a notification as it happens, so an assistant's changes are there to check, whichever model makes them. The hosted models of step 9 are larger: try the same questions there.

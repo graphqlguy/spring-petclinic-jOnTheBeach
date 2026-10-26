@@ -12,13 +12,13 @@ By the end of this chapter, you will:
 - Read a partial response: data and errors in one answer
 - Check arguments with validation directives in the schema
 
-## 1. Where errors come from
+## 1. Errors a client can act on
 
 Every error in a GraphQL response sits in the `errors` array, and its `extensions.classification` says where it came from:
 
 | Classification | Comes from | We have seen it |
 |---|---|---|
-| `ValidationError` | The engine, before any of our code runs: a wrong type, a missing required field, an unknown field | `owners(page: null)` in chapter 1, `"21/10/2026"` in chapter 3 |
+| `ValidationError` | The engine, before any of our code runs: a wrong type, a missing required field, an unknown field | `owners(page: null)` in chapter 1, `"30/10/2026"` in chapter 3 |
 | `INTERNAL_ERROR` | An exception from our code that reached the engine untranslated | `vet(id: 99)`, an invalid telephone |
 | `NOT_FOUND`, `BAD_REQUEST` | Our code, through an exception handler | This chapter |
 | `UNAUTHORIZED`, `FORBIDDEN` | Spring Security | Chapter 5 |
@@ -35,11 +35,7 @@ mutation {
 }
 ```
 
-The answer is `INTERNAL_ERROR for 6140054b-...`, and the log has the reason: `Unresolved InvalidInputException`, with `lastName: must not be blank, telephone: Telephone must be a 10-digit number`. The service found both problems and named both fields, and all the client gets is an id.
-
-## 2. Turn exceptions into errors
-
-The starting point's services throw two exceptions of their own:
+The answer is `INTERNAL_ERROR for 6140054b-...`, and the log has the reason: `Unresolved InvalidInputException`, with `lastName: must not be blank, telephone: Telephone must be a 10-digit number`. The service found both problems and named both fields, and all the client gets is an id. The starting point's services throw two exceptions of their own:
 
 | Exception | When | Holds |
 |---|---|---|
@@ -120,9 +116,9 @@ Restart and run the same mutation:
 }
 ```
 
-The frontend's forms read `extensions.field`. Open **Add owner**, leave the last name blank and type a short telephone: each message appears under its field. Then run `vet(id: 99)` from chapter 1 again: it is now a `NOT_FOUND` with the message `Vet with id 99 does not exist`.
+The frontend's forms read `extensions.field`. Open **Add owner**, leave the last name blank and type a short telephone: each message appears under its field.
 
-## 3. Partial responses
+### Data and errors together
 
 Each field of a query succeeds or fails on its own. Ask for an owner that exists and a vet that does not, in one request:
 
@@ -150,9 +146,9 @@ query {
 }
 ```
 
-The client keeps what worked, and the error's `path` says which part failed. How far a failure spreads depends on nullability: `vet` may be `null`, so the failure stops there. In chapter 2, a `null` in the non-null `visits` list emptied the whole `vet`.
+`vet(id: 99)` from chapter 1 is now a `NOT_FOUND`, with a message the client can show, and the owner still arrives. The client keeps what worked, and the error's `path` says which part failed. How far a failure spreads depends on nullability: `vet` may be `null`, so the failure stops there. In chapter 2, a `null` in the non-null `visits` list emptied the whole `vet`.
 
-## 4. Check arguments in the schema
+## 2. Check arguments in the schema
 
 `owners` accepts any page size. Try `owners(size: 1000000)`: it returns every owner in one page, which is exactly what we deprecated `ownersAll` for. A negative page is worse, `owners(page: -1)` ends as an `INTERNAL_ERROR`.
 
@@ -253,42 +249,6 @@ Introspection, which GraphiQL uses, lists the directives a schema declares and l
 Bean Validation can check the same limits with `@Min` and `@Max` on the controller's parameters, and the directive puts them into the contract that clients read. The entities keep their Bean Validation, because the Petclinic web pages and `OwnerService` rely on it.
 
 Three layers now check what a client sends: the schema's types, which the engine enforces; the directives on arguments, which the library checks before the resolver runs; and the rules in the services, which our handlers report. Chapter 9 adds one more limit, on the shape of the query itself.
-
-## Exercise: a range that ends before it starts
-
-`visits(from: "2026-10-31", to: "2026-10-21")` returns an empty list today, which looks like an empty calendar. Make it a `BAD_REQUEST` on the `to` field instead, with a message that says what is wrong. Throw an `InvalidInputException` from `VisitGraphQLController`: the handler from step 2 does the rest.
-
-<details>
-<summary>Show solution</summary>
-
-`src/main/java/org/springframework/samples/petclinic/owner/visit/VisitGraphQLController.java`
-
-```java
-import org.springframework.samples.petclinic.system.InvalidInputException;
-
-@QueryMapping
-List<Visit> visits(@Argument LocalDate from, @Argument LocalDate to) {
-	if (to.isBefore(from)) {
-		throw new InvalidInputException("to", "The end date " + to + " comes before the start date " + from);
-	}
-	return visitService.findVisits(from, to);
-}
-```
-
-```json
-{
-  "errors": [
-    {
-      "message": "The end date 2026-10-21 comes before the start date 2026-10-31",
-      "path": ["visits"],
-      "extensions": { "field": "to", "classification": "BAD_REQUEST" }
-    }
-  ],
-  "data": null
-}
-```
-
-</details>
 
 ## Recap
 

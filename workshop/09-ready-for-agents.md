@@ -73,17 +73,6 @@ type Query {
     "One vet with their visits. An id that no vet has returns a NOT_FOUND error. vets and search give the ids of vets."
     vet(id: ID!): Vet
 
-    """
-    The visits from one date to another, both included, in date order, past and booked.
-    Use it for questions such as which visits are booked for next week.
-    """
-    visits(
-        "The first day, written as 2026-10-21"
-        from: Date!
-        "The last day, on or after from"
-        to: Date!
-    ): [Visit!]!
-
     "The kinds of pet the clinic treats, sorted by name. addPet and updatePet take their ids as typeId."
     petTypes: [PetType!]!
 
@@ -98,7 +87,7 @@ type Query {
 }
 ```
 
-An argument's description goes right before the argument, which is why `owners` and `visits` now list one argument per line.
+An argument's description goes right before the argument, which is why `owners` now lists one argument per line.
 
 ## 3. Describe the mutations
 
@@ -287,7 +276,7 @@ An agent fills in input types as well. Describe the fields of `AddVisitInput` an
 
 ```graphql
 input AddVisitInput {
-    "The pet to see. owner, search and visits give the ids of pets."
+    "The pet to see. owner and search give the ids of pets."
     petId: ID!
     "The vet who sees the pet, from vets. Leave it out to book the visit without a vet."
     vetId: ID

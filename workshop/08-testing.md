@@ -332,7 +332,7 @@ void hidesTheTelephoneFromAnonymousCallers() {
 }
 ```
 
-With both, `./mvnw test` runs 115 tests.
+With both, `./mvnw test` runs 114 tests.
 
 </details>
 
