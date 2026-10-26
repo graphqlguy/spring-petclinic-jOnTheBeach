@@ -192,7 +192,7 @@ The log shows which tools the model called, and they vary from run to run: one o
 
 > I need you to sign in so that I can book the x-ray for Perla with Helen Leary for tomorrow.
 
-Sign in as `staff` / `staff`, open the **Live** page, and ask again. The visit appears on the Live page, and the assistant answers:
+Sign in as `staff` / `staff` and ask again. A notification for the visit appears at the top right, and the assistant answers:
 
 > The x-ray for Perla, owned by Pablo Morales, has been booked with Helen Leary for tomorrow, 2026-10-23. Visit ID: 33.
 
@@ -229,7 +229,7 @@ Then open the **Visits** page and look for the date. These are mistakes `granite
 | "with Helen Leary" | Left the vet out of 2 bookings in 6, and answered "with Helen Leary" each time |
 | "tomorrow" | Booked the right day every time |
 
-The system prompt gives the model today's date, and turning a weekday into a date is arithmetic, which a model of this size gets wrong more often than right. "Tomorrow" works because `addVisit`'s description says *Leave the date out to book the visit for tomorrow*, and the model follows it. Every booking shows on the Live page as it happens, so an assistant's changes are there to check, whichever model makes them. The hosted models of step 9 are larger: try the same questions there.
+The system prompt gives the model today's date, and turning a weekday into a date is arithmetic, which a model of this size gets wrong more often than right. "Tomorrow" works because `addVisit`'s description says *Leave the date out to book the visit for tomorrow*, and the model follows it. Every booking shows a notification as it happens, so an assistant's changes are there to check, whichever model makes them. The hosted models of step 9 are larger: try the same questions there.
 
 ## 8. Errors the model can act on
 
@@ -480,7 +480,7 @@ Restart and ask the two questions again:
 
 > An x-ray visit has been scheduled for Perla (Pablo Morales's cat) with Helen Leary for tomorrow, 2026-10-23. The visit ID is 33.
 
-The memory lives in the backend, one conversation for each session, and a restart empties it. In one of our four runs, the model booked another owner's cat, so check the Live page here too.
+The memory lives in the backend, one conversation for each session, and a restart empties it. In one of our four runs, the model booked another owner's cat, so check the notification here too.
 
 </details>
 

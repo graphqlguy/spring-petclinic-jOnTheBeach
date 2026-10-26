@@ -1,7 +1,6 @@
 import { Link, Route, Routes } from 'react-router-dom'
 import Layout from './components/Layout'
 import HomePage from './pages/HomePage'
-import LivePage from './pages/LivePage'
 import LoginPage from './pages/LoginPage'
 import OwnerDetailPage from './pages/OwnerDetailPage'
 import OwnerFormPage from './pages/OwnerFormPage'
@@ -40,7 +39,6 @@ export default function App() {
         <Route path="/vets/:vetId" element={<VetDetailPage />} />
         <Route path="/visits" element={<VisitsPage />} />
         <Route path="/search" element={<SearchPage />} />
-        <Route path="/live" element={<LivePage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="*" element={<NotFound />} />
       </Route>

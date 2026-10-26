@@ -97,7 +97,28 @@ GraphQL endpoint WebSocket /graphql
 
 ## 4. Watch the bookings arrive
 
-Refresh the frontend: a **Live** link appears. Open it in one tab, and in a second tab sign in as `staff` and book a visit. The booking appears on the **Live** page the moment you save it. The frontend subscribes with the operation in `src/main/resources/operations-ui/visitBooked.graphql`, over the WebSocket.
+Refresh the frontend. From now on, every page shows a notification for each visit as it is booked, for ten seconds. To see one, open your browser's developer tools on the **Console** tab, so that the page stays in view. A GraphQL request is an HTTP `POST` with the operation in a JSON body, so the console can send one too. Paste this: it signs in as `staff`, as in chapter 5, and books a visit for Simba, Lucía Navarro's cat, with the token:
+
+```js
+fetch('/graphql', {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify({ query: 'mutation { login(username: "staff", password: "staff") }' }),
+})
+  .then((response) => response.json())
+  .then(({ data }) => fetch('/graphql', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${data.login}` },
+    body: JSON.stringify({ query: 'mutation { addVisit(input: { petId: 16, date: "2026-11-06", description: "flea treatment" }) { id } }' }),
+  }))
+  .then((response) => response.json())
+  .then(console.log)
+```
+
+A notification for the visit appears at the top right as soon as the mutation returns. The frontend subscribes with the operation in `src/main/resources/operations-ui/visitBooked.graphql`, over the WebSocket.
+
+> [!NOTE]
+> The first time you paste into the console, Chrome asks you to type `allow pasting`. You can also run the two mutations in GraphiQL, with the token in the **Headers** tab as in chapter 5.
 
 Spring for GraphQL also serves subscriptions over Server-Sent Events: one HTTP response that stays open and carries one event after another. On macOS, Linux or Git Bash, listen with `curl`:
 
@@ -107,7 +128,7 @@ curl -N http://localhost:8080/graphql \
   -d '{"query":"subscription { visitBooked { date description pet { name } } }"}'
 ```
 
-Book a visit, and the event arrives:
+Paste the snippet into the console again, and the event arrives:
 
 ```text
 event:next
@@ -121,7 +142,7 @@ A visit booked through the Petclinic web pages at port 8080 does not appear. Tho
 
 ## Exercise: one vet's bookings
 
-A vet wants only their own bookings. Give `visitBooked` an optional `vetId` argument, and filter the stream: with a `vetId`, a subscriber receives only the visits with that vet. Test it with `curl`, subscribing to `visitBooked(vetId: 3)`, and book one visit with Linda Douglas (vet 3) and one with another vet.
+A vet wants only their own bookings. Give `visitBooked` an optional `vetId` argument, and filter the stream: with a `vetId`, a subscriber receives only the visits with that vet. Test it with `curl`, subscribing to `visitBooked(vetId: 3)`, and book two visits with the snippet: add `vetId: 3` (Linda Douglas) to its `addVisit` input for one, and `vetId: 2` for the other.
 
 <details>
 <summary>Show solution</summary>

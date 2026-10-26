@@ -3,7 +3,7 @@ import pets from '../assets/pets.png'
 import { useGraphQL } from '../context/GraphQLContext'
 import { FEATURES } from '../features'
 
-const PATHS = { owners: '/owners', vets: '/vets', agenda: '/visits', login: '/login', live: '/live' }
+const PATHS = { owners: '/owners', vets: '/vets', agenda: '/visits', login: '/login' }
 
 function BackendStatus({ status }) {
   if (status === 'loading') {

@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { NavLink, Outlet, useNavigate } from 'react-router-dom'
 import { useAuth } from '../context/AuthContext'
 import { useGraphQL } from '../context/GraphQLContext'
+import BookingNotifications from './BookingNotifications'
 import ChatPanel from './ChatPanel'
 
 function NavItem({ to, children }) {
@@ -54,7 +55,6 @@ export default function Layout() {
           {available('findOwners') && <NavItem to="/owners">Find owners</NavItem>}
           {available('listVets') && <NavItem to="/vets">Veterinarians</NavItem>}
           {available('findVisits') && <NavItem to="/visits">Visits</NavItem>}
-          {available('visitBooked') && <NavItem to="/live">Live</NavItem>}
           <div className="ml-auto flex items-center gap-3">
             {available('search') && <SearchBox />}
             {user ? (
@@ -73,6 +73,7 @@ export default function Layout() {
       <footer className="bg-spring-brown py-4 text-center">
         <img src="/spring-logo.svg" alt="Spring" className="mx-auto h-6 opacity-70" />
       </footer>
+      <BookingNotifications />
       <ChatPanel />
     </div>
   )

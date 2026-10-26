@@ -262,7 +262,7 @@ Copy the token. Stop the Inspector with `Ctrl+C`, and start it again with the to
 npx -y @modelcontextprotocol/inspector@2.9.0 --web --transport http --server-url http://localhost:8080/mcp --header "Authorization: Bearer <paste the token here>"
 ```
 
-Open the frontend's **Live** page from chapter 7 in another tab. In the Inspector, connect and run `addVisit` with the same arguments:
+Open the frontend in another tab: since chapter 7, it shows a notification for each booking. In the Inspector, connect and run `addVisit` with the same arguments:
 
 ```json
 {
@@ -278,7 +278,7 @@ Open the frontend's **Live** page from chapter 7 in another tab. In the Inspecto
 }
 ```
 
-The date is tomorrow's, because the input left it out. The visit also appears on the Live page: the tool ran the same `addVisit` mutation, and `VisitService` announced the booking as it does for the frontend. Chapter 13 replaces the pasted token with a sign-in that the MCP client does by itself.
+The date is tomorrow's, because the input left it out. Switch to the frontend's tab, and a notification shows the visit: the tool ran the same `addVisit` mutation, and `VisitService` announced the booking as it does for the frontend. Chapter 13 replaces the pasted token with a sign-in that the MCP client does by itself.
 
 > [!TIP]
 > Any AI assistant that speaks MCP over HTTP can use these tools. With Claude Code, for example, add the server with `claude mcp add --transport http petclinic http://localhost:8080/mcp`.

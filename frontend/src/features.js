@@ -35,7 +35,7 @@ export const FEATURES = [
   { key: 'agenda', title: 'Visits agenda', chapter: 3, operations: ['findVisits'], needs: 'the visits query and the Date scalar' },
   { key: 'login', title: 'Sign in', chapter: 5, operations: ['login'], needs: 'the login mutation' },
   { key: 'search', title: 'Search', chapter: 6, operations: ['search'], needs: 'the search query and its union' },
-  { key: 'live', title: 'Live bookings', chapter: 7, operations: ['visitBooked'], needs: 'the visitBooked subscription' },
+  { key: 'notifications', title: 'Booking notifications', chapter: 7, operations: ['visitBooked'], needs: 'the visitBooked subscription' },
 ]
 
 export const feature = (key) => FEATURES.find((f) => f.key === key)
