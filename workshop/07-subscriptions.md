@@ -42,9 +42,9 @@ Add the third root type, next to `Mutation`:
 `src/main/resources/graphql/schema.graphqls`
 
 ```graphql
-"Events a client can listen to, over a WebSocket or Server-Sent Events"
+"Events a client can listen to, over a WebSocket or Server-Sent Events."
 type Subscription {
-    "Each visit as it is booked"
+    "Each visit, as soon as it is booked."
     visitBooked: Visit!
 }
 ```

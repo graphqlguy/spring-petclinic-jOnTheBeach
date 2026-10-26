@@ -47,14 +47,14 @@ This is schema-first development: we describe the API in the GraphQL Schema Defi
 ```graphql
 # The entry point of our API. This line is a comment:
 # comments start with # and are only for people reading this file.
-"The queries a client can send"
+"The queries a client can send."
 type Query {
-    "All owners, from all pages, without filters"
+    "Every owner of the clinic, in one list, without filters."
     ownersAll: [Owner!]!
 }
 
 """
-An owner of one or more pets, and a client of the clinic.
+A client of the clinic, who owns one or more pets.
 Triple quotes allow a description over several lines.
 """
 # We extend the Owner type as the workshop goes on
@@ -64,7 +64,7 @@ type Owner {
     lastName: String!
     address: String!
     city: String!
-    "Ten digits, such as 9521234567"
+    "The owner's telephone number as ten digits, for example 9521234567."
     telephone: String!
 }
 ```
@@ -280,9 +280,9 @@ enum SortOrder {
 }
 
 input OwnerFilter {
-    "Owners whose last name starts with this text, in upper or lower case"
+    "Keeps the owners whose last name starts with this text. It matches in upper or lower case."
     lastName: String
-    "Owners who live in this city, in upper or lower case"
+    "Keeps the owners who live in this city. It matches in upper or lower case."
     city: String
 }
 
@@ -385,7 +385,7 @@ type Query {
     vets: [Vet!]!
 }
 
-"A veterinarian of the clinic"
+"A veterinarian who works at the clinic."
 type Vet {
     id: ID!
     firstName: String!
@@ -393,7 +393,7 @@ type Vet {
     specialties: [Specialty!]!
 }
 
-"A field a vet specializes in, such as surgery"
+"An area of veterinary medicine that a vet specializes in, such as surgery."
 type Specialty {
     id: ID!
     name: String!

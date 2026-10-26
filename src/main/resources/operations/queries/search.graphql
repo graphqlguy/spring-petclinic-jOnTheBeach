@@ -1,5 +1,5 @@
 # Searches owners, vets and pets by part of a name, in upper or lower case, and returns every match.
-# Each result is an Owner, a Vet or a Pet, as __typename says. getOwnerDetails and getVetDetails take the id of an owner or a vet.
+# Each result is an Owner, a Vet or a Pet, as the __typename field says. The getOwnerDetails and getVetDetails tools take the id of an owner or a vet.
 query Search($text: String!) {
   search(text: $text) {
     __typename

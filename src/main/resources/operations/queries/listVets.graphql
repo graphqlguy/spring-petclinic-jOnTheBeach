@@ -1,5 +1,5 @@
 # Lists every vet of the clinic with their specialties, such as surgery or dentistry.
-# getVetDetails gives the visits of one vet, and addVisit takes the id of a vet as vetId.
+# The getVetDetails tool gives the visits of one vet, and the addVisit tool takes the id of a vet as vetId.
 query ListVets {
   vets {
     id

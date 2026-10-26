@@ -20,11 +20,11 @@ Declare the query and a union of the three types it can return:
 ```graphql
 type Query {
     # ...existing queries...
-    "Owners, vets and pets whose name contains the text, in upper or lower case"
+    "Owners, vets and pets whose name contains the text, in upper or lower case."
     search(text: String!): [SearchResult!]!
 }
 
-"Something a search can find"
+"An owner, a vet or a pet that a search found."
 union SearchResult = Owner | Pet | Vet
 ```
 
@@ -136,7 +136,7 @@ Owners and vets both have a first and a last name; in Java, both extend Petclini
 `src/main/resources/graphql/schema.graphqls`
 
 ```graphql
-"A person the clinic knows: an owner or a vet"
+"A person the clinic knows: an owner or a vet."
 interface Person {
     id: ID!
     firstName: String!
@@ -195,7 +195,7 @@ Add a `people(name: String!)` query that returns owners and vets whose name cont
 ```graphql
 type Query {
     # ...existing queries...
-    "Owners and vets whose first or last name contains the text, in upper or lower case"
+    "Owners and vets whose first or last name contains the text, in upper or lower case."
     people(name: String!): [Person!]!
 }
 ```

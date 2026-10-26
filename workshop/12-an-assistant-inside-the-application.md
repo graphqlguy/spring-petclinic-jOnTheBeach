@@ -151,18 +151,18 @@ Restart. After the MCP tools, GATool lists the in-process tools:
 
 ```text
 GATool serves 11 in-process tools:
-  addOwner from file:.../target/classes/operations/mutations/addOwner.graphql (about 152 tokens)
-  addPet from file:.../target/classes/operations/mutations/addPet.graphql (about 231 tokens)
-  addVisit from file:.../target/classes/operations/mutations/addVisit.graphql (about 277 tokens)
-  updateOwner from file:.../target/classes/operations/mutations/updateOwner.graphql (about 160 tokens)
-  updatePet from file:.../target/classes/operations/mutations/updatePet.graphql (about 168 tokens)
-  findOwners from file:.../target/classes/operations/queries/findOwners.graphql (about 310 tokens)
-  getOwnerDetails from file:.../target/classes/operations/queries/getOwnerDetails.graphql (about 103 tokens)
-  getVetDetails from file:.../target/classes/operations/queries/getVetDetails.graphql (about 100 tokens)
-  listPetTypes from file:.../target/classes/operations/queries/listPetTypes.graphql (about 65 tokens)
-  listVets from file:.../target/classes/operations/queries/listVets.graphql (about 78 tokens)
-  search from file:.../target/classes/operations/queries/search.graphql (about 106 tokens)
-  about 1750 tokens in all, which every agent that lists these tools reads before it calls one
+  addOwner from file:.../target/classes/operations/mutations/addOwner.graphql (about 164 tokens)
+  addPet from file:.../target/classes/operations/mutations/addPet.graphql (about 260 tokens)
+  addVisit from file:.../target/classes/operations/mutations/addVisit.graphql (about 305 tokens)
+  updateOwner from file:.../target/classes/operations/mutations/updateOwner.graphql (about 163 tokens)
+  updatePet from file:.../target/classes/operations/mutations/updatePet.graphql (about 173 tokens)
+  findOwners from file:.../target/classes/operations/queries/findOwners.graphql (about 323 tokens)
+  getOwnerDetails from file:.../target/classes/operations/queries/getOwnerDetails.graphql (about 105 tokens)
+  getVetDetails from file:.../target/classes/operations/queries/getVetDetails.graphql (about 105 tokens)
+  listPetTypes from file:.../target/classes/operations/queries/listPetTypes.graphql (about 67 tokens)
+  listVets from file:.../target/classes/operations/queries/listVets.graphql (about 82 tokens)
+  search from file:.../target/classes/operations/queries/search.graphql (about 111 tokens)
+  about 1858 tokens in all, which every agent that lists these tools reads before it calls one
 ```
 
 Refresh the frontend. The home page lists *Chapter 12 Clinic assistant*, and every page has an **Ask the assistant** button at the bottom right. Open it and ask:
@@ -187,13 +187,13 @@ Without signing in, ask:
 Book an x-ray for Perla, the pet of Pablo Morales, with Helen Leary tomorrow.
 ```
 
-The log shows which tools the model called, and they vary from run to run: one of our runs called `findOwners`, `getOwnerDetails`, `listVets` and `addVisit`. Four of our 5 runs ended with `addVisit`, which answered `Unauthorized`. In all 5, the assistant asks you to sign in:
+The log shows which tools the model called, and they vary from run to run: one of our runs called `findOwners`, `search`, `listVets` and `addVisit`. All 5 of our runs ended with `addVisit`, which answered `Unauthorized`, and the assistant asks you to sign in:
 
 > I need you to sign in so that I can book the x-ray for Perla with Helen Leary for tomorrow.
 
 Sign in as `staff` / `staff` and ask again. A notification for the visit appears at the top right, and the assistant answers:
 
-> The x-ray for Perla, owned by Pablo Morales, has been booked with Helen Leary for tomorrow, 2026-10-27. Visit ID: 33.
+> The x-ray for Perla, owned by Pablo Morales, has been booked with Helen Leary for tomorrow, 2026-10-27.
 
 | Part | What it does |
 |---|---|
@@ -223,7 +223,7 @@ Then open Pablo Morales on the **Find owners** page and look for the date under 
 | Asked | What it did |
 |---|---|
 | "next Wednesday" | Booked Friday 2026-10-30 in all five runs, and called that day Wednesday |
-| "next Monday" | Booked a wrong date in all five runs, 2026-10-29 or 2026-10-30, where next Monday is 2026-11-02 |
+| "next Monday" | Booked a wrong date in all five runs, from 2026-10-28 to 2026-10-30, where next Monday is 2026-11-02 |
 | "tomorrow" | Booked the right day every time |
 
 The system prompt gives the model today's date, and turning a weekday into a date is arithmetic, which a model of this size gets wrong more often than right. "Tomorrow" works because `addVisit`'s description says *Leave the date out to book the visit for tomorrow*, and the model follows it. Every booking shows a notification as it happens, so an assistant's changes are there to check, whichever model makes them. The hosted models of step 9 are larger: try the same questions there.

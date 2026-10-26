@@ -1,7 +1,7 @@
 # Finds owners by the start of their last name, by their city, or both, and returns one page of them with their id and address.
 # The last name and the city match in upper or lower case, and leaving both out lists every owner.
 # Pages count from 0. To answer a question about all owners, read every page.
-# getOwnerDetails gives the telephone, the pets and the visits of one owner.
+# The getOwnerDetails tool gives the telephone, the pets and the visits of one owner.
 query FindOwners($lastName: String, $city: String, $page: Int = 0, $size: Int = 10, $sortBy: OwnerSortField = LAST_NAME, $order: SortOrder = ASC) {
   owners(filter: {lastName: $lastName, city: $city}, page: $page, size: $size, sort: {field: $sortBy, order: $order}) {
     totalElements

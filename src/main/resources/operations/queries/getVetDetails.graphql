@@ -1,5 +1,5 @@
 # Returns one vet with their specialties and every visit they have seen or will see, newest first, with the pet and its owner.
-# listVets or search gives the id of a vet. An unknown id returns an error.
+# The listVets and search tools give the id of a vet. An unknown id returns a NOT_FOUND error.
 query GetVetDetails($id: ID!) {
   vet(id: $id) {
     id

@@ -1,4 +1,4 @@
-# Lists the kinds of pet the clinic treats, such as cat or dog, with the id that addPet and updatePet take as typeId.
+# Lists the kinds of pet the clinic treats, such as cat or dog, with the id that the addPet and updatePet tools take as typeId.
 query ListPetTypes {
   petTypes {
     id

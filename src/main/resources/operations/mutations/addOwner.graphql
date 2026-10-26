@@ -1,6 +1,6 @@
 # Registers a new owner and returns their id.
-# The telephone is ten digits, such as 9521234567. Every call registers one more owner,
-# so after a call that failed or timed out, look for the owner with findOwners before calling again.
+# The telephone is ten digits, for example 9521234567. Every call registers one more owner,
+# so after a call that failed or timed out, look for the owner with the findOwners tool before calling again.
 mutation AddOwner($firstName: String!, $lastName: String!, $address: String!, $city: String!, $telephone: String!) {
   addOwner(input: {firstName: $firstName, lastName: $lastName, address: $address, city: $city, telephone: $telephone}) {
     id

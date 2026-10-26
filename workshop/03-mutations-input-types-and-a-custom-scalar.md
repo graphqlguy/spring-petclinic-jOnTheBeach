@@ -91,16 +91,16 @@ Queries read, and **mutations** change data. A schema declares them in a second 
 `src/main/resources/graphql/schema.graphqls`
 
 ```graphql
-"Changes to the clinic's data"
+"Changes to the clinic's data."
 type Mutation {
     addVisit(input: AddVisitInput!): Visit!
 }
 
 input AddVisitInput {
     petId: ID!
-    "Leave it out to book the visit without a vet"
+    "Leave it out to book the visit without a vet."
     vetId: ID
-    "Leave it out to book the visit for tomorrow"
+    "Leave it out to book the visit for tomorrow."
     date: Date
     description: String!
 }
@@ -178,7 +178,7 @@ input AddOwnerInput {
     lastName: String!
     address: String!
     city: String!
-    "Ten digits, such as 9521234567"
+    "The owner's telephone number as ten digits, for example 9521234567."
     telephone: String!
 }
 ```
@@ -252,7 +252,7 @@ type Mutation {
     updateOwner(input: UpdateOwnerInput!): Owner!
 }
 
-"The fields to change. A field left out keeps its value."
+"The details to change for one owner. A field left out keeps its value."
 input UpdateOwnerInput {
     id: ID!
     firstName: String
@@ -374,7 +374,7 @@ type Mutation {
     updatePet(input: UpdatePetInput!): Pet!
 }
 
-"The fields to change. A field left out keeps its value."
+"The details to change for one pet. A field left out keeps its value."
 input UpdatePetInput {
     id: ID!
     name: String

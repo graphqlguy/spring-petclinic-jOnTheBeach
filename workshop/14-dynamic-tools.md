@@ -41,9 +41,9 @@ The vector holds 1,024 numbers. Two vectors are compared by the angle between th
 
 | Text | Describes | Similarity to `doctors` |
 |---|---|---|
-| Every vet of the clinic, with their specialties | `Query.vets` | 0.57 |
-| The kinds of pet the clinic treats, sorted by name | `Query.petTypes` | 0.31 |
-| Owners, one page at a time, sorted by last name unless sort says otherwise | `Query.owners` | 0.09 |
+| Every vet of the clinic, with their specialties. | `Query.vets` | 0.58 |
+| The kinds of pet the clinic treats, sorted by name. | `Query.petTypes` | 0.31 |
+| Owners, one page at a time, sorted by last name unless the sort argument says otherwise. | `Query.owners` | 0.09 |
 
 `searchSchema` works the same way. At startup, GATool asks the embedding model for the vector of every query field, written as a declaration with its description, and caches the vectors on disk. For each question, it ranks the fields by their similarity to the question's vector and returns the best ones within 2000 tokens.
 
@@ -109,12 +109,12 @@ Run `searchSchema` with:
 
 ```text
 Query.vets:
-"""Every vet of the clinic, with their specialties"""
+"""Every vet of the clinic, with their specialties."""
 vets: [Vet!]!  # on type Query
 
 Visit.vet:
 reach it from Query.vets -> Vet.visits
-"""The vet who sees the pet. The Petclinic web pages book visits without a vet."""
+"""The vet who sees the pet, or null when the visit was booked without one, as the Petclinic web pages do."""
 vet: Vet  # on type Visit
 ...
 ```
@@ -126,7 +126,7 @@ The answer lists all 46 coordinates, best first, because the whole schema fits i
 ```
 
 ```graphql
-"""A field a vet specializes in, such as surgery"""
+"""An area of veterinary medicine that a vet specializes in, such as surgery."""
 type Specialty {
   id: ID!
   name: String!
@@ -148,7 +148,7 @@ These are the calls a model makes, and it needs `introspectType` only when the s
 | Question | By meaning | By words (BM25) |
 |---|---|---|
 | `doctors` | `Query.vets`, then `Vet.specialties` | *Nothing in this schema matched "doctors".* |
-| `phone number` | `Owner.telephone` | *Nothing in this schema matched "phone number".* |
+| `contact details` | `Owner.telephone`, then `Owner.address` | *Nothing in this schema matched "contact details".* |
 | `¿Cuántas visitas ha tenido cada veterinario?` | `Vet.visits`, then `Visit.vet` | `OwnerPage.hasNext`, then `OwnerPage.hasPrevious`, then `Vet.visits` |
 
 ## 5. Ask the assistant
@@ -182,7 +182,7 @@ DEBUG ... o.s.a.m.tool.DefaultToolCallingManager   : Executing tool call: intros
 DEBUG ... o.s.a.m.tool.DefaultToolCallingManager   : Executing tool call: executeGraphql
 ```
 
-In our 5 runs with `granite4.1:8b`, every answer said yes and named Linda Douglas and Rafael Ortega, within 4 seconds. Four of the five answers also added a surgeon the data does not hold, such as "others" or "another vet". Asked for Lucía Navarro's telephone as a guest, the model asked us to sign in in all 3 of our runs.
+In our 5 runs with `granite4.1:8b`, every answer said yes and named Linda Douglas and Rafael Ortega, within 6 seconds. Four of the five answers also added a surgeon the data does not hold, such as "others" or "another vet". Asked for Lucía Navarro's telephone as a guest, the model asked us to sign in in all 3 of our runs.
 
 Now ask:
 
@@ -190,7 +190,7 @@ Now ask:
 What kinds of pets does the clinic treat?
 ```
 
-In all 5 of our runs, the model called `searchSchema` and `introspectType`, and answered with cats and dogs, guessed from the type `PetType`, before it ran a query. The clinic treats birds, cats, dogs, hamsters, lizards and snakes. Two stronger system prompts kept the same two calls in 10 more runs. The operation file `listPetTypes` answers this question in one call.
+In all 5 of our runs, the model answered with cats and dogs, guessed from the type `PetType`, before it ran a query. Four of the runs called `searchSchema` and `introspectType` first, and one called `searchSchema` alone. The clinic treats birds, cats, dogs, hamsters, lizards and snakes. Two stronger system prompts kept the same two calls in 10 more runs. The operation file `listPetTypes` answers this question in one call.
 
 A real application can serve both kinds of tools: the operation files to every caller, and the three tools to signed-in staff. One property makes the three tools need the scope that chapter 13 gives staff:
 
@@ -223,7 +223,7 @@ Ask the assistant:
 How many visits has each vet had? Give their names.
 ```
 
-The schema holds each vet's visits as a list, so the model reads every visit and counts them. In our 5 runs, every answer had at least one count wrong. Linda Douglas has 7 visits, and four answers said 6. James Carter has 15, and three answers said 9, 12 or 14. A model reads text in tokens, and it miscounts the ids in a JSON answer, even in a list of 7. Make the counts right.
+The schema holds each vet's visits as a list, so the model reads every visit and counts them. In our 5 runs, every answer had at least one count wrong. Linda Douglas has 7 visits, and three answers said 6. James Carter has 15, and three answers said 13. A model reads text in tokens, and it miscounts the ids in a JSON answer, even in a list of 7. Make the counts right.
 
 <details>
 <summary>Show solution</summary>
@@ -233,15 +233,15 @@ A field that counts the visits of a vet moves the arithmetic into the API. Repla
 `src/main/resources/graphql/schema.graphqls`
 
 ```graphql
-"A veterinarian of the clinic"
+"A veterinarian who works at the clinic."
 type Vet implements Person {
     id: ID!
     firstName: String!
     lastName: String!
     specialties: [Specialty!]!
-    "The visits this vet has seen or will see, newest first"
+    "The visits this vet has seen or will see, newest first."
     visits: [Visit!]!
-    "The number of visits this vet has seen or will see"
+    "The number of visits this vet has seen or will see."
     visitCount: Int!
 }
 ```

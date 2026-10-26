@@ -66,27 +66,27 @@ Restart. GATool says how it runs the tools, and lists them:
 ```text
 GATool runs each document inside this application.
 GATool serves 14 MCP tools:
-  ownersAll from generated:query/ownersAll (about 82 tokens)
-  owner from generated:query/owner (about 98 tokens)
-  owners from generated:query/owners (about 330 tokens)
+  ownersAll from generated:query/ownersAll (about 85 tokens)
+  owner from generated:query/owner (about 101 tokens)
+  owners from generated:query/owners (about 344 tokens)
   vets from generated:query/vets (about 70 tokens)
-  vet from generated:query/vet (about 101 tokens)
-  petTypes from generated:query/petTypes (about 84 tokens)
-  search from generated:query/search (about 101 tokens)
+  vet from generated:query/vet (about 104 tokens)
+  petTypes from generated:query/petTypes (about 87 tokens)
+  search from generated:query/search (about 103 tokens)
   people from generated:query/people (about 87 tokens)
-  addVisit from generated:mutation/addVisit (about 276 tokens)
-  addOwner from generated:mutation/addOwner (about 172 tokens)
-  updateOwner from generated:mutation/updateOwner (about 210 tokens)
-  addPet from generated:mutation/addPet (about 254 tokens)
-  updatePet from generated:mutation/updatePet (about 204 tokens)
+  addVisit from generated:mutation/addVisit (about 298 tokens)
+  addOwner from generated:mutation/addOwner (about 181 tokens)
+  updateOwner from generated:mutation/updateOwner (about 213 tokens)
+  addPet from generated:mutation/addPet (about 278 tokens)
+  updatePet from generated:mutation/updatePet (about 207 tokens)
   login from generated:mutation/login (about 114 tokens)
-  about 2183 tokens in all, which every agent that lists these tools reads before it calls one
+  about 2272 tokens in all, which every agent that lists these tools reads before it calls one
 ```
 
 | Line | Meaning |
 |---|---|
 | `runs each document inside this application` | A tool call goes straight to the GraphQL engine, in the same application, without an HTTP request to `/graphql`. |
-| `about 82 tokens` | The size of the tool's name, description and JSON Schema. An AI application sends every tool to its model with every question, so these tokens are paid on every request. |
+| `about 85 tokens` | The size of the tool's name, description and JSON Schema. An AI application sends every tool to its model with every question, so these tokens are paid on every request. |
 | `login` | Every root field became a tool, `login` too: a tool that takes a password and returns a token the agent cannot use, since a token travels in a header that the MCP client sets. Chapter 11 publishes only the operations we choose. |
 
 The log goes on to list the same tools as **in-process** tools, which chapter 12 gives to an assistant inside the application. It also warns that the MCP endpoint answers anyone who can reach your laptop. `/graphql` has been open the same way since chapter 1, and the mutations still need a staff token, as step 7 shows.
@@ -202,7 +202,7 @@ The JSON Schema of `addPet`'s `birthDate` holds only a description, so the model
 
 ```json
 "birthDate": {
-  "description": "Written as 2024-05-01, today or earlier An RFC-3339 compliant Full Date Scalar See https://tools.ietf.org/html/rfc3339 for the format of this value."
+  "description": "The day the pet was born, written as 2024-05-01, today or earlier. An RFC-3339 compliant Full Date Scalar See https://tools.ietf.org/html/rfc3339 for the format of this value."
 }
 ```
 
@@ -220,7 +220,7 @@ Restart, reload the Inspector and connect. The warning signs are gone, and so is
 "birthDate": {
   "type": "string",
   "format": "date",
-  "description": "Written as 2024-05-01, today or earlier An RFC-3339 compliant Full Date Scalar"
+  "description": "The day the pet was born, written as 2024-05-01, today or earlier. An RFC-3339 compliant Full Date Scalar"
 }
 ```
 

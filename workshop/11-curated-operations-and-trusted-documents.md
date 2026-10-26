@@ -36,7 +36,7 @@ Open one of them:
 # Finds owners by the start of their last name, by their city, or both, and returns one page of them with their id and address.
 # The last name and the city match in upper or lower case, and leaving both out lists every owner.
 # Pages count from 0. To answer a question about all owners, read every page.
-# getOwnerDetails gives the telephone, the pets and the visits of one owner.
+# The getOwnerDetails tool gives the telephone, the pets and the visits of one owner.
 query FindOwners($lastName: String, $city: String, $page: Int = 0, $size: Int = 10, $sortBy: OwnerSortField = LAST_NAME, $order: SortOrder = ASC) {
   owners(filter: {lastName: $lastName, city: $city}, page: $page, size: $size, sort: {field: $sortBy, order: $order}) {
     totalElements
@@ -75,18 +75,18 @@ Restart. GATool checks every file against the schema, then lists the tools:
 ```text
 GATool validates every operation file against the schema this application serves.
 GATool serves 11 MCP tools:
-  addOwner from file:.../target/classes/operations/mutations/addOwner.graphql (about 176 tokens)
-  addPet from file:.../target/classes/operations/mutations/addPet.graphql (about 255 tokens)
-  addVisit from file:.../target/classes/operations/mutations/addVisit.graphql (about 301 tokens)
-  updateOwner from file:.../target/classes/operations/mutations/updateOwner.graphql (about 185 tokens)
-  updatePet from file:.../target/classes/operations/mutations/updatePet.graphql (about 193 tokens)
-  findOwners from file:.../target/classes/operations/queries/findOwners.graphql (about 334 tokens)
-  getOwnerDetails from file:.../target/classes/operations/queries/getOwnerDetails.graphql (about 127 tokens)
-  getVetDetails from file:.../target/classes/operations/queries/getVetDetails.graphql (about 124 tokens)
-  listPetTypes from file:.../target/classes/operations/queries/listPetTypes.graphql (about 89 tokens)
-  listVets from file:.../target/classes/operations/queries/listVets.graphql (about 102 tokens)
-  search from file:.../target/classes/operations/queries/search.graphql (about 123 tokens)
-  about 2009 tokens in all, which every agent that lists these tools reads before it calls one
+  addOwner from file:.../target/classes/operations/mutations/addOwner.graphql (about 189 tokens)
+  addPet from file:.../target/classes/operations/mutations/addPet.graphql (about 284 tokens)
+  addVisit from file:.../target/classes/operations/mutations/addVisit.graphql (about 329 tokens)
+  updateOwner from file:.../target/classes/operations/mutations/updateOwner.graphql (about 187 tokens)
+  updatePet from file:.../target/classes/operations/mutations/updatePet.graphql (about 198 tokens)
+  findOwners from file:.../target/classes/operations/queries/findOwners.graphql (about 348 tokens)
+  getOwnerDetails from file:.../target/classes/operations/queries/getOwnerDetails.graphql (about 130 tokens)
+  getVetDetails from file:.../target/classes/operations/queries/getVetDetails.graphql (about 129 tokens)
+  listPetTypes from file:.../target/classes/operations/queries/listPetTypes.graphql (about 92 tokens)
+  listVets from file:.../target/classes/operations/queries/listVets.graphql (about 107 tokens)
+  search from file:.../target/classes/operations/queries/search.graphql (about 128 tokens)
+  about 2121 tokens in all, which every agent that lists these tools reads before it calls one
 ```
 
 A file that asks for a field the schema lacks stops the application at startup, and the message names the file and the line:
@@ -105,7 +105,7 @@ Reload the Inspector's page and flip the switch on the card. If you stopped the 
 
 - The description is the four `#` lines of the file.
 - The arguments are the variables, with their defaults. `sortBy` and `order` are lists to choose from, filled with the values of their enums.
-- `lastName` reads *Owners whose last name starts with this text*: the variable fills `OwnerFilter.lastName`, and GATool takes that field's description from the schema.
+- `lastName` reads *Keeps the owners whose last name starts with this text*: the variable fills `OwnerFilter.lastName`, and GATool takes that field's description from the schema.
 
 Type `Torremolinos` in **city** and click **Execute Tool**:
 
@@ -186,7 +186,7 @@ Every operation our clients send is now a file in one of the two folders. The fr
   "extensions": {
     "persistedQuery": {
       "version": 1,
-      "sha256Hash": "d98d297f92fb2f864b0466e9c73c46d26ca0642aa8853e591d513d4763c4e27b"
+      "sha256Hash": "54375c258ed65f2c5330d9657cfb1ca15a5c00879ddb0b409a0e3cd7f785ffce"
     }
   }
 }
@@ -341,14 +341,14 @@ shasum -a 256 src/main/resources/operations/queries/listVets.graphql
 ```
 
 ```text
-d98d297f92fb2f864b0466e9c73c46d26ca0642aa8853e591d513d4763c4e27b  src/main/resources/operations/queries/listVets.graphql
+54375c258ed65f2c5330d9657cfb1ca15a5c00879ddb0b409a0e3cd7f785ffce  src/main/resources/operations/queries/listVets.graphql
 ```
 
 The same bytes always give the same hash, so every copy of the project has this one until someone edits the file. Git on Windows converts line endings by default, which would change the bytes, so the project's `.gitattributes` gives the operation files the same line endings on every system. Ask for the vets with the hash alone:
 
 ```bash
 curl -s http://localhost:8080/graphql -H 'Content-Type: application/json' \
-  -d '{"extensions":{"persistedQuery":{"version":1,"sha256Hash":"d98d297f92fb2f864b0466e9c73c46d26ca0642aa8853e591d513d4763c4e27b"}}}'
+  -d '{"extensions":{"persistedQuery":{"version":1,"sha256Hash":"54375c258ed65f2c5330d9657cfb1ca15a5c00879ddb0b409a0e3cd7f785ffce"}}}'
 ```
 
 ```json
@@ -392,7 +392,7 @@ In chapter 10's exercise, Pablo Morales asked for an x-ray for his cat, with a v
 
 ```graphql
 # Searches owners, vets and pets by part of a name, in upper or lower case, and returns every match, each owner with their pets.
-# Each result is an Owner, a Vet or a Pet, as __typename says. getOwnerDetails and getVetDetails take the id of an owner or a vet.
+# Each result is an Owner, a Vet or a Pet, as the __typename field says. The getOwnerDetails and getVetDetails tools take the id of an owner or a vet.
 query Search($text: String!) {
   search(text: $text) {
     __typename

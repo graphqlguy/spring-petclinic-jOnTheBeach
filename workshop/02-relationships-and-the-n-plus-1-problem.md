@@ -24,7 +24,7 @@ type Owner {
     pets: [Pet!]!
 }
 
-"A pet of an owner, and a patient of the clinic"
+"An animal that an owner has registered with the clinic."
 type Pet {
     id: ID!
     name: String!
@@ -32,7 +32,7 @@ type Pet {
     type: PetType!
 }
 
-"A kind of pet, such as cat or dog"
+"A kind of pet the clinic treats, such as cat or dog."
 type PetType {
     id: ID!
     name: String!
@@ -93,11 +93,11 @@ A vet sees many visits. In Java, the relationship belongs to `Visit`, which has 
 ```graphql
 type Vet {
     # ...existing fields...
-    "The visits this vet has seen or will see, newest first"
+    "The visits this vet has seen or will see, newest first."
     visits: [Visit!]!
 }
 
-"A visit of a pet to the clinic, past or booked"
+"A pet's visit to the clinic, in the past or booked for later."
 type Visit {
     id: ID!
     date: String!
@@ -363,13 +363,13 @@ The owner page in the frontend shows each pet's visits, with the vet who saw it,
 ```graphql
 type Pet {
     # ...existing fields...
-    "The visits of this pet, oldest first"
+    "The pet's visits to the clinic, oldest first."
     visits: [Visit!]!
 }
 
 type Visit {
     # ...existing fields...
-    "The vet who sees the pet. The Petclinic web pages book visits without a vet."
+    "The vet who sees the pet, or null when the visit was booked without one, as the Petclinic web pages do."
     vet: Vet
 }
 ```

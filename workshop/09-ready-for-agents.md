@@ -17,7 +17,7 @@ Every description we wrote reaches the agent, the notes we wrote for ourselves i
 
 | Say | Example |
 |---|---|
-| Where an id comes from | "owners and search give the ids of owners" |
+| Where an id comes from | "The owners and search queries give the ids of owners" |
 | What `null` or an unknown id means | "or null when no owner has the id", "returns a NOT_FOUND error" |
 | What a repeated call does | "Every call books one more visit" |
 | How to write a value | "written as 2026-10-21", "ten digits" |
@@ -50,14 +50,14 @@ Reads the clinic's data. Anyone may read it, except an owner's telephone, which 
 An id identifies an object within its type, so an owner and a pet can have the same id.
 """
 type Query {
-    "All owners, from all pages, without filters"
+    "Every owner of the clinic, in one list, without filters."
     ownersAll: [Owner!]! @deprecated(reason: "Unbounded. Use 'owners' instead.")
 
-    "One owner with their pets, or null when no owner has the id. owners and search give the ids of owners."
+    "One owner with their pets, or null when no owner has the id. The owners and search queries give the ids of owners."
     owner(id: ID!): Owner
 
     """
-    Owners, one page at a time, sorted by last name unless sort says otherwise.
+    Owners, one page at a time, sorted by last name unless the sort argument says otherwise.
     A page past the last one holds an empty list.
     """
     owners(
@@ -65,64 +65,64 @@ type Query {
         filter: OwnerFilter
         "The page to return. Pages count from 0."
         page: Int! = 0 @PositiveOrZero
-        "The number of owners on a page, from 1 to 100"
+        "The number of owners on a page, from 1 to 100."
         size: Int! = 10 @Range(min: 1, max: 100)
         sort: OwnerSort
     ): OwnerPage!
 
-    "Every vet of the clinic, with their specialties"
+    "Every vet of the clinic, with their specialties."
     vets: [Vet!]!
 
-    "One vet with their visits. An id that no vet has returns a NOT_FOUND error. vets and search give the ids of vets."
+    "One vet with their visits. An id that no vet has returns a NOT_FOUND error. The vets and search queries give the ids of vets."
     vet(id: ID!): Vet
 
-    "The kinds of pet the clinic treats, sorted by name. addPet and updatePet take their ids as typeId."
+    "The kinds of pet the clinic treats, sorted by name. The addPet and updatePet mutations take their ids as typeId."
     petTypes: [PetType!]!
 
     """
     Owners, vets and pets whose name contains the text, in upper or lower case.
-    __typename says whether a result is an Owner, a Vet or a Pet.
+    The __typename field says whether a result is an Owner, a Vet or a Pet.
     """
     search(text: String!): [SearchResult!]!
 
-    "Owners and vets whose first or last name contains the text, in upper or lower case"
+    "Owners and vets whose first or last name contains the text, in upper or lower case."
     people(name: String!): [Person!]!
 }
 
-"Something a search can find"
+"An owner, a vet or a pet that a search found."
 union SearchResult = Owner | Pet | Vet
 
-"A person the clinic knows: an owner or a vet"
+"A person the clinic knows: an owner or a vet."
 interface Person {
     id: ID!
     firstName: String!
     lastName: String!
 }
 
-"An owner of one or more pets, and a client of the clinic"
+"A client of the clinic, who owns one or more pets."
 type Owner implements Person {
     id: ID!
     firstName: String!
     lastName: String!
     address: String!
     city: String!
-    "Ten digits, such as 9521234567. Only staff can read it."
+    "The owner's telephone number as ten digits, for example 9521234567. Only staff can read it."
     telephone: String
     pets: [Pet!]!
 }
 
-"A pet of an owner, and a patient of the clinic"
+"An animal that an owner has registered with the clinic."
 type Pet {
     id: ID!
     name: String!
     birthDate: Date
     type: PetType!
     owner: Owner!
-    "The visits of this pet, oldest first"
+    "The pet's visits to the clinic, oldest first."
     visits: [Visit!]!
 }
 
-"A kind of pet, such as cat or dog"
+"A kind of pet the clinic treats, such as cat or dog."
 type PetType {
     id: ID!
     name: String!
@@ -140,9 +140,9 @@ enum SortOrder {
 }
 
 input OwnerFilter {
-    "Owners whose last name starts with this text, in upper or lower case"
+    "Keeps the owners whose last name starts with this text. It matches in upper or lower case."
     lastName: String
-    "Owners who live in this city, in upper or lower case"
+    "Keeps the owners who live in this city. It matches in upper or lower case."
     city: String
 }
 
@@ -164,35 +164,35 @@ type OwnerPage {
     hasPrevious: Boolean!
 }
 
-"A veterinarian of the clinic"
+"A veterinarian who works at the clinic."
 type Vet implements Person {
     id: ID!
     firstName: String!
     lastName: String!
     specialties: [Specialty!]!
-    "The visits this vet has seen or will see, newest first"
+    "The visits this vet has seen or will see, newest first."
     visits: [Visit!]!
 }
 
-"A visit of a pet to the clinic, past or booked"
+"A pet's visit to the clinic, in the past or booked for later."
 type Visit {
     id: ID!
     date: Date!
     description: String!
     pet: Pet!
-    "The vet who sees the pet. The Petclinic web pages book visits without a vet."
+    "The vet who sees the pet, or null when the visit was booked without one, as the Petclinic web pages do."
     vet: Vet
 }
 
-"A field a vet specializes in, such as surgery"
+"An area of veterinary medicine that a vet specializes in, such as surgery."
 type Specialty {
     id: ID!
     name: String!
 }
 
-"Events a client can listen to, over a WebSocket or Server-Sent Events"
+"Events a client can listen to, over a WebSocket or Server-Sent Events."
 type Subscription {
-    "Each visit as it is booked"
+    "Each visit, as soon as it is booked."
     visitBooked: Visit!
 }
 
@@ -234,13 +234,13 @@ type Mutation {
 }
 
 input AddVisitInput {
-    "The pet to see. owner and search give the ids of pets."
+    "The id of the pet the visit is for. The owner and search queries give the ids of pets."
     petId: ID!
-    "The vet who sees the pet, from vets. Leave it out to book the visit without a vet."
+    "The id of the vet who sees the pet, from the vets query. Leave it out to book the visit without a vet."
     vetId: ID
     "The day of the visit, written as 2026-10-21. Leave it out to book the visit for tomorrow."
     date: Date
-    "Why the pet comes, up to 255 characters"
+    "The reason for the visit, at most 255 characters, for example a rabies shot."
     description: String!
 }
 
@@ -249,11 +249,11 @@ input AddOwnerInput {
     lastName: String!
     address: String!
     city: String!
-    "Ten digits, such as 9521234567"
+    "The owner's telephone number as ten digits, for example 9521234567."
     telephone: String!
 }
 
-"The fields to change. A field left out keeps its value."
+"The details to change for one owner. A field left out keeps its value."
 input UpdateOwnerInput {
     id: ID!
     firstName: String
@@ -264,17 +264,17 @@ input UpdateOwnerInput {
 }
 
 input AddPetInput {
-    "The owner of the new pet. owners and search give the ids of owners."
+    "The id of the owner the pet belongs to. The owners and search queries give the ids of owners."
     ownerId: ID!
-    "A name the owner does not already use for another pet"
+    "The pet's name, which must differ from the names of the owner's other pets."
     name: String!
-    "Written as 2024-05-01, today or earlier"
+    "The day the pet was born, written as 2024-05-01, today or earlier."
     birthDate: Date!
-    "The kind of pet, from petTypes"
+    "The id of the kind of pet, from the petTypes query."
     typeId: ID!
 }
 
-"The fields to change. A field left out keeps its value."
+"The details to change for one pet. A field left out keeps its value."
 input UpdatePetInput {
     id: ID!
     name: String

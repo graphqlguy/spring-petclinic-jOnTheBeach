@@ -35,7 +35,7 @@ Once the next step protects the mutations, a client needs a token to change data
 ```graphql
 type Mutation {
     # ...existing mutations...
-    "Signs in, and returns the access token to send as 'Authorization: Bearer <token>'"
+    "Signs in, and returns the access token to send as 'Authorization: Bearer <token>'."
     login(username: String!, password: String!): String!
 }
 ```
@@ -147,7 +147,7 @@ The clinic wants an owner's telephone private. Field-level authorization uses th
 ```graphql
 type Owner {
     # ...existing fields...
-    "Ten digits, such as 9521234567. Only staff can read it."
+    "The owner's telephone number as ten digits, for example 9521234567. Only staff can read it."
     telephone: String
 }
 ```
