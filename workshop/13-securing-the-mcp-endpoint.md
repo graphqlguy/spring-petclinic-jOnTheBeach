@@ -43,23 +43,16 @@ Add the starter next to the resource server starter:
 
 ## 3. Close the endpoint
 
-Replace the Security and MCP sections:
+Make two changes in `application.properties`:
+
+1. In the Security section, delete chapter 5's line `spring.security.oauth2.resourceserver.jwt.public-key-location=classpath:keys/petclinic-dev.pub`. The decoder of step 5 reads the key itself. The two `petclinic.jwt` lines stay, because step 5 signs and checks the tokens with that key pair.
+2. At the end of the MCP section, replace the unsafe switch and its comment with these lines, and the new Authorization server section below them:
 
 `src/main/resources/application.properties`
 
 ```properties
-# Security
-# The key pair that signs and checks access tokens. For development only.
-petclinic.jwt.public-key=classpath:keys/petclinic-dev.pub
-petclinic.jwt.private-key=classpath:keys/petclinic-dev.key
-
-# MCP
 # The name MCP clients show for this server
 spring.ai.mcp.server.name=petclinic
-# GATool serves the frontend's operations as MCP tools at /mcp, one tool for each file
-gatool.mcp.operations.locations=classpath*:operations/
-# An answer with data and errors is a success: the errors say which fields stay null, and why
-gatool.results.partial-results-as-success=true
 # The MCP endpoint is an OAuth 2.1 resource server: every call carries an access token that
 # the authorization server below issued for the endpoint
 spring.security.oauth2.resourceserver.jwt.issuer-uri=http://localhost:${server.port:8080}
@@ -81,7 +74,7 @@ spring.security.oauth2.authorizationserver.issuer=http://localhost:${server.port
 | `authorizationserver.issuer` | The name the authorization server writes into its tokens and its metadata. |
 | `${server.port:8080}` | Follows the port, if you changed it. |
 
-The unsafe switch is gone, so GATool secures the endpoint. Chapter 5's `public-key-location` line is gone too: the decoder of step 5 reads the key itself.
+The unsafe switch is gone, so GATool secures the endpoint.
 
 ## 4. The authorization server and the MCP endpoint
 

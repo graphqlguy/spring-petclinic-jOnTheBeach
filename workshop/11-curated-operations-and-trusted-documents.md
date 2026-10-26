@@ -59,16 +59,13 @@ The `#` lines say what the operation is for and which operation to call next, as
 
 ## 3. Publish the files as tools
 
-Replace the whole MCP section:
+In the MCP section, replace the three generator lines and their comments with these two lines. The unsafe switch below them stays until chapter 13:
 
 `src/main/resources/application.properties`
 
 ```properties
-# MCP
 # GATool serves the frontend's operations as MCP tools at /mcp, one tool for each file
 gatool.mcp.operations.locations=classpath*:operations/
-# Chapter 13 secures the endpoint. Until then, an MCP client connects without signing in.
-gatool.mcp.security.unsafe.allow-mcp-calls-without-authentication=true
 ```
 
 The three generator lines are gone, and without them `generate-tools` is off, its default. `classpath*:operations/` names a folder: GATool reads every `.graphql` file in it and in its subfolders. `operations-ui` stays out, and with it `login`.
