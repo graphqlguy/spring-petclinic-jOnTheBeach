@@ -68,6 +68,17 @@
       <groupId>jakarta.xml.bind</groupId>
       <artifactId>jakarta.xml.bind-api</artifactId>
     </dependency>
+    <!-- Lucene ranks the schema's fields by their words for searchSchema, from chapter 14 on, in the tests and with a hosted model -->
+    <dependency>
+      <groupId>org.apache.lucene</groupId>
+      <artifactId>lucene-core</artifactId>
+      <version>10.3.2</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.lucene</groupId>
+      <artifactId>lucene-analysis-common</artifactId>
+      <version>10.3.2</version>
+    </dependency>
 
     <dependency>
       <groupId>com.h2database</groupId>

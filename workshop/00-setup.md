@@ -8,9 +8,18 @@ You need these three already installed:
 
 | Tool | Version | Check with |
 |------|---------|------------|
-| JDK | 21 or newer (tested with 21.0.12 and 25.0.2) | `java -version` |
+| JDK | 21 or newer (tested with 21.0.12 and 25.0.2), see the note below | `java -version` |
 | Maven | 3.9 or newer | `mvn -v` |
 | Git | any recent version | `git --version` |
+
+> [!NOTE]
+> Chapter 15 calls public services of Spain, such as the register of veterinary medicines and the Junta de Andalucía, whose certificates come from FNMT-RCM, the Spanish state's certificate authority. Eclipse Temurin and the Microsoft Build of OpenJDK trust it. The OpenJDK builds of jdk.java.net, Azul Zulu and JetBrains JBR leave it out of their trust store, so the calls to those services fail with `PKIX path building failed`. To check your JDK:
+>
+> ```bash
+> keytool -list -cacerts -storepass changeit | grep -i fnmt
+> ```
+>
+> In Windows PowerShell, write `findstr /i fnmt` in place of `grep -i fnmt`. A JDK that trusts FNMT-RCM prints two lines, such as `ou=ac_raiz_fnmt-rcm,o=fnmt-rcm,c=es, ..., trustedCertEntry`. If the list stays empty, install Eclipse Temurin 21 from [adoptium.net](https://adoptium.net) for chapter 15.
 
 The project also brings its own Maven, the wrapper `./mvnw`, which the instructions use. On Windows, type `mvnw.cmd` wherever the instructions say `./mvnw`.
 
@@ -70,7 +79,7 @@ ollama pull hf.co/xthor/Qwen3-Embedding-0.6B-GraphQL:Q8_0
 ollama cp hf.co/xthor/Qwen3-Embedding-0.6B-GraphQL:Q8_0 qwen3-graphql-embedder
 ```
 
-The chat model needs about 8 GB of free memory, so a laptop with 16 GB of RAM works best. To see how much RAM you have:
+The chat model needs about 8 GB of free memory, so a laptop with 16 GB of RAM works best. From chapter 14, the embedding model needs about 1.2 GB more, beside the chat model. On a machine with 24 GiB of graphics memory or more, Ollama gives each model a longer context, and the embedding model takes 4.8 GB there. To see how much RAM you have:
 
 | System | Where |
 |--------|-------|
