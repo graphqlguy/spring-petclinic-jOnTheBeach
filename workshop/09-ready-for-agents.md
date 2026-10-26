@@ -7,22 +7,13 @@ In the second half of the workshop, the client is an AI agent. It reads our sche
 By the end of this chapter, you will:
 
 - Know what an agent needs from a description
-- Describe queries, mutations and arguments so that a caller can act on them
-- Read the result the way an agent does, through introspection
+- Describe queries, mutations, arguments and inputs so that a caller can act on them
+- Read the descriptions the way an agent does, through introspection
 - Limit the depth and the size of a query
 
 ## 1. What an agent reads
 
-Every description we wrote reaches the agent. Some were written for us: `Owner`'s description still says *Triple quotes allow a description over several lines*, a note for us that every caller now reads. Replace it, and the comment between it and the type, with one line:
-
-`src/main/resources/graphql/schema.graphqls`
-
-```graphql
-"An owner of one or more pets, and a client of the clinic"
-type Owner implements Person {
-```
-
-A good description answers the questions a caller has before it calls:
+Every description we wrote reaches the agent, the notes we wrote for ourselves included: `Owner`'s description still says *Triple quotes allow a description over several lines*. A good description answers the questions a caller has before it calls:
 
 | Say | Example |
 |---|---|
@@ -35,13 +26,25 @@ A good description answers the questions a caller has before it calls:
 
 An agent that knows a call creates a new visit each time checks before it retries. One that knows where a `petId` comes from calls `owner` or `search` first, and avoids guessing a number.
 
-## 2. Describe the queries
+## 2. Describe the schema
 
-GraphQL allows a description on a type, a field, and each argument. Replace the whole `Query` type, from its description to its closing brace:
+Replace the whole content of `schema.graphqls` with the version below. It keeps every type and field of chapters 1 to 8, and adds the descriptions an agent needs:
+
+- `Query` and `Mutation` get a description of what holds for all their fields, such as who may call and what an error means.
+- Each query and mutation says where its ids come from and what a second call does.
+- The arguments of `owners` get descriptions too. A description goes right before its argument, so the arguments now stand one per line.
+- The fields of `AddVisitInput` and `AddPetInput`, which an agent fills in, say how to write each value.
+- `Owner` gets one line, in place of the note for us.
 
 `src/main/resources/graphql/schema.graphqls`
 
 ```graphql
+scalar Date @specifiedBy(url: "https://tools.ietf.org/html/rfc3339")
+directive @PositiveOrZero(message: String = "graphql.validation.PositiveOrZero.message") on ARGUMENT_DEFINITION | INPUT_FIELD_DEFINITION
+directive @Range(min: Int = 0, max: Int = 2147483647, message: String = "graphql.validation.Range.message") on ARGUMENT_DEFINITION | INPUT_FIELD_DEFINITION
+
+# The entry point of our API. This line is a comment:
+# comments start with # and are only for people reading this file.
 """
 Reads the clinic's data. Anyone may read it, except an owner's telephone, which needs a staff token.
 An id identifies an object within its type, so an owner and a pet can have the same id.
@@ -85,17 +88,114 @@ type Query {
     "Owners and vets whose first or last name contains the text, in upper or lower case"
     people(name: String!): [Person!]!
 }
-```
 
-An argument's description goes right before the argument, which is why `owners` now lists one argument per line.
+"Something a search can find"
+union SearchResult = Owner | Pet | Vet
 
-## 3. Describe the mutations
+"A person the clinic knows: an owner or a vet"
+interface Person {
+    id: ID!
+    firstName: String!
+    lastName: String!
+}
 
-Replace the whole `Mutation` type the same way:
+"An owner of one or more pets, and a client of the clinic"
+type Owner implements Person {
+    id: ID!
+    firstName: String!
+    lastName: String!
+    address: String!
+    city: String!
+    "Ten digits, such as 9521234567. Only staff can read it."
+    telephone: String
+    pets: [Pet!]!
+}
 
-`src/main/resources/graphql/schema.graphqls`
+"A pet of an owner, and a patient of the clinic"
+type Pet {
+    id: ID!
+    name: String!
+    birthDate: Date
+    type: PetType!
+    owner: Owner!
+    "The visits of this pet, oldest first"
+    visits: [Visit!]!
+}
 
-```graphql
+"A kind of pet, such as cat or dog"
+type PetType {
+    id: ID!
+    name: String!
+}
+
+enum OwnerSortField {
+    LAST_NAME
+    FIRST_NAME
+    CITY
+}
+
+enum SortOrder {
+    ASC
+    DESC
+}
+
+input OwnerFilter {
+    "Owners whose last name starts with this text, in upper or lower case"
+    lastName: String
+    "Owners who live in this city, in upper or lower case"
+    city: String
+}
+
+input OwnerSort {
+    field: OwnerSortField
+    order: SortOrder
+}
+
+"One page of owners. Pages count from 0."
+type OwnerPage {
+    content: [Owner!]!
+    totalElements: Int!
+    totalPages: Int!
+    currentPage: Int!
+    size: Int!
+    isFirst: Boolean!
+    isLast: Boolean!
+    hasNext: Boolean!
+    hasPrevious: Boolean!
+}
+
+"A veterinarian of the clinic"
+type Vet implements Person {
+    id: ID!
+    firstName: String!
+    lastName: String!
+    specialties: [Specialty!]!
+    "The visits this vet has seen or will see, newest first"
+    visits: [Visit!]!
+}
+
+"A visit of a pet to the clinic, past or booked"
+type Visit {
+    id: ID!
+    date: Date!
+    description: String!
+    pet: Pet!
+    "The vet who sees the pet. The Petclinic web pages book visits without a vet."
+    vet: Vet
+}
+
+"A field a vet specializes in, such as surgery"
+type Specialty {
+    id: ID!
+    name: String!
+}
+
+"Events a client can listen to, over a WebSocket or Server-Sent Events"
+type Subscription {
+    "Each visit as it is booked"
+    visitBooked: Visit!
+}
+
 """
 Changes the clinic's data. Every mutation except login needs a staff token.
 A value that breaks a rule returns one BAD_REQUEST error for each field, and the data stays as it was.
@@ -132,11 +232,56 @@ type Mutation {
     """
     login(username: String!, password: String!): String!
 }
+
+input AddVisitInput {
+    "The pet to see. owner and search give the ids of pets."
+    petId: ID!
+    "The vet who sees the pet, from vets. Leave it out to book the visit without a vet."
+    vetId: ID
+    "The day of the visit, written as 2026-10-21. Leave it out to book the visit for tomorrow."
+    date: Date
+    "Why the pet comes, up to 255 characters"
+    description: String!
+}
+
+input AddOwnerInput {
+    firstName: String!
+    lastName: String!
+    address: String!
+    city: String!
+    "Ten digits, such as 9521234567"
+    telephone: String!
+}
+
+"The fields to change. A field left out keeps its value."
+input UpdateOwnerInput {
+    id: ID!
+    firstName: String
+    lastName: String
+    address: String
+    city: String
+    telephone: String
+}
+
+input AddPetInput {
+    "The owner of the new pet. owners and search give the ids of owners."
+    ownerId: ID!
+    "A name the owner does not already use for another pet"
+    name: String!
+    "Written as 2024-05-01, today or earlier"
+    birthDate: Date!
+    "The kind of pet, from petTypes"
+    typeId: ID!
+}
+
+"The fields to change. A field left out keeps its value."
+input UpdatePetInput {
+    id: ID!
+    name: String
+    birthDate: Date
+    typeId: ID
+}
 ```
-
-The type's own description states what holds for every mutation: who may call, and what an error means. Each field adds what is particular to it: whether a second call repeats the change.
-
-## 4. Read the schema as an agent does
 
 Restart, and ask the schema for the mutations and their descriptions, as an agent's tools do:
 
@@ -158,9 +303,7 @@ query {
 }
 ```
 
-Ask for two types in one request, with `__type` twice, and GraphQL Java refuses: `This request is not asking for introspection in good faith - Query.__type is present too often!`. It guards introspection against queries built to make it expensive, so a client asks one type at a time, or reads the whole schema with a single `__schema`.
-
-## 5. Limit what one query may cost
+## 3. Limit what one query may cost
 
 A client may follow the graph as deep as it likes. This query asks for every owner's pets' owner's pets, four times over, and an agent that explores freely can write one like it:
 
@@ -263,42 +406,9 @@ Restart and run the deep query:
 }
 ```
 
-A query that selects the same field 210 times under aliases, `a1: firstName a2: firstName ...`, is refused by the other limit: `maximum query complexity exceeded 210 > 200`. Refresh the frontend: every page still works, because its operations stay within both limits.
+A query that selects the same field 210 times under aliases, `owner(id: 1) { a1: firstName a2: firstName ... }`, is refused by the other limit: `maximum query complexity exceeded 211 > 200`, one field for `owner` and 210 for the aliases. Refresh the frontend: every page still works, because its operations stay within both limits.
 
-## Exercise: describe the inputs
-
-An agent fills in input types as well. Describe the fields of `AddVisitInput` and `AddPetInput` with the questions of step 1 in mind: where each id comes from, how to write the values, and the rules that apply.
-
-<details>
-<summary>Show solution</summary>
-
-`src/main/resources/graphql/schema.graphqls`
-
-```graphql
-input AddVisitInput {
-    "The pet to see. owner and search give the ids of pets."
-    petId: ID!
-    "The vet who sees the pet, from vets. Leave it out to book the visit without a vet."
-    vetId: ID
-    "The day of the visit, written as 2026-10-21. Leave it out to book the visit for tomorrow."
-    date: Date
-    "Why the pet comes, up to 255 characters"
-    description: String!
-}
-
-input AddPetInput {
-    "The owner of the new pet. owners and search give the ids of owners."
-    ownerId: ID!
-    "A name the owner does not already use for another pet"
-    name: String!
-    "Written as 2024-05-01, today or earlier"
-    birthDate: Date!
-    "The kind of pet, from petTypes"
-    typeId: ID!
-}
-```
-
-</details>
+GraphQL Java guards introspection on its own, which is why the depth limit leaves it out: ask for `__type` twice in one request, and it answers `This request is not asking for introspection in good faith - Query.__type is present too often!`.
 
 ## Recap
 
