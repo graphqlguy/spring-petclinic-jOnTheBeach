@@ -2,7 +2,7 @@
 
 > **User story** · As a vet in Málaga, I want to ask the assistant about medicines, mosquitoes, dog parks and the neighbourhood of an owner, so that the answers come from official sources while I stay in the clinic's application.
 
-The schema grows from the clinic's 9 root fields to 602, read from 16 public services of Spain, Andalusia and Málaga. Its 605,000 characters come to about 150,000 tokens, and the model on your laptop reads 8,192 tokens at a time. The code is ready on a branch: you switch to it, and ask the assistant questions that it answers with the three tools of chapter 14.
+The schema grows from the clinic's 8 root fields to 601, read from 16 public services of Spain, Andalusia and Málaga. Its 605,000 characters come to about 150,000 tokens, and the model on your laptop reads 8,192 tokens at a time. The code is ready on a branch: you switch to it, and ask the assistant questions that it answers with the three tools of chapter 14.
 
 By the end of this chapter, you will:
 
@@ -60,7 +60,7 @@ Each service has a schema file of its own in `src/main/resources/graphql`:
 | `idee.graphqls` | Addresses, land use, rivers and transport networks of Spain | National Cartographic System (IDEE) |
 | `ign.graphqls` | Administrative units, place names, towns and geodetic stations | National Geographic Institute (IGN) |
 
-Together they add 593 root fields to the clinic's 9. We counted about 150,000 tokens with the `cl100k_base` encoding of [tiktoken](https://github.com/openai/tiktoken), about 18 times the 8,192 tokens that chapter 12 gave `granite4.1:8b`, and one `searchSchema` call returns at most 2,000 of them.
+Together they add 593 root fields to the clinic's 8. We counted about 150,000 tokens with the `cl100k_base` encoding of [tiktoken](https://github.com/openai/tiktoken), about 18 times the 8,192 tokens that chapter 12 gave `granite4.1:8b`, and one `searchSchema` call returns at most 2,000 of them.
 
 ## 3. Without wifi
 
@@ -74,7 +74,7 @@ Stop the backend and start it with the `mock` profile:
 INFO ... o.s.s.p.u.MockUpstreamConfiguration      : External services are mocked with recorded responses on port 9091
 ```
 
-A [WireMock](https://wiremock.org) server inside the application answers in place of the 16 services, from 12 MB of answers in `src/main/resources/mock-upstreams`, recorded on 22 and 23 October 2026. `application-mock.properties` points every client at it. A call with the arguments of a recording gets that recording. A call with other arguments gets the first recording of its field, which can belong to other arguments: an address outside the recordings finds the point of Calle Larios 12, for example.
+A [WireMock](https://wiremock.org) server inside the application answers in place of the 16 services, from 10 MB of answers in `src/main/resources/mock-upstreams`, recorded on 22 and 23 October 2026. `application-mock.properties` points every client at it. A call with the arguments of a recording gets that recording. A call with other arguments gets the first recording of its field, which can belong to other arguments: an address outside the recordings finds the point of Calle Larios 12, for example.
 
 The tests start the application with this profile, so they run without the internet.
 
@@ -237,9 +237,9 @@ The Catastro, the land registry, serves its street directory and its coordinates
 
 `CatastroConfiguration` sends each request with the `WebServiceTemplate` of Spring Web Services, and `XmlMaps` reads the answer into nested maps, the shape a JSON answer has. A field such as `CatastroUnit.yearBuilt` reads the path `debi/ant` of the answer, and converts it to an integer.
 
-#### Operation tables for fourteen services
+#### Operation tables for thirteen services
 
-For the other fourteen services, each root field is one entry in `<service>/operations.json`, and one class, `RestOperationFetcher`, serves them all: it builds the URL from the arguments, calls the service, and returns its answer. This is the entry of `juntaMuseums`:
+For the other thirteen services, each root field is one entry in `<service>/operations.json`, and one class, `RestOperationFetcher`, serves them all: it builds the URL from the arguments, calls the service, and returns its answer. This is the entry of `juntaMuseums`:
 
 `src/main/resources/junta/operations.json` (excerpt)
 
@@ -270,7 +270,7 @@ The enum value `MALAGA` travels as `Málaga`, the text the Junta expects, and th
 
 The Junta writes the latitude as `"36,7213"`, and the field returns `36.7213`. `ValueConversion` holds the conversions the services need: a decimal comma, a yes or no in Spanish, a date in milliseconds, a list sent as a single object, and a few more.
 
-A Python script wrote the fourteen tables, their schema files and the recorded answers of step 3. For each service, it read the OpenAPI document or the help page, called the service with sample arguments, and wrote a type for what came back. It reported every key of a recorded answer without a field, and every field without a key in the answers, and we fixed each report before writing the files. The English names and descriptions are written by hand. The script stays outside the repository, and its output is what you have.
+A Python script wrote the fourteen tables, the Catastro's included, their schema files and the recorded answers of step 3. For each service, it read the OpenAPI document or the help page, called the service with sample arguments, and wrote a type for what came back. It reported every key of a recorded answer without a field, and every field without a key in the answers, and we fixed each report before writing the files. The English names and descriptions are written by hand. The script stays outside the repository, and its output is what you have.
 
 ### Run the fields
 
