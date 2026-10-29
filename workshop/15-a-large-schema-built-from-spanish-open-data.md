@@ -18,7 +18,7 @@ Stop the backend. Commit your work of chapter 14, or set it aside with `git stas
 git add -A
 git commit -m "My chapter 14"
 git fetch origin
-git switch checkpoint_15
+git switch checkpoint-15-large-schema
 ```
 
 Start the backend:
