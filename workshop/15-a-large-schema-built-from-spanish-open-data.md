@@ -106,12 +106,19 @@ The system prompt reaches the assistant alone. An MCP client's model reads the s
 # What the model of an MCP client reads when it connects. This text replaces GATool's, so it names
 # the topics of the API and then says how to use the three tools. Spring Boot reads this file as
 # ISO-8859-1, so the value writes the á of Málaga as \u00e1.
-spring.ai.mcp.server.instructions=This server reads the data of a veterinary clinic in M\u00e1laga, Spain, and public \
-  services of Spain, Andalusia and M\u00e1laga, such as veterinary medicines, mosquito reports, dog parks, the land \
-  registry, statistics, and fuel and electricity prices. For a question on any of these topics, search the schema \
-  before you decide that the API cannot answer it. Find the fields with searchSchema, use introspectType if you \
-  need more details about a type, and run the query with executeGraphql. Some fields, such as an owner's \
-  telephone, need a signed-in staff member.
+spring.ai.mcp.server.instructions=This server answers questions about a veterinary clinic in M\u00e1laga, Spain, and about \
+  public data on pets, animals and daily life in Spain, Andalusia and M\u00e1laga. \
+  The API holds the clinic's owners with their addresses, their pets and visits, and its vets, and for an owner who \
+  lives in M\u00e1laga, the dog parks and drinking fountains nearest to their home, with the distance to each. \
+  It also reads public services: the dog parks, drinking fountains and city buses of M\u00e1laga; veterinary medicines \
+  (CIMAVet) and medicines for people (CIMA); mosquito reports (Mosquito Alert); the land registry (Catastro); datasets \
+  of the Junta de Andaluc\u00eda, such as museums and holidays; regional buses (CTAN); fuel prices; statistics (INE); \
+  laws and the official gazette (BOE); the open data catalogues of Spain and M\u00e1laga; electricity demand and prices \
+  (Red El\u00e9ctrica); addresses, places and maps (IDEE, IGN); and the OpenStreetMap geocoder, which turns an address \
+  into latitude and longitude. \
+  For a question on any of these topics, search the schema before you decide the API cannot answer it. \
+  Find the fields with searchSchema, use introspectType if you need more details about a type, and run the query \
+  with executeGraphql. Some fields, such as an owner's telephone, need a signed-in staff member.
 ```
 
 A search result shows the description of a field, and its arguments by name and type alone, such as `cimaVetMedicines(name: String, activeIngredient: String, speciesId: Int, ...)`. The descriptions of the arguments stay out of the result, so a hint that the model needs goes in the description of the field:
