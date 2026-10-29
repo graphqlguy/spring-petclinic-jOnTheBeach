@@ -286,7 +286,7 @@ The test runs in about a third of a second, against several seconds for a test t
 Petclinic's tests, the starting point's service tests and the new ones run together:
 
 ```text
-Tests run: 114, Failures: 0, Errors: 0, Skipped: 0
+Tests run: 112, Failures: 0, Errors: 0, Skipped: 0
 ```
 
 ## Exercise: prove the authorization rules
@@ -294,7 +294,7 @@ Tests run: 114, Failures: 0, Errors: 0, Skipped: 0
 Tests of the happy path leave the security of chapter 5 unguarded: a careless change could open a mutation to everyone, and every test above would still pass. Add two tests to `PetclinicGraphQLTests`:
 
 1. `guest` tries to add an owner, and gets `FORBIDDEN`.
-2. An anonymous caller asks for owner 6's last name and telephone, gets the last name, a `null` telephone, and an `UNAUTHORIZED` error.
+2. An anonymous caller asks for owner 12's last name and telephone, gets the last name, a `null` telephone, and an `UNAUTHORIZED` error.
 
 <details>
 <summary>Show solution</summary>
