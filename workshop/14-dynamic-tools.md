@@ -45,7 +45,7 @@ The vector holds 1,024 numbers. Two vectors are compared by the angle between th
 | The kinds of pet the clinic treats, sorted by name. | `Query.petTypes` | 0.31 |
 | Owners, one page at a time, sorted by last name unless the sort argument says otherwise. | `Query.owners` | 0.09 |
 
-`searchSchema` works the same way. At startup, GATool asks the embedding model for the vector of every query field, written as a declaration with its description, and caches the vectors on disk. For each question, it ranks the fields by their similarity to the question's vector and returns the best ones within 2000 tokens.
+`searchSchema` works the same way. At startup, GATool asks the embedding model for the vector of every field a query can reach: the root fields, such as `Query.vets`, and the fields of the types behind them, such as `Vet.visits`. GATool embeds the nested fields too, because a question often asks about a detail, such as a vet's visits, and each result names the root field the query starts from. GATool writes each field as a declaration with its description, and caches the vectors on disk. For each question, it ranks the fields by their similarity to the question's vector and returns the best ones within 2000 tokens.
 
 The model the setup pulled is Qwen3-Embedding-0.6B, fine-tuned on 4,788 pairs of a question and the field that answers it, because a schema is camelCase names and type signatures, while most embedding models learn from prose. Its model card gives the right field among the first 50 results for 63.6% of the 816 questions of the GraphQL AI Working Group's benchmark, against 59.8% for OpenAI's `text-embedding-3-large` and 58.5% for the model before the fine-tune.
 
@@ -92,7 +92,7 @@ WARN ... i.g.b.a.GAToolAutoConfiguration          : gatool.dev.experimental.gene
 INFO ... i.g.b.a.GAToolAutoConfiguration          : GATool publishes searchSchema, introspectType, executeGraphql, ranking 46 schema coordinates with EMBEDDING and returning up to 2000 tokens of results per call.
 ```
 
-GATool warns that it serves zero MCP tools, which is what the empty folder is for, and that a model can now run queries it wrote itself: step 6 shows the checks that still apply. The 46 coordinates are the schema's query fields, without the mutations, the subscription and the deprecated `ownersAll`. On our laptop, embedding them took under a second, and the next start reads them from the cache.
+GATool warns that it serves zero MCP tools, which is what the empty folder is for, and that a model can now run queries it wrote itself: step 6 shows the checks that still apply. The 46 coordinates are the fields a query can reach: 7 on `Query`, and 39 on the types behind them, such as `Owner`, `Pet` and `Visit`. The mutations, the subscription and the deprecated `ownersAll` stay out of the search. On our laptop, embedding them took under a second, and the next start reads them from the cache.
 
 > [!NOTE]
 > The embedding model runs in Ollama. With a hosted model from chapter 12, add `gatool.dev.experimental.dynamic-operations.search-backend=bm25` to its `application-<name>.properties`: BM25 ranks the fields by their words, and runs without a model. With the Mistral or OpenAI starter, the application holds two embedding models, and GATool stops at startup and asks which one to use. The tests run without Ollama, so `src/test/resources/config/application.properties` sets `bm25` for them.
